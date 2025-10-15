@@ -62,10 +62,17 @@ static bool     have_seen_any_can = false;
 static uint32_t lastHbMs = 0;
 static uint16_t hbCounter = 0;
 static const uint32_t HB_PID = 0x7AA; // BLE heartbeat
+static const uint32_t DIAG_PID = 0x77E; // BLE diagnostics frame
+static const uint32_t DIAG_PERIOD_MS = 5000;
+static uint32_t lastDiagMs = 0;
 
 static uint32_t rxCount = 0;
 static uint32_t lastRxPrintMs = 0;
 
+static const char FW_VERSION[] = "CCA Telemetry " __DATE__ " " __TIME__;
+static constexpr uint8_t FW_VERSION_MAJOR = 1;
+static constexpr uint8_t FW_VERSION_MINOR = 0;
+static constexpr uint8_t FW_VERSION_PATCH = 0;
 static const char *lastReconnectCause = "boot";
 
 // ===== RaceChrono pidMap extra (per-PID throttle) =====
@@ -642,6 +649,26 @@ static void oil_update_and_publish_if_due() {
   }
 }
 
+static void publish_diag_frame_if_due(uint32_t now) {
+  if (!RaceChronoBle.isConnected()) return;
+  if ((now - lastDiagMs) < DIAG_PERIOD_MS) return;
+
+  lastDiagMs = now;
+
+  uint32_t uptimeSeconds = now / 1000U;
+  uint8_t payload[8] = {
+    static_cast<uint8_t>((uptimeSeconds >> 24) & 0xFF),
+    static_cast<uint8_t>((uptimeSeconds >> 16) & 0xFF),
+    static_cast<uint8_t>((uptimeSeconds >> 8) & 0xFF),
+    static_cast<uint8_t>(uptimeSeconds & 0xFF),
+    FW_VERSION_MAJOR,
+    FW_VERSION_MINOR,
+    FW_VERSION_PATCH,
+    0x00
+  };
+  RaceChronoBle.sendCanData(DIAG_PID, payload, sizeof(payload));
+}
+
 // ===== Concise config print (SHOW) =====
 static void show_config() {
   Serial.println("=== CCA Config ===");
@@ -897,6 +924,8 @@ void loop() {
 
   // Oil channel
   oil_update_and_publish_if_due();
+
+  publish_diag_frame_if_due(now);
 
   // Periodic timeout counter
   if (now - last_time_num_can_bus_timeouts_sent_ms > 2000) {
