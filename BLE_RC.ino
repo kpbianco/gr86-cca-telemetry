@@ -39,6 +39,8 @@
 #include <driver/twai.h>
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER
 
+struct GovernorSnapshot;
+
 #ifndef FW_VERSION
 #define FW_VERSION "unknown"
 #endif
@@ -589,6 +591,8 @@ bool cfg_reset_to_defaults() {
   cfgPrefs.end();
   return true;
 }
+
+static void apply_profile_and_dividers();
 
 void cfg_boot_load_and_apply() {
   bool loaded = cfg_load_from_nvs();
