@@ -9,8 +9,10 @@
 //     CAL 1              -> capture V1_ADC at current input (not saved until SAVE)
 //     RATE <ms>          -> set oil CAN TX period (not saved until SAVE)
 //     PROFILE ON|OFF     -> enable allow-list mode or sniff-all (not saved until SAVE)
+//     SHOW               -> list SHOW subcommands
 //     SHOW CFG           -> show concise config (no spam)
-//     SHOW MAP           -> dump pidMap
+//     SHOW STATS         -> show runtime counters (no spam)
+//     SHOW MAP           -> dump pidMap summary
 //     SHOW DENY          -> dump deny list
 //     ALLOW <pid> <div>  -> add/update a PID with divider (also removes from deny)
 //     DENY  <pid>        -> add PID to deny list
@@ -53,6 +55,9 @@ static const uint32_t HB_PID = 0x7AA; // BLE heartbeat
 
 static uint32_t rxCount = 0;
 static uint32_t lastRxPrintMs = 0;
+
+static const char FW_VERSION[] = "CCA Telemetry " __DATE__ " " __TIME__;
+static const char *lastReconnectCause = "boot";
 
 // ===== RaceChrono pidMap extra (per-PID throttle) =====
 struct PidExtra {
@@ -355,9 +360,10 @@ static uint8_t oil_health_flags_from_volts(float v);
 static float  volts_to_psi_exact(float v);
 static void   oil_update_and_publish_if_due();
 
-static void   restartBle();
+static void   restartBle(const char *reason = nullptr);
 static void   process_cli_line(char *line);
 static void   show_config();      // concise SHOW
+static void   show_stats();       // SHOW STATS
 static void   dumpMapToSerial();  // verbose only on SHOW MAP
 static void   dumpDenyToSerial(); // verbose only on SHOW DENY
 
@@ -386,7 +392,10 @@ class UpdateMapOnRaceChronoCommands : public RaceChronoBleCanHandler {
 } raceChronoHandler;
 
 // ===== Clean BLE restart =====
-static void restartBle() {
+static void restartBle(const char *reason) {
+  if (reason && reason[0]) {
+    lastReconnectCause = reason;
+  }
   Serial.println("BLE: restart...");
   if (NimBLEDevice::getAdvertising()) NimBLEDevice::getAdvertising()->stop();
   NimBLEDevice::deinit(true);
@@ -412,6 +421,8 @@ void setup() {
   RaceChronoBle.startAdvertising();
   Serial.println("Waiting for RaceChrono...");
   waitForConnection();
+
+  lastReconnectCause = "boot";
 
   // Load persisted config + apply profile/dividers
   cfg_boot_load_and_apply();
@@ -631,15 +642,31 @@ static void show_config() {
 }
 
 // ===== Verbose dumps (on demand only) =====
+static void show_stats() {
+  Serial.println("=== CCA Stats ===");
+  Serial.printf("RX count:        %lu\n", (unsigned long)rxCount);
+  Serial.printf("CAN timeouts:    %u\n", (unsigned)num_can_bus_timeouts);
+  Serial.printf("Last reconnect:  %s\n", lastReconnectCause ? lastReconnectCause : "unknown");
+  Serial.printf("FW version:      %s\n", FW_VERSION);
+  Serial.println("=================");
+}
+
 static void dumpMapToSerial() {
   Serial.println("PID map:");
   if (pidMap.isEmpty()) { Serial.println("  <empty>\n"); return; }
-  struct { void operator()(void *entry) {
+  size_t total = 0;
+  size_t printed = 0;
+  pidMap.forEach([&](void *entry) {
+    total++;
+    if (printed >= 128) return;
     uint32_t pid = pidMap.getPid(entry);
     const PidExtra *e = pidMap.getExtra(entry);
     Serial.printf("  %03lX: div=%u\n", (unsigned long)pid, e->updateRateDivider);
-  }} dumper;
-  pidMap.forEach(dumper);
+    printed++;
+  });
+  if (total > 128) {
+    Serial.printf("  ... +%u more\n", (unsigned)(total - 128));
+  }
   Serial.println();
 }
 static void dumpDenyToSerial() {
@@ -661,7 +688,15 @@ static void process_cli_line(char *line) {
   String s(line);
   String up = s; up.toUpperCase();
 
-  if (up == "SHOW" || up == "SHOW CFG") { show_config(); return; }
+  if (up == "SHOW") {
+    Serial.println("SHOW subcommands:");
+    Serial.println("  CFG   -> config summary");
+    Serial.println("  STATS -> runtime counters");
+    Serial.println("  MAP   -> enabled PID allow-list");
+    return;
+  }
+  if (up == "SHOW CFG")   { show_config(); return; }
+  if (up == "SHOW STATS") { show_stats(); return; }
   if (up == "SHOW MAP")        { dumpMapToSerial(); return; }
   if (up == "SHOW DENY")       { dumpDenyToSerial(); return; }
 
@@ -766,7 +801,7 @@ static void process_cli_line(char *line) {
     return;
   }
 
-  Serial.println("Unknown cmd. Try: SHOW CFG | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | RATE <ms> | PROFILE ON|OFF | ALLOW <pid> <div> | DENY <pid> | SAVE | LOAD | RESETCFG");
+  Serial.println("Unknown cmd. Try: SHOW | SHOW CFG | SHOW STATS | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | RATE <ms> | PROFILE ON|OFF | ALLOW <pid> <div> | DENY <pid> | SAVE | LOAD | RESETCFG");
 }
 
 // ===== Main loop =====
@@ -786,7 +821,7 @@ void loop() {
     pidMap.reset();
     stopCanBusReader();
 
-    restartBle();
+    restartBle("RC disconnect");
     Serial.println("Waiting for new RC connection...");
     waitForConnection();
 
