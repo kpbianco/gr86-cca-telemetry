@@ -69,6 +69,10 @@ static uint32_t rxCount = 0;
 static uint32_t lastRxPrintMs = 0;
 
 static char lastReconnectCause[64] = "boot";
+static char pendingBleRestartReason[64] = "";
+static bool pendingBleRestart = false;
+
+static bool nvsWriteInProgress = false;
 
 static constexpr uint32_t CAN_STATUS_POLL_INTERVAL_MS = 100;
 static constexpr uint32_t CAN_TX_FAILURE_WINDOW_MS    = 1000;
@@ -205,6 +209,11 @@ struct __attribute__((packed)) CfgDividerBlob {
 
 static CfgPidDivider customDividers[CUSTOM_DIVIDER_MAX];
 static uint16_t customDividerCount = 0;
+
+struct ScopedNvsWrite {
+  ScopedNvsWrite()  { nvsWriteInProgress = true; }
+  ~ScopedNvsWrite() { nvsWriteInProgress = false; }
+};
 
 static int find_custom_divider_index(uint16_t pid) {
   for (uint16_t i = 0; i < customDividerCount; ++i) {
@@ -547,10 +556,12 @@ bool cfg_load_from_nvs() {
 bool cfg_save_to_nvs() {
   if (!cfgPrefs.begin(CFG_NAMESPACE, false)) return false;
 
+  ScopedNvsWrite guard;
+
   bool ok = true;
-  cfgPrefs.putFloat("v0_adc", V0_ADC);
-  cfgPrefs.putFloat("v1_adc", V1_ADC);
-  cfgPrefs.putUChar("profile", USE_PROFILE_ALLOWLIST ? 1 : 0);
+  if (cfgPrefs.putFloat("v0_adc", V0_ADC) != sizeof(float)) ok = false;
+  if (cfgPrefs.putFloat("v1_adc", V1_ADC) != sizeof(float)) ok = false;
+  if (cfgPrefs.putUChar("profile", USE_PROFILE_ALLOWLIST ? 1 : 0) != sizeof(uint8_t)) ok = false;
 
   CfgDividerBlob blob;
   memset(&blob, 0, sizeof(blob));
@@ -562,9 +573,8 @@ bool cfg_save_to_nvs() {
     memset(&blob.items[customDividerCount], 0,
            sizeof(CfgPidDivider) * (CUSTOM_DIVIDER_MAX - customDividerCount));
   }
-  size_t expected = sizeof(uint16_t) + sizeof(CfgPidDivider) * customDividerCount;
-  size_t written = cfgPrefs.putBytes("dividers", &blob, expected);
-  if (written != expected) ok = false;
+  size_t written = cfgPrefs.putBytes("dividers", &blob, sizeof(blob));
+  if (written != sizeof(blob)) ok = false;
 
   cfgPrefs.end();
   return ok;
@@ -574,6 +584,7 @@ bool cfg_reset_to_defaults() {
   cfg_apply_runtime_defaults();
 
   if (!cfgPrefs.begin(CFG_NAMESPACE, false)) return false;
+  ScopedNvsWrite guard;
   cfgPrefs.clear();
   cfgPrefs.end();
   return true;
@@ -585,10 +596,7 @@ void cfg_boot_load_and_apply() {
     cfg_apply_runtime_defaults();
   }
 
-  if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
-  else                       apply_allow_all();
-
-  piddiv_apply_all();
+  apply_profile_and_dividers();
 }
 
 // ===== Forward decls =====
@@ -611,6 +619,7 @@ static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len);
 
 static void apply_allow_list_profile();
 static void apply_allow_all();
+static void apply_profile_and_dividers();
 
 bool cfg_load_from_nvs();
 bool cfg_save_to_nvs();
@@ -703,6 +712,37 @@ static void waitForConnection() {
   }
   if (!nl) Serial.println();
   Serial.println("RaceChrono connected.");
+}
+
+static void recoverRaceChronoConnection(const char *reason) {
+  Serial.println("RC disconnected -> reset map + CAN + BLE.");
+  pidMap.reset();
+  stopCanBusReader();
+
+  restartBle(reason);
+  Serial.println("Waiting for new RC connection...");
+  waitForConnection();
+
+  apply_profile_and_dividers();
+
+  sendNumCanBusTimeouts();
+}
+
+static void queueBleRestart(const char *reason) {
+  if (pendingBleRestart) return;
+  const char *src = (reason && reason[0]) ? reason : "RC disconnect";
+  strncpy(pendingBleRestartReason, src, sizeof(pendingBleRestartReason) - 1);
+  pendingBleRestartReason[sizeof(pendingBleRestartReason) - 1] = '\0';
+  pendingBleRestart = true;
+}
+
+static void servicePendingBleRestart() {
+  if (!pendingBleRestart) return;
+  if (nvsWriteInProgress) return;
+
+  pendingBleRestart = false;
+  recoverRaceChronoConnection(pendingBleRestartReason[0] ? pendingBleRestartReason : nullptr);
+  pendingBleRestartReason[0] = '\0';
 }
 
 // ===== CAN bring-up/teardown =====
@@ -1008,6 +1048,15 @@ static void apply_allow_all() {
   bleGovernorActive = restored;
 }
 
+static void apply_profile_and_dividers() {
+  if (USE_PROFILE_ALLOWLIST) {
+    apply_allow_list_profile();
+  } else {
+    apply_allow_all();
+  }
+  piddiv_apply_all();
+}
+
 // ===== Oil publish =====
 static void oil_update_and_publish_if_due() {
   const uint32_t now = millis();
@@ -1079,6 +1128,7 @@ static void dumpDenyToSerial() {
 }
 
 // ===== Serial CLI =====
+static constexpr size_t CLI_BUF_SIZE = 192;
 static void process_cli_line(char *line) {
   while (*line == ' ' || *line == '\t') ++line;
   size_t L = strlen(line);
@@ -1105,21 +1155,19 @@ static void process_cli_line(char *line) {
 
   if (up == "PROFILE ON") {
     USE_PROFILE_ALLOWLIST = true;
-    apply_allow_list_profile();
-    piddiv_apply_all();
+    apply_profile_and_dividers();
     Serial.println("Profile=ALLOW-LIST (not saved)");
     return;
   }
   if (up == "PROFILE OFF") {
     USE_PROFILE_ALLOWLIST = false;
-    apply_allow_all();
-    piddiv_apply_all();
+    apply_profile_and_dividers();
     Serial.println("Profile=SNIFF-ALL (not saved)");
     return;
   }
 
   if (up.startsWith("RATE ")) {
-    char buf[64]; strncpy(buf, line, sizeof(buf)); buf[sizeof(buf)-1]=0;
+    char buf[CLI_BUF_SIZE]; strncpy(buf, line, sizeof(buf)); buf[sizeof(buf)-1]=0;
     char *tok = strtok(buf + 5, " \t");
     if (tok) {
       unsigned ms = strtoul(tok, nullptr, 0);
@@ -1130,7 +1178,7 @@ static void process_cli_line(char *line) {
   }
 
   if (up.startsWith("ALLOW ")) {
-    char buf[96]; strncpy(buf, line, sizeof(buf)); buf[sizeof(buf)-1]=0;
+    char buf[CLI_BUF_SIZE]; strncpy(buf, line, sizeof(buf)); buf[sizeof(buf)-1]=0;
     char *tok = strtok(buf + 6, " \t");
     char *tok2 = tok ? strtok(nullptr, " \t") : nullptr;
     if (tok && tok2) {
@@ -1153,7 +1201,7 @@ static void process_cli_line(char *line) {
   }
 
   if (up.startsWith("DENY ")) {
-    char buf[96]; strncpy(buf, line, sizeof(buf)); buf[sizeof(buf)-1]=0;
+    char buf[CLI_BUF_SIZE]; strncpy(buf, line, sizeof(buf)); buf[sizeof(buf)-1]=0;
     char *tok = strtok(buf + 5, " \t");
     if (tok) {
       uint32_t pid = strtoul(tok, nullptr, 0);
@@ -1178,9 +1226,7 @@ static void process_cli_line(char *line) {
       Serial.println("No saved config; using defaults.");
       cfg_apply_runtime_defaults();
     }
-    if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
-    else                       apply_allow_all();
-    piddiv_apply_all();
+    apply_profile_and_dividers();
     show_config();
     return;
   }
@@ -1188,9 +1234,7 @@ static void process_cli_line(char *line) {
   if (up == "RESETCFG") {
     if (cfg_reset_to_defaults()) Serial.println("Config reset to defaults.");
     else                         Serial.println("Failed to reset config.");
-    if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
-    else                       apply_allow_all();
-    piddiv_apply_all();
+    apply_profile_and_dividers();
     show_config();
     return;
   }
@@ -1202,28 +1246,15 @@ static void process_cli_line(char *line) {
 void loop() {
   loop_iteration++;
 
-  // Defensive re-assert (lightweight)
-  if ((loop_iteration % 200) == 0 && RaceChronoBle.isConnected()) {
-    if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
-    else                       apply_allow_all();
-    piddiv_apply_all();
-  }
+  servicePendingBleRestart();
 
   // Handle disconnect / reconnect
   if ((loop_iteration % 100) == 0 && !RaceChronoBle.isConnected()) {
-    Serial.println("RC disconnected -> reset map + CAN + BLE.");
-    pidMap.reset();
-    stopCanBusReader();
-
-    restartBle("RC disconnect");
-    Serial.println("Waiting for new RC connection...");
-    waitForConnection();
-
-    if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
-    else                       apply_allow_all();
-    piddiv_apply_all();
-
-    sendNumCanBusTimeouts();
+    if (nvsWriteInProgress && !pendingBleRestart) {
+      Serial.println("RC disconnected during SAVE; deferring until NVS completes.");
+    }
+    queueBleRestart("RC disconnect");
+    servicePendingBleRestart();
   }
 
   // Ensure CAN is up
@@ -1290,18 +1321,26 @@ void loop() {
   updateBleGovernor(now);
 
   // ---- Robust Serial CLI: accept CR, LF, CRLF, or no line ending ----
-  static char cliBuf[96];
-  static uint8_t cliLen = 0;
+  static char cliBuf[CLI_BUF_SIZE];
+  static size_t cliLen = 0;
+  static bool cliOverflow = false;
   while (Serial.available()) {
     int c = Serial.read();
     if (c < 0) break;
     if (c == '\r' || c == '\n') {
       cliBuf[cliLen] = 0;
-      if (cliLen) process_cli_line(cliBuf);
+      if (cliOverflow) {
+        Serial.println("CLI line too long; ignored.");
+      } else if (cliLen) {
+        process_cli_line(cliBuf);
+      }
       cliLen = 0;
+      cliOverflow = false;
       if (Serial.peek() == '\n' || Serial.peek() == '\r') Serial.read();
-    } else if (cliLen < sizeof(cliBuf) - 1) {
+    } else if (cliLen < (CLI_BUF_SIZE - 1)) {
       cliBuf[cliLen++] = (char)c;
+    } else {
+      cliOverflow = true;
     }
   }
 }
