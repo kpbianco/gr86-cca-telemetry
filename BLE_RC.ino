@@ -34,7 +34,9 @@
 #include <RaceChrono.h>
 #include <NimBLEDevice.h>
 #include <Preferences.h>
+#include <cstdio>
 #include <cstring>
+#include <driver/twai.h>
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER
 
 #ifndef FW_VERSION
@@ -66,7 +68,15 @@ static const uint32_t HB_PID = 0x7AA; // BLE heartbeat
 static uint32_t rxCount = 0;
 static uint32_t lastRxPrintMs = 0;
 
-static const char *lastReconnectCause = "boot";
+static char lastReconnectCause[64] = "boot";
+
+static constexpr uint32_t CAN_STATUS_POLL_INTERVAL_MS = 100;
+static constexpr uint32_t CAN_TX_FAILURE_WINDOW_MS    = 1000;
+static constexpr uint8_t  CAN_TX_FAILURE_THRESHOLD    = 5;
+
+static uint32_t lastCanStatusCheckMs    = 0;
+static uint32_t canTxFailureWindowStart = 0;
+static uint8_t  canTxFailuresInWindow   = 0;
 
 // ===== RaceChrono pidMap extra (per-PID throttle) =====
 struct PidExtra {
@@ -346,6 +356,12 @@ void cfg_boot_load_and_apply() {
 static void waitForConnection();
 static bool startCanBusReader();
 static void stopCanBusReader();
+static bool restartCanBusReader(const char *cause = nullptr);
+static void handleCanFault(const char *cause);
+static bool checkCanBusHealth(uint32_t now);
+[[maybe_unused]] static void noteCanWriteResult(bool success);
+[[maybe_unused]] static bool writeFrameWithWatch(CanFrame &frame, uint32_t timeout = 1);
+static void setLastReconnectCause(const char *reason);
 
 static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len);
 static void handleBufferedPacketsBurst(uint32_t budget_us = 2000);
@@ -403,7 +419,7 @@ class UpdateMapOnRaceChronoCommands : public RaceChronoBleCanHandler {
 // ===== Clean BLE restart =====
 static void restartBle(const char *reason) {
   if (reason && reason[0]) {
-    lastReconnectCause = reason;
+    setLastReconnectCause(reason);
   }
   Serial.println("BLE: restart...");
   if (NimBLEDevice::getAdvertising()) NimBLEDevice::getAdvertising()->stop();
@@ -433,7 +449,7 @@ void setup() {
   Serial.println("Waiting for RaceChrono...");
   waitForConnection();
 
-  lastReconnectCause = "boot";
+  setLastReconnectCause("boot");
 
   // Load persisted config + apply profile/dividers
   cfg_boot_load_and_apply();
@@ -471,6 +487,115 @@ static bool startCanBusReader() {
 static void stopCanBusReader() {
   ESP32Can.end();
   isCanBusReaderActive = false;
+  lastCanStatusCheckMs = 0;
+  canTxFailureWindowStart = 0;
+  canTxFailuresInWindow = 0;
+}
+
+static void setLastReconnectCause(const char *reason) {
+  const char *src = (reason && reason[0]) ? reason : "unknown";
+  strncpy(lastReconnectCause, src, sizeof(lastReconnectCause) - 1);
+  lastReconnectCause[sizeof(lastReconnectCause) - 1] = '\0';
+}
+
+static bool restartCanBusReader(const char *cause) {
+  if (cause && cause[0]) {
+    Serial.printf("CAN: restart (%s)\n", cause);
+    setLastReconnectCause(cause);
+  } else {
+    Serial.println("CAN: restart");
+    setLastReconnectCause("CAN restart");
+  }
+
+  stopCanBusReader();
+  delay(50);
+
+  bool started = startCanBusReader();
+  if (started) {
+    flushBufferedPackets();
+    resetSkippedUpdatesCounters();
+    lastCanMessageReceivedMs = millis();
+  }
+
+  return started;
+}
+
+static void handleCanFault(const char *cause) {
+  char reason[64];
+  if (cause && cause[0]) {
+    strncpy(reason, cause, sizeof(reason) - 1);
+    reason[sizeof(reason) - 1] = '\0';
+  } else {
+    strncpy(reason, "CAN fault", sizeof(reason) - 1);
+    reason[sizeof(reason) - 1] = '\0';
+  }
+
+  Serial.printf("ERROR: %s -> restart CAN\n", reason);
+  num_can_bus_timeouts++;
+  sendNumCanBusTimeouts();
+  restartCanBusReader(reason);
+}
+
+static bool checkCanBusHealth(uint32_t now) {
+  if (!isCanBusReaderActive) return false;
+  if ((now - lastCanStatusCheckMs) < CAN_STATUS_POLL_INTERVAL_MS) return false;
+
+  lastCanStatusCheckMs = now;
+
+  twai_status_info_t status;
+  if (twai_get_status_info(&status) != ESP_OK) {
+    return false;
+  }
+
+  if (status.state == TWAI_STATE_BUS_OFF) {
+    char reason[64];
+    snprintf(reason, sizeof(reason),
+             "TWAI bus-off (tx_err=%u rx_err=%u)",
+             (unsigned)status.tx_error_counter,
+             (unsigned)status.rx_error_counter);
+    handleCanFault(reason);
+    return true;
+  }
+
+  if (status.state == TWAI_STATE_STOPPED) {
+    handleCanFault("TWAI stopped");
+    return true;
+  }
+
+  return false;
+}
+
+[[maybe_unused]] static void noteCanWriteResult(bool success) {
+  if (success) {
+    canTxFailuresInWindow = 0;
+    canTxFailureWindowStart = 0;
+    return;
+  }
+
+  uint32_t now = millis();
+  if ((canTxFailureWindowStart == 0) ||
+      (now - canTxFailureWindowStart > CAN_TX_FAILURE_WINDOW_MS)) {
+    canTxFailureWindowStart = now;
+    canTxFailuresInWindow = 0;
+  }
+
+  canTxFailuresInWindow++;
+  if (canTxFailuresInWindow >= CAN_TX_FAILURE_THRESHOLD) {
+    char reason[64];
+    snprintf(reason, sizeof(reason),
+             "CAN TX failure window (%u/%ums)",
+             (unsigned)canTxFailuresInWindow,
+             (unsigned)CAN_TX_FAILURE_WINDOW_MS);
+    handleCanFault(reason);
+    canTxFailureWindowStart = 0;
+    canTxFailuresInWindow = 0;
+  }
+}
+
+[[maybe_unused]] static bool writeFrameWithWatch(CanFrame &frame, uint32_t timeout) {
+  bool ok = ESP32Can.writeFrame(frame, timeout);
+  noteCanWriteResult(ok);
+  return ok;
 }
 
 // ===== Helpers =====
@@ -657,7 +782,7 @@ static void show_stats() {
   Serial.println("=== CCA Stats ===");
   Serial.printf("RX count:        %lu\n", (unsigned long)rxCount);
   Serial.printf("CAN timeouts:    %u\n", (unsigned)num_can_bus_timeouts);
-  Serial.printf("Last reconnect:  %s\n", lastReconnectCause ? lastReconnectCause : "unknown");
+  Serial.printf("Last reconnect:  %s\n", lastReconnectCause);
   Serial.printf("FW: %s\n", FW_VERSION_STRING);
   Serial.println("=================");
 }
@@ -856,12 +981,13 @@ void loop() {
 
   const uint32_t now = millis();
 
+  if (checkCanBusHealth(now)) {
+    return;
+  }
+
   // Watchdog after first frame
   if (have_seen_any_can && (now - lastCanMessageReceivedMs > 2000)) {
-    Serial.println("ERROR: CAN timeout -> restart CAN");
-    num_can_bus_timeouts++;
-    sendNumCanBusTimeouts();
-    stopCanBusReader();
+    handleCanFault("CAN RX timeout");
     return;
   }
 
