@@ -3,18 +3,20 @@
 // - TWAI CAN RX burst buffering + per-PID throttle
 // - Profile allow-list (car mode) vs sniff-all (bench mode)
 // - Oil pressure analog on GPIO1 -> CAN 0x710 (0.1 psi/bit, big-endian)
-// - Flash config (Preferences): V0_ADC, V1_ADC, RATE, PROFILE
+// - Flash config (Preferences): V0_ADC, V1_ADC, PROFILE, custom dividers
 // - Serial CLI (CR, LF, CRLF, or none):
 //     CAL 0              -> capture V0_ADC at current input (not saved until SAVE)
 //     CAL 1              -> capture V1_ADC at current input (not saved until SAVE)
 //     RATE <ms>          -> set oil CAN TX period (not saved until SAVE)
 //     PROFILE ON|OFF     -> enable allow-list mode or sniff-all (not saved until SAVE)
-//     SHOW               -> show concise config (no spam)
+//     SHOW CFG           -> show concise config (no spam)
 //     SHOW MAP           -> dump pidMap
 //     SHOW DENY          -> dump deny list
 //     ALLOW <pid> <div>  -> add/update a PID with divider (also removes from deny)
 //     DENY  <pid>        -> add PID to deny list
-//     SAVE               -> persist V0/V1/RATE/PROFILE to flash
+//     SAVE               -> persist V0/V1/profile/custom dividers to flash
+//     LOAD               -> reload saved config (or defaults)
+//     RESETCFG           -> clear saved config + revert to defaults
 //
 // Libs:
 //   ESP32-TWAI-CAN    (for S3 TWAI)
@@ -30,6 +32,7 @@
 #include <RaceChrono.h>
 #include <NimBLEDevice.h>
 #include <Preferences.h>
+#include <cstring>
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER
 
 // ===== Pins (S3 <-> SN65HVD230) =====
@@ -101,7 +104,8 @@ static uint8_t divider_override(uint32_t can_id) {
 
 // Toggle: PROFILE allow-list (true) vs sniff-all (false)
 // (persisted in flash)
-static bool USE_PROFILE_ALLOWLIST = true;
+static constexpr bool DEFAULT_USE_PROFILE_ALLOWLIST = true;
+static bool USE_PROFILE_ALLOWLIST = DEFAULT_USE_PROFILE_ALLOWLIST;
 
 // ======== Oil pressure (analog) ========
 // ADC pin/wiring
@@ -115,8 +119,10 @@ static const float P0_PSI = 0.0f;
 static const float P1_PSI = 150.0f;
 
 // Cal endpoints at the ADC pin (defaults; persisted in flash)
-static float V0_ADC = 0.3482f;   // 0 psi
-static float V1_ADC = 3.1290f;   // 150 psi
+static constexpr float DEFAULT_V0_ADC = 0.3482f;   // 0 psi
+static constexpr float DEFAULT_V1_ADC = 3.1290f;   // 150 psi
+static float V0_ADC = DEFAULT_V0_ADC;   // 0 psi
+static float V1_ADC = DEFAULT_V1_ADC;   // 150 psi
 
 // Publish to RaceChrono as if CAN 0x710 was received
 static const uint32_t OIL_CAN_ID      = 0x710;  // private 11-bit
@@ -129,27 +135,197 @@ static uint8_t  oil_flags  = 0;      // bit0=open, bit1=short, bit2=oor
 static uint32_t lastOilTxMs = 0;
 
 // ===== Flash (Preferences) =====
-Preferences prefs;   // namespace "cca"
-static void loadConfig() {
-  if (!prefs.begin("cca", true)) return;
-  float v0 = prefs.getFloat("v0", V0_ADC);
-  float v1 = prefs.getFloat("v1", V1_ADC);
-  uint16_t rate = prefs.getUShort("rate", OIL_TX_RATE_MS);
-  uint8_t prof = prefs.getUChar("profile", USE_PROFILE_ALLOWLIST ? 1 : 0);
-  prefs.end();
-  // sanity
-  if (v1 > v0 && v1 < 3.4f && v0 >= 0.0f) { V0_ADC = v0; V1_ADC = v1; }
-  if (rate >= 10 && rate <= 1000) OIL_TX_RATE_MS = rate;
-  USE_PROFILE_ALLOWLIST = (prof != 0);
+static Preferences cfgPrefs;   // namespace "cca_cfg"
+static constexpr const char *CFG_NAMESPACE = "cca_cfg";
+
+static const size_t CUSTOM_DIVIDER_MAX = 64;
+
+struct __attribute__((packed)) CfgPidDivider {
+  uint16_t pid;
+  uint8_t div;
+};
+
+struct __attribute__((packed)) CfgDividerBlob {
+  uint16_t count;
+  CfgPidDivider items[CUSTOM_DIVIDER_MAX];
+};
+
+static CfgPidDivider customDividers[CUSTOM_DIVIDER_MAX];
+static uint16_t customDividerCount = 0;
+
+static int find_custom_divider_index(uint16_t pid) {
+  for (uint16_t i = 0; i < customDividerCount; ++i) {
+    if (customDividers[i].pid == pid) return i;
+  }
+  return -1;
 }
-static void saveConfig() {
-  if (!prefs.begin("cca", false)) return;
-  prefs.putFloat("v0", V0_ADC);
-  prefs.putFloat("v1", V1_ADC);
-  prefs.putUShort("rate", OIL_TX_RATE_MS);
-  prefs.putUChar("profile", USE_PROFILE_ALLOWLIST ? 1 : 0);
-  prefs.end();
-  Serial.println("Saved.");
+
+static uint8_t compute_default_divider_for_pid(uint32_t pid) {
+  for (size_t i = 0; i < CAR_PROFILE_LEN; ++i) {
+    if (CAR_PROFILE[i].pid == pid) {
+      uint8_t div = CAR_PROFILE[i].divider;
+      return div == 0 ? 1 : div;
+    }
+  }
+  uint8_t div = divider_override(pid);
+  if (!div) {
+    if (pid == 0x139) div = 1;
+    else if (pid == 0x345) div = 10;
+    else if (pid < 0x100) div = 4;
+    else if (pid < 0x200) div = 2;
+    else if (pid > 0x700) div = 1; // OBD replies
+    else div = DEFAULT_UPDATE_RATE_DIVIDER;
+  }
+  if (!div) div = 1;
+  return div;
+}
+
+static void apply_divider_to_pidmap(uint16_t pid, uint8_t div) {
+  void *entry = pidMap.getEntryId(pid);
+  if (!entry) return;
+  PidExtra *extra = pidMap.getExtra(entry);
+  extra->updateRateDivider = div == 0 ? 1 : div;
+  extra->skippedUpdates = 0;
+}
+
+bool piddiv_set(uint16_t pid, uint8_t div) {
+  if (div == 0) div = 1;
+  int idx = find_custom_divider_index(pid);
+  if (idx >= 0) {
+    customDividers[idx].div = div;
+  } else {
+    if (customDividerCount >= CUSTOM_DIVIDER_MAX) return false;
+    customDividers[customDividerCount].pid = pid;
+    customDividers[customDividerCount].div = div;
+    customDividerCount++;
+  }
+  apply_divider_to_pidmap(pid, div);
+  return true;
+}
+
+bool piddiv_clear(uint16_t pid) {
+  int idx = find_custom_divider_index(pid);
+  if (idx < 0) return false;
+  for (uint16_t i = idx + 1; i < customDividerCount; ++i) {
+    customDividers[i - 1] = customDividers[i];
+  }
+  customDividerCount--;
+  apply_divider_to_pidmap(pid, compute_default_divider_for_pid(pid));
+  return true;
+}
+
+void piddiv_apply_all() {
+  for (uint16_t i = 0; i < customDividerCount; ++i) {
+    apply_divider_to_pidmap(customDividers[i].pid, customDividers[i].div);
+  }
+}
+
+static void clear_custom_dividers() {
+  customDividerCount = 0;
+  memset(customDividers, 0, sizeof(customDividers));
+}
+
+static void cfg_apply_runtime_defaults() {
+  V0_ADC = DEFAULT_V0_ADC;
+  V1_ADC = DEFAULT_V1_ADC;
+  USE_PROFILE_ALLOWLIST = DEFAULT_USE_PROFILE_ALLOWLIST;
+  clear_custom_dividers();
+}
+
+bool cfg_load_from_nvs() {
+  bool anyLoaded = false;
+  if (!cfgPrefs.begin(CFG_NAMESPACE, true)) return false;
+
+  customDividerCount = 0;
+
+  if (cfgPrefs.isKey("v0_adc")) {
+    float v0 = cfgPrefs.getFloat("v0_adc", V0_ADC);
+    if (v0 >= 0.0f && v0 < 3.4f) {
+      V0_ADC = v0;
+      anyLoaded = true;
+    }
+  }
+  if (cfgPrefs.isKey("v1_adc")) {
+    float v1 = cfgPrefs.getFloat("v1_adc", V1_ADC);
+    if (v1 > V0_ADC && v1 < 3.5f) {
+      V1_ADC = v1;
+      anyLoaded = true;
+    }
+  }
+  if (cfgPrefs.isKey("profile")) {
+    uint8_t prof = cfgPrefs.getUChar("profile", USE_PROFILE_ALLOWLIST ? 1 : 0);
+    USE_PROFILE_ALLOWLIST = (prof != 0);
+    anyLoaded = true;
+  }
+
+  size_t blobLen = cfgPrefs.getBytesLength("dividers");
+  if (blobLen >= sizeof(uint16_t)) {
+    CfgDividerBlob blob;
+    memset(&blob, 0, sizeof(blob));
+    size_t readLen = cfgPrefs.getBytes("dividers", &blob, sizeof(blob));
+    if (readLen >= sizeof(uint16_t)) {
+      uint16_t count = blob.count;
+      if (count > CUSTOM_DIVIDER_MAX) count = CUSTOM_DIVIDER_MAX;
+      for (uint16_t i = 0; i < count; ++i) {
+        uint16_t pid = blob.items[i].pid;
+        uint8_t div = blob.items[i].div == 0 ? 1 : blob.items[i].div;
+        customDividers[customDividerCount].pid = pid;
+        customDividers[customDividerCount].div = div;
+        customDividerCount++;
+      }
+      anyLoaded = true;
+    }
+  }
+
+  cfgPrefs.end();
+  return anyLoaded;
+}
+
+bool cfg_save_to_nvs() {
+  if (!cfgPrefs.begin(CFG_NAMESPACE, false)) return false;
+
+  bool ok = true;
+  cfgPrefs.putFloat("v0_adc", V0_ADC);
+  cfgPrefs.putFloat("v1_adc", V1_ADC);
+  cfgPrefs.putUChar("profile", USE_PROFILE_ALLOWLIST ? 1 : 0);
+
+  CfgDividerBlob blob;
+  memset(&blob, 0, sizeof(blob));
+  blob.count = customDividerCount;
+  for (uint16_t i = 0; i < customDividerCount; ++i) {
+    blob.items[i] = customDividers[i];
+  }
+  if (customDividerCount < CUSTOM_DIVIDER_MAX) {
+    memset(&blob.items[customDividerCount], 0,
+           sizeof(CfgPidDivider) * (CUSTOM_DIVIDER_MAX - customDividerCount));
+  }
+  size_t expected = sizeof(uint16_t) + sizeof(CfgPidDivider) * customDividerCount;
+  size_t written = cfgPrefs.putBytes("dividers", &blob, expected);
+  if (written != expected) ok = false;
+
+  cfgPrefs.end();
+  return ok;
+}
+
+bool cfg_reset_to_defaults() {
+  cfg_apply_runtime_defaults();
+
+  if (!cfgPrefs.begin(CFG_NAMESPACE, false)) return false;
+  cfgPrefs.clear();
+  cfgPrefs.end();
+  return true;
+}
+
+void cfg_boot_load_and_apply() {
+  bool loaded = cfg_load_from_nvs();
+  if (!loaded) {
+    cfg_apply_runtime_defaults();
+  }
+
+  if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
+  else                       apply_allow_all();
+
+  piddiv_apply_all();
 }
 
 // ===== Forward decls =====
@@ -165,6 +341,14 @@ static void resetSkippedUpdatesCounters();
 
 static void apply_allow_list_profile();
 static void apply_allow_all();
+
+bool cfg_load_from_nvs();
+bool cfg_save_to_nvs();
+bool cfg_reset_to_defaults();
+bool piddiv_set(uint16_t pid, uint8_t div);
+bool piddiv_clear(uint16_t pid);
+void piddiv_apply_all();
+void cfg_boot_load_and_apply();
 
 static float  filtered_adc_volts();
 static uint8_t oil_health_flags_from_volts(float v);
@@ -193,15 +377,9 @@ class UpdateMapOnRaceChronoCommands : public RaceChronoBleCanHandler {
     if (entry) {
       PidExtra *e = pidMap.getExtra(entry);
       e->skippedUpdates = 0;
-      uint8_t div = divider_override(pid);
-      if (!div) {
-        if (pid == 0x139) div = 1;
-        else if (pid == 0x345) div = 10;
-        else if (pid < 0x100) div = 4;
-        else if (pid < 0x200) div = 2;
-        else if (pid > 0x700) div = 1; // OBD replies
-        else div = DEFAULT_UPDATE_RATE_DIVIDER;
-      }
+      uint8_t div = compute_default_divider_for_pid(pid);
+      int idx = find_custom_divider_index(pid);
+      if (idx >= 0) div = customDividers[idx].div;
       e->updateRateDivider = div;
     }
   }
@@ -223,9 +401,6 @@ void setup() {
   Serial.begin(115200);
   uint32_t t0 = millis(); while (!Serial && millis() - t0 < 3000) {}
 
-  // Load persisted config (if any)
-  loadConfig();
-
   // ADC
   analogReadResolution(12);
   analogSetPinAttenuation(OIL_ADC_PIN, ADC_11db);
@@ -238,9 +413,8 @@ void setup() {
   Serial.println("Waiting for RaceChrono...");
   waitForConnection();
 
-  // Apply initial profile
-  if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
-  else                       apply_allow_all();
+  // Load persisted config + apply profile/dividers
+  cfg_boot_load_and_apply();
 
   show_config(); // one-time concise boot print
 }
@@ -450,10 +624,9 @@ static void oil_update_and_publish_if_due() {
 static void show_config() {
   Serial.println("=== CCA Config ===");
   Serial.printf("Profile:        %s\n", USE_PROFILE_ALLOWLIST ? "ALLOW-LIST" : "SNIFF-ALL");
-  Serial.printf("Oil V0_ADC:     %.4f V\n", V0_ADC);
-  Serial.printf("Oil V1_ADC:     %.4f V\n", V1_ADC);
-  Serial.printf("Oil RATE:       %u ms\n", (unsigned)OIL_TX_RATE_MS);
-  Serial.printf("Deny count:     %u\n", (unsigned)denyCount);
+  Serial.printf("V0_ADC:         %.4f V\n", V0_ADC);
+  Serial.printf("V1_ADC:         %.4f V\n", V1_ADC);
+  Serial.printf("Custom divs:    %u\n", (unsigned)customDividerCount);
   Serial.println("==================");
 }
 
@@ -488,15 +661,27 @@ static void process_cli_line(char *line) {
   String s(line);
   String up = s; up.toUpperCase();
 
-  if (up == "SHOW")            { show_config(); return; }
+  if (up == "SHOW" || up == "SHOW CFG") { show_config(); return; }
   if (up == "SHOW MAP")        { dumpMapToSerial(); return; }
   if (up == "SHOW DENY")       { dumpDenyToSerial(); return; }
 
   if (up == "CAL 0")           { V0_ADC = filtered_adc_volts(); Serial.printf("V0_ADC=%.4f (not saved)\n", V0_ADC); return; }
   if (up == "CAL 1")           { V1_ADC = filtered_adc_volts(); Serial.printf("V1_ADC=%.4f (not saved)\n", V1_ADC); return; }
 
-  if (up == "PROFILE ON")      { USE_PROFILE_ALLOWLIST = true;  apply_allow_list_profile(); Serial.println("Profile=ALLOW-LIST (not saved)"); return; }
-  if (up == "PROFILE OFF")     { USE_PROFILE_ALLOWLIST = false; apply_allow_all();          Serial.println("Profile=SNIFF-ALL (not saved)"); return; }
+  if (up == "PROFILE ON") {
+    USE_PROFILE_ALLOWLIST = true;
+    apply_allow_list_profile();
+    piddiv_apply_all();
+    Serial.println("Profile=ALLOW-LIST (not saved)");
+    return;
+  }
+  if (up == "PROFILE OFF") {
+    USE_PROFILE_ALLOWLIST = false;
+    apply_allow_all();
+    piddiv_apply_all();
+    Serial.println("Profile=SNIFF-ALL (not saved)");
+    return;
+  }
 
   if (up.startsWith("RATE ")) {
     char buf[64]; strncpy(buf, line, sizeof(buf)); buf[sizeof(buf)-1]=0;
@@ -518,14 +703,20 @@ static void process_cli_line(char *line) {
       unsigned n   = strtoul(tok2, nullptr, 0);
       if (n == 0) n = 1; if (n > 255) n = 255;
       removeDeny(pid);
-      pidMap.allowOnePid(pid, 40);
-      void *entry = pidMap.getEntryId(pid);
-      if (entry) {
-        PidExtra *e = pidMap.getExtra(entry);
-        e->skippedUpdates = 0;
-        e->updateRateDivider = (uint8_t)n;
+      if (!pidMap.allowOnePid(pid, 40)) {
+        Serial.println("ALLOW failed (map full?)");
+      } else {
+        void *entry = pidMap.getEntryId(pid);
+        if (entry) {
+          PidExtra *e = pidMap.getExtra(entry);
+          e->skippedUpdates = 0;
+          e->updateRateDivider = (uint8_t)n;
+        }
+        if (!piddiv_set(pid, (uint8_t)n)) {
+          Serial.println("WARNING: Custom divider table full; divider not persisted.");
+        }
+        Serial.printf("ALLOW 0x%03lX div=%u\n", (unsigned long)pid, (unsigned)n);
       }
-      Serial.printf("ALLOW 0x%03lX div=%u\n", (unsigned long)pid, (unsigned)n);
     } else {
       Serial.println("Usage: ALLOW <pid> <div>");
     }
@@ -545,9 +736,37 @@ static void process_cli_line(char *line) {
     return;
   }
 
-  if (up == "SAVE") { saveConfig(); show_config(); return; }
+  if (up == "SAVE") {
+    if (cfg_save_to_nvs()) Serial.println("Saved.");
+    else Serial.println("SAVE failed.");
+    show_config();
+    return;
+  }
 
-  Serial.println("Unknown cmd. Try: SHOW | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | RATE <ms> | PROFILE ON|OFF | ALLOW <pid> <div> | DENY <pid> | SAVE");
+  if (up == "LOAD") {
+    bool ok = cfg_load_from_nvs();
+    if (!ok) {
+      Serial.println("No saved config; using defaults.");
+      cfg_apply_runtime_defaults();
+    }
+    if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
+    else                       apply_allow_all();
+    piddiv_apply_all();
+    show_config();
+    return;
+  }
+
+  if (up == "RESETCFG") {
+    if (cfg_reset_to_defaults()) Serial.println("Config reset to defaults.");
+    else                         Serial.println("Failed to reset config.");
+    if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
+    else                       apply_allow_all();
+    piddiv_apply_all();
+    show_config();
+    return;
+  }
+
+  Serial.println("Unknown cmd. Try: SHOW CFG | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | RATE <ms> | PROFILE ON|OFF | ALLOW <pid> <div> | DENY <pid> | SAVE | LOAD | RESETCFG");
 }
 
 // ===== Main loop =====
@@ -558,6 +777,7 @@ void loop() {
   if ((loop_iteration % 200) == 0 && RaceChronoBle.isConnected()) {
     if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
     else                       apply_allow_all();
+    piddiv_apply_all();
   }
 
   // Handle disconnect / reconnect
@@ -572,6 +792,7 @@ void loop() {
 
     if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
     else                       apply_allow_all();
+    piddiv_apply_all();
 
     sendNumCanBusTimeouts();
   }
