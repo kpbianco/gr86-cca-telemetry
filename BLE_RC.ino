@@ -80,10 +80,39 @@ static uint8_t  canTxFailuresInWindow   = 0;
 
 // ===== RaceChrono pidMap extra (per-PID throttle) =====
 struct PidExtra {
-  uint8_t updateRateDivider = DEFAULT_UPDATE_RATE_DIVIDER;
-  uint8_t skippedUpdates = 0;
+  uint8_t baseDivider      = DEFAULT_UPDATE_RATE_DIVIDER;
+  uint8_t governorDivider  = 1;
+  uint8_t skippedUpdates   = 0;
 };
 RaceChronoPidMap<PidExtra> pidMap;
+
+static uint8_t effective_divider(const PidExtra *extra) {
+  uint16_t base = extra ? extra->baseDivider : 1;
+  uint16_t gov  = extra ? extra->governorDivider : 1;
+  if (base == 0) base = 1;
+  if (gov == 0) gov = 1;
+  uint32_t eff = base * gov;
+  if (eff == 0) eff = 1;
+  if (eff > 255) eff = 255;
+  return static_cast<uint8_t>(eff);
+}
+
+static void set_extra_base_divider(PidExtra *extra, uint8_t div, bool resetGovernor) {
+  if (!extra) return;
+  if (div == 0) div = 1;
+  extra->baseDivider = div;
+  if (resetGovernor || extra->governorDivider == 0) {
+    extra->governorDivider = 1;
+  }
+  extra->skippedUpdates = 0;
+}
+
+static void apply_divider_to_pidmap(uint16_t pid, uint8_t div, bool resetGovernor = false) {
+  void *entry = pidMap.getEntryId(pid);
+  if (!entry) return;
+  PidExtra *extra = pidMap.getExtra(entry);
+  set_extra_base_divider(extra, div, resetGovernor);
+}
 
 // ===== Deny list (CLI-managed) =====
 static const size_t DENY_MAX = 64;
@@ -204,14 +233,6 @@ static uint8_t compute_default_divider_for_pid(uint32_t pid) {
   return div;
 }
 
-static void apply_divider_to_pidmap(uint16_t pid, uint8_t div) {
-  void *entry = pidMap.getEntryId(pid);
-  if (!entry) return;
-  PidExtra *extra = pidMap.getExtra(entry);
-  extra->updateRateDivider = div == 0 ? 1 : div;
-  extra->skippedUpdates = 0;
-}
-
 bool piddiv_set(uint16_t pid, uint8_t div) {
   if (div == 0) div = 1;
   int idx = find_custom_divider_index(pid);
@@ -223,7 +244,7 @@ bool piddiv_set(uint16_t pid, uint8_t div) {
     customDividers[customDividerCount].div = div;
     customDividerCount++;
   }
-  apply_divider_to_pidmap(pid, div);
+  apply_divider_to_pidmap(pid, div, /*resetGovernor=*/true);
   return true;
 }
 
@@ -234,13 +255,231 @@ bool piddiv_clear(uint16_t pid) {
     customDividers[i - 1] = customDividers[i];
   }
   customDividerCount--;
-  apply_divider_to_pidmap(pid, compute_default_divider_for_pid(pid));
+  apply_divider_to_pidmap(pid, compute_default_divider_for_pid(pid), /*resetGovernor=*/true);
   return true;
 }
 
 void piddiv_apply_all() {
   for (uint16_t i = 0; i < customDividerCount; ++i) {
-    apply_divider_to_pidmap(customDividers[i].pid, customDividers[i].div);
+    apply_divider_to_pidmap(customDividers[i].pid, customDividers[i].div, /*resetGovernor=*/false);
+  }
+}
+
+// ===== BLE TX soft governor =====
+static constexpr float    BLE_TX_FPS_LIMIT                = 180.0f;
+static constexpr uint8_t  BLE_TX_GOVERNOR_MAX_DIVIDER     = 8;
+static constexpr uint8_t  BLE_TX_OVER_LIMIT_SECONDS       = 3;
+static constexpr uint32_t BLE_TX_OVER_LIMIT_DURATION_MS   = 3000;
+static constexpr uint8_t  BLE_TX_RELAX_SECONDS            = 5;
+static constexpr uint32_t BLE_TX_RELAX_DURATION_MS        = 5000;
+static constexpr uint32_t BLE_TX_GOVERNOR_STEP_INTERVAL_MS = 1000;
+static constexpr uint8_t  BLE_TX_HISTORY_SECONDS          = 6;
+static constexpr size_t   BLE_GOVERNOR_SNAPSHOT_MAX       = 128;
+
+struct GovernorSnapshot {
+  uint32_t pid;
+  uint8_t  governor;
+};
+
+static bool     bleTxBucketsInitialized = false;
+static uint16_t bleTxSecondBuckets[BLE_TX_HISTORY_SECONDS];
+static uint8_t  bleTxBucketIndex        = BLE_TX_HISTORY_SECONDS - 1;
+static uint8_t  bleTxFilledSeconds      = 0;
+static uint16_t bleTxCurrentSecondCount = 0;
+static uint32_t bleTxCurrentSecondStartMs = 0;
+
+static float    bleTxMovingAverageFps   = 0.0f;
+static uint32_t bleTxOverLimitSinceMs   = 0;
+static uint32_t bleTxBelowLimitSinceMs  = 0;
+static uint32_t bleTxLastBoostMs        = 0;
+static uint32_t bleTxLastRelaxMs        = 0;
+static bool     bleGovernorActive       = false;
+
+static size_t capture_governor_snapshot(GovernorSnapshot *out) {
+  size_t count = 0;
+  pidMap.forEach([&](void *entry) {
+    if (count >= BLE_GOVERNOR_SNAPSHOT_MAX) return;
+    const PidExtra *extra = pidMap.getExtra(entry);
+    if (!extra) return;
+    uint8_t gov = extra->governorDivider ? extra->governorDivider : 1;
+    if (gov > 1) {
+      out[count].pid = pidMap.getPid(entry);
+      out[count].governor = gov;
+      count++;
+    }
+  });
+  return count;
+}
+
+static bool restore_governor_snapshot(const GovernorSnapshot *snapshots, size_t count) {
+  bool any = false;
+  for (size_t i = 0; i < count; ++i) {
+    void *entry = pidMap.getEntryId(snapshots[i].pid);
+    if (!entry) continue;
+    PidExtra *extra = pidMap.getExtra(entry);
+    uint8_t gov = snapshots[i].governor;
+    if (gov < 1) gov = 1;
+    extra->governorDivider = gov;
+    extra->skippedUpdates = 0;
+    if (gov > 1) any = true;
+  }
+  return any;
+}
+
+static void bleTxAdvanceBuckets(uint32_t now) {
+  if (!bleTxBucketsInitialized) {
+    memset(bleTxSecondBuckets, 0, sizeof(bleTxSecondBuckets));
+    bleTxBucketIndex = BLE_TX_HISTORY_SECONDS - 1;
+    bleTxFilledSeconds = 0;
+    bleTxCurrentSecondCount = 0;
+    bleTxCurrentSecondStartMs = now;
+    bleTxBucketsInitialized = true;
+    return;
+  }
+
+  while (now - bleTxCurrentSecondStartMs >= 1000) {
+    bleTxBucketIndex = (bleTxBucketIndex + 1) % BLE_TX_HISTORY_SECONDS;
+    if (bleTxFilledSeconds < BLE_TX_HISTORY_SECONDS) {
+      bleTxFilledSeconds++;
+    }
+    bleTxSecondBuckets[bleTxBucketIndex] = bleTxCurrentSecondCount;
+    bleTxCurrentSecondCount = 0;
+    bleTxCurrentSecondStartMs += 1000;
+  }
+}
+
+static void noteBleTxFrame(uint32_t now) {
+  bleTxAdvanceBuckets(now);
+  bleTxCurrentSecondCount++;
+}
+
+static uint32_t bleTxFramesInRecentSeconds(uint8_t seconds) {
+  if (!bleTxBucketsInitialized || bleTxFilledSeconds == 0 || seconds == 0) {
+    return 0;
+  }
+  if (seconds > bleTxFilledSeconds) seconds = bleTxFilledSeconds;
+  uint32_t sum = 0;
+  for (uint8_t i = 0; i < seconds; ++i) {
+    uint8_t idx = (bleTxBucketIndex + BLE_TX_HISTORY_SECONDS - i) % BLE_TX_HISTORY_SECONDS;
+    sum += bleTxSecondBuckets[idx];
+  }
+  return sum;
+}
+
+static bool governorIncreaseDividers() {
+  bool changed = false;
+  pidMap.forEach([&](void *entry) {
+    PidExtra *extra = pidMap.getExtra(entry);
+    uint8_t eff = effective_divider(extra);
+    if (eff < BLE_TX_GOVERNOR_MAX_DIVIDER) {
+      uint8_t gov = extra->governorDivider ? extra->governorDivider : 1;
+      if (gov < 128) {
+        gov *= 2;
+        if (gov == 0) gov = 1;
+        extra->governorDivider = gov;
+        extra->skippedUpdates = 0;
+        changed = true;
+      }
+    }
+  });
+  if (changed) bleGovernorActive = true;
+  return changed;
+}
+
+static bool governorRelaxDividers() {
+  bool changed = false;
+  bool stillActive = false;
+  pidMap.forEach([&](void *entry) {
+    PidExtra *extra = pidMap.getExtra(entry);
+    uint8_t base = extra->baseDivider ? extra->baseDivider : 1;
+    uint8_t eff = effective_divider(extra);
+    if (eff > base) {
+      uint8_t gov = extra->governorDivider ? extra->governorDivider : 1;
+      if (gov > 1) {
+        uint8_t newGov = gov / 2;
+        if (newGov < 1) newGov = 1;
+        extra->governorDivider = newGov;
+        extra->skippedUpdates = 0;
+        changed = true;
+        eff = effective_divider(extra);
+      } else {
+        extra->governorDivider = 1;
+        eff = effective_divider(extra);
+      }
+    }
+    if (eff > base) {
+      stillActive = true;
+    }
+  });
+  bleGovernorActive = stillActive;
+  return changed;
+}
+
+static void updateBleGovernor(uint32_t now) {
+  bleTxAdvanceBuckets(now);
+
+  float avgSeconds = static_cast<float>(bleTxFilledSeconds);
+  uint32_t sumCompleted = bleTxFramesInRecentSeconds(bleTxFilledSeconds);
+  uint32_t partialMs = 0;
+  if (bleTxBucketsInitialized) {
+    if (now >= bleTxCurrentSecondStartMs) {
+      partialMs = now - bleTxCurrentSecondStartMs;
+    }
+  }
+
+  float denom = avgSeconds;
+  if (partialMs > 0) {
+    denom += static_cast<float>(partialMs) / 1000.0f;
+  } else if (avgSeconds == 0 && bleTxCurrentSecondCount > 0) {
+    denom = 1.0f;
+  }
+
+  float totalFrames = static_cast<float>(sumCompleted + bleTxCurrentSecondCount);
+  if (denom > 0.0f) bleTxMovingAverageFps = totalFrames / denom;
+  else               bleTxMovingAverageFps = 0.0f;
+
+  bool overLimit = false;
+  bool belowLimit = false;
+  if (bleTxFilledSeconds >= BLE_TX_OVER_LIMIT_SECONDS) {
+    float avg = static_cast<float>(bleTxFramesInRecentSeconds(BLE_TX_OVER_LIMIT_SECONDS)) /
+                static_cast<float>(BLE_TX_OVER_LIMIT_SECONDS);
+    overLimit = (avg > BLE_TX_FPS_LIMIT);
+  }
+  if (bleTxFilledSeconds >= BLE_TX_RELAX_SECONDS) {
+    float avg = static_cast<float>(bleTxFramesInRecentSeconds(BLE_TX_RELAX_SECONDS)) /
+                static_cast<float>(BLE_TX_RELAX_SECONDS);
+    belowLimit = (avg < BLE_TX_FPS_LIMIT);
+  }
+
+  if (overLimit) {
+    if (bleTxOverLimitSinceMs == 0) bleTxOverLimitSinceMs = now;
+    bleTxBelowLimitSinceMs = 0;
+    if ((now - bleTxOverLimitSinceMs) >= BLE_TX_OVER_LIMIT_DURATION_MS &&
+        (now - bleTxLastBoostMs) >= BLE_TX_GOVERNOR_STEP_INTERVAL_MS) {
+      if (governorIncreaseDividers()) {
+        bleTxLastBoostMs = now;
+      }
+    }
+  } else {
+    bleTxOverLimitSinceMs = 0;
+    if (belowLimit) {
+      if (bleTxBelowLimitSinceMs == 0) bleTxBelowLimitSinceMs = now;
+      if ((now - bleTxBelowLimitSinceMs) >= BLE_TX_RELAX_DURATION_MS &&
+          (now - bleTxLastRelaxMs) >= BLE_TX_GOVERNOR_STEP_INTERVAL_MS) {
+        if (governorRelaxDividers()) {
+          bleTxLastRelaxMs = now;
+        }
+      }
+    } else {
+      bleTxBelowLimitSinceMs = 0;
+    }
+  }
+}
+
+static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len) {
+  RaceChronoBle.sendCanData(pid, data, len);
+  if (RaceChronoBle.isConnected()) {
+    noteBleTxFrame(millis());
   }
 }
 
@@ -368,6 +607,7 @@ static void handleBufferedPacketsBurst(uint32_t budget_us = 2000);
 static void flushBufferedPackets();
 static void sendNumCanBusTimeouts();
 static void resetSkippedUpdatesCounters();
+static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len);
 
 static void apply_allow_list_profile();
 static void apply_allow_all();
@@ -407,11 +647,10 @@ class UpdateMapOnRaceChronoCommands : public RaceChronoBleCanHandler {
     void *entry = pidMap.getEntryId(pid);
     if (entry) {
       PidExtra *e = pidMap.getExtra(entry);
-      e->skippedUpdates = 0;
       uint8_t div = compute_default_divider_for_pid(pid);
       int idx = find_custom_divider_index(pid);
       if (idx >= 0) div = customDividers[idx].div;
-      e->updateRateDivider = div;
+      set_extra_base_divider(e, div, /*resetGovernor=*/false);
     }
   }
 } raceChronoHandler;
@@ -690,15 +929,16 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
     if (allowed) {
       if (entry) {
         PidExtra *extra = pidMap.getExtra(entry);
+        uint8_t div = effective_divider(extra);
         if (extra->skippedUpdates == 0) {
-          RaceChronoBle.sendCanData(m->pid, m->data, m->length);
+          bleSendCanData(m->pid, m->data, m->length);
         }
         extra->skippedUpdates++;
-        if (extra->skippedUpdates >= extra->updateRateDivider) {
+        if (extra->skippedUpdates >= div) {
           extra->skippedUpdates = 0;
         }
       } else {
-        RaceChronoBle.sendCanData(m->pid, m->data, m->length);
+        bleSendCanData(m->pid, m->data, m->length);
       }
     }
 
@@ -716,7 +956,7 @@ static void sendNumCanBusTimeouts() {
     (uint8_t)(num_can_bus_timeouts & 0xFF),
     (uint8_t)(num_can_bus_timeouts >> 8)
   };
-  RaceChronoBle.sendCanData(0x777, d, 2);
+  bleSendCanData(0x777, d, 2);
   last_time_num_can_bus_timeouts_sent_ms = millis();
 }
 
@@ -729,24 +969,43 @@ static void resetSkippedUpdatesCounters() {
 
 // ===== Profile application =====
 static void apply_allow_list_profile() {
+  GovernorSnapshot snapshots[BLE_GOVERNOR_SNAPSHOT_MAX];
+  size_t snapshotCount = capture_governor_snapshot(snapshots);
+
   pidMap.reset();
   clearDeny(); // optional fresh start
+  bleTxOverLimitSinceMs = 0;
+  bleTxBelowLimitSinceMs = 0;
   for (size_t i = 0; i < CAR_PROFILE_LEN; ++i) {
     const auto &r = CAR_PROFILE[i];
     pidMap.allowOnePid(r.pid, /*ms*/40);
     void *entry = pidMap.getEntryId(r.pid);
     if (entry) {
       PidExtra *e = pidMap.getExtra(entry);
-      e->skippedUpdates = 0;
-      e->updateRateDivider = (r.divider == 0 ? 1 : r.divider);
+      uint8_t base = (r.divider == 0 ? 1 : r.divider);
+      set_extra_base_divider(e, base, /*resetGovernor=*/false);
     }
   }
+  bool restored = restore_governor_snapshot(snapshots, snapshotCount);
+  bleGovernorActive = restored;
 }
 
 static void apply_allow_all() {
+  GovernorSnapshot snapshots[BLE_GOVERNOR_SNAPSHOT_MAX];
+  size_t snapshotCount = capture_governor_snapshot(snapshots);
+
   pidMap.reset();
   clearDeny();
+  bleTxOverLimitSinceMs = 0;
+  bleTxBelowLimitSinceMs = 0;
   pidMap.allowAllPids(/*ms*/50);
+  pidMap.forEach([&](void *entry) {
+    uint32_t pid = pidMap.getPid(entry);
+    uint8_t base = compute_default_divider_for_pid(pid);
+    set_extra_base_divider(pidMap.getExtra(entry), base, /*resetGovernor=*/false);
+  });
+  bool restored = restore_governor_snapshot(snapshots, snapshotCount);
+  bleGovernorActive = restored;
 }
 
 // ===== Oil publish =====
@@ -763,7 +1022,7 @@ static void oil_update_and_publish_if_due() {
       (uint8_t)(psi01 >> 8), (uint8_t)(psi01 & 0xFF),
       oil_flags, 0, 0, 0, 0, 0
     };
-    RaceChronoBle.sendCanData(OIL_CAN_ID, d, 8);
+    bleSendCanData(OIL_CAN_ID, d, 8);
   }
 }
 
@@ -782,6 +1041,8 @@ static void show_stats() {
   Serial.println("=== CCA Stats ===");
   Serial.printf("RX count:        %lu\n", (unsigned long)rxCount);
   Serial.printf("CAN timeouts:    %u\n", (unsigned)num_can_bus_timeouts);
+  Serial.printf("BLE tx avg:      %.1f fps\n", bleTxMovingAverageFps);
+  Serial.printf("BLE governor:    %s\n", bleGovernorActive ? "ACTIVE" : "idle");
   Serial.printf("Last reconnect:  %s\n", lastReconnectCause);
   Serial.printf("FW: %s\n", FW_VERSION_STRING);
   Serial.println("=================");
@@ -797,7 +1058,10 @@ static void dumpMapToSerial() {
     if (printed >= 128) return;
     uint32_t pid = pidMap.getPid(entry);
     const PidExtra *e = pidMap.getExtra(entry);
-    Serial.printf("  %03lX: div=%u\n", (unsigned long)pid, e->updateRateDivider);
+    Serial.printf("  %03lX: base=%u eff=%u\n",
+                  (unsigned long)pid,
+                  (unsigned)e->baseDivider,
+                  (unsigned)effective_divider(e));
     printed++;
   });
   if (total > 128) {
@@ -877,12 +1141,6 @@ static void process_cli_line(char *line) {
       if (!pidMap.allowOnePid(pid, 40)) {
         Serial.println("ALLOW failed (map full?)");
       } else {
-        void *entry = pidMap.getEntryId(pid);
-        if (entry) {
-          PidExtra *e = pidMap.getExtra(entry);
-          e->skippedUpdates = 0;
-          e->updateRateDivider = (uint8_t)n;
-        }
         if (!piddiv_set(pid, (uint8_t)n)) {
           Serial.println("WARNING: Custom divider table full; divider not persisted.");
         }
@@ -995,7 +1253,7 @@ void loop() {
   if (RaceChronoBle.isConnected() && now - lastHbMs >= 500) {
     lastHbMs = now;
     uint8_t hb[2] = { (uint8_t)(hbCounter & 0xFF), (uint8_t)(hbCounter >> 8) };
-    RaceChronoBle.sendCanData(HB_PID, hb, 2);
+    bleSendCanData(HB_PID, hb, 2);
     hbCounter++;
   }
 
@@ -1028,6 +1286,8 @@ void loop() {
   if (now - last_time_num_can_bus_timeouts_sent_ms > 2000) {
     sendNumCanBusTimeouts();
   }
+
+  updateBleGovernor(now);
 
   // ---- Robust Serial CLI: accept CR, LF, CRLF, or no line ending ----
   static char cliBuf[96];
