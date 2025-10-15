@@ -37,6 +37,16 @@
 #include <cstring>
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER
 
+#ifndef FW_VERSION
+#define FW_VERSION "unknown"
+#endif
+
+#ifdef FW_GITHASH
+static const char FW_VERSION_STRING[] = FW_VERSION " (" FW_GITHASH ")";
+#else
+static const char FW_VERSION_STRING[] = FW_VERSION;
+#endif
+
 // ===== Pins (S3 <-> SN65HVD230) =====
 #define CAN_TX 5
 #define CAN_RX 4
@@ -56,7 +66,6 @@ static const uint32_t HB_PID = 0x7AA; // BLE heartbeat
 static uint32_t rxCount = 0;
 static uint32_t lastRxPrintMs = 0;
 
-static const char FW_VERSION[] = "CCA Telemetry " __DATE__ " " __TIME__;
 static const char *lastReconnectCause = "boot";
 
 // ===== RaceChrono pidMap extra (per-PID throttle) =====
@@ -410,6 +419,8 @@ void setup() {
   Serial.begin(115200);
   uint32_t t0 = millis(); while (!Serial && millis() - t0 < 3000) {}
 
+  Serial.printf("FW: %s\n", FW_VERSION_STRING);
+
   // ADC
   analogReadResolution(12);
   analogSetPinAttenuation(OIL_ADC_PIN, ADC_11db);
@@ -647,7 +658,7 @@ static void show_stats() {
   Serial.printf("RX count:        %lu\n", (unsigned long)rxCount);
   Serial.printf("CAN timeouts:    %u\n", (unsigned)num_can_bus_timeouts);
   Serial.printf("Last reconnect:  %s\n", lastReconnectCause ? lastReconnectCause : "unknown");
-  Serial.printf("FW version:      %s\n", FW_VERSION);
+  Serial.printf("FW: %s\n", FW_VERSION_STRING);
   Serial.println("=================");
 }
 
