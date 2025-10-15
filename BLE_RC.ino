@@ -34,6 +34,7 @@
 #include <RaceChrono.h>
 #include <NimBLEDevice.h>
 #include <Preferences.h>
+#include <esp_task_wdt.h>
 #include <cstdio>
 #include <cstring>
 #include <driver/twai.h>
@@ -73,6 +74,7 @@ static char lastReconnectCause[64] = "boot";
 static constexpr uint32_t CAN_STATUS_POLL_INTERVAL_MS = 100;
 static constexpr uint32_t CAN_TX_FAILURE_WINDOW_MS    = 1000;
 static constexpr uint8_t  CAN_TX_FAILURE_THRESHOLD    = 5;
+static constexpr uint32_t TASK_WDT_TIMEOUT_SECONDS    = 5;
 
 static uint32_t lastCanStatusCheckMs    = 0;
 static uint32_t canTxFailureWindowStart = 0;
@@ -437,6 +439,10 @@ void setup() {
 
   Serial.printf("FW: %s\n", FW_VERSION_STRING);
 
+  esp_task_wdt_init(TASK_WDT_TIMEOUT_SECONDS, true);
+  esp_task_wdt_add(nullptr);
+  esp_task_wdt_reset();
+
   // ADC
   analogReadResolution(12);
   analogSetPinAttenuation(OIL_ADC_PIN, ADC_11db);
@@ -448,11 +454,13 @@ void setup() {
   RaceChronoBle.startAdvertising();
   Serial.println("Waiting for RaceChrono...");
   waitForConnection();
+  esp_task_wdt_reset();
 
   setLastReconnectCause("boot");
 
   // Load persisted config + apply profile/dividers
   cfg_boot_load_and_apply();
+  esp_task_wdt_reset();
 
   show_config(); // one-time concise boot print
 }
@@ -460,8 +468,10 @@ void setup() {
 static void waitForConnection() {
   uint32_t i=0; bool nl=true;
   while (!RaceChronoBle.waitForConnection(1000)) {
+    esp_task_wdt_reset();
     Serial.print("."); nl=false; if ((++i % 10)==0) { Serial.println(); nl=true; }
   }
+  esp_task_wdt_reset();
   if (!nl) Serial.println();
   Serial.println("RaceChrono connected.");
 }
@@ -944,6 +954,10 @@ static void process_cli_line(char *line) {
 void loop() {
   loop_iteration++;
 
+#if defined(DEBUG)
+  delay(7000);
+#endif
+
   // Defensive re-assert (lightweight)
   if ((loop_iteration % 200) == 0 && RaceChronoBle.isConnected()) {
     if (USE_PROFILE_ALLOWLIST) apply_allow_list_profile();
@@ -966,6 +980,7 @@ void loop() {
     piddiv_apply_all();
 
     sendNumCanBusTimeouts();
+    esp_task_wdt_reset();
   }
 
   // Ensure CAN is up
@@ -976,18 +991,21 @@ void loop() {
       lastCanMessageReceivedMs = millis();
       break;
     }
+    esp_task_wdt_reset();
     delay(500);
   }
 
   const uint32_t now = millis();
 
   if (checkCanBusHealth(now)) {
+    esp_task_wdt_reset();
     return;
   }
 
   // Watchdog after first frame
   if (have_seen_any_can && (now - lastCanMessageReceivedMs > 2000)) {
     handleCanFault("CAN RX timeout");
+    esp_task_wdt_reset();
     return;
   }
 
@@ -1020,6 +1038,7 @@ void loop() {
 
   // Forward bursts within a small time budget
   handleBufferedPacketsBurst(2000);
+  esp_task_wdt_reset();
 
   // Oil channel
   oil_update_and_publish_if_due();
@@ -1044,4 +1063,6 @@ void loop() {
       cliBuf[cliLen++] = (char)c;
     }
   }
+
+  esp_task_wdt_reset();
 }
