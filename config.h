@@ -3,6 +3,10 @@
 // Customize your BLE device name here
 #define DEVICE_NAME "CCA Telemetry"
 
+// Firmware metadata
+#define FW_VERSION "0.5.0"
+#define FW_GITHASH "abcdef1"
+
 // Default divider for RaceChronoPidMap extra (only used as init)
 #define DEFAULT_UPDATE_RATE_DIVIDER 10
 
