@@ -104,6 +104,9 @@ static uint32_t lastGpsInitAttemptMs = 0;
 static constexpr uint32_t GPS_NOTIFY_PERIOD_MS = 100;  // 10 Hz
 static constexpr uint32_t GPS_INIT_RETRY_MS    = 5000;
 
+static NimBLECharacteristic *gpsDataCharacteristic = nullptr;
+static NimBLECharacteristic *gpsTimeCharacteristic = nullptr;
+
 // RMC fields
 static int    rmc_hour = 0, rmc_min = 0, rmc_sec = 0, rmc_millis = 0;
 static bool   rmc_valid = false;
@@ -646,20 +649,63 @@ static void gpsResetSyncState() {
   lastGpsNotifyMs = 0;
 }
 
-static NimBLECharacteristic *gpsFindCharacteristic(const char *uuid) {
-  NimBLEServer *server = NimBLEDevice::getServer();
-  if (!server) return nullptr;
-
-  NimBLEService *service = server->getServiceByUUID("00001ff8-0000-1000-8000-00805f9b34fb");
-  if (!service) return nullptr;
-
-  return service->getCharacteristic(uuid);
+static void gpsClearCharacteristics() {
+  gpsDataCharacteristic = nullptr;
+  gpsTimeCharacteristic = nullptr;
 }
 
-static bool gpsNotifyCharacteristic(const char *uuid, const uint8_t *data,
-                                    size_t len, size_t maxLen,
-                                    const char *label, uint32_t now) {
-  NimBLECharacteristic *ch = gpsFindCharacteristic(uuid);
+static void gpsPrimeCharacteristics() {
+  if (gpsDataCharacteristic && gpsTimeCharacteristic) return;
+
+  NimBLEServer *server = NimBLEDevice::getServer();
+  if (!server) return;
+
+  NimBLEService *service = server->getServiceByUUID("00001ff8-0000-1000-8000-00805f9b34fb");
+  if (!service) return;
+
+  bool serviceStarted = service->isStarted();
+  bool createdAny     = false;
+
+  if (!gpsDataCharacteristic) {
+    gpsDataCharacteristic = service->getCharacteristic("00000003-0000-1000-8000-00805f9b34fb");
+    if (!gpsDataCharacteristic && !serviceStarted) {
+      gpsDataCharacteristic = service->createCharacteristic(
+          "00000003-0000-1000-8000-00805f9b34fb",
+          NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
+      if (gpsDataCharacteristic) createdAny = true;
+    }
+    if (gpsDataCharacteristic) {
+      uint8_t init[20];
+      memset(init, 0xFF, sizeof(init));
+      gpsDataCharacteristic->setValue(init, sizeof(init));
+    }
+  }
+
+  if (!gpsTimeCharacteristic) {
+    gpsTimeCharacteristic = service->getCharacteristic("00000004-0000-1000-8000-00805f9b34fb");
+    if (!gpsTimeCharacteristic && !serviceStarted) {
+      gpsTimeCharacteristic = service->createCharacteristic(
+          "00000004-0000-1000-8000-00805f9b34fb",
+          NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
+      if (gpsTimeCharacteristic) createdAny = true;
+    }
+    if (gpsTimeCharacteristic) {
+      uint8_t init[3] = {0, 0, 0};
+      gpsTimeCharacteristic->setValue(init, sizeof(init));
+    }
+  }
+
+  if (!serviceStarted && createdAny && !service->isStarted()) {
+    service->start();
+  }
+}
+
+static bool gpsNotifyCharacteristic(NimBLECharacteristic *ch,
+                                    const uint8_t *data,
+                                    size_t len,
+                                    size_t maxLen,
+                                    const char *label,
+                                    uint32_t now) {
   if (!ch) {
     static uint32_t lastWarnDataMs = 0;
     static uint32_t lastWarnTimeMs = 0;
@@ -745,7 +791,9 @@ static void gpsPackAndNotify(uint32_t now) {
   payload[18] = hdop;
   payload[19] = vdop;
 
-  if (gpsNotifyCharacteristic("00000003-0000-1000-8000-00805f9b34fb",
+  gpsPrimeCharacteristics();
+
+  if (gpsNotifyCharacteristic(gpsDataCharacteristic,
                               payload, sizeof(payload), 20,
                               "GPS data", now)) {
     noteBleTxFrame(now);
@@ -755,7 +803,7 @@ static void gpsPackAndNotify(uint32_t now) {
   timePayload[0] = static_cast<uint8_t>(((gpsSyncBits & 0x7) << 5) | ((dateHour >> 16) & 0x1F));
   timePayload[1] = static_cast<uint8_t>(dateHour >> 8);
   timePayload[2] = static_cast<uint8_t>(dateHour);
-  if (gpsNotifyCharacteristic("00000004-0000-1000-8000-00805f9b34fb",
+  if (gpsNotifyCharacteristic(gpsTimeCharacteristic,
                               timePayload, sizeof(timePayload), 3,
                               "GPS time", now)) {
     noteBleTxFrame(now);
@@ -1070,10 +1118,12 @@ static void restartBle(const char *reason) {
     setLastReconnectCause(reason);
   }
   Serial.println("BLE: restart...");
+  gpsClearCharacteristics();
   if (NimBLEDevice::getAdvertising()) NimBLEDevice::getAdvertising()->stop();
   NimBLEDevice::deinit(true);
   delay(100);
   RaceChronoBle.setUp(DEVICE_NAME, &raceChronoHandler);
+  gpsPrimeCharacteristics();
   RaceChronoBle.startAdvertising();
   Serial.println("BLE: advertising");
 }
@@ -1093,6 +1143,7 @@ void setup() {
   // BLE
   Serial.println("BLE setup...");
   RaceChronoBle.setUp(DEVICE_NAME, &raceChronoHandler);
+  gpsPrimeCharacteristics();
   RaceChronoBle.startAdvertising();
   Serial.println("Waiting for RaceChrono...");
   waitForConnection();
@@ -1115,6 +1166,7 @@ static void waitForConnection() {
   }
   if (!nl) Serial.println();
   Serial.println("RaceChrono connected.");
+  gpsPrimeCharacteristics();
 }
 
 static void recoverRaceChronoConnection(const char *reason) {
