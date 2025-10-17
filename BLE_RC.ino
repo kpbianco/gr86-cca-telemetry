@@ -34,8 +34,10 @@
 #include <RaceChrono.h>
 #include <NimBLEDevice.h>
 #include <Preferences.h>
+#include <cmath>
 #include <cstdio>
 #include <cstring>
+#include <ctype.h>
 #include <driver/twai.h>
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER
 
@@ -54,6 +56,15 @@ static const char FW_VERSION_STRING[] = FW_VERSION;
 // ===== Pins (S3 <-> SN65HVD230) =====
 #define CAN_TX 5
 #define CAN_RX 4
+
+// ===== GPS pins (UART1) =====
+#define GPS_RX_GPIO 18   // GPS TX -> ESP RX
+#define GPS_TX_GPIO 17   // GPS RX <- ESP TX (PMTK)
+
+// ===== GPS PMTK sequences =====
+static const char *PMTK_SET_NMEA_OUTPUT_RMCGGA = "$PMTK314,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0*28\r\n";
+static const char *PMTK_SET_NMEA_UPDATE_10HZ   = "$PMTK220,100*2F\r\n";
+static const char *PMTK_SET_BAUD_115200        = "$PMTK251,115200*1F\r\n";
 
 // ===== Global state =====
 static bool     isCanBusReaderActive = false;
@@ -83,6 +94,37 @@ static constexpr uint8_t  CAN_TX_FAILURE_THRESHOLD    = 5;
 static uint32_t lastCanStatusCheckMs    = 0;
 static uint32_t canTxFailureWindowStart = 0;
 static uint8_t  canTxFailuresInWindow   = 0;
+
+// ===== GPS state =====
+static HardwareSerial GPSSerial(1);
+static bool gpsConfigured = false;
+static uint32_t gpsLastSentenceMs = 0;
+static uint32_t lastGpsNotifyMs = 0;
+static uint32_t lastGpsInitAttemptMs = 0;
+static constexpr uint32_t GPS_NOTIFY_PERIOD_MS = 100;  // 10 Hz
+static constexpr uint32_t GPS_INIT_RETRY_MS    = 5000;
+
+// RMC fields
+static int    rmc_hour = 0, rmc_min = 0, rmc_sec = 0, rmc_millis = 0;
+static bool   rmc_valid = false;
+static double rmc_lat_deg = 0.0, rmc_lon_deg = 0.0;
+static double rmc_speed_kmh = 0.0;
+static double rmc_course_deg = 0.0;
+
+// GGA fields
+static int    gga_sats = 0;
+static double gga_hdop = 99.9;
+static double gga_alt_m = 0.0;
+
+// Date (UTC)
+static int gps_year = 0, gps_mon = 0, gps_day = 0;
+
+// Synchronization bits for RaceChrono DIY GPS payload
+static uint8_t gpsSyncBits = 0;
+static int lastDateHourPacked = -1;
+
+static char gpsLineBuf[128];
+static size_t gpsLineLen = 0;
 
 // ===== RaceChrono pidMap extra (per-PID throttle) =====
 struct PidExtra {
@@ -494,6 +536,354 @@ static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len) {
   }
 }
 
+// ===== GPS helpers =====
+static inline int clampi(int value, int lo, int hi) {
+  return value < lo ? lo : (value > hi ? hi : value);
+}
+
+static bool nmeaCoordToDegrees(const char *ddmm, const char *hemi, double &out) {
+  if (!ddmm || !hemi || !*ddmm || !*hemi) return false;
+  const char *dot = strchr(ddmm, '.');
+  int len = dot ? static_cast<int>(dot - ddmm) : static_cast<int>(strlen(ddmm));
+  if (len < 3) return false;
+  int degLen = len - 2;
+  if (degLen <= 0 || degLen >= 10) return false;
+  char degBuf[12];
+  memset(degBuf, 0, sizeof(degBuf));
+  strncpy(degBuf, ddmm, degLen);
+  int degrees = atoi(degBuf);
+  double minutes = atof(ddmm + degLen);
+  double val = degrees + (minutes / 60.0);
+  if (*hemi == 'S' || *hemi == 'W') val = -val;
+  out = val;
+  return true;
+}
+
+static int splitCsv(char *s, const char *fields[], int maxFields) {
+  int count = 0;
+  if (!s || maxFields <= 0) return 0;
+  fields[count++] = s;
+  for (char *p = s; *p && count < maxFields; ++p) {
+    if (*p == ',') {
+      *p = 0;
+      fields[count++] = p + 1;
+    } else if (*p == '*') {
+      *p = 0;
+      break;
+    }
+  }
+  return count;
+}
+
+static bool nmeaChecksumOk(const char *line) {
+  if (!line || line[0] != '$') return false;
+  const char *star = strrchr(line, '*');
+  if (!star || (star - line) < 3) return false;
+  uint8_t checksum = 0;
+  for (const char *p = line + 1; p < star; ++p) checksum ^= static_cast<uint8_t>(*p);
+  int hi = toupper(static_cast<unsigned char>(star[1]));
+  int lo = toupper(static_cast<unsigned char>(star[2]));
+  if (!isxdigit(hi) || !isxdigit(lo)) return false;
+  int value = ((hi >= 'A') ? (hi - 'A' + 10) : (hi - '0')) * 16 +
+              ((lo >= 'A') ? (lo - 'A' + 10) : (lo - '0'));
+  return checksum == static_cast<uint8_t>(value);
+}
+
+static void parseRmcSentence(char *line) {
+  if (!nmeaChecksumOk(line)) return;
+  const char *fields[20];
+  int nf = splitCsv(line, fields, 20);
+  if (nf < 10) return;
+
+  const char *time = fields[1];
+  if (time && strlen(time) >= 6) {
+    char hh[3] = { time[0], time[1], 0 };
+    char mm[3] = { time[2], time[3], 0 };
+    char ss[3] = { time[4], time[5], 0 };
+    rmc_hour = atoi(hh);
+    rmc_min  = atoi(mm);
+    rmc_sec  = atoi(ss);
+    const char *dot = strchr(time, '.');
+    rmc_millis = dot ? atoi(dot + 1) : 0;
+    if (rmc_millis > 999) rmc_millis = 999;
+  }
+
+  rmc_valid = (fields[2] && *fields[2] == 'A');
+
+  double lat, lon;
+  if (nmeaCoordToDegrees(fields[3], fields[4], lat)) rmc_lat_deg = lat;
+  if (nmeaCoordToDegrees(fields[5], fields[6], lon)) rmc_lon_deg = lon;
+
+  double speedKnots = (fields[7] && *fields[7]) ? atof(fields[7]) : 0.0;
+  rmc_speed_kmh = speedKnots * 1.852;
+  rmc_course_deg = (fields[8] && *fields[8]) ? atof(fields[8]) : 0.0;
+
+  const char *date = fields[9];
+  if (date && strlen(date) >= 6) {
+    char dd[3] = { date[0], date[1], 0 };
+    char mm[3] = { date[2], date[3], 0 };
+    char yy[3] = { date[4], date[5], 0 };
+    gps_day = atoi(dd);
+    gps_mon = atoi(mm);
+    gps_year = 2000 + atoi(yy);
+  }
+}
+
+static void parseGgaSentence(char *line) {
+  if (!nmeaChecksumOk(line)) return;
+  const char *fields[20];
+  int nf = splitCsv(line, fields, 20);
+  if (nf < 11) return;
+
+  gga_sats = (fields[7] && *fields[7]) ? atoi(fields[7]) : 0;
+  gga_hdop = (fields[8] && *fields[8]) ? atof(fields[8]) : 99.9;
+  gga_alt_m = (fields[9] && *fields[9]) ? atof(fields[9]) : 0.0;
+}
+
+static void gpsResetSyncState() {
+  gpsSyncBits = 0;
+  lastDateHourPacked = -1;
+  lastGpsNotifyMs = 0;
+}
+
+template <typename T>
+static auto callSendGpsDataImpl(T &ble, const uint8_t *data, size_t len, int)
+    -> decltype(ble.sendGpsData(data, static_cast<uint8_t>(len)), void()) {
+  ble.sendGpsData(data, static_cast<uint8_t>(len));
+}
+
+template <typename T>
+static auto callSendGpsDataImpl(T &ble, const uint8_t *data, size_t, long)
+    -> decltype(ble.sendGpsData(data), void()) {
+  ble.sendGpsData(data);
+}
+
+static void callSendGpsData(const uint8_t *data, size_t len) {
+  callSendGpsDataImpl(RaceChronoBle, data, len, 0);
+}
+
+template <typename T>
+static auto callSendGpsTimeImpl(T &ble, const uint8_t *data, size_t len, int)
+    -> decltype(ble.sendGpsTime(data, static_cast<uint8_t>(len)), void()) {
+  ble.sendGpsTime(data, static_cast<uint8_t>(len));
+}
+
+template <typename T>
+static auto callSendGpsTimeImpl(T &ble, const uint8_t *data, size_t, long)
+    -> decltype(ble.sendGpsTime(data), void()) {
+  ble.sendGpsTime(data);
+}
+
+static void callSendGpsTime(const uint8_t *data, size_t len) {
+  callSendGpsTimeImpl(RaceChronoBle, data, len, 0);
+}
+
+static void gpsPackAndNotify(uint32_t now) {
+  if (!RaceChronoBle.isConnected()) return;
+
+  uint8_t payload[20];
+  memset(payload, 0xFF, sizeof(payload));
+
+  int year = gps_year >= 2000 ? gps_year : 2000;
+  int month = gps_mon >= 1 ? gps_mon : 1;
+  int day = gps_day >= 1 ? gps_day : 1;
+  int dateHour = ((year - 2000) * 8928) + ((month - 1) * 744) + ((day - 1) * 24) + rmc_hour;
+  if (dateHour != lastDateHourPacked) {
+    lastDateHourPacked = dateHour;
+    gpsSyncBits = (gpsSyncBits + 1) & 0x7;
+  }
+
+  int timeSinceHour = (rmc_min * 30000) + (rmc_sec * 500) + (rmc_millis / 2);
+  if (timeSinceHour < 0) timeSinceHour = 0;
+
+  uint8_t fixQuality = rmc_valid ? 1 : 0;
+  uint8_t sats = static_cast<uint8_t>(clampi(gga_sats, 0, 63));
+
+  int32_t latFixed = static_cast<int32_t>(std::lround(rmc_lat_deg * 10000000.0));
+  int32_t lonFixed = static_cast<int32_t>(std::lround(rmc_lon_deg * 10000000.0));
+
+  int altWord = 0xFFFF;
+  if (gga_alt_m > -7000.0 && gga_alt_m < 20000.0) {
+    double alt = gga_alt_m;
+    if (alt >= -500.0 && alt <= 6053.5) {
+      altWord = clampi(static_cast<int>(std::lround((alt + 500.0) * 10.0)) & 0x7FFF, 0, 0x7FFF);
+    } else {
+      altWord = (static_cast<int>(std::lround(alt + 500.0)) & 0x7FFF) | 0x8000;
+    }
+  }
+
+  int speedWord = 0xFFFF;
+  double speed = rmc_speed_kmh;
+  if (speed <= 655.35) {
+    speedWord = clampi(static_cast<int>(std::lround(speed * 100.0)) & 0x7FFF, 0, 0x7FFF);
+  } else {
+    speedWord = (static_cast<int>(std::lround(speed * 10.0)) & 0x7FFF) | 0x8000;
+  }
+
+  int bearing = clampi(static_cast<int>(std::lround(rmc_course_deg * 100.0)), 0, 0xFFFF);
+  uint8_t hdop = (gga_hdop >= 0.0 && gga_hdop <= 25.4) ? static_cast<uint8_t>(std::lround(gga_hdop * 10.0)) : 0xFF;
+  uint8_t vdop = 0xFF;
+
+  payload[0]  = static_cast<uint8_t>(((gpsSyncBits & 0x7) << 5) | ((timeSinceHour >> 16) & 0x1F));
+  payload[1]  = static_cast<uint8_t>(timeSinceHour >> 8);
+  payload[2]  = static_cast<uint8_t>(timeSinceHour);
+  payload[3]  = static_cast<uint8_t>(((fixQuality & 0x3) << 6) | (sats & 0x3F));
+  payload[4]  = static_cast<uint8_t>(latFixed >> 24);
+  payload[5]  = static_cast<uint8_t>(latFixed >> 16);
+  payload[6]  = static_cast<uint8_t>(latFixed >> 8);
+  payload[7]  = static_cast<uint8_t>(latFixed);
+  payload[8]  = static_cast<uint8_t>(lonFixed >> 24);
+  payload[9]  = static_cast<uint8_t>(lonFixed >> 16);
+  payload[10] = static_cast<uint8_t>(lonFixed >> 8);
+  payload[11] = static_cast<uint8_t>(lonFixed);
+  payload[12] = static_cast<uint8_t>(altWord >> 8);
+  payload[13] = static_cast<uint8_t>(altWord);
+  payload[14] = static_cast<uint8_t>(speedWord >> 8);
+  payload[15] = static_cast<uint8_t>(speedWord);
+  payload[16] = static_cast<uint8_t>(bearing >> 8);
+  payload[17] = static_cast<uint8_t>(bearing);
+  payload[18] = hdop;
+  payload[19] = vdop;
+
+  callSendGpsData(payload, sizeof(payload));
+  noteBleTxFrame(now);
+
+  uint8_t timePayload[3];
+  timePayload[0] = static_cast<uint8_t>(((gpsSyncBits & 0x7) << 5) | ((dateHour >> 16) & 0x1F));
+  timePayload[1] = static_cast<uint8_t>(dateHour >> 8);
+  timePayload[2] = static_cast<uint8_t>(dateHour);
+  callSendGpsTime(timePayload, sizeof(timePayload));
+  noteBleTxFrame(now);
+}
+
+static void gpsSendRaw(const char *cmd) {
+  GPSSerial.print(cmd);
+}
+
+static bool gpsLooksLikeNmea(uint32_t timeoutMs) {
+  uint32_t start = millis();
+  char prev = 0;
+  while (millis() - start < timeoutMs) {
+    if (GPSSerial.available()) {
+      char c = static_cast<char>(GPSSerial.read());
+      if (prev == '$' && (c == 'G' || c == 'N')) return true;
+      prev = c;
+    }
+  }
+  return false;
+}
+
+static bool gpsConfigurePort() {
+  const uint32_t bauds[] = { 9600, 38400, 57600, 115200 };
+  bool detected = false;
+  for (uint32_t baud : bauds) {
+    GPSSerial.updateBaudRate(baud);
+    delay(60);
+    if (gpsLooksLikeNmea(500)) {
+      Serial.printf("[GPS] Detected NMEA @ %lu\n", static_cast<unsigned long>(baud));
+      detected = true;
+      break;
+    }
+  }
+  if (!detected) {
+    Serial.println("[GPS] No NMEA detected");
+    return false;
+  }
+
+  gpsSendRaw(PMTK_SET_NMEA_OUTPUT_RMCGGA);
+  delay(80);
+  gpsSendRaw(PMTK_SET_NMEA_UPDATE_10HZ);
+  delay(80);
+  gpsSendRaw(PMTK_SET_BAUD_115200);
+  delay(120);
+
+  GPSSerial.end();
+  delay(20);
+  GPSSerial.begin(115200, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
+  delay(80);
+  if (!gpsLooksLikeNmea(800)) {
+    Serial.println("[GPS] Missing NMEA after baud switch");
+    return false;
+  }
+
+  return true;
+}
+
+static void gpsInit() {
+  Serial.printf("[GPS] UART init @ %u bps (RX=%d, TX=%d)\n", 9600u, GPS_RX_GPIO, GPS_TX_GPIO);
+  GPSSerial.begin(9600, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
+  delay(100);
+
+  if (gpsConfigurePort()) {
+    gpsConfigured = true;
+    gpsLastSentenceMs = millis();
+    gpsResetSyncState();
+    Serial.println("[GPS] Configured: RMC+GGA @10Hz, 115200");
+  } else {
+    GPSSerial.end();
+    gpsConfigured = false;
+    gpsResetSyncState();
+  }
+}
+
+static void gpsProcessSentence(char *line) {
+  if (!line || strlen(line) < 6) return;
+  if (strstr(line, "GPRMC") || strstr(line, "GNRMC")) {
+    parseRmcSentence(line);
+  } else if (strstr(line, "GPGGA") || strstr(line, "GNGGA")) {
+    parseGgaSentence(line);
+  }
+}
+
+static void gpsService(uint32_t now) {
+  if (!gpsConfigured) {
+    if (now - lastGpsInitAttemptMs >= GPS_INIT_RETRY_MS) {
+      lastGpsInitAttemptMs = now;
+      gpsInit();
+    }
+    return;
+  }
+
+  bool sentenceSeen = false;
+  while (GPSSerial.available()) {
+    char c = static_cast<char>(GPSSerial.read());
+    if (c == '\r') continue;
+    if (c == '\n') {
+      gpsLineBuf[gpsLineLen] = 0;
+      if (gpsLineLen > 0 && gpsLineBuf[0] == '$') {
+        char work[sizeof(gpsLineBuf)];
+        strncpy(work, gpsLineBuf, sizeof(work) - 1);
+        work[sizeof(work) - 1] = 0;
+        gpsProcessSentence(work);
+        sentenceSeen = true;
+      }
+      gpsLineLen = 0;
+    } else {
+      if (gpsLineLen < sizeof(gpsLineBuf) - 1) {
+        gpsLineBuf[gpsLineLen++] = c;
+      } else {
+        gpsLineLen = 0;
+      }
+    }
+  }
+
+  if (sentenceSeen) {
+    gpsLastSentenceMs = now;
+  } else if (now - gpsLastSentenceMs > 2000) {
+    Serial.println("[GPS] Sentence timeout -> reinit");
+    gpsConfigured = false;
+    gpsResetSyncState();
+    GPSSerial.end();
+    lastGpsInitAttemptMs = now;
+    return;
+  }
+
+  if (RaceChronoBle.isConnected() && (now - lastGpsNotifyMs) >= GPS_NOTIFY_PERIOD_MS) {
+    lastGpsNotifyMs = now;
+    gpsPackAndNotify(now);
+  }
+}
+
 static void clear_custom_dividers() {
   customDividerCount = 0;
   memset(customDividers, 0, sizeof(customDividers));
@@ -707,6 +1097,9 @@ void setup() {
   cfg_boot_load_and_apply();
 
   show_config(); // one-time concise boot print
+
+  gpsInit();
+  lastGpsInitAttemptMs = millis();
 }
 
 static void waitForConnection() {
@@ -726,6 +1119,8 @@ static void recoverRaceChronoConnection(const char *reason) {
   restartBle(reason);
   Serial.println("Waiting for new RC connection...");
   waitForConnection();
+
+  gpsResetSyncState();
 
   apply_profile_and_dividers();
 
@@ -1321,6 +1716,8 @@ void loop() {
   if (now - last_time_num_can_bus_timeouts_sent_ms > 2000) {
     sendNumCanBusTimeouts();
   }
+
+  gpsService(now);
 
   updateBleGovernor(now);
 
