@@ -39,6 +39,8 @@
 #include <cstring>
 #include <ctype.h>
 #include <driver/twai.h>
+#include <type_traits>
+#include <utility>
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER
 
 struct GovernorSnapshot;
@@ -125,6 +127,9 @@ static int lastDateHourPacked = -1;
 
 static char gpsLineBuf[128];
 static size_t gpsLineLen = 0;
+
+static NimBLECharacteristic *gpsDataCharacteristic = nullptr;
+static NimBLECharacteristic *gpsTimeCharacteristic = nullptr;
 
 // ===== RaceChrono pidMap extra (per-PID throttle) =====
 struct PidExtra {
@@ -646,36 +651,175 @@ static void gpsResetSyncState() {
   lastGpsNotifyMs = 0;
 }
 
-template <typename T>
-static auto callSendGpsDataImpl(T &ble, const uint8_t *data, size_t len, int)
-    -> decltype(ble.sendGpsData(data, static_cast<uint8_t>(len)), void()) {
-  ble.sendGpsData(data, static_cast<uint8_t>(len));
+static void gpsInvalidateBleCharacteristics() {
+  gpsDataCharacteristic = nullptr;
+  gpsTimeCharacteristic = nullptr;
 }
+
+static NimBLECharacteristic *getRaceChronoCharacteristic(const char *uuid,
+                                                         NimBLECharacteristic *&cache) {
+  if (cache) return cache;
+  NimBLEServer *server = NimBLEDevice::getServer();
+  if (!server) return nullptr;
+  NimBLEService *service = server->getServiceByUUID("00001ff8-0000-1000-8000-00805f9b34fb");
+  if (!service) return nullptr;
+  cache = service->getCharacteristic(uuid);
+  return cache;
+}
+
+static NimBLECharacteristic *getGpsDataCharacteristic() {
+  return getRaceChronoCharacteristic("00000003-0000-1000-8000-00805f9b34fb",
+                                     gpsDataCharacteristic);
+}
+
+static NimBLECharacteristic *getGpsTimeCharacteristic() {
+  return getRaceChronoCharacteristic("00000004-0000-1000-8000-00805f9b34fb",
+                                     gpsTimeCharacteristic);
+}
+
+static bool sendGpsDataFallback(const uint8_t *data, size_t len);
+static bool sendGpsTimeFallback(const uint8_t *data, size_t len);
+
+template <typename T, typename = void>
+struct HasSendGpsDataLen : std::false_type {};
 
 template <typename T>
-static auto callSendGpsDataImpl(T &ble, const uint8_t *data, size_t, long)
-    -> decltype(ble.sendGpsData(data), void()) {
-  ble.sendGpsData(data);
-}
+struct HasSendGpsDataLen<T, decltype(void(std::declval<T &>().sendGpsData(
+                                    static_cast<const uint8_t *>(nullptr),
+                                    uint8_t{})))> : std::true_type {};
 
-static void callSendGpsData(const uint8_t *data, size_t len) {
-  callSendGpsDataImpl(RaceChronoBle, data, len, 0);
-}
+template <typename T, typename = void>
+struct HasSendGpsDataNoLen : std::false_type {};
 
 template <typename T>
-static auto callSendGpsTimeImpl(T &ble, const uint8_t *data, size_t len, int)
-    -> decltype(ble.sendGpsTime(data, static_cast<uint8_t>(len)), void()) {
-  ble.sendGpsTime(data, static_cast<uint8_t>(len));
-}
+struct HasSendGpsDataNoLen<T, decltype(void(std::declval<T &>().sendGpsData(
+                                      static_cast<const uint8_t *>(nullptr))))>
+    : std::true_type {};
+
+template <typename T, bool HasLen, bool HasNoLen>
+struct RaceChronoGpsDataDispatcher;
 
 template <typename T>
-static auto callSendGpsTimeImpl(T &ble, const uint8_t *data, size_t, long)
-    -> decltype(ble.sendGpsTime(data), void()) {
-  ble.sendGpsTime(data);
+struct RaceChronoGpsDataDispatcher<T, true, false> {
+  static bool send(T &ble, const uint8_t *data, size_t len) {
+    ble.sendGpsData(data, static_cast<uint8_t>(len));
+    return true;
+  }
+};
+
+template <typename T>
+struct RaceChronoGpsDataDispatcher<T, false, true> {
+  static bool send(T &ble, const uint8_t *data, size_t) {
+    ble.sendGpsData(data);
+    return true;
+  }
+};
+
+template <typename T>
+struct RaceChronoGpsDataDispatcher<T, true, true>
+    : RaceChronoGpsDataDispatcher<T, true, false> {};
+
+template <typename T>
+struct RaceChronoGpsDataDispatcher<T, false, false> {
+  static bool send(T &, const uint8_t *data, size_t len) {
+    return sendGpsDataFallback(data, len);
+  }
+};
+
+template <typename T, typename = void>
+struct HasSendGpsTimeLen : std::false_type {};
+
+template <typename T>
+struct HasSendGpsTimeLen<T, decltype(void(std::declval<T &>().sendGpsTime(
+                                    static_cast<const uint8_t *>(nullptr),
+                                    uint8_t{})))> : std::true_type {};
+
+template <typename T, typename = void>
+struct HasSendGpsTimeNoLen : std::false_type {};
+
+template <typename T>
+struct HasSendGpsTimeNoLen<T, decltype(void(std::declval<T &>().sendGpsTime(
+                                      static_cast<const uint8_t *>(nullptr))))>
+    : std::true_type {};
+
+template <typename T, bool HasLen, bool HasNoLen>
+struct RaceChronoGpsTimeDispatcher;
+
+template <typename T>
+struct RaceChronoGpsTimeDispatcher<T, true, false> {
+  static bool send(T &ble, const uint8_t *data, size_t len) {
+    ble.sendGpsTime(data, static_cast<uint8_t>(len));
+    return true;
+  }
+};
+
+template <typename T>
+struct RaceChronoGpsTimeDispatcher<T, false, true> {
+  static bool send(T &ble, const uint8_t *data, size_t) {
+    ble.sendGpsTime(data);
+    return true;
+  }
+};
+
+template <typename T>
+struct RaceChronoGpsTimeDispatcher<T, true, true>
+    : RaceChronoGpsTimeDispatcher<T, true, false> {};
+
+template <typename T>
+struct RaceChronoGpsTimeDispatcher<T, false, false> {
+  static bool send(T &, const uint8_t *data, size_t len) {
+    return sendGpsTimeFallback(data, len);
+  }
+};
+
+static bool sendGpsDataFallback(const uint8_t *data, size_t len) {
+  NimBLECharacteristic *ch = getGpsDataCharacteristic();
+  if (!ch) {
+    static uint32_t lastWarnMs = 0;
+    uint32_t now = millis();
+    if (now - lastWarnMs >= 2000) {
+      Serial.println("[GPS] Missing GPS data characteristic");
+      lastWarnMs = now;
+    }
+    return false;
+  }
+  if (len > 20) len = 20;
+  ch->setValue(data, len);
+  ch->notify();
+  return true;
 }
 
-static void callSendGpsTime(const uint8_t *data, size_t len) {
-  callSendGpsTimeImpl(RaceChronoBle, data, len, 0);
+static bool sendGpsTimeFallback(const uint8_t *data, size_t len) {
+  NimBLECharacteristic *ch = getGpsTimeCharacteristic();
+  if (!ch) {
+    static uint32_t lastWarnMs = 0;
+    uint32_t now = millis();
+    if (now - lastWarnMs >= 2000) {
+      Serial.println("[GPS] Missing GPS time characteristic");
+      lastWarnMs = now;
+    }
+    return false;
+  }
+  if (len > 20) len = 20;
+  ch->setValue(data, len);
+  ch->notify();
+  return true;
+}
+
+static bool callSendGpsData(const uint8_t *data, size_t len) {
+  using BleType = typename std::decay<decltype(RaceChronoBle)>::type;
+  return RaceChronoGpsDataDispatcher<BleType,
+                                     HasSendGpsDataLen<BleType>::value,
+                                     HasSendGpsDataNoLen<BleType>::value>::send(
+      RaceChronoBle, data, len);
+}
+
+static bool callSendGpsTime(const uint8_t *data, size_t len) {
+  using BleType = typename std::decay<decltype(RaceChronoBle)>::type;
+  return RaceChronoGpsTimeDispatcher<BleType,
+                                     HasSendGpsTimeLen<BleType>::value,
+                                     HasSendGpsTimeNoLen<BleType>::value>::send(
+      RaceChronoBle, data, len);
 }
 
 static void gpsPackAndNotify(uint32_t now) {
@@ -745,15 +889,17 @@ static void gpsPackAndNotify(uint32_t now) {
   payload[18] = hdop;
   payload[19] = vdop;
 
-  callSendGpsData(payload, sizeof(payload));
-  noteBleTxFrame(now);
+  if (callSendGpsData(payload, sizeof(payload))) {
+    noteBleTxFrame(now);
+  }
 
   uint8_t timePayload[3];
   timePayload[0] = static_cast<uint8_t>(((gpsSyncBits & 0x7) << 5) | ((dateHour >> 16) & 0x1F));
   timePayload[1] = static_cast<uint8_t>(dateHour >> 8);
   timePayload[2] = static_cast<uint8_t>(dateHour);
-  callSendGpsTime(timePayload, sizeof(timePayload));
-  noteBleTxFrame(now);
+  if (callSendGpsTime(timePayload, sizeof(timePayload))) {
+    noteBleTxFrame(now);
+  }
 }
 
 static void gpsSendRaw(const char *cmd) {
@@ -1067,6 +1213,7 @@ static void restartBle(const char *reason) {
   if (NimBLEDevice::getAdvertising()) NimBLEDevice::getAdvertising()->stop();
   NimBLEDevice::deinit(true);
   delay(100);
+  gpsInvalidateBleCharacteristics();
   RaceChronoBle.setUp(DEVICE_NAME, &raceChronoHandler);
   RaceChronoBle.startAdvertising();
   Serial.println("BLE: advertising");
@@ -1086,6 +1233,7 @@ void setup() {
 
   // BLE
   Serial.println("BLE setup...");
+  gpsInvalidateBleCharacteristics();
   RaceChronoBle.setUp(DEVICE_NAME, &raceChronoHandler);
   RaceChronoBle.startAdvertising();
   Serial.println("Waiting for RaceChrono...");
