@@ -600,8 +600,12 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
   uint8_t cmd = d[0];
   switch (cmd) {
     case 0: // Deny all
-      g_allowAll = false; g_defaultNotifyMs = 0; Serial.println("FIL: DENY ALL");
-      pidMap.reset();
+      g_allowAll = false;
+      g_defaultNotifyMs = 0;
+      Serial.println("FIL: DENY ALL");
+      if (!USE_PROFILE_ALLOWLIST) {
+        pidMap.reset();
+      }
       break;
     case 1: // Allow all + interval
       if (L >= 3) {
@@ -611,7 +615,43 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
       }
       break;
     case 2: // Allow one PID (minimal accept)
-      Serial.println("FIL: ALLOW PID (accepted)");
+      if (L < 3) {
+        Serial.println("FIL: ALLOW PID ignored (payload too short)");
+        break;
+      }
+      {
+        uint32_t rawId = 0;
+        if (L >= 5) {
+          rawId = ((uint32_t)d[1]) |
+                  ((uint32_t)d[2] << 8) |
+                  ((uint32_t)d[3] << 16) |
+                  ((uint32_t)d[4] << 24);
+        } else {
+          rawId = ((uint32_t)d[1] << 8) | (uint32_t)d[2];
+        }
+        uint32_t pid = rawId & 0x1FFFFFFF; // RaceChrono uses LE CAN IDs
+        if (pid > 0x7FF) {
+          Serial.printf("FIL: ALLOW PID 0x%08lX ignored (29-bit not supported)\n",
+                        (unsigned long)pid);
+          break;
+        }
+        removeDeny(pid);
+        if (!pidMap.allowOnePid(pid, 40)) {
+          Serial.println("FIL: ALLOW PID failed (map full?)");
+          break;
+        }
+        void *entry = pidMap.getEntryId(pid);
+        if (entry) {
+          PidExtra *extra = pidMap.getExtra(entry);
+          uint8_t div = compute_default_divider_for_pid(pid);
+          int idx = find_custom_divider_index(static_cast<uint16_t>(pid));
+          if (idx >= 0) {
+            div = customDividers[idx].div;
+          }
+          set_extra_base_divider(extra, div, /*resetGovernor=*/true);
+        }
+        Serial.printf("FIL: ALLOW PID 0x%03lX\n", (unsigned long)pid);
+      }
       break;
     default: break;
   }
