@@ -648,13 +648,111 @@ static bool     g_allowAll = true;
 static uint16_t g_defaultNotifyMs = 0;
 static uint32_t g_lastCanNotifyMs = 0;
 
+static uint16_t estimate_native_period_ms(uint32_t pid) {
+  if (pid == 0x040 || pid == 0x041 || pid == 0x6FC) return 10;   // 100 Hz group
+  switch (pid) {
+    case 0x118: case 0x138: case 0x139: case 0x13A: case 0x13B:
+    case 0x13C: case 0x143: case 0x146: case 0x39A: case 0x3D9:
+      return 20; // ~50 Hz
+    case 0x2D2:
+      return 30; // 33.3 Hz
+    case 0x241:
+      return 50; // 20 Hz
+    case 0x328: case 0x32B: case 0x345: case 0x390:
+    case 0x393: case 0x3A7: case 0x3AC:
+    case 0x6E1: case 0x6E2:
+      return 100; // 10 Hz cluster
+    case 0x330: case 0x332: case 0x33A: case 0x33B:
+    case 0x640: case 0x651: case 0x652: case 0x654:
+    case 0x658: case 0x663:
+    case 0x68C: case 0x68D: case 0x6B1: case 0x6BB:
+    case 0x6CF: case 0x6DF:
+      return 1200; // ~8-9 per 10s
+    case 0x228:
+      return 100; // ~10 Hz group
+    default:
+      break;
+  }
+  if (pid >= 0x700 && pid <= 0x7FF) return 10; // OBD and virtual
+  if (pid < 0x100) return 10;
+  if (pid < 0x200) return 20;
+  return 100;
+}
+
+static uint8_t divider_from_interval(uint32_t pid, uint16_t intervalMs) {
+  if (intervalMs == 0) {
+    return compute_default_divider_for_pid(pid);
+  }
+  uint16_t native = estimate_native_period_ms(pid);
+  if (native == 0) native = 10;
+  uint32_t div = (intervalMs + native - 1) / native;
+  if (div < 1) div = 1;
+  if (div > 255) div = 255;
+  return static_cast<uint8_t>(div);
+}
+
+static bool parse_allow_pid_id(const uint8_t *bytes, size_t len,
+                               uint32_t *outPid,
+                               bool *outIsExtended) {
+  if (!bytes || len == 0 || len > 4 || !outPid) return false;
+
+  uint32_t le = 0;
+  for (size_t i = 0; i < len; ++i) {
+    le |= ((uint32_t)bytes[i]) << (8 * i);
+  }
+
+  uint32_t be = 0;
+  for (size_t i = 0; i < len; ++i) {
+    be = (be << 8) | bytes[i];
+  }
+
+  auto useStandard = [&](uint32_t id) {
+    if (id <= 0x7FF) {
+      *outPid = id;
+      if (outIsExtended) *outIsExtended = false;
+      return true;
+    }
+    return false;
+  };
+
+  auto useExtended = [&](uint32_t id) {
+    id &= 0x1FFFFFFF;
+    if (id <= 0x7FF) {
+      *outPid = id;
+      if (outIsExtended) *outIsExtended = false;
+      return true;
+    }
+    if (id <= 0x1FFFFFFF) {
+      *outPid = id;
+      if (outIsExtended) *outIsExtended = true;
+      return true;
+    }
+    return false;
+  };
+
+  if (len <= 2) {
+    if (useStandard(le)) return true;
+    if (useStandard(be)) return true;
+    return false;
+  }
+
+  if (useExtended(le)) return true;
+  if (useExtended(be)) return true;
+
+  return false;
+}
+
 static void handleFilWrite(const uint8_t *d, size_t L) {
   if (!d || L < 1) return;
   uint8_t cmd = d[0];
   switch (cmd) {
     case 0: // Deny all
-      g_allowAll = false; g_defaultNotifyMs = 0; Serial.println("FIL: DENY ALL");
-      pidMap.reset();
+      g_allowAll = false;
+      g_defaultNotifyMs = 0;
+      Serial.println("FIL: DENY ALL");
+      if (!USE_PROFILE_ALLOWLIST) {
+        pidMap.reset();
+      }
       break;
     case 1: // Allow all + interval
       if (L >= 3) {
@@ -664,7 +762,109 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
       }
       break;
     case 2: // Allow one PID (minimal accept)
-      Serial.println("FIL: ALLOW PID (accepted)");
+      if (L < 3) {
+        Serial.println("FIL: ALLOW PID ignored (payload too short)");
+        break;
+      }
+      {
+        uint16_t intervalMs = 0;
+        uint16_t hintLE = 0;
+        uint16_t hintBE = 0;
+        const char *intervalHintOrder = nullptr;
+        bool intervalHintProvided = false;
+        size_t payloadLen = L - 1;
+        size_t idBytes = payloadLen;
+        if (payloadLen >= 4) {
+          intervalHintProvided = true;
+          hintLE = (uint16_t)d[L - 2] | ((uint16_t)d[L - 1] << 8);
+          hintBE = ((uint16_t)d[L - 2] << 8) | d[L - 1];
+
+          bool chooseLE = false;
+          bool chooseBE = false;
+
+          if (hintLE == hintBE) {
+            chooseLE = chooseBE = true;
+            intervalMs = hintLE;
+          } else if (hintLE == 0) {
+            chooseBE = true;
+            intervalMs = hintBE;
+          } else if (hintBE == 0) {
+            chooseLE = true;
+            intervalMs = hintLE;
+          } else {
+            bool leReasonable = (hintLE <= 5000);
+            bool beReasonable = (hintBE <= 5000);
+            if (leReasonable != beReasonable) {
+              chooseLE = leReasonable;
+              chooseBE = beReasonable;
+            } else {
+              if (hintLE <= hintBE) {
+                chooseLE = true;
+              } else {
+                chooseBE = true;
+              }
+            }
+            intervalMs = chooseLE ? hintLE : hintBE;
+          }
+
+          if (chooseLE && chooseBE) {
+            intervalHintOrder = "LE/BE";
+          } else if (chooseLE) {
+            intervalHintOrder = "LE";
+          } else if (chooseBE) {
+            intervalHintOrder = "BE";
+          }
+
+          idBytes -= 2;
+        }
+        if (idBytes == 0 || idBytes > 4) {
+          Serial.println("FIL: ALLOW PID ignored (invalid length)");
+          break;
+        }
+        uint32_t pid = 0;
+        bool isExtended = false;
+        if (!parse_allow_pid_id(&d[1], idBytes, &pid, &isExtended)) {
+          Serial.println("FIL: ALLOW PID ignored (unrecognized identifier)");
+          break;
+        }
+        if (isExtended) {
+          Serial.printf(
+              "FIL: ALLOW PID 0x%08lX ignored (29-bit not supported)\n",
+              (unsigned long)pid);
+          break;
+        }
+        removeDeny(pid);
+        if (!pidMap.allowOnePid(pid, 40)) {
+          Serial.println("FIL: ALLOW PID failed (map full?)");
+          break;
+        }
+        void *entry = pidMap.getEntryId(pid);
+        if (entry) {
+          PidExtra *extra = pidMap.getExtra(entry);
+          uint8_t div = divider_from_interval(pid, intervalMs);
+          int idx = find_custom_divider_index(static_cast<uint16_t>(pid));
+          if (idx >= 0) {
+            div = customDividers[idx].div;
+          }
+          set_extra_base_divider(extra, div, /*resetGovernor=*/true);
+        }
+        if (intervalMs) {
+          if (intervalHintProvided && intervalHintOrder && hintLE != hintBE) {
+            Serial.printf(
+                "FIL: ALLOW PID 0x%03lX interval=%ums (%s hint: LE=%u BE=%u)\n",
+                (unsigned long)pid,
+                (unsigned)intervalMs,
+                intervalHintOrder,
+                (unsigned)hintLE,
+                (unsigned)hintBE);
+          } else {
+            Serial.printf("FIL: ALLOW PID 0x%03lX interval=%ums\n",
+                          (unsigned long)pid, (unsigned)intervalMs);
+          }
+        } else {
+          Serial.printf("FIL: ALLOW PID 0x%03lX\n", (unsigned long)pid);
+        }
+      }
       break;
     default: break;
   }
