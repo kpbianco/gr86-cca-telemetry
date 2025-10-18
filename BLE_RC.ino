@@ -1501,6 +1501,38 @@ static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len) {
   bufferToWriteTo++;
 }
 
+static bool ensure_pid_entry_for_sniff_all(uint32_t pid) {
+  void *entry = pidMap.getEntryId(pid);
+  if (entry) return true;
+
+  if (!pidMap.allowOnePid(pid, /*ms*/40)) {
+    static uint32_t lastWarnMs = 0;
+    static uint32_t lastWarnPid = 0;
+    uint32_t now = millis();
+    if (pid != lastWarnPid || now - lastWarnMs > 1000) {
+      Serial.println("WARNING: PID map full; sniff-all divider skipped.");
+      lastWarnPid = pid;
+      lastWarnMs = now;
+    }
+    return false;
+  }
+
+  entry = pidMap.getEntryId(pid);
+  if (!entry) return false;
+
+  PidExtra *extra = pidMap.getExtra(entry);
+  if (!extra) return false;
+
+  set_extra_base_divider(extra, compute_default_divider_for_pid(pid), /*resetGovernor=*/true);
+
+  int idx = find_custom_divider_index((uint16_t)pid);
+  if (idx >= 0) {
+    apply_divider_to_pidmap((uint16_t)pid, customDividers[idx].div, /*resetGovernor=*/false);
+  }
+
+  return true;
+}
+
 static void handleBufferedPacketsBurst(uint32_t budget_us) {
   uint32_t t0 = micros();
   while (bufferToReadFrom != bufferToWriteTo && (micros() - t0) < budget_us) {
@@ -1512,6 +1544,11 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
       allowed = (entry != nullptr) && !isDenied(m->pid);
     } else {
       allowed = !isDenied(m->pid);
+      if (allowed && !entry) {
+        if (ensure_pid_entry_for_sniff_all(m->pid)) {
+          entry = pidMap.getEntryId(m->pid);
+        }
+      }
     }
 
     if (allowed) {
