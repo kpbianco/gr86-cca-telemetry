@@ -715,10 +715,53 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
       }
       {
         uint16_t intervalMs = 0;
+        uint16_t hintLE = 0;
+        uint16_t hintBE = 0;
+        const char *intervalHintOrder = nullptr;
+        bool intervalHintProvided = false;
         size_t payloadLen = L - 1;
         size_t idBytes = payloadLen;
         if (payloadLen >= 4) {
-          intervalMs = ((uint16_t)d[L - 2] << 8) | d[L - 1];
+          intervalHintProvided = true;
+          hintLE = (uint16_t)d[L - 2] | ((uint16_t)d[L - 1] << 8);
+          hintBE = ((uint16_t)d[L - 2] << 8) | d[L - 1];
+
+          bool chooseLE = false;
+          bool chooseBE = false;
+
+          if (hintLE == hintBE) {
+            chooseLE = chooseBE = true;
+            intervalMs = hintLE;
+          } else if (hintLE == 0) {
+            chooseBE = true;
+            intervalMs = hintBE;
+          } else if (hintBE == 0) {
+            chooseLE = true;
+            intervalMs = hintLE;
+          } else {
+            bool leReasonable = (hintLE <= 5000);
+            bool beReasonable = (hintBE <= 5000);
+            if (leReasonable != beReasonable) {
+              chooseLE = leReasonable;
+              chooseBE = beReasonable;
+            } else {
+              if (hintLE <= hintBE) {
+                chooseLE = true;
+              } else {
+                chooseBE = true;
+              }
+            }
+            intervalMs = chooseLE ? hintLE : hintBE;
+          }
+
+          if (chooseLE && chooseBE) {
+            intervalHintOrder = "LE/BE";
+          } else if (chooseLE) {
+            intervalHintOrder = "LE";
+          } else if (chooseBE) {
+            intervalHintOrder = "BE";
+          }
+
           idBytes -= 2;
         }
         if (idBytes == 0 || idBytes > 4) {
@@ -753,8 +796,18 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
           set_extra_base_divider(extra, div, /*resetGovernor=*/true);
         }
         if (intervalMs) {
-          Serial.printf("FIL: ALLOW PID 0x%03lX interval=%ums\n",
-                        (unsigned long)pid, (unsigned)intervalMs);
+          if (intervalHintProvided && intervalHintOrder && hintLE != hintBE) {
+            Serial.printf(
+                "FIL: ALLOW PID 0x%03lX interval=%ums (%s hint: LE=%u BE=%u)\n",
+                (unsigned long)pid,
+                (unsigned)intervalMs,
+                intervalHintOrder,
+                (unsigned)hintLE,
+                (unsigned)hintBE);
+          } else {
+            Serial.printf("FIL: ALLOW PID 0x%03lX interval=%ums\n",
+                          (unsigned long)pid, (unsigned)intervalMs);
+          }
         } else {
           Serial.printf("FIL: ALLOW PID 0x%03lX\n", (unsigned long)pid);
         }
