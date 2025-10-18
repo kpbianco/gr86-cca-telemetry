@@ -164,10 +164,6 @@ public:
     return false;
   }
 
-  void allowAllPids(uint16_t ms){
-    (void)ms; // not pre-filling in this simple map
-  }
-
   void* getEntryId(uint32_t pid){
     for (auto &e: entries){ if (e.used && e.pid==pid) return &e; }
     return nullptr;
@@ -176,12 +172,32 @@ public:
   uint32_t getPid(void* entry){ return ((Entry*)entry)->pid; }
   ExtraT*  getExtra(void* entry){ return &((Entry*)entry)->extra; }
 
+  ExtraT* getOrCreateExtra(uint32_t pid, uint16_t intervalMs = 0){
+    void *entry = getEntryId(pid);
+    if (entry) return getExtra(entry);
+    for (auto &e: entries){
+      if (!e.used){
+        e.used = true;
+        e.pid = pid;
+        e.intervalMs = intervalMs;
+        e.extra = ExtraT();
+        return &e.extra;
+      }
+    }
+    return nullptr;
+  }
+
   template<typename F>
   void forEach(F f){ for (auto &e: entries){ if (e.used) f((void*)&e); } }
 };
 
 static SimplePidMap<PidExtra> pidMap;
 
+struct AllowAllThrottleState {
+  uint32_t lastNotifyMs = 0;
+};
+
+static SimplePidMap<AllowAllThrottleState> allowAllThrottleMap;
 static const char *reset_reason_to_string(esp_reset_reason_t reason) {
   switch (reason) {
     case ESP_RST_POWERON:     return "POWERON";
@@ -646,7 +662,6 @@ static void bleStopAdvertising(){
 // ===== FIL (0x0002) handler to mirror RaceChrono DIY control =====
 static bool     g_allowAll = true;
 static uint16_t g_defaultNotifyMs = 0;
-static uint32_t g_lastCanNotifyMs = 0;
 
 static void handleFilWrite(const uint8_t *d, size_t L) {
   if (!d || L < 1) return;
@@ -654,12 +669,14 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
   switch (cmd) {
     case 0: // Deny all
       g_allowAll = false; g_defaultNotifyMs = 0; Serial.println("FIL: DENY ALL");
+      allowAllThrottleMap.reset();
       pidMap.reset();
       break;
     case 1: // Allow all + interval
       if (L >= 3) {
         g_defaultNotifyMs = ((uint16_t)d[1] << 8) | d[2];
         g_allowAll = true;
+        allowAllThrottleMap.reset();
         Serial.printf("FIL: ALLOW ALL, interval=%ums\n", g_defaultNotifyMs);
       }
       break;
@@ -1859,11 +1876,14 @@ void loop() {
       // Throttle to g_defaultNotifyMs if allowAll
       uint32_t ms = now;
       if (g_allowAll && g_defaultNotifyMs>0){
-        if (ms - g_lastCanNotifyMs < g_defaultNotifyMs) {
+        AllowAllThrottleState *state = allowAllThrottleMap.getOrCreateExtra(rx.identifier);
+        if (state && (ms - state->lastNotifyMs < g_defaultNotifyMs)) {
           // skip this one
         } else {
           bufferNewPacket(rx.identifier, rx.data, rx.data_length_code);
-          g_lastCanNotifyMs = ms;
+          if (state) {
+            state->lastNotifyMs = ms;
+          }
         }
       } else {
         bufferNewPacket(rx.identifier, rx.data, rx.data_length_code);
