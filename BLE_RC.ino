@@ -638,6 +638,57 @@ static uint8_t divider_from_interval(uint32_t pid, uint16_t intervalMs) {
   return static_cast<uint8_t>(div);
 }
 
+static bool parse_allow_pid_id(const uint8_t *bytes, size_t len,
+                               uint32_t *outPid,
+                               bool *outIsExtended) {
+  if (!bytes || len == 0 || len > 4 || !outPid) return false;
+
+  uint32_t le = 0;
+  for (size_t i = 0; i < len; ++i) {
+    le |= ((uint32_t)bytes[i]) << (8 * i);
+  }
+
+  uint32_t be = 0;
+  for (size_t i = 0; i < len; ++i) {
+    be = (be << 8) | bytes[i];
+  }
+
+  auto useStandard = [&](uint32_t id) {
+    if (id <= 0x7FF) {
+      *outPid = id;
+      if (outIsExtended) *outIsExtended = false;
+      return true;
+    }
+    return false;
+  };
+
+  auto useExtended = [&](uint32_t id) {
+    id &= 0x1FFFFFFF;
+    if (id <= 0x7FF) {
+      *outPid = id;
+      if (outIsExtended) *outIsExtended = false;
+      return true;
+    }
+    if (id <= 0x1FFFFFFF) {
+      *outPid = id;
+      if (outIsExtended) *outIsExtended = true;
+      return true;
+    }
+    return false;
+  };
+
+  if (len <= 2) {
+    if (useStandard(le)) return true;
+    if (useStandard(be)) return true;
+    return false;
+  }
+
+  if (useExtended(le)) return true;
+  if (useExtended(be)) return true;
+
+  return false;
+}
+
 static void handleFilWrite(const uint8_t *d, size_t L) {
   if (!d || L < 1) return;
   uint8_t cmd = d[0];
@@ -664,7 +715,6 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
       }
       {
         uint16_t intervalMs = 0;
-        uint32_t rawId = 0;
         size_t payloadLen = L - 1;
         size_t idBytes = payloadLen;
         if (payloadLen >= 4) {
@@ -675,23 +725,16 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
           Serial.println("FIL: ALLOW PID ignored (invalid length)");
           break;
         }
-        for (size_t i = 0; i < idBytes; ++i) {
-          rawId |= ((uint32_t)d[1 + i]) << (8 * i);
+        uint32_t pid = 0;
+        bool isExtended = false;
+        if (!parse_allow_pid_id(&d[1], idBytes, &pid, &isExtended)) {
+          Serial.println("FIL: ALLOW PID ignored (unrecognized identifier)");
+          break;
         }
-        if (idBytes == 2 && rawId > 0x7FF && payloadLen > idBytes) {
-          // Probably a 29-bit identifier without interval, reparse using full payload.
-          rawId = 0;
-          idBytes = payloadLen;
-          if (idBytes > 4) idBytes = 4;
-          for (size_t i = 0; i < idBytes; ++i) {
-            rawId |= ((uint32_t)d[1 + i]) << (8 * i);
-          }
-          intervalMs = 0;
-        }
-        uint32_t pid = rawId & 0x1FFFFFFF; // RaceChrono uses LE CAN IDs
-        if (pid > 0x7FF) {
-          Serial.printf("FIL: ALLOW PID 0x%08lX ignored (29-bit not supported)\n",
-                        (unsigned long)pid);
+        if (isExtended) {
+          Serial.printf(
+              "FIL: ALLOW PID 0x%08lX ignored (29-bit not supported)\n",
+              (unsigned long)pid);
           break;
         }
         removeDeny(pid);
