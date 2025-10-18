@@ -627,7 +627,8 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
                   ((uint32_t)d[3] << 16) |
                   ((uint32_t)d[4] << 24);
         } else {
-          rawId = ((uint32_t)d[1] << 8) | (uint32_t)d[2];
+          // RaceChrono sends 11-bit IDs as little-endian 16-bit values.
+          rawId = ((uint32_t)d[1]) | ((uint32_t)d[2] << 8);
         }
         uint32_t pid = rawId & 0x1FFFFFFF; // RaceChrono uses LE CAN IDs
         if (pid > 0x7FF) {
