@@ -595,6 +595,49 @@ static bool     g_allowAll = true;
 static uint16_t g_defaultNotifyMs = 0;
 static uint32_t g_lastCanNotifyMs = 0;
 
+static uint16_t estimate_native_period_ms(uint32_t pid) {
+  if (pid == 0x040 || pid == 0x041 || pid == 0x6FC) return 10;   // 100 Hz group
+  switch (pid) {
+    case 0x118: case 0x138: case 0x139: case 0x13A: case 0x13B:
+    case 0x13C: case 0x143: case 0x146: case 0x39A: case 0x3D9:
+      return 20; // ~50 Hz
+    case 0x2D2:
+      return 30; // 33.3 Hz
+    case 0x241:
+      return 50; // 20 Hz
+    case 0x328: case 0x32B: case 0x345: case 0x390:
+    case 0x393: case 0x3A7: case 0x3AC:
+    case 0x6E1: case 0x6E2:
+      return 100; // 10 Hz cluster
+    case 0x330: case 0x332: case 0x33A: case 0x33B:
+    case 0x640: case 0x651: case 0x652: case 0x654:
+    case 0x658: case 0x663:
+    case 0x68C: case 0x68D: case 0x6B1: case 0x6BB:
+    case 0x6CF: case 0x6DF:
+      return 1200; // ~8-9 per 10s
+    case 0x228:
+      return 100; // ~10 Hz group
+    default:
+      break;
+  }
+  if (pid >= 0x700 && pid <= 0x7FF) return 10; // OBD and virtual
+  if (pid < 0x100) return 10;
+  if (pid < 0x200) return 20;
+  return 100;
+}
+
+static uint8_t divider_from_interval(uint32_t pid, uint16_t intervalMs) {
+  if (intervalMs == 0) {
+    return compute_default_divider_for_pid(pid);
+  }
+  uint16_t native = estimate_native_period_ms(pid);
+  if (native == 0) native = 10;
+  uint32_t div = (intervalMs + native - 1) / native;
+  if (div < 1) div = 1;
+  if (div > 255) div = 255;
+  return static_cast<uint8_t>(div);
+}
+
 static void handleFilWrite(const uint8_t *d, size_t L) {
   if (!d || L < 1) return;
   uint8_t cmd = d[0];
@@ -620,15 +663,30 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
         break;
       }
       {
+        uint16_t intervalMs = 0;
         uint32_t rawId = 0;
-        if (L >= 5) {
-          rawId = ((uint32_t)d[1]) |
-                  ((uint32_t)d[2] << 8) |
-                  ((uint32_t)d[3] << 16) |
-                  ((uint32_t)d[4] << 24);
-        } else {
-          // RaceChrono sends 11-bit IDs as little-endian 16-bit values.
-          rawId = ((uint32_t)d[1]) | ((uint32_t)d[2] << 8);
+        size_t payloadLen = L - 1;
+        size_t idBytes = payloadLen;
+        if (payloadLen >= 4) {
+          intervalMs = ((uint16_t)d[L - 2] << 8) | d[L - 1];
+          idBytes -= 2;
+        }
+        if (idBytes == 0 || idBytes > 4) {
+          Serial.println("FIL: ALLOW PID ignored (invalid length)");
+          break;
+        }
+        for (size_t i = 0; i < idBytes; ++i) {
+          rawId |= ((uint32_t)d[1 + i]) << (8 * i);
+        }
+        if (idBytes == 2 && rawId > 0x7FF && payloadLen > idBytes) {
+          // Probably a 29-bit identifier without interval, reparse using full payload.
+          rawId = 0;
+          idBytes = payloadLen;
+          if (idBytes > 4) idBytes = 4;
+          for (size_t i = 0; i < idBytes; ++i) {
+            rawId |= ((uint32_t)d[1 + i]) << (8 * i);
+          }
+          intervalMs = 0;
         }
         uint32_t pid = rawId & 0x1FFFFFFF; // RaceChrono uses LE CAN IDs
         if (pid > 0x7FF) {
@@ -644,14 +702,19 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
         void *entry = pidMap.getEntryId(pid);
         if (entry) {
           PidExtra *extra = pidMap.getExtra(entry);
-          uint8_t div = compute_default_divider_for_pid(pid);
+          uint8_t div = divider_from_interval(pid, intervalMs);
           int idx = find_custom_divider_index(static_cast<uint16_t>(pid));
           if (idx >= 0) {
             div = customDividers[idx].div;
           }
           set_extra_base_divider(extra, div, /*resetGovernor=*/true);
         }
-        Serial.printf("FIL: ALLOW PID 0x%03lX\n", (unsigned long)pid);
+        if (intervalMs) {
+          Serial.printf("FIL: ALLOW PID 0x%03lX interval=%ums\n",
+                        (unsigned long)pid, (unsigned)intervalMs);
+        } else {
+          Serial.printf("FIL: ALLOW PID 0x%03lX\n", (unsigned long)pid);
+        }
       }
       break;
     default: break;
