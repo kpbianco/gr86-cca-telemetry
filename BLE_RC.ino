@@ -26,6 +26,8 @@
 #include <ctype.h>
 #include <driver/twai.h>
 #include <math.h>
+#include <esp_system.h>
+#include <esp_task_wdt.h>
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER and DEVICE_NAME
 
 // ---------- Version ----------
@@ -82,6 +84,8 @@ static char pendingBleRestartReason[64] = "";
 static bool pendingBleRestart = false;
 
 static bool nvsWriteInProgress = false;
+
+static constexpr int TASK_WDT_TIMEOUT_SECONDS = 5;
 
 static constexpr uint32_t CAN_STATUS_POLL_INTERVAL_MS = 100;
 static constexpr uint32_t CAN_TX_FAILURE_WINDOW_MS    = 1000;
@@ -177,6 +181,55 @@ public:
 };
 
 static SimplePidMap<PidExtra> pidMap;
+
+static const char *reset_reason_to_string(esp_reset_reason_t reason) {
+  switch (reason) {
+    case ESP_RST_POWERON:     return "POWERON";
+    case ESP_RST_EXT:         return "EXT";
+    case ESP_RST_SW:          return "SW";
+    case ESP_RST_PANIC:       return "PANIC";
+    case ESP_RST_INT_WDT:     return "INT_WDT";
+    case ESP_RST_TASK_WDT:    return "TASK_WDT";
+    case ESP_RST_WDT:         return "WDT";
+    case ESP_RST_DEEPSLEEP:   return "DEEPSLEEP";
+    case ESP_RST_BROWNOUT:    return "BROWNOUT";
+    case ESP_RST_SDIO:        return "SDIO";
+    case ESP_RST_RTC_WDT:     return "RTC_WDT";
+    case ESP_RST_USB:         return "USB";
+    case ESP_RST_CPU_LOCKUP:  return "CPU_LOCKUP";
+    case ESP_RST_JTAG:        return "JTAG";
+    case ESP_RST_TIME_WDT:    return "TIME_WDT";
+    case ESP_RST_MWDT0:       return "MWDT0";
+    case ESP_RST_MWDT1:       return "MWDT1";
+    case ESP_RST_RTC_MWDT0:   return "RTC_MWDT0";
+    case ESP_RST_RTC_MWDT1:   return "RTC_MWDT1";
+    default:                  return "UNKNOWN";
+  }
+}
+
+static void init_task_watchdog() {
+  esp_err_t err = esp_task_wdt_init(TASK_WDT_TIMEOUT_SECONDS, true);
+  if (err == ESP_ERR_INVALID_STATE) {
+    // Already initialized with a different timeout; reset and try again.
+    esp_task_wdt_deinit();
+    err = esp_task_wdt_init(TASK_WDT_TIMEOUT_SECONDS, true);
+  }
+  if (err != ESP_OK && err != ESP_ERR_INVALID_STATE) {
+    Serial.printf("WARN: esp_task_wdt_init failed: %d\n", (int)err);
+    return;
+  }
+
+  err = esp_task_wdt_add(NULL);
+  if (err == ESP_ERR_INVALID_STATE) {
+    Serial.println("Task WDT already armed for loop task.");
+    return;
+  }
+  if (err != ESP_OK) {
+    Serial.printf("WARN: esp_task_wdt_add failed: %d\n", (int)err);
+  } else {
+    Serial.printf("Task WDT armed (%ds).\n", TASK_WDT_TIMEOUT_SECONDS);
+  }
+}
 
 static uint8_t effective_divider(const PidExtra *extra) {
   uint16_t base = extra ? extra->baseDivider : 1;
@@ -1172,6 +1225,10 @@ void setup() {
   uint32_t t0 = millis(); while (!Serial && millis() - t0 < 3000) {}
 
   Serial.printf("FW: %s\n", FW_VERSION_STRING);
+  esp_reset_reason_t reason = esp_reset_reason();
+  Serial.printf("Boot reason: %s (%d)\n", reset_reason_to_string(reason), (int)reason);
+
+  init_task_watchdog();
 
   // ADC
   analogReadResolution(12);
@@ -1201,6 +1258,7 @@ void setup() {
 static void waitForConnection() {
   uint32_t i=0; bool nl=true;
   while (!bleWaitForConnection(1000)) {
+    esp_task_wdt_reset();
     Serial.print("."); nl=false; if ((++i % 10)==0) { Serial.println(); nl=true; }
   }
   if (!nl) Serial.println();
@@ -1738,6 +1796,7 @@ static void process_cli_line(char *line) {
 // ===== Main loop =====
 void loop() {
   loop_iteration++;
+  esp_task_wdt_reset();
 
   servicePendingBleRestart();
 
@@ -1752,6 +1811,7 @@ void loop() {
 
   // Ensure CAN is up
   while (!isCanBusReaderActive) {
+    esp_task_wdt_reset();
     if (startCanBusReader()) {
       flushBufferedPackets();
       resetSkippedUpdatesCounters();
