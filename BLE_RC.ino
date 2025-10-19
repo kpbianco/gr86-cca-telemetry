@@ -193,11 +193,6 @@ public:
 
 static SimplePidMap<PidExtra> pidMap;
 
-struct AllowAllThrottleState {
-  uint32_t lastNotifyMs = 0;
-};
-
-static SimplePidMap<AllowAllThrottleState> allowAllThrottleMap;
 static const char *reset_reason_to_string(esp_reset_reason_t reason) {
   switch (reason) {
     case ESP_RST_POWERON:     return "POWERON";
@@ -660,24 +655,20 @@ static void bleStopAdvertising(){
 }
 
 // ===== FIL (0x0002) handler to mirror RaceChrono DIY control =====
-static bool     g_allowAll = true;
-static uint16_t g_defaultNotifyMs = 0;
-
 static void handleFilWrite(const uint8_t *d, size_t L) {
   if (!d || L < 1) return;
   uint8_t cmd = d[0];
   switch (cmd) {
     case 0: // Deny all
-      g_allowAll = false; g_defaultNotifyMs = 0; Serial.println("FIL: DENY ALL");
-      allowAllThrottleMap.reset();
+      Serial.println("FIL: DENY ALL");
       pidMap.reset();
       break;
     case 1: // Allow all + interval
       if (L >= 3) {
-        g_defaultNotifyMs = ((uint16_t)d[1] << 8) | d[2];
-        g_allowAll = true;
-        allowAllThrottleMap.reset();
-        Serial.printf("FIL: ALLOW ALL, interval=%ums\n", g_defaultNotifyMs);
+        uint16_t interval = ((uint16_t)d[1] << 8) | d[2];
+        Serial.printf("FIL: ALLOW ALL (interval=%ums ignored)\n", interval);
+      } else {
+        Serial.println("FIL: ALLOW ALL");
       }
       break;
     case 2: // Allow one PID (minimal accept)
@@ -1873,21 +1864,7 @@ void loop() {
     }
 
     if (rx.data_length_code) {
-      // Throttle to g_defaultNotifyMs if allowAll
-      uint32_t ms = now;
-      if (g_allowAll && g_defaultNotifyMs>0){
-        AllowAllThrottleState *state = allowAllThrottleMap.getOrCreateExtra(rx.identifier);
-        if (state && (ms - state->lastNotifyMs < g_defaultNotifyMs)) {
-          // skip this one
-        } else {
-          bufferNewPacket(rx.identifier, rx.data, rx.data_length_code);
-          if (state) {
-            state->lastNotifyMs = ms;
-          }
-        }
-      } else {
-        bufferNewPacket(rx.identifier, rx.data, rx.data_length_code);
-      }
+      bufferNewPacket(rx.identifier, rx.data, rx.data_length_code);
     }
   }
 
