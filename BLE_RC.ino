@@ -27,6 +27,7 @@
 #include <driver/twai.h>
 #include <math.h>
 #include <esp_system.h>
+#include <esp_idf_version.h>
 #include <esp_task_wdt.h>
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER and DEVICE_NAME
 
@@ -205,25 +206,51 @@ static const char *reset_reason_to_string(esp_reset_reason_t reason) {
     case ESP_RST_DEEPSLEEP:   return "DEEPSLEEP";
     case ESP_RST_BROWNOUT:    return "BROWNOUT";
     case ESP_RST_SDIO:        return "SDIO";
+#ifdef ESP_RST_RTC_WDT
     case ESP_RST_RTC_WDT:     return "RTC_WDT";
+#endif
     case ESP_RST_USB:         return "USB";
     case ESP_RST_CPU_LOCKUP:  return "CPU_LOCKUP";
     case ESP_RST_JTAG:        return "JTAG";
+#ifdef ESP_RST_TIME_WDT
     case ESP_RST_TIME_WDT:    return "TIME_WDT";
+#endif
+#ifdef ESP_RST_MWDT0
     case ESP_RST_MWDT0:       return "MWDT0";
+#endif
+#ifdef ESP_RST_MWDT1
     case ESP_RST_MWDT1:       return "MWDT1";
+#endif
+#ifdef ESP_RST_RTC_MWDT0
     case ESP_RST_RTC_MWDT0:   return "RTC_MWDT0";
+#endif
+#ifdef ESP_RST_RTC_MWDT1
     case ESP_RST_RTC_MWDT1:   return "RTC_MWDT1";
+#endif
     default:                  return "UNKNOWN";
   }
 }
 
 static void init_task_watchdog() {
+#if ESP_IDF_VERSION_MAJOR >= 5
+  esp_task_wdt_config_t twdt_config = {};
+  twdt_config.timeout_ms = TASK_WDT_TIMEOUT_SECONDS * 1000;
+  twdt_config.trigger_panic = true;
+#ifdef portNUM_PROCESSORS
+  twdt_config.idle_core_mask = (1 << portNUM_PROCESSORS) - 1;
+#endif
+  esp_err_t err = esp_task_wdt_init(&twdt_config);
+#else
   esp_err_t err = esp_task_wdt_init(TASK_WDT_TIMEOUT_SECONDS, true);
+#endif
   if (err == ESP_ERR_INVALID_STATE) {
     // Already initialized with a different timeout; reset and try again.
     esp_task_wdt_deinit();
+#if ESP_IDF_VERSION_MAJOR >= 5
+    err = esp_task_wdt_init(&twdt_config);
+#else
     err = esp_task_wdt_init(TASK_WDT_TIMEOUT_SECONDS, true);
+#endif
   }
   if (err != ESP_OK && err != ESP_ERR_INVALID_STATE) {
     Serial.printf("WARN: esp_task_wdt_init failed: %d\n", (int)err);
