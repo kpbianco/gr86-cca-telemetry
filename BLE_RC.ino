@@ -28,6 +28,11 @@
 #include <math.h>
 #include <esp_system.h>
 #include <esp_task_wdt.h>
+#if defined(__has_include)
+#if __has_include(<esp_idf_version.h>)
+#include <esp_idf_version.h>
+#endif
+#endif
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER and DEVICE_NAME
 
 // ---------- Version ----------
@@ -68,13 +73,17 @@ static bool   restore_governor_snapshot(const GovernorSnapshot *snapshots, size_
 static bool     isCanBusReaderActive = false;
 static uint32_t lastCanMessageReceivedMs = 0;
 static uint32_t loop_iteration = 0;
-static uint32_t last_time_num_can_bus_timeouts_sent_ms = 0;
 static uint16_t num_can_bus_timeouts = 0;
 
 static bool     have_seen_any_can = false;
 static uint32_t lastHbMs = 0;
 static uint16_t hbCounter = 0;
 static const uint32_t HB_PID = 0x7AA; // BLE heartbeat
+
+static constexpr uint32_t MS_PER_SECOND = 1000;
+static constexpr uint32_t MS_PER_MINUTE = 60 * MS_PER_SECOND;
+static constexpr uint32_t MS_PER_HOUR   = 60 * MS_PER_MINUTE;
+static constexpr uint32_t MS_PER_DAY    = 24 * MS_PER_HOUR;
 
 static uint32_t rxCount = 0;
 static uint32_t lastRxPrintMs = 0;
@@ -87,22 +96,54 @@ static bool nvsWriteInProgress = false;
 
 static constexpr int TASK_WDT_TIMEOUT_SECONDS = 5;
 
-static constexpr uint32_t CAN_STATUS_POLL_INTERVAL_MS = 100;
+static constexpr uint32_t CAN_STATUS_POLL_INTERVAL_MS = 1000;
 static constexpr uint32_t CAN_TX_FAILURE_WINDOW_MS    = 1000;
 static constexpr uint8_t  CAN_TX_FAILURE_THRESHOLD    = 5;
 
 static uint32_t lastCanStatusCheckMs    = 0;
 static uint32_t canTxFailureWindowStart = 0;
 static uint8_t  canTxFailuresInWindow   = 0;
+static uint32_t lastCanDiagSendMs       = 0;
+static uint32_t canBusOffCount          = 0;
+static uint32_t canRestartCount         = 0;
+static uint32_t lastCanRestartMs        = 0;
+static twai_status_info_t lastTwaiStatus = {};
+static constexpr uint32_t CAN_DIAG_NOTIFY_INTERVAL_MS = 2000;
+static constexpr uint32_t CAN_RECOVERY_BACKOFF_MS     = 300;
 
 // ===== GPS state =====
 static HardwareSerial GPSSerial(1);
 static bool gpsConfigured = false;
+static bool gpsUsingRawStream = false;
+static bool gpsWarnedNoNmea = false;
 static uint32_t gpsLastSentenceMs = 0;
 static uint32_t lastGpsNotifyMs = 0;
 static uint32_t lastGpsInitAttemptMs = 0;
 static constexpr uint32_t GPS_NOTIFY_PERIOD_MS = 100;  // 10 Hz
 static constexpr uint32_t GPS_INIT_RETRY_MS    = 5000;
+static const uint32_t GPS_INIT_PROBE_BAUDS[] = { 9600, 38400, 57600, 115200 };
+static constexpr size_t GPS_INIT_PROBE_BAUD_COUNT = sizeof(GPS_INIT_PROBE_BAUDS) / sizeof(GPS_INIT_PROBE_BAUDS[0]);
+
+enum class GpsInitPhase : uint8_t {
+  Idle,
+  WaitInitialNmea,
+  SendConfigCommand,
+  CommandDelay,
+  Prepare115200,
+  WaitBefore115200,
+  Confirm115200,
+  BeginFallback,
+  FinalizeFallback,
+};
+
+static GpsInitPhase gpsInitPhase = GpsInitPhase::Idle;
+static uint32_t gpsInitPhaseStartMs = 0;
+static uint8_t gpsInitCommandIndex = 0;
+static bool gpsInitSawInitialNmea = false;
+static bool gpsInitPrevWasDollar = false;
+static uint32_t gpsInitFallbackBaud = 9600;
+static size_t gpsInitProbeIndex = 0;
+static uint32_t gpsInitCurrentBaud = 9600;
 
 // ====== BLE objects we own (we create the full 0x1FF8 service) ======
 static NimBLEServer*         g_server = nullptr;
@@ -119,6 +160,11 @@ static bool   rmc_valid = false;
 static double rmc_lat_deg = 0.0, rmc_lon_deg = 0.0;
 static double rmc_speed_kmh = 0.0;
 static double rmc_course_deg = 0.0;
+
+static bool     rmc_time_available = false;
+static uint32_t rmc_ms_since_midnight = 0;
+static uint32_t rmc_capture_tick_ms  = 0;
+static uint32_t gps_monotonic_ms     = 0;
 
 // GGA fields
 static int    gga_sats = 0;
@@ -205,25 +251,59 @@ static const char *reset_reason_to_string(esp_reset_reason_t reason) {
     case ESP_RST_DEEPSLEEP:   return "DEEPSLEEP";
     case ESP_RST_BROWNOUT:    return "BROWNOUT";
     case ESP_RST_SDIO:        return "SDIO";
+#ifdef ESP_RST_RTC_WDT
     case ESP_RST_RTC_WDT:     return "RTC_WDT";
+#endif
+#ifdef ESP_RST_USB
     case ESP_RST_USB:         return "USB";
+#endif
+#ifdef ESP_RST_CPU_LOCKUP
     case ESP_RST_CPU_LOCKUP:  return "CPU_LOCKUP";
+#endif
+#ifdef ESP_RST_JTAG
     case ESP_RST_JTAG:        return "JTAG";
+#endif
+#ifdef ESP_RST_TIME_WDT
     case ESP_RST_TIME_WDT:    return "TIME_WDT";
+#endif
+#ifdef ESP_RST_MWDT0
     case ESP_RST_MWDT0:       return "MWDT0";
+#endif
+#ifdef ESP_RST_MWDT1
     case ESP_RST_MWDT1:       return "MWDT1";
+#endif
+#ifdef ESP_RST_RTC_MWDT0
     case ESP_RST_RTC_MWDT0:   return "RTC_MWDT0";
+#endif
+#ifdef ESP_RST_RTC_MWDT1
     case ESP_RST_RTC_MWDT1:   return "RTC_MWDT1";
+#endif
     default:                  return "UNKNOWN";
   }
 }
 
+static esp_err_t init_task_wdt_backend() {
+#if defined(ESP_TASK_WDT_INIT_CONFIG_DEFAULT)
+  esp_task_wdt_config_t cfg = ESP_TASK_WDT_INIT_CONFIG_DEFAULT();
+  cfg.timeout_ms = TASK_WDT_TIMEOUT_SECONDS * 1000;
+  cfg.trigger_panic = true;
+  return esp_task_wdt_init(&cfg);
+#elif defined(ESP_IDF_VERSION_MAJOR) && (ESP_IDF_VERSION_MAJOR >= 5)
+  esp_task_wdt_config_t cfg = {};
+  cfg.timeout_ms = TASK_WDT_TIMEOUT_SECONDS * 1000;
+  cfg.trigger_panic = true;
+  return esp_task_wdt_init(&cfg);
+#else
+  return esp_task_wdt_init(TASK_WDT_TIMEOUT_SECONDS, true);
+#endif
+}
+
 static void init_task_watchdog() {
-  esp_err_t err = esp_task_wdt_init(TASK_WDT_TIMEOUT_SECONDS, true);
+  esp_err_t err = init_task_wdt_backend();
   if (err == ESP_ERR_INVALID_STATE) {
     // Already initialized with a different timeout; reset and try again.
     esp_task_wdt_deinit();
-    err = esp_task_wdt_init(TASK_WDT_TIMEOUT_SECONDS, true);
+    err = init_task_wdt_backend();
   }
   if (err != ESP_OK && err != ESP_ERR_INVALID_STATE) {
     Serial.printf("WARN: esp_task_wdt_init failed: %d\n", (int)err);
@@ -751,6 +831,40 @@ static int splitCsv(char *s, const char *fields[], int maxFields) {
   return count;
 }
 
+static inline uint32_t msSinceMidnightFromTime(int hour, int minute, int second, int millis) {
+  uint32_t h = static_cast<uint32_t>(hour >= 0 ? hour : 0);
+  uint32_t m = static_cast<uint32_t>(minute >= 0 ? minute : 0);
+  uint32_t s = static_cast<uint32_t>(second >= 0 ? second : 0);
+  uint32_t ms = static_cast<uint32_t>(millis >= 0 ? millis : 0);
+  uint64_t total = (static_cast<uint64_t>(h) * MS_PER_HOUR) +
+                   (static_cast<uint64_t>(m) * MS_PER_MINUTE) +
+                   (static_cast<uint64_t>(s) * MS_PER_SECOND) +
+                   static_cast<uint64_t>(ms);
+  return static_cast<uint32_t>(total % MS_PER_DAY);
+}
+
+static uint32_t gpsMonotonicMsSinceMidnight(uint32_t now) {
+  if (!rmc_time_available) {
+    return gps_monotonic_ms;
+  }
+
+  uint32_t delta = now - rmc_capture_tick_ms;
+  uint64_t candidate64 = static_cast<uint64_t>(rmc_ms_since_midnight) + delta;
+  uint32_t candidate = static_cast<uint32_t>(candidate64 % MS_PER_DAY);
+
+  if (candidate < gps_monotonic_ms) {
+    uint32_t diff = gps_monotonic_ms - candidate;
+    if (diff < 2000) {
+      candidate = gps_monotonic_ms;
+    } else if (diff < (MS_PER_DAY - 2000)) {
+      candidate = gps_monotonic_ms;
+    }
+  }
+
+  gps_monotonic_ms = candidate;
+  return gps_monotonic_ms;
+}
+
 static bool nmeaChecksumOk(const char *line) {
   if (!line || line[0] != '$') return false;
   const char *star = strrchr(line, '*');
@@ -780,8 +894,26 @@ static void parseRmcSentence(char *line) {
     rmc_min  = atoi(mm);
     rmc_sec  = atoi(ss);
     const char *dot = strchr(time, '.');
-    rmc_millis = dot ? atoi(dot + 1) : 0;
+    if (dot) {
+      int ms = 0;
+      int scale = 100;
+      for (const char *p = dot + 1; *p && isdigit(static_cast<unsigned char>(*p)) && scale > 0; ++p) {
+        ms += (*p - '0') * scale;
+        scale /= 10;
+      }
+      rmc_millis = ms;
+    } else {
+      rmc_millis = 0;
+    }
     if (rmc_millis > 999) rmc_millis = 999;
+  }
+
+  uint32_t msSinceMidnight = msSinceMidnightFromTime(rmc_hour, rmc_min, rmc_sec, rmc_millis);
+  rmc_ms_since_midnight = msSinceMidnight;
+  rmc_capture_tick_ms = millis();
+  if (!rmc_time_available) {
+    gps_monotonic_ms = msSinceMidnight;
+    rmc_time_available = true;
   }
 
   rmc_valid = (fields[2] && *fields[2] == 'A');
@@ -856,16 +988,19 @@ static void gpsPackAndNotify(uint32_t now) {
   uint8_t payload[20];
   memset(payload, 0xFF, sizeof(payload));
 
+  uint32_t msSinceMidnight = gpsMonotonicMsSinceMidnight(now);
+  uint32_t msIntoHour = msSinceMidnight % MS_PER_HOUR;
+  int hour = static_cast<int>((msSinceMidnight / MS_PER_HOUR) % 24);
   int year = gps_year >= 2000 ? gps_year : 2000;
   int month = gps_mon >= 1 ? gps_mon : 1;
   int day = gps_day >= 1 ? gps_day : 1;
-  int dateHour = ((year - 2000) * 8928) + ((month - 1) * 744) + ((day - 1) * 24) + rmc_hour;
+  int dateHour = ((year - 2000) * 8928) + ((month - 1) * 744) + ((day - 1) * 24) + hour;
   if (dateHour != lastDateHourPacked) {
     lastDateHourPacked = dateHour;
     gpsSyncBits = (gpsSyncBits + 1) & 0x7;
   }
 
-  int timeSinceHour = (rmc_min * 30000) + (rmc_sec * 500) + (rmc_millis / 2);
+  int timeSinceHour = static_cast<int>(msIntoHour / 2);
   if (timeSinceHour < 0) timeSinceHour = 0;
 
   uint8_t fixQuality = rmc_valid ? 1 : 0;
@@ -934,75 +1069,181 @@ static void gpsSendRaw(const char *cmd) {
   GPSSerial.print(cmd);
 }
 
-static bool gpsLooksLikeNmea(uint32_t timeoutMs) {
-  uint32_t start = millis();
-  char prev = 0;
-  while (millis() - start < timeoutMs) {
-    if (GPSSerial.available()) {
-      char c = static_cast<char>(GPSSerial.read());
-      if (prev == '$' && (c == 'G' || c == 'N')) return true;
-      prev = c;
+static bool gpsScanForNmea(size_t maxBytes = 96) {
+  size_t processed = 0;
+  while (GPSSerial.available() && processed < maxBytes) {
+    char c = static_cast<char>(GPSSerial.read());
+    processed++;
+    if (gpsInitPrevWasDollar) {
+      gpsInitPrevWasDollar = (c == '$');
+      if (c == 'G' || c == 'N') {
+        return true;
+      }
+    } else {
+      gpsInitPrevWasDollar = (c == '$');
     }
   }
   return false;
 }
 
-static bool gpsConfigurePort() {
-  const uint32_t bauds[] = { 9600, 38400, 57600, 115200 };
-  bool detected = false;
-  for (uint32_t baud : bauds) {
-    GPSSerial.updateBaudRate(baud);
-    delay(60);
-    if (gpsLooksLikeNmea(500)) {
-      Serial.printf("[GPS] Detected NMEA @ %lu\n", static_cast<unsigned long>(baud));
-      detected = true;
-      break;
-    }
+static void gpsDrainInput(size_t maxBytes = 128) {
+  size_t processed = 0;
+  while (GPSSerial.available() && processed < maxBytes) {
+    GPSSerial.read();
+    processed++;
   }
-  if (!detected) {
-    Serial.println("[GPS] No NMEA detected");
-    return false;
-  }
-
-  gpsSendRaw(PMTK_SET_NMEA_OUTPUT_RMCGGA);
-  delay(80);
-  gpsSendRaw(PMTK_SET_NMEA_UPDATE_10HZ);
-  delay(80);
-  gpsSendRaw(PMTK_SET_BAUD_115200);
-  delay(120);
-
-  GPSSerial.end();
-  delay(20);
-  GPSSerial.begin(115200, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
-  delay(80);
-  if (!gpsLooksLikeNmea(800)) {
-    Serial.println("[GPS] Missing NMEA after baud switch");
-    return false;
-  }
-
-  return true;
 }
 
 static void gpsResetSyncState() {
   gpsSyncBits = 0;
   lastDateHourPacked = -1;
   lastGpsNotifyMs = 0;
+  rmc_time_available = false;
+  rmc_ms_since_midnight = 0;
+  rmc_capture_tick_ms = millis();
+  gps_monotonic_ms = 0;
 }
 
-static void gpsInit() {
+static void gpsBeginInitAttempt(uint32_t now) {
   Serial.printf("[GPS] UART init @ %u bps (RX=%d, TX=%d)\n", 9600u, GPS_RX_GPIO, GPS_TX_GPIO);
-  GPSSerial.begin(9600, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
-  delay(100);
+  GPSSerial.end();
+  gpsInitProbeIndex = 0;
+  gpsInitCurrentBaud = GPS_INIT_PROBE_BAUDS[gpsInitProbeIndex];
+  GPSSerial.begin(gpsInitCurrentBaud, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
+  gpsInitPrevWasDollar = false;
+  gpsInitSawInitialNmea = false;
+  gpsInitFallbackBaud = gpsInitCurrentBaud;
+  gpsInitCommandIndex = 0;
+  gpsInitPhase = GpsInitPhase::WaitInitialNmea;
+  gpsInitPhaseStartMs = now;
+  gpsUsingRawStream = false;
+  gpsResetSyncState();
+}
 
-  if (gpsConfigurePort()) {
-    gpsConfigured = true;
-    gpsLastSentenceMs = millis();
-    gpsResetSyncState();
-    Serial.println("[GPS] Configured: RMC+GGA @10Hz, 115200");
+static void gpsFinalizeConfigured(uint32_t now) {
+  gpsConfigured = true;
+  gpsUsingRawStream = false;
+  gpsWarnedNoNmea = false;
+  gpsLastSentenceMs = now;
+  gpsResetSyncState();
+  Serial.println("[GPS] Configured: RMC+GGA @10Hz, 115200");
+  gpsInitPhase = GpsInitPhase::Idle;
+}
+
+static void gpsFinalizeRawStream(uint32_t now) {
+  gpsConfigured = true;
+  gpsUsingRawStream = true;
+  gpsLastSentenceMs = now;
+  gpsResetSyncState();
+  if (!gpsInitSawInitialNmea) {
+    gpsInitFallbackBaud = GPS_INIT_PROBE_BAUDS[0];
+    if (!gpsWarnedNoNmea) {
+      Serial.println("[GPS] No NMEA detected; using raw stream");
+      gpsWarnedNoNmea = true;
+    }
   } else {
-    GPSSerial.end();
-    gpsConfigured = false;
-    gpsResetSyncState();
+    Serial.printf("[GPS] Using raw stream (baud switch not acknowledged, %lu bps)\n",
+                  static_cast<unsigned long>(gpsInitFallbackBaud));
+  }
+  gpsInitPhase = GpsInitPhase::Idle;
+}
+
+static void gpsInitStep(uint32_t now) {
+  switch (gpsInitPhase) {
+    case GpsInitPhase::Idle:
+      if (now - lastGpsInitAttemptMs >= GPS_INIT_RETRY_MS) {
+        lastGpsInitAttemptMs = now;
+        gpsBeginInitAttempt(now);
+      }
+      break;
+
+    case GpsInitPhase::WaitInitialNmea:
+      if (gpsScanForNmea()) {
+        gpsInitSawInitialNmea = true;
+        gpsInitFallbackBaud = gpsInitCurrentBaud;
+        Serial.printf("[GPS] Detected NMEA @ %lu\n", static_cast<unsigned long>(gpsInitCurrentBaud));
+        gpsInitPhase = GpsInitPhase::SendConfigCommand;
+        gpsInitPhaseStartMs = now;
+      } else if (now - gpsInitPhaseStartMs >= 500) {
+        if ((gpsInitProbeIndex + 1) < GPS_INIT_PROBE_BAUD_COUNT) {
+          gpsInitProbeIndex++;
+          gpsInitCurrentBaud = GPS_INIT_PROBE_BAUDS[gpsInitProbeIndex];
+          gpsDrainInput();
+          GPSSerial.updateBaudRate(gpsInitCurrentBaud);
+          gpsInitPrevWasDollar = false;
+          gpsInitPhaseStartMs = now;
+        } else {
+          gpsInitPhase = GpsInitPhase::SendConfigCommand;
+          gpsInitPhaseStartMs = now;
+        }
+      }
+      break;
+
+    case GpsInitPhase::SendConfigCommand: {
+      static const char *CMDS[] = {
+        PMTK_SET_NMEA_OUTPUT_RMCGGA,
+        PMTK_SET_NMEA_UPDATE_10HZ,
+        PMTK_SET_BAUD_115200,
+      };
+      static constexpr size_t CMD_COUNT = sizeof(CMDS) / sizeof(CMDS[0]);
+      if (gpsInitCommandIndex < CMD_COUNT) {
+        gpsSendRaw(CMDS[gpsInitCommandIndex]);
+        gpsInitCommandIndex++;
+        gpsInitPhase = GpsInitPhase::CommandDelay;
+        gpsInitPhaseStartMs = now;
+      } else {
+        gpsInitPhase = GpsInitPhase::Prepare115200;
+        gpsInitPhaseStartMs = now;
+      }
+      break;
+    }
+
+    case GpsInitPhase::CommandDelay:
+      if (now - gpsInitPhaseStartMs >= 90) {
+        gpsInitPhase = GpsInitPhase::SendConfigCommand;
+        gpsInitPhaseStartMs = now;
+      }
+      break;
+
+    case GpsInitPhase::Prepare115200:
+      gpsDrainInput();
+      GPSSerial.end();
+      gpsInitPrevWasDollar = false;
+      gpsInitPhase = GpsInitPhase::WaitBefore115200;
+      gpsInitPhaseStartMs = now;
+      break;
+
+    case GpsInitPhase::WaitBefore115200:
+      if (now - gpsInitPhaseStartMs >= 20) {
+        GPSSerial.begin(115200, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
+        gpsInitPrevWasDollar = false;
+        gpsInitPhase = GpsInitPhase::Confirm115200;
+        gpsInitPhaseStartMs = now;
+      }
+      break;
+
+    case GpsInitPhase::Confirm115200:
+      if (gpsScanForNmea()) {
+        gpsFinalizeConfigured(now);
+      } else if (now - gpsInitPhaseStartMs >= 800) {
+        GPSSerial.end();
+        gpsInitPhase = GpsInitPhase::BeginFallback;
+        gpsInitPhaseStartMs = now;
+      }
+      break;
+
+    case GpsInitPhase::BeginFallback:
+      if (now - gpsInitPhaseStartMs >= 20) {
+        GPSSerial.begin(gpsInitFallbackBaud, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
+        gpsInitPrevWasDollar = false;
+        gpsInitPhase = GpsInitPhase::FinalizeFallback;
+        gpsInitPhaseStartMs = now;
+      }
+      break;
+
+    case GpsInitPhase::FinalizeFallback:
+      gpsFinalizeRawStream(now);
+      break;
   }
 }
 
@@ -1017,11 +1258,10 @@ static void gpsProcessSentence(char *line) {
 
 static void gpsService(uint32_t now) {
   if (!gpsConfigured) {
-    if (now - lastGpsInitAttemptMs >= GPS_INIT_RETRY_MS) {
-      lastGpsInitAttemptMs = now;
-      gpsInit();
+    gpsInitStep(now);
+    if (!gpsConfigured) {
+      return;
     }
-    return;
   }
 
   bool sentenceSeen = false;
@@ -1049,13 +1289,22 @@ static void gpsService(uint32_t now) {
 
   if (sentenceSeen) {
     gpsLastSentenceMs = now;
-  } else if (now - gpsLastSentenceMs > 2000) {
-    Serial.println("[GPS] Sentence timeout -> reinit");
-    gpsConfigured = false;
-    gpsResetSyncState();
-    GPSSerial.end();
-    lastGpsInitAttemptMs = now;
-    return;
+  } else {
+    uint32_t timeoutMs = gpsUsingRawStream ? 15000 : 2000;
+    if (now - gpsLastSentenceMs > timeoutMs) {
+      if (gpsUsingRawStream) {
+        Serial.println("[GPS] Raw stream stalled -> retry config");
+      } else {
+        Serial.println("[GPS] Sentence timeout -> reinit");
+      }
+      gpsConfigured = false;
+      gpsUsingRawStream = false;
+      gpsWarnedNoNmea = false;
+      gpsResetSyncState();
+      GPSSerial.end();
+      lastGpsInitAttemptMs = now;
+      return;
+    }
   }
 
   if (bleIsConnected() && (now - lastGpsNotifyMs) >= GPS_NOTIFY_PERIOD_MS) {
@@ -1177,8 +1426,8 @@ void cfg_boot_load_and_apply() {
 static void waitForConnection();
 static bool startCanBusReader();
 static void stopCanBusReader();
-static bool restartCanBusReader(const char *cause = nullptr);
-static void handleCanFault(const char *cause);
+static bool restartCanBusReader(const char *cause = nullptr, uint32_t backoffMs = 50);
+static void handleCanFault(const char *cause, uint32_t backoffMs = 50);
 static bool checkCanBusHealth(uint32_t now);
 [[maybe_unused]] static void noteCanWriteResult(bool success);
 [[maybe_unused]] static bool writeFrameWithWatch(CanFrame &frame, uint32_t timeout = 1);
@@ -1187,7 +1436,7 @@ static void setLastReconnectCause(const char *reason);
 static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len);
 static void handleBufferedPacketsBurst(uint32_t budget_us = 2000);
 static void flushBufferedPackets();
-static void sendNumCanBusTimeouts();
+static void sendCanDiagnostics(uint32_t now);
 static void resetSkippedUpdatesCounters();
 static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len);
 
@@ -1257,8 +1506,9 @@ void setup() {
   show_config(); // one-time concise boot print
 
   // GPS
-  gpsInit();
-  lastGpsInitAttemptMs = millis();
+  uint32_t gpsStartMs = millis();
+  gpsBeginInitAttempt(gpsStartMs);
+  lastGpsInitAttemptMs = gpsStartMs;
 
   // CAN bring-up deferred to loop() retry logic
 }
@@ -1286,7 +1536,8 @@ static void recoverRaceChronoConnection(const char *reason) {
 
   apply_profile_and_dividers();
 
-  sendNumCanBusTimeouts();
+  lastCanDiagSendMs = 0;
+  sendCanDiagnostics(millis());
 }
 
 static void queueBleRestart(const char *reason) {
@@ -1320,7 +1571,13 @@ static bool startCanBusReader() {
   Serial.println("CAN OK.");
   isCanBusReaderActive = true;
   have_seen_any_can = false;
-  lastCanMessageReceivedMs = millis();
+  uint32_t nowMs = millis();
+  lastCanMessageReceivedMs = nowMs;
+  lastCanRestartMs = nowMs;
+  lastTwaiStatus.state = TWAI_STATE_RUNNING;
+  lastTwaiStatus.tx_error_counter = 0;
+  lastTwaiStatus.rx_error_counter = 0;
+  lastTwaiStatus.bus_error_count = 0;
   return true;
 }
 
@@ -1330,6 +1587,10 @@ static void stopCanBusReader() {
   lastCanStatusCheckMs = 0;
   canTxFailureWindowStart = 0;
   canTxFailuresInWindow = 0;
+  lastTwaiStatus.state = TWAI_STATE_STOPPED;
+  lastTwaiStatus.tx_error_counter = 0;
+  lastTwaiStatus.rx_error_counter = 0;
+  lastTwaiStatus.bus_error_count = 0;
 }
 
 static void setLastReconnectCause(const char *reason) {
@@ -1338,7 +1599,7 @@ static void setLastReconnectCause(const char *reason) {
   lastReconnectCause[sizeof(lastReconnectCause) - 1] = '\0';
 }
 
-static bool restartCanBusReader(const char *cause) {
+static bool restartCanBusReader(const char *cause, uint32_t backoffMs) {
   if (cause && cause[0]) {
     Serial.printf("CAN: restart (%s)\n", cause);
     setLastReconnectCause(cause);
@@ -1348,19 +1609,22 @@ static bool restartCanBusReader(const char *cause) {
   }
 
   stopCanBusReader();
-  delay(50);
+  delay(backoffMs);
 
   bool started = startCanBusReader();
   if (started) {
     flushBufferedPackets();
     resetSkippedUpdatesCounters();
     lastCanMessageReceivedMs = millis();
+    canRestartCount++;
+    lastCanDiagSendMs = 0;
+    lastCanRestartMs = millis();
   }
 
   return started;
 }
 
-static void handleCanFault(const char *cause) {
+static void handleCanFault(const char *cause, uint32_t backoffMs) {
   char reason[64];
   if (cause && cause[0]) {
     strncpy(reason, cause, sizeof(reason) - 1);
@@ -1372,8 +1636,9 @@ static void handleCanFault(const char *cause) {
 
   Serial.printf("ERROR: %s -> restart CAN\n", reason);
   num_can_bus_timeouts++;
-  sendNumCanBusTimeouts();
-  restartCanBusReader(reason);
+  lastCanDiagSendMs = 0;
+  sendCanDiagnostics(millis());
+  restartCanBusReader(reason, backoffMs);
 }
 
 static bool checkCanBusHealth(uint32_t now) {
@@ -1387,13 +1652,16 @@ static bool checkCanBusHealth(uint32_t now) {
     return false;
   }
 
+  lastTwaiStatus = status;
+
   if (status.state == TWAI_STATE_BUS_OFF) {
+    canBusOffCount++;
     char reason[64];
     snprintf(reason, sizeof(reason),
              "TWAI bus-off (tx_err=%u rx_err=%u)",
              (unsigned)status.tx_error_counter,
              (unsigned)status.rx_error_counter);
-    handleCanFault(reason);
+    handleCanFault(reason, CAN_RECOVERY_BACKOFF_MS);
     return true;
   }
 
@@ -1549,13 +1817,25 @@ static void flushBufferedPackets() {
   bufferToReadFrom = 0;
 }
 
-static void sendNumCanBusTimeouts() {
-  uint8_t d[2] = {
-    (uint8_t)(num_can_bus_timeouts & 0xFF),
-    (uint8_t)(num_can_bus_timeouts >> 8)
+static void sendCanDiagnostics(uint32_t now) {
+  if (!bleIsConnected()) return;
+  if ((now - lastCanDiagSendMs) < CAN_DIAG_NOTIFY_INTERVAL_MS) return;
+
+  uint16_t busErr = (uint16_t)(lastTwaiStatus.bus_error_count & 0xFFFF);
+  uint16_t busOff = (uint16_t)(canBusOffCount & 0xFFFF);
+  uint16_t restartCount = (uint16_t)(canRestartCount & 0xFFFF);
+  uint8_t d[8] = {
+    (uint8_t)lastTwaiStatus.state,
+    (uint8_t)lastTwaiStatus.tx_error_counter,
+    (uint8_t)lastTwaiStatus.rx_error_counter,
+    (uint8_t)(busErr & 0xFF),
+    (uint8_t)((busErr >> 8) & 0xFF),
+    (uint8_t)(restartCount & 0xFF),
+    (uint8_t)(restartCount >> 8),
+    (uint8_t)(busOff & 0xFF)
   };
-  bleSendCanData(0x777, d, 2);
-  last_time_num_can_bus_timeouts_sent_ms = millis();
+  bleSendCanData(0x777, d, 8);
+  lastCanDiagSendMs = now;
 }
 
 static void resetSkippedUpdatesCounters() {
@@ -1649,6 +1929,11 @@ static void show_stats() {
   Serial.println("=== CCA Stats ===");
   Serial.printf("RX count:        %lu\n", (unsigned long)rxCount);
   Serial.printf("CAN timeouts:    %u\n", (unsigned)num_can_bus_timeouts);
+  Serial.printf("CAN restarts:    %lu\n", (unsigned long)canRestartCount);
+  Serial.printf("CAN bus-off:     %lu\n", (unsigned long)canBusOffCount);
+  uint32_t now = millis();
+  uint32_t sinceRestartMs = lastCanRestartMs ? (now - lastCanRestartMs) : 0;
+  Serial.printf("Last CAN restart:%lu s ago\n", (unsigned long)(sinceRestartMs / 1000UL));
   Serial.printf("BLE tx avg:      %.1f fps\n", bleTxMovingAverageFps);
   Serial.printf("BLE governor:    %s\n", bleGovernorActive ? "ACTIVE" : "idle");
   Serial.printf("Last reconnect:  %s\n", lastReconnectCause);
@@ -1874,10 +2159,8 @@ void loop() {
   // Oil channel
   oil_update_and_publish_if_due();
 
-  // Periodic timeout counter
-  if (now - last_time_num_can_bus_timeouts_sent_ms > 2000) {
-    sendNumCanBusTimeouts();
-  }
+  // Periodic CAN diagnostic frame
+  sendCanDiagnostics(now);
 
   // GPS service (read UART + notify BLE)
   gpsService(now);
