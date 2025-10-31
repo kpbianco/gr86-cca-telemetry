@@ -80,6 +80,11 @@ static uint32_t lastHbMs = 0;
 static uint16_t hbCounter = 0;
 static const uint32_t HB_PID = 0x7AA; // BLE heartbeat
 
+static constexpr uint32_t MS_PER_SECOND = 1000;
+static constexpr uint32_t MS_PER_MINUTE = 60 * MS_PER_SECOND;
+static constexpr uint32_t MS_PER_HOUR   = 60 * MS_PER_MINUTE;
+static constexpr uint32_t MS_PER_DAY    = 24 * MS_PER_HOUR;
+
 static uint32_t rxCount = 0;
 static uint32_t lastRxPrintMs = 0;
 
@@ -155,6 +160,11 @@ static bool   rmc_valid = false;
 static double rmc_lat_deg = 0.0, rmc_lon_deg = 0.0;
 static double rmc_speed_kmh = 0.0;
 static double rmc_course_deg = 0.0;
+
+static bool     rmc_time_available = false;
+static uint32_t rmc_ms_since_midnight = 0;
+static uint32_t rmc_capture_tick_ms  = 0;
+static uint32_t gps_monotonic_ms     = 0;
 
 // GGA fields
 static int    gga_sats = 0;
@@ -821,6 +831,40 @@ static int splitCsv(char *s, const char *fields[], int maxFields) {
   return count;
 }
 
+static inline uint32_t msSinceMidnightFromTime(int hour, int minute, int second, int millis) {
+  uint32_t h = static_cast<uint32_t>(hour >= 0 ? hour : 0);
+  uint32_t m = static_cast<uint32_t>(minute >= 0 ? minute : 0);
+  uint32_t s = static_cast<uint32_t>(second >= 0 ? second : 0);
+  uint32_t ms = static_cast<uint32_t>(millis >= 0 ? millis : 0);
+  uint64_t total = (static_cast<uint64_t>(h) * MS_PER_HOUR) +
+                   (static_cast<uint64_t>(m) * MS_PER_MINUTE) +
+                   (static_cast<uint64_t>(s) * MS_PER_SECOND) +
+                   static_cast<uint64_t>(ms);
+  return static_cast<uint32_t>(total % MS_PER_DAY);
+}
+
+static uint32_t gpsMonotonicMsSinceMidnight(uint32_t now) {
+  if (!rmc_time_available) {
+    return gps_monotonic_ms;
+  }
+
+  uint32_t delta = now - rmc_capture_tick_ms;
+  uint64_t candidate64 = static_cast<uint64_t>(rmc_ms_since_midnight) + delta;
+  uint32_t candidate = static_cast<uint32_t>(candidate64 % MS_PER_DAY);
+
+  if (candidate < gps_monotonic_ms) {
+    uint32_t diff = gps_monotonic_ms - candidate;
+    if (diff < 2000) {
+      candidate = gps_monotonic_ms;
+    } else if (diff < (MS_PER_DAY - 2000)) {
+      candidate = gps_monotonic_ms;
+    }
+  }
+
+  gps_monotonic_ms = candidate;
+  return gps_monotonic_ms;
+}
+
 static bool nmeaChecksumOk(const char *line) {
   if (!line || line[0] != '$') return false;
   const char *star = strrchr(line, '*');
@@ -862,6 +906,14 @@ static void parseRmcSentence(char *line) {
       rmc_millis = 0;
     }
     if (rmc_millis > 999) rmc_millis = 999;
+  }
+
+  uint32_t msSinceMidnight = msSinceMidnightFromTime(rmc_hour, rmc_min, rmc_sec, rmc_millis);
+  rmc_ms_since_midnight = msSinceMidnight;
+  rmc_capture_tick_ms = millis();
+  if (!rmc_time_available) {
+    gps_monotonic_ms = msSinceMidnight;
+    rmc_time_available = true;
   }
 
   rmc_valid = (fields[2] && *fields[2] == 'A');
@@ -936,16 +988,19 @@ static void gpsPackAndNotify(uint32_t now) {
   uint8_t payload[20];
   memset(payload, 0xFF, sizeof(payload));
 
+  uint32_t msSinceMidnight = gpsMonotonicMsSinceMidnight(now);
+  uint32_t msIntoHour = msSinceMidnight % MS_PER_HOUR;
+  int hour = static_cast<int>((msSinceMidnight / MS_PER_HOUR) % 24);
   int year = gps_year >= 2000 ? gps_year : 2000;
   int month = gps_mon >= 1 ? gps_mon : 1;
   int day = gps_day >= 1 ? gps_day : 1;
-  int dateHour = ((year - 2000) * 8928) + ((month - 1) * 744) + ((day - 1) * 24) + rmc_hour;
+  int dateHour = ((year - 2000) * 8928) + ((month - 1) * 744) + ((day - 1) * 24) + hour;
   if (dateHour != lastDateHourPacked) {
     lastDateHourPacked = dateHour;
     gpsSyncBits = (gpsSyncBits + 1) & 0x7;
   }
 
-  int timeSinceHour = (rmc_min * 30000) + (rmc_sec * 500) + (rmc_millis / 2);
+  int timeSinceHour = static_cast<int>(msIntoHour / 2);
   if (timeSinceHour < 0) timeSinceHour = 0;
 
   uint8_t fixQuality = rmc_valid ? 1 : 0;
@@ -1043,6 +1098,10 @@ static void gpsResetSyncState() {
   gpsSyncBits = 0;
   lastDateHourPacked = -1;
   lastGpsNotifyMs = 0;
+  rmc_time_available = false;
+  rmc_ms_since_midnight = 0;
+  rmc_capture_tick_ms = millis();
+  gps_monotonic_ms = 0;
 }
 
 static void gpsBeginInitAttempt(uint32_t now) {
