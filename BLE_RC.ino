@@ -850,7 +850,17 @@ static void parseRmcSentence(char *line) {
     rmc_min  = atoi(mm);
     rmc_sec  = atoi(ss);
     const char *dot = strchr(time, '.');
-    rmc_millis = dot ? atoi(dot + 1) : 0;
+    if (dot) {
+      int ms = 0;
+      int scale = 100;
+      for (const char *p = dot + 1; *p && isdigit(static_cast<unsigned char>(*p)) && scale > 0; ++p) {
+        ms += (*p - '0') * scale;
+        scale /= 10;
+      }
+      rmc_millis = ms;
+    } else {
+      rmc_millis = 0;
+    }
     if (rmc_millis > 999) rmc_millis = 999;
   }
 
