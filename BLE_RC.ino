@@ -109,6 +109,7 @@ static constexpr uint32_t CAN_RECOVERY_BACKOFF_MS     = 300;
 // ===== GPS state =====
 static HardwareSerial GPSSerial(1);
 static bool gpsConfigured = false;
+static bool gpsUsingRawStream = false;
 static bool gpsWarnedNoNmea = false;
 static uint32_t gpsLastSentenceMs = 0;
 static uint32_t lastGpsNotifyMs = 0;
@@ -993,10 +994,11 @@ static bool gpsLooksLikeNmea(uint32_t timeoutMs) {
   return false;
 }
 
-static bool gpsConfigurePort(bool *sawInitialNmea = nullptr) {
+static bool gpsConfigurePort(bool *sawInitialNmea = nullptr, uint32_t *detectedBaudOut = nullptr) {
   const uint32_t bauds[] = { 9600, 38400, 57600, 115200 };
   bool detected = false;
   uint32_t timeoutMs = 0;
+  uint32_t detectedBaud = 0;
 
   while (GPSSerial.available()) {
     GPSSerial.read();
@@ -1012,11 +1014,15 @@ static bool gpsConfigurePort(bool *sawInitialNmea = nullptr) {
     if (gpsLooksLikeNmea(timeoutMs)) {
       Serial.printf("[GPS] Detected NMEA @ %lu\n", static_cast<unsigned long>(baud));
       detected = true;
+      detectedBaud = baud;
       break;
     }
   }
   if (sawInitialNmea) {
     *sawInitialNmea = detected;
+  }
+  if (detectedBaudOut) {
+    *detectedBaudOut = detected ? detectedBaud : 0;
   }
   if (!detected) {
     GPSSerial.updateBaudRate(9600);
@@ -1039,6 +1045,11 @@ static bool gpsConfigurePort(bool *sawInitialNmea = nullptr) {
   }
   if (!gpsLooksLikeNmea(1200)) {
     Serial.println("[GPS] Missing NMEA after baud switch");
+    uint32_t fallbackBaud = detectedBaud ? detectedBaud : 9600;
+    GPSSerial.end();
+    delay(20);
+    GPSSerial.begin(fallbackBaud, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
+    delay(80);
     return false;
   }
 
@@ -1057,8 +1068,10 @@ static void gpsInit() {
   delay(100);
 
   bool sawInitialNmea = false;
-  bool configuredOk = gpsConfigurePort(&sawInitialNmea);
+  uint32_t detectedBaud = 0;
+  bool configuredOk = gpsConfigurePort(&sawInitialNmea, &detectedBaud);
   gpsResetSyncState();
+  gpsUsingRawStream = false;
 
   if (configuredOk) {
     gpsConfigured = true;
@@ -1069,6 +1082,7 @@ static void gpsInit() {
   }
 
   gpsConfigured = true;
+  gpsUsingRawStream = true;
   gpsLastSentenceMs = millis();
   if (!sawInitialNmea) {
     if (!gpsWarnedNoNmea) {
@@ -1077,7 +1091,10 @@ static void gpsInit() {
     }
     GPSSerial.updateBaudRate(9600);
   } else {
-    Serial.println("[GPS] Using raw stream (baud switch not acknowledged)");
+    uint32_t fallbackBaud = detectedBaud ? detectedBaud : 9600;
+    Serial.printf("[GPS] Using raw stream (baud switch not acknowledged, %lu bps)\n",
+                  static_cast<unsigned long>(fallbackBaud));
+    GPSSerial.updateBaudRate(fallbackBaud);
   }
 }
 
@@ -1124,13 +1141,22 @@ static void gpsService(uint32_t now) {
 
   if (sentenceSeen) {
     gpsLastSentenceMs = now;
-  } else if (now - gpsLastSentenceMs > 2000) {
-    Serial.println("[GPS] Sentence timeout -> reinit");
-    gpsConfigured = false;
-    gpsResetSyncState();
-    GPSSerial.end();
-    lastGpsInitAttemptMs = now;
-    return;
+  } else {
+    uint32_t timeoutMs = gpsUsingRawStream ? 15000 : 2000;
+    if (now - gpsLastSentenceMs > timeoutMs) {
+      if (gpsUsingRawStream) {
+        Serial.println("[GPS] Raw stream stalled -> retry config");
+      } else {
+        Serial.println("[GPS] Sentence timeout -> reinit");
+      }
+      gpsConfigured = false;
+      gpsUsingRawStream = false;
+      gpsWarnedNoNmea = false;
+      gpsResetSyncState();
+      GPSSerial.end();
+      lastGpsInitAttemptMs = now;
+      return;
+    }
   }
 
   if (bleIsConnected() && (now - lastGpsNotifyMs) >= GPS_NOTIFY_PERIOD_MS) {
