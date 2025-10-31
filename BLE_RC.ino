@@ -116,6 +116,29 @@ static uint32_t lastGpsNotifyMs = 0;
 static uint32_t lastGpsInitAttemptMs = 0;
 static constexpr uint32_t GPS_NOTIFY_PERIOD_MS = 100;  // 10 Hz
 static constexpr uint32_t GPS_INIT_RETRY_MS    = 5000;
+static const uint32_t GPS_INIT_PROBE_BAUDS[] = { 9600, 38400, 57600, 115200 };
+static constexpr size_t GPS_INIT_PROBE_BAUD_COUNT = sizeof(GPS_INIT_PROBE_BAUDS) / sizeof(GPS_INIT_PROBE_BAUDS[0]);
+
+enum class GpsInitPhase : uint8_t {
+  Idle,
+  WaitInitialNmea,
+  SendConfigCommand,
+  CommandDelay,
+  Prepare115200,
+  WaitBefore115200,
+  Confirm115200,
+  BeginFallback,
+  FinalizeFallback,
+};
+
+static GpsInitPhase gpsInitPhase = GpsInitPhase::Idle;
+static uint32_t gpsInitPhaseStartMs = 0;
+static uint8_t gpsInitCommandIndex = 0;
+static bool gpsInitSawInitialNmea = false;
+static bool gpsInitPrevWasDollar = false;
+static uint32_t gpsInitFallbackBaud = 9600;
+static size_t gpsInitProbeIndex = 0;
+static uint32_t gpsInitCurrentBaud = 9600;
 
 // ====== BLE objects we own (we create the full 0x1FF8 service) ======
 static NimBLEServer*         g_server = nullptr;
@@ -981,79 +1004,29 @@ static void gpsSendRaw(const char *cmd) {
   GPSSerial.print(cmd);
 }
 
-static bool gpsLooksLikeNmea(uint32_t timeoutMs) {
-  uint32_t start = millis();
-  char prev = 0;
-  while (millis() - start < timeoutMs) {
-    if (GPSSerial.available()) {
-      char c = static_cast<char>(GPSSerial.read());
-      if (prev == '$' && (c == 'G' || c == 'N')) return true;
-      prev = c;
+static bool gpsScanForNmea(size_t maxBytes = 96) {
+  size_t processed = 0;
+  while (GPSSerial.available() && processed < maxBytes) {
+    char c = static_cast<char>(GPSSerial.read());
+    processed++;
+    if (gpsInitPrevWasDollar) {
+      gpsInitPrevWasDollar = (c == '$');
+      if (c == 'G' || c == 'N') {
+        return true;
+      }
+    } else {
+      gpsInitPrevWasDollar = (c == '$');
     }
   }
   return false;
 }
 
-static bool gpsConfigurePort(bool *sawInitialNmea = nullptr, uint32_t *detectedBaudOut = nullptr) {
-  const uint32_t bauds[] = { 9600, 38400, 57600, 115200 };
-  bool detected = false;
-  uint32_t timeoutMs = 0;
-  uint32_t detectedBaud = 0;
-
-  while (GPSSerial.available()) {
+static void gpsDrainInput(size_t maxBytes = 128) {
+  size_t processed = 0;
+  while (GPSSerial.available() && processed < maxBytes) {
     GPSSerial.read();
+    processed++;
   }
-
-  for (uint32_t baud : bauds) {
-    GPSSerial.updateBaudRate(baud);
-    delay(80);
-    while (GPSSerial.available()) {
-      GPSSerial.read();
-    }
-    timeoutMs = (baud <= 9600) ? 1200 : 800;
-    if (gpsLooksLikeNmea(timeoutMs)) {
-      Serial.printf("[GPS] Detected NMEA @ %lu\n", static_cast<unsigned long>(baud));
-      detected = true;
-      detectedBaud = baud;
-      break;
-    }
-  }
-  if (sawInitialNmea) {
-    *sawInitialNmea = detected;
-  }
-  if (detectedBaudOut) {
-    *detectedBaudOut = detected ? detectedBaud : 0;
-  }
-  if (!detected) {
-    GPSSerial.updateBaudRate(9600);
-    return false;
-  }
-
-  gpsSendRaw(PMTK_SET_NMEA_OUTPUT_RMCGGA);
-  delay(80);
-  gpsSendRaw(PMTK_SET_NMEA_UPDATE_10HZ);
-  delay(80);
-  gpsSendRaw(PMTK_SET_BAUD_115200);
-  delay(120);
-
-  GPSSerial.end();
-  delay(20);
-  GPSSerial.begin(115200, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
-  delay(80);
-  while (GPSSerial.available()) {
-    GPSSerial.read();
-  }
-  if (!gpsLooksLikeNmea(1200)) {
-    Serial.println("[GPS] Missing NMEA after baud switch");
-    uint32_t fallbackBaud = detectedBaud ? detectedBaud : 9600;
-    GPSSerial.end();
-    delay(20);
-    GPSSerial.begin(fallbackBaud, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
-    delay(80);
-    return false;
-  }
-
-  return true;
 }
 
 static void gpsResetSyncState() {
@@ -1062,39 +1035,146 @@ static void gpsResetSyncState() {
   lastGpsNotifyMs = 0;
 }
 
-static void gpsInit() {
+static void gpsBeginInitAttempt(uint32_t now) {
   Serial.printf("[GPS] UART init @ %u bps (RX=%d, TX=%d)\n", 9600u, GPS_RX_GPIO, GPS_TX_GPIO);
-  GPSSerial.begin(9600, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
-  delay(100);
-
-  bool sawInitialNmea = false;
-  uint32_t detectedBaud = 0;
-  bool configuredOk = gpsConfigurePort(&sawInitialNmea, &detectedBaud);
-  gpsResetSyncState();
+  GPSSerial.end();
+  gpsInitProbeIndex = 0;
+  gpsInitCurrentBaud = GPS_INIT_PROBE_BAUDS[gpsInitProbeIndex];
+  GPSSerial.begin(gpsInitCurrentBaud, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
+  gpsInitPrevWasDollar = false;
+  gpsInitSawInitialNmea = false;
+  gpsInitFallbackBaud = gpsInitCurrentBaud;
+  gpsInitCommandIndex = 0;
+  gpsInitPhase = GpsInitPhase::WaitInitialNmea;
+  gpsInitPhaseStartMs = now;
   gpsUsingRawStream = false;
+  gpsResetSyncState();
+}
 
-  if (configuredOk) {
-    gpsConfigured = true;
-    gpsLastSentenceMs = millis();
-    gpsWarnedNoNmea = false;
-    Serial.println("[GPS] Configured: RMC+GGA @10Hz, 115200");
-    return;
-  }
+static void gpsFinalizeConfigured(uint32_t now) {
+  gpsConfigured = true;
+  gpsUsingRawStream = false;
+  gpsWarnedNoNmea = false;
+  gpsLastSentenceMs = now;
+  gpsResetSyncState();
+  Serial.println("[GPS] Configured: RMC+GGA @10Hz, 115200");
+  gpsInitPhase = GpsInitPhase::Idle;
+}
 
+static void gpsFinalizeRawStream(uint32_t now) {
   gpsConfigured = true;
   gpsUsingRawStream = true;
-  gpsLastSentenceMs = millis();
-  if (!sawInitialNmea) {
+  gpsLastSentenceMs = now;
+  gpsResetSyncState();
+  if (!gpsInitSawInitialNmea) {
+    gpsInitFallbackBaud = GPS_INIT_PROBE_BAUDS[0];
     if (!gpsWarnedNoNmea) {
       Serial.println("[GPS] No NMEA detected; using raw stream");
       gpsWarnedNoNmea = true;
     }
-    GPSSerial.updateBaudRate(9600);
   } else {
-    uint32_t fallbackBaud = detectedBaud ? detectedBaud : 9600;
     Serial.printf("[GPS] Using raw stream (baud switch not acknowledged, %lu bps)\n",
-                  static_cast<unsigned long>(fallbackBaud));
-    GPSSerial.updateBaudRate(fallbackBaud);
+                  static_cast<unsigned long>(gpsInitFallbackBaud));
+  }
+  gpsInitPhase = GpsInitPhase::Idle;
+}
+
+static void gpsInitStep(uint32_t now) {
+  switch (gpsInitPhase) {
+    case GpsInitPhase::Idle:
+      if (now - lastGpsInitAttemptMs >= GPS_INIT_RETRY_MS) {
+        lastGpsInitAttemptMs = now;
+        gpsBeginInitAttempt(now);
+      }
+      break;
+
+    case GpsInitPhase::WaitInitialNmea:
+      if (gpsScanForNmea()) {
+        gpsInitSawInitialNmea = true;
+        gpsInitFallbackBaud = gpsInitCurrentBaud;
+        Serial.printf("[GPS] Detected NMEA @ %lu\n", static_cast<unsigned long>(gpsInitCurrentBaud));
+        gpsInitPhase = GpsInitPhase::SendConfigCommand;
+        gpsInitPhaseStartMs = now;
+      } else if (now - gpsInitPhaseStartMs >= 500) {
+        if ((gpsInitProbeIndex + 1) < GPS_INIT_PROBE_BAUD_COUNT) {
+          gpsInitProbeIndex++;
+          gpsInitCurrentBaud = GPS_INIT_PROBE_BAUDS[gpsInitProbeIndex];
+          gpsDrainInput();
+          GPSSerial.updateBaudRate(gpsInitCurrentBaud);
+          gpsInitPrevWasDollar = false;
+          gpsInitPhaseStartMs = now;
+        } else {
+          gpsInitPhase = GpsInitPhase::SendConfigCommand;
+          gpsInitPhaseStartMs = now;
+        }
+      }
+      break;
+
+    case GpsInitPhase::SendConfigCommand: {
+      static const char *CMDS[] = {
+        PMTK_SET_NMEA_OUTPUT_RMCGGA,
+        PMTK_SET_NMEA_UPDATE_10HZ,
+        PMTK_SET_BAUD_115200,
+      };
+      static constexpr size_t CMD_COUNT = sizeof(CMDS) / sizeof(CMDS[0]);
+      if (gpsInitCommandIndex < CMD_COUNT) {
+        gpsSendRaw(CMDS[gpsInitCommandIndex]);
+        gpsInitCommandIndex++;
+        gpsInitPhase = GpsInitPhase::CommandDelay;
+        gpsInitPhaseStartMs = now;
+      } else {
+        gpsInitPhase = GpsInitPhase::Prepare115200;
+        gpsInitPhaseStartMs = now;
+      }
+      break;
+    }
+
+    case GpsInitPhase::CommandDelay:
+      if (now - gpsInitPhaseStartMs >= 90) {
+        gpsInitPhase = GpsInitPhase::SendConfigCommand;
+        gpsInitPhaseStartMs = now;
+      }
+      break;
+
+    case GpsInitPhase::Prepare115200:
+      gpsDrainInput();
+      GPSSerial.end();
+      gpsInitPrevWasDollar = false;
+      gpsInitPhase = GpsInitPhase::WaitBefore115200;
+      gpsInitPhaseStartMs = now;
+      break;
+
+    case GpsInitPhase::WaitBefore115200:
+      if (now - gpsInitPhaseStartMs >= 20) {
+        GPSSerial.begin(115200, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
+        gpsInitPrevWasDollar = false;
+        gpsInitPhase = GpsInitPhase::Confirm115200;
+        gpsInitPhaseStartMs = now;
+      }
+      break;
+
+    case GpsInitPhase::Confirm115200:
+      if (gpsScanForNmea()) {
+        gpsFinalizeConfigured(now);
+      } else if (now - gpsInitPhaseStartMs >= 800) {
+        GPSSerial.end();
+        gpsInitPhase = GpsInitPhase::BeginFallback;
+        gpsInitPhaseStartMs = now;
+      }
+      break;
+
+    case GpsInitPhase::BeginFallback:
+      if (now - gpsInitPhaseStartMs >= 20) {
+        GPSSerial.begin(gpsInitFallbackBaud, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
+        gpsInitPrevWasDollar = false;
+        gpsInitPhase = GpsInitPhase::FinalizeFallback;
+        gpsInitPhaseStartMs = now;
+      }
+      break;
+
+    case GpsInitPhase::FinalizeFallback:
+      gpsFinalizeRawStream(now);
+      break;
   }
 }
 
@@ -1109,11 +1189,10 @@ static void gpsProcessSentence(char *line) {
 
 static void gpsService(uint32_t now) {
   if (!gpsConfigured) {
-    if (now - lastGpsInitAttemptMs >= GPS_INIT_RETRY_MS) {
-      lastGpsInitAttemptMs = now;
-      gpsInit();
+    gpsInitStep(now);
+    if (!gpsConfigured) {
+      return;
     }
-    return;
   }
 
   bool sentenceSeen = false;
@@ -1358,8 +1437,9 @@ void setup() {
   show_config(); // one-time concise boot print
 
   // GPS
-  gpsInit();
-  lastGpsInitAttemptMs = millis();
+  uint32_t gpsStartMs = millis();
+  gpsBeginInitAttempt(gpsStartMs);
+  lastGpsInitAttemptMs = gpsStartMs;
 
   // CAN bring-up deferred to loop() retry logic
 }
