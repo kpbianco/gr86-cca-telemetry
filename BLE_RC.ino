@@ -28,6 +28,11 @@
 #include <math.h>
 #include <esp_system.h>
 #include <esp_task_wdt.h>
+#if defined(__has_include)
+#if __has_include(<esp_idf_version.h>)
+#include <esp_idf_version.h>
+#endif
+#endif
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER and DEVICE_NAME
 
 // ---------- Version ----------
@@ -211,25 +216,59 @@ static const char *reset_reason_to_string(esp_reset_reason_t reason) {
     case ESP_RST_DEEPSLEEP:   return "DEEPSLEEP";
     case ESP_RST_BROWNOUT:    return "BROWNOUT";
     case ESP_RST_SDIO:        return "SDIO";
+#ifdef ESP_RST_RTC_WDT
     case ESP_RST_RTC_WDT:     return "RTC_WDT";
+#endif
+#ifdef ESP_RST_USB
     case ESP_RST_USB:         return "USB";
+#endif
+#ifdef ESP_RST_CPU_LOCKUP
     case ESP_RST_CPU_LOCKUP:  return "CPU_LOCKUP";
+#endif
+#ifdef ESP_RST_JTAG
     case ESP_RST_JTAG:        return "JTAG";
+#endif
+#ifdef ESP_RST_TIME_WDT
     case ESP_RST_TIME_WDT:    return "TIME_WDT";
+#endif
+#ifdef ESP_RST_MWDT0
     case ESP_RST_MWDT0:       return "MWDT0";
+#endif
+#ifdef ESP_RST_MWDT1
     case ESP_RST_MWDT1:       return "MWDT1";
+#endif
+#ifdef ESP_RST_RTC_MWDT0
     case ESP_RST_RTC_MWDT0:   return "RTC_MWDT0";
+#endif
+#ifdef ESP_RST_RTC_MWDT1
     case ESP_RST_RTC_MWDT1:   return "RTC_MWDT1";
+#endif
     default:                  return "UNKNOWN";
   }
 }
 
+static esp_err_t init_task_wdt_backend() {
+#if defined(ESP_TASK_WDT_INIT_CONFIG_DEFAULT)
+  esp_task_wdt_config_t cfg = ESP_TASK_WDT_INIT_CONFIG_DEFAULT();
+  cfg.timeout_ms = TASK_WDT_TIMEOUT_SECONDS * 1000;
+  cfg.trigger_panic = true;
+  return esp_task_wdt_init(&cfg);
+#elif defined(ESP_IDF_VERSION_MAJOR) && (ESP_IDF_VERSION_MAJOR >= 5)
+  esp_task_wdt_config_t cfg = {};
+  cfg.timeout_ms = TASK_WDT_TIMEOUT_SECONDS * 1000;
+  cfg.trigger_panic = true;
+  return esp_task_wdt_init(&cfg);
+#else
+  return esp_task_wdt_init(TASK_WDT_TIMEOUT_SECONDS, true);
+#endif
+}
+
 static void init_task_watchdog() {
-  esp_err_t err = esp_task_wdt_init(TASK_WDT_TIMEOUT_SECONDS, true);
+  esp_err_t err = init_task_wdt_backend();
   if (err == ESP_ERR_INVALID_STATE) {
     // Already initialized with a different timeout; reset and try again.
     esp_task_wdt_deinit();
-    err = esp_task_wdt_init(TASK_WDT_TIMEOUT_SECONDS, true);
+    err = init_task_wdt_backend();
   }
   if (err != ESP_OK && err != ESP_ERR_INVALID_STATE) {
     Serial.printf("WARN: esp_task_wdt_init failed: %d\n", (int)err);
@@ -1354,7 +1393,7 @@ static void setLastReconnectCause(const char *reason) {
   lastReconnectCause[sizeof(lastReconnectCause) - 1] = '\0';
 }
 
-static bool restartCanBusReader(const char *cause, uint32_t backoffMs = 50) {
+static bool restartCanBusReader(const char *cause, uint32_t backoffMs) {
   if (cause && cause[0]) {
     Serial.printf("CAN: restart (%s)\n", cause);
     setLastReconnectCause(cause);
@@ -1378,7 +1417,7 @@ static bool restartCanBusReader(const char *cause, uint32_t backoffMs = 50) {
   return started;
 }
 
-static void handleCanFault(const char *cause, uint32_t backoffMs = 50) {
+static void handleCanFault(const char *cause, uint32_t backoffMs) {
   char reason[64];
   if (cause && cause[0]) {
     strncpy(reason, cause, sizeof(reason) - 1);
