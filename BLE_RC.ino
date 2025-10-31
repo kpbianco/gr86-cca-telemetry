@@ -68,7 +68,6 @@ static bool   restore_governor_snapshot(const GovernorSnapshot *snapshots, size_
 static bool     isCanBusReaderActive = false;
 static uint32_t lastCanMessageReceivedMs = 0;
 static uint32_t loop_iteration = 0;
-static uint32_t last_time_num_can_bus_timeouts_sent_ms = 0;
 static uint16_t num_can_bus_timeouts = 0;
 
 static bool     have_seen_any_can = false;
@@ -87,13 +86,20 @@ static bool nvsWriteInProgress = false;
 
 static constexpr int TASK_WDT_TIMEOUT_SECONDS = 5;
 
-static constexpr uint32_t CAN_STATUS_POLL_INTERVAL_MS = 100;
+static constexpr uint32_t CAN_STATUS_POLL_INTERVAL_MS = 1000;
 static constexpr uint32_t CAN_TX_FAILURE_WINDOW_MS    = 1000;
 static constexpr uint8_t  CAN_TX_FAILURE_THRESHOLD    = 5;
 
 static uint32_t lastCanStatusCheckMs    = 0;
 static uint32_t canTxFailureWindowStart = 0;
 static uint8_t  canTxFailuresInWindow   = 0;
+static uint32_t lastCanDiagSendMs       = 0;
+static uint32_t canBusOffCount          = 0;
+static uint32_t canRestartCount         = 0;
+static uint32_t lastCanRestartMs        = 0;
+static twai_status_info_t lastTwaiStatus = {};
+static constexpr uint32_t CAN_DIAG_NOTIFY_INTERVAL_MS = 2000;
+static constexpr uint32_t CAN_RECOVERY_BACKOFF_MS     = 300;
 
 // ===== GPS state =====
 static HardwareSerial GPSSerial(1);
@@ -1177,8 +1183,8 @@ void cfg_boot_load_and_apply() {
 static void waitForConnection();
 static bool startCanBusReader();
 static void stopCanBusReader();
-static bool restartCanBusReader(const char *cause = nullptr);
-static void handleCanFault(const char *cause);
+static bool restartCanBusReader(const char *cause = nullptr, uint32_t backoffMs = 50);
+static void handleCanFault(const char *cause, uint32_t backoffMs = 50);
 static bool checkCanBusHealth(uint32_t now);
 [[maybe_unused]] static void noteCanWriteResult(bool success);
 [[maybe_unused]] static bool writeFrameWithWatch(CanFrame &frame, uint32_t timeout = 1);
@@ -1187,7 +1193,7 @@ static void setLastReconnectCause(const char *reason);
 static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len);
 static void handleBufferedPacketsBurst(uint32_t budget_us = 2000);
 static void flushBufferedPackets();
-static void sendNumCanBusTimeouts();
+static void sendCanDiagnostics(uint32_t now);
 static void resetSkippedUpdatesCounters();
 static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len);
 
@@ -1286,7 +1292,8 @@ static void recoverRaceChronoConnection(const char *reason) {
 
   apply_profile_and_dividers();
 
-  sendNumCanBusTimeouts();
+  lastCanDiagSendMs = 0;
+  sendCanDiagnostics(millis());
 }
 
 static void queueBleRestart(const char *reason) {
@@ -1321,6 +1328,11 @@ static bool startCanBusReader() {
   isCanBusReaderActive = true;
   have_seen_any_can = false;
   lastCanMessageReceivedMs = millis();
+  lastCanRestartMs = lastCanMessageReceivedMs;
+  lastTwaiStatus.state = TWAI_STATE_RUNNING;
+  lastTwaiStatus.tx_error_counter = 0;
+  lastTwaiStatus.rx_error_counter = 0;
+  lastTwaiStatus.bus_error_count = 0;
   return true;
 }
 
@@ -1330,6 +1342,10 @@ static void stopCanBusReader() {
   lastCanStatusCheckMs = 0;
   canTxFailureWindowStart = 0;
   canTxFailuresInWindow = 0;
+  lastTwaiStatus.state = TWAI_STATE_STOPPED;
+  lastTwaiStatus.tx_error_counter = 0;
+  lastTwaiStatus.rx_error_counter = 0;
+  lastTwaiStatus.bus_error_count = 0;
 }
 
 static void setLastReconnectCause(const char *reason) {
@@ -1338,7 +1354,7 @@ static void setLastReconnectCause(const char *reason) {
   lastReconnectCause[sizeof(lastReconnectCause) - 1] = '\0';
 }
 
-static bool restartCanBusReader(const char *cause) {
+static bool restartCanBusReader(const char *cause, uint32_t backoffMs = 50) {
   if (cause && cause[0]) {
     Serial.printf("CAN: restart (%s)\n", cause);
     setLastReconnectCause(cause);
@@ -1348,19 +1364,21 @@ static bool restartCanBusReader(const char *cause) {
   }
 
   stopCanBusReader();
-  delay(50);
+  delay(backoffMs);
 
   bool started = startCanBusReader();
   if (started) {
     flushBufferedPackets();
     resetSkippedUpdatesCounters();
     lastCanMessageReceivedMs = millis();
+    canRestartCount++;
+    lastCanDiagSendMs = 0;
   }
 
   return started;
 }
 
-static void handleCanFault(const char *cause) {
+static void handleCanFault(const char *cause, uint32_t backoffMs = 50) {
   char reason[64];
   if (cause && cause[0]) {
     strncpy(reason, cause, sizeof(reason) - 1);
@@ -1372,8 +1390,9 @@ static void handleCanFault(const char *cause) {
 
   Serial.printf("ERROR: %s -> restart CAN\n", reason);
   num_can_bus_timeouts++;
-  sendNumCanBusTimeouts();
-  restartCanBusReader(reason);
+  lastCanDiagSendMs = 0;
+  sendCanDiagnostics(millis());
+  restartCanBusReader(reason, backoffMs);
 }
 
 static bool checkCanBusHealth(uint32_t now) {
@@ -1387,13 +1406,16 @@ static bool checkCanBusHealth(uint32_t now) {
     return false;
   }
 
+  lastTwaiStatus = status;
+
   if (status.state == TWAI_STATE_BUS_OFF) {
+    canBusOffCount++;
     char reason[64];
     snprintf(reason, sizeof(reason),
              "TWAI bus-off (tx_err=%u rx_err=%u)",
              (unsigned)status.tx_error_counter,
              (unsigned)status.rx_error_counter);
-    handleCanFault(reason);
+    handleCanFault(reason, CAN_RECOVERY_BACKOFF_MS);
     return true;
   }
 
@@ -1549,13 +1571,24 @@ static void flushBufferedPackets() {
   bufferToReadFrom = 0;
 }
 
-static void sendNumCanBusTimeouts() {
-  uint8_t d[2] = {
-    (uint8_t)(num_can_bus_timeouts & 0xFF),
-    (uint8_t)(num_can_bus_timeouts >> 8)
+static void sendCanDiagnostics(uint32_t now) {
+  if (!bleIsConnected()) return;
+  if ((now - lastCanDiagSendMs) < CAN_DIAG_NOTIFY_INTERVAL_MS) return;
+
+  uint16_t busErr = (uint16_t)(lastTwaiStatus.bus_error_count & 0xFFFF);
+  uint16_t restartCount = (uint16_t)(canRestartCount & 0xFFFF);
+  uint8_t d[8] = {
+    (uint8_t)lastTwaiStatus.state,
+    (uint8_t)lastTwaiStatus.tx_error_counter,
+    (uint8_t)lastTwaiStatus.rx_error_counter,
+    (uint8_t)(busErr & 0xFF),
+    (uint8_t)((busErr >> 8) & 0xFF),
+    (uint8_t)(restartCount & 0xFF),
+    (uint8_t)(restartCount >> 8),
+    0
   };
-  bleSendCanData(0x777, d, 2);
-  last_time_num_can_bus_timeouts_sent_ms = millis();
+  bleSendCanData(0x777, d, 8);
+  lastCanDiagSendMs = now;
 }
 
 static void resetSkippedUpdatesCounters() {
@@ -1649,6 +1682,9 @@ static void show_stats() {
   Serial.println("=== CCA Stats ===");
   Serial.printf("RX count:        %lu\n", (unsigned long)rxCount);
   Serial.printf("CAN timeouts:    %u\n", (unsigned)num_can_bus_timeouts);
+  Serial.printf("CAN restarts:    %lu\n", (unsigned long)canRestartCount);
+  Serial.printf("CAN bus-off:     %lu\n", (unsigned long)canBusOffCount);
+  Serial.printf("Last CAN restart:%lu s\n", (unsigned long)(lastCanRestartMs / 1000UL));
   Serial.printf("BLE tx avg:      %.1f fps\n", bleTxMovingAverageFps);
   Serial.printf("BLE governor:    %s\n", bleGovernorActive ? "ACTIVE" : "idle");
   Serial.printf("Last reconnect:  %s\n", lastReconnectCause);
@@ -1874,10 +1910,8 @@ void loop() {
   // Oil channel
   oil_update_and_publish_if_due();
 
-  // Periodic timeout counter
-  if (now - last_time_num_can_bus_timeouts_sent_ms > 2000) {
-    sendNumCanBusTimeouts();
-  }
+  // Periodic CAN diagnostic frame
+  sendCanDiagnostics(now);
 
   // GPS service (read UART + notify BLE)
   gpsService(now);
