@@ -109,6 +109,7 @@ static constexpr uint32_t CAN_RECOVERY_BACKOFF_MS     = 300;
 // ===== GPS state =====
 static HardwareSerial GPSSerial(1);
 static bool gpsConfigured = false;
+static bool gpsWarnedNoNmea = false;
 static uint32_t gpsLastSentenceMs = 0;
 static uint32_t lastGpsNotifyMs = 0;
 static uint32_t lastGpsInitAttemptMs = 0;
@@ -992,20 +993,33 @@ static bool gpsLooksLikeNmea(uint32_t timeoutMs) {
   return false;
 }
 
-static bool gpsConfigurePort() {
+static bool gpsConfigurePort(bool *sawInitialNmea = nullptr) {
   const uint32_t bauds[] = { 9600, 38400, 57600, 115200 };
   bool detected = false;
+  uint32_t timeoutMs = 0;
+
+  while (GPSSerial.available()) {
+    GPSSerial.read();
+  }
+
   for (uint32_t baud : bauds) {
     GPSSerial.updateBaudRate(baud);
-    delay(60);
-    if (gpsLooksLikeNmea(500)) {
+    delay(80);
+    while (GPSSerial.available()) {
+      GPSSerial.read();
+    }
+    timeoutMs = (baud <= 9600) ? 1200 : 800;
+    if (gpsLooksLikeNmea(timeoutMs)) {
       Serial.printf("[GPS] Detected NMEA @ %lu\n", static_cast<unsigned long>(baud));
       detected = true;
       break;
     }
   }
+  if (sawInitialNmea) {
+    *sawInitialNmea = detected;
+  }
   if (!detected) {
-    Serial.println("[GPS] No NMEA detected");
+    GPSSerial.updateBaudRate(9600);
     return false;
   }
 
@@ -1020,7 +1034,10 @@ static bool gpsConfigurePort() {
   delay(20);
   GPSSerial.begin(115200, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
   delay(80);
-  if (!gpsLooksLikeNmea(800)) {
+  while (GPSSerial.available()) {
+    GPSSerial.read();
+  }
+  if (!gpsLooksLikeNmea(1200)) {
     Serial.println("[GPS] Missing NMEA after baud switch");
     return false;
   }
@@ -1039,15 +1056,28 @@ static void gpsInit() {
   GPSSerial.begin(9600, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
   delay(100);
 
-  if (gpsConfigurePort()) {
+  bool sawInitialNmea = false;
+  bool configuredOk = gpsConfigurePort(&sawInitialNmea);
+  gpsResetSyncState();
+
+  if (configuredOk) {
     gpsConfigured = true;
     gpsLastSentenceMs = millis();
-    gpsResetSyncState();
+    gpsWarnedNoNmea = false;
     Serial.println("[GPS] Configured: RMC+GGA @10Hz, 115200");
+    return;
+  }
+
+  gpsConfigured = true;
+  gpsLastSentenceMs = millis();
+  if (!sawInitialNmea) {
+    if (!gpsWarnedNoNmea) {
+      Serial.println("[GPS] No NMEA detected; using raw stream");
+      gpsWarnedNoNmea = true;
+    }
+    GPSSerial.updateBaudRate(9600);
   } else {
-    GPSSerial.end();
-    gpsConfigured = false;
-    gpsResetSyncState();
+    Serial.println("[GPS] Using raw stream (baud switch not acknowledged)");
   }
 }
 
@@ -1366,8 +1396,9 @@ static bool startCanBusReader() {
   Serial.println("CAN OK.");
   isCanBusReaderActive = true;
   have_seen_any_can = false;
-  lastCanMessageReceivedMs = millis();
-  lastCanRestartMs = lastCanMessageReceivedMs;
+  uint32_t nowMs = millis();
+  lastCanMessageReceivedMs = nowMs;
+  lastCanRestartMs = nowMs;
   lastTwaiStatus.state = TWAI_STATE_RUNNING;
   lastTwaiStatus.tx_error_counter = 0;
   lastTwaiStatus.rx_error_counter = 0;
@@ -1412,6 +1443,7 @@ static bool restartCanBusReader(const char *cause, uint32_t backoffMs) {
     lastCanMessageReceivedMs = millis();
     canRestartCount++;
     lastCanDiagSendMs = 0;
+    lastCanRestartMs = millis();
   }
 
   return started;
@@ -1615,6 +1647,7 @@ static void sendCanDiagnostics(uint32_t now) {
   if ((now - lastCanDiagSendMs) < CAN_DIAG_NOTIFY_INTERVAL_MS) return;
 
   uint16_t busErr = (uint16_t)(lastTwaiStatus.bus_error_count & 0xFFFF);
+  uint16_t busOff = (uint16_t)(canBusOffCount & 0xFFFF);
   uint16_t restartCount = (uint16_t)(canRestartCount & 0xFFFF);
   uint8_t d[8] = {
     (uint8_t)lastTwaiStatus.state,
@@ -1624,7 +1657,7 @@ static void sendCanDiagnostics(uint32_t now) {
     (uint8_t)((busErr >> 8) & 0xFF),
     (uint8_t)(restartCount & 0xFF),
     (uint8_t)(restartCount >> 8),
-    0
+    (uint8_t)(busOff & 0xFF)
   };
   bleSendCanData(0x777, d, 8);
   lastCanDiagSendMs = now;
@@ -1723,7 +1756,9 @@ static void show_stats() {
   Serial.printf("CAN timeouts:    %u\n", (unsigned)num_can_bus_timeouts);
   Serial.printf("CAN restarts:    %lu\n", (unsigned long)canRestartCount);
   Serial.printf("CAN bus-off:     %lu\n", (unsigned long)canBusOffCount);
-  Serial.printf("Last CAN restart:%lu s\n", (unsigned long)(lastCanRestartMs / 1000UL));
+  uint32_t now = millis();
+  uint32_t sinceRestartMs = lastCanRestartMs ? (now - lastCanRestartMs) : 0;
+  Serial.printf("Last CAN restart:%lu s ago\n", (unsigned long)(sinceRestartMs / 1000UL));
   Serial.printf("BLE tx avg:      %.1f fps\n", bleTxMovingAverageFps);
   Serial.printf("BLE governor:    %s\n", bleGovernorActive ? "ACTIVE" : "idle");
   Serial.printf("Last reconnect:  %s\n", lastReconnectCause);
