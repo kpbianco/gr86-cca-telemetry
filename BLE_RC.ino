@@ -20,6 +20,11 @@
 
 #include <ESP32-TWAI-CAN.hpp>
 #include <NimBLEDevice.h>
+#if defined(CONFIG_NIMBLE_CPP_IDF)
+#include "host/ble_gap.h"
+#else
+#include "nimble/nimble/host/include/host/ble_gap.h"
+#endif
 #include <Preferences.h>
 #include <cstdio>
 #include <cstring>
@@ -153,6 +158,154 @@ static NimBLECharacteristic* g_can    = nullptr; // 0x0001
 static NimBLECharacteristic* g_fil    = nullptr; // 0x0002
 static NimBLECharacteristic* g_gps    = nullptr; // 0x0003
 static NimBLECharacteristic* g_gtm    = nullptr; // 0x0004
+
+static constexpr uint16_t BLE_LINK_PRI_INVALID_HANDLE      = 0xFFFF;
+static constexpr uint16_t BLE_LINK_PRI_MIN_INTERVAL_UNITS  = 6;   // 7.5 ms
+static constexpr uint16_t BLE_LINK_PRI_MAX_INTERVAL_UNITS  = 12;  // 15 ms
+static constexpr uint16_t BLE_LINK_PRI_LATENCY              = 0;
+static constexpr uint16_t BLE_LINK_PRI_TIMEOUT_UNITS        = 200; // 2.0 s
+static constexpr uint32_t BLE_LINK_PRI_RETRY_DELAY_MS       = 2000;
+
+static bool     g_bleLinkPriEnabled           = true;
+static bool     g_bleLinkPriCallbacksAttached = false;
+static uint16_t g_bleLinkPriConnHandle        = BLE_LINK_PRI_INVALID_HANDLE;
+static bool     g_bleLinkPriRetryArmed        = false;
+static bool     g_bleLinkPriRetryDone         = false;
+static uint32_t g_bleLinkPriRetryAtMs         = 0;
+
+static bool bleLinkPri_requestConnParams(uint16_t connHandle, const char *label);
+static void bleLinkPri_resetState();
+static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo);
+static void bleLinkPri_onDisconnect();
+static void bleLinkPri_service(uint32_t now);
+static void bleLinkPri_attachIfReady();
+
+void bleLinkPri_setEnabled(bool enabled);
+bool bleLinkPri_isEnabled();
+
+class BleLinkPriCallbacks : public NimBLEServerCallbacks {
+ public:
+  void onConnect(NimBLEServer*, NimBLEConnInfo& connInfo) override {
+    bleLinkPri_onConnect(connInfo);
+  }
+
+  void onDisconnect(NimBLEServer*, NimBLEConnInfo&, int) override {
+    bleLinkPri_onDisconnect();
+  }
+
+  void onMTUChange(uint16_t MTU, NimBLEConnInfo&) override {
+    Serial.printf("MTU negotiated: %u\n", static_cast<unsigned>(MTU));
+  }
+
+  void onConnParamsUpdate(NimBLEConnInfo& connInfo) override {
+    float intervalMs = static_cast<float>(connInfo.getConnInterval()) * 1.25f;
+    float timeoutSec = static_cast<float>(connInfo.getConnTimeout()) * 0.010f;
+    Serial.printf("ConnParams update: interval=%.2f ms latency=%u timeout=%.2f s\n",
+                  intervalMs,
+                  static_cast<unsigned>(connInfo.getConnLatency()),
+                  timeoutSec);
+  }
+} static g_bleLinkPriCallbacks;
+
+static void bleLinkPri_resetState() {
+  g_bleLinkPriConnHandle = BLE_LINK_PRI_INVALID_HANDLE;
+  g_bleLinkPriRetryArmed = false;
+  g_bleLinkPriRetryDone = false;
+  g_bleLinkPriRetryAtMs = 0;
+}
+
+static void bleLinkPri_attachIfReady() {
+  if (g_bleLinkPriCallbacksAttached) return;
+  if (!g_server) return;
+  g_server->setCallbacks(&g_bleLinkPriCallbacks, false);
+  g_bleLinkPriCallbacksAttached = true;
+}
+
+static bool bleLinkPri_requestConnParams(uint16_t connHandle, const char *label) {
+  if (!g_server) return false;
+  if (connHandle == BLE_LINK_PRI_INVALID_HANDLE) return false;
+
+  const char *tag = (label && label[0]) ? label : "req";
+  float minMs = static_cast<float>(BLE_LINK_PRI_MIN_INTERVAL_UNITS) * 1.25f;
+  float maxMs = static_cast<float>(BLE_LINK_PRI_MAX_INTERVAL_UNITS) * 1.25f;
+  float timeoutSec = static_cast<float>(BLE_LINK_PRI_TIMEOUT_UNITS) * 0.010f;
+
+  ble_gap_upd_params params = {
+    .itvl_min = BLE_LINK_PRI_MIN_INTERVAL_UNITS,
+    .itvl_max = BLE_LINK_PRI_MAX_INTERVAL_UNITS,
+    .latency = BLE_LINK_PRI_LATENCY,
+    .supervision_timeout = BLE_LINK_PRI_TIMEOUT_UNITS,
+    .min_ce_len = BLE_GAP_INITIAL_CONN_MIN_CE_LEN,
+    .max_ce_len = BLE_GAP_INITIAL_CONN_MAX_CE_LEN,
+  };
+
+  int rc = ble_gap_update_params(connHandle, &params);
+  Serial.printf("ConnParams %s: min=%.2f ms max=%.2f ms lat=%u timeout=%.2f s -> %s",
+                tag,
+                minMs,
+                maxMs,
+                static_cast<unsigned>(BLE_LINK_PRI_LATENCY),
+                timeoutSec,
+                (rc == 0) ? "sent" : "rejected");
+  if (rc != 0) {
+    Serial.printf(" (err=%d)\n", rc);
+  } else {
+    Serial.println();
+  }
+  return rc == 0;
+}
+
+static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo) {
+  g_bleLinkPriConnHandle = connInfo.getConnHandle();
+  g_bleLinkPriRetryDone = false;
+
+  if (!g_bleLinkPriEnabled) {
+    g_bleLinkPriRetryArmed = false;
+    return;
+  }
+
+  bleLinkPri_requestConnParams(g_bleLinkPriConnHandle, "req");
+  g_bleLinkPriRetryArmed = true;
+  g_bleLinkPriRetryAtMs = millis() + BLE_LINK_PRI_RETRY_DELAY_MS;
+}
+
+static void bleLinkPri_onDisconnect() {
+  bleLinkPri_resetState();
+}
+
+static void bleLinkPri_service(uint32_t now) {
+  if (!g_bleLinkPriEnabled) return;
+  if (!g_bleLinkPriRetryArmed) return;
+  if (g_bleLinkPriRetryDone) return;
+  if (g_bleLinkPriConnHandle == BLE_LINK_PRI_INVALID_HANDLE) return;
+  if (static_cast<int32_t>(now - g_bleLinkPriRetryAtMs) < 0) return;
+
+  g_bleLinkPriRetryDone = true;
+  g_bleLinkPriRetryArmed = false;
+  bleLinkPri_requestConnParams(g_bleLinkPriConnHandle, "retry");
+}
+
+void bleLinkPri_setEnabled(bool enabled) {
+  if (enabled == g_bleLinkPriEnabled) return;
+  g_bleLinkPriEnabled = enabled;
+
+  if (!enabled) {
+    g_bleLinkPriRetryArmed = false;
+    g_bleLinkPriRetryDone = false;
+    return;
+  }
+
+  if (g_bleLinkPriConnHandle == BLE_LINK_PRI_INVALID_HANDLE) return;
+
+  bleLinkPri_requestConnParams(g_bleLinkPriConnHandle, "req");
+  g_bleLinkPriRetryDone = false;
+  g_bleLinkPriRetryArmed = true;
+  g_bleLinkPriRetryAtMs = millis() + BLE_LINK_PRI_RETRY_DELAY_MS;
+}
+
+bool bleLinkPri_isEnabled() {
+  return g_bleLinkPriEnabled;
+}
 
 // RMC fields
 static int    rmc_hour = 0, rmc_min = 0, rmc_sec = 0, rmc_millis = 0;
@@ -952,8 +1105,10 @@ static void parseGgaSentence(char *line) {
 static void bleInit(){
   NimBLEDevice::init(DEVICE_NAME);
   NimBLEDevice::setPower(ESP_PWR_LVL_P9);
+  NimBLEDevice::setMTU(185);
 
   g_server = NimBLEDevice::createServer();
+  bleLinkPri_attachIfReady();
 
   g_svc = g_server->createService(RC_SERVICE_UUID);
 
@@ -2092,6 +2247,7 @@ void loop() {
   esp_task_wdt_reset();
 
   servicePendingBleRestart();
+  bleLinkPri_attachIfReady();
 
   // Handle disconnect / reconnect
   if ((loop_iteration % 100) == 0 && !bleIsConnected()) {
@@ -2115,6 +2271,8 @@ void loop() {
   }
 
   const uint32_t now = millis();
+
+  bleLinkPri_service(now);
 
   if (checkCanBusHealth(now)) {
     return;
