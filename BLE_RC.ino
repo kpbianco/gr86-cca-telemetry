@@ -907,22 +907,48 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
   if (!d || L < 1) return;
   uint8_t cmd = d[0];
   switch (cmd) {
-    case 0: // Deny all
-      Serial.println("FIL: DENY ALL");
-      pidMap.reset();
+    case 0: { // Deny all
+      Serial.println("FIL: DENY ALL -> keeping profile allow-list");
+      resetSkippedUpdatesCounters();
       break;
-    case 1: // Allow all + interval
+    }
+    case 1: { // Allow all + interval
+      uint16_t interval = 0;
       if (L >= 3) {
-        uint16_t interval = ((uint16_t)d[1] << 8) | d[2];
-        Serial.printf("FIL: ALLOW ALL (interval=%ums ignored)\n", interval);
-      } else {
-        Serial.println("FIL: ALLOW ALL");
+        interval = ((uint16_t)d[1] << 8) | d[2];
+      }
+      Serial.printf("FIL: ALLOW ALL (interval=%ums)\n", (unsigned)interval);
+      clearDeny();
+      break;
+    }
+    case 2: { // Allow one PID (minimal accept)
+      if (L < 7) {
+        Serial.println("FIL: ALLOW PID (ignored; packet too short)");
+        break;
+      }
+      uint32_t pid = ((uint32_t)d[1]) |
+                     ((uint32_t)d[2] << 8) |
+                     ((uint32_t)d[3] << 16) |
+                     ((uint32_t)d[4] << 24);
+      uint16_t interval = ((uint16_t)d[5] << 8) | d[6];
+      Serial.printf("FIL: ALLOW PID 0x%03lX (interval=%ums)\n",
+                    static_cast<unsigned long>(pid),
+                    (unsigned)interval);
+
+      removeDeny(pid);
+
+      if (USE_PROFILE_ALLOWLIST) {
+        pidMap.allowOnePid(pid, interval);
+        if (PidExtra *extra = pidMap.getOrCreateExtra(pid)) {
+          uint8_t base = compute_default_divider_for_pid(pid);
+          if (base == 0) base = 1;
+          set_extra_base_divider(extra, base, /*resetGovernor=*/true);
+        }
       }
       break;
-    case 2: // Allow one PID (minimal accept)
-      Serial.println("FIL: ALLOW PID (accepted)");
+    }
+    default:
       break;
-    default: break;
   }
 }
 
