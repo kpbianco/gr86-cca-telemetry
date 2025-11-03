@@ -1958,14 +1958,23 @@ struct BufferedMessage {
   uint8_t  data[8];
   uint8_t  length;
 };
-static const uint8_t NUM_BUFFERS = 32;
+static constexpr size_t NUM_BUFFERS = 64;
 static BufferedMessage buffers[NUM_BUFFERS];
-static uint8_t bufferToWriteTo = 0;
-static uint8_t bufferToReadFrom = 0;
+static uint32_t bufferToWriteTo = 0;
+static uint32_t bufferToReadFrom = 0;
+static uint32_t lastBufferOverflowWarningMs = 0;
+
+static inline uint32_t bufferedPacketCount() {
+  return bufferToWriteTo - bufferToReadFrom;
+}
 
 static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len) {
-  if (bufferToWriteTo - bufferToReadFrom == NUM_BUFFERS) {
-    Serial.println("WARNING: RX buffer overflow, dropping oldest.");
+  if (bufferedPacketCount() == static_cast<uint32_t>(NUM_BUFFERS)) {
+    uint32_t nowMs = millis();
+    if (nowMs - lastBufferOverflowWarningMs >= 250) {
+      Serial.println("WARNING: RX buffer overflow, dropping oldest.");
+      lastBufferOverflowWarningMs = nowMs;
+    }
     bufferToReadFrom++;
   }
   BufferedMessage *m = &buffers[bufferToWriteTo % NUM_BUFFERS];
@@ -1977,7 +1986,11 @@ static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len) {
 
 static void handleBufferedPacketsBurst(uint32_t budget_us) {
   uint32_t t0 = micros();
-  while (bufferToReadFrom != bufferToWriteTo && (micros() - t0) < budget_us) {
+  uint32_t baseBudget = budget_us ? budget_us : 1;
+  uint32_t extendedBudget = baseBudget;
+  bool catchUpMode = false;
+
+  while (bufferToReadFrom != bufferToWriteTo) {
     BufferedMessage *m = &buffers[bufferToReadFrom % NUM_BUFFERS];
 
     void *entry = pidMap.getEntryId(m->pid);
@@ -2040,12 +2053,33 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
     }
 
     bufferToReadFrom++;
+
+    uint32_t elapsed = micros() - t0;
+    if (!catchUpMode) {
+      if (elapsed >= baseBudget) {
+        if (bufferedPacketCount() > (static_cast<uint32_t>(NUM_BUFFERS) / 2)) {
+          catchUpMode = true;
+          uint32_t scaled = baseBudget * 4;
+          extendedBudget = (scaled > baseBudget) ? scaled : 0xFFFFFFFFu;
+        } else {
+          break;
+        }
+      }
+    } else {
+      if (bufferedPacketCount() <= (static_cast<uint32_t>(NUM_BUFFERS) / 4)) {
+        break;
+      }
+      if (elapsed >= extendedBudget) {
+        break;
+      }
+    }
   }
 }
 
 static void flushBufferedPackets() {
   bufferToWriteTo = 0;
   bufferToReadFrom = 0;
+  lastBufferOverflowWarningMs = 0;
 }
 
 static void sendCanDiagnostics(uint32_t now) {
