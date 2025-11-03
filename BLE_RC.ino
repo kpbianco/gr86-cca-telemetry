@@ -342,6 +342,9 @@ struct PidExtra {
   uint8_t baseDivider      = DEFAULT_UPDATE_RATE_DIVIDER;
   uint8_t governorDivider  = 1;
   uint8_t skippedUpdates   = 0;
+  uint8_t lastLength       = 0;
+  uint8_t lastData[8]      = {0};
+  bool    hasLastPayload   = false;
 };
 
 // Minimal pid map implementation for allow-listing + extras.
@@ -497,6 +500,9 @@ static void set_extra_base_divider(PidExtra *extra, uint8_t div, bool resetGover
     extra->governorDivider = 1;
   }
   extra->skippedUpdates = 0;
+  extra->hasLastPayload = false;
+  extra->lastLength = 0;
+  memset(extra->lastData, 0, sizeof(extra->lastData));
 }
 
 static void apply_divider_to_pidmap(uint16_t pid, uint8_t div, bool resetGovernor = false) {
@@ -708,6 +714,9 @@ static bool restore_governor_snapshot(const GovernorSnapshot *snapshots, size_t 
     if (gov < 1) gov = 1;
     extra->governorDivider = gov;
     extra->skippedUpdates = 0;
+    extra->hasLastPayload = false;
+    extra->lastLength = 0;
+    memset(extra->lastData, 0, sizeof(extra->lastData));
     if (gov > 1) any = true;
   }
   return any;
@@ -765,6 +774,9 @@ static bool governorIncreaseDividers() {
         if (gov == 0) gov = 1;
         extra->governorDivider = gov;
         extra->skippedUpdates = 0;
+        extra->hasLastPayload = false;
+        extra->lastLength = 0;
+        memset(extra->lastData, 0, sizeof(extra->lastData));
         changed = true;
       }
     }
@@ -787,6 +799,9 @@ static bool governorRelaxDividers() {
         if (newGov < 1) newGov = 1;
         extra->governorDivider = newGov;
         extra->skippedUpdates = 0;
+        extra->hasLastPayload = false;
+        extra->lastLength = 0;
+        memset(extra->lastData, 0, sizeof(extra->lastData));
         changed = true;
         eff = effective_divider(extra);
       } else {
@@ -1956,18 +1971,45 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
     }
 
     if (allowed) {
-      if (entry) {
-        PidExtra *extra = pidMap.getExtra(entry);
-        uint8_t div = effective_divider(extra);
-        if (extra->skippedUpdates == 0) {
-          bleSendCanData(m->pid, m->data, m->length);
+      PidExtra *extra = entry ? pidMap.getExtra(entry) : nullptr;
+      uint8_t div = extra ? effective_divider(extra) : 1;
+      bool dataChanged = false;
+      if (extra) {
+        if (!extra->hasLastPayload || extra->lastLength != m->length) {
+          dataChanged = true;
+        } else if (m->length &&
+                   memcmp(extra->lastData, m->data, m->length) != 0) {
+          dataChanged = true;
         }
-        extra->skippedUpdates++;
+      }
+
+      bool shouldSend = (!extra) || dataChanged || (extra->skippedUpdates == 0);
+      if (shouldSend) {
+        bleSendCanData(m->pid, m->data, m->length);
+        if (extra) {
+          extra->hasLastPayload = true;
+          extra->lastLength = m->length;
+          if (m->length) {
+            memcpy(extra->lastData, m->data, m->length);
+            if (m->length < sizeof(extra->lastData)) {
+              memset(extra->lastData + m->length, 0,
+                     sizeof(extra->lastData) - m->length);
+            }
+          } else {
+            memset(extra->lastData, 0, sizeof(extra->lastData));
+          }
+        }
+      }
+
+      if (extra) {
+        if (shouldSend) {
+          extra->skippedUpdates = 1;
+        } else {
+          extra->skippedUpdates++;
+        }
         if (extra->skippedUpdates >= div) {
           extra->skippedUpdates = 0;
         }
-      } else {
-        bleSendCanData(m->pid, m->data, m->length);
       }
     }
 
@@ -2003,7 +2045,10 @@ static void sendCanDiagnostics(uint32_t now) {
 
 static void resetSkippedUpdatesCounters() {
   struct { void operator()(void *entry) {
-    ((SimplePidMap<PidExtra>::Entry*)entry)->extra.skippedUpdates = 0;
+    PidExtra &extra = ((SimplePidMap<PidExtra>::Entry*)entry)->extra;
+    extra.skippedUpdates = 0;
+    extra.hasLastPayload = false;
+    extra.lastLength = 0;
   }} fun;
   pidMap.forEach(fun);
 }
