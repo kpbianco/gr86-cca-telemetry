@@ -530,12 +530,11 @@ static void removeDeny(uint32_t pid) {
 static void clearDeny() { denyCount = 0; }
 
 // ===== Profile allow-list =====
-using pidmaps::PidMapDefinition;
 using pidmaps::PidRule;
 
-static const PidMapDefinition *CAR_PID_MAP = ACTIVE_PID_MAP;
+static const pidmaps::PidMapDefinition *CAR_PID_MAP = ACTIVE_PID_MAP;
 
-static inline const PidMapDefinition *active_pid_map() {
+static inline const pidmaps::PidMapDefinition *active_pid_map() {
   return CAR_PID_MAP;
 }
 
