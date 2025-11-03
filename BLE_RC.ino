@@ -96,6 +96,7 @@ static constexpr uint32_t MS_PER_DAY    = 24 * MS_PER_HOUR;
 
 static uint32_t rxCount = 0;
 static uint32_t lastRxPrintMs = 0;
+static constexpr uint32_t CAN_RX_PRINT_INTERVAL_MS = 200;
 
 static char lastReconnectCause[64] = "boot";
 static char pendingBleRestartReason[64] = "";
@@ -1958,11 +1959,14 @@ struct BufferedMessage {
   uint8_t  data[8];
   uint8_t  length;
 };
-static constexpr size_t NUM_BUFFERS = 64;
+static constexpr size_t NUM_BUFFERS = 256;
 static BufferedMessage buffers[NUM_BUFFERS];
 static uint32_t bufferToWriteTo = 0;
 static uint32_t bufferToReadFrom = 0;
 static uint32_t lastBufferOverflowWarningMs = 0;
+
+static constexpr uint32_t CAN_RX_READ_BUDGET_US = 2000;      // microseconds per poll burst
+static constexpr uint32_t CAN_RX_BUDGET_CHECK_INTERVAL = 16; // frames between budget checks
 
 static inline uint32_t bufferedPacketCount() {
   return bufferToWriteTo - bufferToReadFrom;
@@ -2400,22 +2404,42 @@ void loop() {
     hbCounter++;
   }
 
-  // TWAI RX -> buffer
+  // TWAI RX -> buffer (within a short budget so GPS isn't starved)
   CanFrame rx;
+  uint32_t canPollStartUs = micros();
+  uint32_t framesPolled = 0;
   while (ESP32Can.readFrame(rx, 0)) {
-    if (rx.rtr) continue;
+    framesPolled++;
+    if (rx.rtr) {
+      if ((framesPolled % CAN_RX_BUDGET_CHECK_INTERVAL) == 0) {
+        uint32_t elapsedUs = micros() - canPollStartUs;
+        if (elapsedUs >= CAN_RX_READ_BUDGET_US) {
+          break;
+        }
+      }
+      continue;
+    }
+
+    uint32_t frameNow = millis();
     have_seen_any_can = true;
-    lastCanMessageReceivedMs = now;
+    lastCanMessageReceivedMs = frameNow;
 
     rxCount++;
-    if (now - lastRxPrintMs >= 100) {
-      lastRxPrintMs = now;
+    if (frameNow - lastRxPrintMs >= CAN_RX_PRINT_INTERVAL_MS) {
+      lastRxPrintMs = frameNow;
       Serial.printf("RX #%lu id=%03X dlc=%d\n", (unsigned long)rxCount,
                     rx.identifier, rx.data_length_code);
     }
 
     if (rx.data_length_code) {
       bufferNewPacket(rx.identifier, rx.data, rx.data_length_code);
+    }
+
+    if ((framesPolled % CAN_RX_BUDGET_CHECK_INTERVAL) == 0) {
+      uint32_t elapsedUs = micros() - canPollStartUs;
+      if (elapsedUs >= CAN_RX_READ_BUDGET_US) {
+        break;
+      }
     }
   }
 
@@ -2425,13 +2449,15 @@ void loop() {
   // Oil channel
   oil_update_and_publish_if_due();
 
+  uint32_t postCanNow = millis();
+
   // Periodic CAN diagnostic frame
-  sendCanDiagnostics(now);
+  sendCanDiagnostics(postCanNow);
 
   // GPS service (read UART + notify BLE)
-  gpsService(now);
+  gpsService(postCanNow);
 
-  updateBleGovernor(now);
+  updateBleGovernor(postCanNow);
 
   // ---- Robust Serial CLI: accept CR, LF, CRLF, or no line ending ----
   static char cliBuf[CLI_BUF_SIZE];
