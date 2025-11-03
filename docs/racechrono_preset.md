@@ -38,7 +38,7 @@ Frequency=25
 
 ## Key FT86/ZN8 CAN channels
 
-The table below lists the most useful factory CAN IDs for the second-generation FT86 platform (GR86/BRZ). All of these IDs are whitelisted and rate-limited by the firmware for RaceChrono streaming.【F:pid_map.h†L6-L83】 Use one row per RaceChrono channel; make sure to select Motorola byte order and enter the equation exactly as shown.
+The table below lists the most useful factory CAN IDs for the second-generation FT86 platform (GR86/BRZ). All of these IDs are whitelisted and rate-limited by the firmware for RaceChrono streaming.【F:pidmaps/gr86_2022.h†L9-L118】 Use one row per RaceChrono channel; make sure to select Motorola byte order and enter the equation exactly as shown.
 
 | CAN ID | Signal | Bytes | RaceChrono equation | Unit | Notes |
 |-------:|--------|-------|---------------------|------|-------|
