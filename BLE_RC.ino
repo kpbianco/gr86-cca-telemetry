@@ -500,9 +500,8 @@ static void set_extra_base_divider(PidExtra *extra, uint8_t div, bool resetGover
 }
 
 static void apply_divider_to_pidmap(uint16_t pid, uint8_t div, bool resetGovernor = false) {
-  void *entry = pidMap.getEntryId(pid);
-  if (!entry) return;
-  PidExtra *extra = pidMap.getExtra(entry);
+  PidExtra *extra = pidMap.getOrCreateExtra(pid);
+  if (!extra) return;
   set_extra_base_divider(extra, div, resetGovernor);
 }
 
@@ -1941,8 +1940,16 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
   while (bufferToReadFrom != bufferToWriteTo && (micros() - t0) < budget_us) {
     BufferedMessage *m = &buffers[bufferToReadFrom % NUM_BUFFERS];
 
-    bool allowed = false;
     void *entry = pidMap.getEntryId(m->pid);
+    if (!USE_PROFILE_ALLOWLIST && !entry) {
+      if (PidExtra *extra = pidMap.getOrCreateExtra(m->pid)) {
+        uint8_t base = compute_default_divider_for_pid(m->pid);
+        set_extra_base_divider(extra, base, /*resetGovernor=*/false);
+        entry = pidMap.getEntryId(m->pid);
+      }
+    }
+
+    bool allowed = false;
     if (USE_PROFILE_ALLOWLIST) {
       allowed = (entry != nullptr) && !isDenied(m->pid);
     } else {
@@ -2016,12 +2023,9 @@ static void apply_allow_list_profile() {
     for (size_t i = 0; i < map->ruleCount; ++i) {
       const PidRule &r = map->rules[i];
       pidMap.allowOnePid(r.pid, /*ms*/40);
-      void *entry = pidMap.getEntryId(r.pid);
-      if (entry) {
-        // (Fix) correctly take the address of the entry's Extra
-        PidExtra *ee = &((SimplePidMap<PidExtra>::Entry*)entry)->extra;
+      if (PidExtra *extra = pidMap.getOrCreateExtra(r.pid)) {
         uint8_t base = (r.divider == 0 ? 1 : r.divider);
-        set_extra_base_divider(ee, base, /*resetGovernor=*/false);
+        set_extra_base_divider(extra, base, /*resetGovernor=*/false);
       }
     }
   }
@@ -2037,12 +2041,7 @@ static void apply_allow_all() {
   clearDeny();
   bleTxOverLimitSinceMs = 0;
   bleTxBelowLimitSinceMs = 0;
-  // No implicit population here; base dividers will apply lazily as PIDs appear
-  pidMap.forEach([&](void *entry) {
-    uint32_t pid = ((SimplePidMap<PidExtra>::Entry*)entry)->pid;
-    uint8_t base = compute_default_divider_for_pid(pid);
-    set_extra_base_divider(&((SimplePidMap<PidExtra>::Entry*)entry)->extra, base, /*resetGovernor=*/false);
-  });
+  // Entries will be created lazily when packets arrive or dividers are customized.
   bool restored = restore_governor_snapshot(snapshots, snapshotCount);
   bleGovernorActive = restored;
 }
