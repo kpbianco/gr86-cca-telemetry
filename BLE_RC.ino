@@ -534,16 +534,55 @@ static void clearDeny() { denyCount = 0; }
 struct PidRule { uint32_t pid; uint8_t divider; };
 
 // Seed list (extend as you validate):
+// Dividers express "send every Nth frame" for that CAN ID. Values below target ~25 Hz
+// for the very fast engine/chassis blocks while keeping slower diagnostics unthrottled.
 static const PidRule CAR_PROFILE[] = {
-  { 0x040, 4 },   // 100 Hz block -> 25 Hz
-  { 0x710, 1 },   // your oil channel
+  // 100 Hz drivetrain block
+  { 0x040, 4 },   // engine RPM / pedals -> 25 Hz
+  { 0x041, 4 },   // clutch / AC -> 25 Hz
+
+  // 50 Hz chassis dynamics block
+  { 0x118, 2 },   // mixed engine data -> 25 Hz
+  { 0x138, 2 },   // steering angle / yaw -> 25 Hz
+  { 0x139, 1 },   // vehicle speed / brake pressure (keep full rate)
+  { 0x13A, 2 },   // wheel speeds (ASC bus)
+  { 0x13B, 1 },   // accelerometers
+  { 0x13C, 2 },   // misc chassis signals
+  { 0x143, 2 },   // secondary speed source
+  { 0x146, 2 },   // additional dynamics block
+
+  // 33-20 Hz drivetrain / controls
+  { 0x228, 1 },   // reverse gear
+  { 0x241, 1 },   // clutch / gear selection
+  { 0x2D2, 2 },   // ABS / stability payload (~33 Hz)
+
+  // 10 Hz body / environmental sensors
+  { 0x328, 1 }, { 0x32B, 1 }, { 0x330, 1 }, { 0x332, 1 },
+  { 0x33A, 1 }, { 0x33B, 1 },
+  { 0x345, 1 },   // oil / coolant temps
+  { 0x390, 1 },   // intake air temp
+  { 0x393, 1 },   // fuel level
+  { 0x39A, 1 },
+  { 0x3A7, 1 }, { 0x3AC, 1 }, { 0x3D9, 1 },
+
+  // Body / HVAC / telematics (<=10 Hz unless noted)
+  { 0x500, 1 }, { 0x506, 1 }, { 0x509, 1 }, { 0x50B, 1 },
+  { 0x513, 1 }, { 0x515, 1 }, { 0x517, 1 },
+  { 0x640, 1 }, { 0x651, 1 }, { 0x652, 1 }, { 0x654, 1 },
+  { 0x658, 1 }, { 0x660, 1 }, { 0x663, 1 },
+  { 0x68C, 1 }, { 0x68D, 1 }, { 0x6B1, 1 }, { 0x6BB, 1 },
+  { 0x6CF, 1 }, { 0x6DF, 1 },
+  { 0x6E1, 1 }, { 0x6E2, 1 },   // TPMS
+  { 0x6FB, 1 }, { 0x6FC, 1 },
+
+  // Custom sensors
+  { 0x710, 1 },   // oil pressure synthetic CAN frame
 };
 static const size_t CAR_PROFILE_LEN = sizeof(CAR_PROFILE)/sizeof(CAR_PROFILE[0]);
 
 // Divider hint
 static uint8_t divider_override(uint32_t can_id) {
   if (can_id == 0x139) return 1;  // brake/speed critical
-  if (can_id == 0x345) return 10; // slow group example
   return 0;
 }
 
@@ -618,7 +657,6 @@ static uint8_t compute_default_divider_for_pid(uint32_t pid) {
   uint8_t div = divider_override(pid);
   if (!div) {
     if (pid == 0x139) div = 1;
-    else if (pid == 0x345) div = 10;
     else if (pid < 0x100) div = 4;
     else if (pid < 0x200) div = 2;
     else if (pid > 0x700) div = 1; // OBD replies
