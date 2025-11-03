@@ -531,59 +531,13 @@ static void removeDeny(uint32_t pid) {
 static void clearDeny() { denyCount = 0; }
 
 // ===== Profile allow-list =====
-struct PidRule { uint32_t pid; uint8_t divider; };
+using pidmaps::PidMapDefinition;
+using pidmaps::PidRule;
 
-// Seed list (extend as you validate):
-// Dividers express "send every Nth frame" for that CAN ID. Values below target ~25 Hz
-// for the very fast engine/chassis blocks while keeping slower diagnostics unthrottled.
-static const PidRule CAR_PROFILE[] = {
-  // 100 Hz drivetrain block
-  { 0x040, 4 },   // engine RPM / pedals -> 25 Hz
-  { 0x041, 4 },   // clutch / AC -> 25 Hz
+static const PidMapDefinition *CAR_PID_MAP = ACTIVE_PID_MAP;
 
-  // 50 Hz chassis dynamics block
-  { 0x118, 2 },   // mixed engine data -> 25 Hz
-  { 0x138, 2 },   // steering angle / yaw -> 25 Hz
-  { 0x139, 1 },   // vehicle speed / brake pressure (keep full rate)
-  { 0x13A, 2 },   // wheel speeds (ASC bus)
-  { 0x13B, 1 },   // accelerometers
-  { 0x13C, 2 },   // misc chassis signals
-  { 0x143, 2 },   // secondary speed source
-  { 0x146, 2 },   // additional dynamics block
-
-  // 33-20 Hz drivetrain / controls
-  { 0x228, 1 },   // reverse gear
-  { 0x241, 1 },   // clutch / gear selection
-  { 0x2D2, 2 },   // ABS / stability payload (~33 Hz)
-
-  // 10 Hz body / environmental sensors
-  { 0x328, 1 }, { 0x32B, 1 }, { 0x330, 1 }, { 0x332, 1 },
-  { 0x33A, 1 }, { 0x33B, 1 },
-  { 0x345, 1 },   // oil / coolant temps
-  { 0x390, 1 },   // intake air temp
-  { 0x393, 1 },   // fuel level
-  { 0x39A, 1 },
-  { 0x3A7, 1 }, { 0x3AC, 1 }, { 0x3D9, 1 },
-
-  // Body / HVAC / telematics (<=10 Hz unless noted)
-  { 0x500, 1 }, { 0x506, 1 }, { 0x509, 1 }, { 0x50B, 1 },
-  { 0x513, 1 }, { 0x515, 1 }, { 0x517, 1 },
-  { 0x640, 1 }, { 0x651, 1 }, { 0x652, 1 }, { 0x654, 1 },
-  { 0x658, 1 }, { 0x660, 1 }, { 0x663, 1 },
-  { 0x68C, 1 }, { 0x68D, 1 }, { 0x6B1, 1 }, { 0x6BB, 1 },
-  { 0x6CF, 1 }, { 0x6DF, 1 },
-  { 0x6E1, 1 }, { 0x6E2, 1 },   // TPMS
-  { 0x6FB, 1 }, { 0x6FC, 1 },
-
-  // Custom sensors
-  { 0x710, 1 },   // oil pressure synthetic CAN frame
-};
-static const size_t CAR_PROFILE_LEN = sizeof(CAR_PROFILE)/sizeof(CAR_PROFILE[0]);
-
-// Divider hint
-static uint8_t divider_override(uint32_t can_id) {
-  if (can_id == 0x139) return 1;  // brake/speed critical
-  return 0;
+static inline const PidMapDefinition *active_pid_map() {
+  return CAR_PID_MAP;
 }
 
 // Toggle: PROFILE allow-list (true) vs sniff-all (false)
@@ -648,20 +602,27 @@ static int find_custom_divider_index(uint16_t pid) {
 }
 
 static uint8_t compute_default_divider_for_pid(uint32_t pid) {
-  for (size_t i = 0; i < CAR_PROFILE_LEN; ++i) {
-    if (CAR_PROFILE[i].pid == pid) {
-      uint8_t div = CAR_PROFILE[i].divider;
-      return div == 0 ? 1 : div;
+  const auto *map = active_pid_map();
+  if (map) {
+    for (size_t i = 0; i < map->ruleCount; ++i) {
+      const PidRule &rule = map->rules[i];
+      if (rule.pid == pid) {
+        uint8_t div = rule.divider;
+        return div == 0 ? 1 : div;
+      }
+    }
+    if (map->policyDividerForId) {
+      uint8_t policy = map->policyDividerForId(pid);
+      if (policy) return policy;
     }
   }
-  uint8_t div = divider_override(pid);
-  if (!div) {
-    if (pid == 0x139) div = 1;
-    else if (pid < 0x100) div = 4;
-    else if (pid < 0x200) div = 2;
-    else if (pid > 0x700) div = 1; // OBD replies
-    else div = DEFAULT_UPDATE_RATE_DIVIDER;
-  }
+
+  if (pid == 0x139) return 1;
+  if (pid < 0x100) return 4;
+  if (pid < 0x200) return 2;
+  if (pid > 0x700) return 1; // OBD replies
+
+  uint8_t div = DEFAULT_UPDATE_RATE_DIVIDER;
   if (!div) div = 1;
   return div;
 }
@@ -2050,15 +2011,18 @@ static void apply_allow_list_profile() {
   clearDeny(); // optional fresh start
   bleTxOverLimitSinceMs = 0;
   bleTxBelowLimitSinceMs = 0;
-  for (size_t i = 0; i < CAR_PROFILE_LEN; ++i) {
-    const auto &r = CAR_PROFILE[i];
-    pidMap.allowOnePid(r.pid, /*ms*/40);
-    void *entry = pidMap.getEntryId(r.pid);
-    if (entry) {
-      // (Fix) correctly take the address of the entry's Extra
-      PidExtra *ee = &((SimplePidMap<PidExtra>::Entry*)entry)->extra;
-      uint8_t base = (r.divider == 0 ? 1 : r.divider);
-      set_extra_base_divider(ee, base, /*resetGovernor=*/false);
+  const auto *map = active_pid_map();
+  if (map) {
+    for (size_t i = 0; i < map->ruleCount; ++i) {
+      const PidRule &r = map->rules[i];
+      pidMap.allowOnePid(r.pid, /*ms*/40);
+      void *entry = pidMap.getEntryId(r.pid);
+      if (entry) {
+        // (Fix) correctly take the address of the entry's Extra
+        PidExtra *ee = &((SimplePidMap<PidExtra>::Entry*)entry)->extra;
+        uint8_t base = (r.divider == 0 ? 1 : r.divider);
+        set_extra_base_divider(ee, base, /*resetGovernor=*/false);
+      }
     }
   }
   bool restored = restore_governor_snapshot(snapshots, snapshotCount);

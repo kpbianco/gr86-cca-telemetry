@@ -15,3 +15,9 @@
 
 // CAN bus baud rate (500 kbps)
 static const long BAUD_RATE = 500 * 1000L;
+
+// ---- Car profile selection ----
+#include "pidmaps/pidmap_defs.h"
+#include "pidmaps/gr86_2022.h"
+
+static constexpr const pidmaps::PidMapDefinition *ACTIVE_PID_MAP = &pidmaps::GR86_2022;
