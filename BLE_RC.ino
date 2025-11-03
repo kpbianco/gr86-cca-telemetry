@@ -2307,8 +2307,8 @@ void loop() {
     rxCount++;
     if (now - lastRxPrintMs >= 100) {
       lastRxPrintMs = now;
-      Serial.printf("RX #%lu id=%03X dlc=%d\n",
-                    (unsigned long)rxCount, rx.identifier, rx.data_length_code);
+      Serial.printf("RX #%lu id=%03X dlc=%d\n", (unsigned long)rxCount,
+                    rx.identifier, rx.data_length_code);
     }
 
     if (rx.data_length_code) {

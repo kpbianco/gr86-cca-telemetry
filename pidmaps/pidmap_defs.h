@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef PIDMAPS_PIDMAP_DEFS_H
+#define PIDMAPS_PIDMAP_DEFS_H
+
 #include <stddef.h>
 #include <stdint.h>
 
@@ -19,3 +22,5 @@ struct PidMapDefinition {
 };
 
 }  // namespace pidmaps
+
+#endif  // PIDMAPS_PIDMAP_DEFS_H
