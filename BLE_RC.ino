@@ -41,6 +41,7 @@
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER and DEVICE_NAME
 #include "src/gps_nmea.h"
 #include "src/sched.hpp"
+#include "src/nvs_cfg.h"
 
 // ---------- Version ----------
 #ifndef FW_VERSION
@@ -111,8 +112,6 @@ static uint32_t notifies_suppressed_total = 0;
 static char lastReconnectCause[64] = "boot";
 static char pendingBleRestartReason[64] = "";
 static bool pendingBleRestart = false;
-
-static bool nvsWriteInProgress = false;
 
 static constexpr int TASK_WDT_TIMEOUT_SECONDS = 5;
 
@@ -565,6 +564,7 @@ static bool USE_PROFILE_ALLOWLIST = DEFAULT_USE_PROFILE_ALLOWLIST;
 #define ADC_SAMPLES         8
 #define ADC_IIR_ALPHA       0.15f
 #define ADC_DEADBAND_PSI    0.5f
+static constexpr float ADC_VALID_VREF = 3.60f;
 
 // Pressure range
 static const float P0_PSI = 0.0f;
@@ -604,11 +604,6 @@ struct __attribute__((packed)) CfgDividerBlob {
 
 static CfgPidDivider customDividers[CUSTOM_DIVIDER_MAX];
 static uint16_t customDividerCount = 0;
-
-struct ScopedNvsWrite {
-  ScopedNvsWrite()  { nvsWriteInProgress = true; }
-  ~ScopedNvsWrite() { nvsWriteInProgress = false; }
-};
 
 static int find_custom_divider_index(uint16_t pid) {
   for (uint16_t i = 0; i < customDividerCount; ++i) {
@@ -1464,23 +1459,36 @@ static void cfg_apply_runtime_defaults() {
 }
 
 bool cfg_load_from_nvs() {
-  bool anyLoaded = false;
-  if (!cfgPrefs.begin(CFG_NAMESPACE, true)) return false;
+  bool calibrationLoaded = oil_calibration_load(&V0_ADC, &V1_ADC);
+  if (!calibrationLoaded) {
+    V0_ADC = DEFAULT_V0_ADC;
+    V1_ADC = DEFAULT_V1_ADC;
+  }
+
+  bool anyLoaded = calibrationLoaded;
+  if (!cfgPrefs.begin(CFG_NAMESPACE, true)) return anyLoaded;
 
   customDividerCount = 0;
 
-  if (cfgPrefs.isKey("v0_adc")) {
-    float v0 = cfgPrefs.getFloat("v0_adc", V0_ADC);
-    if (v0 >= 0.0f && v0 < 3.4f) {
-      V0_ADC = v0;
-      anyLoaded = true;
+  if (!calibrationLoaded) {
+    bool legacyLoaded = false;
+    if (cfgPrefs.isKey("v0_adc")) {
+      float v0 = cfgPrefs.getFloat("v0_adc", V0_ADC);
+      if (v0 >= 0.0f && v0 < 3.5f) {
+        V0_ADC = v0;
+        legacyLoaded = true;
+      }
     }
-  }
-  if (cfgPrefs.isKey("v1_adc")) {
-    float v1 = cfgPrefs.getFloat("v1_adc", V1_ADC);
-    if (v1 > V0_ADC && v1 < 3.5f) {
-      V1_ADC = v1;
+    if (cfgPrefs.isKey("v1_adc")) {
+      float v1 = cfgPrefs.getFloat("v1_adc", V1_ADC);
+      if (v1 > V0_ADC && v1 < 3.6f) {
+        V1_ADC = v1;
+        legacyLoaded = true;
+      }
+    }
+    if (legacyLoaded) {
       anyLoaded = true;
+      oil_calibration_save(V0_ADC, V1_ADC);
     }
   }
   if (cfgPrefs.isKey("profile")) {
@@ -1513,14 +1521,13 @@ bool cfg_load_from_nvs() {
 }
 
 bool cfg_save_to_nvs() {
+  bool calOk = oil_calibration_save(V0_ADC, V1_ADC);
   if (!cfgPrefs.begin(CFG_NAMESPACE, false)) return false;
 
   ScopedNvsWrite guard;
 
-  bool ok = true;
-  if (cfgPrefs.putFloat("v0_adc", V0_ADC) != sizeof(float)) ok = false;
-  if (cfgPrefs.putFloat("v1_adc", V1_ADC) != sizeof(float)) ok = false;
-  if (cfgPrefs.putUChar("profile", USE_PROFILE_ALLOWLIST ? 1 : 0) != sizeof(uint8_t)) ok = false;
+  bool allOk = calOk;
+  if (cfgPrefs.putUChar("profile", USE_PROFILE_ALLOWLIST ? 1 : 0) != sizeof(uint8_t)) allOk = false;
 
   CfgDividerBlob blob;
   memset(&blob, 0, sizeof(blob));
@@ -1533,20 +1540,22 @@ bool cfg_save_to_nvs() {
            sizeof(CfgPidDivider) * (CUSTOM_DIVIDER_MAX - customDividerCount));
   }
   size_t written = cfgPrefs.putBytes("dividers", &blob, sizeof(blob));
-  if (written != sizeof(blob)) ok = false;
+  if (written != sizeof(blob)) allOk = false;
 
   cfgPrefs.end();
-  return ok;
+  return allOk;
 }
 
 bool cfg_reset_to_defaults() {
   cfg_apply_runtime_defaults();
 
+  bool calOk = oil_calibration_save(V0_ADC, V1_ADC);
+
   if (!cfgPrefs.begin(CFG_NAMESPACE, false)) return false;
   ScopedNvsWrite guard;
   cfgPrefs.clear();
   cfgPrefs.end();
-  return true;
+  return calOk;
 }
 
 static void apply_profile_and_dividers();
@@ -1874,8 +1883,19 @@ static float filtered_adc_volts() {
   }
   for (int i=1;i<5;i++){ float t=s[i]; int j=i-1; while(j>=0&&s[j]>t){s[j+1]=s[j]; j--;} s[j+1]=t; }
   float med = s[2];
-  static float v_filt = 0.0f;
-  if (v_filt == 0.0f) v_filt = med;
+  static float v_filt = DEFAULT_V0_ADC;
+  static bool have_valid = false;
+  if (!have_valid) {
+    v_filt = DEFAULT_V0_ADC;
+  }
+  if (isnan(med) || med < 0.0f || med > ADC_VALID_VREF) {
+    return v_filt;
+  }
+  if (!have_valid) {
+    v_filt = med;
+    have_valid = true;
+    return v_filt;
+  }
   v_filt = (1.0f - ADC_IIR_ALPHA) * v_filt + ADC_IIR_ALPHA * med;
   return v_filt;
 }
@@ -2228,8 +2248,51 @@ static void process_cli_line(char *line) {
   if (up == "SHOW MAP")        { dumpMapToSerial(); return; }
   if (up == "SHOW DENY")       { dumpDenyToSerial(); return; }
 
-  if (up == "CAL 0")           { V0_ADC = filtered_adc_volts(); Serial.printf("V0_ADC=%.4f (not saved)\n", V0_ADC); return; }
-  if (up == "CAL 1")           { V1_ADC = filtered_adc_volts(); Serial.printf("V1_ADC=%.4f (not saved)\n", V1_ADC); return; }
+  if (up == "CAL 0") {
+    float sample = filtered_adc_volts();
+    if (!isnan(sample)) {
+      if (sample >= V1_ADC) {
+        Serial.printf("CAL 0: %.4f V >= V1 (%.4f V); aborting.\n", sample, V1_ADC);
+      } else {
+        V0_ADC = sample;
+        bool saved = oil_calibration_save(V0_ADC, V1_ADC);
+        Serial.printf("V0_ADC=%.4f (%s)\n", V0_ADC, saved ? "saved" : "save FAILED");
+      }
+    } else {
+      Serial.println("CAL 0: invalid sample; keeping previous value.");
+    }
+    return;
+  }
+  if (up == "CAL 1") {
+    float sample = filtered_adc_volts();
+    if (!isnan(sample)) {
+      if (sample <= V0_ADC) {
+        Serial.printf("CAL 1: %.4f V <= V0 (%.4f V); aborting.\n", sample, V0_ADC);
+      } else {
+        V1_ADC = sample;
+        bool saved = oil_calibration_save(V0_ADC, V1_ADC);
+        Serial.printf("V1_ADC=%.4f (%s)\n", V1_ADC, saved ? "saved" : "save FAILED");
+      }
+    } else {
+      Serial.println("CAL 1: invalid sample; keeping previous value.");
+    }
+    return;
+  }
+  if (up == "CAL SHOW") {
+    OilCalibrationRaw raw;
+    if (!oil_calibration_read_raw(&raw) || !raw.present) {
+      Serial.println("No oil calibration stored.");
+    } else {
+      Serial.println("=== Oil Calibration (raw) ===");
+      Serial.printf("Version:      %u%s\n", (unsigned)raw.version, raw.valid ? "" : " (invalid)");
+      Serial.printf("V0_ADC:       %.4f V\n", raw.v0_adc);
+      Serial.printf("V1_ADC:       %.4f V\n", raw.v1_adc);
+      Serial.printf("Stored CRC32: 0x%08lX\n", (unsigned long)raw.stored_crc32);
+      Serial.printf("CRC32 calc:   0x%08lX\n", (unsigned long)raw.computed_crc32);
+      Serial.println("=============================");
+    }
+    return;
+  }
 
   if (up == "PROFILE ON") {
     USE_PROFILE_ALLOWLIST = true;
@@ -2317,7 +2380,7 @@ static void process_cli_line(char *line) {
     return;
   }
 
-  Serial.println("Unknown cmd. Try: SHOW | SHOW CFG | SHOW STATS | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | RATE <ms> | PROFILE ON|OFF | ALLOW <pid> <div> | DENY <pid> | SAVE | LOAD | RESETCFG");
+  Serial.println("Unknown cmd. Try: SHOW | SHOW CFG | SHOW STATS | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | CAL SHOW | RATE <ms> | PROFILE ON|OFF | ALLOW <pid> <div> | DENY <pid> | SAVE | LOAD | RESETCFG");
 }
 
 // ===== Main loop =====
