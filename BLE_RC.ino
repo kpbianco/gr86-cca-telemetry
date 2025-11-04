@@ -39,7 +39,7 @@
 #endif
 #endif
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER and DEVICE_NAME
-#include <gps_nmea.h>
+#include "src/gps_nmea.h"
 
 // ---------- Version ----------
 #ifndef FW_VERSION
