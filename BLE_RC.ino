@@ -39,6 +39,7 @@
 #endif
 #endif
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER and DEVICE_NAME
+#include "src/gps_nmea.h"
 
 // ---------- Version ----------
 #ifndef FW_VERSION
@@ -1001,40 +1002,6 @@ static inline int clampi(int value, int lo, int hi) {
   return value < lo ? lo : (value > hi ? hi : value);
 }
 
-static bool nmeaCoordToDegrees(const char *ddmm, const char *hemi, double &out) {
-  if (!ddmm || !hemi || !*ddmm || !*hemi) return false;
-  const char *dot = strchr(ddmm, '.');
-  int len = dot ? static_cast<int>(dot - ddmm) : static_cast<int>(strlen(ddmm));
-  if (len < 3) return false;
-  int degLen = len - 2;
-  if (degLen <= 0 || degLen >= 10) return false;
-  char degBuf[12];
-  memset(degBuf, 0, sizeof(degBuf));
-  strncpy(degBuf, ddmm, degLen);
-  int degrees = atoi(degBuf);
-  double minutes = atof(ddmm + degLen);
-  double val = degrees + (minutes / 60.0);
-  if (*hemi == 'S' || *hemi == 'W') val = -val;
-  out = val;
-  return true;
-}
-
-static int splitCsv(char *s, const char *fields[], int maxFields) {
-  int count = 0;
-  if (!s || maxFields <= 0) return 0;
-  fields[count++] = s;
-  for (char *p = s; *p && count < maxFields; ++p) {
-    if (*p == ',') {
-      *p = 0;
-      fields[count++] = p + 1;
-    } else if (*p == '*') {
-      *p = 0;
-      break;
-    }
-  }
-  return count;
-}
-
 static inline uint32_t msSinceMidnightFromTime(int hour, int minute, int second, int millis) {
   uint32_t h = static_cast<uint32_t>(hour >= 0 ? hour : 0);
   uint32_t m = static_cast<uint32_t>(minute >= 0 ? minute : 0);
@@ -1069,47 +1036,15 @@ static uint32_t gpsMonotonicMsSinceMidnight(uint32_t now) {
   return gps_monotonic_ms;
 }
 
-static bool nmeaChecksumOk(const char *line) {
-  if (!line || line[0] != '$') return false;
-  const char *star = strrchr(line, '*');
-  if (!star || (star - line) < 3) return false;
-  uint8_t checksum = 0;
-  for (const char *p = line + 1; p < star; ++p) checksum ^= static_cast<uint8_t>(*p);
-  int hi = toupper(static_cast<unsigned char>(star[1]));
-  int lo = toupper(static_cast<unsigned char>(star[2]));
-  if (!isxdigit(hi) || !isxdigit(lo)) return false;
-  int value = ((hi >= 'A') ? (hi - 'A' + 10) : (hi - '0')) * 16 +
-              ((lo >= 'A') ? (lo - 'A' + 10) : (lo - '0'));
-  return checksum == static_cast<uint8_t>(value);
-}
-
 static void parseRmcSentence(char *line) {
-  if (!nmeaChecksumOk(line)) return;
-  const char *fields[20];
-  int nf = splitCsv(line, fields, 20);
-  if (nf < 10) return;
+  gps::RmcData rmc;
+  if (!gps::parseRmcSentence(line, rmc)) return;
 
-  const char *time = fields[1];
-  if (time && strlen(time) >= 6) {
-    char hh[3] = { time[0], time[1], 0 };
-    char mm[3] = { time[2], time[3], 0 };
-    char ss[3] = { time[4], time[5], 0 };
-    rmc_hour = atoi(hh);
-    rmc_min  = atoi(mm);
-    rmc_sec  = atoi(ss);
-    const char *dot = strchr(time, '.');
-    if (dot) {
-      int ms = 0;
-      int scale = 100;
-      for (const char *p = dot + 1; *p && isdigit(static_cast<unsigned char>(*p)) && scale > 0; ++p) {
-        ms += (*p - '0') * scale;
-        scale /= 10;
-      }
-      rmc_millis = ms;
-    } else {
-      rmc_millis = 0;
-    }
-    if (rmc_millis > 999) rmc_millis = 999;
+  if (rmc.has_time) {
+    rmc_hour = rmc.hour;
+    rmc_min  = rmc.minute;
+    rmc_sec  = rmc.second;
+    rmc_millis = rmc.millis;
   }
 
   uint32_t msSinceMidnight = msSinceMidnightFromTime(rmc_hour, rmc_min, rmc_sec, rmc_millis);
@@ -1120,36 +1055,28 @@ static void parseRmcSentence(char *line) {
     rmc_time_available = true;
   }
 
-  rmc_valid = (fields[2] && *fields[2] == 'A');
+  rmc_valid = rmc.valid;
 
-  double lat, lon;
-  if (nmeaCoordToDegrees(fields[3], fields[4], lat)) rmc_lat_deg = lat;
-  if (nmeaCoordToDegrees(fields[5], fields[6], lon)) rmc_lon_deg = lon;
+  if (rmc.has_latitude) rmc_lat_deg = rmc.latitude_deg;
+  if (rmc.has_longitude) rmc_lon_deg = rmc.longitude_deg;
 
-  double speedKnots = (fields[7] && *fields[7]) ? atof(fields[7]) : 0.0;
-  rmc_speed_kmh = speedKnots * 1.852;
-  rmc_course_deg = (fields[8] && *fields[8]) ? atof(fields[8]) : 0.0;
+  rmc_speed_kmh = rmc.speed_kmh;
+  rmc_course_deg = rmc.course_deg;
 
-  const char *date = fields[9];
-  if (date && strlen(date) >= 6) {
-    char dd[3] = { date[0], date[1], 0 };
-    char mm[3] = { date[2], date[3], 0 };
-    char yy[3] = { date[4], date[5], 0 };
-    gps_day = atoi(dd);
-    gps_mon = atoi(mm);
-    gps_year = 2000 + atoi(yy);
+  if (rmc.has_date) {
+    gps_day = rmc.day;
+    gps_mon = rmc.month;
+    gps_year = rmc.year;
   }
 }
 
 static void parseGgaSentence(char *line) {
-  if (!nmeaChecksumOk(line)) return;
-  const char *fields[20];
-  int nf = splitCsv(line, fields, 20);
-  if (nf < 11) return;
+  gps::GgaData gga;
+  if (!gps::parseGgaSentence(line, gga)) return;
 
-  gga_sats = (fields[7] && *fields[7]) ? atoi(fields[7]) : 0;
-  gga_hdop = (fields[8] && *fields[8]) ? atof(fields[8]) : 99.9;
-  gga_alt_m = (fields[9] && *fields[9]) ? atof(fields[9]) : 0.0;
+  gga_sats = gga.has_sats ? gga.sats : 0;
+  gga_hdop = gga.has_hdop ? gga.hdop : 99.9;
+  gga_alt_m = gga.has_altitude ? gga.altitude_m : 0.0;
 }
 
 // ===== BLE bring-up (we own the whole 0x1FF8 service) =====
