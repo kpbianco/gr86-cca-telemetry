@@ -1,111 +1,17 @@
-#pragma once
+#include "gps_nmea.h"
 
 #include <cctype>
-#include <cstddef>
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
 
 namespace gps {
-
-constexpr std::size_t kMaxSentenceLength = 120;
-constexpr int kMaxFields = 20;
-
-struct RmcData {
-  bool has_time = false;
-  int hour = 0;
-  int minute = 0;
-  int second = 0;
-  int millis = 0;
-  bool valid = false;
-  bool has_latitude = false;
-  double latitude_deg = 0.0;
-  bool has_longitude = false;
-  double longitude_deg = 0.0;
-  double speed_kmh = 0.0;
-  double course_deg = 0.0;
-  bool has_date = false;
-  int day = 0;
-  int month = 0;
-  int year = 0;
-};
-
-struct GgaData {
-  bool has_sats = false;
-  int sats = 0;
-  bool has_hdop = false;
-  double hdop = 0.0;
-  bool has_altitude = false;
-  double altitude_m = 0.0;
-};
-
 namespace detail {
 
-inline bool nmeaChecksumOk(const char *line, std::size_t len) {
-  if (!line || len == 0 || line[0] != '$') return false;
-  const char *star = nullptr;
-  for (std::size_t i = 1; i < len; ++i) {
-    if (line[i] == '*') {
-      star = line + i;
-      break;
-    }
-    if (line[i] == '\0') {
-      break;
-    }
-  }
-  if (!star || star[1] == '\0' || star[2] == '\0') return false;
-  int hi = std::toupper(static_cast<unsigned char>(star[1]));
-  int lo = std::toupper(static_cast<unsigned char>(star[2]));
-  if (!std::isxdigit(hi) || !std::isxdigit(lo)) return false;
-  auto hexVal = [](int c) -> int {
-    if (c >= 'A') return c - 'A' + 10;
-    return c - '0';
-  };
-  int expected = (hexVal(hi) << 4) | hexVal(lo);
-  unsigned checksum = 0;
-  for (const char *p = line + 1; p < star && *p; ++p) {
-    checksum ^= static_cast<unsigned char>(*p);
-  }
-  return static_cast<unsigned>(expected & 0xFF) == (checksum & 0xFF);
-}
-
-inline bool nmeaCoordToDegrees(const char *ddmm, const char *hemi, double &out) {
-  if (!ddmm || !hemi || *ddmm == '\0' || *hemi == '\0') return false;
-  const char *dot = std::strchr(ddmm, '.');
-  int len = dot ? static_cast<int>(dot - ddmm)
-                : static_cast<int>(std::strlen(ddmm));
-  if (len < 3) return false;
-  int degLen = len - 2;
-  if (degLen <= 0 || degLen >= 10) return false;
-  char degBuf[12];
-  std::memset(degBuf, 0, sizeof(degBuf));
-  std::strncpy(degBuf, ddmm, static_cast<std::size_t>(degLen));
-  int degrees = std::atoi(degBuf);
-  double minutes = std::atof(ddmm + degLen);
-  double val = static_cast<double>(degrees) + (minutes / 60.0);
-  if (*hemi == 'S' || *hemi == 'W') val = -val;
-  out = val;
-  return true;
-}
-
-inline int splitCsv(char *s, std::size_t len, const char *fields[], int maxFields) {
-  if (!s || !fields || maxFields <= 0) return 0;
-  int count = 0;
-  fields[count++] = s;
-  for (std::size_t i = 0; i < len && s[i] != '\0'; ++i) {
-    if (s[i] == ',' || s[i] == '*') {
-      char current = s[i];
-      s[i] = '\0';
-      if (current == ',') {
-        if (count < maxFields) {
-          fields[count++] = &s[i + 1];
-        }
-      } else {
-        break;
-      }
-    }
-  }
-  return count;
+namespace {
+inline int hexValue(int c) {
+  if (c >= 'A') return c - 'A' + 10;
+  return c - '0';
 }
 
 inline int clampMillis(int value) {
@@ -125,10 +31,74 @@ inline double clampHdop(double value) {
   if (value > 25.4) return 25.4;
   return value;
 }
+}  // namespace
+
+bool nmeaChecksumOk(const char *line, std::size_t len) {
+  if (!line || len == 0 || line[0] != '$') return false;
+  const char *star = nullptr;
+  for (std::size_t i = 1; i < len; ++i) {
+    if (line[i] == '*') {
+      star = line + i;
+      break;
+    }
+    if (line[i] == '\0') {
+      break;
+    }
+  }
+  if (!star || star[1] == '\0' || star[2] == '\0') return false;
+  int hi = std::toupper(static_cast<unsigned char>(star[1]));
+  int lo = std::toupper(static_cast<unsigned char>(star[2]));
+  if (!std::isxdigit(hi) || !std::isxdigit(lo)) return false;
+  int expected = (hexValue(hi) << 4) | hexValue(lo);
+  unsigned checksum = 0;
+  for (const char *p = line + 1; p < star && *p; ++p) {
+    checksum ^= static_cast<unsigned char>(*p);
+  }
+  return static_cast<unsigned>(expected & 0xFF) == (checksum & 0xFF);
+}
+
+bool nmeaCoordToDegrees(const char *ddmm, const char *hemi, double &out) {
+  if (!ddmm || !hemi || *ddmm == '\0' || *hemi == '\0') return false;
+  const char *dot = std::strchr(ddmm, '.');
+  int len = dot ? static_cast<int>(dot - ddmm)
+                : static_cast<int>(std::strlen(ddmm));
+  if (len < 3) return false;
+  int degLen = len - 2;
+  if (degLen <= 0 || degLen >= 10) return false;
+  char degBuf[12];
+  std::memset(degBuf, 0, sizeof(degBuf));
+  std::strncpy(degBuf, ddmm, static_cast<std::size_t>(degLen));
+  int degrees = std::atoi(degBuf);
+  double minutes = std::atof(ddmm + degLen);
+  double val = static_cast<double>(degrees) + (minutes / 60.0);
+  if (*hemi == 'S' || *hemi == 'W') val = -val;
+  out = val;
+  return true;
+}
+
+int splitCsv(char *s, std::size_t len, const char *fields[], int maxFields) {
+  if (!s || !fields || maxFields <= 0) return 0;
+  int count = 0;
+  fields[count++] = s;
+  for (std::size_t i = 0; i < len && s[i] != '\0'; ++i) {
+    if (s[i] == ',' || s[i] == '*') {
+      char current = s[i];
+      s[i] = '\0';
+      if (current == ',') {
+        if (count < maxFields) {
+          fields[count++] = &s[i + 1];
+        }
+      } else {
+        break;
+      }
+    }
+  }
+  return count;
+}
 
 }  // namespace detail
 
-inline bool parseRmcSentence(char *line, RmcData &out) {
+bool parseRmcSentence(char *line, RmcData &out) {
   if (!line) return false;
   std::size_t len = ::strnlen(line, kMaxSentenceLength + 1);
   if (len == 0 || len > kMaxSentenceLength) return false;
@@ -184,7 +154,7 @@ inline bool parseRmcSentence(char *line, RmcData &out) {
   return true;
 }
 
-inline bool parseGgaSentence(char *line, GgaData &out) {
+bool parseGgaSentence(char *line, GgaData &out) {
   if (!line) return false;
   std::size_t len = ::strnlen(line, kMaxSentenceLength + 1);
   if (len == 0 || len > kMaxSentenceLength) return false;
