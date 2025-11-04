@@ -1485,11 +1485,13 @@ static void gpsService(uint32_t now) {
     }
   }
 
+  uint32_t serviceNow = millis();
+
   if (sentenceSeen) {
-    gpsLastSentenceMs = now;
+    gpsLastSentenceMs = serviceNow;
   } else {
     uint32_t timeoutMs = gpsUsingRawStream ? 15000 : 2000;
-    if (now - gpsLastSentenceMs > timeoutMs) {
+    if (serviceNow - gpsLastSentenceMs > timeoutMs) {
       if (gpsUsingRawStream) {
         Serial.println("[GPS] Raw stream stalled -> retry config");
       } else {
@@ -1500,14 +1502,17 @@ static void gpsService(uint32_t now) {
       gpsWarnedNoNmea = false;
       gpsResetSyncState();
       GPSSerial.end();
-      lastGpsInitAttemptMs = now;
+      lastGpsInitAttemptMs = serviceNow;
       return;
     }
   }
 
-  if (bleIsConnected() && (now - lastGpsNotifyMs) >= GPS_NOTIFY_PERIOD_MS) {
-    lastGpsNotifyMs = now;
-    gpsPackAndNotify(now);
+  if (bleIsConnected()) {
+    uint32_t notifyNow = serviceNow;
+    if (notifyNow - lastGpsNotifyMs >= GPS_NOTIFY_PERIOD_MS) {
+      lastGpsNotifyMs = notifyNow;
+      gpsPackAndNotify(notifyNow);
+    }
   }
 }
 
