@@ -40,6 +40,7 @@
 #endif
 #include "config.h"   // must define DEFAULT_UPDATE_RATE_DIVIDER and DEVICE_NAME
 #include "src/gps_nmea.h"
+#include "src/sched.hpp"
 
 // ---------- Version ----------
 #ifndef FW_VERSION
@@ -1444,8 +1445,7 @@ static void gpsService(uint32_t now) {
 
   if (bleIsConnected()) {
     uint32_t notifyNow = serviceNow;
-    if (notifyNow - lastGpsNotifyMs >= GPS_NOTIFY_PERIOD_MS) {
-      lastGpsNotifyMs = notifyNow;
+    if (every(notifyNow, &lastGpsNotifyMs, GPS_NOTIFY_PERIOD_MS)) {
       gpsPackAndNotify(notifyNow);
     }
   }
@@ -2054,7 +2054,7 @@ static void flushBufferedPackets() {
 
 static void sendCanDiagnostics(uint32_t now) {
   if (!bleIsConnected()) return;
-  if ((now - lastCanDiagSendMs) < CAN_DIAG_NOTIFY_INTERVAL_MS) return;
+  if (!every(now, &lastCanDiagSendMs, CAN_DIAG_NOTIFY_INTERVAL_MS)) return;
 
   uint16_t busErr = (uint16_t)(lastTwaiStatus.bus_error_count & 0xFFFF);
   uint16_t busOff = (uint16_t)(canBusOffCount & 0xFFFF);
@@ -2070,7 +2070,6 @@ static void sendCanDiagnostics(uint32_t now) {
     (uint8_t)(busOff & 0xFF)
   };
   bleSendCanData(0x777, d, 8);
-  lastCanDiagSendMs = now;
 }
 
 static void resetSkippedUpdatesCounters() {
@@ -2368,8 +2367,7 @@ void loop() {
   }
 
   // BLE heartbeat (2 Hz)
-  if (bleIsConnected() && now - lastHbMs >= 500) {
-    lastHbMs = now;
+  if (bleIsConnected() && every(now, &lastHbMs, 500)) {
     uint8_t hb[2] = { (uint8_t)(hbCounter & 0xFF), (uint8_t)(hbCounter >> 8) };
     bleSendCanData(HB_PID, hb, 2);
     hbCounter++;
