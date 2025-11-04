@@ -98,6 +98,14 @@ static uint32_t rxCount = 0;
 static uint32_t lastRxPrintMs = 0;
 static constexpr uint32_t CAN_RX_PRINT_INTERVAL_MS = 200;
 
+static constexpr uint16_t kMaxCanNotifiesPerLoop = 20;
+static constexpr uint32_t NOTIFY_CAP_LOG_INTERVAL_MS = 2000;
+static uint16_t canNotifiesThisLoop = 0;
+static bool notifyCapHitCurrentLoop = false;
+static uint32_t notifyCapHitsSinceLastLog = 0;
+static uint32_t notifyCapLastLogMs = 0;
+static uint32_t notifies_suppressed_total = 0;
+
 static char lastReconnectCause[64] = "boot";
 static char pendingBleRestartReason[64] = "";
 static bool pendingBleRestart = false;
@@ -1638,6 +1646,7 @@ static void setLastReconnectCause(const char *reason);
 
 static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len);
 static void handleBufferedPacketsBurst(uint32_t budget_us = 2000);
+static void logNotifyCapIfNeeded(uint32_t now);
 static void flushBufferedPackets();
 static void sendCanDiagnostics(uint32_t now);
 static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len);
@@ -2033,7 +2042,16 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
 
       bool shouldSend = (!extra) || dataChanged || (extra->skippedUpdates == 0);
       if (shouldSend) {
+        if (canNotifiesThisLoop >= kMaxCanNotifiesPerLoop) {
+          if (!notifyCapHitCurrentLoop) {
+            notifyCapHitCurrentLoop = true;
+            notifyCapHitsSinceLastLog++;
+          }
+          notifies_suppressed_total++;
+          break;
+        }
         bleSendCanData(m->pid, m->data, m->length);
+        canNotifiesThisLoop++;
         if (extra) {
           extra->hasLastPayload = true;
           extra->lastLength = m->length;
@@ -2083,6 +2101,22 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
       }
     }
   }
+}
+
+static void logNotifyCapIfNeeded(uint32_t now) {
+  if (!notifyCapHitsSinceLastLog) {
+    return;
+  }
+  if ((now - notifyCapLastLogMs) < NOTIFY_CAP_LOG_INTERVAL_MS) {
+    return;
+  }
+  Serial.printf("INFO: CAN notify cap hit %u loop%s (max %u/loop); suppressed_total=%lu\n",
+                (unsigned)notifyCapHitsSinceLastLog,
+                (notifyCapHitsSinceLastLog == 1) ? "" : "s",
+                (unsigned)kMaxCanNotifiesPerLoop,
+                (unsigned long)notifies_suppressed_total);
+  notifyCapLastLogMs = now;
+  notifyCapHitsSinceLastLog = 0;
 }
 
 static void flushBufferedPackets() {
@@ -2203,6 +2237,8 @@ static void show_stats() {
   Serial.printf("CAN timeouts:    %u\n", (unsigned)num_can_bus_timeouts);
   Serial.printf("CAN restarts:    %lu\n", (unsigned long)canRestartCount);
   Serial.printf("CAN bus-off:     %lu\n", (unsigned long)canBusOffCount);
+  Serial.printf("CAN notifies suppressed: %lu\n",
+                (unsigned long)notifies_suppressed_total);
   uint32_t now = millis();
   uint32_t sinceRestartMs = lastCanRestartMs ? (now - lastCanRestartMs) : 0;
   Serial.printf("Last CAN restart:%lu s ago\n", (unsigned long)(sinceRestartMs / 1000UL));
@@ -2363,6 +2399,9 @@ void loop() {
   loop_iteration++;
   esp_task_wdt_reset();
 
+  canNotifiesThisLoop = 0;
+  notifyCapHitCurrentLoop = false;
+
   servicePendingBleRestart();
   bleLinkPri_attachIfReady();
 
@@ -2455,6 +2494,8 @@ void loop() {
   oil_update_and_publish_if_due();
 
   uint32_t postCanNow = millis();
+
+  logNotifyCapIfNeeded(postCanNow);
 
   // Periodic CAN diagnostic frame
   sendCanDiagnostics(postCanNow);
