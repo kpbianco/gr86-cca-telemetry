@@ -26,6 +26,8 @@
 #include "nimble/nimble/host/include/host/ble_gap.h"
 #endif
 #include <Preferences.h>
+#include <esp_gatt_defs.h>
+#include <esp_random.h>
 #include <cstdio>
 #include <cstring>
 #include <ctype.h>
@@ -42,6 +44,14 @@
 #include "src/gps_nmea.h"
 #include "src/sched.hpp"
 #include "src/nvs_cfg.h"
+
+#ifndef PASSKEY_U32
+#define PASSKEY_U32 123456
+#endif
+
+#ifndef DEV_TRUST_FIL
+#define DEV_TRUST_FIL 0
+#endif
 
 // ---------- Version ----------
 #ifndef FW_VERSION
@@ -108,6 +118,11 @@ static bool notifyCapHitCurrentLoop = false;
 static uint32_t notifyCapHitsSinceLastLog = 0;
 static uint32_t notifyCapLastLogMs = 0;
 static uint32_t notifies_suppressed_total = 0;
+
+static constexpr uint32_t FIL_WRITE_WINDOW_MS = 10000;
+static constexpr uint8_t  FIL_WRITE_WINDOW_MAX = 3;
+static uint32_t filWriteWindowStartMs = 0;
+static uint8_t  filWritesInWindow = 0;
 
 static char lastReconnectCause[64] = "boot";
 static char pendingBleRestartReason[64] = "";
@@ -589,6 +604,7 @@ static uint32_t lastOilTxMs = 0;
 // ===== Flash (Preferences) =====
 static Preferences cfgPrefs;   // namespace "cca_cfg"
 static constexpr const char *CFG_NAMESPACE = "cca_cfg";
+static uint32_t CFG_TOKEN = 0;
 
 static const size_t CUSTOM_DIVIDER_MAX = 64;
 
@@ -912,7 +928,48 @@ static void bleStopAdvertising(){
 // ===== FIL (0x0002) handler to mirror RaceChrono DIY control =====
 static void handleFilWrite(const uint8_t *d, size_t L) {
   if (!d || L < 1) return;
+
   uint8_t cmd = d[0];
+  const uint8_t *payload = nullptr;
+  size_t payloadLen = 0;
+
+#if DEV_TRUST_FIL
+  if (L > 1) {
+    payload = d + 1;
+    payloadLen = L - 1;
+  }
+#else
+  uint32_t now = millis();
+  if (filWriteWindowStartMs == 0 || (now - filWriteWindowStartMs) > FIL_WRITE_WINDOW_MS) {
+    filWriteWindowStartMs = now;
+    filWritesInWindow = 0;
+  }
+  if (filWritesInWindow >= FIL_WRITE_WINDOW_MAX) {
+    Serial.println("FIL: throttled (rate limit)");
+    return;
+  }
+  filWritesInWindow++;
+
+  if (CFG_TOKEN == 0) {
+    Serial.println("FIL: token unavailable; ignoring write");
+    return;
+  }
+  if (L < 5) {
+    Serial.println("FIL: ignoring write (token missing)");
+    return;
+  }
+  uint32_t token = ((uint32_t)d[1] << 24) |
+                   ((uint32_t)d[2] << 16) |
+                   ((uint32_t)d[3] << 8) |
+                   ((uint32_t)d[4]);
+  if (token != CFG_TOKEN) {
+    Serial.println("FIL: bad token; ignoring write");
+    return;
+  }
+  payload = d + 5;
+  payloadLen = L - 5;
+#endif
+
   switch (cmd) {
     case 0: { // Deny all
       Serial.println("FIL: DENY ALL -> keeping profile allow-list");
@@ -921,23 +978,23 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
     }
     case 1: { // Allow all + interval
       uint16_t interval = 0;
-      if (L >= 3) {
-        interval = ((uint16_t)d[1] << 8) | d[2];
+      if (payloadLen >= 2 && payload) {
+        interval = ((uint16_t)payload[0] << 8) | payload[1];
       }
       Serial.printf("FIL: ALLOW ALL (interval=%ums)\n", (unsigned)interval);
       clearDeny();
       break;
     }
     case 2: { // Allow one PID (minimal accept)
-      if (L < 7) {
+      if (!payload || payloadLen < 6) {
         Serial.println("FIL: ALLOW PID (ignored; packet too short)");
         break;
       }
-      uint32_t pid = ((uint32_t)d[1]) |
-                     ((uint32_t)d[2] << 8) |
-                     ((uint32_t)d[3] << 16) |
-                     ((uint32_t)d[4] << 24);
-      uint16_t interval = ((uint16_t)d[5] << 8) | d[6];
+      uint32_t pid = ((uint32_t)payload[0]) |
+                     ((uint32_t)payload[1] << 8) |
+                     ((uint32_t)payload[2] << 16) |
+                     ((uint32_t)payload[3] << 24);
+      uint16_t interval = ((uint16_t)payload[4] << 8) | payload[5];
       Serial.printf("FIL: ALLOW PID 0x%03lX (interval=%ums)\n",
                     static_cast<unsigned long>(pid),
                     (unsigned)interval);
@@ -1080,6 +1137,10 @@ static void bleInit(){
   NimBLEDevice::init(DEVICE_NAME);
   NimBLEDevice::setPower(ESP_PWR_LVL_P9);
   NimBLEDevice::setMTU(185);
+#if !DEV_TRUST_FIL
+  NimBLEDevice::setSecurityAuth(true, true, true);
+  NimBLEDevice::setSecurityPasskey(PASSKEY_U32);
+#endif
 
   g_server = NimBLEDevice::createServer();
   bleLinkPri_attachIfReady();
@@ -1090,6 +1151,9 @@ static void bleInit(){
             NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
   g_fil = g_svc->createCharacteristic(RC_CHAR_FIL_UUID,
             NIMBLE_PROPERTY::WRITE);
+#if !DEV_TRUST_FIL
+  g_fil->setAccessPermissions(ESP_GATT_PERM_READ_ENCRYPT | ESP_GATT_PERM_WRITE_ENCRYPT);
+#endif
   g_gps = g_svc->createCharacteristic(RC_CHAR_GPS_UUID,
             NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
   g_gtm = g_svc->createCharacteristic(RC_CHAR_GTM_UUID,
@@ -1451,6 +1515,22 @@ static void clear_custom_dividers() {
   memset(customDividers, 0, sizeof(customDividers));
 }
 
+static uint32_t generate_cfg_token() {
+  uint32_t token = 0;
+  while (token == 0) {
+    token = esp_random();
+  }
+  return token;
+}
+
+static bool save_cfg_token_value(uint32_t token) {
+  if (!cfgPrefs.begin(CFG_NAMESPACE, false)) return false;
+  ScopedNvsWrite guard;
+  bool ok = cfgPrefs.putUInt("token", token) == sizeof(uint32_t);
+  cfgPrefs.end();
+  return ok;
+}
+
 static void cfg_apply_runtime_defaults() {
   V0_ADC = DEFAULT_V0_ADC;
   V1_ADC = DEFAULT_V1_ADC;
@@ -1466,9 +1546,21 @@ bool cfg_load_from_nvs() {
   }
 
   bool anyLoaded = calibrationLoaded;
+  bool needSaveToken = false;
   if (!cfgPrefs.begin(CFG_NAMESPACE, true)) return anyLoaded;
 
   customDividerCount = 0;
+
+  if (cfgPrefs.isKey("token")) {
+    uint32_t stored = cfgPrefs.getUInt("token", 0);
+    if (stored != 0) {
+      CFG_TOKEN = stored;
+    } else {
+      needSaveToken = true;
+    }
+  } else {
+    needSaveToken = true;
+  }
 
   if (!calibrationLoaded) {
     bool legacyLoaded = false;
@@ -1517,6 +1609,14 @@ bool cfg_load_from_nvs() {
   }
 
   cfgPrefs.end();
+  if (needSaveToken) {
+    CFG_TOKEN = generate_cfg_token();
+    if (!save_cfg_token_value(CFG_TOKEN)) {
+      Serial.println("CFG: failed to persist new FIL token");
+    } else {
+      Serial.printf("CFG: generated FIL token %08lX\n", (unsigned long)CFG_TOKEN);
+    }
+  }
   return anyLoaded;
 }
 
@@ -1528,6 +1628,7 @@ bool cfg_save_to_nvs() {
 
   bool allOk = calOk;
   if (cfgPrefs.putUChar("profile", USE_PROFILE_ALLOWLIST ? 1 : 0) != sizeof(uint8_t)) allOk = false;
+  if (cfgPrefs.putUInt("token", CFG_TOKEN) != sizeof(uint32_t)) allOk = false;
 
   CfgDividerBlob blob;
   memset(&blob, 0, sizeof(blob));
@@ -1554,8 +1655,13 @@ bool cfg_reset_to_defaults() {
   if (!cfgPrefs.begin(CFG_NAMESPACE, false)) return false;
   ScopedNvsWrite guard;
   cfgPrefs.clear();
+  CFG_TOKEN = generate_cfg_token();
+  bool tokenOk = cfgPrefs.putUInt("token", CFG_TOKEN) == sizeof(uint32_t);
   cfgPrefs.end();
-  return calOk;
+  if (!tokenOk) {
+    Serial.println("CFG: failed to persist FIL token after reset");
+  }
+  return calOk && tokenOk;
 }
 
 static void apply_profile_and_dividers();
@@ -2173,6 +2279,7 @@ static void show_config() {
   Serial.printf("V0_ADC:         %.4f V\n", V0_ADC);
   Serial.printf("V1_ADC:         %.4f V\n", V1_ADC);
   Serial.printf("Custom divs:    %u\n", (unsigned)customDividerCount);
+  Serial.printf("FIL token:      %08lX\n", (unsigned long)CFG_TOKEN);
   Serial.println("==================");
 }
 
@@ -2354,6 +2461,28 @@ static void process_cli_line(char *line) {
     return;
   }
 
+  if (up.startsWith("TOKEN")) {
+    char buf[CLI_BUF_SIZE]; strncpy(buf, line, sizeof(buf)); buf[sizeof(buf)-1]=0;
+    char *tok = strtok(buf + 5, " \t");
+    if (!tok || tok[0] == '\0') {
+      Serial.printf("Current FIL token: %08lX\n", (unsigned long)CFG_TOKEN);
+      Serial.println("Usage: TOKEN <hex8>");
+      return;
+    }
+    char *endptr = nullptr;
+    unsigned long parsed = strtoul(tok, &endptr, 16);
+    if ((endptr && *endptr) || parsed == 0) {
+      Serial.println("TOKEN expects 8 hex digits (non-zero).");
+      return;
+    }
+    CFG_TOKEN = static_cast<uint32_t>(parsed);
+    bool saved = save_cfg_token_value(CFG_TOKEN);
+    Serial.printf("FIL token set to %08lX (%s)\n",
+                  (unsigned long)CFG_TOKEN,
+                  saved ? "saved" : "save FAILED");
+    return;
+  }
+
   if (up == "SAVE") {
     if (cfg_save_to_nvs()) Serial.println("Saved.");
     else Serial.println("SAVE failed.");
@@ -2380,7 +2509,7 @@ static void process_cli_line(char *line) {
     return;
   }
 
-  Serial.println("Unknown cmd. Try: SHOW | SHOW CFG | SHOW STATS | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | CAL SHOW | RATE <ms> | PROFILE ON|OFF | ALLOW <pid> <div> | DENY <pid> | SAVE | LOAD | RESETCFG");
+  Serial.println("Unknown cmd. Try: SHOW | SHOW CFG | SHOW STATS | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | CAL SHOW | RATE <ms> | PROFILE ON|OFF | ALLOW <pid> <div> | DENY <pid> | TOKEN <hex8> | SAVE | LOAD | RESETCFG");
 }
 
 // ===== Main loop =====
