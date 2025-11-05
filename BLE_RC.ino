@@ -44,6 +44,7 @@
 #include "src/gps_nmea.h"
 #include "src/sched.hpp"
 #include "src/nvs_cfg.h"
+#include "src/ota_update.h"
 
 #ifndef PASSKEY_U32
 #define PASSKEY_U32 123456
@@ -1011,6 +1012,26 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
       }
       break;
     }
+    case 10: { // OTA update via BLE
+      if (!payload || payloadLen == 0) {
+        Serial.println("FIL: OTA ignored (no URL)");
+        break;
+      }
+      if (ota_update_in_progress()) {
+        Serial.println("FIL: OTA already in progress");
+        break;
+      }
+      size_t copyLen = payloadLen;
+      if (copyLen >= CLI_BUF_SIZE) copyLen = CLI_BUF_SIZE - 1;
+      char url[CLI_BUF_SIZE];
+      memcpy(url, payload, copyLen);
+      url[copyLen] = 0;
+      Serial.printf("FIL: OTA URL %s\n", url);
+      if (!ota_update_start(url)) {
+        Serial.println("FIL: OTA start failed");
+      }
+      break;
+    }
     default:
       break;
   }
@@ -1738,6 +1759,8 @@ void setup() {
   esp_reset_reason_t reason = esp_reset_reason();
   Serial.printf("Boot reason: %s (%d)\n", reset_reason_to_string(reason), (int)reason);
 
+  ota_update_init();
+
   init_task_watchdog();
 
   // ADC
@@ -2355,6 +2378,21 @@ static void process_cli_line(char *line) {
   if (up == "SHOW MAP")        { dumpMapToSerial(); return; }
   if (up == "SHOW DENY")       { dumpDenyToSerial(); return; }
 
+  if (up.startsWith("OTA URL ")) {
+    char buf[CLI_BUF_SIZE]; strncpy(buf, line, sizeof(buf)); buf[sizeof(buf)-1] = 0;
+    char *url = buf + 8;
+    while (*url == ' ' || *url == '\t') ++url;
+    if (*url) {
+      Serial.printf("OTA: fetching %s\n", url);
+      if (!ota_update_start(url)) {
+        Serial.println("OTA: update failed");
+      }
+    } else {
+      Serial.println("Usage: OTA URL <http(s)://...>");
+    }
+    return;
+  }
+
   if (up == "CAL 0") {
     float sample = filtered_adc_volts();
     if (!isnan(sample)) {
@@ -2545,6 +2583,8 @@ void loop() {
   }
 
   const uint32_t now = millis();
+
+  ota_update_service(now);
 
   bleLinkPri_service(now);
 
