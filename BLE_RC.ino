@@ -1149,11 +1149,11 @@ static void bleInit(){
 
   g_can = g_svc->createCharacteristic(RC_CHAR_CAN_UUID,
             NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
-  g_fil = g_svc->createCharacteristic(RC_CHAR_FIL_UUID,
-            NIMBLE_PROPERTY::WRITE);
+  uint16_t filProps = NIMBLE_PROPERTY::WRITE;
 #if !DEV_TRUST_FIL
-  g_fil->setAccessPermissions(ESP_GATT_PERM_READ_ENCRYPT | ESP_GATT_PERM_WRITE_ENCRYPT);
+  filProps |= NIMBLE_PROPERTY::WRITE_ENC;
 #endif
+  g_fil = g_svc->createCharacteristic(RC_CHAR_FIL_UUID, filProps);
   g_gps = g_svc->createCharacteristic(RC_CHAR_GPS_UUID,
             NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
   g_gtm = g_svc->createCharacteristic(RC_CHAR_GTM_UUID,
