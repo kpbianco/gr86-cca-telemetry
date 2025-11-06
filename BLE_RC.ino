@@ -123,6 +123,20 @@ static uint32_t notifyCapHitsSinceLastLog = 0;
 static uint32_t notifyCapLastLogMs = 0;
 static uint32_t notifies_suppressed_total = 0;
 
+static volatile uint32_t gps_pps_event_micros = 0;
+static volatile uint32_t gps_pps_last_interval_us = 0;
+static volatile uint32_t gps_pps_event_count = 0;
+static volatile uint32_t gps_pps_last_isr_micros = 0;
+[[maybe_unused]] static double   gps_pps_drift_estimate_us = 0.0;
+static int64_t  gps_time_correction_us = 0;
+[[maybe_unused]] static bool     gps_pps_locked = false;
+[[maybe_unused]] static uint32_t gps_pps_last_processed_ms = 0;
+
+#if GPS_PPS_GPIO >= 0
+static constexpr uint32_t GPS_PPS_DEBOUNCE_US = 200000;  // reject pulses <200 ms apart
+static constexpr int64_t  GPS_PPS_MAX_SLEW_US = 2000;     // +/-2 ms per second
+#endif
+
 static constexpr uint32_t FIL_WRITE_WINDOW_MS = 10000;
 static constexpr uint8_t  FIL_WRITE_WINDOW_MAX = 3;
 static uint32_t filWriteWindowStartMs = 0;
@@ -341,6 +355,21 @@ bool bleLinkPri_isEnabled() {
   return g_bleLinkPriEnabled;
 }
 
+// RMC fields
+static int    rmc_hour = 0, rmc_min = 0, rmc_sec = 0, rmc_millis = 0;
+static bool   rmc_valid = false;
+static double rmc_lat_deg = 0.0, rmc_lon_deg = 0.0;
+static double rmc_speed_kmh = 0.0;
+static double rmc_course_deg = 0.0;
+
+static bool     rmc_time_available = false;
+static uint32_t rmc_ms_since_midnight = 0;
+static uint32_t rmc_capture_tick_ms  = 0;
+static uint32_t gps_monotonic_ms     = 0;
+static uint32_t rmc_capture_tick_us  = 0;
+
+static constexpr int64_t GPS_US_PER_DAY = static_cast<int64_t>(MS_PER_DAY) * 1000LL;
+
 static void IRAM_ATTR gpsPpsIsr() {
 #if GPS_PPS_GPIO >= 0
   uint32_t now = micros();
@@ -363,35 +392,6 @@ static void IRAM_ATTR gpsPpsIsr() {
   (void)gps_pps_event_micros;
 #endif
 }
-
-// RMC fields
-static int    rmc_hour = 0, rmc_min = 0, rmc_sec = 0, rmc_millis = 0;
-static bool   rmc_valid = false;
-static double rmc_lat_deg = 0.0, rmc_lon_deg = 0.0;
-static double rmc_speed_kmh = 0.0;
-static double rmc_course_deg = 0.0;
-
-static bool     rmc_time_available = false;
-static uint32_t rmc_ms_since_midnight = 0;
-static uint32_t rmc_capture_tick_ms  = 0;
-static uint32_t gps_monotonic_ms     = 0;
-static uint32_t rmc_capture_tick_us  = 0;
-
-#if GPS_PPS_GPIO >= 0
-static constexpr uint32_t GPS_PPS_DEBOUNCE_US = 200000;  // reject pulses <200 ms apart
-static constexpr int64_t  GPS_PPS_MAX_SLEW_US = 2000;     // +/-2 ms per second
-#endif
-
-static constexpr int64_t GPS_US_PER_DAY = static_cast<int64_t>(MS_PER_DAY) * 1000LL;
-
-static volatile uint32_t gps_pps_event_micros = 0;
-static volatile uint32_t gps_pps_last_interval_us = 0;
-static volatile uint32_t gps_pps_event_count = 0;
-static volatile uint32_t gps_pps_last_isr_micros = 0;
-[[maybe_unused]] static double   gps_pps_drift_estimate_us = 0.0;
-static int64_t  gps_time_correction_us = 0;
-[[maybe_unused]] static bool     gps_pps_locked = false;
-[[maybe_unused]] static uint32_t gps_pps_last_processed_ms = 0;
 
 // GGA fields
 static int    gga_sats = 0;
