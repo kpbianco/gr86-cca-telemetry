@@ -9,6 +9,7 @@
 //      0x0002 CAN filter (WRITE)
 //      0x0003 GPS main (READ+NOTIFY)
 //      0x0004 GPS time (READ+NOTIFY)
+//      0x0005 CCA-Diag (READ+NOTIFY)
 // - Serial CLI (CR, LF, CRLF, or none)
 //
 // Libs:
@@ -30,6 +31,7 @@
 #include <esp_random.h>
 #include <cstdio>
 #include <cstring>
+#include <array>
 #include <ctype.h>
 #include <driver/twai.h>
 #include <math.h>
@@ -81,6 +83,7 @@ static const char* RC_CHAR_CAN_UUID = "00000001-0000-1000-8000-00805f9b34fb"; //
 static const char* RC_CHAR_FIL_UUID = "00000002-0000-1000-8000-00805f9b34fb"; // WRITE
 static const char* RC_CHAR_GPS_UUID = "00000003-0000-1000-8000-00805f9b34fb"; // READ+NOTIFY
 static const char* RC_CHAR_GTM_UUID = "00000004-0000-1000-8000-00805f9b34fb"; // READ+NOTIFY
+static const char* RC_CHAR_DIAG_UUID = "00000005-0000-1000-8000-00805f9b34fb"; // READ+NOTIFY
 
 // ====== (Fix) Governor snapshot: define early so Arduino doesn't mangle prototypes ======
 struct GovernorSnapshot { uint32_t pid; uint8_t governor; };
@@ -187,6 +190,54 @@ static NimBLECharacteristic* g_can    = nullptr; // 0x0001
 static NimBLECharacteristic* g_fil    = nullptr; // 0x0002
 static NimBLECharacteristic* g_gps    = nullptr; // 0x0003
 static NimBLECharacteristic* g_gtm    = nullptr; // 0x0004
+static NimBLECharacteristic* g_diag   = nullptr; // 0x0005
+
+static constexpr size_t kDiagSubscriptionSlots = 4;
+static std::array<uint16_t, kDiagSubscriptionSlots> g_diagSubscriptionHandles{};
+static std::array<bool, kDiagSubscriptionSlots>     g_diagSubscriptionStates{};
+
+static void diagSubscriptionsClear() {
+  g_diagSubscriptionHandles.fill(BLE_HS_CONN_HANDLE_NONE);
+  g_diagSubscriptionStates.fill(false);
+}
+
+static void diagSubscriptionUpdate(uint16_t connHandle, bool subscribed) {
+  size_t slot = kDiagSubscriptionSlots;
+  for (size_t i = 0; i < kDiagSubscriptionSlots; ++i) {
+    if (g_diagSubscriptionHandles[i] == connHandle) {
+      slot = i;
+      break;
+    }
+  }
+
+  if ((slot == kDiagSubscriptionSlots) && subscribed) {
+    for (size_t i = 0; i < kDiagSubscriptionSlots; ++i) {
+      if (!g_diagSubscriptionStates[i]) {
+        slot = i;
+        break;
+      }
+    }
+  }
+
+  if (slot == kDiagSubscriptionSlots) {
+    if (!subscribed) {
+      return;
+    }
+    slot = 0;
+  }
+
+  g_diagSubscriptionHandles[slot] = subscribed ? connHandle : BLE_HS_CONN_HANDLE_NONE;
+  g_diagSubscriptionStates[slot] = subscribed;
+}
+
+static bool diagHasSubscribers() {
+  for (bool state : g_diagSubscriptionStates) {
+    if (state) {
+      return true;
+    }
+  }
+  return false;
+}
 
 static constexpr uint16_t BLE_LINK_PRI_INVALID_HANDLE      = 0xFFFF;
 static constexpr uint16_t BLE_LINK_PRI_MIN_INTERVAL_UNITS  = 6;   // 7.5 ms
@@ -300,6 +351,7 @@ static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo) {
 
 static void bleLinkPri_onDisconnect() {
   bleLinkPri_resetState();
+  diagSubscriptionsClear();
 }
 
 static void bleLinkPri_service(uint32_t now) {
@@ -1034,6 +1086,14 @@ public:
 #endif
 } g_filCB;
 
+class DiagCB : public NimBLECharacteristicCallbacks {
+ public:
+  void onSubscribe(NimBLECharacteristic* ch, NimBLEConnInfo& connInfo, uint16_t subValue) override {
+    (void)ch;
+    diagSubscriptionUpdate(connInfo.getConnHandle(), subValue != 0);
+  }
+} g_diagCB;
+
 // ===== Our CAN sender over BLE 0x0001 =====
 static uint8_t canBuf[20];
 static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len) {
@@ -1158,12 +1218,18 @@ static void bleInit(){
             NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
   g_gtm = g_svc->createCharacteristic(RC_CHAR_GTM_UUID,
             NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
+  g_diag = g_svc->createCharacteristic(RC_CHAR_DIAG_UUID,
+            NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
 
   g_fil->setCallbacks(&g_filCB);
+  if (g_diag) {
+    g_diag->setCallbacks(&g_diagCB);
+  }
 
   // Init payloads
   { uint8_t init20[20]; memset(init20, 0xFF, sizeof(init20)); g_gps->setValue(init20, 20); }
   { uint8_t init3[3] = {0,0,0}; g_gtm->setValue(init3, 3); }
+  { uint8_t init2[2] = {0,0}; if (g_diag) g_diag->setValue(init2, 2); }
 
   g_svc->start();
 
@@ -1686,7 +1752,7 @@ static bool checkCanBusHealth(uint32_t now);
 [[maybe_unused]] static bool writeFrameWithWatch(CanFrame &frame, uint32_t timeout = 1);
 static void setLastReconnectCause(const char *reason);
 
-static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len);
+static void bufferNewPacket(uint32_t pid, uint32_t t_us_rx, const uint8_t *data, uint8_t len);
 static void handleBufferedPacketsBurst(uint32_t budget_us = 2000);
 static void logNotifyCapIfNeeded(uint32_t now);
 static void flushBufferedPackets();
@@ -1747,6 +1813,7 @@ void setup() {
 
   // BLE
   Serial.println("BLE setup...");
+  diagSubscriptionsClear();
   bleInit();
   Serial.println("Waiting for RaceChrono...");
   waitForConnection();
@@ -2023,6 +2090,7 @@ static float volts_to_psi_exact(float v) {
 // ===== Circular buffer =====
 struct BufferedMessage {
   uint32_t pid;
+  uint32_t t_us_rx;
   uint8_t  data[8];
   uint8_t  length;
 };
@@ -2035,11 +2103,53 @@ static uint32_t lastBufferOverflowWarningMs = 0;
 static constexpr uint32_t CAN_RX_READ_BUDGET_US = 2000;      // microseconds per poll burst
 static constexpr uint32_t CAN_RX_BUDGET_CHECK_INTERVAL = 16; // frames between budget checks
 
+// ===== CAN timing diagnostics =====
+struct CanTimingRecord {
+  uint16_t pid11;
+  uint8_t  dlc;
+  uint32_t t_us;
+};
+static constexpr size_t   CAN_TIMING_BUFFER_SIZE = 256;
+static constexpr uint32_t CAN_TIMING_NOTIFY_INTERVAL_MS = 250;
+static CanTimingRecord    canTimingBuffer[CAN_TIMING_BUFFER_SIZE];
+static uint32_t           canTimingWriteIndex = 0;
+static uint32_t           canTimingReadIndex  = 0;
+static uint32_t           canTimingDrops      = 0;
+static uint32_t           canTimingLastNotifyMs = 0;
+static bool               canTimingOverflowWarned = false;
+
 static inline uint32_t bufferedPacketCount() {
   return bufferToWriteTo - bufferToReadFrom;
 }
 
-static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len) {
+static inline uint32_t canTimingBufferedCount() {
+  return canTimingWriteIndex - canTimingReadIndex;
+}
+
+static void canTimingRecord(uint32_t pid, uint8_t dlc, uint32_t t_us_rx) {
+  if (canTimingBufferedCount() == static_cast<uint32_t>(CAN_TIMING_BUFFER_SIZE)) {
+    canTimingReadIndex++;
+    canTimingDrops++;
+    if (!canTimingOverflowWarned) {
+      Serial.println("WARNING: CAN timing diag overflow, dropping oldest.");
+      canTimingOverflowWarned = true;
+    }
+  }
+  CanTimingRecord *rec = &canTimingBuffer[canTimingWriteIndex % CAN_TIMING_BUFFER_SIZE];
+  rec->pid11 = static_cast<uint16_t>(pid & 0x7FFu);
+  rec->dlc   = dlc & 0x0Fu;
+  rec->t_us  = t_us_rx;
+  canTimingWriteIndex++;
+}
+
+static void canTimingResetOverflowWarning(uint32_t nowMs) {
+  (void)nowMs;
+  if (canTimingBufferedCount() < static_cast<uint32_t>(CAN_TIMING_BUFFER_SIZE / 2)) {
+    canTimingOverflowWarned = false;
+  }
+}
+
+static void bufferNewPacket(uint32_t pid, uint32_t t_us_rx, const uint8_t *data, uint8_t len) {
   if (bufferedPacketCount() == static_cast<uint32_t>(NUM_BUFFERS)) {
     uint32_t nowMs = millis();
     if (nowMs - lastBufferOverflowWarningMs >= 250) {
@@ -2050,9 +2160,94 @@ static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len) {
   }
   BufferedMessage *m = &buffers[bufferToWriteTo % NUM_BUFFERS];
   m->pid = pid;
+  m->t_us_rx = t_us_rx;
   m->length = (len > 8) ? 8 : len;
   memcpy(m->data, data, m->length);
   bufferToWriteTo++;
+}
+
+static void canTimingFlush(uint32_t nowMs) {
+  if (!g_diag) return;
+  if (!bleIsConnected()) return;
+  if (!diagHasSubscribers()) {
+    canTimingLastNotifyMs = nowMs;
+    canTimingReadIndex = canTimingWriteIndex;
+    canTimingDrops = 0;
+    canTimingOverflowWarned = false;
+    return;
+  }
+  if ((canTimingBufferedCount() == 0) && (canTimingDrops == 0)) {
+    return;
+  }
+
+  uint16_t mtu = NimBLEDevice::getMTU();
+  if (mtu < 4) {
+    return;
+  }
+  uint16_t maxPayload = static_cast<uint16_t>(mtu > 3 ? mtu - 3 : 0);
+  if (maxPayload < 9) {
+    return;
+  }
+
+  static constexpr size_t RECORD_SIZE_BYTES = 7;
+  size_t maxRecords = (maxPayload - 2) / RECORD_SIZE_BYTES;
+  if (maxRecords == 0) {
+    maxRecords = 1;
+  }
+
+  uint8_t payload[512];
+  const size_t maxRecordsByBuffer = (sizeof(payload) - 2) / RECORD_SIZE_BYTES;
+  if (maxRecordsByBuffer > 0 && maxRecords > maxRecordsByBuffer) {
+    maxRecords = maxRecordsByBuffer;
+  }
+  if (maxRecords == 0) {
+    return;
+  }
+
+  uint32_t elapsed = nowMs - canTimingLastNotifyMs;
+  bool intervalElapsed = elapsed >= CAN_TIMING_NOTIFY_INTERVAL_MS;
+  bool needFlushForCapacity = canTimingBufferedCount() >= maxRecords;
+  bool haveDrops = canTimingDrops != 0;
+  if (!intervalElapsed && !needFlushForCapacity && !haveDrops) {
+    return;
+  }
+  size_t count = canTimingBufferedCount();
+  if (count > maxRecords) {
+    count = maxRecords;
+  }
+
+  size_t offset = 0;
+  uint16_t count16 = static_cast<uint16_t>(count);
+  payload[offset++] = static_cast<uint8_t>(count16 & 0xFF);
+  payload[offset++] = static_cast<uint8_t>((count16 >> 8) & 0xFF);
+
+  for (size_t i = 0; i < count; ++i) {
+    const CanTimingRecord *rec = &canTimingBuffer[canTimingReadIndex % CAN_TIMING_BUFFER_SIZE];
+    payload[offset++] = static_cast<uint8_t>(rec->pid11 & 0xFF);
+    payload[offset++] = static_cast<uint8_t>((rec->pid11 >> 8) & 0xFF);
+    payload[offset++] = rec->dlc;
+    payload[offset++] = static_cast<uint8_t>(rec->t_us & 0xFF);
+    payload[offset++] = static_cast<uint8_t>((rec->t_us >> 8) & 0xFF);
+    payload[offset++] = static_cast<uint8_t>((rec->t_us >> 16) & 0xFF);
+    payload[offset++] = static_cast<uint8_t>((rec->t_us >> 24) & 0xFF);
+    canTimingReadIndex++;
+  }
+
+  g_diag->setValue(payload, offset);
+  if (g_diag->notify()) {
+    noteBleTxFrame(nowMs);
+  }
+
+  canTimingLastNotifyMs = nowMs;
+  if (haveDrops && (canTimingDrops > 0)) {
+    uint32_t drops = canTimingDrops;
+    canTimingDrops = 0;
+    Serial.printf("WARNING: CAN timing diag dropped %lu record%s\n",
+                  static_cast<unsigned long>(drops),
+                  (drops == 1) ? "" : "s");
+  }
+
+  canTimingResetOverflowWarning(nowMs);
 }
 
 static void handleBufferedPacketsBurst(uint32_t budget_us) {
@@ -2104,6 +2299,9 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
           break;
         }
         bleSendCanData(m->pid, m->data, m->length);
+        if (bleIsConnected()) {
+          canTimingRecord(m->pid, m->length, m->t_us_rx);
+        }
         canNotifiesThisLoop++;
         if (extra) {
           extra->hasLastPayload = true;
@@ -2176,6 +2374,11 @@ static void flushBufferedPackets() {
   bufferToWriteTo = 0;
   bufferToReadFrom = 0;
   lastBufferOverflowWarningMs = 0;
+  canTimingReadIndex = 0;
+  canTimingWriteIndex = 0;
+  canTimingDrops = 0;
+  canTimingLastNotifyMs = 0;
+  canTimingOverflowWarned = false;
 }
 
 static void sendCanDiagnostics(uint32_t now) {
@@ -2570,6 +2773,7 @@ void loop() {
   uint32_t canPollStartUs = micros();
   uint32_t framesPolled = 0;
   while (ESP32Can.readFrame(rx, 0)) {
+    uint32_t t_us_rx = micros();
     framesPolled++;
     if (rx.rtr) {
       if ((framesPolled % CAN_RX_BUDGET_CHECK_INTERVAL) == 0) {
@@ -2593,7 +2797,7 @@ void loop() {
     }
 
     if (rx.data_length_code) {
-      bufferNewPacket(rx.identifier, rx.data, rx.data_length_code);
+      bufferNewPacket(rx.identifier, t_us_rx, rx.data, rx.data_length_code);
     }
 
     if ((framesPolled % CAN_RX_BUDGET_CHECK_INTERVAL) == 0) {
@@ -2616,6 +2820,9 @@ void loop() {
 
   // Periodic CAN diagnostic frame
   sendCanDiagnostics(postCanNow);
+
+  // Optional CAN timing diagnostic stream
+  canTimingFlush(postCanNow);
 
   // GPS service (read UART + notify BLE)
   gpsService(postCanNow);
