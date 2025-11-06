@@ -7,6 +7,9 @@
 #define FW_VERSION "0.5.0"
 #define FW_GITHASH "abcdef1"
 
+// GPS PPS discipline (set to -1 to disable)
+#define GPS_PPS_GPIO 16
+
 // Default divider for RaceChronoPidMap extra (only used as init)
 #define DEFAULT_UPDATE_RATE_DIVIDER 10
 
