@@ -76,11 +76,12 @@ static const char *PMTK_SET_NMEA_UPDATE_10HZ   = "$PMTK220,100*2F\r\n";
 static const char *PMTK_SET_BAUD_115200        = "$PMTK251,115200*1F\r\n";
 
 // ===== BLE UUIDs (RaceChrono DIY) =====
-static const char* RC_SERVICE_UUID  = "00001ff8-0000-1000-8000-00805f9b34fb";
-static const char* RC_CHAR_CAN_UUID = "00000001-0000-1000-8000-00805f9b34fb"; // READ+NOTIFY
-static const char* RC_CHAR_FIL_UUID = "00000002-0000-1000-8000-00805f9b34fb"; // WRITE
-static const char* RC_CHAR_GPS_UUID = "00000003-0000-1000-8000-00805f9b34fb"; // READ+NOTIFY
-static const char* RC_CHAR_GTM_UUID = "00000004-0000-1000-8000-00805f9b34fb"; // READ+NOTIFY
+static const char* RC_SERVICE_UUID   = "00001ff8-0000-1000-8000-00805f9b34fb";
+static const char* RC_CHAR_CAN_UUID  = "00000001-0000-1000-8000-00805f9b34fb"; // READ+NOTIFY
+static const char* RC_CHAR_FIL_UUID  = "00000002-0000-1000-8000-00805f9b34fb"; // WRITE
+static const char* RC_CHAR_GPS_UUID  = "00000003-0000-1000-8000-00805f9b34fb"; // READ+NOTIFY
+static const char* RC_CHAR_GTM_UUID  = "00000004-0000-1000-8000-00805f9b34fb"; // READ+NOTIFY
+static const char* RC_CHAR_DIAG_UUID = "00000005-0000-1000-8000-00805f9b34fb"; // READ+NOTIFY
 
 // ====== (Fix) Governor snapshot: define early so Arduino doesn't mangle prototypes ======
 struct GovernorSnapshot { uint32_t pid; uint8_t governor; };
@@ -187,6 +188,7 @@ static NimBLECharacteristic* g_can    = nullptr; // 0x0001
 static NimBLECharacteristic* g_fil    = nullptr; // 0x0002
 static NimBLECharacteristic* g_gps    = nullptr; // 0x0003
 static NimBLECharacteristic* g_gtm    = nullptr; // 0x0004
+static NimBLECharacteristic* g_diag   = nullptr; // 0x0005
 
 static constexpr uint16_t BLE_LINK_PRI_INVALID_HANDLE      = 0xFFFF;
 static constexpr uint16_t BLE_LINK_PRI_MIN_INTERVAL_UNITS  = 6;   // 7.5 ms
@@ -1158,12 +1160,15 @@ static void bleInit(){
             NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
   g_gtm = g_svc->createCharacteristic(RC_CHAR_GTM_UUID,
             NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
+  g_diag = g_svc->createCharacteristic(RC_CHAR_DIAG_UUID,
+            NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
 
   g_fil->setCallbacks(&g_filCB);
 
   // Init payloads
   { uint8_t init20[20]; memset(init20, 0xFF, sizeof(init20)); g_gps->setValue(init20, 20); }
   { uint8_t init3[3] = {0,0,0}; g_gtm->setValue(init3, 3); }
+  { uint8_t init2[2] = {0,0}; g_diag->setValue(init2, 2); }
 
   g_svc->start();
 
@@ -1686,12 +1691,14 @@ static bool checkCanBusHealth(uint32_t now);
 [[maybe_unused]] static bool writeFrameWithWatch(CanFrame &frame, uint32_t timeout = 1);
 static void setLastReconnectCause(const char *reason);
 
-static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len);
+static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len, uint32_t t_us_rx);
 static void handleBufferedPacketsBurst(uint32_t budget_us = 2000);
 static void logNotifyCapIfNeeded(uint32_t now);
 static void flushBufferedPackets();
 static void sendCanDiagnostics(uint32_t now);
 static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len);
+static void diagRecordFrame(uint32_t pid, uint8_t dlc, uint32_t t_us_rx);
+static void serviceDiagStream();
 
 static void apply_allow_list_profile();
 static void apply_allow_all();
@@ -2025,12 +2032,28 @@ struct BufferedMessage {
   uint32_t pid;
   uint8_t  data[8];
   uint8_t  length;
+  uint32_t t_us_rx;
 };
 static constexpr size_t NUM_BUFFERS = 256;
 static BufferedMessage buffers[NUM_BUFFERS];
 static uint32_t bufferToWriteTo = 0;
 static uint32_t bufferToReadFrom = 0;
 static uint32_t lastBufferOverflowWarningMs = 0;
+
+struct DiagTuple {
+  uint16_t id11;
+  uint8_t  dlc;
+  uint32_t t_us32;
+};
+static constexpr size_t DIAG_BUFFER_CAPACITY = 512;
+static constexpr size_t DIAG_MAX_TUPLES_PER_PACKET = 26;
+static constexpr uint32_t DIAG_NOTIFY_INTERVAL_US = 250000;
+static DiagTuple diagBuffer[DIAG_BUFFER_CAPACITY];
+static uint32_t diagWriteIndex = 0;
+static uint32_t diagReadIndex = 0;
+static uint32_t diagLastNotifyUs = 0;
+static bool diagTimerInitialized = false;
+static uint8_t diagPayload[2 + (DIAG_MAX_TUPLES_PER_PACKET * 7)];
 
 static constexpr uint32_t CAN_RX_READ_BUDGET_US = 2000;      // microseconds per poll burst
 static constexpr uint32_t CAN_RX_BUDGET_CHECK_INTERVAL = 16; // frames between budget checks
@@ -2039,7 +2062,11 @@ static inline uint32_t bufferedPacketCount() {
   return bufferToWriteTo - bufferToReadFrom;
 }
 
-static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len) {
+static inline uint32_t diagBufferedCount() {
+  return diagWriteIndex - diagReadIndex;
+}
+
+static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len, uint32_t t_us_rx) {
   if (bufferedPacketCount() == static_cast<uint32_t>(NUM_BUFFERS)) {
     uint32_t nowMs = millis();
     if (nowMs - lastBufferOverflowWarningMs >= 250) {
@@ -2051,8 +2078,80 @@ static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len) {
   BufferedMessage *m = &buffers[bufferToWriteTo % NUM_BUFFERS];
   m->pid = pid;
   m->length = (len > 8) ? 8 : len;
-  memcpy(m->data, data, m->length);
+  m->t_us_rx = t_us_rx;
+  if (m->length) {
+    memcpy(m->data, data, m->length);
+  }
   bufferToWriteTo++;
+}
+
+static void diagRecordFrame(uint32_t pid, uint8_t dlc, uint32_t t_us_rx) {
+  if (diagBufferedCount() == static_cast<uint32_t>(DIAG_BUFFER_CAPACITY)) {
+    diagReadIndex++;
+  }
+  DiagTuple *slot = &diagBuffer[diagWriteIndex % DIAG_BUFFER_CAPACITY];
+  slot->id11 = static_cast<uint16_t>(pid & 0x7FFu);
+  slot->dlc = dlc;
+  slot->t_us32 = t_us_rx;
+  diagWriteIndex++;
+}
+
+static void serviceDiagStream() {
+  if (!g_diag || !bleIsConnected()) {
+    diagTimerInitialized = false;
+    return;
+  }
+
+  uint32_t nowUs = micros();
+  if (!diagTimerInitialized) {
+    diagTimerInitialized = true;
+    diagLastNotifyUs = nowUs;
+  }
+
+  if ((uint32_t)(nowUs - diagLastNotifyUs) < DIAG_NOTIFY_INTERVAL_US) {
+    return;
+  }
+
+  diagLastNotifyUs = nowUs;
+
+  uint32_t available = diagBufferedCount();
+  if (available == 0) {
+    diagPayload[0] = 0;
+    diagPayload[1] = 0;
+    g_diag->setValue(diagPayload, 2);
+    g_diag->notify();
+    return;
+  }
+
+  do {
+    available = diagBufferedCount();
+    if (!available) break;
+
+    uint16_t count = static_cast<uint16_t>(
+        available > DIAG_MAX_TUPLES_PER_PACKET ? DIAG_MAX_TUPLES_PER_PACKET : available);
+
+    diagPayload[0] = static_cast<uint8_t>(count & 0xFF);
+    diagPayload[1] = static_cast<uint8_t>((count >> 8) & 0xFF);
+
+    size_t payloadLen = 2;
+    for (uint16_t i = 0; i < count; ++i) {
+      const DiagTuple &tuple = diagBuffer[(diagReadIndex + i) % DIAG_BUFFER_CAPACITY];
+      size_t base = payloadLen;
+      diagPayload[base + 0] = static_cast<uint8_t>(tuple.id11 & 0xFF);
+      diagPayload[base + 1] = static_cast<uint8_t>((tuple.id11 >> 8) & 0x07);
+      diagPayload[base + 2] = tuple.dlc;
+      uint32_t t = tuple.t_us32;
+      diagPayload[base + 3] = static_cast<uint8_t>(t & 0xFF);
+      diagPayload[base + 4] = static_cast<uint8_t>((t >> 8) & 0xFF);
+      diagPayload[base + 5] = static_cast<uint8_t>((t >> 16) & 0xFF);
+      diagPayload[base + 6] = static_cast<uint8_t>((t >> 24) & 0xFF);
+      payloadLen += 7;
+    }
+
+    diagReadIndex += count;
+    g_diag->setValue(diagPayload, payloadLen);
+    g_diag->notify();
+  } while (diagBufferedCount() > 0);
 }
 
 static void handleBufferedPacketsBurst(uint32_t budget_us) {
@@ -2063,6 +2162,8 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
 
   while (bufferToReadFrom != bufferToWriteTo) {
     BufferedMessage *m = &buffers[bufferToReadFrom % NUM_BUFFERS];
+
+    diagRecordFrame(m->pid, m->length, m->t_us_rx);
 
     void *entry = pidMap.getEntryId(m->pid);
     if (!USE_PROFILE_ALLOWLIST && !entry) {
@@ -2176,6 +2277,9 @@ static void flushBufferedPackets() {
   bufferToWriteTo = 0;
   bufferToReadFrom = 0;
   lastBufferOverflowWarningMs = 0;
+  diagWriteIndex = 0;
+  diagReadIndex = 0;
+  diagTimerInitialized = false;
 }
 
 static void sendCanDiagnostics(uint32_t now) {
@@ -2569,7 +2673,13 @@ void loop() {
   CanFrame rx;
   uint32_t canPollStartUs = micros();
   uint32_t framesPolled = 0;
-  while (ESP32Can.readFrame(rx, 0)) {
+  while (true) {
+    if (!ESP32Can.readFrame(rx, 0)) {
+      break;
+    }
+
+    uint32_t t_us_rx = micros();
+
     framesPolled++;
     if (rx.rtr) {
       if ((framesPolled % CAN_RX_BUDGET_CHECK_INTERVAL) == 0) {
@@ -2593,7 +2703,9 @@ void loop() {
     }
 
     if (rx.data_length_code) {
-      bufferNewPacket(rx.identifier, rx.data, rx.data_length_code);
+      bufferNewPacket(rx.identifier, rx.data, rx.data_length_code, t_us_rx);
+    } else {
+      diagRecordFrame(rx.identifier, 0, t_us_rx);
     }
 
     if ((framesPolled % CAN_RX_BUDGET_CHECK_INTERVAL) == 0) {
@@ -2616,6 +2728,7 @@ void loop() {
 
   // Periodic CAN diagnostic frame
   sendCanDiagnostics(postCanNow);
+  serviceDiagStream();
 
   // GPS service (read UART + notify BLE)
   gpsService(postCanNow);
