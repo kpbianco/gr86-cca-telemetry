@@ -31,6 +31,7 @@
 #include <esp_random.h>
 #include <cstdio>
 #include <cstring>
+#include <array>
 #include <ctype.h>
 #include <driver/twai.h>
 #include <math.h>
@@ -191,6 +192,53 @@ static NimBLECharacteristic* g_gps    = nullptr; // 0x0003
 static NimBLECharacteristic* g_gtm    = nullptr; // 0x0004
 static NimBLECharacteristic* g_diag   = nullptr; // 0x0005
 
+static constexpr size_t kDiagSubscriptionSlots = 4;
+static std::array<uint16_t, kDiagSubscriptionSlots> g_diagSubscriptionHandles{};
+static std::array<bool, kDiagSubscriptionSlots>     g_diagSubscriptionStates{};
+
+static void diagSubscriptionsClear() {
+  g_diagSubscriptionHandles.fill(BLE_HS_CONN_HANDLE_NONE);
+  g_diagSubscriptionStates.fill(false);
+}
+
+static void diagSubscriptionUpdate(uint16_t connHandle, bool subscribed) {
+  size_t slot = kDiagSubscriptionSlots;
+  for (size_t i = 0; i < kDiagSubscriptionSlots; ++i) {
+    if (g_diagSubscriptionHandles[i] == connHandle) {
+      slot = i;
+      break;
+    }
+  }
+
+  if ((slot == kDiagSubscriptionSlots) && subscribed) {
+    for (size_t i = 0; i < kDiagSubscriptionSlots; ++i) {
+      if (!g_diagSubscriptionStates[i]) {
+        slot = i;
+        break;
+      }
+    }
+  }
+
+  if (slot == kDiagSubscriptionSlots) {
+    if (!subscribed) {
+      return;
+    }
+    slot = 0;
+  }
+
+  g_diagSubscriptionHandles[slot] = subscribed ? connHandle : BLE_HS_CONN_HANDLE_NONE;
+  g_diagSubscriptionStates[slot] = subscribed;
+}
+
+static bool diagHasSubscribers() {
+  for (bool state : g_diagSubscriptionStates) {
+    if (state) {
+      return true;
+    }
+  }
+  return false;
+}
+
 static constexpr uint16_t BLE_LINK_PRI_INVALID_HANDLE      = 0xFFFF;
 static constexpr uint16_t BLE_LINK_PRI_MIN_INTERVAL_UNITS  = 6;   // 7.5 ms
 static constexpr uint16_t BLE_LINK_PRI_MAX_INTERVAL_UNITS  = 12;  // 15 ms
@@ -303,6 +351,7 @@ static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo) {
 
 static void bleLinkPri_onDisconnect() {
   bleLinkPri_resetState();
+  diagSubscriptionsClear();
 }
 
 static void bleLinkPri_service(uint32_t now) {
@@ -1037,6 +1086,14 @@ public:
 #endif
 } g_filCB;
 
+class DiagCB : public NimBLECharacteristicCallbacks {
+ public:
+  void onSubscribe(NimBLECharacteristic* ch, NimBLEConnInfo& connInfo, uint16_t subValue) override {
+    (void)ch;
+    diagSubscriptionUpdate(connInfo.getConnHandle(), subValue != 0);
+  }
+} g_diagCB;
+
 // ===== Our CAN sender over BLE 0x0001 =====
 static uint8_t canBuf[20];
 static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len) {
@@ -1165,6 +1222,9 @@ static void bleInit(){
             NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
 
   g_fil->setCallbacks(&g_filCB);
+  if (g_diag) {
+    g_diag->setCallbacks(&g_diagCB);
+  }
 
   // Init payloads
   { uint8_t init20[20]; memset(init20, 0xFF, sizeof(init20)); g_gps->setValue(init20, 20); }
@@ -1753,6 +1813,7 @@ void setup() {
 
   // BLE
   Serial.println("BLE setup...");
+  diagSubscriptionsClear();
   bleInit();
   Serial.println("Waiting for RaceChrono...");
   waitForConnection();
@@ -2108,7 +2169,7 @@ static void bufferNewPacket(uint32_t pid, uint32_t t_us_rx, const uint8_t *data,
 static void canTimingFlush(uint32_t nowMs) {
   if (!g_diag) return;
   if (!bleIsConnected()) return;
-  if (g_diag->getSubscribedCount() == 0) {
+  if (!diagHasSubscribers()) {
     canTimingLastNotifyMs = nowMs;
     canTimingReadIndex = canTimingWriteIndex;
     canTimingDrops = 0;
@@ -2172,8 +2233,8 @@ static void canTimingFlush(uint32_t nowMs) {
     canTimingReadIndex++;
   }
 
-  if (g_diag->setValue(payload, offset)) {
-    g_diag->notify();
+  g_diag->setValue(payload, offset);
+  if (g_diag->notify()) {
     noteBleTxFrame(nowMs);
   }
 
