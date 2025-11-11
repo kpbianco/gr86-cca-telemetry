@@ -18,6 +18,8 @@
 //
 // Board: ESP32S3 Dev Module
 
+struct TwaiFilterSpec;
+
 #include <ESP32-TWAI-CAN.hpp>
 #include <NimBLEDevice.h>
 #if defined(CONFIG_NIMBLE_CPP_IDF)
@@ -1998,15 +2000,18 @@ static void servicePendingBleRestart() {
 }
 
 // ===== TWAI acceptance filter helpers =====
-static TwaiFilterSpec twai_compute_spec(const uint16_t *begin, const uint16_t *end) {
-  TwaiFilterSpec spec{0, 0, false};
+static void twai_compute_spec(const uint16_t *begin, const uint16_t *end, TwaiFilterSpec *specOut) {
+  if (!specOut) return;
+
+  specOut->base = 0;
+  specOut->mask = 0;
+  specOut->valid = false;
+
   if (begin >= end) {
-    return spec;
+    return;
   }
 
-  spec.valid = true;
-  spec.base = 0;
-  spec.mask = 0;
+  specOut->valid = true;
 
   for (uint16_t bit = 0; bit < 11; ++bit) {
     bool bitVal = ((*begin) >> bit) & 0x1u;
@@ -2019,22 +2024,20 @@ static TwaiFilterSpec twai_compute_spec(const uint16_t *begin, const uint16_t *e
     }
     if (allSame) {
       if (bitVal) {
-        spec.base |= static_cast<uint16_t>(1u << bit);
+        specOut->base |= static_cast<uint16_t>(1u << bit);
       }
     } else {
-      spec.mask |= static_cast<uint16_t>(1u << bit);
+      specOut->mask |= static_cast<uint16_t>(1u << bit);
     }
   }
-
-  return spec;
 }
 
-static inline bool twai_spec_matches(const TwaiFilterSpec &spec, uint16_t id) {
-  if (!spec.valid) return false;
-  return (((id ^ spec.base) & static_cast<uint16_t>(~spec.mask)) == 0u);
+static inline bool twai_spec_matches(const TwaiFilterSpec *spec, uint16_t id) {
+  if (!spec || !spec->valid) return false;
+  return (((id ^ spec->base) & static_cast<uint16_t>(~spec->mask)) == 0u);
 }
 
-static size_t twai_combined_coverage(const TwaiFilterSpec &a, const TwaiFilterSpec &b) {
+static size_t twai_combined_coverage(const TwaiFilterSpec *a, const TwaiFilterSpec *b) {
   size_t count = 0;
   for (uint16_t id = 0; id <= 0x7FFu; ++id) {
     if (twai_spec_matches(a, id) || twai_spec_matches(b, id)) {
@@ -2044,9 +2047,9 @@ static size_t twai_combined_coverage(const TwaiFilterSpec &a, const TwaiFilterSp
   return count;
 }
 
-static void twai_fill_filter_bytes(const TwaiFilterSpec &spec, uint8_t *codeOut, uint8_t *maskOut) {
-  uint16_t base = spec.valid ? static_cast<uint16_t>(spec.base & 0x7FFu) : 0u;
-  uint16_t mask = spec.valid ? static_cast<uint16_t>(spec.mask & 0x7FFu) : 0x7FFu;
+static void twai_fill_filter_bytes(const TwaiFilterSpec *spec, uint8_t *codeOut, uint8_t *maskOut) {
+  uint16_t base = (spec && spec->valid) ? static_cast<uint16_t>(spec->base & 0x7FFu) : 0u;
+  uint16_t mask = (spec && spec->valid) ? static_cast<uint16_t>(spec->mask & 0x7FFu) : 0x7FFu;
 
   uint8_t code0 = static_cast<uint8_t>((base >> 3) & 0xFFu);
   uint8_t code1 = static_cast<uint8_t>((base & 0x7u) << 5);
@@ -2089,11 +2092,11 @@ static bool build_profile_twai_filter(twai_filter_config_t &out) {
 
   auto consider_partition = [&](const TwaiFilterSpec &specA, const TwaiFilterSpec &specB) {
     for (uint16_t id : allowed) {
-      if (!twai_spec_matches(specA, id) && !twai_spec_matches(specB, id)) {
+      if (!twai_spec_matches(&specA, id) && !twai_spec_matches(&specB, id)) {
         return;
       }
     }
-    size_t coverage = twai_combined_coverage(specA, specB);
+    size_t coverage = twai_combined_coverage(&specA, &specB);
     if (!found || coverage < bestCoverage) {
       bestCoverage = coverage;
       bestA = specA;
@@ -2107,8 +2110,10 @@ static bool build_profile_twai_filter(twai_filter_config_t &out) {
     const uint16_t *mid = begin + split;
     const uint16_t *end = begin + allowed.size();
 
-    TwaiFilterSpec specA = twai_compute_spec(begin, mid);
-    TwaiFilterSpec specB = twai_compute_spec(mid, end);
+    TwaiFilterSpec specA{0, 0, false};
+    TwaiFilterSpec specB{0, 0, false};
+    twai_compute_spec(begin, mid, &specA);
+    twai_compute_spec(mid, end, &specB);
     consider_partition(specA, specB);
   }
 
@@ -2146,8 +2151,10 @@ static bool build_profile_twai_filter(twai_filter_config_t &out) {
           subsetB.insert(subsetB.end(), vec.begin(), vec.end());
         }
       }
-      TwaiFilterSpec specA = twai_compute_spec(subsetA.data(), subsetA.data() + subsetA.size());
-      TwaiFilterSpec specB = twai_compute_spec(subsetB.data(), subsetB.data() + subsetB.size());
+      TwaiFilterSpec specA{0, 0, false};
+      TwaiFilterSpec specB{0, 0, false};
+      twai_compute_spec(subsetA.data(), subsetA.data() + subsetA.size(), &specA);
+      twai_compute_spec(subsetB.data(), subsetB.data() + subsetB.size(), &specB);
       consider_partition(specA, specB);
     }
   }
@@ -2165,8 +2172,8 @@ static bool build_profile_twai_filter(twai_filter_config_t &out) {
 
   uint8_t code[4] = {0, 0, 0, 0};
   uint8_t mask[4] = {0xFF, 0xFF, 0xFF, 0xFF};
-  twai_fill_filter_bytes(bestA, &code[0], &mask[0]);
-  twai_fill_filter_bytes(bestB, &code[2], &mask[2]);
+  twai_fill_filter_bytes(&bestA, &code[0], &mask[0]);
+  twai_fill_filter_bytes(&bestB, &code[2], &mask[2]);
 
   out.acceptance_code = static_cast<uint32_t>(code[0]) |
                         (static_cast<uint32_t>(code[1]) << 8) |
@@ -2176,7 +2183,8 @@ static bool build_profile_twai_filter(twai_filter_config_t &out) {
                         (static_cast<uint32_t>(mask[1]) << 8) |
                         (static_cast<uint32_t>(mask[2]) << 16) |
                         (static_cast<uint32_t>(mask[3]) << 24);
-  out.single_filter = TWAI_FILTER_MODE_DUAL;
+  twai_filter_config_t defaults = TWAI_FILTER_CONFIG_ACCEPT_ALL();
+  out.single_filter = defaults.single_filter;
 
   g_profileFilterSummary.computed = true;
   g_profileFilterSummary.applied = true;
