@@ -1828,6 +1828,21 @@ void cfg_boot_load_and_apply() {
   apply_profile_and_dividers();
 }
 
+static twai_filter_config_t build_profile_twai_filter() {
+  twai_filter_config_t defaults = TWAI_FILTER_CONFIG_ACCEPT_ALL();
+  twai_filter_config_t out = defaults;
+
+  // Force dual-filter mode so both profile-generated specs are evaluated whenever we
+  // populate two acceptance windows.
+#if defined(TWAI_FILTER_MODE_DUAL)
+  out.single_filter = static_cast<decltype(out.single_filter)>(TWAI_FILTER_MODE_DUAL);
+#else
+  out.single_filter = static_cast<decltype(out.single_filter)>(false);
+#endif
+
+  return out;
+}
+
 // ===== Forward decls =====
 static void waitForConnection();
 static bool startCanBusReader();
@@ -1978,7 +1993,8 @@ static bool startCanBusReader() {
   ESP32Can.setSpeed(ESP32Can.convertSpeed(500));
   ESP32Can.setRxQueueSize(64);
   ESP32Can.setTxQueueSize(16);
-  if (!ESP32Can.begin()) {
+  twai_filter_config_t profileFilter = build_profile_twai_filter();
+  if (!ESP32Can.begin(ESP32Can.getSpeed(), CAN_TX, CAN_RX, 0xFFFF, 0xFFFF, &profileFilter)) {
     Serial.println("ERROR: TWAI begin() failed. Check wiring/termination/RS.");
     return false;
   }
