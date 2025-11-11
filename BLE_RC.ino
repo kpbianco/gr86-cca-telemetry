@@ -2305,6 +2305,97 @@ static void serviceDiagStream() {
   } while (diagBufferedCount() > 0);
 }
 
+class Supervisor {
+public:
+  enum class Subsystem : uint8_t {
+    CanPoll = 0,
+    GpsService = 1,
+    BleBurst = 2,
+    Count = 3,
+  };
+
+  struct Channel {
+    const char *tag;
+    uint32_t budgetUs;
+    uint32_t streak;
+    uint32_t faults;
+    uint32_t lastUs;
+    uint32_t maxUs;
+  };
+
+  Supervisor()
+      : channels{
+            {"CAN", 2000, 0, 0, 0, 0},
+            {"GPS", 3000, 0, 0, 0, 0},
+            {"BLE", 4000, 0, 0, 0, 0},
+        } {}
+
+  void beginLoop() { loopCounter++; }
+
+  void noteElapsed(Subsystem subsystem, uint32_t elapsedUs) {
+    Channel &ch = channels[static_cast<size_t>(subsystem)];
+    ch.lastUs = elapsedUs;
+    if (elapsedUs > ch.maxUs) {
+      ch.maxUs = elapsedUs;
+    }
+
+    if (loopCounter <= kStartupGraceLoops) {
+      ch.streak = 0;
+      return;
+    }
+
+    if (elapsedUs <= ch.budgetUs) {
+      ch.streak = 0;
+      return;
+    }
+
+    if (ch.streak < 0xFFFFFFFFu) {
+      ch.streak++;
+    }
+
+    if (ch.streak > kOverrunTripLoops) {
+      if (ch.faults < 0xFFFFFFFFu) {
+        ch.faults++;
+      }
+      emitStarve(ch, elapsedUs);
+      ch.streak = 0;
+    }
+  }
+
+  const Channel &stats(Subsystem subsystem) const {
+    return channels[static_cast<size_t>(subsystem)];
+  }
+
+private:
+  static constexpr uint32_t kStartupGraceLoops = 128;
+  static constexpr uint32_t kOverrunTripLoops = 3;
+  uint32_t loopCounter = 0;
+  static constexpr size_t kChannelCount = static_cast<size_t>(Subsystem::Count);
+  Channel channels[kChannelCount];
+
+  void emitStarve(const Channel &ch, uint32_t elapsedUs) {
+    char code = ch.tag && ch.tag[0] ? ch.tag[0] : '?';
+    uint32_t elapsedMs = (elapsedUs + 500) / 1000;
+    if (elapsedMs == 0 && elapsedUs > 0) {
+      elapsedMs = 1;
+    }
+
+    char text[16];
+    int written = snprintf(text, sizeof(text), "STARVE %c,%lu", code, (unsigned long)elapsedMs);
+    if (written <= 0) {
+      return;
+    }
+    if (written >= static_cast<int>(sizeof(text))) {
+      written = sizeof(text) - 1;
+    }
+
+    Serial.printf("WARN: Supervisor STARVE %s (%lu us)\n", ch.tag ? ch.tag : "?", (unsigned long)elapsedUs);
+    bleSendCanData(0x777, reinterpret_cast<const uint8_t*>(text), static_cast<uint8_t>(written));
+  }
+};
+
+static Supervisor g_supervisor;
+
 static void handleBufferedPacketsBurst(uint32_t budget_us) {
   uint32_t t0 = micros();
   uint32_t baseBudget = budget_us ? budget_us : 1;
@@ -2552,6 +2643,17 @@ static void show_stats() {
   Serial.printf("Last CAN restart:%lu s ago\n", (unsigned long)(sinceRestartMs / 1000UL));
   Serial.printf("BLE tx avg:      %.1f fps\n", bleTxMovingAverageFps);
   Serial.printf("BLE governor:    %s\n", bleGovernorActive ? "ACTIVE" : "idle");
+  const auto &supCan = g_supervisor.stats(Supervisor::Subsystem::CanPoll);
+  const auto &supGps = g_supervisor.stats(Supervisor::Subsystem::GpsService);
+  const auto &supBle = g_supervisor.stats(Supervisor::Subsystem::BleBurst);
+  Serial.printf("Supervisor faults: CAN=%lu GPS=%lu BLE=%lu\n",
+                (unsigned long)supCan.faults,
+                (unsigned long)supGps.faults,
+                (unsigned long)supBle.faults);
+  Serial.printf("Supervisor max us: CAN=%lu GPS=%lu BLE=%lu\n",
+                (unsigned long)supCan.maxUs,
+                (unsigned long)supGps.maxUs,
+                (unsigned long)supBle.maxUs);
   Serial.printf("Last reconnect:  %s\n", lastReconnectCause);
   Serial.printf("FW: %s\n", FW_VERSION_STRING);
   Serial.println("=================");
@@ -2772,6 +2874,8 @@ void loop() {
   loop_iteration++;
   esp_task_wdt_reset();
 
+  g_supervisor.beginLoop();
+
   canNotifiesThisLoop = 0;
   notifyCapHitCurrentLoop = false;
 
@@ -2867,8 +2971,14 @@ void loop() {
     }
   }
 
+  uint32_t canPollElapsedUs = micros() - canPollStartUs;
+  g_supervisor.noteElapsed(Supervisor::Subsystem::CanPoll, canPollElapsedUs);
+
   // Forward bursts within a small time budget
+  uint32_t bleBurstStartUs = micros();
   handleBufferedPacketsBurst(2000);
+  uint32_t bleBurstElapsedUs = micros() - bleBurstStartUs;
+  g_supervisor.noteElapsed(Supervisor::Subsystem::BleBurst, bleBurstElapsedUs);
 
   // Oil channel
   oil_update_and_publish_if_due();
@@ -2882,7 +2992,10 @@ void loop() {
   serviceDiagStream();
 
   // GPS service (read UART + notify BLE)
+  uint32_t gpsStartUs = micros();
   gpsService(postCanNow);
+  uint32_t gpsElapsedUs = micros() - gpsStartUs;
+  g_supervisor.noteElapsed(Supervisor::Subsystem::GpsService, gpsElapsedUs);
 
   updateBleGovernor(postCanNow);
 
