@@ -29,11 +29,14 @@
 #include <Preferences.h>
 #include <esp_gatt_defs.h>
 #include <esp_random.h>
+#include <algorithm>
+#include <limits>
 #include <cstdio>
 #include <cstring>
 #include <ctype.h>
 #include <driver/twai.h>
 #include <math.h>
+#include <vector>
 #include <esp_system.h>
 #include <esp_task_wdt.h>
 #include <esp_heap_caps.h>
@@ -621,6 +624,28 @@ static inline const pidmaps::PidMapDefinition *active_pid_map() {
 // Toggle: PROFILE allow-list (true) vs sniff-all (false)
 static constexpr bool DEFAULT_USE_PROFILE_ALLOWLIST = true;
 static bool USE_PROFILE_ALLOWLIST = DEFAULT_USE_PROFILE_ALLOWLIST;
+
+static constexpr bool DEFAULT_USE_TWAI_PROFILE_FILTER = true;
+static bool USE_TWAI_PROFILE_FILTER = DEFAULT_USE_TWAI_PROFILE_FILTER;
+
+struct TwaiFilterSpec {
+  uint16_t base;
+  uint16_t mask;
+  bool valid;
+};
+
+struct TwaiFilterSummary {
+  bool computed;
+  bool applied;
+  uint16_t allowedCount;
+  uint16_t coverageCount;
+  uint16_t minId;
+  uint16_t maxId;
+  TwaiFilterSpec specA;
+  TwaiFilterSpec specB;
+};
+
+static TwaiFilterSummary g_profileFilterSummary = {};
 
 // ======== Oil pressure (analog) ========
 #define OIL_ADC_PIN         1       // GPIO1 (ADC1_CH0)
@@ -1688,6 +1713,7 @@ static void cfg_apply_runtime_defaults() {
   V0_ADC = DEFAULT_V0_ADC;
   V1_ADC = DEFAULT_V1_ADC;
   USE_PROFILE_ALLOWLIST = DEFAULT_USE_PROFILE_ALLOWLIST;
+  USE_TWAI_PROFILE_FILTER = DEFAULT_USE_TWAI_PROFILE_FILTER;
   clear_custom_dividers();
 }
 
@@ -1971,6 +1997,199 @@ static void servicePendingBleRestart() {
   pendingBleRestartReason[0] = '\0';
 }
 
+// ===== TWAI acceptance filter helpers =====
+static TwaiFilterSpec twai_compute_spec(const uint16_t *begin, const uint16_t *end) {
+  TwaiFilterSpec spec{0, 0, false};
+  if (begin >= end) {
+    return spec;
+  }
+
+  spec.valid = true;
+  spec.base = 0;
+  spec.mask = 0;
+
+  for (uint16_t bit = 0; bit < 11; ++bit) {
+    bool bitVal = ((*begin) >> bit) & 0x1u;
+    bool allSame = true;
+    for (const uint16_t *it = begin + 1; it < end; ++it) {
+      if (((*it >> bit) & 0x1u) != bitVal) {
+        allSame = false;
+        break;
+      }
+    }
+    if (allSame) {
+      if (bitVal) {
+        spec.base |= static_cast<uint16_t>(1u << bit);
+      }
+    } else {
+      spec.mask |= static_cast<uint16_t>(1u << bit);
+    }
+  }
+
+  return spec;
+}
+
+static inline bool twai_spec_matches(const TwaiFilterSpec &spec, uint16_t id) {
+  if (!spec.valid) return false;
+  return (((id ^ spec.base) & static_cast<uint16_t>(~spec.mask)) == 0u);
+}
+
+static size_t twai_combined_coverage(const TwaiFilterSpec &a, const TwaiFilterSpec &b) {
+  size_t count = 0;
+  for (uint16_t id = 0; id <= 0x7FFu; ++id) {
+    if (twai_spec_matches(a, id) || twai_spec_matches(b, id)) {
+      ++count;
+    }
+  }
+  return count;
+}
+
+static void twai_fill_filter_bytes(const TwaiFilterSpec &spec, uint8_t *codeOut, uint8_t *maskOut) {
+  uint16_t base = spec.valid ? static_cast<uint16_t>(spec.base & 0x7FFu) : 0u;
+  uint16_t mask = spec.valid ? static_cast<uint16_t>(spec.mask & 0x7FFu) : 0x7FFu;
+
+  uint8_t code0 = static_cast<uint8_t>((base >> 3) & 0xFFu);
+  uint8_t code1 = static_cast<uint8_t>((base & 0x7u) << 5);
+
+  uint8_t mask0 = static_cast<uint8_t>((mask >> 3) & 0xFFu);
+  uint8_t mask1 = static_cast<uint8_t>(((mask & 0x7u) << 5) & 0xE0u);
+
+  mask1 |= 0x1Fu;  // Ignore RTR, IDE, DLC bits
+  code1 &= 0xE0u;  // Ensure control bits cleared
+
+  codeOut[0] = code0;
+  codeOut[1] = code1;
+  maskOut[0] = mask0;
+  maskOut[1] = mask1;
+}
+
+static bool build_profile_twai_filter(twai_filter_config_t &out) {
+  g_profileFilterSummary = {};
+
+  const auto *map = active_pid_map();
+  if (!map || !map->isCanIdWhitelisted) {
+    return false;
+  }
+
+  std::vector<uint16_t> allowed;
+  allowed.reserve(0x800);
+  for (uint16_t id = 0; id <= 0x7FFu; ++id) {
+    if (map->isCanIdWhitelisted(id)) {
+      allowed.push_back(id);
+    }
+  }
+  if (allowed.empty()) {
+    return false;
+  }
+
+  TwaiFilterSpec bestA{0, 0, false};
+  TwaiFilterSpec bestB{0, 0, false};
+  size_t bestCoverage = std::numeric_limits<size_t>::max();
+  bool found = false;
+
+  auto consider_partition = [&](const TwaiFilterSpec &specA, const TwaiFilterSpec &specB) {
+    for (uint16_t id : allowed) {
+      if (!twai_spec_matches(specA, id) && !twai_spec_matches(specB, id)) {
+        return;
+      }
+    }
+    size_t coverage = twai_combined_coverage(specA, specB);
+    if (!found || coverage < bestCoverage) {
+      bestCoverage = coverage;
+      bestA = specA;
+      bestB = specB;
+      found = true;
+    }
+  };
+
+  for (size_t split = 0; split <= allowed.size(); ++split) {
+    const uint16_t *begin = allowed.data();
+    const uint16_t *mid = begin + split;
+    const uint16_t *end = begin + allowed.size();
+
+    TwaiFilterSpec specA = twai_compute_spec(begin, mid);
+    TwaiFilterSpec specB = twai_compute_spec(mid, end);
+    consider_partition(specA, specB);
+  }
+
+  const uint8_t shifts[] = {3u, 4u};
+  for (uint8_t shift : shifts) {
+    std::vector<uint16_t> groupKeys;
+    std::vector<std::vector<uint16_t>> grouped;
+    uint16_t currentKey = 0xFFFFu;
+    for (uint16_t id : allowed) {
+      uint16_t key = static_cast<uint16_t>(id >> shift);
+      if (groupKeys.empty() || key != currentKey) {
+        groupKeys.push_back(key);
+        grouped.emplace_back();
+        currentKey = key;
+      }
+      grouped.back().push_back(id);
+    }
+    size_t gcount = groupKeys.size();
+    if (gcount == 0 || gcount > 14) {
+      continue;
+    }
+
+    const uint32_t maskLimit = 1u << gcount;
+    for (uint32_t mask = 1; mask < maskLimit; ++mask) {
+      if ((mask & 0x1u) == 0u) {
+        continue;  // avoid symmetric duplicates
+      }
+      std::vector<uint16_t> subsetA;
+      std::vector<uint16_t> subsetB;
+      for (size_t gi = 0; gi < gcount; ++gi) {
+        const auto &vec = grouped[gi];
+        if (mask & (1u << gi)) {
+          subsetA.insert(subsetA.end(), vec.begin(), vec.end());
+        } else {
+          subsetB.insert(subsetB.end(), vec.begin(), vec.end());
+        }
+      }
+      TwaiFilterSpec specA = twai_compute_spec(subsetA.data(), subsetA.data() + subsetA.size());
+      TwaiFilterSpec specB = twai_compute_spec(subsetB.data(), subsetB.data() + subsetB.size());
+      consider_partition(specA, specB);
+    }
+  }
+
+  if (!found) {
+    return false;
+  }
+
+  if (!bestA.valid && bestB.valid) {
+    bestA = bestB;
+  }
+  if (!bestB.valid && bestA.valid) {
+    bestB = bestA;
+  }
+
+  uint8_t code[4] = {0, 0, 0, 0};
+  uint8_t mask[4] = {0xFF, 0xFF, 0xFF, 0xFF};
+  twai_fill_filter_bytes(bestA, &code[0], &mask[0]);
+  twai_fill_filter_bytes(bestB, &code[2], &mask[2]);
+
+  out.acceptance_code = static_cast<uint32_t>(code[0]) |
+                        (static_cast<uint32_t>(code[1]) << 8) |
+                        (static_cast<uint32_t>(code[2]) << 16) |
+                        (static_cast<uint32_t>(code[3]) << 24);
+  out.acceptance_mask = static_cast<uint32_t>(mask[0]) |
+                        (static_cast<uint32_t>(mask[1]) << 8) |
+                        (static_cast<uint32_t>(mask[2]) << 16) |
+                        (static_cast<uint32_t>(mask[3]) << 24);
+  out.single_filter = TWAI_FILTER_MODE_DUAL;
+
+  g_profileFilterSummary.computed = true;
+  g_profileFilterSummary.applied = true;
+  g_profileFilterSummary.allowedCount = static_cast<uint16_t>(allowed.size());
+  g_profileFilterSummary.coverageCount = static_cast<uint16_t>(bestCoverage & 0xFFFFu);
+  g_profileFilterSummary.minId = allowed.front();
+  g_profileFilterSummary.maxId = allowed.back();
+  g_profileFilterSummary.specA = bestA;
+  g_profileFilterSummary.specB = bestB;
+
+  return true;
+}
+
 // ===== CAN bring-up/teardown =====
 static bool startCanBusReader() {
   Serial.println("TWAI start...");
@@ -1978,10 +2197,41 @@ static bool startCanBusReader() {
   ESP32Can.setSpeed(ESP32Can.convertSpeed(500));
   ESP32Can.setRxQueueSize(64);
   ESP32Can.setTxQueueSize(16);
-  if (!ESP32Can.begin()) {
+
+  twai_filter_config_t filterConfig = TWAI_FILTER_CONFIG_ACCEPT_ALL();
+  twai_filter_config_t *filterPtr = nullptr;
+  bool filterActive = false;
+  if (USE_PROFILE_ALLOWLIST && USE_TWAI_PROFILE_FILTER) {
+    if (build_profile_twai_filter(filterConfig)) {
+      filterPtr = &filterConfig;
+      filterActive = true;
+      const auto &summary = g_profileFilterSummary;
+      float pct = summary.coverageCount == 0 ? 0.0f
+                  : (static_cast<float>(summary.allowedCount) * 100.0f) /
+                        static_cast<float>(summary.coverageCount);
+      Serial.printf("TWAI filter: allow %u ids within %u hw slots (%.1f%% hit). A=0x%03X/0x%03X B=0x%03X/0x%03X\n",
+                    (unsigned)summary.allowedCount,
+                    (unsigned)summary.coverageCount,
+                    pct,
+                    (unsigned)summary.specA.base,
+                    (unsigned)summary.specA.mask,
+                    (unsigned)summary.specB.base,
+                    (unsigned)summary.specB.mask);
+    } else {
+      g_profileFilterSummary.applied = false;
+      Serial.println("TWAI filter: profile derivation failed; using open filter.");
+    }
+  } else {
+    g_profileFilterSummary.applied = false;
+    g_profileFilterSummary.computed = false;
+  }
+
+  if (!ESP32Can.begin(ESP32Can.getSpeed(), CAN_TX, CAN_RX, 0xFFFF, 0xFFFF, filterPtr)) {
+    g_profileFilterSummary.applied = false;
     Serial.println("ERROR: TWAI begin() failed. Check wiring/termination/RS.");
     return false;
   }
+  g_profileFilterSummary.applied = filterActive;
   Serial.println("CAN OK.");
   isCanBusReaderActive = true;
   have_seen_any_can = false;
@@ -2716,6 +2966,24 @@ static void oil_update_and_publish_if_due() {
 static void show_config() {
   Serial.println("=== CCA Config ===");
   Serial.printf("Profile:        %s\n", USE_PROFILE_ALLOWLIST ? "ALLOW-LIST" : "SNIFF-ALL");
+  const char *filterMode;
+  if (!USE_TWAI_PROFILE_FILTER) {
+    filterMode = "OFF";
+  } else if (!USE_PROFILE_ALLOWLIST) {
+    filterMode = "PROFILE (inactive)";
+  } else if (g_profileFilterSummary.applied) {
+    filterMode = "PROFILE";
+  } else {
+    filterMode = "PROFILE (open)";
+  }
+  Serial.printf("CAN filter:     %s\n", filterMode);
+  if (USE_TWAI_PROFILE_FILTER && g_profileFilterSummary.computed) {
+    Serial.printf("  allow=%u hw=%u range=0x%03X-0x%03X\n",
+                  (unsigned)g_profileFilterSummary.allowedCount,
+                  (unsigned)g_profileFilterSummary.coverageCount,
+                  (unsigned)g_profileFilterSummary.minId,
+                  (unsigned)g_profileFilterSummary.maxId);
+  }
   Serial.printf("V0_ADC:         %.4f V\n", V0_ADC);
   Serial.printf("V1_ADC:         %.4f V\n", V1_ADC);
   Serial.printf("Custom divs:    %u\n", (unsigned)customDividerCount);
@@ -2865,6 +3133,26 @@ static void process_cli_line(char *line) {
     return;
   }
 
+  if (up == "FILTER OFF") {
+    USE_TWAI_PROFILE_FILTER = false;
+    Serial.println("CAN filter=OFF (not saved)");
+    if (isCanBusReaderActive) {
+      restartCanBusReader("CLI FILTER OFF");
+    }
+    return;
+  }
+  if (up == "FILTER PROFILE") {
+    USE_TWAI_PROFILE_FILTER = true;
+    Serial.println("CAN filter=PROFILE (not saved)");
+    if (!USE_PROFILE_ALLOWLIST) {
+      Serial.println("NOTE: Profile allow-list disabled; hardware filter remains open.");
+    }
+    if (isCanBusReaderActive) {
+      restartCanBusReader("CLI FILTER PROFILE");
+    }
+    return;
+  }
+
   if (up.startsWith("RATE ")) {
     char buf[CLI_BUF_SIZE]; strncpy(buf, line, sizeof(buf)); buf[sizeof(buf)-1]=0;
     char *tok = strtok(buf + 5, " \t");
@@ -2960,7 +3248,7 @@ static void process_cli_line(char *line) {
     return;
   }
 
-  Serial.println("Unknown cmd. Try: SHOW | SHOW CFG | SHOW STATS | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | CAL SHOW | RATE <ms> | PROFILE ON|OFF | ALLOW <pid> <div> | DENY <pid> | TOKEN <hex8> | SAVE | LOAD | RESETCFG");
+  Serial.println("Unknown cmd. Try: SHOW | SHOW CFG | SHOW STATS | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | CAL SHOW | RATE <ms> | PROFILE ON|OFF | FILTER OFF|PROFILE | ALLOW <pid> <div> | DENY <pid> | TOKEN <hex8> | SAVE | LOAD | RESETCFG");
 }
 
 // ===== Main loop =====
