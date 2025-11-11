@@ -99,6 +99,7 @@ static void resetSkippedUpdatesCounters();
 static int64_t gpsComputeMonotonicUs(uint32_t micros_now, int64_t correction_us);
 static void gpsHandlePpsDiscipline(uint32_t now_ms);
 static void IRAM_ATTR gpsPpsIsr();
+static void gpsMarkSentenceStale();
 
 // ===== Global state =====
 static bool     isCanBusReaderActive = false;
@@ -233,6 +234,7 @@ static void bleLinkPri_onDisconnect();
 static void bleLinkPri_service(uint32_t now);
 static void bleLinkPri_attachIfReady();
 static void refreshBleLed();
+static void resetStatusIndicatorsForDisconnect();
 
 void bleLinkPri_setEnabled(bool enabled);
 bool bleLinkPri_isEnabled();
@@ -328,6 +330,7 @@ static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo) {
 
 static void bleLinkPri_onDisconnect() {
   bleLinkPri_resetState();
+  resetStatusIndicatorsForDisconnect();
   refreshBleLed();
   led_service(millis());
 }
@@ -990,13 +993,24 @@ static void bleStopAdvertising(){
 }
 
 static void refreshBleLed() {
-  LedPattern pattern = LedPattern::Off;
+  LedPattern pattern = LedPattern::BlinkFast;
   if (bleIsConnected()) {
     pattern = LedPattern::Solid;
-  } else if (g_adv && g_adv->isAdvertising()) {
-    pattern = LedPattern::BlinkFast;
   }
   led_set_ble(pattern);
+}
+
+static void resetStatusIndicatorsForDisconnect() {
+  have_seen_any_can = false;
+  lastCanMessageReceivedMs = 0;
+  gpsMarkSentenceStale();
+
+  led_set_power(LedPattern::Solid);
+  led_set_ble(LedPattern::BlinkFast);
+  led_set_can(LedPattern::BlinkSlow);
+  led_set_gps(LedPattern::BlinkSlow);
+  led_set_sys(LedPattern::Off);
+  led_set_oil(LedPattern::Off);
 }
 
 // ===== FIL (0x0002) handler to mirror RaceChrono DIY control =====
@@ -3069,8 +3083,12 @@ void loop() {
   bool canFaulted = checkCanBusHealth(now);
   bool twaiRunning = (lastTwaiStatus.state == TWAI_STATE_RUNNING);
   bool recentCan = have_seen_any_can && (now - lastCanMessageReceivedMs <= 1000);
-  bool canHealthy = twaiRunning && recentCan;
-  led_set_can(canHealthy ? LedPattern::Pulse2Every2s : LedPattern::BlinkSlow);
+
+  LedPattern canPattern = LedPattern::BlinkSlow;  // ready but waiting for bus activity
+  if (twaiRunning && have_seen_any_can) {
+    canPattern = recentCan ? LedPattern::Pulse2Every2s : LedPattern::Solid;
+  }
+  led_set_can(canPattern);
   if (canFaulted) {
     led_service(now);
     return;
@@ -3196,11 +3214,11 @@ void loop() {
 
   uint32_t gpsNow = millis();
   bool gpsRecent = (gpsLastSentenceMs != 0) && (gpsNow - gpsLastSentenceMs <= 1200);
-  LedPattern gpsPattern = LedPattern::Off;
+  LedPattern gpsPattern = LedPattern::BlinkSlow;  // ready, waiting on fix/data
   if (gpsRecent && rmc_valid) {
     gpsPattern = LedPattern::Pulse3Every2s;
   } else if (gpsRecent) {
-    gpsPattern = LedPattern::BlinkSlow;
+    gpsPattern = LedPattern::Solid;
   }
   led_set_gps(gpsPattern);
 

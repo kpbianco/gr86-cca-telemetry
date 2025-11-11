@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 #ifndef LED_PWR_GPIO
-#define LED_PWR_GPIO 15
+#define LED_PWR_GPIO 46
 #endif
 
 #ifndef LED_PWR_ACTIVE_LOW
