@@ -7,7 +7,7 @@
 #endif
 
 #ifndef LED_PWR_ACTIVE_LOW
-#define LED_PWR_ACTIVE_LOW 1
+#define LED_PWR_ACTIVE_LOW 0
 #endif
 
 #ifndef LED_BLE_GPIO
@@ -15,7 +15,7 @@
 #endif
 
 #ifndef LED_BLE_ACTIVE_LOW
-#define LED_BLE_ACTIVE_LOW 1
+#define LED_BLE_ACTIVE_LOW 0
 #endif
 
 #ifndef LED_CAN_GPIO
@@ -23,7 +23,7 @@
 #endif
 
 #ifndef LED_CAN_ACTIVE_LOW
-#define LED_CAN_ACTIVE_LOW 1
+#define LED_CAN_ACTIVE_LOW 0
 #endif
 
 #ifndef LED_GPS_GPIO
@@ -31,7 +31,7 @@
 #endif
 
 #ifndef LED_GPS_ACTIVE_LOW
-#define LED_GPS_ACTIVE_LOW 1
+#define LED_GPS_ACTIVE_LOW 0
 #endif
 
 #ifndef LED_SYS_GPIO
@@ -39,7 +39,7 @@
 #endif
 
 #ifndef LED_SYS_ACTIVE_LOW
-#define LED_SYS_ACTIVE_LOW 1
+#define LED_SYS_ACTIVE_LOW 0
 #endif
 
 #ifndef LED_OIL_GPIO
@@ -47,7 +47,7 @@
 #endif
 
 #ifndef LED_OIL_ACTIVE_LOW
-#define LED_OIL_ACTIVE_LOW 1
+#define LED_OIL_ACTIVE_LOW 0
 #endif
 
 enum class LedPattern : uint8_t {
