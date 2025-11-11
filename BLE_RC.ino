@@ -965,19 +965,6 @@ static inline bool bleIsConnected(){
   return g_server && g_server->getConnectedCount() > 0;
 }
 
-static bool bleWaitForConnection(uint32_t timeoutMs){
-  uint32_t t0 = millis();
-  while (millis() - t0 < timeoutMs){
-    if (bleIsConnected()) return true;
-    refreshBleLed();
-    led_service(millis());
-    delay(20);
-  }
-  refreshBleLed();
-  led_service(millis());
-  return bleIsConnected();
-}
-
 static void bleStartAdvertising(){
   if (!g_adv) return;
   g_adv->start();
@@ -1892,7 +1879,6 @@ static twai_filter_config_t build_profile_twai_filter() {
 }
 
 // ===== Forward decls =====
-static void waitForConnection();
 static bool startCanBusReader();
 static void stopCanBusReader();
 static bool restartCanBusReader(const char *cause = nullptr, uint32_t backoffMs = 50);
@@ -1973,8 +1959,7 @@ void setup() {
   // BLE
   Serial.println("BLE setup...");
   bleInit();
-  Serial.println("Waiting for RaceChrono...");
-  waitForConnection();
+  Serial.println("RaceChrono connection will establish in background.");
 
   setLastReconnectCause("boot");
 
@@ -1997,24 +1982,13 @@ void setup() {
   // CAN bring-up deferred to loop() retry logic
 }
 
-static void waitForConnection() {
-  uint32_t i=0; bool nl=true;
-  while (!bleWaitForConnection(1000)) {
-    esp_task_wdt_reset();
-    Serial.print("."); nl=false; if ((++i % 10)==0) { Serial.println(); nl=true; }
-  }
-  if (!nl) Serial.println();
-  Serial.println("RaceChrono connected.");
-}
-
 static void recoverRaceChronoConnection(const char *reason) {
   Serial.println("RC disconnected -> reset map + CAN + BLE.");
   pidMap.reset();
   stopCanBusReader();
 
   restartBle(reason);
-  Serial.println("Waiting for new RC connection...");
-  waitForConnection();
+  Serial.println("Advertising for new RaceChrono connection (non-blocking).");
 
   gpsResetSyncState();
 

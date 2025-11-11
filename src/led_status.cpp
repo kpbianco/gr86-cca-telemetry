@@ -55,10 +55,10 @@ const char *ledName(LedIndex index) {
   return "?";
 }
 
-bool pinSupportsOutput(int pin) {
+bool pinIsValid(int pin) {
 #if defined(ARDUINO_ARCH_ESP32)
   if (pin < 0) return false;
-  return digitalPinIsValid(pin) && digitalPinCanOutput(pin);
+  return digitalPinIsValid(pin);
 #else
   return pin >= 0;
 #endif
@@ -158,14 +158,21 @@ void led_init() {
     state.outputValid = false;
     state.outputState = false;
     if (state.pin >= 0) {
-      if (!pinSupportsOutput(state.pin)) {
-        Serial.printf("LED[%s]: GPIO %d cannot drive output; disabling channel.\n",
+      if (!pinIsValid(state.pin)) {
+        Serial.printf("LED[%s]: GPIO %d invalid; disabling channel.\n",
                       ledName(static_cast<LedIndex>(i)), state.pin);
         state.pin = -1;
         continue;
       }
-      pinMode(state.pin, OUTPUT);
+#if defined(ARDUINO_ARCH_ESP32)
+      if (!digitalPinCanOutput(state.pin)) {
+        Serial.printf(
+            "LED[%s]: GPIO %d is input-only; attempting output anyway.\n",
+            ledName(static_cast<LedIndex>(i)), state.pin);
+      }
+#endif
       digitalWrite(state.pin, state.activeLow ? HIGH : LOW);
+      pinMode(state.pin, OUTPUT);
     }
   }
 }
