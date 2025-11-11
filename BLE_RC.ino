@@ -47,6 +47,7 @@
 #include "src/gps_nmea.h"
 #include "src/sched.hpp"
 #include "src/nvs_cfg.h"
+#include "src/led_status.h"
 
 #ifndef PASSKEY_U32
 #define PASSKEY_U32 123456
@@ -98,6 +99,7 @@ static void resetSkippedUpdatesCounters();
 static int64_t gpsComputeMonotonicUs(uint32_t micros_now, int64_t correction_us);
 static void gpsHandlePpsDiscipline(uint32_t now_ms);
 static void IRAM_ATTR gpsPpsIsr();
+static void gpsMarkSentenceStale();
 
 // ===== Global state =====
 static bool     isCanBusReaderActive = false;
@@ -231,6 +233,8 @@ static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo);
 static void bleLinkPri_onDisconnect();
 static void bleLinkPri_service(uint32_t now);
 static void bleLinkPri_attachIfReady();
+static void refreshBleLed();
+static void resetStatusIndicatorsForDisconnect();
 
 void bleLinkPri_setEnabled(bool enabled);
 bool bleLinkPri_isEnabled();
@@ -311,6 +315,9 @@ static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo) {
   g_bleLinkPriConnHandle = connInfo.getConnHandle();
   g_bleLinkPriRetryDone = false;
 
+  refreshBleLed();
+  led_service(millis());
+
   if (!g_bleLinkPriEnabled) {
     g_bleLinkPriRetryArmed = false;
     return;
@@ -323,6 +330,9 @@ static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo) {
 
 static void bleLinkPri_onDisconnect() {
   bleLinkPri_resetState();
+  resetStatusIndicatorsForDisconnect();
+  refreshBleLed();
+  led_service(millis());
 }
 
 static void bleLinkPri_service(uint32_t now) {
@@ -955,23 +965,39 @@ static inline bool bleIsConnected(){
   return g_server && g_server->getConnectedCount() > 0;
 }
 
-static bool bleWaitForConnection(uint32_t timeoutMs){
-  uint32_t t0 = millis();
-  while (millis() - t0 < timeoutMs){
-    if (bleIsConnected()) return true;
-    delay(20);
-  }
-  return bleIsConnected();
-}
-
 static void bleStartAdvertising(){
   if (!g_adv) return;
   g_adv->start();
+  refreshBleLed();
+  led_service(millis());
 }
 
 static void bleStopAdvertising(){
   if (!g_adv) return;
   g_adv->stop();
+  refreshBleLed();
+  led_service(millis());
+}
+
+static void refreshBleLed() {
+  LedPattern pattern = LedPattern::BlinkFast;
+  if (bleIsConnected()) {
+    pattern = LedPattern::Solid;
+  }
+  led_set_ble(pattern);
+}
+
+static void resetStatusIndicatorsForDisconnect() {
+  have_seen_any_can = false;
+  lastCanMessageReceivedMs = 0;
+  gpsMarkSentenceStale();
+
+  led_set_power(LedPattern::Solid);
+  led_set_ble(LedPattern::BlinkFast);
+  led_set_can(LedPattern::BlinkSlow);
+  led_set_gps(LedPattern::BlinkSlow);
+  led_set_sys(LedPattern::Off);
+  led_set_oil(LedPattern::Off);
 }
 
 // ===== FIL (0x0002) handler to mirror RaceChrono DIY control =====
@@ -1244,7 +1270,7 @@ static void bleInit(){
 
   g_adv = NimBLEDevice::getAdvertising();
   g_adv->addServiceUUID(RC_SERVICE_UUID);
-  g_adv->start();
+  bleStartAdvertising();
 
   Serial.println("BLE: advertising (RaceChrono DIY 0x1FF8)");
 }
@@ -1382,6 +1408,11 @@ static void gpsResetSyncState() {
 #endif
 }
 
+static void gpsMarkSentenceStale() {
+  gpsLastSentenceMs = 0;
+  rmc_valid = false;
+}
+
 static void gpsHandlePpsDiscipline(uint32_t now_ms) {
 #if GPS_PPS_GPIO >= 0
   uint32_t eventMicros = 0;
@@ -1463,6 +1494,7 @@ static void gpsBeginInitAttempt(uint32_t now) {
   gpsInitPhaseStartMs = now;
   gpsUsingRawStream = false;
   gpsResetSyncState();
+  gpsMarkSentenceStale();
 }
 
 static void gpsFinalizeConfigured(uint32_t now) {
@@ -1603,6 +1635,7 @@ static void gpsProcessSentence(char *line) {
 
 static void gpsService(uint32_t now) {
   if (!gpsConfigured) {
+    gpsMarkSentenceStale();
     gpsInitStep(now);
     if (!gpsConfigured) {
       return;
@@ -1650,6 +1683,7 @@ static void gpsService(uint32_t now) {
       gpsUsingRawStream = false;
       gpsWarnedNoNmea = false;
       gpsResetSyncState();
+      gpsMarkSentenceStale();
       GPSSerial.end();
       lastGpsInitAttemptMs = serviceNow;
       return;
@@ -1845,7 +1879,6 @@ static twai_filter_config_t build_profile_twai_filter() {
 }
 
 // ===== Forward decls =====
-static void waitForConnection();
 static bool startCanBusReader();
 static void stopCanBusReader();
 static bool restartCanBusReader(const char *cause = nullptr, uint32_t backoffMs = 50);
@@ -1898,6 +1931,7 @@ static void restartBle(const char *reason) {
   // Service + characteristics remain; we just restart advertising.
   bleStartAdvertising();
   Serial.println("BLE: advertising");
+  led_service(millis());
 }
 
 // ===== Setup =====
@@ -1911,6 +1945,12 @@ void setup() {
 
   init_task_watchdog();
 
+  led_init();
+  led_set_power(LedPattern::Solid);
+  led_set_ble(LedPattern::BlinkFast);
+  led_set_oil(LedPattern::Off);
+  led_service(millis());
+
   // ADC
   analogReadResolution(12);
   analogSetPinAttenuation(OIL_ADC_PIN, ADC_11db);
@@ -1919,8 +1959,7 @@ void setup() {
   // BLE
   Serial.println("BLE setup...");
   bleInit();
-  Serial.println("Waiting for RaceChrono...");
-  waitForConnection();
+  Serial.println("RaceChrono connection will establish in background.");
 
   setLastReconnectCause("boot");
 
@@ -1943,24 +1982,13 @@ void setup() {
   // CAN bring-up deferred to loop() retry logic
 }
 
-static void waitForConnection() {
-  uint32_t i=0; bool nl=true;
-  while (!bleWaitForConnection(1000)) {
-    esp_task_wdt_reset();
-    Serial.print("."); nl=false; if ((++i % 10)==0) { Serial.println(); nl=true; }
-  }
-  if (!nl) Serial.println();
-  Serial.println("RaceChrono connected.");
-}
-
 static void recoverRaceChronoConnection(const char *reason) {
   Serial.println("RC disconnected -> reset map + CAN + BLE.");
   pidMap.reset();
   stopCanBusReader();
 
   restartBle(reason);
-  Serial.println("Waiting for new RC connection...");
-  waitForConnection();
+  Serial.println("Advertising for new RaceChrono connection (non-blocking).");
 
   gpsResetSyncState();
 
@@ -2040,7 +2068,11 @@ static bool restartCanBusReader(const char *cause, uint32_t backoffMs) {
   }
 
   stopCanBusReader();
-  delay(backoffMs);
+  uint32_t waitStart = millis();
+  while (millis() - waitStart < backoffMs) {
+    led_service(millis());
+    delay(20);
+  }
 
   bool started = startCanBusReader();
   if (started) {
@@ -3011,20 +3043,35 @@ void loop() {
       lastCanMessageReceivedMs = millis();
       break;
     }
-    delay(500);
+    for (int i = 0; i < 25; ++i) {
+      led_service(millis());
+      delay(20);
+    }
   }
 
   const uint32_t now = millis();
 
   bleLinkPri_service(now);
+  refreshBleLed();
 
-  if (checkCanBusHealth(now)) {
+  bool canFaulted = checkCanBusHealth(now);
+  bool twaiRunning = (lastTwaiStatus.state == TWAI_STATE_RUNNING);
+  bool recentCan = have_seen_any_can && (now - lastCanMessageReceivedMs <= 1000);
+
+  LedPattern canPattern = LedPattern::BlinkSlow;  // ready but waiting for bus activity
+  if (twaiRunning && have_seen_any_can) {
+    canPattern = recentCan ? LedPattern::Pulse2Every2s : LedPattern::Solid;
+  }
+  led_set_can(canPattern);
+  if (canFaulted) {
+    led_service(now);
     return;
   }
 
   // Watchdog after first frame
   if (have_seen_any_can && (now - lastCanMessageReceivedMs > 2000)) {
     handleCanFault("CAN RX timeout");
+    led_service(millis());
     return;
   }
 
@@ -3113,6 +3160,17 @@ void loop() {
 
   // Oil channel
   oil_update_and_publish_if_due();
+  LedPattern oilPattern = LedPattern::Off;
+  if (oil_flags == 0) {
+    oilPattern = LedPattern::Solid;
+  } else if (oil_flags & (1 << 1)) {
+    oilPattern = LedPattern::BlinkFast;  // sensor short to ground
+  } else if (oil_flags & (1 << 0)) {
+    oilPattern = LedPattern::Pulse2Every2s;  // harness open
+  } else {
+    oilPattern = LedPattern::BlinkSlow;  // out-of-range but not hard fault
+  }
+  led_set_oil(oilPattern);
 
   uint32_t postCanNow = millis();
 
@@ -3128,7 +3186,22 @@ void loop() {
   uint32_t gpsElapsedUs = micros() - gpsStartUs;
   g_supervisor.noteElapsed(Supervisor::Subsystem::GpsService, gpsElapsedUs);
 
+  uint32_t gpsNow = millis();
+  bool gpsRecent = (gpsLastSentenceMs != 0) && (gpsNow - gpsLastSentenceMs <= 1200);
+  LedPattern gpsPattern = LedPattern::BlinkSlow;  // ready, waiting on fix/data
+  if (gpsRecent && rmc_valid) {
+    gpsPattern = LedPattern::Pulse3Every2s;
+  } else if (gpsRecent) {
+    gpsPattern = LedPattern::Solid;
+  }
+  led_set_gps(gpsPattern);
+
   updateBleGovernor(postCanNow);
+
+  bool sysBlink = bleGovernorActive || notifyCapHitCurrentLoop;
+  led_set_sys(sysBlink ? LedPattern::BlinkSlow : LedPattern::Off);
+
+  led_service(gpsNow);
 
   // ---- Robust Serial CLI: accept CR, LF, CRLF, or no line ending ----
   static char cliBuf[CLI_BUF_SIZE];
