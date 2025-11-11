@@ -2053,7 +2053,11 @@ static bool restartCanBusReader(const char *cause, uint32_t backoffMs) {
   }
 
   stopCanBusReader();
-  delay(backoffMs);
+  uint32_t waitStart = millis();
+  while (millis() - waitStart < backoffMs) {
+    led_service(millis());
+    delay(20);
+  }
 
   bool started = startCanBusReader();
   if (started) {
@@ -3024,7 +3028,10 @@ void loop() {
       lastCanMessageReceivedMs = millis();
       break;
     }
-    delay(500);
+    for (int i = 0; i < 25; ++i) {
+      led_service(millis());
+      delay(20);
+    }
   }
 
   const uint32_t now = millis();
