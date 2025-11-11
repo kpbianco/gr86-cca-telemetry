@@ -177,9 +177,12 @@ static bool gpsWarnedNoNmea = false;
 static uint32_t gpsLastSentenceMs = 0;
 static uint32_t lastGpsNotifyMs = 0;
 static uint32_t lastGpsInitAttemptMs = 0;
-static constexpr uint32_t GPS_NOTIFY_PERIOD_MS = 100;  // 10 Hz
-static constexpr uint32_t GPS_INIT_RETRY_MS    = 5000;
-static const uint32_t GPS_INIT_PROBE_BAUDS[] = { 9600, 38400, 57600, 115200 };
+static constexpr uint32_t GPS_NOTIFY_PERIOD_MS            = 100;  // 10 Hz
+static constexpr uint32_t GPS_INIT_RETRY_MS               = 5000;
+static constexpr uint32_t GPS_WAIT_BEFORE_115200_MS       = 120;
+static constexpr uint32_t GPS_CONFIRM_115200_TIMEOUT_MS   = 2500;
+static constexpr uint8_t  GPS_INIT_MAX_115200_ATTEMPTS    = 3;
+static const uint32_t     GPS_INIT_PROBE_BAUDS[]          = { 9600, 38400, 57600, 115200 };
 static constexpr size_t GPS_INIT_PROBE_BAUD_COUNT = sizeof(GPS_INIT_PROBE_BAUDS) / sizeof(GPS_INIT_PROBE_BAUDS[0]);
 
 enum class GpsInitPhase : uint8_t {
@@ -202,6 +205,7 @@ static bool gpsInitPrevWasDollar = false;
 static uint32_t gpsInitFallbackBaud = 9600;
 static size_t gpsInitProbeIndex = 0;
 static uint32_t gpsInitCurrentBaud = 9600;
+static uint8_t gpsInit115200Attempt = 0;
 
 // ====== BLE objects we own (we create the full 0x1FF8 service) ======
 static NimBLEServer*         g_server = nullptr;
@@ -1480,7 +1484,7 @@ static void gpsHandlePpsDiscipline(uint32_t now_ms) {
 #endif
 }
 
-static void gpsBeginInitAttempt(uint32_t now) {
+static void gpsBeginInitAttempt(uint32_t now, bool resetAttemptCounter) {
   Serial.printf("[GPS] UART init @ %u bps (RX=%d, TX=%d)\n", 9600u, GPS_RX_GPIO, GPS_TX_GPIO);
   GPSSerial.end();
   gpsInitProbeIndex = 0;
@@ -1495,6 +1499,9 @@ static void gpsBeginInitAttempt(uint32_t now) {
   gpsUsingRawStream = false;
   gpsResetSyncState();
   gpsMarkSentenceStale();
+  if (resetAttemptCounter) {
+    gpsInit115200Attempt = 0;
+  }
 }
 
 static void gpsFinalizeConfigured(uint32_t now) {
@@ -1505,6 +1512,7 @@ static void gpsFinalizeConfigured(uint32_t now) {
   gpsResetSyncState();
   Serial.println("[GPS] Configured: RMC+GGA @10Hz, 115200");
   gpsInitPhase = GpsInitPhase::Idle;
+  gpsInit115200Attempt = 0;
 }
 
 static void gpsFinalizeRawStream(uint32_t now) {
@@ -1512,6 +1520,7 @@ static void gpsFinalizeRawStream(uint32_t now) {
   gpsUsingRawStream = true;
   gpsLastSentenceMs = now;
   gpsResetSyncState();
+  gpsInit115200Attempt = 0;
   if (!gpsInitSawInitialNmea) {
     gpsInitFallbackBaud = GPS_INIT_PROBE_BAUDS[0];
     if (!gpsWarnedNoNmea) {
@@ -1530,7 +1539,7 @@ static void gpsInitStep(uint32_t now) {
     case GpsInitPhase::Idle:
       if (now - lastGpsInitAttemptMs >= GPS_INIT_RETRY_MS) {
         lastGpsInitAttemptMs = now;
-        gpsBeginInitAttempt(now);
+        gpsBeginInitAttempt(now, true);
       }
       break;
 
@@ -1591,7 +1600,7 @@ static void gpsInitStep(uint32_t now) {
       break;
 
     case GpsInitPhase::WaitBefore115200:
-      if (now - gpsInitPhaseStartMs >= 20) {
+      if (now - gpsInitPhaseStartMs >= GPS_WAIT_BEFORE_115200_MS) {
         GPSSerial.begin(115200, SERIAL_8N1, GPS_RX_GPIO, GPS_TX_GPIO);
         gpsInitPrevWasDollar = false;
         gpsInitPhase = GpsInitPhase::Confirm115200;
@@ -1602,10 +1611,19 @@ static void gpsInitStep(uint32_t now) {
     case GpsInitPhase::Confirm115200:
       if (gpsScanForNmea()) {
         gpsFinalizeConfigured(now);
-      } else if (now - gpsInitPhaseStartMs >= 800) {
+      } else if (now - gpsInitPhaseStartMs >= GPS_CONFIRM_115200_TIMEOUT_MS) {
         GPSSerial.end();
-        gpsInitPhase = GpsInitPhase::BeginFallback;
-        gpsInitPhaseStartMs = now;
+        gpsInit115200Attempt++;
+        if (gpsInit115200Attempt < GPS_INIT_MAX_115200_ATTEMPTS) {
+          Serial.printf("[GPS] 115200 confirm timeout, retrying (%u/%u)\n",
+                        static_cast<unsigned>(gpsInit115200Attempt),
+                        static_cast<unsigned>(GPS_INIT_MAX_115200_ATTEMPTS));
+          gpsBeginInitAttempt(now, false);
+        } else {
+          Serial.println("[GPS] 115200 confirm failed, using raw stream");
+          gpsInitPhase = GpsInitPhase::BeginFallback;
+          gpsInitPhaseStartMs = now;
+        }
       }
       break;
 
@@ -1672,7 +1690,7 @@ static void gpsService(uint32_t now) {
   if (sentenceSeen) {
     gpsLastSentenceMs = serviceNow;
   } else {
-    uint32_t timeoutMs = gpsUsingRawStream ? 15000 : 2000;
+    uint32_t timeoutMs = gpsUsingRawStream ? 5000 : 2000;
     if (serviceNow - gpsLastSentenceMs > timeoutMs) {
       if (gpsUsingRawStream) {
         Serial.println("[GPS] Raw stream stalled -> retry config");
@@ -1976,7 +1994,7 @@ void setup() {
 
   // GPS
   uint32_t gpsStartMs = millis();
-  gpsBeginInitAttempt(gpsStartMs);
+  gpsBeginInitAttempt(gpsStartMs, true);
   lastGpsInitAttemptMs = gpsStartMs;
 
   // CAN bring-up deferred to loop() retry logic
