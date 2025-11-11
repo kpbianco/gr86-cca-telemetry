@@ -232,6 +232,7 @@ static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo);
 static void bleLinkPri_onDisconnect();
 static void bleLinkPri_service(uint32_t now);
 static void bleLinkPri_attachIfReady();
+static void refreshBleLed();
 
 void bleLinkPri_setEnabled(bool enabled);
 bool bleLinkPri_isEnabled();
@@ -312,7 +313,8 @@ static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo) {
   g_bleLinkPriConnHandle = connInfo.getConnHandle();
   g_bleLinkPriRetryDone = false;
 
-  led_set_ble(LedPattern::Solid);
+  refreshBleLed();
+  led_service(millis());
 
   if (!g_bleLinkPriEnabled) {
     g_bleLinkPriRetryArmed = false;
@@ -326,7 +328,8 @@ static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo) {
 
 static void bleLinkPri_onDisconnect() {
   bleLinkPri_resetState();
-  led_set_ble(LedPattern::BlinkFast);
+  refreshBleLed();
+  led_service(millis());
 }
 
 static void bleLinkPri_service(uint32_t now) {
@@ -963,9 +966,11 @@ static bool bleWaitForConnection(uint32_t timeoutMs){
   uint32_t t0 = millis();
   while (millis() - t0 < timeoutMs){
     if (bleIsConnected()) return true;
+    refreshBleLed();
     led_service(millis());
     delay(20);
   }
+  refreshBleLed();
   led_service(millis());
   return bleIsConnected();
 }
@@ -973,12 +978,25 @@ static bool bleWaitForConnection(uint32_t timeoutMs){
 static void bleStartAdvertising(){
   if (!g_adv) return;
   g_adv->start();
-  led_set_ble(LedPattern::BlinkFast);
+  refreshBleLed();
+  led_service(millis());
 }
 
 static void bleStopAdvertising(){
   if (!g_adv) return;
   g_adv->stop();
+  refreshBleLed();
+  led_service(millis());
+}
+
+static void refreshBleLed() {
+  LedPattern pattern = LedPattern::Off;
+  if (bleIsConnected()) {
+    pattern = LedPattern::Solid;
+  } else if (g_adv && g_adv->isAdvertising()) {
+    pattern = LedPattern::BlinkFast;
+  }
+  led_set_ble(pattern);
 }
 
 // ===== FIL (0x0002) handler to mirror RaceChrono DIY control =====
@@ -1251,7 +1269,7 @@ static void bleInit(){
 
   g_adv = NimBLEDevice::getAdvertising();
   g_adv->addServiceUUID(RC_SERVICE_UUID);
-  g_adv->start();
+  bleStartAdvertising();
 
   Serial.println("BLE: advertising (RaceChrono DIY 0x1FF8)");
 }
@@ -1389,6 +1407,11 @@ static void gpsResetSyncState() {
 #endif
 }
 
+static void gpsMarkSentenceStale() {
+  gpsLastSentenceMs = 0;
+  rmc_valid = false;
+}
+
 static void gpsHandlePpsDiscipline(uint32_t now_ms) {
 #if GPS_PPS_GPIO >= 0
   uint32_t eventMicros = 0;
@@ -1470,6 +1493,7 @@ static void gpsBeginInitAttempt(uint32_t now) {
   gpsInitPhaseStartMs = now;
   gpsUsingRawStream = false;
   gpsResetSyncState();
+  gpsMarkSentenceStale();
 }
 
 static void gpsFinalizeConfigured(uint32_t now) {
@@ -1610,6 +1634,7 @@ static void gpsProcessSentence(char *line) {
 
 static void gpsService(uint32_t now) {
   if (!gpsConfigured) {
+    gpsMarkSentenceStale();
     gpsInitStep(now);
     if (!gpsConfigured) {
       return;
@@ -1657,6 +1682,7 @@ static void gpsService(uint32_t now) {
       gpsUsingRawStream = false;
       gpsWarnedNoNmea = false;
       gpsResetSyncState();
+      gpsMarkSentenceStale();
       GPSSerial.end();
       lastGpsInitAttemptMs = serviceNow;
       return;
@@ -1905,6 +1931,7 @@ static void restartBle(const char *reason) {
   // Service + characteristics remain; we just restart advertising.
   bleStartAdvertising();
   Serial.println("BLE: advertising");
+  led_service(millis());
 }
 
 // ===== Setup =====
@@ -3037,6 +3064,7 @@ void loop() {
   const uint32_t now = millis();
 
   bleLinkPri_service(now);
+  refreshBleLed();
 
   bool canFaulted = checkCanBusHealth(now);
   bool twaiRunning = (lastTwaiStatus.state == TWAI_STATE_RUNNING);
