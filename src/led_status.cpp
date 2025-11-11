@@ -10,6 +10,7 @@ enum class LedIndex : uint8_t {
   Can,
   Gps,
   Sys,
+  Oil,
   Count,
 };
 
@@ -30,6 +31,7 @@ LedState g_leds[kLedCount] = {
     {LED_CAN_GPIO, LED_CAN_ACTIVE_LOW != 0, LedPattern::Off, 0, false, false},
     {LED_GPS_GPIO, LED_GPS_ACTIVE_LOW != 0, LedPattern::Off, 0, false, false},
     {LED_SYS_GPIO, LED_SYS_ACTIVE_LOW != 0, LedPattern::Off, 0, false, false},
+    {LED_OIL_GPIO, LED_OIL_ACTIVE_LOW != 0, LedPattern::Off, 0, false, false},
 };
 
 inline LedState &stateFor(LedIndex index) {
@@ -104,12 +106,13 @@ void updateLed(LedState &state, uint32_t now) {
 
 void setPattern(LedIndex index, LedPattern pattern) {
   LedState &state = stateFor(index);
+  uint32_t now = millis();
   if (state.pattern != pattern) {
     state.pattern = pattern;
-    state.cycleStartMs = millis();
+    state.cycleStartMs = now;
     state.outputValid = false;
   }
-  updateLed(state, millis());
+  updateLed(state, now);
 }
 
 }  // namespace
@@ -134,23 +137,11 @@ void led_set_ble(LedPattern pattern)   { setPattern(LedIndex::Ble, pattern); }
 void led_set_can(LedPattern pattern)   { setPattern(LedIndex::Can, pattern); }
 void led_set_gps(LedPattern pattern)   { setPattern(LedIndex::Gps, pattern); }
 void led_set_sys(LedPattern pattern)   { setPattern(LedIndex::Sys, pattern); }
+void led_set_oil(LedPattern pattern)   { setPattern(LedIndex::Oil, pattern); }
 
 void led_service(uint32_t now_ms) {
   for (size_t i = 0; i < kLedCount; ++i) {
     LedState &state = g_leds[i];
-    if (state.pin < 0) {
-      continue;
-    }
-    if (state.pattern == LedPattern::Off) {
-      if (!state.outputValid || state.outputState) {
-        applyOutput(state, false);
-      }
-      continue;
-    }
-    uint32_t elapsed = now_ms - state.cycleStartMs;
-    bool shouldOn = patternOn(state.pattern, elapsed);
-    if (!state.outputValid || shouldOn != state.outputState) {
-      applyOutput(state, shouldOn);
-    }
+    updateLed(state, now_ms);
   }
 }

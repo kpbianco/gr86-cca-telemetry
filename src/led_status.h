@@ -42,6 +42,14 @@
 #define LED_SYS_ACTIVE_LOW 1
 #endif
 
+#ifndef LED_OIL_GPIO
+#define LED_OIL_GPIO 10
+#endif
+
+#ifndef LED_OIL_ACTIVE_LOW
+#define LED_OIL_ACTIVE_LOW 1
+#endif
+
 enum class LedPattern : uint8_t {
   Off = 0,
   Solid,
@@ -58,5 +66,6 @@ void led_set_ble(LedPattern pattern);
 void led_set_can(LedPattern pattern);
 void led_set_gps(LedPattern pattern);
 void led_set_sys(LedPattern pattern);
+void led_set_oil(LedPattern pattern);
 
 void led_service(uint32_t now_ms);

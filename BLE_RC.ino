@@ -963,8 +963,10 @@ static bool bleWaitForConnection(uint32_t timeoutMs){
   uint32_t t0 = millis();
   while (millis() - t0 < timeoutMs){
     if (bleIsConnected()) return true;
+    led_service(millis());
     delay(20);
   }
+  led_service(millis());
   return bleIsConnected();
 }
 
@@ -1919,6 +1921,8 @@ void setup() {
   led_init();
   led_set_power(LedPattern::Solid);
   led_set_ble(LedPattern::BlinkFast);
+  led_set_oil(LedPattern::Off);
+  led_service(millis());
 
   // ADC
   analogReadResolution(12);
@@ -3033,12 +3037,14 @@ void loop() {
   bool canHealthy = twaiRunning && recentCan;
   led_set_can(canHealthy ? LedPattern::Pulse2Every2s : LedPattern::BlinkSlow);
   if (canFaulted) {
+    led_service(now);
     return;
   }
 
   // Watchdog after first frame
   if (have_seen_any_can && (now - lastCanMessageReceivedMs > 2000)) {
     handleCanFault("CAN RX timeout");
+    led_service(millis());
     return;
   }
 
@@ -3127,6 +3133,17 @@ void loop() {
 
   // Oil channel
   oil_update_and_publish_if_due();
+  LedPattern oilPattern = LedPattern::Off;
+  if (oil_flags == 0) {
+    oilPattern = LedPattern::Solid;
+  } else if (oil_flags & (1 << 1)) {
+    oilPattern = LedPattern::BlinkFast;  // sensor short to ground
+  } else if (oil_flags & (1 << 0)) {
+    oilPattern = LedPattern::Pulse2Every2s;  // harness open
+  } else {
+    oilPattern = LedPattern::BlinkSlow;  // out-of-range but not hard fault
+  }
+  led_set_oil(oilPattern);
 
   uint32_t postCanNow = millis();
 
