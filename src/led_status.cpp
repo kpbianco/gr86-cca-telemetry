@@ -2,6 +2,10 @@
 
 #include <Arduino.h>
 
+#if defined(ARDUINO_ARCH_ESP32)
+#include <esp32-hal-gpio.h>
+#endif
+
 namespace {
 
 enum class LedIndex : uint8_t {
@@ -38,6 +42,28 @@ inline LedState &stateFor(LedIndex index) {
   return g_leds[static_cast<size_t>(index)];
 }
 
+const char *ledName(LedIndex index) {
+  switch (index) {
+    case LedIndex::Power: return "power";
+    case LedIndex::Ble:   return "ble";
+    case LedIndex::Can:   return "can";
+    case LedIndex::Gps:   return "gps";
+    case LedIndex::Sys:   return "sys";
+    case LedIndex::Oil:   return "oil";
+    case LedIndex::Count: break;
+  }
+  return "?";
+}
+
+bool pinSupportsOutput(int pin) {
+#if defined(ARDUINO_ARCH_ESP32)
+  if (pin < 0) return false;
+  return digitalPinIsValid(pin) && digitalPinCanOutput(pin);
+#else
+  return pin >= 0;
+#endif
+}
+
 void applyOutput(LedState &state, bool on) {
   if (state.pin < 0) {
     state.outputState = on;
@@ -45,8 +71,14 @@ void applyOutput(LedState &state, bool on) {
     return;
   }
 
-  bool level = state.activeLow ? !on : on;
-  digitalWrite(state.pin, level ? HIGH : LOW);
+  int driveLevel;
+  if (state.activeLow) {
+    driveLevel = on ? LOW : HIGH;
+  } else {
+    driveLevel = on ? HIGH : LOW;
+  }
+
+  digitalWrite(state.pin, driveLevel);
   state.outputState = on;
   state.outputValid = true;
 }
@@ -126,6 +158,12 @@ void led_init() {
     state.outputValid = false;
     state.outputState = false;
     if (state.pin >= 0) {
+      if (!pinSupportsOutput(state.pin)) {
+        Serial.printf("LED[%s]: GPIO %d cannot drive output; disabling channel.\n",
+                      ledName(static_cast<LedIndex>(i)), state.pin);
+        state.pin = -1;
+        continue;
+      }
       pinMode(state.pin, OUTPUT);
       digitalWrite(state.pin, state.activeLow ? HIGH : LOW);
     }
