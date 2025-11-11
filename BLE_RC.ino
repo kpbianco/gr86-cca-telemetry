@@ -25,6 +25,7 @@
 #else
 #include "nimble/nimble/host/include/host/ble_gap.h"
 #endif
+#include "nimble/porting/nimble/include/os/os_mempool.h"
 #include <Preferences.h>
 #include <esp_gatt_defs.h>
 #include <esp_random.h>
@@ -35,6 +36,7 @@
 #include <math.h>
 #include <esp_system.h>
 #include <esp_task_wdt.h>
+#include <esp_heap_caps.h>
 #if defined(__has_include)
 #if __has_include(<esp_idf_version.h>)
 #include <esp_idf_version.h>
@@ -85,6 +87,7 @@ static const char* RC_CHAR_DIAG_UUID = "00000005-0000-1000-8000-00805f9b34fb"; /
 
 // ====== (Fix) Governor snapshot: define early so Arduino doesn't mangle prototypes ======
 struct GovernorSnapshot { uint32_t pid; uint8_t governor; };
+struct NimblePoolWatermark { uint16_t minFreeBlocks; uint16_t blockSize; };
 static size_t capture_governor_snapshot(GovernorSnapshot *out);
 static bool   restore_governor_snapshot(const GovernorSnapshot *snapshots, size_t count);
 
@@ -2524,24 +2527,115 @@ static void flushBufferedPackets() {
   diagTimerInitialized = false;
 }
 
+static bool isNimblePoolName(const char *name) {
+  if (!name || !name[0]) {
+    return false;
+  }
+  if (strstr(name, "transport_") != nullptr) {
+    return true;
+  }
+  if (strstr(name, "ble_") != nullptr) {
+    return true;
+  }
+  if (strstr(name, "nimble") != nullptr) {
+    return true;
+  }
+  return false;
+}
+
+static void captureNimblePoolWatermark(NimblePoolWatermark *watermark) {
+  if (!watermark) {
+    return;
+  }
+  *watermark = NimblePoolWatermark{0, 0};
+  uint32_t lowestBytes = 0xFFFFFFFFu;
+  struct os_mempool *mp = nullptr;
+  struct os_mempool_info info = {};
+
+  while ((mp = os_mempool_info_get_next(mp, &info)) != nullptr) {
+    if (!isNimblePoolName(info.omi_name)) {
+      continue;
+    }
+    if (info.omi_block_size == 0) {
+      continue;
+    }
+
+    uint32_t minBlocks = info.omi_min_free;
+    uint32_t blockSize = info.omi_block_size;
+    uint32_t totalBytes = 0;
+
+    if (minBlocks == 0) {
+      totalBytes = 0;
+    } else if (blockSize > 0 && minBlocks > (0xFFFFFFFFu / blockSize)) {
+      totalBytes = 0xFFFFFFFFu;
+    } else {
+      totalBytes = minBlocks * blockSize;
+    }
+
+    if (totalBytes < lowestBytes) {
+      lowestBytes = totalBytes;
+      watermark->minFreeBlocks = static_cast<uint16_t>(minBlocks > 0xFFFFu ? 0xFFFFu : minBlocks);
+      watermark->blockSize = static_cast<uint16_t>(blockSize > 0xFFFFu ? 0xFFFFu : blockSize);
+      if (lowestBytes == 0) {
+        break;
+      }
+    }
+  }
+
+  if (lowestBytes == 0xFFFFFFFFu) {
+    watermark->minFreeBlocks = 0;
+    watermark->blockSize = 0;
+  }
+}
+
 static void sendCanDiagnostics(uint32_t now) {
   if (!bleIsConnected()) return;
   if (!every(now, &lastCanDiagSendMs, CAN_DIAG_NOTIFY_INTERVAL_MS)) return;
 
-  uint16_t busErr = (uint16_t)(lastTwaiStatus.bus_error_count & 0xFFFF);
-  uint16_t busOff = (uint16_t)(canBusOffCount & 0xFFFF);
-  uint16_t restartCount = (uint16_t)(canRestartCount & 0xFFFF);
-  uint8_t d[8] = {
-    (uint8_t)lastTwaiStatus.state,
-    (uint8_t)lastTwaiStatus.tx_error_counter,
-    (uint8_t)lastTwaiStatus.rx_error_counter,
-    (uint8_t)(busErr & 0xFF),
-    (uint8_t)((busErr >> 8) & 0xFF),
-    (uint8_t)(restartCount & 0xFF),
-    (uint8_t)(restartCount >> 8),
-    (uint8_t)(busOff & 0xFF)
-  };
-  bleSendCanData(0x777, d, 8);
+  twai_status_info_t status = lastTwaiStatus;
+  if (twai_get_status_info(&status) == ESP_OK) {
+    lastTwaiStatus = status;
+  } else {
+    status = lastTwaiStatus;
+  }
+
+  uint32_t heapFreeBytes = esp_get_free_heap_size();
+  uint32_t heapMinBytes = esp_get_minimum_free_heap_size();
+  uint32_t heapFreeUnits = heapFreeBytes >> 5;  // 32-byte units
+  uint32_t heapMinUnits = heapMinBytes >> 5;
+  if (heapFreeUnits > 0xFFFFu) heapFreeUnits = 0xFFFFu;
+  if (heapMinUnits > 0xFFFFu) heapMinUnits = 0xFFFFu;
+
+  NimblePoolWatermark nimble;
+  captureNimblePoolWatermark(&nimble);
+  uint32_t nimbleBlocks = nimble.minFreeBlocks;
+  uint32_t nimbleBlockSizeDiv8 = (nimble.blockSize + 7u) / 8u;
+  if (nimbleBlocks > 0xFFu) nimbleBlocks = 0xFFu;
+  if (nimbleBlockSizeDiv8 > 0xFFu) nimbleBlockSizeDiv8 = 0xFFu;
+
+  uint32_t txQueued = status.msgs_to_tx;
+  uint32_t rxQueued = status.msgs_to_rx;
+  uint8_t txPacked = static_cast<uint8_t>((txQueued > 0x0Fu) ? 0x0Fu : txQueued);
+  uint8_t rxPacked = static_cast<uint8_t>((rxQueued > 0xFFu) ? 0xFFu : rxQueued);
+
+  uint8_t payload[8];
+  // payload v2 layout:
+  //   byte0: [7:4]=version, [3:0]=CAN TX queue depth (clamped to 15)
+  //   byte1: CAN RX queue depth (clamped to 255)
+  //   byte2: NimBLE min-free block count (clamped to 255)
+  //   byte3: NimBLE block size in units of 8 bytes (ceil, clamped to 255)
+  //   byte4-5: minimum heap free in units of 32 bytes (little-endian)
+  //   byte6-7: current heap free in units of 32 bytes (little-endian)
+  payload[0] = static_cast<uint8_t>((0x02u << 4) | txPacked);
+  payload[1] = rxPacked;
+  payload[2] = static_cast<uint8_t>(nimbleBlocks & 0xFFu);
+  payload[3] = static_cast<uint8_t>(nimbleBlockSizeDiv8 & 0xFFu);
+  payload[4] = static_cast<uint8_t>(heapMinUnits & 0xFFu);
+  payload[5] = static_cast<uint8_t>((heapMinUnits >> 8) & 0xFFu);
+  payload[6] = static_cast<uint8_t>(heapFreeUnits & 0xFFu);
+  payload[7] = static_cast<uint8_t>((heapFreeUnits >> 8) & 0xFFu);
+
+  bleSendCanData(0x777, payload, sizeof(payload));
 }
 
 static void resetSkippedUpdatesCounters() {
