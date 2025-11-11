@@ -47,6 +47,7 @@
 #include "src/gps_nmea.h"
 #include "src/sched.hpp"
 #include "src/nvs_cfg.h"
+#include "src/led_status.h"
 
 #ifndef PASSKEY_U32
 #define PASSKEY_U32 123456
@@ -311,6 +312,8 @@ static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo) {
   g_bleLinkPriConnHandle = connInfo.getConnHandle();
   g_bleLinkPriRetryDone = false;
 
+  led_set_ble(LedPattern::Solid);
+
   if (!g_bleLinkPriEnabled) {
     g_bleLinkPriRetryArmed = false;
     return;
@@ -323,6 +326,7 @@ static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo) {
 
 static void bleLinkPri_onDisconnect() {
   bleLinkPri_resetState();
+  led_set_ble(LedPattern::BlinkFast);
 }
 
 static void bleLinkPri_service(uint32_t now) {
@@ -967,6 +971,7 @@ static bool bleWaitForConnection(uint32_t timeoutMs){
 static void bleStartAdvertising(){
   if (!g_adv) return;
   g_adv->start();
+  led_set_ble(LedPattern::BlinkFast);
 }
 
 static void bleStopAdvertising(){
@@ -1910,6 +1915,10 @@ void setup() {
   Serial.printf("Boot reason: %s (%d)\n", reset_reason_to_string(reason), (int)reason);
 
   init_task_watchdog();
+
+  led_init();
+  led_set_power(LedPattern::Solid);
+  led_set_ble(LedPattern::BlinkFast);
 
   // ADC
   analogReadResolution(12);
@@ -3018,7 +3027,12 @@ void loop() {
 
   bleLinkPri_service(now);
 
-  if (checkCanBusHealth(now)) {
+  bool canFaulted = checkCanBusHealth(now);
+  bool twaiRunning = (lastTwaiStatus.state == TWAI_STATE_RUNNING);
+  bool recentCan = have_seen_any_can && (now - lastCanMessageReceivedMs <= 1000);
+  bool canHealthy = twaiRunning && recentCan;
+  led_set_can(canHealthy ? LedPattern::Pulse2Every2s : LedPattern::BlinkSlow);
+  if (canFaulted) {
     return;
   }
 
@@ -3128,7 +3142,22 @@ void loop() {
   uint32_t gpsElapsedUs = micros() - gpsStartUs;
   g_supervisor.noteElapsed(Supervisor::Subsystem::GpsService, gpsElapsedUs);
 
+  uint32_t gpsNow = millis();
+  bool gpsRecent = (gpsLastSentenceMs != 0) && (gpsNow - gpsLastSentenceMs <= 1200);
+  LedPattern gpsPattern = LedPattern::Off;
+  if (gpsRecent && rmc_valid) {
+    gpsPattern = LedPattern::Pulse3Every2s;
+  } else if (gpsRecent) {
+    gpsPattern = LedPattern::BlinkSlow;
+  }
+  led_set_gps(gpsPattern);
+
   updateBleGovernor(postCanNow);
+
+  bool sysBlink = bleGovernorActive || notifyCapHitCurrentLoop;
+  led_set_sys(sysBlink ? LedPattern::BlinkSlow : LedPattern::Off);
+
+  led_service(gpsNow);
 
   // ---- Robust Serial CLI: accept CR, LF, CRLF, or no line ending ----
   static char cliBuf[CLI_BUF_SIZE];
