@@ -31,6 +31,7 @@
 #include <esp_random.h>
 #include <cstdio>
 #include <cstring>
+#include <cstdint>
 #include <ctype.h>
 #include <driver/twai.h>
 #include <math.h>
@@ -1854,7 +1855,7 @@ static bool checkCanBusHealth(uint32_t now);
 [[maybe_unused]] static bool writeFrameWithWatch(CanFrame &frame, uint32_t timeout = 1);
 static void setLastReconnectCause(const char *reason);
 
-static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len, uint32_t t_us_rx);
+static void bufferNewPacket(const CanFrame &frame, uint32_t t_us_rx);
 static void handleBufferedPacketsBurst(uint32_t budget_us = 2000);
 static void logNotifyCapIfNeeded(uint32_t now);
 static void flushBufferedPackets();
@@ -2199,11 +2200,10 @@ static float volts_to_psi_exact(float v) {
 
 // ===== Circular buffer =====
 struct BufferedMessage {
-  uint32_t pid;
-  uint8_t  data[8];
-  uint8_t  length;
+  CanFrame frame;
   uint32_t t_us_rx;
 };
+static_assert(alignof(CanFrame) >= alignof(uint32_t), "CanFrame alignment insufficient for fast path");
 static constexpr size_t NUM_BUFFERS = 256;
 static BufferedMessage buffers[NUM_BUFFERS];
 static uint32_t bufferToWriteTo = 0;
@@ -2224,6 +2224,7 @@ static uint32_t diagReadIndex = 0;
 static uint32_t diagLastNotifyUs = 0;
 static bool diagTimerInitialized = false;
 static uint8_t diagPayload[2 + (DIAG_MAX_TUPLES_PER_PACKET * 7)];
+static constexpr uint8_t CAN_RX_FASTPATH_MAX_DLC = 4;
 
 static constexpr uint32_t CAN_RX_READ_BUDGET_US = 2000;      // microseconds per poll burst
 static constexpr uint32_t CAN_RX_BUDGET_CHECK_INTERVAL = 16; // frames between budget checks
@@ -2236,7 +2237,7 @@ static inline uint32_t diagBufferedCount() {
   return diagWriteIndex - diagReadIndex;
 }
 
-static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len, uint32_t t_us_rx) {
+static void bufferNewPacket(const CanFrame &frame, uint32_t t_us_rx) {
   if (bufferedPacketCount() == static_cast<uint32_t>(NUM_BUFFERS)) {
     uint32_t nowMs = millis();
     if (nowMs - lastBufferOverflowWarningMs >= 250) {
@@ -2245,13 +2246,13 @@ static void bufferNewPacket(uint32_t pid, const uint8_t *data, uint8_t len, uint
     }
     bufferToReadFrom++;
   }
+
   BufferedMessage *m = &buffers[bufferToWriteTo % NUM_BUFFERS];
-  m->pid = pid;
-  m->length = (len > 8) ? 8 : len;
-  m->t_us_rx = t_us_rx;
-  if (m->length) {
-    memcpy(m->data, data, m->length);
+  m->frame = frame;
+  if (m->frame.data_length_code > 8) {
+    m->frame.data_length_code = 8;
   }
+  m->t_us_rx = t_us_rx;
   bufferToWriteTo++;
 }
 
@@ -2424,22 +2425,22 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
   while (bufferToReadFrom != bufferToWriteTo) {
     BufferedMessage *m = &buffers[bufferToReadFrom % NUM_BUFFERS];
 
-    diagRecordFrame(m->pid, m->length, m->t_us_rx);
+    diagRecordFrame(m->frame.identifier, m->frame.data_length_code, m->t_us_rx);
 
-    void *entry = pidMap.getEntryId(m->pid);
+    void *entry = pidMap.getEntryId(m->frame.identifier);
     if (!USE_PROFILE_ALLOWLIST && !entry) {
-      if (PidExtra *extra = pidMap.getOrCreateExtra(m->pid)) {
-        uint8_t base = compute_default_divider_for_pid(m->pid);
+      if (PidExtra *extra = pidMap.getOrCreateExtra(m->frame.identifier)) {
+        uint8_t base = compute_default_divider_for_pid(m->frame.identifier);
         set_extra_base_divider(extra, base, /*resetGovernor=*/false);
-        entry = pidMap.getEntryId(m->pid);
+        entry = pidMap.getEntryId(m->frame.identifier);
       }
     }
 
     bool allowed = false;
     if (USE_PROFILE_ALLOWLIST) {
-      allowed = (entry != nullptr) && !isDenied(m->pid);
+      allowed = (entry != nullptr) && !isDenied(m->frame.identifier);
     } else {
-      allowed = !isDenied(m->pid);
+      allowed = !isDenied(m->frame.identifier);
     }
 
     if (allowed) {
@@ -2447,10 +2448,10 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
       uint8_t div = extra ? effective_divider(extra) : 1;
       bool dataChanged = false;
       if (extra) {
-        if (!extra->hasLastPayload || extra->lastLength != m->length) {
+        if (!extra->hasLastPayload || extra->lastLength != m->frame.data_length_code) {
           dataChanged = true;
-        } else if (m->length &&
-                   memcmp(extra->lastData, m->data, m->length) != 0) {
+        } else if (m->frame.data_length_code &&
+                   memcmp(extra->lastData, m->frame.data, m->frame.data_length_code) != 0) {
           dataChanged = true;
         }
       }
@@ -2465,16 +2466,16 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
           notifies_suppressed_total++;
           break;
         }
-        bleSendCanData(m->pid, m->data, m->length);
+        bleSendCanData(m->frame.identifier, m->frame.data, m->frame.data_length_code);
         canNotifiesThisLoop++;
         if (extra) {
           extra->hasLastPayload = true;
-          extra->lastLength = m->length;
-          if (m->length) {
-            memcpy(extra->lastData, m->data, m->length);
-            if (m->length < sizeof(extra->lastData)) {
-              memset(extra->lastData + m->length, 0,
-                     sizeof(extra->lastData) - m->length);
+          extra->lastLength = m->frame.data_length_code;
+          if (m->frame.data_length_code) {
+            memcpy(extra->lastData, m->frame.data, m->frame.data_length_code);
+            if (m->frame.data_length_code < sizeof(extra->lastData)) {
+              memset(extra->lastData + m->frame.data_length_code, 0,
+                     sizeof(extra->lastData) - m->frame.data_length_code);
             }
           } else {
             memset(extra->lastData, 0, sizeof(extra->lastData));
@@ -3039,14 +3040,21 @@ void loop() {
   uint32_t canPollStartUs = micros();
   uint32_t framesPolled = 0;
   while (true) {
-    if (!ESP32Can.readFrame(rx, 0)) {
+    bool bufferFull = (bufferedPacketCount() == static_cast<uint32_t>(NUM_BUFFERS));
+    BufferedMessage *fastSlot = bufferFull ? nullptr : &buffers[bufferToWriteTo % NUM_BUFFERS];
+    bool fastSlotAligned = fastSlot &&
+                           ((reinterpret_cast<uintptr_t>(fastSlot->frame.data) & (alignof(uint32_t) - 1)) == 0);
+
+    CanFrame *target = fastSlotAligned ? &fastSlot->frame : &rx;
+
+    if (!ESP32Can.readFrame(*target, 0)) {
       break;
     }
 
     uint32_t t_us_rx = micros();
 
     framesPolled++;
-    if (rx.rtr) {
+    if (target->rtr) {
       if ((framesPolled % CAN_RX_BUDGET_CHECK_INTERVAL) == 0) {
         uint32_t elapsedUs = micros() - canPollStartUs;
         if (elapsedUs >= CAN_RX_READ_BUDGET_US) {
@@ -3060,17 +3068,30 @@ void loop() {
     have_seen_any_can = true;
     lastCanMessageReceivedMs = frameNow;
 
+    uint8_t dlc = target->data_length_code;
+    if (dlc > 8) {
+      Serial.printf("WARN: dropping CAN frame id=%03X with invalid DLC=%u\n",
+                    target->identifier, dlc);
+      continue;
+    }
+
     rxCount++;
     if (frameNow - lastRxPrintMs >= CAN_RX_PRINT_INTERVAL_MS) {
       lastRxPrintMs = frameNow;
-      Serial.printf("RX #%lu id=%03X dlc=%d\n", (unsigned long)rxCount,
-                    rx.identifier, rx.data_length_code);
+      Serial.printf("RX #%lu id=%03X dlc=%u\n", (unsigned long)rxCount,
+                    target->identifier, dlc);
     }
 
-    if (rx.data_length_code) {
-      bufferNewPacket(rx.identifier, rx.data, rx.data_length_code, t_us_rx);
+    if (dlc) {
+      if (fastSlotAligned && dlc <= CAN_RX_FASTPATH_MAX_DLC) {
+        fastSlot->frame.data_length_code = dlc;
+        fastSlot->t_us_rx = t_us_rx;
+        bufferToWriteTo++;
+      } else {
+        bufferNewPacket(*target, t_us_rx);
+      }
     } else {
-      diagRecordFrame(rx.identifier, 0, t_us_rx);
+      diagRecordFrame(target->identifier, 0, t_us_rx);
     }
 
     if ((framesPolled % CAN_RX_BUDGET_CHECK_INTERVAL) == 0) {
