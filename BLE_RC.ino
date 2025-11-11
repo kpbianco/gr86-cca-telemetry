@@ -87,6 +87,7 @@ static const char* RC_CHAR_DIAG_UUID = "00000005-0000-1000-8000-00805f9b34fb"; /
 
 // ====== (Fix) Governor snapshot: define early so Arduino doesn't mangle prototypes ======
 struct GovernorSnapshot { uint32_t pid; uint8_t governor; };
+struct NimblePoolWatermark { uint16_t minFreeBlocks; uint16_t blockSize; };
 static size_t capture_governor_snapshot(GovernorSnapshot *out);
 static bool   restore_governor_snapshot(const GovernorSnapshot *snapshots, size_t count);
 
@@ -2526,11 +2527,6 @@ static void flushBufferedPackets() {
   diagTimerInitialized = false;
 }
 
-struct NimblePoolWatermark {
-  uint16_t minFreeBlocks;
-  uint16_t blockSize;
-};
-
 static bool isNimblePoolName(const char *name) {
   if (!name || !name[0]) {
     return false;
@@ -2547,8 +2543,11 @@ static bool isNimblePoolName(const char *name) {
   return false;
 }
 
-static NimblePoolWatermark captureNimblePoolWatermark() {
-  NimblePoolWatermark watermark{0, 0};
+static void captureNimblePoolWatermark(NimblePoolWatermark *watermark) {
+  if (!watermark) {
+    return;
+  }
+  *watermark = NimblePoolWatermark{0, 0};
   uint32_t lowestBytes = 0xFFFFFFFFu;
   struct os_mempool *mp = nullptr;
   struct os_mempool_info info = {};
@@ -2575,8 +2574,8 @@ static NimblePoolWatermark captureNimblePoolWatermark() {
 
     if (totalBytes < lowestBytes) {
       lowestBytes = totalBytes;
-      watermark.minFreeBlocks = static_cast<uint16_t>(minBlocks > 0xFFFFu ? 0xFFFFu : minBlocks);
-      watermark.blockSize = static_cast<uint16_t>(blockSize > 0xFFFFu ? 0xFFFFu : blockSize);
+      watermark->minFreeBlocks = static_cast<uint16_t>(minBlocks > 0xFFFFu ? 0xFFFFu : minBlocks);
+      watermark->blockSize = static_cast<uint16_t>(blockSize > 0xFFFFu ? 0xFFFFu : blockSize);
       if (lowestBytes == 0) {
         break;
       }
@@ -2584,11 +2583,9 @@ static NimblePoolWatermark captureNimblePoolWatermark() {
   }
 
   if (lowestBytes == 0xFFFFFFFFu) {
-    watermark.minFreeBlocks = 0;
-    watermark.blockSize = 0;
+    watermark->minFreeBlocks = 0;
+    watermark->blockSize = 0;
   }
-
-  return watermark;
 }
 
 static void sendCanDiagnostics(uint32_t now) {
@@ -2609,7 +2606,8 @@ static void sendCanDiagnostics(uint32_t now) {
   if (heapFreeUnits > 0xFFFFu) heapFreeUnits = 0xFFFFu;
   if (heapMinUnits > 0xFFFFu) heapMinUnits = 0xFFFFu;
 
-  NimblePoolWatermark nimble = captureNimblePoolWatermark();
+  NimblePoolWatermark nimble;
+  captureNimblePoolWatermark(&nimble);
   uint32_t nimbleBlocks = nimble.minFreeBlocks;
   uint32_t nimbleBlockSizeDiv8 = (nimble.blockSize + 7u) / 8u;
   if (nimbleBlocks > 0xFFu) nimbleBlocks = 0xFFu;
