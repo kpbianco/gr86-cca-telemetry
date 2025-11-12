@@ -20,10 +20,15 @@
 
 #include <ESP32-TWAI-CAN.hpp>
 #include <NimBLEDevice.h>
+#include <NimBLEUtils.h>
 #if defined(CONFIG_NIMBLE_CPP_IDF)
 #include "host/ble_gap.h"
+#include "host/ble_hs.h"
+#include "host/ble_att.h"
 #else
 #include "nimble/nimble/host/include/host/ble_gap.h"
+#include "nimble/nimble/host/include/host/ble_hs.h"
+#include "nimble/nimble/host/include/host/ble_att.h"
 #endif
 #include "nimble/porting/nimble/include/os/os_mempool.h"
 #include <Preferences.h>
@@ -100,6 +105,11 @@ static int64_t gpsComputeMonotonicUs(uint32_t micros_now, int64_t correction_us)
 static void gpsHandlePpsDiscipline(uint32_t now_ms);
 static void IRAM_ATTR gpsPpsIsr();
 static void gpsMarkSentenceStale();
+static void bleNotifyBackoffReset();
+static void bleNotifyBackoffService(uint32_t now);
+static void bleApplyNegotiatedMtu(uint16_t mtu);
+static void bleResetNotifySizing();
+static void bleHandleNotifyStatus(const char *label, int code);
 
 // ===== Global state =====
 static bool     isCanBusReaderActive = false;
@@ -121,13 +131,42 @@ static uint32_t rxCount = 0;
 static uint32_t lastRxPrintMs = 0;
 static constexpr uint32_t CAN_RX_PRINT_INTERVAL_MS = 200;
 
-static constexpr uint16_t kMaxCanNotifiesPerLoop = 20;
+static constexpr uint16_t kBaseCanNotifiesPerLoop = 20;
+static constexpr uint16_t BLE_BASE_NOTIFY_PAYLOAD = 20;
+static constexpr uint32_t BLE_NOTIFY_BASE_BUDGET_BYTES =
+    static_cast<uint32_t>(kBaseCanNotifiesPerLoop) * BLE_BASE_NOTIFY_PAYLOAD;
 static constexpr uint32_t NOTIFY_CAP_LOG_INTERVAL_MS = 2000;
 static uint16_t canNotifiesThisLoop = 0;
 static bool notifyCapHitCurrentLoop = false;
 static uint32_t notifyCapHitsSinceLastLog = 0;
 static uint32_t notifyCapLastLogMs = 0;
 static uint32_t notifies_suppressed_total = 0;
+static uint16_t g_bleNotifyBurstBudgetPerLoop = kBaseCanNotifiesPerLoop;
+
+static uint16_t g_bleNegotiatedMtu = BLE_ATT_MTU_DFLT;
+static uint16_t g_bleNotifyMaxValueLength = (BLE_ATT_MTU_DFLT > 3) ? (BLE_ATT_MTU_DFLT - 3) : 0;
+static uint32_t bleNotifyFailuresTotal = 0;
+static uint32_t bleNotifyStatusErrors = 0;
+static uint32_t bleNotifyCongestionEvents = 0;
+static uint32_t bleNotifyClampEvents = 0;
+static uint32_t bleNotifyFailureLastLogMs = 0;
+static uint32_t bleNotifyClampLastLogMs = 0;
+static uint32_t bleNotifyBackoffEvents = 0;
+static uint32_t bleNotifyBackoffLastLogMs = 0;
+static uint32_t bleNotifyBackoffUntilMs = 0;
+static uint8_t  bleNotifyBackoffLevel = 0;
+static bool     bleNotifyBackoffActive = false;
+static int      bleNotifyLastStatusCode = 0;
+static uint32_t bleNotifyLastStatusMs = 0;
+static char     bleNotifyBackoffLastReason[48] = "none";
+static constexpr uint32_t BLE_NOTIFY_FAILURE_LOG_INTERVAL_MS = 2000;
+static constexpr uint32_t BLE_NOTIFY_CLAMP_LOG_INTERVAL_MS   = 5000;
+static constexpr uint32_t BLE_NOTIFY_BACKOFF_LOG_INTERVAL_MS = 5000;
+static constexpr uint8_t  BLE_NOTIFY_BACKOFF_MAX_LEVEL       = 5;
+static constexpr uint32_t BLE_NOTIFY_BACKOFF_BASE_MS         = 20;
+static constexpr uint32_t BLE_NOTIFY_BACKOFF_MAX_MS          = 640;
+static GovernorSnapshot bleNotifyBackoffSnapshot[BLE_GOVERNOR_SNAPSHOT_MAX];
+static size_t bleNotifyBackoffSnapshotCount = 0;
 
 static volatile uint32_t gps_pps_event_micros = 0;
 static volatile uint32_t gps_pps_last_interval_us = 0;
@@ -246,15 +285,20 @@ bool bleLinkPri_isEnabled();
 class BleLinkPriCallbacks : public NimBLEServerCallbacks {
  public:
   void onConnect(NimBLEServer*, NimBLEConnInfo& connInfo) override {
+    bleNotifyBackoffReset();
+    bleApplyNegotiatedMtu(connInfo.getMTU());
     bleLinkPri_onConnect(connInfo);
   }
 
   void onDisconnect(NimBLEServer*, NimBLEConnInfo&, int) override {
+    bleNotifyBackoffReset();
+    bleResetNotifySizing();
     bleLinkPri_onDisconnect();
   }
 
   void onMTUChange(uint16_t MTU, NimBLEConnInfo&) override {
     Serial.printf("MTU negotiated: %u\n", static_cast<unsigned>(MTU));
+    bleApplyNegotiatedMtu(MTU);
   }
 
   void onConnParamsUpdate(NimBLEConnInfo& connInfo) override {
@@ -964,6 +1008,262 @@ static void updateBleGovernor(uint32_t now) {
   }
 }
 
+static void bleRecalculateNotifyBudgets() {
+  uint16_t maxLen = g_bleNotifyMaxValueLength;
+  if (maxLen == 0) {
+    g_bleNotifyBurstBudgetPerLoop = 1;
+    return;
+  }
+
+  uint32_t computed = BLE_NOTIFY_BASE_BUDGET_BYTES / maxLen;
+  if (computed == 0) {
+    computed = 1;
+  }
+  if (computed > kBaseCanNotifiesPerLoop) {
+    computed = kBaseCanNotifiesPerLoop;
+  }
+  g_bleNotifyBurstBudgetPerLoop = static_cast<uint16_t>(computed);
+}
+
+static void bleResetNotifySizing() {
+  g_bleNegotiatedMtu = BLE_ATT_MTU_DFLT;
+  g_bleNotifyMaxValueLength = (BLE_ATT_MTU_DFLT > 3) ? (BLE_ATT_MTU_DFLT - 3) : 0;
+  bleRecalculateNotifyBudgets();
+}
+
+static void bleApplyNegotiatedMtu(uint16_t mtu) {
+  if (mtu < BLE_ATT_MTU_DFLT) {
+    mtu = BLE_ATT_MTU_DFLT;
+  }
+  g_bleNegotiatedMtu = mtu;
+  g_bleNotifyMaxValueLength = (mtu > 3) ? (mtu - 3) : 0;
+  bleRecalculateNotifyBudgets();
+}
+
+static void bleNotifyLogClamp(const char *label, size_t requested, size_t allowed) {
+  uint32_t now = millis();
+  bleNotifyClampEvents++;
+  if ((now - bleNotifyClampLastLogMs) < BLE_NOTIFY_CLAMP_LOG_INTERVAL_MS) {
+    return;
+  }
+
+  Serial.printf("WARN: BLE %s payload clamped (%u -> %u bytes, MTU=%u)\n",
+                label ? label : "?",
+                static_cast<unsigned>(requested),
+                static_cast<unsigned>(allowed),
+                static_cast<unsigned>(g_bleNegotiatedMtu));
+  bleNotifyClampLastLogMs = now;
+}
+
+static uint8_t bleClampCanDataLen(uint8_t requested, const char *label) {
+  if (g_bleNotifyMaxValueLength < 4) {
+    bleNotifyLogClamp(label, static_cast<size_t>(requested) + 4, g_bleNotifyMaxValueLength);
+    return 0;
+  }
+
+  uint16_t maxData = g_bleNotifyMaxValueLength - 4;
+  if (maxData > 16) {
+    maxData = 16;
+  }
+  if (requested <= maxData) {
+    return requested;
+  }
+
+  bleNotifyLogClamp(label, static_cast<size_t>(requested) + 4, g_bleNotifyMaxValueLength);
+  return static_cast<uint8_t>(maxData & 0xFFu);
+}
+
+static size_t bleClampPayloadLength(size_t requested, const char *label) {
+  if (g_bleNotifyMaxValueLength == 0) {
+    bleNotifyLogClamp(label, requested, 0);
+    return 0;
+  }
+  if (requested <= g_bleNotifyMaxValueLength) {
+    return requested;
+  }
+
+  size_t allowed = g_bleNotifyMaxValueLength;
+  bleNotifyLogClamp(label, requested, allowed);
+  return allowed;
+}
+
+static uint16_t bleDiagMaxTuplesPerPacket() {
+  if (g_bleNotifyMaxValueLength <= 2) {
+    return 0;
+  }
+  return static_cast<uint16_t>((g_bleNotifyMaxValueLength - 2) / 7);
+}
+
+static bool bleNotifyIsCongestionCode(int code) {
+  switch (code) {
+    case BLE_HS_ENOMEM:
+    case BLE_HS_EBUSY:
+    case BLE_HS_EAGAIN:
+    case BLE_HS_ESTALLED:
+    case BLE_HS_ECONTROLLER:
+    case BLE_HS_ETIMEOUT:
+      return true;
+    default:
+      return false;
+  }
+}
+
+static uint32_t bleNotifyBackoffDurationForLevel(uint8_t level) {
+  if (level == 0) {
+    level = 1;
+  }
+  uint32_t duration = BLE_NOTIFY_BACKOFF_BASE_MS << (level - 1);
+  if (duration > BLE_NOTIFY_BACKOFF_MAX_MS) {
+    duration = BLE_NOTIFY_BACKOFF_MAX_MS;
+  }
+  return duration;
+}
+
+static void bleNotifyBackoffTrigger(const char *label, int code) {
+  uint32_t now = millis();
+
+  if (bleNotifyBackoffActive && static_cast<int32_t>(now - bleNotifyBackoffUntilMs) >= 0) {
+    bleNotifyBackoffService(now);
+  }
+
+  if (!bleNotifyBackoffActive) {
+    bleNotifyBackoffSnapshotCount = capture_governor_snapshot(bleNotifyBackoffSnapshot);
+    bleNotifyBackoffActive = true;
+    bleNotifyBackoffLevel = 0;
+  }
+
+  if (bleNotifyBackoffLevel < BLE_NOTIFY_BACKOFF_MAX_LEVEL) {
+    bleNotifyBackoffLevel++;
+  }
+
+  uint32_t duration = bleNotifyBackoffDurationForLevel(bleNotifyBackoffLevel);
+  bleNotifyBackoffUntilMs = now + duration;
+  bleNotifyBackoffEvents++;
+
+  const char *codeStr = NimBLEUtils::returnCodeToString(code);
+  snprintf(bleNotifyBackoffLastReason, sizeof(bleNotifyBackoffLastReason),
+           "%s:%d%s%s",
+           label ? label : "?",
+           code,
+           (codeStr && codeStr[0]) ? ":" : "",
+           (codeStr && codeStr[0]) ? codeStr : "");
+
+  if (governorIncreaseDividers()) {
+    bleTxLastBoostMs = now;
+  }
+
+  if ((now - bleNotifyBackoffLastLogMs) >= BLE_NOTIFY_BACKOFF_LOG_INTERVAL_MS) {
+    Serial.printf("WARN: BLE notify backoff level=%u duration=%lu ms reason=%s\n",
+                  static_cast<unsigned>(bleNotifyBackoffLevel),
+                  static_cast<unsigned long>(duration),
+                  bleNotifyBackoffLastReason);
+    bleNotifyBackoffLastLogMs = now;
+  }
+}
+
+static void bleNotifyBackoffReset() {
+  if (bleNotifyBackoffSnapshotCount > 0) {
+    bool any = restore_governor_snapshot(bleNotifyBackoffSnapshot, bleNotifyBackoffSnapshotCount);
+    bleGovernorActive = any;
+  }
+  bleNotifyBackoffSnapshotCount = 0;
+  bleNotifyBackoffActive = false;
+  bleNotifyBackoffLevel = 0;
+  bleNotifyBackoffUntilMs = 0;
+  bleNotifyBackoffLastLogMs = 0;
+  snprintf(bleNotifyBackoffLastReason, sizeof(bleNotifyBackoffLastReason), "none");
+}
+
+static void bleNotifyBackoffService(uint32_t now) {
+  if (!bleNotifyBackoffActive) {
+    return;
+  }
+  if (static_cast<int32_t>(now - bleNotifyBackoffUntilMs) < 0) {
+    return;
+  }
+
+  if (bleNotifyBackoffSnapshotCount > 0) {
+    bool any = restore_governor_snapshot(bleNotifyBackoffSnapshot, bleNotifyBackoffSnapshotCount);
+    bleGovernorActive = any;
+  }
+  bleNotifyBackoffSnapshotCount = 0;
+  bleNotifyBackoffActive = false;
+  bleNotifyBackoffLevel = 0;
+  bleNotifyBackoffUntilMs = 0;
+  snprintf(bleNotifyBackoffLastReason, sizeof(bleNotifyBackoffLastReason), "idle");
+}
+
+static void bleNotifyHandleFailure(const char *label, int code) {
+  uint32_t now = millis();
+  bleNotifyFailuresTotal++;
+  bleNotifyLastStatusCode = code;
+  bleNotifyLastStatusMs = now;
+
+  bool congested = bleNotifyIsCongestionCode(code);
+  if (congested) {
+    bleNotifyCongestionEvents++;
+  }
+
+  if ((now - bleNotifyFailureLastLogMs) >= BLE_NOTIFY_FAILURE_LOG_INTERVAL_MS) {
+    const char *codeStr = NimBLEUtils::returnCodeToString(code);
+    Serial.printf("WARN: BLE notify %s failed (%d %s)\n",
+                  label ? label : "?",
+                  code,
+                  codeStr ? codeStr : "?");
+    bleNotifyFailureLastLogMs = now;
+  }
+
+  bleNotifyBackoffTrigger(label, congested ? code : BLE_HS_EUNKNOWN);
+}
+
+void bleHandleNotifyStatus(const char *label, int code) {
+  uint32_t now = millis();
+  bleNotifyLastStatusCode = code;
+  bleNotifyLastStatusMs = now;
+
+  if (code == 0 || code == BLE_HS_EDONE) {
+    return;
+  }
+
+  bleNotifyStatusErrors++;
+  bool congested = bleNotifyIsCongestionCode(code);
+  if (congested) {
+    bleNotifyCongestionEvents++;
+  }
+
+  if ((now - bleNotifyFailureLastLogMs) >= BLE_NOTIFY_FAILURE_LOG_INTERVAL_MS) {
+    const char *codeStr = NimBLEUtils::returnCodeToString(code);
+    Serial.printf("WARN: BLE notify status %s -> %d %s\n",
+                  label ? label : "?",
+                  code,
+                  codeStr ? codeStr : "?");
+    bleNotifyFailureLastLogMs = now;
+  }
+
+  if (congested) {
+    bleNotifyBackoffTrigger(label, code);
+  }
+}
+
+static bool bleNotifyCharacteristic(NimBLECharacteristic* characteristic,
+                                    const char *label,
+                                    uint32_t now,
+                                    bool countTxFrame) {
+  if (!characteristic || !bleIsConnected()) {
+    return false;
+  }
+
+  if (!characteristic->notify()) {
+    bleNotifyHandleFailure(label, BLE_HS_EUNKNOWN);
+    return false;
+  }
+
+  if (countTxFrame) {
+    noteBleTxFrame(now);
+  }
+  return true;
+}
+
 // ===== BLE helpers we provide (instead of RaceChronoBle.*) =====
 static inline bool bleIsConnected(){
   return g_server && g_server->getConnectedCount() > 0;
@@ -1113,20 +1413,53 @@ public:
 #endif
 } g_filCB;
 
+class NotifyStatusCB : public NimBLECharacteristicCallbacks {
+ public:
+  explicit NotifyStatusCB(const char *label) : label_(label) {}
+
+  void onStatus(NimBLECharacteristic*, int code) override {
+    bleHandleNotifyStatus(label_, code);
+  }
+
+ private:
+  const char *label_;
+};
+
+static NotifyStatusCB g_canNotifyCB{"CAN"};
+static NotifyStatusCB g_gpsNotifyCB{"GPS"};
+static NotifyStatusCB g_gtmNotifyCB{"GTM"};
+static NotifyStatusCB g_diagNotifyCB{"DIAG"};
+
 // ===== Our CAN sender over BLE 0x0001 =====
 static uint8_t canBuf[20];
-static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len) {
-  if (!g_can || !bleIsConnected()) return;
-  // Pack as RaceChrono DIY: 4 bytes LE ID + up to 16 data bytes
-  canBuf[0] = (uint8_t)(pid & 0xFF);
-  canBuf[1] = (uint8_t)((pid >> 8) & 0xFF);
-  canBuf[2] = (uint8_t)((pid >> 16) & 0xFF);
-  canBuf[3] = (uint8_t)((pid >> 24) & 0xFF);
-  uint8_t n = len > 16 ? 16 : len;
-  if (n) memcpy(&canBuf[4], data, n);
-  g_can->setValue(canBuf, 4 + n);
-  g_can->notify();
-  noteBleTxFrame(millis());
+static int bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len) {
+  if (!g_can || !bleIsConnected()) {
+    return -1;
+  }
+
+  if (g_bleNotifyMaxValueLength < 4) {
+    bleNotifyLogClamp("CAN", static_cast<size_t>(len) + 4, g_bleNotifyMaxValueLength);
+    return -1;
+  }
+
+  uint8_t allowed = bleClampCanDataLen(len, "CAN");
+
+  canBuf[0] = static_cast<uint8_t>(pid & 0xFFu);
+  canBuf[1] = static_cast<uint8_t>((pid >> 8) & 0xFFu);
+  canBuf[2] = static_cast<uint8_t>((pid >> 16) & 0xFFu);
+  canBuf[3] = static_cast<uint8_t>((pid >> 24) & 0xFFu);
+
+  if (allowed && data) {
+    memcpy(&canBuf[4], data, allowed);
+  }
+
+  uint32_t now = millis();
+  g_can->setValue(canBuf, 4 + allowed);
+  if (!bleNotifyCharacteristic(g_can, "CAN", now, true)) {
+    return -1;
+  }
+
+  return static_cast<int>(allowed);
 }
 
 // ===== GPS helpers =====
@@ -1263,7 +1596,11 @@ static void bleInit(){
   g_diag = g_svc->createCharacteristic(RC_CHAR_DIAG_UUID,
             NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
 
+  g_can->setCallbacks(&g_canNotifyCB);
   g_fil->setCallbacks(&g_filCB);
+  g_gps->setCallbacks(&g_gpsNotifyCB);
+  g_gtm->setCallbacks(&g_gtmNotifyCB);
+  g_diag->setCallbacks(&g_diagNotifyCB);
 
   // Init payloads
   { uint8_t init20[20]; memset(init20, 0xFF, sizeof(init20)); g_gps->setValue(init20, 20); }
@@ -1350,17 +1687,21 @@ static void gpsPackAndNotify(uint32_t now) {
   payload[18] = hdop;
   payload[19] = vdop;
 
-  g_gps->setValue(payload, sizeof(payload));
-  g_gps->notify();
-  noteBleTxFrame(now);
+  size_t gpsLen = bleClampPayloadLength(sizeof(payload), "GPS");
+  if (gpsLen > 0) {
+    g_gps->setValue(payload, gpsLen);
+    bleNotifyCharacteristic(g_gps, "GPS", now, true);
+  }
 
   uint8_t timePayload[3];
   timePayload[0] = static_cast<uint8_t>(((gpsSyncBits & 0x7) << 5) | ((dateHour >> 16) & 0x1F));
   timePayload[1] = static_cast<uint8_t>(dateHour >> 8);
   timePayload[2] = static_cast<uint8_t>(dateHour);
-  g_gtm->setValue(timePayload, sizeof(timePayload));
-  g_gtm->notify();
-  noteBleTxFrame(now);
+  size_t gtmLen = bleClampPayloadLength(sizeof(timePayload), "GTM");
+  if (gtmLen > 0) {
+    g_gtm->setValue(timePayload, gtmLen);
+    bleNotifyCharacteristic(g_gtm, "GTM", now, true);
+  }
 }
 
 static void gpsSendRaw(const char *cmd) {
@@ -1911,7 +2252,7 @@ static void handleBufferedPacketsBurst(uint32_t budget_us = 2000);
 static void logNotifyCapIfNeeded(uint32_t now);
 static void flushBufferedPackets();
 static void sendCanDiagnostics(uint32_t now);
-static void bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len);
+static int bleSendCanData(uint32_t pid, const uint8_t *data, uint8_t len);
 static void diagRecordFrame(uint32_t pid, uint8_t dlc, uint32_t t_us_rx);
 static void serviceDiagStream();
 
@@ -1945,6 +2286,7 @@ static void restartBle(const char *reason) {
     setLastReconnectCause(reason);
   }
   Serial.println("BLE: restart...");
+  bleNotifyBackoffReset();
   bleStopAdvertising();
   // Service + characteristics remain; we just restart advertising.
   bleStartAdvertising();
@@ -1976,6 +2318,7 @@ void setup() {
 
   // BLE
   Serial.println("BLE setup...");
+  bleResetNotifySizing();
   bleInit();
   Serial.println("RaceChrono connection will establish in background.");
 
@@ -2339,8 +2682,11 @@ static void serviceDiagStream() {
   if (available == 0) {
     diagPayload[0] = 0;
     diagPayload[1] = 0;
-    g_diag->setValue(diagPayload, 2);
-    g_diag->notify();
+    size_t sendLen = bleClampPayloadLength(2, "DIAG");
+    if (sendLen > 0) {
+      g_diag->setValue(diagPayload, sendLen);
+      bleNotifyCharacteristic(g_diag, "DIAG", millis(), false);
+    }
     return;
   }
 
@@ -2348,8 +2694,23 @@ static void serviceDiagStream() {
     available = diagBufferedCount();
     if (!available) break;
 
-    uint16_t count = static_cast<uint16_t>(
-        available > DIAG_MAX_TUPLES_PER_PACKET ? DIAG_MAX_TUPLES_PER_PACKET : available);
+    uint16_t maxTuples = bleDiagMaxTuplesPerPacket();
+    if (maxTuples > DIAG_MAX_TUPLES_PER_PACKET) {
+      maxTuples = DIAG_MAX_TUPLES_PER_PACKET;
+    }
+    if (maxTuples == 0) {
+      diagPayload[0] = 0;
+      diagPayload[1] = 0;
+      size_t sendLen = bleClampPayloadLength(2, "DIAG");
+      if (sendLen == 0) {
+        return;
+      }
+      g_diag->setValue(diagPayload, sendLen);
+      bleNotifyCharacteristic(g_diag, "DIAG", millis(), false);
+      return;
+    }
+
+    uint16_t count = static_cast<uint16_t>(available > maxTuples ? maxTuples : available);
 
     diagPayload[0] = static_cast<uint8_t>(count & 0xFF);
     diagPayload[1] = static_cast<uint8_t>((count >> 8) & 0xFF);
@@ -2371,7 +2732,9 @@ static void serviceDiagStream() {
 
     diagReadIndex += count;
     g_diag->setValue(diagPayload, payloadLen);
-    g_diag->notify();
+    if (!bleNotifyCharacteristic(g_diag, "DIAG", millis(), false)) {
+      return;
+    }
   } while (diagBufferedCount() > 0);
 }
 
@@ -2498,17 +2861,32 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
       uint8_t div = extra ? effective_divider(extra) : 1;
       bool dataChanged = false;
       if (extra) {
-        if (!extra->hasLastPayload || extra->lastLength != m->frame.data_length_code) {
+        uint8_t allowedLen = m->frame.data_length_code;
+        if (g_bleNotifyMaxValueLength < 4) {
+          allowedLen = 0;
+        } else {
+          uint16_t maxData = g_bleNotifyMaxValueLength - 4;
+          if (maxData > 16) {
+            maxData = 16;
+          }
+          if (allowedLen > maxData) {
+            allowedLen = static_cast<uint8_t>(maxData & 0xFFu);
+          }
+        }
+
+        if (!extra->hasLastPayload || extra->lastLength != allowedLen) {
           dataChanged = true;
-        } else if (m->frame.data_length_code &&
-                   memcmp(extra->lastData, m->frame.data, m->frame.data_length_code) != 0) {
+        } else if (allowedLen &&
+                   memcmp(extra->lastData, m->frame.data, allowedLen) != 0) {
           dataChanged = true;
         }
       }
 
       bool shouldSend = (!extra) || dataChanged || (extra->skippedUpdates == 0);
+      bool sent = false;
+      int sentLen = -1;
       if (shouldSend) {
-        if (canNotifiesThisLoop >= kMaxCanNotifiesPerLoop) {
+        if (canNotifiesThisLoop >= g_bleNotifyBurstBudgetPerLoop) {
           if (!notifyCapHitCurrentLoop) {
             notifyCapHitCurrentLoop = true;
             notifyCapHitsSinceLastLog++;
@@ -2516,26 +2894,34 @@ static void handleBufferedPacketsBurst(uint32_t budget_us) {
           notifies_suppressed_total++;
           break;
         }
-        bleSendCanData(m->frame.identifier, m->frame.data, m->frame.data_length_code);
-        canNotifiesThisLoop++;
-        if (extra) {
-          extra->hasLastPayload = true;
-          extra->lastLength = m->frame.data_length_code;
-          if (m->frame.data_length_code) {
-            memcpy(extra->lastData, m->frame.data, m->frame.data_length_code);
-            if (m->frame.data_length_code < sizeof(extra->lastData)) {
-              memset(extra->lastData + m->frame.data_length_code, 0,
-                     sizeof(extra->lastData) - m->frame.data_length_code);
+        sentLen = bleSendCanData(m->frame.identifier, m->frame.data, m->frame.data_length_code);
+        sent = (sentLen >= 0);
+        if (sent) {
+          canNotifiesThisLoop++;
+          if (extra) {
+            extra->hasLastPayload = true;
+            extra->lastLength = static_cast<uint8_t>(sentLen & 0xFF);
+            if (sentLen > 0) {
+              size_t copyLen = static_cast<size_t>(sentLen);
+              memcpy(extra->lastData, m->frame.data, copyLen);
+              if (copyLen < sizeof(extra->lastData)) {
+                memset(extra->lastData + copyLen, 0, sizeof(extra->lastData) - copyLen);
+              }
+            } else {
+              memset(extra->lastData, 0, sizeof(extra->lastData));
             }
-          } else {
-            memset(extra->lastData, 0, sizeof(extra->lastData));
           }
+        } else {
+          if (extra) {
+            extra->skippedUpdates = 0;
+          }
+          break;
         }
       }
 
       if (extra) {
         if (shouldSend) {
-          extra->skippedUpdates = 1;
+          extra->skippedUpdates = sent ? 1 : 0;
         } else {
           extra->skippedUpdates++;
         }
@@ -2579,7 +2965,7 @@ static void logNotifyCapIfNeeded(uint32_t now) {
   Serial.printf("INFO: CAN notify cap hit %u loop%s (max %u/loop); suppressed_total=%lu\n",
                 (unsigned)notifyCapHitsSinceLastLog,
                 (notifyCapHitsSinceLastLog == 1) ? "" : "s",
-                (unsigned)kMaxCanNotifiesPerLoop,
+                (unsigned)g_bleNotifyBurstBudgetPerLoop,
                 (unsigned long)notifies_suppressed_total);
   notifyCapLastLogMs = now;
   notifyCapHitsSinceLastLog = 0;
@@ -2804,6 +3190,19 @@ static void show_stats() {
   Serial.printf("Last CAN restart:%lu s ago\n", (unsigned long)(sinceRestartMs / 1000UL));
   Serial.printf("BLE tx avg:      %.1f fps\n", bleTxMovingAverageFps);
   Serial.printf("BLE governor:    %s\n", bleGovernorActive ? "ACTIVE" : "idle");
+  Serial.printf("BLE MTU/value:   %u/%u (loop cap=%u)\n",
+                static_cast<unsigned>(g_bleNegotiatedMtu),
+                static_cast<unsigned>(g_bleNotifyMaxValueLength),
+                static_cast<unsigned>(g_bleNotifyBurstBudgetPerLoop));
+  Serial.printf("BLE notify errs: failures=%lu status=%lu congestion=%lu clamps=%lu\n",
+                static_cast<unsigned long>(bleNotifyFailuresTotal),
+                static_cast<unsigned long>(bleNotifyStatusErrors),
+                static_cast<unsigned long>(bleNotifyCongestionEvents),
+                static_cast<unsigned long>(bleNotifyClampEvents));
+  Serial.printf("BLE backoff:     events=%lu active=%s last=%s\n",
+                static_cast<unsigned long>(bleNotifyBackoffEvents),
+                bleNotifyBackoffActive ? "yes" : "no",
+                bleNotifyBackoffLastReason);
   const auto &supCan = g_supervisor.stats(Supervisor::Subsystem::CanPoll);
   const auto &supGps = g_supervisor.stats(Supervisor::Subsystem::GpsService);
   const auto &supBle = g_supervisor.stats(Supervisor::Subsystem::BleBurst);
@@ -3197,6 +3596,7 @@ void loop() {
   // Periodic CAN diagnostic frame
   sendCanDiagnostics(postCanNow);
   serviceDiagStream();
+  bleNotifyBackoffService(postCanNow);
 
   // GPS service (read UART + notify BLE)
   uint32_t gpsStartUs = micros();
