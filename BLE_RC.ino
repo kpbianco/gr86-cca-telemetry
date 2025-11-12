@@ -187,10 +187,14 @@ static constexpr uint32_t FIL_WRITE_WINDOW_MS = 10000;
 static constexpr uint8_t  FIL_WRITE_WINDOW_MAX = 3;
 static uint32_t filWriteWindowStartMs = 0;
 static uint8_t  filWritesInWindow = 0;
+static bool     filVerboseLogging = false;
 
 static char lastReconnectCause[64] = "boot";
 static char pendingBleRestartReason[64] = "";
 static bool pendingBleRestart = false;
+static constexpr uint32_t BLE_DISCONNECT_GRACE_MS = 750;
+static bool     bleDisconnectGraceActive = false;
+static uint32_t bleDisconnectGraceDeadlineMs = 0;
 
 static constexpr int TASK_WDT_TIMEOUT_SECONDS = 5;
 
@@ -258,23 +262,26 @@ static NimBLECharacteristic* g_gtm    = nullptr; // 0x0004
 static NimBLECharacteristic* g_diag   = nullptr; // 0x0005
 
 static constexpr uint16_t BLE_LINK_PRI_INVALID_HANDLE      = 0xFFFF;
-static constexpr uint16_t BLE_LINK_PRI_MIN_INTERVAL_UNITS  = 6;   // 7.5 ms
-static constexpr uint16_t BLE_LINK_PRI_MAX_INTERVAL_UNITS  = 12;  // 15 ms
-static constexpr uint16_t BLE_LINK_PRI_LATENCY              = 0;
-static constexpr uint16_t BLE_LINK_PRI_TIMEOUT_UNITS        = 200; // 2.0 s
-static constexpr uint32_t BLE_LINK_PRI_RETRY_DELAY_MS       = 2000;
+static constexpr uint16_t BLE_LINK_PRI_MIN_INTERVAL_UNITS   = 6;   // 7.5 ms
+static constexpr uint16_t BLE_LINK_PRI_MAX_INTERVAL_UNITS   = 12;  // 15 ms
+static constexpr uint16_t BLE_LINK_PRI_LATENCY               = 0;
+static constexpr uint16_t BLE_LINK_PRI_TIMEOUT_UNITS         = 200; // 2.0 s
+static constexpr uint32_t BLE_LINK_PRI_RETRY_DELAY_MS        = 4000;
+static constexpr uint8_t  BLE_LINK_PRI_RETRY_MAX_ATTEMPTS    = 3;
 
 static bool     g_bleLinkPriEnabled           = true;
 static bool     g_bleLinkPriCallbacksAttached = false;
 static uint16_t g_bleLinkPriConnHandle        = BLE_LINK_PRI_INVALID_HANDLE;
-static bool     g_bleLinkPriRetryArmed        = false;
-static bool     g_bleLinkPriRetryDone         = false;
+static bool     g_bleLinkPriRetryPending      = false;
 static uint32_t g_bleLinkPriRetryAtMs         = 0;
+static uint8_t  g_bleLinkPriRetryCount        = 0;
+static uint16_t g_bleLinkPriLastIntervalUnits = 0;
 
 static bool bleLinkPri_requestConnParams(uint16_t connHandle, const char *label);
 static void bleLinkPri_resetState();
 static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo);
 static void bleLinkPri_onDisconnect();
+static void bleLinkPri_onConnParamsUpdate(NimBLEConnInfo& connInfo);
 static void bleLinkPri_service(uint32_t now);
 static void bleLinkPri_attachIfReady();
 static void refreshBleLed();
@@ -309,14 +316,16 @@ class BleLinkPriCallbacks : public NimBLEServerCallbacks {
                   intervalMs,
                   static_cast<unsigned>(connInfo.getConnLatency()),
                   timeoutSec);
+    bleLinkPri_onConnParamsUpdate(connInfo);
   }
 } static g_bleLinkPriCallbacks;
 
 static void bleLinkPri_resetState() {
   g_bleLinkPriConnHandle = BLE_LINK_PRI_INVALID_HANDLE;
-  g_bleLinkPriRetryArmed = false;
-  g_bleLinkPriRetryDone = false;
+  g_bleLinkPriRetryPending = false;
+  g_bleLinkPriRetryCount = 0;
   g_bleLinkPriRetryAtMs = 0;
+  g_bleLinkPriLastIntervalUnits = 0;
 }
 
 static void bleLinkPri_attachIfReady() {
@@ -360,40 +369,78 @@ static bool bleLinkPri_requestConnParams(uint16_t connHandle, const char *label)
   return rc == 0;
 }
 
+static inline bool bleLinkPri_intervalAcceptable(uint16_t intervalUnits) {
+  return intervalUnits != 0 && intervalUnits <= BLE_LINK_PRI_MAX_INTERVAL_UNITS;
+}
+
+static void bleLinkPri_considerRetry(uint16_t intervalUnits, uint32_t now) {
+  g_bleLinkPriLastIntervalUnits = intervalUnits;
+
+  if (!g_bleLinkPriEnabled) {
+    g_bleLinkPriRetryPending = false;
+    return;
+  }
+  if (g_bleLinkPriConnHandle == BLE_LINK_PRI_INVALID_HANDLE) {
+    g_bleLinkPriRetryPending = false;
+    return;
+  }
+  if (intervalUnits == 0) {
+    g_bleLinkPriRetryPending = false;
+    return;
+  }
+
+  if (bleLinkPri_intervalAcceptable(intervalUnits) ||
+      g_bleLinkPriRetryCount >= BLE_LINK_PRI_RETRY_MAX_ATTEMPTS) {
+    g_bleLinkPriRetryPending = false;
+    return;
+  }
+
+  g_bleLinkPriRetryPending = true;
+  g_bleLinkPriRetryAtMs = now + BLE_LINK_PRI_RETRY_DELAY_MS;
+}
+
 static void bleLinkPri_onConnect(NimBLEConnInfo& connInfo) {
+  bleDisconnectGraceActive = false;
   g_bleLinkPriConnHandle = connInfo.getConnHandle();
-  g_bleLinkPriRetryDone = false;
+  g_bleLinkPriRetryCount = 0;
+  g_bleLinkPriRetryPending = false;
+  g_bleLinkPriLastIntervalUnits = connInfo.getConnInterval();
 
   refreshBleLed();
   led_service(millis());
 
-  if (!g_bleLinkPriEnabled) {
-    g_bleLinkPriRetryArmed = false;
-    return;
-  }
+  if (!g_bleLinkPriEnabled) return;
 
   bleLinkPri_requestConnParams(g_bleLinkPriConnHandle, "req");
-  g_bleLinkPriRetryArmed = true;
-  g_bleLinkPriRetryAtMs = millis() + BLE_LINK_PRI_RETRY_DELAY_MS;
+  bleLinkPri_considerRetry(g_bleLinkPriLastIntervalUnits, millis());
 }
 
 static void bleLinkPri_onDisconnect() {
   bleLinkPri_resetState();
+  bleDisconnectGraceActive = true;
+  bleDisconnectGraceDeadlineMs = millis() + BLE_DISCONNECT_GRACE_MS;
   resetStatusIndicatorsForDisconnect();
   refreshBleLed();
   led_service(millis());
 }
 
+static void bleLinkPri_onConnParamsUpdate(NimBLEConnInfo& connInfo) {
+  bleLinkPri_considerRetry(connInfo.getConnInterval(), millis());
+}
+
 static void bleLinkPri_service(uint32_t now) {
   if (!g_bleLinkPriEnabled) return;
-  if (!g_bleLinkPriRetryArmed) return;
-  if (g_bleLinkPriRetryDone) return;
+  if (!g_bleLinkPriRetryPending) return;
   if (g_bleLinkPriConnHandle == BLE_LINK_PRI_INVALID_HANDLE) return;
+  if (g_bleLinkPriRetryCount >= BLE_LINK_PRI_RETRY_MAX_ATTEMPTS) {
+    g_bleLinkPriRetryPending = false;
+    return;
+  }
   if (static_cast<int32_t>(now - g_bleLinkPriRetryAtMs) < 0) return;
 
-  g_bleLinkPriRetryDone = true;
-  g_bleLinkPriRetryArmed = false;
   bleLinkPri_requestConnParams(g_bleLinkPriConnHandle, "retry");
+  g_bleLinkPriRetryCount++;
+  g_bleLinkPriRetryPending = false;
 }
 
 void bleLinkPri_setEnabled(bool enabled) {
@@ -401,17 +448,19 @@ void bleLinkPri_setEnabled(bool enabled) {
   g_bleLinkPriEnabled = enabled;
 
   if (!enabled) {
-    g_bleLinkPriRetryArmed = false;
-    g_bleLinkPriRetryDone = false;
+    g_bleLinkPriRetryPending = false;
     return;
   }
 
   if (g_bleLinkPriConnHandle == BLE_LINK_PRI_INVALID_HANDLE) return;
 
   bleLinkPri_requestConnParams(g_bleLinkPriConnHandle, "req");
-  g_bleLinkPriRetryDone = false;
-  g_bleLinkPriRetryArmed = true;
-  g_bleLinkPriRetryAtMs = millis() + BLE_LINK_PRI_RETRY_DELAY_MS;
+  g_bleLinkPriRetryCount = 0;
+  if (g_bleLinkPriLastIntervalUnits != 0) {
+    bleLinkPri_considerRetry(g_bleLinkPriLastIntervalUnits, millis());
+  } else {
+    g_bleLinkPriRetryPending = false;
+  }
 }
 
 bool bleLinkPri_isEnabled() {
@@ -1329,7 +1378,9 @@ static void handleFilWrite(const uint8_t *d, size_t L) {
   filWritesInWindow++;
 
   if (CFG_TOKEN == 0) {
-    Serial.println("FIL: token unavailable; ignoring write");
+    if (filVerboseLogging) {
+      Serial.println("FIL: token unavailable; ignoring write");
+    }
     return;
   }
   if (L < 5) {
@@ -2343,9 +2394,9 @@ void setup() {
 }
 
 static void recoverRaceChronoConnection(const char *reason) {
-  Serial.println("RC disconnected -> reset map + CAN + BLE.");
+  Serial.println("RC disconnected -> reset map + BLE (TWAI stays up).");
+  bleDisconnectGraceActive = false;
   pidMap.reset();
-  stopCanBusReader();
 
   restartBle(reason);
   Serial.println("Advertising for new RaceChrono connection (non-blocking).");
@@ -2364,6 +2415,7 @@ static void queueBleRestart(const char *reason) {
   strncpy(pendingBleRestartReason, src, sizeof(pendingBleRestartReason) - 1);
   pendingBleRestartReason[sizeof(pendingBleRestartReason) - 1] = '\0';
   pendingBleRestart = true;
+  bleDisconnectGraceActive = false;
 }
 
 static void servicePendingBleRestart() {
@@ -3377,6 +3429,21 @@ static void process_cli_line(char *line) {
     return;
   }
 
+  if (up == "FIL VERBOSE") {
+    Serial.printf("FIL verbose logging: %s\n", filVerboseLogging ? "ON" : "OFF");
+    return;
+  }
+  if (up == "FIL VERBOSE ON") {
+    filVerboseLogging = true;
+    Serial.println("FIL verbose logging enabled (not saved).");
+    return;
+  }
+  if (up == "FIL VERBOSE OFF") {
+    filVerboseLogging = false;
+    Serial.println("FIL verbose logging disabled (not saved).");
+    return;
+  }
+
   if (up.startsWith("TOKEN")) {
     char buf[CLI_BUF_SIZE]; strncpy(buf, line, sizeof(buf)); buf[sizeof(buf)-1]=0;
     char *tok = strtok(buf + 5, " \t");
@@ -3425,7 +3492,7 @@ static void process_cli_line(char *line) {
     return;
   }
 
-  Serial.println("Unknown cmd. Try: SHOW | SHOW CFG | SHOW STATS | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | CAL SHOW | RATE <ms> | PROFILE ON|OFF | ALLOW <pid> <div> | DENY <pid> | TOKEN <hex8> | SAVE | LOAD | RESETCFG");
+  Serial.println("Unknown cmd. Try: SHOW | SHOW CFG | SHOW STATS | SHOW MAP | SHOW DENY | CAL 0 | CAL 1 | CAL SHOW | RATE <ms> | PROFILE ON|OFF | ALLOW <pid> <div> | DENY <pid> | TOKEN <hex8> | FIL VERBOSE [ON|OFF] | SAVE | LOAD | RESETCFG");
 }
 
 // ===== Main loop =====
@@ -3442,12 +3509,23 @@ void loop() {
   bleLinkPri_attachIfReady();
 
   // Handle disconnect / reconnect
-  if ((loop_iteration % 100) == 0 && !bleIsConnected()) {
-    if (nvsWriteInProgress && !pendingBleRestart) {
-      Serial.println("RC disconnected during SAVE; deferring until NVS completes.");
+  if ((loop_iteration % 100) == 0) {
+    if (bleIsConnected()) {
+      bleDisconnectGraceActive = false;
+    } else {
+      uint32_t nowMs = millis();
+      if (bleDisconnectGraceActive &&
+          static_cast<int32_t>(nowMs - bleDisconnectGraceDeadlineMs) < 0) {
+        // Still within grace window; skip heavy reset.
+      } else {
+        bleDisconnectGraceActive = false;
+        if (nvsWriteInProgress && !pendingBleRestart) {
+          Serial.println("RC disconnected during SAVE; deferring until NVS completes.");
+        }
+        queueBleRestart("RC disconnect");
+        servicePendingBleRestart();
+      }
     }
-    queueBleRestart("RC disconnect");
-    servicePendingBleRestart();
   }
 
   // Ensure CAN is up
