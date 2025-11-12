@@ -39,6 +39,8 @@
 #include <cstdint>
 #include <ctype.h>
 #include <driver/twai.h>
+#include <esp_err.h>
+#include <freertos/FreeRTOS.h>
 #include <math.h>
 #include <esp_system.h>
 #include <esp_task_wdt.h>
@@ -117,6 +119,8 @@ static bool     isCanBusReaderActive = false;
 static uint32_t lastCanMessageReceivedMs = 0;
 static uint32_t loop_iteration = 0;
 static uint16_t num_can_bus_timeouts = 0;
+static uint8_t  consecutiveCanRxTimeouts = 0;
+static uint32_t lastCanRxTimeoutMs = 0;
 
 static bool     have_seen_any_can = false;
 static uint32_t lastHbMs = 0;
@@ -201,6 +205,23 @@ static constexpr int TASK_WDT_TIMEOUT_SECONDS = 5;
 static constexpr uint32_t CAN_STATUS_POLL_INTERVAL_MS = 1000;
 static constexpr uint32_t CAN_TX_FAILURE_WINDOW_MS    = 1000;
 static constexpr uint8_t  CAN_TX_FAILURE_THRESHOLD    = 5;
+static constexpr uint32_t CAN_RX_TIMEOUT_MS           = 320;  // ~8x 25 Hz frame period
+static constexpr uint32_t CAN_RX_TIMEOUT_STRIKE_LIMIT = 2;
+static constexpr uint32_t CAN_TWAI_ALERT_MASK =
+    TWAI_ALERT_ERR_PASS |
+    TWAI_ALERT_BUS_OFF |
+    TWAI_ALERT_BUS_RECOVERED |
+    TWAI_ALERT_RECOVERY_IN_PROGRESS |
+    TWAI_ALERT_ABOVE_ERR_WARN |
+    TWAI_ALERT_RX_QUEUE_FULL |
+    TWAI_ALERT_TX_FAILED |
+    TWAI_ALERT_ARB_LOST;
+static constexpr uint32_t CAN_TWAI_ERROR_ALERTS =
+    TWAI_ALERT_ERR_PASS |
+    TWAI_ALERT_BUS_OFF |
+    TWAI_ALERT_ABOVE_ERR_WARN |
+    TWAI_ALERT_TX_FAILED |
+    TWAI_ALERT_ARB_LOST;
 
 static uint32_t lastCanStatusCheckMs    = 0;
 static uint32_t canTxFailureWindowStart = 0;
@@ -2291,8 +2312,9 @@ static twai_filter_config_t build_profile_twai_filter() {
 static bool startCanBusReader();
 static void stopCanBusReader();
 static bool restartCanBusReader(const char *cause = nullptr, uint32_t backoffMs = 50);
-static void handleCanFault(const char *cause, uint32_t backoffMs = 50);
+static bool handleCanFault(const char *cause, uint32_t backoffMs = 50);
 static bool checkCanBusHealth(uint32_t now);
+static bool handleCanInactivityTimeout(uint32_t now);
 [[maybe_unused]] static void noteCanWriteResult(bool success);
 [[maybe_unused]] static bool writeFrameWithWatch(CanFrame &frame, uint32_t timeout = 1);
 static void setLastReconnectCause(const char *reason);
@@ -2449,6 +2471,16 @@ static bool startCanBusReader() {
   lastTwaiStatus.tx_error_counter = 0;
   lastTwaiStatus.rx_error_counter = 0;
   lastTwaiStatus.bus_error_count = 0;
+  consecutiveCanRxTimeouts = 0;
+  lastCanRxTimeoutMs = 0;
+
+  uint32_t pendingAlerts = 0;
+  esp_err_t alertErr = twai_reconfigure_alerts(CAN_TWAI_ALERT_MASK, &pendingAlerts);
+  if (alertErr != ESP_OK) {
+    Serial.printf("WARN: Failed to enable TWAI alerts (err=%d)\n", (int)alertErr);
+  } else if (pendingAlerts) {
+    Serial.printf("TWAI alerts latched at start: 0x%08lX\n", (unsigned long)pendingAlerts);
+  }
   return true;
 }
 
@@ -2458,10 +2490,82 @@ static void stopCanBusReader() {
   lastCanStatusCheckMs = 0;
   canTxFailureWindowStart = 0;
   canTxFailuresInWindow = 0;
+  consecutiveCanRxTimeouts = 0;
+  lastCanRxTimeoutMs = 0;
   lastTwaiStatus.state = TWAI_STATE_STOPPED;
   lastTwaiStatus.tx_error_counter = 0;
   lastTwaiStatus.rx_error_counter = 0;
   lastTwaiStatus.bus_error_count = 0;
+}
+
+static const char *twai_state_to_string(twai_state_t state) {
+  switch (state) {
+    case TWAI_STATE_STOPPED:    return "stopped";
+    case TWAI_STATE_RUNNING:    return "active";
+    case TWAI_STATE_RECOVERING: return "recovering";
+    case TWAI_STATE_BUS_OFF:    return "bus_off";
+    default:                    return "unknown";
+  }
+}
+
+static void sample_twai_health(bool *haveStatus,
+                               twai_status_info_t *statusOut,
+                               bool *haveAlerts,
+                               uint32_t *alertsOut) {
+  bool statusOk = false;
+  twai_status_info_t status = {};
+  if (isCanBusReaderActive && twai_get_status_info(&status) == ESP_OK) {
+    statusOk = true;
+    if (statusOut) {
+      *statusOut = status;
+    }
+    lastTwaiStatus = status;
+  }
+  if (haveStatus) {
+    *haveStatus = statusOk;
+  }
+
+  bool alertsOk = false;
+  uint32_t alerts = 0;
+  if (isCanBusReaderActive) {
+    esp_err_t err = twai_read_alerts(&alerts, pdMS_TO_TICKS(0));
+    if (err == ESP_OK) {
+      alertsOk = true;
+    } else if (err == ESP_ERR_TIMEOUT) {
+      alerts = 0;
+    } else if (err != ESP_ERR_INVALID_STATE) {
+      Serial.printf("WARN: twai_read_alerts failed (err=%d)\n", (int)err);
+    }
+  }
+  if (alertsOut) {
+    *alertsOut = alerts;
+  }
+  if (haveAlerts) {
+    *haveAlerts = alertsOk;
+  }
+}
+
+static void log_twai_health_snapshot(const char *reason,
+                                     const twai_status_info_t *status,
+                                     bool haveStatus,
+                                     uint32_t alerts,
+                                     bool haveAlerts) {
+  const char *label = (reason && reason[0]) ? reason : "unknown";
+  Serial.printf("CAN health (%s): state=%s", label,
+                haveStatus ? twai_state_to_string(status->state) : "unknown");
+  if (haveStatus) {
+    Serial.printf(" TEC=%u REC=%u rx_q=%u tx_q=%u rx_missed=%u tx_failed=%u bus_err=%u",
+                  (unsigned)status->tx_error_counter,
+                  (unsigned)status->rx_error_counter,
+                  (unsigned)status->msgs_to_rx,
+                  (unsigned)status->msgs_to_tx,
+                  (unsigned)status->rx_missed_count,
+                  (unsigned)status->tx_failed_count,
+                  (unsigned)status->bus_error_count);
+  }
+  Serial.printf(" alerts=0x%08lX%s\n",
+                (unsigned long)alerts,
+                haveAlerts ? "" : " (no new alerts)");
 }
 
 static void setLastReconnectCause(const char *reason) {
@@ -2499,7 +2603,7 @@ static bool restartCanBusReader(const char *cause, uint32_t backoffMs) {
   return started;
 }
 
-static void handleCanFault(const char *cause, uint32_t backoffMs) {
+static bool handleCanFault(const char *cause, uint32_t backoffMs) {
   char reason[64];
   if (cause && cause[0]) {
     strncpy(reason, cause, sizeof(reason) - 1);
@@ -2509,11 +2613,32 @@ static void handleCanFault(const char *cause, uint32_t backoffMs) {
     reason[sizeof(reason) - 1] = '\0';
   }
 
+  twai_status_info_t status = {};
+  bool haveStatus = false;
+  bool haveAlerts = false;
+  uint32_t alerts = 0;
+  sample_twai_health(&haveStatus, &status, &haveAlerts, &alerts);
+
+  log_twai_health_snapshot(reason, &status, haveStatus, alerts, haveAlerts);
+
+  bool restartNeeded = true;
+  if (haveStatus && status.state == TWAI_STATE_RUNNING) {
+    restartNeeded = (alerts & CAN_TWAI_ERROR_ALERTS) != 0;
+  }
+
+  if (!restartNeeded) {
+    Serial.println("CAN health: bus active; skipping restart.");
+    return false;
+  }
+
   Serial.printf("ERROR: %s -> restart CAN\n", reason);
   num_can_bus_timeouts++;
   lastCanDiagSendMs = 0;
   sendCanDiagnostics(millis());
   restartCanBusReader(reason, backoffMs);
+  consecutiveCanRxTimeouts = 0;
+  lastCanRxTimeoutMs = 0;
+  return true;
 }
 
 static bool checkCanBusHealth(uint32_t now) {
@@ -2546,6 +2671,62 @@ static bool checkCanBusHealth(uint32_t now) {
   }
 
   return false;
+}
+
+static bool handleCanInactivityTimeout(uint32_t now) {
+  if (!have_seen_any_can) {
+    return false;
+  }
+
+  uint32_t sinceLastFrame = now - lastCanMessageReceivedMs;
+  if (sinceLastFrame <= CAN_RX_TIMEOUT_MS) {
+    return false;
+  }
+
+  if (consecutiveCanRxTimeouts == 0) {
+    consecutiveCanRxTimeouts = 1;
+    lastCanRxTimeoutMs = now;
+    Serial.printf("WARN: CAN RX inactivity (strike 1, %lu ms since last frame)\n",
+                  (unsigned long)sinceLastFrame);
+    twai_status_info_t status = {};
+    bool haveStatus = false;
+    bool haveAlerts = false;
+    uint32_t alerts = 0;
+    sample_twai_health(&haveStatus, &status, &haveAlerts, &alerts);
+    log_twai_health_snapshot("RX timeout", &status, haveStatus, alerts, haveAlerts);
+    return false;
+  }
+
+  if ((now - lastCanRxTimeoutMs) < CAN_RX_TIMEOUT_MS) {
+    return false;
+  }
+
+  if (consecutiveCanRxTimeouts < CAN_RX_TIMEOUT_STRIKE_LIMIT) {
+    consecutiveCanRxTimeouts++;
+  }
+  lastCanRxTimeoutMs = now;
+
+  Serial.printf("WARN: CAN RX inactivity (strike %u, %lu ms since last frame)\n",
+                (unsigned)consecutiveCanRxTimeouts,
+                (unsigned long)sinceLastFrame);
+
+  if (consecutiveCanRxTimeouts < CAN_RX_TIMEOUT_STRIKE_LIMIT) {
+    twai_status_info_t status = {};
+    bool haveStatus = false;
+    bool haveAlerts = false;
+    uint32_t alerts = 0;
+    sample_twai_health(&haveStatus, &status, &haveAlerts, &alerts);
+    log_twai_health_snapshot("RX timeout", &status, haveStatus, alerts, haveAlerts);
+    return false;
+  }
+
+  bool restarted = handleCanFault("CAN RX timeout", 50);
+  if (!restarted) {
+    if (CAN_RX_TIMEOUT_STRIKE_LIMIT > 0) {
+      consecutiveCanRxTimeouts = CAN_RX_TIMEOUT_STRIKE_LIMIT - 1;
+    }
+  }
+  return restarted;
 }
 
 [[maybe_unused]] static void noteCanWriteResult(bool success) {
@@ -3563,8 +3744,7 @@ void loop() {
   }
 
   // Watchdog after first frame
-  if (have_seen_any_can && (now - lastCanMessageReceivedMs > 2000)) {
-    handleCanFault("CAN RX timeout");
+  if (handleCanInactivityTimeout(now)) {
     led_service(millis());
     return;
   }
@@ -3608,6 +3788,8 @@ void loop() {
     uint32_t frameNow = millis();
     have_seen_any_can = true;
     lastCanMessageReceivedMs = frameNow;
+    consecutiveCanRxTimeouts = 0;
+    lastCanRxTimeoutMs = 0;
 
     uint8_t dlc = target->data_length_code;
     if (dlc > 8) {
