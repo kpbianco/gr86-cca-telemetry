@@ -95,6 +95,7 @@ static const char* RC_CHAR_DIAG_UUID = "00000005-0000-1000-8000-00805f9b34fb"; /
 // ====== (Fix) Governor snapshot: define early so Arduino doesn't mangle prototypes ======
 struct GovernorSnapshot { uint32_t pid; uint8_t governor; };
 struct NimblePoolWatermark { uint16_t minFreeBlocks; uint16_t blockSize; };
+static constexpr size_t   BLE_GOVERNOR_SNAPSHOT_MAX = 128;
 static size_t capture_governor_snapshot(GovernorSnapshot *out);
 static bool   restore_governor_snapshot(const GovernorSnapshot *snapshots, size_t count);
 
@@ -802,8 +803,6 @@ static constexpr uint8_t  BLE_TX_RELAX_SECONDS            = 5;
 static constexpr uint32_t BLE_TX_RELAX_DURATION_MS        = 5000;
 static constexpr uint32_t BLE_TX_GOVERNOR_STEP_INTERVAL_MS = 1000;
 static constexpr uint8_t  BLE_TX_HISTORY_SECONDS          = 6;
-static constexpr size_t   BLE_GOVERNOR_SNAPSHOT_MAX       = 128;
-
 static bool     bleTxBucketsInitialized = false;
 static uint16_t bleTxSecondBuckets[BLE_TX_HISTORY_SECONDS];
 static uint8_t  bleTxBucketIndex        = BLE_TX_HISTORY_SECONDS - 1;
