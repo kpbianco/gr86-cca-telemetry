@@ -1,7 +1,8 @@
 #pragma once
 
+
 // Customize your BLE device name here
-#define DEVICE_NAME "CCA Telemetry"
+#define DEVICE_NAME "CAN Telemetry"
 
 // Firmware metadata
 #define FW_VERSION "0.5.0"
