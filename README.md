@@ -16,7 +16,6 @@ Hardware bring-up (CAN transceiver wiring, GPS, OLEDs, etc.) is intentionally ou
 │   ├── pidmaps/             ← CAN whitelist & scaling definitions
 │   └── src/                 ← Reusable C++ helpers (GPS parser, NVS config, LEDs, scheduler)
 ├── libraries/               ← Vendored Arduino dependencies
-└── tests/                   ← Host-side unit tests (currently GPS parsing)
 ```
 
 ## Firmware architecture
@@ -60,18 +59,6 @@ The local `libraries/` directory contains every dependency the sketch includes, 
 ## RaceChrono integration
 
 The BLE characteristic layout follows the RaceChrono DIY specification: CAN notify, CAN filter write, GPS notify, GPS time notify, and a diagnostics notify channel. Use the ready-made CAN preset in `docs/racechrono_preset.md` to create RaceChrono channels for the GR86/BRZ platform, including the virtual oil-pressure frame published on CAN ID `0x710` and the curated list of factory CAN IDs.
-
-## Testing
-
-Host-side tests live in `tests/`. They currently validate the GPS sentence parser and act as a regression suite for checksum edge cases.
-
-```bash
-cmake -S tests -B build-tests  # or manually:
-g++ -std=c++17 -Ifirmware/src tests/test_nmea.cc firmware/src/gps_nmea.cpp -o build-tests/test_nmea
-./build-tests/test_nmea
-```
-
-Feel free to extend the suite with more host-compilable helpers (e.g., PID governor logic) to catch regressions without hardware in the loop.
 
 ## Third-party dependencies
 
