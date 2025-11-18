@@ -56,6 +56,8 @@ The local `libraries/` directory contains every dependency the sketch includes, 
 3. **Calibrate analog inputs** – update the `V0_ADC` / `V1_ADC` defaults and oil-pressure conversion constants in `config.h` for your sensors.
 4. **Persist overrides at runtime** – use the serial CLI exposed by the firmware to tweak dividers or profile settings, then commit them via NVS (`save` command). See the inline comments in `nvs_cfg.*` for the stored keys.
 
+For new cars (non GR86 2nd Gen) create a .h file and place it in the `firmware/pidmaps/*.h` directory. Follow the existing GR86 one as a template. Then within the  `firmware/config.h` change the [`static constexpr const pidmaps::PidMapDefinition *ACTIVE_PID_MAP = &pidmaps::GR86_2022;`] to the name of the namespace defined in your .h file.
+
 ## RaceChrono integration
 
 The BLE characteristic layout follows the RaceChrono DIY specification: CAN notify, CAN filter write, GPS notify, GPS time notify, and a diagnostics notify channel. Use the ready-made CAN preset in `docs/racechrono_preset.md` to create RaceChrono channels for the GR86/BRZ platform, including the virtual oil-pressure frame published on CAN ID `0x710` and the curated list of factory CAN IDs.
