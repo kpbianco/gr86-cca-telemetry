@@ -5,7 +5,7 @@
 #define DEVICE_NAME "CAN Telemetry"
 
 // Firmware metadata
-#define FW_VERSION "0.5.0"
+#define FW_VERSION "1.0.0"
 #define FW_GITHASH "abcdef1"
 
 // GPS PPS discipline (set to -1 to disable)
@@ -25,3 +25,4 @@ static const long BAUD_RATE = 500 * 1000L;
 #include "pidmaps/gr86_2022.h"
 
 static constexpr const pidmaps::PidMapDefinition *ACTIVE_PID_MAP = &pidmaps::GR86_2022;
+
