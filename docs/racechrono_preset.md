@@ -4,7 +4,7 @@ This document describes the CAN channels that the CCA Telemetry firmware exposes
 
 ## Virtual oil pressure (CAN 0x710)
 
-The firmware publishes the analog oil-pressure input as a virtual CAN frame on ID `0x710` with a 16-bit big-endian value that represents pressure in 0.1 psi units.【F:BLE_RC.ino†L149-L168】 Copy the block below and use *Add channel → Import from clipboard* in RaceChrono to create a ready-to-use gauge:
+The firmware publishes the analog oil-pressure input as a virtual CAN frame on ID `0x710` with a 16-bit big-endian value that represents pressure in 0.1 psi units.【F:firmware/cca_telemetry.ino†L149-L168】 Copy the block below and use *Add channel → Import from clipboard* in RaceChrono to create a ready-to-use gauge:
 
 ```
 RaceChrono CAN channel
@@ -38,7 +38,7 @@ Frequency=25
 
 ## Key FT86/ZN8 CAN channels
 
-The table below lists the most useful factory CAN IDs for the second-generation FT86 platform (GR86/BRZ). All of these IDs are whitelisted and rate-limited by the firmware for RaceChrono streaming.【F:pidmaps/gr86_2022.h†L9-L118】 Use one row per RaceChrono channel; make sure to select Motorola byte order and enter the equation exactly as shown.
+The table below lists the most useful factory CAN IDs for the second-generation FT86 platform (GR86/BRZ). All of these IDs are whitelisted and rate-limited by the firmware for RaceChrono streaming.【F:firmware/pidmaps/gr86_2022.h†L9-L118】 Use one row per RaceChrono channel; make sure to select Motorola byte order and enter the equation exactly as shown.
 
 | CAN ID | Signal | Bytes | RaceChrono equation | Unit | Notes |
 |-------:|--------|-------|---------------------|------|-------|
