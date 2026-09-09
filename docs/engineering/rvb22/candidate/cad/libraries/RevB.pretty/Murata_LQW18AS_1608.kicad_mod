@@ -1,142 +1,21 @@
-(footprint "Murata_LQW18AS_1608" (version 20241229) (generator pcbnew)
-		(layer "F.Cu")
-		
-		
-		(descr "Murata LQW18AS 1608 wirewound; JELF243A_9139E-01 pp4,9")
-		(tags "inductor RF automotive")
-		(property "Reference" "REF**"
-			(at 0 1.43 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9b05a64e-103e-57a3-a71a-a5514a2ece79")
-			(effects
-				(font
-					(size 0.7 0.7)
-					(thickness 0.1)
-				)
-				
-			)
-		)
-		(property "Value" "1.6nH 5% RF MATCH"
-			(at 0 -1.43 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "95d558fc-d02d-51a0-8c12-bb9196307841")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				
-			)
-		)
-		(property "Datasheet" "https://pim.murata.com/asset/pim4/inductor/JELF243A-9139_PDF_INDUCTOR"
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "ac0d9a2a-d162-50ae-b16a-638492c1fb56")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-				
-			)
-		)
-		(property "Description" "RVB21 candidate: Murata automotive RF inductor; manufacturer land pattern; native verification pending"
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8428987f-1238-5ff7-bfde-088f47fc1670")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-				
-			)
-		)
-		(property "MPN" "LQW18AS1N6J0ZD"
-			(at 0 0 270)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "4aab12ec-4364-5fcd-aba3-2ef6a6c1fc0b")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-				
-			)
-		)
-		(property "Manufacturer" "Murata"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "633a792a-4d30-43a1-a44a-ddaa28908636")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "4de03785-9e56-4581-aac2-a9fa79d071e8")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Assembly" "FACTORY"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "f0d00e64-97b2-4744-8557-56bde72ab550")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		
-		(attr smd)
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		(pad "1" smd roundrect
-			(at -0.675 0)
-			(size 0.65 0.75)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.25)
-			
-			
-		)
-		(pad "2" smd roundrect
-			(at 0.675 0)
-			(size 0.65 0.75)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.25)
-			
-			
-		)
-		(embedded_fonts no)
-		
-	
+(footprint "Murata_LQW18AS_1608"
+(version 20241229)
+(generator pcbnew)
+(layer "F.Cu")
+(descr "Murata LQW18AS 1608 wirewound; JELF243A_9139E-01 pp4,9")
+(tags "inductor RF automotive")
+(property "Reference" "REF**" (at 0 1.43 270) (layer "F.Fab") (hide yes) (uuid "9b05a64e-103e-57a3-a71a-a5514a2ece79") (effects (font (size 0.7 0.7) (thickness 0.1))))
+(property "Value" "1.6nH 5% RF MATCH" (at 0 -1.43 270) (layer "F.Fab") (hide yes) (uuid "95d558fc-d02d-51a0-8c12-bb9196307841") (effects (font (size 1 1) (thickness 0.15))))
+(property "Datasheet" "https://pim.murata.com/asset/pim4/inductor/JELF243A-9139_PDF_INDUCTOR" (at 0 0 270) (layer "F.Fab") (hide yes) (uuid "ac0d9a2a-d162-50ae-b16a-638492c1fb56") (effects (font (size 1.27 1.27) (thickness 0.15))))
+(property "Description" "RVB21 candidate: Murata automotive RF inductor; manufacturer land pattern; native verification pending" (at 0 0 270) (layer "F.Fab") (hide yes) (uuid "8428987f-1238-5ff7-bfde-088f47fc1670") (effects (font (size 1.27 1.27) (thickness 0.15))))
+(property "MPN" "LQW18AS1N6J0ZD" (at 0 0 270) (layer "F.SilkS") (hide yes) (uuid "4aab12ec-4364-5fcd-aba3-2ef6a6c1fc0b") (effects (font (size 1.27 1.27) (thickness 0.15))))
+(property "Manufacturer" "Murata" (at 0 0 0) (layer "F.SilkS") (hide yes) (uuid "633a792a-4d30-43a1-a44a-ddaa28908636") (effects (font (size 1.27 1.27) (thickness 0.15))))
+(property "LCSC" "" (at 0 0 0) (layer "F.SilkS") (hide yes) (uuid "4de03785-9e56-4581-aac2-a9fa79d071e8") (effects (font (size 1.27 1.27) (thickness 0.15))))
+(property "Assembly" "FACTORY" (at 0 0 0) (layer "F.SilkS") (hide yes) (uuid "f0d00e64-97b2-4744-8557-56bde72ab550") (effects (font (size 1.27 1.27) (thickness 0.15))))
+(attr smd)
+(pad "1" smd roundrect (at -0.675 0) (size 0.65 0.75) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25))
+(pad "2" smd roundrect (at 0.675 0) (size 0.65 0.75) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.25))
+(embedded_fonts no)
 (fp_line (start -0.8 -0.4) (end 0.8 -0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab") (uuid "ca3b7ba1-cb1d-5b0e-8eb9-6bbfcdf83a89"))
 (fp_line (start 0.8 -0.4) (end 0.8 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab") (uuid "9ba7160a-5d8c-5b81-8739-c9fb4111b2b0"))
 (fp_line (start 0.8 0.4) (end -0.8 0.4) (stroke (width 0.1) (type solid)) (layer "F.Fab") (uuid "625c6ab0-6a96-50d8-8f4e-c8a52861d72c"))
@@ -145,4 +24,5 @@
 (fp_line (start 1.25 -0.8) (end 1.25 0.8) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "3a2d1735-beea-5d54-b40f-398ffd85a72f"))
 (fp_line (start 1.25 0.8) (end -1.25 0.8) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "b095e70e-dbb0-5d38-96b7-15ad97367d67"))
 (fp_line (start -1.25 0.8) (end -1.25 -0.8) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (uuid "3eb2aa7e-df48-527b-a9a2-16b17978507f"))
+(model "${KIPRJMOD}/models/ENVELOPE_Murata_LQW18AS_1608.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )

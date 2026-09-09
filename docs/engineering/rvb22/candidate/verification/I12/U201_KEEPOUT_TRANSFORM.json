@@ -1,0 +1,79 @@
+{
+  "source_library_sha256": "c5b6b58e13372539f45801d259ac3524ec636e2d903bd6338d87eadf600e1dc9",
+  "corrected_library_sha256": "d6feca1219e0ee0cdd576b1fbdb003d4a9262fa38926a54b8109db2090cb2750",
+  "board_position_mm": [
+    81.504766,
+    23,
+    -90
+  ],
+  "prior_library_polygon_mm": [
+    [
+      57.504766,
+      16.25
+    ],
+    [
+      105.504766,
+      16.25
+    ],
+    [
+      105.504766,
+      -4.75
+    ],
+    [
+      57.504766,
+      -4.75
+    ],
+    [
+      57.504766,
+      16.25
+    ]
+  ],
+  "corrected_local_polygon_mm": [
+    [
+      -24.0,
+      -6.75
+    ],
+    [
+      24.0,
+      -6.75
+    ],
+    [
+      24.0,
+      -27.75
+    ],
+    [
+      -24.0,
+      -27.75
+    ],
+    [
+      -24.0,
+      -6.75
+    ]
+  ],
+  "board_polygon_mm": [
+    [
+      88.254766,
+      -1.0
+    ],
+    [
+      88.254766,
+      47.0
+    ],
+    [
+      109.254766,
+      47.0
+    ],
+    [
+      109.254766,
+      -1.0
+    ],
+    [
+      88.254766,
+      -1.0
+    ]
+  ],
+  "transformed_polygon_symmetric_difference_mm2": 0.0,
+  "board_keepout_unchanged": true,
+  "cause": "Native FootprintSave rotated the rule area around the placed footprint origin but retained its translation; only the library polygon requires translation removal.",
+  "native_parity": "PENDING"
+}

@@ -1,5 +1,5 @@
 {
-  "candidate": "I11 native verified with one library warning; coupled thermal/mechanical engineering remains",
+  "candidate": "I12 in progress: logo, keepout transform and complete model references; coupled thermal/mechanics work continues",
   "files": [
     {
       "bytes": 43883,
@@ -43,10 +43,10 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
-      "bytes": 1176660,
-      "sha256": "e75b73f72187100fdc9b8c5e6c39b971fc7e349bc1ad0262703baa2ab5952729",
-      "git_blob_sha": "48533c80e5acb3b4f911db3c3468bded49b2deb2",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+      "bytes": 1249893,
+      "sha256": "dd1a7bc6b5d7d6ba72056fb82b61cdc6f2c34aaa40f6a71211a7abc2ba08ef27",
+      "git_blob_sha": "1eb6cb1350e146ebef3f5d4d52c034b873094148",
       "mode": "100644"
     },
     {
@@ -162,12 +162,12 @@
       "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.kicad_sym"
     },
     {
-      "bytes": 3273,
-      "git_blob_sha": "3aaa3c0388bc8522e3dc19c53c33143bb46b02f5",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/CDTop_PA1616D_20Pad_v06.kicad_mod",
-      "sha256": "2a83b98d59d8bcc659ee834b34145411bde0af6361cc5ed5e16fe9ea8855b845",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/CDTop_PA1616D_20Pad_v06.kicad_mod"
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/CDTop_PA1616D_20Pad_v06.kicad_mod",
+      "bytes": 3402,
+      "sha256": "595453e700993350c3e2154261109550fd90dd2e8323077911daf3340a1fb430",
+      "git_blob_sha": "1ae5b0ab1bd0f2e65913a5188db99afd3d126fcc",
+      "mode": "100644"
     },
     {
       "bytes": 2627,
@@ -250,12 +250,12 @@
       "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/ESP32-S3-WROOM-1.kicad_mod"
     },
     {
-      "bytes": 3919,
-      "git_blob_sha": "3ef145215de2f6103ed32cb54ea4e604ed152263",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/Fuse_Littelfuse-NANO2-885.kicad_mod",
-      "sha256": "09f61fb465f35eaee911558b7a2f053c7ab8d613a3127ce1d48ee9fa5b642cf6",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/Fuse_Littelfuse-NANO2-885.kicad_mod"
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/Fuse_Littelfuse-NANO2-885.kicad_mod",
+      "bytes": 3913,
+      "sha256": "b041f0e9d16bafb9f833640d4f6fc49e2ba71f90d21fed23638d10ba696c0b4a",
+      "git_blob_sha": "451966cfad6ceef60531e18030205b107a2a04e8",
+      "mode": "100644"
     },
     {
       "bytes": 4518,
@@ -282,12 +282,12 @@
       "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/Hirose_UFL_R_SMT_1_80_RevB.kicad_mod"
     },
     {
-      "bytes": 1180,
-      "git_blob_sha": "15443a30b48c1a9eb11488764fc887f1d28af5c9",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/KEMET_C1210_10u50V.kicad_mod",
-      "sha256": "5483046ede81c356a6e2cccb82df3b42357b1961b3bfa762b792539ffeef501b",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/KEMET_C1210_10u50V.kicad_mod"
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/KEMET_C1210_10u50V.kicad_mod",
+      "bytes": 1284,
+      "sha256": "bf19c7f0ff60f7a10572bca286f824c29a0974bfc6de0183ff90ac6c2eaf5e16",
+      "git_blob_sha": "c0ee97a2406065b1a2aa03d29a88d065d42cfb5e",
+      "mode": "100644"
     },
     {
       "bytes": 3127,
@@ -338,12 +338,12 @@
       "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/MountingHole_4.4mm_Outboard.kicad_mod"
     },
     {
-      "bytes": 3556,
-      "git_blob_sha": "416bc475bab25c4ba7c52ab566b2e81f9a19fdec",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/Murata_LQW18AS_1608.kicad_mod",
-      "sha256": "8da68c398c5d1e120b6192d0ec2987f3bb0603316dc8ff9f8bba198b45039215",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/Murata_LQW18AS_1608.kicad_mod"
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/Murata_LQW18AS_1608.kicad_mod",
+      "bytes": 3205,
+      "sha256": "bbc27566d1eda3ed63ed86d856e53e674ac58bb51aa4d60edd2994096d537fcf",
+      "git_blob_sha": "f4a2f09a63767120781abd53cdcd83143e67dd1c",
+      "mode": "100644"
     },
     {
       "bytes": 1771,
@@ -426,36 +426,36 @@
       "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm.kicad_mod"
     },
     {
-      "bytes": 2257,
-      "git_blob_sha": "b3a88bb05f9ceafe3cf65ecfc6de21095bb22883",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/TI_DDA0008B_4214849B.kicad_mod",
-      "sha256": "13fd3ac372c83931dfa57258e28a0bdfbace9c4c1054ee7afff7f714cf20b88f",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/TI_DDA0008B_4214849B.kicad_mod"
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/TI_DDA0008B_4214849B.kicad_mod",
+      "bytes": 2384,
+      "sha256": "d7153eb7b6245784529bd34fa265eea9dde51380969793584c2ce3c50f121016",
+      "git_blob_sha": "ae0cac8b0b4019d0485f163a3045360934a24a90",
+      "mode": "100644"
     },
     {
-      "bytes": 1827,
-      "git_blob_sha": "373a0d4cac83255f136e056056f55714df7cba4c",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/TI_DPY0002A_TPD1E05U06_SMDMask.kicad_mod",
-      "sha256": "4358fa0cee77bbfbe7222641d5de0fb2096ce0d5cc93c13240402641ee76e564",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/TI_DPY0002A_TPD1E05U06_SMDMask.kicad_mod"
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/TI_DPY0002A_TPD1E05U06_SMDMask.kicad_mod",
+      "bytes": 1941,
+      "sha256": "99cf73073a296cbd9a26c6fe36d9de9b5c4cb72b3b62a6f2da18cc611a614ee2",
+      "git_blob_sha": "7c853ab628f0869692573f6546c1b29311163a3a",
+      "mode": "100644"
     },
     {
-      "bytes": 3138,
-      "git_blob_sha": "784cce77ad7022b6d811d5bc7d8eb8d64211ca24",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/TI_DRB0008J_TCAN3403.kicad_mod",
-      "sha256": "e2f3b36e4bb86f6b8fdafa894336e91ccb4778841a06c77ec0ffa11440ac486f",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/TI_DRB0008J_TCAN3403.kicad_mod"
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/TI_DRB0008J_TCAN3403.kicad_mod",
+      "bytes": 3045,
+      "sha256": "6a087c283c7dfdf04838e90b35b49f0c323ece348600c172c0c3a64cf9e1202e",
+      "git_blob_sha": "39997ff42c5132e40cd82fbbcadf9d75a6a07c58",
+      "mode": "100644"
     },
     {
-      "bytes": 3276,
-      "git_blob_sha": "525cae1383a64522503080bce6f260224af1d720",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/TI_PWP0016A_TPS2660.kicad_mod",
-      "sha256": "5df3a54877b7f9de507796c3ad245ec3e9a1f0029f346755656c62011726ebb0",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/TI_PWP0016A_TPS2660.kicad_mod"
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/TI_PWP0016A_TPS2660.kicad_mod",
+      "bytes": 3402,
+      "sha256": "fac4eb28211a9a50ee25bbf26f3b9032ac18f7995e4f76bff63cf6a3ba873931",
+      "git_blob_sha": "420d1c8cabbb216944bd8212832737ae90e030d3",
+      "mode": "100644"
     },
     {
       "bytes": 5549,
@@ -466,12 +466,12 @@
       "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/TO-252-2.kicad_mod"
     },
     {
-      "bytes": 1380,
-      "git_blob_sha": "b9352930d0369de67ac62bd510f8297333b720ea",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/TPS3808_DBV0006A.kicad_mod",
-      "sha256": "255f04abb3ad056b2adc0945f9ea37d8276c8d357e4d0c3b5d6aa2b20df8f2ca",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/TPS3808_DBV0006A.kicad_mod"
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/TPS3808_DBV0006A.kicad_mod",
+      "bytes": 1511,
+      "sha256": "2481f3a84725b6069d69c7b9b66d3281b5dfc7bef5ee133835a96124cfacac04",
+      "git_blob_sha": "df95216b943f796535d68e1c2fd0a23cc50d4a69",
+      "mode": "100644"
     },
     {
       "bytes": 3483,
@@ -506,20 +506,20 @@
       "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/VSSOP-8_2.3x2mm_P0.5mm.kicad_mod"
     },
     {
-      "bytes": 2163,
-      "git_blob_sha": "cd28e9cd4c6b16b621822d582f6cca54921e6ade",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/WSLP0603_MANUFACTURER.kicad_mod",
-      "sha256": "cfa7f9b1e2a192ad070582586dcb392b6cdf756bd517d4de4a179e8e19f7870b",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/WSLP0603_MANUFACTURER.kicad_mod"
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/WSLP0603_MANUFACTURER.kicad_mod",
+      "bytes": 2291,
+      "sha256": "d762689855c072c352dba0202e4780af14db25b4964e44973fc6bbc9f03d5fbb",
+      "git_blob_sha": "6318b5b04aa075a3dfed11e1483eb669cdc23603",
+      "mode": "100644"
     },
     {
-      "bytes": 2375,
-      "git_blob_sha": "35d454775c14e0959999ecffee30cb608fe26dbd",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/WSLP0603_MANUFACTURER_R153.kicad_mod",
-      "sha256": "6cd10e372a0e9ef26a8be28af5e6390e616891b27f777aac10efe8d948d7f1e0",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/libraries/RevB.pretty/WSLP0603_MANUFACTURER_R153.kicad_mod"
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/WSLP0603_MANUFACTURER_R153.kicad_mod",
+      "bytes": 2507,
+      "sha256": "e221b11feb82caf78a35d9d9c47d12b962a172eaf38e412357424943ca373165",
+      "git_blob_sha": "928422c32f5a011a59d9522fdf995d61381aebeb",
+      "mode": "100644"
     },
     {
       "bytes": 3078,
@@ -1492,9 +1492,9 @@
     {
       "path": "docs/engineering/rvb22/candidate/run_native_candidate.py",
       "source": "runtime/run_native_candidate.py",
-      "bytes": 28333,
-      "sha256": "81d7232b133b86ebebab83f64cb8107aba8167f5bb81d136568e61f7af9bfa3e",
-      "git_blob_sha": "f4514aebafcaff903de6ca7fc1c3e83bfe213c53",
+      "bytes": 29779,
+      "sha256": "187d303cb103cef92143d53c099615a435ceef29c0458d7ac9521205d451f315",
+      "git_blob_sha": "16e82c31031c62f9de3e460f2e372050f4fe155d",
       "mode": "100644"
     },
     {
@@ -1691,10 +1691,10 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/README.md",
-      "source": "iterations/I11_controlled_footprint_variants/REPOSITORY_README.md",
-      "bytes": 1421,
-      "sha256": "62100090fa4aaf1ee0f5e223c1df182962ce39d2a96e00790bfce033920e80e5",
-      "git_blob_sha": "4756437b20ddf663059810433a86e843d0a076c9",
+      "source": "iterations/I12_branding_models_thermal/CANDIDATE_README.md",
+      "bytes": 860,
+      "sha256": "d7048fe2a29e81e1828f186b53227008cac3ae9da4c77fd18fedceec1a003a15",
+      "git_blob_sha": "d1c01e45f593a663a309bd341208e9d08172a6fe",
       "mode": "100644"
     },
     {
@@ -1931,42 +1931,42 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R156.kicad_mod",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R156.kicad_mod",
-      "bytes": 2754,
-      "sha256": "c988e91b0a93d27ebdceb48a575c1610de8a547bf2b26d1f2308d7da0af1d500",
-      "git_blob_sha": "9e29aafd6261d09ebfca3e68098bbc6509f6723c",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R156.kicad_mod",
+      "bytes": 2528,
+      "sha256": "c18c6b45214d5b6c56f645b69f6568d25275bd872bcf56f588dd9a7e1e5f9fd6",
+      "git_blob_sha": "591c95d2503d204e7655a352f26686d697613800",
       "mode": "100644"
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/KEMET_T598_X_7343_Median_RVB22_C206.kicad_mod",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/libraries/RevB.pretty/KEMET_T598_X_7343_Median_RVB22_C206.kicad_mod",
-      "bytes": 3635,
-      "sha256": "946965627285900b2da21d8dd6d138daa89184602e6e05666527adfcfdbd3c07",
-      "git_blob_sha": "576146649fc03d990b35d1d29fc67a25e4a2feb4",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/KEMET_T598_X_7343_Median_RVB22_C206.kicad_mod",
+      "bytes": 3294,
+      "sha256": "3abe092b5475ee38f326e36f846186a9b839d0c11d01485e7f443a21769e888c",
+      "git_blob_sha": "698dc66e4ac7055e8b77bcd0537969e7195ce7d6",
       "mode": "100644"
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R203.kicad_mod",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R203.kicad_mod",
-      "bytes": 2524,
-      "sha256": "6fe7ba12a47c15297096e710e5e97fa2f15b6779667974b9b250579b3714e64c",
-      "git_blob_sha": "e7632ca774a1c50b593fbfe84c14f228494edfac",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R203.kicad_mod",
+      "bytes": 2332,
+      "sha256": "f7916796ae7c2c9092f7a1ad71856a38d7b8ec22461bf40846903e745aa7e311",
+      "git_blob_sha": "810d618a88d9687aa23cc596310ec10bb2b6cd99",
       "mode": "100644"
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R155.kicad_mod",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R155.kicad_mod",
-      "bytes": 2761,
-      "sha256": "e2c1b1fa6c2a4a362b3b9c8bc5aa63fc553a5f4abbcb9a70cdbad6314a5db984",
-      "git_blob_sha": "775721cfd46eed6dd4fd5fa5c2bf176efcf37d47",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R155.kicad_mod",
+      "bytes": 2535,
+      "sha256": "73c41c8ed8b62bcf4c6baba606b61bce664d31fc130a50d9a5df7b67e9bcbef6",
+      "git_blob_sha": "b99d7e3dfa3bcb693db36ff75ec7def64218f62c",
       "mode": "100644"
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.kicad_mod",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/libraries/RevB.pretty/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.kicad_mod",
-      "bytes": 8593,
-      "sha256": "eb17804bae971b3edbfce7538b6d9ca6adfb8253f2d013c09ae9dfca5e382721",
-      "git_blob_sha": "f85036484e0b077e40005410a1acc6677c733bec",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.kicad_mod",
+      "bytes": 7580,
+      "sha256": "e84beb0320bccedf7a1f971c3bbb7f367a862dd8206247d51e913b34cf9e7633",
+      "git_blob_sha": "cb7c06b0d19c9c37c307103212e7561ba2024e0c",
       "mode": "100644"
     },
     {
@@ -1979,26 +1979,26 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.kicad_mod",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.kicad_mod",
-      "bytes": 8216,
-      "sha256": "d747bfc68115a30d91ff8278ac011f7663975eb5208a08160c3362215826de77",
-      "git_blob_sha": "a10afe8597e8115ea2336a3b3dcaaedd2056ff20",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.kicad_mod",
+      "bytes": 7319,
+      "sha256": "cbc4631b4f422e67d772176af27ac1af4c2f5ce5a1431a3409f2df58bae9d482",
+      "git_blob_sha": "d2a7b352dd02a8bdb9b6a077028b8d1bfe49232f",
       "mode": "100644"
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/Coilcraft_MSS1246T_12x12_RVB22_L121.kicad_mod",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/libraries/RevB.pretty/Coilcraft_MSS1246T_12x12_RVB22_L121.kicad_mod",
-      "bytes": 2742,
-      "sha256": "4bf963e11b14de5baf55b4fdeb84ca6c6116f91f6f19c6eed45241200882ac5f",
-      "git_blob_sha": "7e160b93e626ba1d4c0d481b56113ff35ad1fc78",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/Coilcraft_MSS1246T_12x12_RVB22_L121.kicad_mod",
+      "bytes": 2532,
+      "sha256": "4dc10090e2f615024b53139aafe2b754ab5c105de094d3fee4304f1db60aa045",
+      "git_blob_sha": "88b1630d8d135b6a06d96c6c8e17dcc820f6a708",
       "mode": "100644"
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/ESP32-S3-WROOM-1_RVB22_U201.kicad_mod",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/libraries/RevB.pretty/ESP32-S3-WROOM-1_RVB22_U201.kicad_mod",
-      "bytes": 16404,
-      "sha256": "c5b6b58e13372539f45801d259ac3524ec636e2d903bd6338d87eadf600e1dc9",
-      "git_blob_sha": "3d037db23943b65271747f8ed32612cece85d25d",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/ESP32-S3-WROOM-1_RVB22_U201.kicad_mod",
+      "bytes": 14707,
+      "sha256": "d6feca1219e0ee0cdd576b1fbdb003d4a9262fa38926a54b8109db2090cb2750",
+      "git_blob_sha": "4e72f9f6425ee334a510db379bc6d611c872fd73",
       "mode": "100644"
     },
     {
@@ -2011,18 +2011,18 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/C_0603_1608Metric_RVB22_C205.kicad_mod",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/libraries/RevB.pretty/C_0603_1608Metric_RVB22_C205.kicad_mod",
-      "bytes": 2553,
-      "sha256": "051830f9d3bfc858d802c1cfc0c4658a9f61e11ff4113dcb6a4bcef313ad38e2",
-      "git_blob_sha": "7ed6ec6fb331d292b3a8ad78700738f14144a969",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/C_0603_1608Metric_RVB22_C205.kicad_mod",
+      "bytes": 2361,
+      "sha256": "3634037f681da9a06a7ff5b4dab2349650dfb638e951fde6438c475867caf6d0",
+      "git_blob_sha": "06fc215c2e3167194ab5cb6d8db627cae31283e8",
       "mode": "100644"
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R157.kicad_mod",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R157.kicad_mod",
-      "bytes": 2726,
-      "sha256": "52c235ba08f95cffae8b6237c368adea02dfbbad7a86f38f0f49ef00bf3d6265",
-      "git_blob_sha": "78e90f6ebb8e47305fd2ee20d7dffb7d72dbd140",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R157.kicad_mod",
+      "bytes": 2503,
+      "sha256": "ccc18a2be92a75b0406d9842522773aa5fd4767eda9419f28f497afd9796b008",
+      "git_blob_sha": "d65c99f32518ad72fe0d12886773773376e2d155",
       "mode": "100644"
     },
     {
@@ -2151,6 +2151,230 @@
       "bytes": 19,
       "sha256": "52bc11601f828944017af38be43d76f460973e26dba309b7dd579079b04e65ba",
       "git_blob_sha": "c97e6bbc8fc77c341b1c0d31964cf8b94cd7a8fc",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/FITTED_REFERENCES.json",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/FITTED_REFERENCES.json",
+      "bytes": 2080,
+      "sha256": "087ff2fdf0f3d8d45b508277863fc8a830b78d1d002d22966811328ccc7de82e",
+      "git_blob_sha": "22ee61c4cf29d1cf4a2b36ce9d4b993709cf5eae",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_CDTop_PA1616D_20Pad_v06.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_CDTop_PA1616D_20Pad_v06.step",
+      "bytes": 15530,
+      "sha256": "d3c27aeb3da18df56e080db9947eb015a1967d558c9aecd4dc6f93c79d42a8ca",
+      "git_blob_sha": "70458e52d0457650e41975c9914477c483f934ad",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_C_0603_1608Metric_RVB22_C205.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_C_0603_1608Metric_RVB22_C205.step",
+      "bytes": 15584,
+      "sha256": "6f635d6a798f5b396801338bd09c561cb28c5ed77b3f3b28248ae6934f3ca326",
+      "git_blob_sha": "97688e34e1f91d3daa4785e224f770b368622d60",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_Coilcraft_MSS1246T_12x12_RVB22_L121.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_Coilcraft_MSS1246T_12x12_RVB22_L121.step",
+      "bytes": 15504,
+      "sha256": "ddd6949e37a4949979fcbfd33b7194073cb8d9f20713a929af460e011db336ed",
+      "git_blob_sha": "08bdc5c4ff7b047201c3fd892d08b10cdaf658fb",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_Fuse_Littelfuse-NANO2-885.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_Fuse_Littelfuse-NANO2-885.step",
+      "bytes": 15534,
+      "sha256": "9d36a9abf86fe279bf6de0a69d7bd60e729853d406d1523e3406362177cb6003",
+      "git_blob_sha": "f297c1b55b23090b43e634d2a0f750065145039d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.step",
+      "bytes": 15498,
+      "sha256": "b30c2bf603e43d6fd52a5532c80196e6ad8df4c1de639250321851f114fefc6f",
+      "git_blob_sha": "e4ec2a64fed9f06516b4994c342b12478326f3cf",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_KEMET_C1210_10u50V.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_KEMET_C1210_10u50V.step",
+      "bytes": 15522,
+      "sha256": "5b0d225bb2c29ee9132422fdcf2b1dfbc044cedcc181e102344f0d5dd34e274d",
+      "git_blob_sha": "e333c9c5075c1ad5b713f45ad32361a13a2f6cc2",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_KEMET_T598_X_7343_Median_RVB22_C206.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_KEMET_T598_X_7343_Median_RVB22_C206.step",
+      "bytes": 15528,
+      "sha256": "70e116f6b72779d9d18e13b3f39b807c8d55337d3b94d25107a7c972fe799330",
+      "git_blob_sha": "e18b9bd4f91583f8f05717f44394219e8f8c6833",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.step",
+      "bytes": 15560,
+      "sha256": "2243353fd26661c62429727755fdc6f236a303e3b37a78bfb77d7062a91ec91e",
+      "git_blob_sha": "66d6f9a7b6830b0c0369241bfc389ebeaecf2254",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_Murata_LQW18AS_1608.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_Murata_LQW18AS_1608.step",
+      "bytes": 15485,
+      "sha256": "8dc9860d48f1f310cbb4fedd0859e36f6b22350e2f1eb7ca433e5d2465fc130d",
+      "git_blob_sha": "310e7080923fb118b59abdcfabe90396a121da89",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R155.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_R_0603_1608Metric_RVB22_R155.step",
+      "bytes": 15597,
+      "sha256": "9fa8ccd8941ac41b5cfcbfe19e4b8e011285245410a56c75a4f1b4916fcfc785",
+      "git_blob_sha": "68de97b024b158ccdbbfa768af0777d6f862cff6",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R156.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_R_0603_1608Metric_RVB22_R156.step",
+      "bytes": 15597,
+      "sha256": "34333acbfbf21749f6c9601043337101b7c1790e7a5a69842e37599ae3f07d2c",
+      "git_blob_sha": "b6933967451b1d28cbe82b5db204db750b759de8",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R157.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_R_0603_1608Metric_RVB22_R157.step",
+      "bytes": 15584,
+      "sha256": "24d98fde147dda86b6eaf5e60d7412babffba9fab808ba53cab12091fc09aabb",
+      "git_blob_sha": "7b0e989f0acfb1f80ea15f25d0d038879c9278a7",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R203.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_R_0603_1608Metric_RVB22_R203.step",
+      "bytes": 15584,
+      "sha256": "379bf1889a646b97bd6172624f5cb82ead3c68097b0693b15d2cca55e3ab3494",
+      "git_blob_sha": "cb05e66a79a34e113628047aa3cec64ee10722b6",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_TI_DDA0008B_4214849B.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_TI_DDA0008B_4214849B.step",
+      "bytes": 15496,
+      "sha256": "9ef46c4d078c5bbb9982618e3c80d58590fa2dbcb052185ee7728a010ad4d931",
+      "git_blob_sha": "4b77b0110c60580f800c5a0e6441848036416250",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_TI_DPY0002A_TPD1E05U06_SMDMask.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_TI_DPY0002A_TPD1E05U06_SMDMask.step",
+      "bytes": 15509,
+      "sha256": "c9d865a8b06d5de7e49b609d88e16493b0842f8623eda2073718034e07a2e374",
+      "git_blob_sha": "43ef6c7bec94b119d522c42af2a76534a8374c28",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_TI_DRB0008J_TCAN3403.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_TI_DRB0008J_TCAN3403.step",
+      "bytes": 15496,
+      "sha256": "c0ce404df93ae34fa583617fb70a787b163f8d3d2e0537580652a5badf4ff737",
+      "git_blob_sha": "64469da4cdab48cf9ee6adde39239314fa1d26b5",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_TI_PWP0016A_TPS2660.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_TI_PWP0016A_TPS2660.step",
+      "bytes": 15498,
+      "sha256": "5f4c1b37c0a8362ddb61c8228a7233d601c78a2878029a100b67c8091b11d35c",
+      "git_blob_sha": "bd7cbfec6479d0ae054fe7ccdc7e7f478e55628f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_TPS3808_DBV0006A.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_TPS3808_DBV0006A.step",
+      "bytes": 15485,
+      "sha256": "49c7af653bd28289a781dbc22e2974042c1ad314726f6d6ab4da24e6050d048d",
+      "git_blob_sha": "ef1b900e029bbc4d94129a0844e2fda30b2b236d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_WSLP0603_MANUFACTURER.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_WSLP0603_MANUFACTURER.step",
+      "bytes": 15610,
+      "sha256": "41b3fb49317d8023ba3e55d02a8d568e7a99ef293928d5ba4e69f481a00438b6",
+      "git_blob_sha": "9d2b8f79870c42e310fda6453f3bf4bd0db48bc6",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/models/ENVELOPE_WSLP0603_MANUFACTURER_R153.step",
+      "source": "iterations/I12_branding_models_thermal/candidate_kicad/models/ENVELOPE_WSLP0603_MANUFACTURER_R153.step",
+      "bytes": 15526,
+      "sha256": "5d3ddd582dc72c78ad5910dd196a105247bfef40a94cd49eaad1a28116cfd740",
+      "git_blob_sha": "aec6af6e914b8602c3a014803e2d9d3127cda4f8",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I12/REDLINE_FREEZE.json",
+      "source": "iterations/I12_branding_models_thermal/REDLINE_FREEZE.json",
+      "bytes": 2313,
+      "sha256": "cf2d8eb07d9b773d2bb6a37bb21fc3d27190cf7fac5879d0d2b311faaf397496",
+      "git_blob_sha": "1be1440566b62347837ad5c03ff9f001238946f8",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I12/U201_KEEPOUT_TRANSFORM.json",
+      "source": "iterations/I12_branding_models_thermal/U201_KEEPOUT_TRANSFORM.json",
+      "bytes": 1265,
+      "sha256": "26a781c89a109186ac70c347d8ed489ec54e70ea1940a3e4b8b6f5f012755e48",
+      "git_blob_sha": "a83e729de3a17c2dbc6c812c20d7a606e01eb113",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I12/LOGO_GEOMETRY.json",
+      "source": "iterations/I12_branding_models_thermal/LOGO_GEOMETRY.json",
+      "bytes": 1141,
+      "sha256": "2c54fbd72e22c68be5a5da465b73a6ec7ff125eb98ecc18d22b24efd723b1d1f",
+      "git_blob_sha": "b643a0a884f59427679100224854696ff206fbdd",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I12/MODEL_COVERAGE_SOURCE.json",
+      "source": "iterations/I12_branding_models_thermal/MODEL_COVERAGE_SOURCE.json",
+      "bytes": 14604,
+      "sha256": "f7a927ed3963bba19323f277322456180157ffc1522d519229fa5ee544ef01dd",
+      "git_blob_sha": "c89448177676e75fba4167aa35ebee7a10eed6c5",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I12/SOURCE_CHANGE_CHECK.json",
+      "source": "iterations/I12_branding_models_thermal/SOURCE_CHANGE_CHECK.json",
+      "bytes": 433,
+      "sha256": "db0088fdbacf57b96a1edfb78e497ebb8d825378091d805b23fbdb73f37d1ef2",
+      "git_blob_sha": "3387d3c207600902211f4b57839cbf58dd50216c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I12/TranquilWorks_PCB_Logo_Preview.png",
+      "source": "iterations/I12_branding_models_thermal/TranquilWorks_PCB_Logo_Preview.png",
+      "bytes": 271420,
+      "sha256": "6ff4a68b20188bce30ab4dfe9dfd8af64cc3d115b6e466ad31415ade63caeda9",
+      "git_blob_sha": "0081ae55b9e1e013dbfb5fc39b5fe08f0cd07335",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/branding/TW_Compact_On_Dark.svg",
+      "source": "branding/source/01_Vector_Masters/Compact_TW/TW_Compact_On_Dark.svg",
+      "bytes": 8784,
+      "sha256": "e6707dd5db08d4ebcbf6745a3036b7a06f457c0359b5d1c2e715fb026a4acfe0",
+      "git_blob_sha": "aafde08437e60dd65fde5c1019d35d87e7f0aae5",
       "mode": "100644"
     }
   ],

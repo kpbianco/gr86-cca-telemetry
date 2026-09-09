@@ -1,0 +1,347 @@
+{
+  "fitted_references": 153,
+  "new_or_repaired_references": 22,
+  "unique_envelope_models": 20,
+  "rows": [
+    {
+      "reference": "C506",
+      "footprint": "RevB:KEMET_C1210_10u50V",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_KEMET_C1210_10u50V.step",
+      "sha256": "5b0d225bb2c29ee9132422fdcf2b1dfbc044cedcc181e102344f0d5dd34e274d",
+      "model_coordinate_bounds_mm": [
+        -2.65,
+        -1.95,
+        2.65,
+        1.95,
+        2.8
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "C504",
+      "footprint": "RevB:KEMET_C1210_10u50V",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_KEMET_C1210_10u50V.step",
+      "sha256": "5b0d225bb2c29ee9132422fdcf2b1dfbc044cedcc181e102344f0d5dd34e274d",
+      "model_coordinate_bounds_mm": [
+        -2.65,
+        -1.95,
+        2.65,
+        1.95,
+        2.8
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "F101",
+      "footprint": "RevB:Fuse_Littelfuse-NANO2-885",
+      "replaced_model_references": [
+        "${KICAD7_3DMODEL_DIR}/Fuse.3dshapes/Fuse_Littelfuse-NANO2-885.wrl"
+      ],
+      "new_model": "models/ENVELOPE_Fuse_Littelfuse-NANO2-885.step",
+      "sha256": "9d36a9abf86fe279bf6de0a69d7bd60e729853d406d1523e3406362177cb6003",
+      "model_coordinate_bounds_mm": [
+        -8.67,
+        -4.18,
+        8.67,
+        4.18,
+        2.9
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "U121",
+      "footprint": "RevB:TI_DDA0008B_4214849B",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_TI_DDA0008B_4214849B.step",
+      "sha256": "9ef46c4d078c5bbb9982618e3c80d58590fa2dbcb052185ee7728a010ad4d931",
+      "model_coordinate_bounds_mm": [
+        -4.025,
+        -3.0,
+        4.025,
+        3.0,
+        1.7
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "C505",
+      "footprint": "RevB:KEMET_C1210_10u50V",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_KEMET_C1210_10u50V.step",
+      "sha256": "5b0d225bb2c29ee9132422fdcf2b1dfbc044cedcc181e102344f0d5dd34e274d",
+      "model_coordinate_bounds_mm": [
+        -2.65,
+        -1.95,
+        2.65,
+        1.95,
+        2.8
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "U401",
+      "footprint": "RevB:CDTop_PA1616D_20Pad_v06",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_CDTop_PA1616D_20Pad_v06.step",
+      "sha256": "d3c27aeb3da18df56e080db9947eb015a1967d558c9aecd4dc6f93c79d42a8ca",
+      "model_coordinate_bounds_mm": [
+        -9.350000000000001,
+        -8.55,
+        9.350000000000001,
+        8.55,
+        6.9
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "L121",
+      "footprint": "RevB:Coilcraft_MSS1246T_12x12_RVB22_L121",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_Coilcraft_MSS1246T_12x12_RVB22_L121.step",
+      "sha256": "ddd6949e37a4949979fcbfd33b7194073cb8d9f20713a929af460e011db336ed",
+      "model_coordinate_bounds_mm": [
+        -6.55,
+        -6.8,
+        6.55,
+        6.8,
+        4.8
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "F1",
+      "footprint": "RevB:Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1",
+      "replaced_model_references": [
+        "${KICAD6_3DMODEL_DIR}/Connector_Molex.3dshapes/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal.wrl"
+      ],
+      "new_model": "models/ENVELOPE_Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.step",
+      "sha256": "2243353fd26661c62429727755fdc6f236a303e3b37a78bfb77d7062a91ec91e",
+      "model_coordinate_bounds_mm": [
+        -4.38,
+        -4.55,
+        19.38,
+        9.72,
+        9.27
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "D402",
+      "footprint": "RevB:TI_DPY0002A_TPD1E05U06_SMDMask",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_TI_DPY0002A_TPD1E05U06_SMDMask.step",
+      "sha256": "c9d865a8b06d5de7e49b609d88e16493b0842f8623eda2073718034e07a2e374",
+      "model_coordinate_bounds_mm": [
+        -1.15,
+        -0.8999999999999999,
+        1.15,
+        0.8999999999999999,
+        0.45
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "R153",
+      "footprint": "RevB:WSLP0603_MANUFACTURER_R153",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_WSLP0603_MANUFACTURER_R153.step",
+      "sha256": "5d3ddd582dc72c78ad5910dd196a105247bfef40a94cd49eaad1a28116cfd740",
+      "model_coordinate_bounds_mm": [
+        -1.82,
+        -1.1,
+        1.82,
+        1.1,
+        0.533
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "U301",
+      "footprint": "RevB:TI_DRB0008J_TCAN3403",
+      "replaced_model_references": [
+        "${KICAD9_3DMODEL_DIR}/Package_SON.3dshapes/VSON-8-1EP_3x3mm_P0.65mm_EP1.6x2.4mm.wrl"
+      ],
+      "new_model": "models/ENVELOPE_TI_DRB0008J_TCAN3403.step",
+      "sha256": "c0ce404df93ae34fa583617fb70a787b163f8d3d2e0537580652a5badf4ff737",
+      "model_coordinate_bounds_mm": [
+        -2.25,
+        -2.1,
+        2.25,
+        2.4499999999999997,
+        1.0
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "L406",
+      "footprint": "RevB:Murata_LQW18AS_1608",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_Murata_LQW18AS_1608.step",
+      "sha256": "8dc9860d48f1f310cbb4fedd0859e36f6b22350e2f1eb7ca433e5d2465fc130d",
+      "model_coordinate_bounds_mm": [
+        -1.55,
+        -1.1,
+        1.55,
+        1.1,
+        1.0
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "U501",
+      "footprint": "RevB:TI_PWP0016A_TPS2660",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_TI_PWP0016A_TPS2660.step",
+      "sha256": "5f4c1b37c0a8362ddb61c8228a7233d601c78a2878029a100b67c8091b11d35c",
+      "model_coordinate_bounds_mm": [
+        -4.2,
+        -3.05,
+        4.2,
+        3.05,
+        1.2
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "U151",
+      "footprint": "RevB:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151",
+      "replaced_model_references": [
+        "${KICAD7_3DMODEL_DIR}/Package_SO.3dshapes/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm.wrl"
+      ],
+      "new_model": "models/ENVELOPE_HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.step",
+      "sha256": "b30c2bf603e43d6fd52a5532c80196e6ad8df4c1de639250321851f114fefc6f",
+      "model_coordinate_bounds_mm": [
+        -4.2,
+        -3.05,
+        4.2,
+        3.05,
+        1.2
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "U202",
+      "footprint": "RevB:TPS3808_DBV0006A",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_TPS3808_DBV0006A.step",
+      "sha256": "49c7af653bd28289a781dbc22e2974042c1ad314726f6d6ab4da24e6050d048d",
+      "model_coordinate_bounds_mm": [
+        -2.4,
+        -2.1,
+        2.4,
+        2.1,
+        1.45
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "R203",
+      "footprint": "RevB:R_0603_1608Metric_RVB22_R203",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_R_0603_1608Metric_RVB22_R203.step",
+      "sha256": "379bf1889a646b97bd6172624f5cb82ead3c68097b0693b15d2cca55e3ab3494",
+      "model_coordinate_bounds_mm": [
+        -1.805,
+        -1.055,
+        1.805,
+        1.055,
+        0.5
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "C205",
+      "footprint": "RevB:C_0603_1608Metric_RVB22_C205",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_C_0603_1608Metric_RVB22_C205.step",
+      "sha256": "6f635d6a798f5b396801338bd09c561cb28c5ed77b3f3b28248ae6934f3ca326",
+      "model_coordinate_bounds_mm": [
+        -1.805,
+        -1.055,
+        1.805,
+        1.055,
+        0.9
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "R158",
+      "footprint": "RevB:WSLP0603_MANUFACTURER",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_WSLP0603_MANUFACTURER.step",
+      "sha256": "41b3fb49317d8023ba3e55d02a8d568e7a99ef293928d5ba4e69f481a00438b6",
+      "model_coordinate_bounds_mm": [
+        -1.805,
+        -1.055,
+        1.805,
+        1.055,
+        0.533
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "R155",
+      "footprint": "RevB:R_0603_1608Metric_RVB22_R155",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_R_0603_1608Metric_RVB22_R155.step",
+      "sha256": "9fa8ccd8941ac41b5cfcbfe19e4b8e011285245410a56c75a4f1b4916fcfc785",
+      "model_coordinate_bounds_mm": [
+        -1.805,
+        -1.055,
+        1.805,
+        1.055,
+        0.55
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "R156",
+      "footprint": "RevB:R_0603_1608Metric_RVB22_R156",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_R_0603_1608Metric_RVB22_R156.step",
+      "sha256": "34333acbfbf21749f6c9601043337101b7c1790e7a5a69842e37599ae3f07d2c",
+      "model_coordinate_bounds_mm": [
+        -1.805,
+        -1.055,
+        1.805,
+        1.055,
+        0.55
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "C206",
+      "footprint": "RevB:KEMET_T598_X_7343_Median_RVB22_C206",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_KEMET_T598_X_7343_Median_RVB22_C206.step",
+      "sha256": "70e116f6b72779d9d18e13b3f39b807c8d55337d3b94d25107a7c972fe799330",
+      "model_coordinate_bounds_mm": [
+        -4.859999999999999,
+        -2.8499999999999996,
+        4.859999999999999,
+        2.8499999999999996,
+        4.3
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    },
+    {
+      "reference": "R157",
+      "footprint": "RevB:R_0603_1608Metric_RVB22_R157",
+      "replaced_model_references": [],
+      "new_model": "models/ENVELOPE_R_0603_1608Metric_RVB22_R157.step",
+      "sha256": "24d98fde147dda86b6eaf5e60d7412babffba9fab808ba53cab12091fc09aabb",
+      "model_coordinate_bounds_mm": [
+        -1.805,
+        -1.055,
+        1.805,
+        1.055,
+        0.5
+      ],
+      "scope": "Conservative assembly envelope; manufacturer maximum height; XY source courtyard plus0.3mm is a stated bound, not guaranteed vendor geometry; solder/warp/deflection added by separate collision analysis."
+    }
+  ],
+  "all_fitted_have_model_reference": true,
+  "source_coverage_is_not_native_export_or_vendor_geometry_proof": true
+}

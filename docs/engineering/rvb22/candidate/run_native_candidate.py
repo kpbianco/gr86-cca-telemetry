@@ -179,6 +179,20 @@ def validate_component_log(path: Path) -> dict:
     return {'missing_model_log_entries':0, 'scope':'Exporter log only; source model presence and envelope correctness remain separate checks.'}
 
 
+def validate_component_inventory(log_path: Path, step_path: Path, expected_path: Path) -> dict:
+    """Bind fitted-reference coverage to actual STEP assembly occurrences."""
+    expected = set(json.loads(expected_path.read_text())['fitted_references'])
+    require(len(expected) == 153, 'Controlled fitted-reference inventory must contain 153 distinct references')
+    added = set(re.findall(r'^Adding component ([^.]+)\.$', log_path.read_text(), re.M))
+    occurrences = set(re.findall(r"NEXT_ASSEMBLY_USAGE_OCCURRENCE\('[^']*','([^']+)'", step_path.read_text()))
+    require(expected <= added, 'Fitted references absent from exporter additions: '+', '.join(sorted(expected-added)))
+    require(expected <= occurrences, 'Fitted references absent from STEP assembly: '+', '.join(sorted(expected-occurrences)))
+    return {'fitted_count':len(expected),'exporter_added_count':len(added),
+            'step_occurrence_reference_count':len(occurrences),'all_fitted_present':True,
+            'expected_inventory_sha256':sha(expected_path),
+            'scope':'Native STEP inclusion only. Explicit envelope models remain envelopes, and solder/cable/installed bounds are checked separately.'}
+
+
 def validate_native_report(path: Path, kind: str) -> dict:
     d = json.loads(path.read_text())
     require(isinstance(d, dict), 'Report is not an object')
@@ -447,6 +461,9 @@ def main() -> int:
             if args.component_step:
                 postcondition('component_step_file',validate_magic,output/'REVIEW_COMPONENTS.step',b'ISO-10303-21;')
                 postcondition('component_model_log',validate_component_log,output/'logs/component_step.stdout')
+                postcondition('fitted_component_step_inventory',validate_component_inventory,
+                              output/'logs/component_step.stdout',output/'REVIEW_COMPONENTS.step',
+                              target/'FITTED_REFERENCES.json')
             result['copied_source_inventories']['cad_after_native'] = inventory(target)
         if fw and fw_ready:
             target_fw = output/'candidate_firmware'

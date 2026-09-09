@@ -1,5 +1,4 @@
-(footprint
-"WSLP0603_MANUFACTURER_R153"
+(footprint "WSLP0603_MANUFACTURER_R153"
 (version 20241229)
 (generator "pcbnew")
 (layer "F.Cu")
@@ -24,4 +23,5 @@
 (pad "1" smd rect (at -0.76 0) (size 1.02 1.02) (layers "F.Cu" "F.Mask" "F.Paste"))
 (pad "2" smd rect (at 0.76 0) (size 1.02 1.02) (layers "F.Cu" "F.Mask" "F.Paste"))
 (fp_rect (start -0.887 -0.507) (end 0.887 0.507) (stroke (width 0.1) (type solid)) (fill none) (layer "F.Fab"))
+(model "${KIPRJMOD}/models/ENVELOPE_WSLP0603_MANUFACTURER_R153.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )

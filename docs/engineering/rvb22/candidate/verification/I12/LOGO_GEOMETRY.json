@@ -1,0 +1,31 @@
+{
+  "source": "branding/source/01_Vector_Masters/Compact_TW/TW_Compact_On_Dark.svg",
+  "source_sha256": "e6707dd5db08d4ebcbf6745a3036b7a06f457c0359b5d1c2e715fb026a4acfe0",
+  "choice": "Approved compact TW secondary logo in white one-ink legend; outlined artwork proportions retained",
+  "layer": "F.SilkS",
+  "center_mm": [
+    34,
+    -5
+  ],
+  "bounds_mm": [
+    30.0,
+    -7.055078957109914,
+    38.0,
+    -2.944921042890085
+  ],
+  "width_mm": 8,
+  "half_capital_T_clearspace_mm": 1.2619009937614567,
+  "edge_gap_mm": 2.944921042890086,
+  "nearest_mask_pad": {
+    "ref": "TP404",
+    "pad": "1",
+    "gap_mm": 5.055505939319305
+  },
+  "curve_chord_error_target_mm": 0.00043137858620521377,
+  "polygon_count": 355,
+  "retained_geometry_mm2": 12.3041044955404,
+  "wave_nominal_stroke_mm": 0.25882715172312826,
+  "minimum_text_T_stem_mm": 0.4037703566880801,
+  "manufacturing_note": "Filled polygons contain sharp corners and wave/letter intersections. Native DRC, plotted legend and fabrication artwork review required; nominal strokes are not a proof of minimum local width at every sharp vertex.",
+  "native_artwork_review": "PENDING"
+}

@@ -1,152 +1,22 @@
 (footprint "R_0603_1608Metric_RVB22_R156"
-	(version 20241229)
-	(generator "pcbnew")
-	(generator_version "9.0")
-	(layer "F.Cu")
-	(property "Reference" "R156"
-		(at 0 1.6 90)
-		(layer "F.Fab")
-		(uuid "638f7702-af96-5a2e-a74d-237eba8e4fbe")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.1)
-			)
-		)
-	)
-	(property "Value" "10k /0.1% 25ppm FB BOTTOM"
-		(at 0 1.6 90)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "403f6eb1-5699-5c2a-8e2c-7470ec597f1c")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.1)
-			)
-		)
-	)
-	(property "Datasheet" "https://www.vishay.com/docs/28758/tnpw_e3.pdf"
-		(at 0 1.6 90)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "ea8d21aa-bbb0-5d22-9c54-6d71bdca379c")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.1)
-			)
-		)
-	)
-	(property "Description" ""
-		(at 0 0 180)
-		(layer "B.Fab")
-		(hide yes)
-		(uuid "b9618595-454a-47b8-9f1e-f5c4ae081462")
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.15)
-			)
-			(justify mirror)
-		)
-	)
-	(property "MPN" "TNPW060310K0BEEA"
-		(at 0 1.6 90)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "dfed7399-b6ba-51f3-87c1-7023c1666bc6")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.1)
-			)
-		)
-	)
-	(property "Manufacturer" "Vishay"
-		(at 0 1.6 90)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "c5ed937e-d16b-5d6d-82cc-295654567bc4")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.1)
-			)
-		)
-	)
-	(property "LCSC" ""
-		(at 0 1.6 90)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "13aea778-5ebb-5d47-8299-4b270fe03e9a")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.1)
-			)
-		)
-	)
-	(property "Assembly" "FACTORY"
-		(at 0 1.6 90)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "2e520dbd-45d9-56d6-abde-db7caf7178b1")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.1)
-			)
-		)
-	)
-	(property "Qualification" "RVB22 reconstructed power candidate; native validation pending"
-		(at 0 1.6 90)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "729c6ad8-a6b3-5a9d-af14-fca4c0d67281")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.1)
-			)
-		)
-	)
-	(attr smd)
-	(fp_rect
-		(start -1.505 0.755)
-		(end 1.505 -0.755)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(fill no)
-		(layer "F.CrtYd")
-		(uuid "db45207c-89bd-5d5d-b966-0d3edcd32a15")
-	)
-	(fp_rect
-		(start -0.8 0.4)
-		(end 0.8 -0.4)
-		(stroke
-			(width 0.05)
-			(type solid)
-		)
-		(fill no)
-		(layer "F.Fab")
-		(uuid "e91f662e-42cf-56e1-bbef-1175553d1a7c")
-	)
-	(pad "1" smd roundrect
-		(at -0.825 0)
-		(size 0.8 0.95)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(roundrect_rratio 0.1)
-		(uuid "20022e64-319a-505c-bb14-e7c85c2a6261")
-	)
-	(pad "2" smd roundrect
-		(at 0.825 0)
-		(size 0.8 0.95)
-		(layers "F.Cu" "F.Mask" "F.Paste")
-		(roundrect_rratio 0.1)
-		(uuid "029dff7e-4ee7-5dc0-b788-670ddc4ca782")
-	)
-	(embedded_fonts no)
+(version 20241229)
+(generator "pcbnew")
+(generator_version "9.0")
+(layer "F.Cu")
+(property "Reference" "R156" (at 0 1.6 90) (layer "F.Fab") (uuid "638f7702-af96-5a2e-a74d-237eba8e4fbe") (effects (font (size 0.7 0.7) (thickness 0.1))))
+(property "Value" "10k /0.1% 25ppm FB BOTTOM" (at 0 1.6 90) (layer "F.Fab") (hide yes) (uuid "403f6eb1-5699-5c2a-8e2c-7470ec597f1c") (effects (font (size 0.7 0.7) (thickness 0.1))))
+(property "Datasheet" "https://www.vishay.com/docs/28758/tnpw_e3.pdf" (at 0 1.6 90) (layer "F.Fab") (hide yes) (uuid "ea8d21aa-bbb0-5d22-9c54-6d71bdca379c") (effects (font (size 0.7 0.7) (thickness 0.1))))
+(property "Description" "" (at 0 0 180) (layer "B.Fab") (hide yes) (uuid "b9618595-454a-47b8-9f1e-f5c4ae081462") (effects (font (size 1.27 1.27) (thickness 0.15)) (justify mirror)))
+(property "MPN" "TNPW060310K0BEEA" (at 0 1.6 90) (layer "F.Fab") (hide yes) (uuid "dfed7399-b6ba-51f3-87c1-7023c1666bc6") (effects (font (size 0.7 0.7) (thickness 0.1))))
+(property "Manufacturer" "Vishay" (at 0 1.6 90) (layer "F.Fab") (hide yes) (uuid "c5ed937e-d16b-5d6d-82cc-295654567bc4") (effects (font (size 0.7 0.7) (thickness 0.1))))
+(property "LCSC" "" (at 0 1.6 90) (layer "F.Fab") (hide yes) (uuid "13aea778-5ebb-5d47-8299-4b270fe03e9a") (effects (font (size 0.7 0.7) (thickness 0.1))))
+(property "Assembly" "FACTORY" (at 0 1.6 90) (layer "F.Fab") (hide yes) (uuid "2e520dbd-45d9-56d6-abde-db7caf7178b1") (effects (font (size 0.7 0.7) (thickness 0.1))))
+(property "Qualification" "RVB22 reconstructed power candidate; native validation pending" (at 0 1.6 90) (layer "F.Fab") (hide yes) (uuid "729c6ad8-a6b3-5a9d-af14-fca4c0d67281") (effects (font (size 0.7 0.7) (thickness 0.1))))
+(attr smd)
+(fp_rect (start -1.505 0.755) (end 1.505 -0.755) (stroke (width 0.05) (type solid)) (fill no) (layer "F.CrtYd") (uuid "db45207c-89bd-5d5d-b966-0d3edcd32a15"))
+(fp_rect (start -0.8 0.4) (end 0.8 -0.4) (stroke (width 0.05) (type solid)) (fill no) (layer "F.Fab") (uuid "e91f662e-42cf-56e1-bbef-1175553d1a7c"))
+(pad "1" smd roundrect (at -0.825 0) (size 0.8 0.95) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.1) (uuid "20022e64-319a-505c-bb14-e7c85c2a6261"))
+(pad "2" smd roundrect (at 0.825 0) (size 0.8 0.95) (layers "F.Cu" "F.Mask" "F.Paste") (roundrect_rratio 0.1) (uuid "029dff7e-4ee7-5dc0-b788-670ddc4ca782"))
+(embedded_fonts no)
+(model "${KIPRJMOD}/models/ENVELOPE_R_0603_1608Metric_RVB22_R156.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )

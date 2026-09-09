@@ -1,11 +1,5 @@
-# GR86 CCA Rev B — I11 engineering review candidate
+# GR86 Rev B — I12 corrective engineering in progress
 
-Current plan: ../EXECUTION_PLAN_CURRENT.md. Review PR45 remains a draft.
+The upper PCB wing now carries the approved compact TranquilWorks TW artwork in one-color silkscreen. The U201 library antenna rule area is corrected from board-relative translation to local coordinates; the board keepout and all electrical geometry remain unchanged. All153 fitted references have model references;22 missing/broken entries receive dimensioned envelopes with explicit XY and height provenance. Native export coverage is now checked against all153 STEP assembly occurrences.
 
-I10 native KiCad9.0.9 reports0 ERC findings,0 DRC errors,0 unconnected items and12 footprint-library warnings. I11 reconciles those identities with reviewed native exports and no PCB geometry change; native reevaluation is required. The pinned ESP32 target build passes. U.FL retains its centered0.7mm straight entry.
-
-Thermal and mechanics remain unfinished: native-fill temperature estimates need mesh/package closure; the actual thermal foil bend infringes the allocated antenna setback and four conservative component envelopes. T02 geometric trial clears these bounds but raises contact resistance to13.766K/W and is not adopted. Four referenced STEP models are missing; complete populated/cable-envelope qualification and supplier/installed conditions remain.
-
-This is not a manufacturing release. Formal290-criterion register remains the I06 snapshot110 closed/176 open/4 not applicable pending later evidence adjudication. A zero native-error result is not zero engineering redlines.
-
-I11 result: native run34391032375 returns one U201 footprint-library warning, zero ERC findings and zero DRC errors/unconnected/parity items. Firmware build passes. Native thermal0.25mm retry completed at113.189C C206 /132.516C maximum board region; mesh independence and package proof remain open.
+This is an intermediate checkpoint within the coordinated I12 revision. Thermal, foil/contact, complete connector envelopes and affected regressions remain in progress, as listed in verification/I12/REDLINE_FREEZE.json. Native reevaluation is pending; no release or zero-overall claim follows from these edits.
