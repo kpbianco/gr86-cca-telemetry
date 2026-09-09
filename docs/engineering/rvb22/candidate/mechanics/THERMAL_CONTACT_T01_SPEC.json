@@ -1,0 +1,92 @@
+{
+  "status": "SOURCE_CANDIDATE_WITH_ALLOCATED_ACCEPTANCE_BOUNDS",
+  "contact_mm": [
+    66.6,
+    11.8,
+    72,
+    28.8
+  ],
+  "contact_area_mm2": 91.8000000000001,
+  "tape": {
+    "MPN": "3M8805",
+    "nominal_mm": 0.127,
+    "typical_impedance_C_cm2_W": 3.2,
+    "typical_R_K_W": 3.485838779956423,
+    "allocated_installed_R_K_W": 4,
+    "scope": "Includes published test contact impedance; installed mask/copper roughness, adhesion and hot aging are acceptance conditions, not guaranteed by typical data."
+  },
+  "mask": {
+    "max_thickness_um_allocation": 30,
+    "min_k_W_mK_allocation": 0.2,
+    "R_K_W": 1.6339869281045734
+  },
+  "foil": {
+    "material": "C11000 annealed copper",
+    "lamina_count": 40,
+    "each_thickness_mm": [
+      0.05,
+      0.055
+    ],
+    "min_total_mm": 2,
+    "width_mm": 17,
+    "max_developed_heat_path_mm": 34,
+    "reference_centerline_length_mm": 27.823701390834337,
+    "min_k_allocation_W_mK": 300,
+    "R_K_W": 3.3333333333333335,
+    "max_packet_mass_g": 11.393536000000003,
+    "free_span": "Unbonded laminae; weld/braze only terminal packets before attachment. No rigid epoxy across flex span."
+  },
+  "terminal_and_landing_R_allocation_K_W": 1,
+  "total_R_K_W": 9.967320261437907,
+  "model_total_R_K_W": 10,
+  "landing_boundary_C": 70,
+  "RF": {
+    "antenna_start_X_mm": 88.254766,
+    "metal_max_X_mm": 72,
+    "module_and_cut_position_allocation_mm": 0.3,
+    "free_span_bow_allocation_mm": 0.5,
+    "minimum_clearance_mm": 15.454766000000003,
+    "requirement_mm": 15,
+    "scope": "Revision of broader legacy exclusion supported geometrically by official Espressif15mm guidance; this does not prove unchanged BLE performance."
+  },
+  "basic_thermal_assembly_bbox_mm": [
+    108.454766,
+    73,
+    36.5
+  ],
+  "removed_anchor_centres_mm": [
+    [
+      63,
+      16
+    ],
+    [
+      63,
+      22
+    ]
+  ],
+  "retained_anchor_centres_mm": [
+    [
+      -4,
+      31
+    ],
+    [
+      -4,
+      37
+    ],
+    [
+      62.5,
+      33
+    ],
+    [
+      62.5,
+      39
+    ]
+  ],
+  "checks": {
+    "budget_at_most10K_W": true,
+    "nominal_centerline_under34mm": true,
+    "RF15mm_with_bow": true,
+    "free_vertical_bundle_carrier_gap_after1mm": true
+  },
+  "remaining_execution_gate": "Actual filled-copper/interlayer/package thermal model and native carrier/component solid collision execution. Whole-assembly heat safety is not passed by this candidate."
+}

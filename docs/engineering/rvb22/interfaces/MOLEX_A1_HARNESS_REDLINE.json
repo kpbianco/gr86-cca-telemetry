@@ -1,0 +1,92 @@
+{
+  "id": "INT22-02-MOLEX-A1",
+  "state": "SOURCE_CONTRACT_AND_FINITE_MODEL_CORRECTION_COMPLETE_CONDITIONAL_ACCEPTANCE_REMAINS",
+  "basis": "Molex430450001-AS A1 pp2\u20133 primary text freshly read2026-09-09",
+  "source": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/430/43045/430450001-AS-000.pdf",
+  "findings": [
+    "F1.1 andF1.2 tied PCB GND plus two chassis leads split the same load. Full-current sizing does not remove current sharing.",
+    "Prior15mm end-untwist conflicts with recommended25.4mm relaxed wire before bends,ties or twists for twelve circuits.",
+    "Prior wire field spacing\u22642mm does not cover F1 CAN3mm cavity pitch and relaxed exit."
+  ],
+  "corrections": [
+    "Populate one full-current power returnF1.1; F1.2 harness cavity empty while PCB pin remainsGND; no PCB edit.",
+    "Seven populated leads, five empty harness cavities; preserve four original PCB NC positions.",
+    "Adopt25.4\u201330mm relaxedF1exit, first bend/tie/twist after that; ASC\u226415mm untwist remains.",
+    "Expand geometry/model envelope and coordinate parent complete CAN rerun.",
+    "Require tin-to-tin mating, no double-wire crimp and no energized mating; no supplier waiver."
+  ],
+  "parent_adoption": "Explicitly adopted by root message in active task.",
+  "prior_hashes": {
+    "interfaces/build_harness_contract.py": "25c1bbf1f3e5351f02a2c52f8892fe97a0c999948874d2103ac297af3c054631",
+    "interfaces/HARNESS_INTERFACE_CONTRACT.json": "08739e0996550bdf8a8f4589ddf5765aeed3877b77cae980852f0b1639b59183",
+    "interfaces/HARNESS_INTERFACE_CONTRACT.md": "a61cc2e62d1647ecf77ced262c3ffc7374bf6bc473f80c531053347493bbd05e",
+    "interfaces/HARNESS_CHECKS.json": "ef8ec316269f4768dc11cf91644468e09a00223e06eace0ea49ba8b58bd68d88",
+    "interfaces/ALL_PAIR_ISOLATION_MATRIX.json": "8ec163af9eae90b059ec6dc522336919b7b276fd7ba19414a54339237fa3b07e",
+    "interfaces/MISINSERTION_MATRIX.json": "ed0099d17a91416cec0baca46392ada199ca058cc4b8bb2e18fe96498e93f42f",
+    "interfaces/LOST_GROUND_FINITE_DC_SCREEN.json": "7d539e04b4e72813639b3a9b308f9723d920d45d5645d0e3d413316a50bcbe58",
+    "analyses/harness_wire/rebuild_wire_contract.py": "53d46a5f8d37e50a1e3e44182129226e7da2715f7056ec37db7dde4d7eea129d",
+    "analyses/harness_wire/HARNESS_WIRE_DELTA.json": "d6adcc3ab6b115b3e19212f32adf2f3b998867da6adbc69fbcebfa9874e61d5c",
+    "analyses/harness_wire/AVSS_CAN_STUB_MODEL.json": "fd6344ae3e757bc67773944c4eb423112810bacc1d10e68d7fc5a1db9b65eab8"
+  },
+  "limits": "Single-return loss forfeits redundancy and invokes retained alternate-bond fault conditions. Original physical acceptance is not granted.",
+  "implemented": {
+    "PCB_changed": false,
+    "PCB_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+    "populated_harness_cavities": [
+      1,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "empty_harness_cavities": [
+      2,
+      4,
+      10,
+      11,
+      12
+    ],
+    "source_contract_checks": 26,
+    "misinsertion_negative_cases": 77,
+    "pair_isolation_cases": 66,
+    "hot_sensor_ground_sweep_cases": 12960,
+    "normal_equilibrium_cases": 216,
+    "fault_no_equilibrium_cases_retained": 396,
+    "F1_free_exit_mm": [
+      25.4,
+      30
+    ],
+    "ASC_untwist_max_mm": 15,
+    "single_return_effectivity": "interfaces/SINGLE_RETURN_EFFECTIVITY.json",
+    "relaxed_exit_model_inputs": "analyses/harness_wire/FREE_EXIT_SECTION_ENVELOPE.json",
+    "schematic_note_delta": "interfaces/MOLEX_A1_SCHEMATIC_TEXT_DELTA.json",
+    "schematic_note_delta_sha256": "301c7b672186dc58a6a166afca251a68dd3d438e4380e7b00c7819f976d5e71b",
+    "final_handoff": "iterations/I06_harness_handoff/candidate_kicad",
+    "final_note_binding": "interfaces/FINAL_I06_HARNESS_BINDING.json",
+    "current_normal_wire_pressure_error_all_three_points_psi": [
+      -0.09473684323062226,
+      0.09473684049828186
+    ],
+    "pressure_scope": "Finite0/75/150psi transfer points; old75psi field is explicitly midpoint only.",
+    "complete_CAN_cases": 14400,
+    "complete_CAN_result_sha256": "a801a4a8e8e64f129b875e99b68c8d790509ea22707726f5a2e7c3d75c50f40e"
+  },
+  "remaining": [
+    "Actual mated plug relaxed wire exit/first restraint and installed service-envelope dimensional acceptance.",
+    "Current,temperature,crimp and contact acceptance; no fabricated supplier waiver or current-sharing approval.",
+    "Installed bus,receiver hysteresis/common-mode and relaxed-wire geometry applicability remain conditional;196 fast2ns-edge0.9V recrossings are retained, not hidden or declared RXD errors."
+  ],
+  "evidence": [
+    "interfaces/HARNESS_INTERFACE_CONTRACT.json",
+    "interfaces/HARNESS_CHECKS.json",
+    "interfaces/SINGLE_RETURN_EFFECTIVITY.json",
+    "analyses/harness_wire/HARNESS_WIRE_DELTA.json",
+    "analyses/harness_wire/FREE_EXIT_SECTION_ENVELOPE.json",
+    "interfaces/FINAL_I06_HARNESS_BINDING.json",
+    "iterations/I06_harness_handoff/CANDIDATE_MANIFEST.json",
+    "analyses/can_branch/COMPLETE_CAN_BRANCH_RESULTS.json",
+    "analyses/can_branch/CAN22-02_THRESHOLD_REFINEMENT.json"
+  ]
+}

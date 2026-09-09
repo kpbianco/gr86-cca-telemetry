@@ -1,0 +1,87 @@
+{
+  "status": "CURRENT_DISPOSITION_OF_RECOVERY_ACTIONS",
+  "historical_action_list": "control/REMAINING_DESKTOP_ACTIONS.json",
+  "historical_action_list_sha256": "b84855bbad787f85bb09585ac7bad085918336926d159b2f8ad1e18ab9f7dcfe",
+  "history_notice": "The earlier action list records unperformed work at the file-loss checkpoint. Its tense is historical; this file controls current work disposition.",
+  "rows": [
+    {
+      "id": "RDA-01",
+      "status": "Completed conditional model",
+      "work": "Complete CAN branch, including relaxed connector exits.",
+      "evidence": "analyses/can_branch/COMPLETE_CAN_BRANCH_REVIEW.md"
+    },
+    {
+      "id": "RDA-02",
+      "status": "Completed conditional model",
+      "work": "Representative conducted switching spectrum.",
+      "evidence": "lanes/emc/EMC_DESKTOP_REPORT.md"
+    },
+    {
+      "id": "RDA-03",
+      "status": "Completed conditional model",
+      "work": "Board and cable field and susceptibility bounds.",
+      "evidence": "lanes/emc/EMC_DESKTOP_REPORT.md"
+    },
+    {
+      "id": "RDA-04",
+      "status": "Completed conditional model",
+      "work": "Accessible-port exposure matrix, protection interception and ESD inverse bounds.",
+      "evidence": "lanes/emc/EMC_DESKTOP_REPORT.md"
+    },
+    {
+      "id": "RDA-05",
+      "status": "Completed profile and host checks",
+      "work": "Controlled ASC profile, semantic vectors and actual-source encoder checks.",
+      "evidence": "interfaces/asc_profile/ASC_PROFILE_REVIEW.json"
+    },
+    {
+      "id": "RDA-06",
+      "status": "Partially complete; native geometry and body-data gates",
+      "work": "Carrier checks and primary maximum heights for all 153 fitted references completed. Full populated solids, 18 missing model references, mated accessories and installed service/fit remain.",
+      "evidence": "lanes/mechanics/FINAL_COMPONENT_ENVELOPES.json"
+    },
+    {
+      "id": "RDA-07",
+      "status": "Completed conditional design and calculation",
+      "work": "Selected tie, corrected curved slots, web and retained cable-grip calculations; actual friction, retained tension and hot material limits remain.",
+      "evidence": "lanes/mechanics/MECHANICAL_INSTALLATION_RVB22.md"
+    },
+    {
+      "id": "RDA-08",
+      "status": "Completed primary-source review; supplier conditions retained",
+      "work": "74 exact fitted MPNs reviewed, 58 classified moisture entries; explicit restrictions and unknown numerical classifications preserved.",
+      "evidence": "analyses/assembly_handling/HANDLING_REVIEW.md"
+    },
+    {
+      "id": "RDA-09",
+      "status": "Completed allocation; material acceptance remains",
+      "work": "Dry-dashboard exposure and service matrix completed; selected material compatibility and actual environment remain conditions.",
+      "evidence": "analyses/installation/DASHBOARD_EXPOSURE_AND_SERVICE.md"
+    },
+    {
+      "id": "RDA-I01",
+      "status": "Completed source integration",
+      "work": "I05 handoff carries corrected I04 electrical source and current firmware.",
+      "evidence": "iterations/I06_harness_handoff/CANDIDATE_MANIFEST.json"
+    },
+    {
+      "id": "RDA-I02",
+      "status": "Blocked runtime",
+      "work": "Native CAD and target compilation require the pinned executable environment.",
+      "evidence": "runtime/final_I06_actual_preflight/RESULT.json"
+    },
+    {
+      "id": "RDA-I03",
+      "status": "Completed register reconciliation",
+      "work": "All 290 original criteria preserved; evidence states and real remaining gates retained.",
+      "evidence": "control/FINAL_REVIEW_REGISTER.json"
+    },
+    {
+      "id": "THERMAL",
+      "status": "Open engineering with runtime/input dependencies",
+      "work": "Actual source-copper, interlayer and package heat network has not established full-load safety; ideal copper sweeps retain a failure.",
+      "evidence": "lanes/mechanics/THERMAL_CONTACT_T01_REVIEW.md"
+    }
+  ],
+  "not_a_claim_of_zero_original_criteria": true
+}

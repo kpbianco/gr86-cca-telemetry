@@ -1,0 +1,1 @@
+(fp_lib_table (version 7) (lib (name "RevB") (type "KiCad") (uri "${KIPRJMOD}/libraries/RevB.pretty") (options "") (descr "Frozen working footprints; see qualification")))

@@ -1,0 +1,680 @@
+{
+  "status": "EXECUTED_CONDITIONAL_BEAM_AND_TOLERANCE_SCREEN",
+  "source_pcb_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "material_requirements": {
+    "E_min_GPa": 10,
+    "PCB_t_min_mm": 1.44,
+    "flexural_allowable_MPa": 150,
+    "bearing_allowable_MPa": 50,
+    "scope": "Engineering procurement/acceptance requirements, not guaranteed NP510A or JLC laminate minima. Notched fastener-hole and laminate fatigue strength are not inferred from bulk flexural strength."
+  },
+  "mass_scope": {
+    "assembly_max_g": 100,
+    "C206_engineering_allocation_g": 1,
+    "C206_supplier_typical_g": 0.554,
+    "outboard_PCB_conservative_g": 7.7653305220952396
+  },
+  "mount_screen": {
+    "one_lug_carries_full20g_load_N": 19.6133,
+    "Kt_allocation": 3,
+    "cantilever_lever_mm": 4,
+    "ear_flexural_MPa": 97.28819444444443,
+    "sleeve_bearing_MPa": 3.405086805555555,
+    "min_hole_edge_ligament_mm": 1.025,
+    "z_float_mm": [
+      0.09000000000000008,
+      0.51
+    ],
+    "global_relative_motion_allocation_mm": 1,
+    "hardware_to_original_courtyard_margin_mm": 0.75,
+    "hardware_to_legacy_ESP_exclusion_margin_mm": 0.5297659999999951,
+    "carrier_gross_deflection_mm": 0.020760435910493827,
+    "carrier_gross_bending_MPa": 10.35146388888889,
+    "M3_window_min_ligament_mm": 0.65,
+    "local_notch_fastener_stress_scope": "Not covered by gross carrier beam. All four chassis mounts required; root/local material analysis remains a conditional geometry acceptance."
+  },
+  "outboard_beam_cases": [
+    {
+      "module_mass_g": 1,
+      "other_tip_mass_g": 0,
+      "acceleration_g": 5,
+      "tip_deflection_mm": 0.018475323099561833,
+      "C206_far_edge_deflection_mm": 0.012272652095421053,
+      "root_surface_strain_microstrain": 54.83845881055315,
+      "module_chord_curvature_mm": 0.001216429425845134,
+      "C206_chord_curvature_mm": 5.8023796864088424e-05
+    },
+    {
+      "module_mass_g": 1,
+      "other_tip_mass_g": 0,
+      "acceleration_g": 10,
+      "tip_deflection_mm": 0.036950646199123666,
+      "C206_far_edge_deflection_mm": 0.024545304190842106,
+      "root_surface_strain_microstrain": 109.6769176211063,
+      "module_chord_curvature_mm": 0.002432858851690268,
+      "C206_chord_curvature_mm": 0.00011604759372817685
+    },
+    {
+      "module_mass_g": 1,
+      "other_tip_mass_g": 0,
+      "acceleration_g": 20,
+      "tip_deflection_mm": 0.07390129239824733,
+      "C206_far_edge_deflection_mm": 0.04909060838168421,
+      "root_surface_strain_microstrain": 219.3538352422126,
+      "module_chord_curvature_mm": 0.004865717703380536,
+      "C206_chord_curvature_mm": 0.0002320951874563537
+    },
+    {
+      "module_mass_g": 1,
+      "other_tip_mass_g": 2,
+      "acceleration_g": 5,
+      "tip_deflection_mm": 0.028197596939197742,
+      "C206_far_edge_deflection_mm": 0.018341583091229317,
+      "root_surface_strain_microstrain": 76.33601520933922,
+      "module_chord_curvature_mm": 0.0022202623253190622,
+      "C206_chord_curvature_mm": 0.00013222531373026692
+    },
+    {
+      "module_mass_g": 1,
+      "other_tip_mass_g": 2,
+      "acceleration_g": 10,
+      "tip_deflection_mm": 0.056395193878395485,
+      "C206_far_edge_deflection_mm": 0.036683166182458635,
+      "root_surface_strain_microstrain": 152.67203041867845,
+      "module_chord_curvature_mm": 0.0044405246506381245,
+      "C206_chord_curvature_mm": 0.00026445062746053384
+    },
+    {
+      "module_mass_g": 1,
+      "other_tip_mass_g": 2,
+      "acceleration_g": 20,
+      "tip_deflection_mm": 0.11279038775679097,
+      "C206_far_edge_deflection_mm": 0.07336633236491727,
+      "root_surface_strain_microstrain": 305.3440608373569,
+      "module_chord_curvature_mm": 0.008881049301276249,
+      "C206_chord_curvature_mm": 0.0005289012549210677
+    },
+    {
+      "module_mass_g": 1,
+      "other_tip_mass_g": 5,
+      "acceleration_g": 5,
+      "tip_deflection_mm": 0.042781007698651605,
+      "C206_far_edge_deflection_mm": 0.027444979584941718,
+      "root_surface_strain_microstrain": 108.58234980751834,
+      "module_chord_curvature_mm": 0.0037385191293846116,
+      "C206_chord_curvature_mm": 0.0002437005327865384
+    },
+    {
+      "module_mass_g": 1,
+      "other_tip_mass_g": 5,
+      "acceleration_g": 10,
+      "tip_deflection_mm": 0.08556201539730321,
+      "C206_far_edge_deflection_mm": 0.054889959169883436,
+      "root_surface_strain_microstrain": 217.16469961503668,
+      "module_chord_curvature_mm": 0.007477038258769223,
+      "C206_chord_curvature_mm": 0.0004874010655730768
+    },
+    {
+      "module_mass_g": 1,
+      "other_tip_mass_g": 5,
+      "acceleration_g": 20,
+      "tip_deflection_mm": 0.17112403079460642,
+      "C206_far_edge_deflection_mm": 0.10977991833976687,
+      "root_surface_strain_microstrain": 434.32939923007336,
+      "module_chord_curvature_mm": 0.014954076517538446,
+      "C206_chord_curvature_mm": 0.0009748021311461536
+    },
+    {
+      "module_mass_g": 3,
+      "other_tip_mass_g": 0,
+      "acceleration_g": 5,
+      "tip_deflection_mm": 0.022578477003145365,
+      "C206_far_edge_deflection_mm": 0.015066545125836809,
+      "root_surface_strain_microstrain": 67.56634967786405,
+      "module_chord_curvature_mm": 0.0014220787593199574,
+      "C206_chord_curvature_mm": 5.9518584133914736e-05
+    },
+    {
+      "module_mass_g": 3,
+      "other_tip_mass_g": 0,
+      "acceleration_g": 10,
+      "tip_deflection_mm": 0.04515695400629073,
+      "C206_far_edge_deflection_mm": 0.030133090251673617,
+      "root_surface_strain_microstrain": 135.1326993557281,
+      "module_chord_curvature_mm": 0.002844157518639915,
+      "C206_chord_curvature_mm": 0.00011903716826782947
+    },
+    {
+      "module_mass_g": 3,
+      "other_tip_mass_g": 0,
+      "acceleration_g": 20,
+      "tip_deflection_mm": 0.09031390801258146,
+      "C206_far_edge_deflection_mm": 0.060266180503347234,
+      "root_surface_strain_microstrain": 270.2653987114562,
+      "module_chord_curvature_mm": 0.00568831503727983,
+      "C206_chord_curvature_mm": 0.00023807433653565894
+    },
+    {
+      "module_mass_g": 3,
+      "other_tip_mass_g": 2,
+      "acceleration_g": 5,
+      "tip_deflection_mm": 0.03230075084278127,
+      "C206_far_edge_deflection_mm": 0.021135476121645073,
+      "root_surface_strain_microstrain": 89.06390607665011,
+      "module_chord_curvature_mm": 0.0024203417853516387,
+      "C206_chord_curvature_mm": 0.00013365894096080706
+    },
+    {
+      "module_mass_g": 3,
+      "other_tip_mass_g": 2,
+      "acceleration_g": 10,
+      "tip_deflection_mm": 0.06460150168556254,
+      "C206_far_edge_deflection_mm": 0.042270952243290146,
+      "root_surface_strain_microstrain": 178.12781215330023,
+      "module_chord_curvature_mm": 0.004840683570703277,
+      "C206_chord_curvature_mm": 0.0002673178819216141
+    },
+    {
+      "module_mass_g": 3,
+      "other_tip_mass_g": 2,
+      "acceleration_g": 20,
+      "tip_deflection_mm": 0.12920300337112509,
+      "C206_far_edge_deflection_mm": 0.08454190448658029,
+      "root_surface_strain_microstrain": 356.25562430660045,
+      "module_chord_curvature_mm": 0.009681367141406555,
+      "C206_chord_curvature_mm": 0.0005346357638432282
+    },
+    {
+      "module_mass_g": 3,
+      "other_tip_mass_g": 5,
+      "acceleration_g": 5,
+      "tip_deflection_mm": 0.04688416160223514,
+      "C206_far_edge_deflection_mm": 0.030238872615357473,
+      "root_surface_strain_microstrain": 121.31024067482925,
+      "module_chord_curvature_mm": 0.003934678738939062,
+      "C206_chord_curvature_mm": 0.0002451177447019163
+    },
+    {
+      "module_mass_g": 3,
+      "other_tip_mass_g": 5,
+      "acceleration_g": 10,
+      "tip_deflection_mm": 0.09376832320447027,
+      "C206_far_edge_deflection_mm": 0.06047774523071495,
+      "root_surface_strain_microstrain": 242.6204813496585,
+      "module_chord_curvature_mm": 0.007869357477878125,
+      "C206_chord_curvature_mm": 0.0004902354894038326
+    },
+    {
+      "module_mass_g": 3,
+      "other_tip_mass_g": 5,
+      "acceleration_g": 20,
+      "tip_deflection_mm": 0.18753664640894055,
+      "C206_far_edge_deflection_mm": 0.1209554904614299,
+      "root_surface_strain_microstrain": 485.240962699317,
+      "module_chord_curvature_mm": 0.01573871495575625,
+      "C206_chord_curvature_mm": 0.0009804709788076651
+    },
+    {
+      "module_mass_g": 10,
+      "other_tip_mass_g": 0,
+      "acceleration_g": 5,
+      "tip_deflection_mm": 0.036939515665687726,
+      "C206_far_edge_deflection_mm": 0.024845170732291956,
+      "root_surface_strain_microstrain": 112.11396771345218,
+      "module_chord_curvature_mm": 0.0021489691615098464,
+      "C206_chord_curvature_mm": 6.487195332451718e-05
+    },
+    {
+      "module_mass_g": 10,
+      "other_tip_mass_g": 0,
+      "acceleration_g": 10,
+      "tip_deflection_mm": 0.07387903133137545,
+      "C206_far_edge_deflection_mm": 0.04969034146458391,
+      "root_surface_strain_microstrain": 224.22793542690437,
+      "module_chord_curvature_mm": 0.004297938323019693,
+      "C206_chord_curvature_mm": 0.00012974390664903437
+    },
+    {
+      "module_mass_g": 10,
+      "other_tip_mass_g": 0,
+      "acceleration_g": 20,
+      "tip_deflection_mm": 0.1477580626627509,
+      "C206_far_edge_deflection_mm": 0.09938068292916782,
+      "root_surface_strain_microstrain": 448.45587085380873,
+      "module_chord_curvature_mm": 0.008595876646039386,
+      "C206_chord_curvature_mm": 0.00025948781329806873
+    },
+    {
+      "module_mass_g": 10,
+      "other_tip_mass_g": 2,
+      "acceleration_g": 5,
+      "tip_deflection_mm": 0.04666178950532364,
+      "C206_far_edge_deflection_mm": 0.030914101728100222,
+      "root_surface_strain_microstrain": 133.61152411223827,
+      "module_chord_curvature_mm": 0.0031325954948828796,
+      "C206_chord_curvature_mm": 0.0001387556604677366
+    },
+    {
+      "module_mass_g": 10,
+      "other_tip_mass_g": 2,
+      "acceleration_g": 10,
+      "tip_deflection_mm": 0.09332357901064728,
+      "C206_far_edge_deflection_mm": 0.061828203456200444,
+      "root_surface_strain_microstrain": 267.22304822447654,
+      "module_chord_curvature_mm": 0.006265190989765759,
+      "C206_chord_curvature_mm": 0.0002775113209354732
+    },
+    {
+      "module_mass_g": 10,
+      "other_tip_mass_g": 2,
+      "acceleration_g": 20,
+      "tip_deflection_mm": 0.18664715802129456,
+      "C206_far_edge_deflection_mm": 0.12365640691240089,
+      "root_surface_strain_microstrain": 534.4460964489531,
+      "module_chord_curvature_mm": 0.012530381979531519,
+      "C206_chord_curvature_mm": 0.0005550226418709464
+    },
+    {
+      "module_mass_g": 10,
+      "other_tip_mass_g": 5,
+      "acceleration_g": 5,
+      "tip_deflection_mm": 0.0612452002647775,
+      "C206_far_edge_deflection_mm": 0.040017498221812615,
+      "root_surface_strain_microstrain": 165.85785871041736,
+      "module_chord_curvature_mm": 0.004632334482479775,
+      "C206_chord_curvature_mm": 0.00025013544000879325
+    },
+    {
+      "module_mass_g": 10,
+      "other_tip_mass_g": 5,
+      "acceleration_g": 10,
+      "tip_deflection_mm": 0.122490400529555,
+      "C206_far_edge_deflection_mm": 0.08003499644362523,
+      "root_surface_strain_microstrain": 331.7157174208347,
+      "module_chord_curvature_mm": 0.00926466896495955,
+      "C206_chord_curvature_mm": 0.0005002708800175865
+    },
+    {
+      "module_mass_g": 10,
+      "other_tip_mass_g": 5,
+      "acceleration_g": 20,
+      "tip_deflection_mm": 0.24498080105911,
+      "C206_far_edge_deflection_mm": 0.16006999288725046,
+      "root_surface_strain_microstrain": 663.4314348416694,
+      "module_chord_curvature_mm": 0.0185293379299191,
+      "C206_chord_curvature_mm": 0.001000541760035173
+    }
+  ],
+  "CTE_joint_kinematic_cases": [
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.0031212978070027215,
+      "kinematic_shear_strain": 0.031212978070027212
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.0031212978070027215,
+      "kinematic_shear_strain": 0.012485191228010886
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0008472307831990051,
+      "kinematic_shear_strain": 0.008472307831990052
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0008472307831990051,
+      "kinematic_shear_strain": 0.0033889231327960206
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.0050721089363794224,
+      "kinematic_shear_strain": 0.05072108936379422
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.0050721089363794224,
+      "kinematic_shear_strain": 0.02028843574551769
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0013767500226983835,
+      "kinematic_shear_strain": 0.013767500226983835
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0013767500226983835,
+      "kinematic_shear_strain": 0.005507000090793534
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.008193406743382144,
+      "kinematic_shear_strain": 0.08193406743382144
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.008193406743382144,
+      "kinematic_shear_strain": 0.03277362697352858
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0022239808058973887,
+      "kinematic_shear_strain": 0.022239808058973885
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 5,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0022239808058973887,
+      "kinematic_shear_strain": 0.008895923223589555
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.006242595614005443,
+      "kinematic_shear_strain": 0.062425956140054424
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.006242595614005443,
+      "kinematic_shear_strain": 0.02497038245602177
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0016944615663980103,
+      "kinematic_shear_strain": 0.016944615663980103
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0016944615663980103,
+      "kinematic_shear_strain": 0.006777846265592041
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.010144217872758845,
+      "kinematic_shear_strain": 0.10144217872758844
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.010144217872758845,
+      "kinematic_shear_strain": 0.04057687149103538
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.002753500045396767,
+      "kinematic_shear_strain": 0.02753500045396767
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.002753500045396767,
+      "kinematic_shear_strain": 0.011014000181587068
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.01638681348676429,
+      "kinematic_shear_strain": 0.16386813486764287
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.01638681348676429,
+      "kinematic_shear_strain": 0.06554725394705715
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0044479616117947774,
+      "kinematic_shear_strain": 0.04447961611794777
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 10,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0044479616117947774,
+      "kinematic_shear_strain": 0.01779184644717911
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.009363893421008164,
+      "kinematic_shear_strain": 0.09363893421008164
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.009363893421008164,
+      "kinematic_shear_strain": 0.037455573684032656
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0025416923495970157,
+      "kinematic_shear_strain": 0.025416923495970155
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 40,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.0025416923495970157,
+      "kinematic_shear_strain": 0.010166769398388063
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.015216326809138267,
+      "kinematic_shear_strain": 0.15216326809138267
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.015216326809138267,
+      "kinematic_shear_strain": 0.06086530723655307
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.00413025006809515,
+      "kinematic_shear_strain": 0.0413025006809515
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 65,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.00413025006809515,
+      "kinematic_shear_strain": 0.0165210002723806
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.02458022023014643,
+      "kinematic_shear_strain": 0.2458022023014643
+    },
+    {
+      "package": "U201",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 15.606489035013608,
+      "free_mismatch_mm": 0.02458022023014643,
+      "kinematic_shear_strain": 0.09832088092058572
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.1,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.006671942417692166,
+      "kinematic_shear_strain": 0.06671942417692166
+    },
+    {
+      "package": "C206",
+      "CTE_mismatch_ppm_K": 15,
+      "deltaT_K": 105,
+      "solder_height_mm": 0.25,
+      "DNP_mm": 4.236153915995026,
+      "free_mismatch_mm": 0.006671942417692166,
+      "kinematic_shear_strain": 0.026687769670768663
+    }
+  ],
+  "C206_clearance": {
+    "under_module_design_depth_mm": 7,
+    "body_max_mm": 4.3,
+    "solder_standoff_allocation_mm": 0.25,
+    "mount_float_max_mm": 0.51,
+    "warp_allocation_mm": 0.75,
+    "local_deflection_allocation_mm": 0.2,
+    "remaining_mm": 0.9900000000000002
+  },
+  "fit": {
+    "bare_board_mm": [
+      88.254766,
+      61.275846143
+    ],
+    "basic_installed_bbox_mm": [
+      108.454766,
+      67,
+      30.27
+    ],
+    "scope": "Board/carrier/hardware only; actual vehicle cavity fit, connector mating/tool access, cable bend radius, antenna clearance and thermal air gaps are additional constraints."
+  },
+  "checks": {
+    "ear_flexural_below_requirement": true,
+    "bearing_below_requirement": true,
+    "positive_Z_float": true,
+    "positive_RF_hardware_margin": true,
+    "C206_deflection_within_allocation": true,
+    "C206_depth_positive": true
+  },
+  "limits": "Static beam and kinematic CTE sensitivity are reproducible reasoning, not modal response, joint fatigue life, physical drop/vibration or actual material acceptance. The 100g mass and20g acceleration are declared installation loads.",
+  "thermal_hardware_125g_screen": {
+    "total_mass_requirement_g": 125,
+    "base100g_ear_stress_MPa": 97.28819444444443,
+    "with_25g_hardware_allowance_MPa": 121.61024305555554,
+    "flexural_requirement_MPa": 150,
+    "pass_under_declared_material_load": true
+  },
+  "MECH22_31_total_126g_screen": {
+    "total_mass_requirement_g": 126,
+    "prior_125g_screen_retained_as_history": true,
+    "added_carrier_mass_upper_g": 0.086,
+    "one_ear_flexural_MPa": 122.58312499999998,
+    "flexural_requirement_MPa": 150,
+    "pass_under_declared_material_load": true,
+    "scope": "Added carrier mass is supported by carrier mounts; placing the entire126g allocation onto one PCB ear is conservative for this static screen. No modal/fatigue guarantee."
+  }
+}

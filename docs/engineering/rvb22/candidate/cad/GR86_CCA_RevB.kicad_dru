@@ -1,0 +1,19 @@
+(version 1)
+(rule "Logic clearance"
+  (constraint clearance (min 0.15mm)))
+(rule "Protected automotive voltage clearance"
+  (condition "A.NetName == 'PROTECTED_12V' || A.NetName == 'PROTECT_CTRL_VIN' || A.NetName == 'INPUT_GATE' || A.NetName == 'INPUT_GATE_DRIVE' || A.NetName == 'INPUT_GATE_SLEW' || A.NetName == 'BUCK_FEED' || A.NetName == '5V_VIN' || A.NetName == '5V_SW' || A.NetName == '5V_BST' || B.NetName == 'PROTECTED_12V' || B.NetName == 'PROTECT_CTRL_VIN' || B.NetName == 'INPUT_GATE' || B.NetName == 'INPUT_GATE_DRIVE' || B.NetName == 'INPUT_GATE_SLEW' || B.NetName == 'BUCK_FEED' || B.NetName == '5V_VIN' || B.NetName == '5V_SW' || B.NetName == '5V_BST'")
+  (constraint clearance (min 0.25mm)))
+(rule "Raw vehicle transient clearance"
+  (condition "A.NetName == 'RAW_12V' || A.NetName == 'FUSED_12V' || A.NetName == 'REV_BLOCKED_12V' || B.NetName == 'RAW_12V' || B.NetName == 'FUSED_12V' || B.NetName == 'REV_BLOCKED_12V'")
+  (constraint clearance (min 0.6mm)))
+
+(rule "JLC 2oz component PTH annular ring"
+  (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole' && A.Reference != 'U201'")
+  (constraint annular_width (min 0.254mm)))
+(rule "JLC component PTH hole to copper"
+  (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole' && A.Reference != 'U201'")
+  (constraint hole_clearance (min 0.30mm)))
+(rule "JLC component drilled hole spacing"
+  (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole' && A.Reference != 'U201' && B.Type == 'Pad' && B.Pad_Type == 'Through-hole' && B.Reference != 'U201'")
+  (constraint hole_to_hole (min 0.45mm)))

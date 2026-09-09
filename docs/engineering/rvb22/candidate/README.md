@@ -1,0 +1,22 @@
+# RVB-22 corrective engineering candidate
+
+This is the editable engineering handoff for draft PR45. `cad/` is the complete I06 harness handoff directory. Its PCB bytes remain unchanged from the final I04 compact-shunt iteration. I05 replaced obsolete candidate instructions; I06 corrects the schematic return-contact note and matching handoff documentation while preserving electrical objects. `firmware/` contains the recovered corrected firmware candidate. The repository's main `firmware/` is unchanged.
+
+The final PCB SHA-256 is `c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1`. `SOURCE_MANIFEST.json` binds every forwarded file to its source, byte count, SHA-256 and Git blob identity. It excludes itself to avoid a recursive hash.
+
+The current source geometry checks report zero prior pad-connectivity regressions, zero new or worsened foreign-copper gaps below 0.15 mm, and zero courtyard overlaps within their documented scope. These are source calculations. Native KiCad refill/ERC/DRC, matched Gerber/drill/placement exports, target firmware build, and populated mechanical solid checks remain unexecuted in this environment. The attached native preflight reports the actual missing tools. Older manufacturing outputs do not describe this candidate.
+
+The C03 carrier adds positive board retention, outboard heat-spreading geometry, defined harness corridors and insulating RF accessory mounts. T01 specifies an insulated PCB-to-landing thermal path allocated at 10 K/W. Its thermal model is a conductivity sensitivity: actual filled-copper, interlayer and package heat transfer has not established full-load temperature margin. The 65 C dashboard screen and specified installation boundaries remain model conditions. `verification/FINAL_GATES.json` preserves the other circuit, accessory, supplier, assembly and physical acceptance gates.
+
+Open `cad/GR86_CCA_RevB.kicad_pro` in the pinned KiCad environment. The native runner copies its inputs to a new output directory before attempting execution. From this directory:
+
+```sh
+python run_native_candidate.py --cad-dir cad --firmware-dir firmware --output /path/to/new/native-evidence --preflight-only
+python run_native_candidate.py --cad-dir cad --firmware-dir firmware --output /path/to/new/native-evidence-full
+```
+
+Use the runner's `--help` for explicit tool, library and component-STEP options. Required tools and pinned firmware dependencies must first be present; the second command has not succeeded on this candidate here. The bring-up contract is in `verification/BRING_UP_AND_MEASUREMENT_CONTRACT.md`.
+
+Use `mechanics/GR86_RVB_CARRIER_C03_THERMAL.scad` with its adjacent includes for the current carrier source; read the assembly and installation documents before interpreting the accessory and cable envelope solids. Earlier C02 and alternative thermal model files are retained as comparison evidence, not as the selected carrier. Python model dependencies are NumPy, SciPy, Shapely, sexpdata and Matplotlib. The final source-body screen can be rerun from `mechanics/` as `python final_component_envelopes.py --pcb ../cad/GR86_CCA_RevB.kicad_pcb`, followed by `python apply_height_supersession.py` to retain the authoritative primary-source height addendum. Current primary-source height coverage is153 of153 fitted references. Eighteen missing model references and native populated-solid checks remain. Do not apply `rebuild_mechanics.py` to this already modified final board: it is a historical patch generator requiring the pre-mechanics input. Source-generated SCAD does not establish a successful native solid export.
+
+This commit forwards source and evidence for review. It is neither a production release nor a declaration of zero qualification gates. The updated execution plan is at `../EXECUTION_PLAN_CURRENT.md`; the final single-return/free-exit harness contract and current CAN/handling evidence are under `../interfaces/` and `../analyses/`. The complete checkpoint controls the broader model and primary-source context. The final review register, its verification record and the board vetting summary are included one directory above this candidate. The register records110 closed,176 open and4 not-applicable original criteria: evidence statuses, not separate board-defect counts. Actual-source full-load thermal analysis remains unfinished desktop engineering; native, conditional-model, supplier and physical gates are also retained.

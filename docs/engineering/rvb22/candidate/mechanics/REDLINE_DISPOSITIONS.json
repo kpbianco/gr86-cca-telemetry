@@ -1,0 +1,458 @@
+{
+  "source_final_PCB_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "scope": "Reconstructed lane; historypreloss hashes are not represented as regeneratedhashes. Originalcriterion physicalacceptance is distinctfromredline source/model disposition.",
+  "counts": {
+    "BLOCKED_NATIVE": 1,
+    "CONDITIONAL_BOUND": 7,
+    "CORRECTED_SOURCE_MODEL": 22,
+    "OPEN_ENGINEERING": 1
+  },
+  "redlines": [
+    {
+      "id": "MECH22-01",
+      "finding": "Missing positive +X retention",
+      "actual_correction": "Four outboard ears, NPTH holes and shoulder/washer capture",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "CAD_PATCH_MANIFEST.json",
+        "EAR_GEOMETRY.json"
+      ],
+      "criteriaIDs": [
+        "MECH-02",
+        "MECH-03"
+      ],
+      "remainingcondition": "Actual assembly material/load acceptance remains."
+    },
+    {
+      "id": "MECH22-02",
+      "finding": "Tiny friction-only edge support",
+      "actual_correction": "Shoulder sleeves carry shear and washers captureZ",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "STRUCTURAL_SERVICE_MODEL.json"
+      ],
+      "criteriaIDs": [
+        "MECH-02",
+        "MECH-03"
+      ],
+      "remainingcondition": "Specified sleeves, thickness and material requirements."
+    },
+    {
+      "id": "MECH22-03",
+      "finding": "Incomplete fit/service envelope",
+      "actual_correction": "Source-defined73mm-high carrier; body/connector/model gaps enumerated",
+      "status": "CONDITIONAL_BOUND",
+      "evidencepaths": [
+        "MECHANICAL_INSTALLATION_RVB22.md",
+        "FINAL_COMPONENT_ENVELOPES.json"
+      ],
+      "criteriaIDs": [
+        "MECH-02",
+        "MECH-03",
+        "RDA-06"
+      ],
+      "remainingcondition": "Native populated solid and actual vehicle fit not executed; missing body heights explicitly listed."
+    },
+    {
+      "id": "MECH22-04",
+      "finding": "F101/ESP incompatible whole-board profile",
+      "actual_correction": "Remove globalF101paste/CPL; adopt laterfactory260C\u22643s localoperation",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "ASSEMBLY_PROCESS_RVB22.md",
+        "CAD_PATCH_MANIFEST.json"
+      ],
+      "criteriaIDs": [
+        "DFM-08",
+        "DFM-09",
+        "DRW-05"
+      ],
+      "remainingcondition": "ExactlocalSMDprocess requires assembler acceptance and executedprofile; fuse retained electrically."
+    },
+    {
+      "id": "MECH22-05",
+      "finding": "Conflicting U201 filled/capped versus tented-via instruction",
+      "actual_correction": "Supersede tent/no-fill with12filled/capped/planarizedpad41vias",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "ASSEMBLY_PROCESS_RVB22.md"
+      ],
+      "criteriaIDs": [
+        "DRW-04",
+        "DFM-09"
+      ],
+      "remainingcondition": "Fabricator construction acceptance and manufacturing export remain."
+    },
+    {
+      "id": "MECH22-06",
+      "finding": "Wrong or unsupported environmental interpretation",
+      "actual_correction": "Dashboard65Cair/radiant screen;120F estimate separately identified",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "MECHANICAL_INSTALLATION_RVB22.md"
+      ],
+      "criteriaIDs": [
+        "THERM-02"
+      ],
+      "remainingcondition": "Screen is not measured hotsoak."
+    },
+    {
+      "id": "MECH22-07",
+      "finding": "Outboard mass and joint strain unmodeled",
+      "actual_correction": "27beamcases plus CTEjoint-displacement intervals",
+      "status": "CONDITIONAL_BOUND",
+      "evidencepaths": [
+        "STRUCTURAL_SERVICE_MODEL.json"
+      ],
+      "criteriaIDs": [
+        "THERM-05",
+        "MECH-03"
+      ],
+      "remainingcondition": "Static/kinematic sensitivity, not plate/modal/joint-fatigue proof."
+    },
+    {
+      "id": "MECH22-08",
+      "finding": "Retracing polygon spurs in visual/SCAD outline",
+      "actual_correction": "Generate ordered continuous outline directly fromEdge.Cuts",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "rebuild_mechanics.py",
+        "CAD_PATCH_MANIFEST.json"
+      ],
+      "criteriaIDs": [
+        "MECH-02"
+      ],
+      "remainingcondition": "NativeCADexport execution still distinct."
+    },
+    {
+      "id": "MECH22-09",
+      "finding": "ESP antenna-board overhang omitted from fit",
+      "actual_correction": "Add6mmESPoverhang and supplierbodymax tofit",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "MECHANICAL_INSTALLATION_RVB22.md",
+        "FINAL_COMPONENT_ENVELOPES.json"
+      ],
+      "criteriaIDs": [
+        "MECH-03"
+      ],
+      "remainingcondition": "Actualantenna/cavityclearance required."
+    },
+    {
+      "id": "MECH22-10",
+      "finding": "Only left carrier attachments provide poor support",
+      "actual_correction": "Four vehicleM3mounts, rightpairlatermovedbyC03",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "GR86_RVB_CARRIER_C03.scad",
+        "C03_CARRIER_CHECKS.json"
+      ],
+      "criteriaIDs": [
+        "MECH-02",
+        "MECH-03"
+      ],
+      "remainingcondition": "Allfourmounts required."
+    },
+    {
+      "id": "MECH22-11",
+      "finding": "Solid carrier blocks heat exchange",
+      "actual_correction": "Central and wing windows implemented",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "GR86_RVB_CARRIER_C03.scad",
+        "thermal_network.py"
+      ],
+      "criteriaIDs": [
+        "THERM-02"
+      ],
+      "remainingcondition": "Windows maynotbe covered byjackets/vehicletrim."
+    },
+    {
+      "id": "MECH22-12",
+      "finding": "Continuous local worst-load heat safety not established",
+      "actual_correction": "Executeaverage,position,winganddirectcontactmodels; retainfailures",
+      "status": "OPEN_ENGINEERING",
+      "evidencepaths": [
+        "THERMAL_CONTACT_T01_MODEL.json",
+        "THERMAL_CONTACT_T01_INVERSE_REQUIREMENTS.json"
+      ],
+      "criteriaIDs": [
+        "THERM-02",
+        "THERM-05"
+      ],
+      "remainingcondition": "Actualnativefilledcopper/interlayer/packageheatmodel plus installationboundarymust satisfyT01requirements; notpassed byuniformsheet sensitivity."
+    },
+    {
+      "id": "MECH22-13",
+      "finding": "Adiabatic wire heating overstates1800sfaulttemperature",
+      "actual_correction": "Powerlane finitecoolingODE andinverseh bound",
+      "status": "CONDITIONAL_BOUND",
+      "evidencepaths": [
+        "MECHANICAL_INSTALLATION_RVB22.md"
+      ],
+      "criteriaIDs": [
+        "PWR-02",
+        "PWR-06",
+        "LAY-06"
+      ],
+      "remainingcondition": "See power/POWER_BOUNDS.json; actualwire/holder/bundlecooling andfuseclearingconditions retained."
+    },
+    {
+      "id": "MECH22-14",
+      "finding": "Coax shield can create vehicle return path",
+      "actual_correction": "InsulatingSMAbulkhead andpuckmount source",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "SMA_ISOLATOR.scad",
+        "PUCK_ISOLATOR.scad",
+        "RF_ACCESSORY_ISOLATION_CHECKS.json"
+      ],
+      "criteriaIDs": [
+        "MECH-03",
+        "FMEA-09"
+      ],
+      "remainingcondition": "ExactAdafruitSKU/bodyshapeandinstalledmetalclearanceconditional;Honeywellhousinggroundretained."
+    },
+    {
+      "id": "MECH22-15",
+      "finding": "Wing area incorrectly implies isothermal copper",
+      "actual_correction": "AddsourceGNDzones andfiniteCu-neck model",
+      "status": "BLOCKED_NATIVE",
+      "evidencepaths": [
+        "THERMAL_WING_GEOMETRY.json",
+        "THERMAL_WING_MODEL.json"
+      ],
+      "criteriaIDs": [
+        "THERM-02",
+        "LAY-06"
+      ],
+      "remainingcondition": "Nativefill,connectivityandthermalCu-path extractionrequired."
+    },
+    {
+      "id": "MECH22-16",
+      "finding": "Wing windows and carrier mounts conflict",
+      "actual_correction": "C03extendscarrier andmovesrightmountsawayfromwindows",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "C03_CARRIER_CHECKS.json"
+      ],
+      "criteriaIDs": [
+        "MECH-02",
+        "MECH-03"
+      ],
+      "remainingcondition": "Hot/wet/notchedmaterialallowables remain engineeringrequirements."
+    },
+    {
+      "id": "MECH22-17",
+      "finding": "Anchor slots absent from surviving material",
+      "actual_correction": "Realroundedslots inleft/rightspines",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "GR86_RVB_CARRIER_C03_THERMAL.scad"
+      ],
+      "criteriaIDs": [
+        "RDA-07",
+        "MECH-03"
+      ],
+      "remainingcondition": "Exacttieandjacketgrip addressedbyindependentreview; slotpresenceisnotslipproof."
+    },
+    {
+      "id": "MECH22-18",
+      "finding": "Low pressure and cavity airflow omitted",
+      "actual_correction": "70/85/101.325kPa convection andinverseopening sensitivity",
+      "status": "CONDITIONAL_BOUND",
+      "evidencepaths": [
+        "THERMAL_WING_MODEL.json"
+      ],
+      "criteriaIDs": [
+        "THERM-02"
+      ],
+      "remainingcondition": "Actualorientation,openingsandlocalair must match declaredinstallation."
+    },
+    {
+      "id": "MECH22-19",
+      "finding": "Local board curvature and CTE joint motion omitted",
+      "actual_correction": "Package-chord curvature and mismatchintervals",
+      "status": "CONDITIONAL_BOUND",
+      "evidencepaths": [
+        "STRUCTURAL_SERVICE_MODEL.json"
+      ],
+      "criteriaIDs": [
+        "THERM-05"
+      ],
+      "remainingcondition": "No solderfatiguelife ormaterialcertificate inferred."
+    },
+    {
+      "id": "MECH22-20",
+      "finding": "PrimaryF1anchors too remote or removed",
+      "actual_correction": "Leftspine pair(-4,31/37) afterpretensioncorrection",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "GR86_RVB_CARRIER_C03_THERMAL.scad"
+      ],
+      "criteriaIDs": [
+        "RDA-07"
+      ],
+      "remainingcondition": "Selectedinstalledgrip needed;F1harnessgeometryconditional."
+    },
+    {
+      "id": "MECH22-21",
+      "finding": "Puck mount had posts without capture",
+      "actual_correction": "Real sidefences andremovableframe",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "PUCK_ISOLATOR.scad",
+        "RF_ACCESSORY_ISOLATION_CHECKS.json"
+      ],
+      "criteriaIDs": [
+        "MECH-03"
+      ],
+      "remainingcondition": "ExactpuckSKU/curvedradome/cableexit remainsapplicabilitycondition."
+    },
+    {
+      "id": "MECH22-22",
+      "finding": "C2064Vpartlife and taller replacement clearance",
+      "actual_correction": "Adoptpowerlane6.3VXcase and7mmunder-moduledepth",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "STRUCTURAL_SERVICE_MODEL.json",
+        "FINAL_COMPONENT_ENVELOPES.json"
+      ],
+      "criteriaIDs": [
+        "MECH-03",
+        "THERM-05"
+      ],
+      "remainingcondition": "ActualcapthermalR/RMSconditions ownedby powerlane."
+    },
+    {
+      "id": "MECH22-23",
+      "finding": "Wing-onlychassis heat path insufficient",
+      "actual_correction": "ImplementT01insulatedPCB-backstrap10K/Wallocatedpath",
+      "status": "CONDITIONAL_BOUND",
+      "evidencepaths": [
+        "THERMAL_CONTACT_T01.scad",
+        "THERMAL_CONTACT_T01_SPEC.json",
+        "THERMAL_CONTACT_T01_REVIEW.md"
+      ],
+      "criteriaIDs": [
+        "THERM-02",
+        "THERM-05"
+      ],
+      "remainingcondition": "Actualcontactprocess/materialminimumand70Clanding; originalsourceheatgate remainsMECH22-12."
+    },
+    {
+      "id": "MECH22-24",
+      "finding": "ESP85Crating misread ascase maximum",
+      "actual_correction": "Correcttoambientimmediatelyoutsidemodule forN8R2",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "THERMAL_CONTACT_T01_REVIEW.md"
+      ],
+      "criteriaIDs": [
+        "THERM-02"
+      ],
+      "remainingcondition": "Localambientlimit remainsapplicable; nofreecase/junction waiver."
+    },
+    {
+      "id": "MECH22-25",
+      "finding": "BroaderlegacyRFhardwareexclusion blockscontact",
+      "actual_correction": "Explicitlyrevise onlyT01metalsource underactual15mmguidance",
+      "status": "CONDITIONAL_BOUND",
+      "evidencepaths": [
+        "THERMAL_CONTACT_T01_SPEC.json"
+      ],
+      "criteriaIDs": [
+        "RDA-03",
+        "MECH-03"
+      ],
+      "remainingcondition": "RFloading modeledbyRF lane; externalrange/match remainconditional."
+    },
+    {
+      "id": "MECH22-26",
+      "finding": "Positionmodel coupling/deposition idealizations hidden",
+      "actual_correction": "ExposeuniformCu/perfectcoupling andallmainheatEPADhypotheses",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "THERMAL_CONTACT_T01_INVERSE_REQUIREMENTS.json"
+      ],
+      "criteriaIDs": [
+        "THERM-02"
+      ],
+      "remainingcondition": "These models do notclose actual-sourceheat safety."
+    },
+    {
+      "id": "MECH22-27",
+      "finding": "C02rightmountligament only0.65mm",
+      "actual_correction": "MoveM3holes andextendcarrier; minwindowligament1.3516mm",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "C03_CARRIER_CHECKS.json"
+      ],
+      "criteriaIDs": [
+        "MECH-02",
+        "MECH-03"
+      ],
+      "remainingcondition": "Finitefatigue/materialacceptance retained."
+    },
+    {
+      "id": "MECH22-28",
+      "finding": "Firstenlargedstrip overlapsfinalJ401courtyard",
+      "actual_correction": "MovecontactY11.8..28.8 andrerunI03courtcheck",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "FINAL_COMPONENT_ENVELOPES.json",
+        "THERMAL_CONTACT_T01_SPEC.json"
+      ],
+      "criteriaIDs": [
+        "RDA-06",
+        "MECH-03"
+      ],
+      "remainingcondition": "Nativeplug/cable/servicevolume stillrequired; routeUFLtoward\u2212Y."
+    },
+    {
+      "id": "MECH22-29",
+      "finding": "ExactT18Rhead exceeds2.8mm andhitsfoilzone",
+      "actual_correction": "Allocatelocal5.2x5.2x3.9mmheads; move rightpairtoY33/39",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "GR86_RVB_CARRIER_C03_THERMAL.scad",
+        "THERMAL_CONTACT_T01_REVIEW.md"
+      ],
+      "criteriaIDs": [
+        "RDA-07",
+        "MECH-03"
+      ],
+      "remainingcondition": "Independentexacttie/pretension/grip reportgovernsinstalledpullbound."
+    },
+    {
+      "id": "MECH22-30",
+      "finding": "Left slot webs inadequate for specified retained tension",
+      "actual_correction": "Local8mmspines; primaryslotsX\u22124/rightX62.5;2.0mmnominal and1.8mmallocatedworstweb afteractualslotshape correction",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "C03_CARRIER_CHECKS.json",
+        "GR86_RVB_CARRIER_C03_THERMAL.scad"
+      ],
+      "criteriaIDs": [
+        "RDA-07",
+        "MECH-03"
+      ],
+      "remainingcondition": "Actualhotpretension andlaminateshearallowance remainconditional."
+    },
+    {
+      "id": "MECH22-31",
+      "finding": "Rectangular strap corners do not fit nominal obround slot",
+      "actual_correction": "3.9x1.6mm nominal obrounds,fulltolerance/cornerproof andlocalwebreinforcement",
+      "status": "CORRECTED_SOURCE_MODEL",
+      "evidencepaths": [
+        "SLOT_SHAPE_CORRECTION_CHECKS.json",
+        "GR86_RVB_CARRIER_C03_THERMAL.scad"
+      ],
+      "criteriaIDs": [
+        "RDA-07",
+        "MECH-03"
+      ],
+      "remainingcondition": "Actualjacketfriction,hotretainedtension andmaterialallowables remainconditional."
+    }
+  ]
+}

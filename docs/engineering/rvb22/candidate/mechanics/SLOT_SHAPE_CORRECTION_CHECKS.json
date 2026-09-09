@@ -1,0 +1,3868 @@
+{
+  "status": "PASS_SOURCE_OBROUND_TOLERANCE_AND_LOAD_PATH_SCREEN",
+  "redline": "MECH22-31",
+  "corner_cases": 324,
+  "minimum_corner_clearance_mm": 0.06992647456322776,
+  "min_web_mm": 1.7999999999999985,
+  "checks": [
+    {
+      "name": "324independentrectanglecorners fitactualroundedslot",
+      "pass": true,
+      "detail": {
+        "min_corner_clearance_mm": 0.06992647456322776,
+        "max_polygon_difference_mm": 1.5983318065682095e-05
+      }
+    },
+    {
+      "name": "All324corners fitactualSCAD64facetobround",
+      "pass": true,
+      "detail": {
+        "minimum_clearance_mm": 0.06971497910647163,
+        "circle_facets": 64
+      }
+    },
+    {
+      "name": "SCADslotdimensionsmatchcalculation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SCADanchorsandreinforcementmatch",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Everyworstslot retainsatleast1p8mmweb",
+      "pass": true,
+      "detail": [
+        {
+          "anchor": [
+            -4,
+            31
+          ],
+          "position_error": [
+            -0.1,
+            -0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.8000000000000003
+        },
+        {
+          "anchor": [
+            -4,
+            31
+          ],
+          "position_error": [
+            -0.1,
+            0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.8000000000000003
+        },
+        {
+          "anchor": [
+            -4,
+            31
+          ],
+          "position_error": [
+            0.1,
+            -0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.7999999999999998
+        },
+        {
+          "anchor": [
+            -4,
+            31
+          ],
+          "position_error": [
+            0.1,
+            0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.7999999999999998
+        },
+        {
+          "anchor": [
+            -4,
+            37
+          ],
+          "position_error": [
+            -0.1,
+            -0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.8000000000000003
+        },
+        {
+          "anchor": [
+            -4,
+            37
+          ],
+          "position_error": [
+            -0.1,
+            0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.8000000000000003
+        },
+        {
+          "anchor": [
+            -4,
+            37
+          ],
+          "position_error": [
+            0.1,
+            -0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.7999999999999998
+        },
+        {
+          "anchor": [
+            -4,
+            37
+          ],
+          "position_error": [
+            0.1,
+            0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.801089586965328
+        },
+        {
+          "anchor": [
+            62.5,
+            33
+          ],
+          "position_error": [
+            -0.1,
+            -0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.7999999999999985
+        },
+        {
+          "anchor": [
+            62.5,
+            33
+          ],
+          "position_error": [
+            -0.1,
+            0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.7999999999999985
+        },
+        {
+          "anchor": [
+            62.5,
+            33
+          ],
+          "position_error": [
+            0.1,
+            -0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.8000000000000056
+        },
+        {
+          "anchor": [
+            62.5,
+            33
+          ],
+          "position_error": [
+            0.1,
+            0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.8000000000000056
+        },
+        {
+          "anchor": [
+            62.5,
+            39
+          ],
+          "position_error": [
+            -0.1,
+            -0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.8051261875269837
+        },
+        {
+          "anchor": [
+            62.5,
+            39
+          ],
+          "position_error": [
+            -0.1,
+            0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.8245140413556422
+        },
+        {
+          "anchor": [
+            62.5,
+            39
+          ],
+          "position_error": [
+            0.1,
+            -0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.8000000000000056
+        },
+        {
+          "anchor": [
+            62.5,
+            39
+          ],
+          "position_error": [
+            0.1,
+            0.1
+          ],
+          "minimum_remaining_web_mm_after_edge0p1": 1.8000000000000056
+        }
+      ]
+    },
+    {
+      "name": "Carrierplanvalid",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Globalplanbboxunchanged",
+      "pass": true,
+      "detail": {
+        "old": [
+          -13.0,
+          -15.0,
+          66.5,
+          58.0
+        ],
+        "new": [
+          -13.0,
+          -15.0,
+          66.5,
+          58.0
+        ]
+      }
+    },
+    {
+      "name": "Thermalfoilbyteunchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "RightinsertclearsthermalpacketYby1p2mm",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "FR4rightedgedoesnotapproachantenna",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Harnessandheadfitexistingbasicthermalbox",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Addedcarriermassless0p2g",
+      "pass": true,
+      "detail": {
+        "additional_area_mm2": 13.534447897910013,
+        "density_upper_allocation_kg_m3": 2000,
+        "max_thickness_mm": 3.15,
+        "additional_mass_g": 0.08526702175683308
+      }
+    }
+  ],
+  "corner_rows": [
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.2999943525847803,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.2999943525847803,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.2999943525847803,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.2999943525847803,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652017,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652017,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652017,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652017,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999811752826009,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999811752826009,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999811752826009,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999811752826009,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.2890227771353556,
+      "polygon_clearance_mm": 0.2890121852743522,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.2890227771353556,
+      "polygon_clearance_mm": 0.2890121852743523,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.2890227771353556,
+      "polygon_clearance_mm": 0.28901218527435224,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.2890227771353556,
+      "polygon_clearance_mm": 0.28901218527435224,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19098300562505255,
+      "polygon_clearance_mm": 0.1909699086079249,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19098300562505255,
+      "polygon_clearance_mm": 0.190969908607925,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19098300562505255,
+      "polygon_clearance_mm": 0.19096990860792495,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19098300562505255,
+      "polygon_clearance_mm": 0.19096990860792493,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09235267810170467,
+      "polygon_clearance_mm": 0.09233874391111929,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09235267810170467,
+      "polygon_clearance_mm": 0.0923387439111193,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09235267810170467,
+      "polygon_clearance_mm": 0.0923387439111193,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09235267810170467,
+      "polygon_clearance_mm": 0.0923387439111193,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.2575571099101947,
+      "polygon_clearance_mm": 0.2575495328479266,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.2575571099101947,
+      "polygon_clearance_mm": 0.25754953284792664,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.2575571099101947,
+      "polygon_clearance_mm": 0.25754953284792664,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.2575571099101947,
+      "polygon_clearance_mm": 0.25754953284792664,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.16476500446401865,
+      "polygon_clearance_mm": 0.16475116501834744,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.16476500446401865,
+      "polygon_clearance_mm": 0.16475116501834744,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.16476500446401865,
+      "polygon_clearance_mm": 0.16475116501834744,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.16476500446401865,
+      "polygon_clearance_mm": 0.1647511650183475,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.06992647456322776,
+      "polygon_clearance_mm": 0.06991394441447508,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.06992647456322776,
+      "polygon_clearance_mm": 0.06991394441447502,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.06992647456322776,
+      "polygon_clearance_mm": 0.06991394441447507,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.06992647456322776,
+      "polygon_clearance_mm": 0.06991394441447506,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3472307430931292,
+      "polygon_clearance_mm": 0.34722363152482827,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3472307430931292,
+      "polygon_clearance_mm": 0.3472236315248282,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3472307430931292,
+      "polygon_clearance_mm": 0.34722363152482827,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3472307430931292,
+      "polygon_clearance_mm": 0.34722363152482827,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.247731949140637,
+      "polygon_clearance_mm": 0.24771741444401144,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.247731949140637,
+      "polygon_clearance_mm": 0.2477174144440114,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.247731949140637,
+      "polygon_clearance_mm": 0.2477174144440114,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.247731949140637,
+      "polygon_clearance_mm": 0.24771741444401144,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.14807975947973517,
+      "polygon_clearance_mm": 0.14806762378825172,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.14807975947973517,
+      "polygon_clearance_mm": 0.14806762378825172,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.14807975947973517,
+      "polygon_clearance_mm": 0.14806762378825172,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.14807975947973517,
+      "polygon_clearance_mm": 0.14806762378825172,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3256583509747431,
+      "polygon_clearance_mm": 0.325646119645695,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3256583509747431,
+      "polygon_clearance_mm": 0.32564611964569506,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3256583509747431,
+      "polygon_clearance_mm": 0.3256461196456951,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3256583509747431,
+      "polygon_clearance_mm": 0.325646119645695,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.22991228745043102,
+      "polygon_clearance_mm": 0.22989887960506042,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.22991228745043102,
+      "polygon_clearance_mm": 0.22989887960506034,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.22991228745043102,
+      "polygon_clearance_mm": 0.22989887960506034,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.22991228745043102,
+      "polygon_clearance_mm": 0.2298988796050604,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.1329167967936833,
+      "polygon_clearance_mm": 0.13290175471148766,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.1329167967936833,
+      "polygon_clearance_mm": 0.1329017547114877,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.1329167967936833,
+      "polygon_clearance_mm": 0.13290175471148763,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.1329167967936833,
+      "polygon_clearance_mm": 0.13290175471148766,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.28521849295064994,
+      "polygon_clearance_mm": 0.28520465990074134,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.28521849295064994,
+      "polygon_clearance_mm": 0.2852046599007413,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.28521849295064994,
+      "polygon_clearance_mm": 0.2852046599007413,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.28521849295064994,
+      "polygon_clearance_mm": 0.2852046599007413,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.1958477013202713,
+      "polygon_clearance_mm": 0.19583582985861847,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.1958477013202713,
+      "polygon_clearance_mm": 0.1958358298586184,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.1958477013202713,
+      "polygon_clearance_mm": 0.19583582985861847,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.1958477013202713,
+      "polygon_clearance_mm": 0.19583582985861847,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.10358058614079402,
+      "polygon_clearance_mm": 0.10357477741064233,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.10358058614079402,
+      "polygon_clearance_mm": 0.10357477741064232,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.10358058614079402,
+      "polygon_clearance_mm": 0.1035747774106423,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.10358058614079402,
+      "polygon_clearance_mm": 0.1035747774106423,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3890227771353556,
+      "polygon_clearance_mm": 0.38901030280261234,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3890227771353556,
+      "polygon_clearance_mm": 0.38901030280261245,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3890227771353556,
+      "polygon_clearance_mm": 0.38901030280261223,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3890227771353556,
+      "polygon_clearance_mm": 0.38901030280261234,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2909830056250525,
+      "polygon_clearance_mm": 0.29096802613618494,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2909830056250525,
+      "polygon_clearance_mm": 0.29096802613618505,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2909830056250525,
+      "polygon_clearance_mm": 0.29096802613618505,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2909830056250525,
+      "polygon_clearance_mm": 0.290968026136185,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.19235267810170464,
+      "polygon_clearance_mm": 0.1923368614393794,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.19235267810170464,
+      "polygon_clearance_mm": 0.1923368614393794,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.19235267810170464,
+      "polygon_clearance_mm": 0.19233686143937945,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.19235267810170464,
+      "polygon_clearance_mm": 0.19233686143937945,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3575571099101947,
+      "polygon_clearance_mm": 0.3575476503761867,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3575571099101947,
+      "polygon_clearance_mm": 0.35754765037618663,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3575571099101947,
+      "polygon_clearance_mm": 0.3575476503761867,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3575571099101947,
+      "polygon_clearance_mm": 0.35754765037618663,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2647650044640186,
+      "polygon_clearance_mm": 0.2647492825466075,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2647650044640186,
+      "polygon_clearance_mm": 0.2647492825466075,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2647650044640186,
+      "polygon_clearance_mm": 0.2647492825466075,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2647650044640186,
+      "polygon_clearance_mm": 0.26474928254660757,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.16992647456322774,
+      "polygon_clearance_mm": 0.16991206194273517,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.16992647456322774,
+      "polygon_clearance_mm": 0.16991206194273514,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.16992647456322774,
+      "polygon_clearance_mm": 0.1699120619427352,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.16992647456322774,
+      "polygon_clearance_mm": 0.1699120619427352,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.30916730868040143,
+      "polygon_clearance_mm": 0.3091583133653583,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.30916730868040143,
+      "polygon_clearance_mm": 0.3091583133653583,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.30916730868040143,
+      "polygon_clearance_mm": 0.30915831336535826,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.30916730868040143,
+      "polygon_clearance_mm": 0.30915831336535826,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2235017956929164,
+      "polygon_clearance_mm": 0.22348750543546575,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2235017956929164,
+      "polygon_clearance_mm": 0.22348750543546572,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2235017956929164,
+      "polygon_clearance_mm": 0.22348750543546572,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2235017956929164,
+      "polygon_clearance_mm": 0.22348750543546572,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.13410894683618224,
+      "polygon_clearance_mm": 0.13409670981557592,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.13410894683618224,
+      "polygon_clearance_mm": 0.13409670981557592,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.13410894683618224,
+      "polygon_clearance_mm": 0.13409670981557584,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.8,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.13410894683618224,
+      "polygon_clearance_mm": 0.13409670981557587,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.3,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.3,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.3,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.3,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999999999999996,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999999999999996,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999999999999996,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999999999999996,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999999999999998,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999999999999998,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999999999999998,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999999999999998,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.29723074309312913,
+      "polygon_clearance_mm": 0.2972245727606981,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.29723074309312913,
+      "polygon_clearance_mm": 0.29722457276069797,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.29723074309312913,
+      "polygon_clearance_mm": 0.29722457276069797,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.29723074309312913,
+      "polygon_clearance_mm": 0.29722457276069797,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19773194914063696,
+      "polygon_clearance_mm": 0.1977183556798813,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19773194914063696,
+      "polygon_clearance_mm": 0.19771835567988127,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19773194914063696,
+      "polygon_clearance_mm": 0.19771835567988127,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19773194914063696,
+      "polygon_clearance_mm": 0.1977183556798813,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09807975947973513,
+      "polygon_clearance_mm": 0.09806856502412165,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09807975947973513,
+      "polygon_clearance_mm": 0.09806856502412166,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09807975947973513,
+      "polygon_clearance_mm": 0.09806856502412166,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09807975947973513,
+      "polygon_clearance_mm": 0.09806856502412166,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.27565835097474306,
+      "polygon_clearance_mm": 0.27564706088156493,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.27565835097474306,
+      "polygon_clearance_mm": 0.2756470608815649,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.27565835097474306,
+      "polygon_clearance_mm": 0.27564706088156493,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.27565835097474306,
+      "polygon_clearance_mm": 0.275647060881565,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.17991228745043097,
+      "polygon_clearance_mm": 0.1798998208409303,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.17991228745043097,
+      "polygon_clearance_mm": 0.17989982084093026,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.17991228745043097,
+      "polygon_clearance_mm": 0.1798998208409303,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.17991228745043097,
+      "polygon_clearance_mm": 0.17989982084093034,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.08291679679368325,
+      "polygon_clearance_mm": 0.0829026959473576,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.08291679679368325,
+      "polygon_clearance_mm": 0.08290269594735762,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.08291679679368325,
+      "polygon_clearance_mm": 0.08290269594735755,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.08291679679368325,
+      "polygon_clearance_mm": 0.08290269594735757,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.35000000000000003,
+      "polygon_clearance_mm": 0.34999341134891043,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.35000000000000003,
+      "polygon_clearance_mm": 0.3499934113489105,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.35000000000000003,
+      "polygon_clearance_mm": 0.34999341134891043,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.35000000000000003,
+      "polygon_clearance_mm": 0.34999341134891043,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.25,
+      "polygon_clearance_mm": 0.24999529382065028,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.25,
+      "polygon_clearance_mm": 0.24999529382065028,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.25,
+      "polygon_clearance_mm": 0.24999529382065028,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.25,
+      "polygon_clearance_mm": 0.24999529382065028,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.15000000000000002,
+      "polygon_clearance_mm": 0.1499971762923902,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.15000000000000002,
+      "polygon_clearance_mm": 0.14999717629239018,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.15000000000000002,
+      "polygon_clearance_mm": 0.14999717629239018,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.15000000000000002,
+      "polygon_clearance_mm": 0.14999717629239018,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.33902277713535567,
+      "polygon_clearance_mm": 0.3390112440384824,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.33902277713535567,
+      "polygon_clearance_mm": 0.3390112440384824,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.33902277713535567,
+      "polygon_clearance_mm": 0.3390112440384823,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.33902277713535567,
+      "polygon_clearance_mm": 0.3390112440384824,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2409830056250526,
+      "polygon_clearance_mm": 0.24096896737205495,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2409830056250526,
+      "polygon_clearance_mm": 0.24096896737205506,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2409830056250526,
+      "polygon_clearance_mm": 0.24096896737205503,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2409830056250526,
+      "polygon_clearance_mm": 0.24096896737205503,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.1423526781017047,
+      "polygon_clearance_mm": 0.14233780267524937,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.1423526781017047,
+      "polygon_clearance_mm": 0.14233780267524943,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.1423526781017047,
+      "polygon_clearance_mm": 0.14233780267524945,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.1423526781017047,
+      "polygon_clearance_mm": 0.14233780267524945,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.30755710991019475,
+      "polygon_clearance_mm": 0.3075485916120567,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.30755710991019475,
+      "polygon_clearance_mm": 0.3075485916120566,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.30755710991019475,
+      "polygon_clearance_mm": 0.3075485916120566,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.30755710991019475,
+      "polygon_clearance_mm": 0.30754859161205667,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2147650044640187,
+      "polygon_clearance_mm": 0.21475022378247755,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2147650044640187,
+      "polygon_clearance_mm": 0.21475022378247755,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2147650044640187,
+      "polygon_clearance_mm": 0.2147502237824776,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2147650044640187,
+      "polygon_clearance_mm": 0.2147502237824776,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.1199264745632278,
+      "polygon_clearance_mm": 0.11991300317860515,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.1199264745632278,
+      "polygon_clearance_mm": 0.11991300317860512,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.1199264745632278,
+      "polygon_clearance_mm": 0.11991300317860516,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.1199264745632278,
+      "polygon_clearance_mm": 0.11991300317860515,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.39723074309312917,
+      "polygon_clearance_mm": 0.39722269028895824,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.39723074309312917,
+      "polygon_clearance_mm": 0.3972226902889581,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.39723074309312917,
+      "polygon_clearance_mm": 0.3972226902889583,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.39723074309312917,
+      "polygon_clearance_mm": 0.3972226902889583,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.29773194914063694,
+      "polygon_clearance_mm": 0.2977164732081414,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.29773194914063694,
+      "polygon_clearance_mm": 0.2977164732081414,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.29773194914063694,
+      "polygon_clearance_mm": 0.2977164732081414,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.29773194914063694,
+      "polygon_clearance_mm": 0.2977164732081413,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.1980797594797351,
+      "polygon_clearance_mm": 0.19806668255238175,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.1980797594797351,
+      "polygon_clearance_mm": 0.19806668255238172,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.1980797594797351,
+      "polygon_clearance_mm": 0.19806668255238175,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.1980797594797351,
+      "polygon_clearance_mm": 0.19806668255238175,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3756583509747431,
+      "polygon_clearance_mm": 0.37564517840982514,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3756583509747431,
+      "polygon_clearance_mm": 0.37564517840982514,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3756583509747431,
+      "polygon_clearance_mm": 0.37564517840982514,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3756583509747431,
+      "polygon_clearance_mm": 0.3756451784098251,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.27991228745043095,
+      "polygon_clearance_mm": 0.27989793836919047,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.27991228745043095,
+      "polygon_clearance_mm": 0.2798979383691904,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.27991228745043095,
+      "polygon_clearance_mm": 0.2798979383691904,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.27991228745043095,
+      "polygon_clearance_mm": 0.2798979383691904,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.18291679679368333,
+      "polygon_clearance_mm": 0.1829008134756177,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.18291679679368333,
+      "polygon_clearance_mm": 0.18290081347561776,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.18291679679368333,
+      "polygon_clearance_mm": 0.18290081347561765,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.18291679679368333,
+      "polygon_clearance_mm": 0.18290081347561768,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.33521849295065,
+      "polygon_clearance_mm": 0.3352037186648714,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.33521849295065,
+      "polygon_clearance_mm": 0.3352037186648713,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.33521849295065,
+      "polygon_clearance_mm": 0.33520371866487136,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.33521849295065,
+      "polygon_clearance_mm": 0.33520371866487136,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.24584770132027134,
+      "polygon_clearance_mm": 0.24583488862274855,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.24584770132027134,
+      "polygon_clearance_mm": 0.24583488862274852,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.24584770132027134,
+      "polygon_clearance_mm": 0.24583488862274844,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.24584770132027134,
+      "polygon_clearance_mm": 0.2458348886227485,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.15358058614079395,
+      "polygon_clearance_mm": 0.1535738361747724,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.15358058614079395,
+      "polygon_clearance_mm": 0.15357383617477235,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.15358058614079395,
+      "polygon_clearance_mm": 0.15357383617477235,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 3.9,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.15358058614079395,
+      "polygon_clearance_mm": 0.15357383617477238,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.3,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.3,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.3,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.3,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999999999999996,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999999999999996,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999999999999996,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999999999999996,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999999999999998,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999999999999998,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999999999999998,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999999999999998,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.2999943525847803,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.2999943525847803,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.2999943525847803,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3,
+      "polygon_clearance_mm": 0.2999943525847803,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652017,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652017,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652017,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652017,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999811752826009,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999811752826009,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999811752826009,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09999999999999998,
+      "polygon_clearance_mm": 0.09999811752826009,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.2890227771353556,
+      "polygon_clearance_mm": 0.2890121852743522,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.2890227771353556,
+      "polygon_clearance_mm": 0.2890121852743523,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.2890227771353556,
+      "polygon_clearance_mm": 0.28901218527435224,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.2890227771353556,
+      "polygon_clearance_mm": 0.28901218527435224,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19098300562505255,
+      "polygon_clearance_mm": 0.1909699086079249,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19098300562505255,
+      "polygon_clearance_mm": 0.190969908607925,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.19098300562505255,
+      "polygon_clearance_mm": 0.19096990860792495,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.19098300562505255,
+      "polygon_clearance_mm": 0.19096990860792493,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09235267810170467,
+      "polygon_clearance_mm": 0.09233874391111929,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09235267810170467,
+      "polygon_clearance_mm": 0.0923387439111193,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.09235267810170467,
+      "polygon_clearance_mm": 0.0923387439111193,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.5,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.09235267810170467,
+      "polygon_clearance_mm": 0.0923387439111193,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.35000000000000003,
+      "polygon_clearance_mm": 0.35000000000000003,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.35000000000000003,
+      "polygon_clearance_mm": 0.35000000000000003,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.35000000000000003,
+      "polygon_clearance_mm": 0.35000000000000003,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.35000000000000003,
+      "polygon_clearance_mm": 0.35000000000000003,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.25,
+      "polygon_clearance_mm": 0.25,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.25,
+      "polygon_clearance_mm": 0.25,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.25,
+      "polygon_clearance_mm": 0.25,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.25,
+      "polygon_clearance_mm": 0.25,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.15000000000000002,
+      "polygon_clearance_mm": 0.15000000000000002,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.15000000000000002,
+      "polygon_clearance_mm": 0.15000000000000002,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.15000000000000002,
+      "polygon_clearance_mm": 0.15000000000000002,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.15000000000000002,
+      "polygon_clearance_mm": 0.15000000000000002,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3472307430931292,
+      "polygon_clearance_mm": 0.34722363152482827,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3472307430931292,
+      "polygon_clearance_mm": 0.3472236315248282,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3472307430931292,
+      "polygon_clearance_mm": 0.34722363152482827,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3472307430931292,
+      "polygon_clearance_mm": 0.34722363152482827,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.247731949140637,
+      "polygon_clearance_mm": 0.24771741444401144,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.247731949140637,
+      "polygon_clearance_mm": 0.2477174144440114,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.247731949140637,
+      "polygon_clearance_mm": 0.2477174144440114,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.247731949140637,
+      "polygon_clearance_mm": 0.24771741444401144,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.14807975947973517,
+      "polygon_clearance_mm": 0.14806762378825172,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.14807975947973517,
+      "polygon_clearance_mm": 0.14806762378825172,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.14807975947973517,
+      "polygon_clearance_mm": 0.14806762378825172,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.14807975947973517,
+      "polygon_clearance_mm": 0.14806762378825172,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3256583509747431,
+      "polygon_clearance_mm": 0.325646119645695,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3256583509747431,
+      "polygon_clearance_mm": 0.32564611964569506,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3256583509747431,
+      "polygon_clearance_mm": 0.3256461196456951,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3256583509747431,
+      "polygon_clearance_mm": 0.325646119645695,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.22991228745043102,
+      "polygon_clearance_mm": 0.22989887960506042,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.22991228745043102,
+      "polygon_clearance_mm": 0.22989887960506034,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.22991228745043102,
+      "polygon_clearance_mm": 0.22989887960506034,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.22991228745043102,
+      "polygon_clearance_mm": 0.2298988796050604,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.1329167967936833,
+      "polygon_clearance_mm": 0.13290175471148766,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.1329167967936833,
+      "polygon_clearance_mm": 0.1329017547114877,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.1329167967936833,
+      "polygon_clearance_mm": 0.13290175471148763,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.6,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.1329167967936833,
+      "polygon_clearance_mm": 0.13290175471148766,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.39999999999999997,
+      "polygon_clearance_mm": 0.39999247011304045,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": -1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.39999999999999997,
+      "polygon_clearance_mm": 0.3999924701130404,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.39999999999999997,
+      "polygon_clearance_mm": 0.3999924701130404,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 0.9,
+      "corner_x": 1.15,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.39999999999999997,
+      "polygon_clearance_mm": 0.3999924701130404,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.29999999999999993,
+      "polygon_clearance_mm": 0.29999435258478024,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": -1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.29999999999999993,
+      "polygon_clearance_mm": 0.2999943525847803,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.29999999999999993,
+      "polygon_clearance_mm": 0.2999943525847803,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.1,
+      "corner_x": 1.15,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.29999999999999993,
+      "polygon_clearance_mm": 0.2999943525847803,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652023,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": -1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652014,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652014,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.3,
+      "strap_t": 1.3,
+      "corner_x": 1.15,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.19999999999999996,
+      "polygon_clearance_mm": 0.19999623505652014,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3890227771353556,
+      "polygon_clearance_mm": 0.38901030280261234,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": -1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3890227771353556,
+      "polygon_clearance_mm": 0.38901030280261245,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3890227771353556,
+      "polygon_clearance_mm": 0.38901030280261223,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 0.9,
+      "corner_x": 1.25,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3890227771353556,
+      "polygon_clearance_mm": 0.38901030280261234,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2909830056250525,
+      "polygon_clearance_mm": 0.29096802613618494,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": -1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2909830056250525,
+      "polygon_clearance_mm": 0.29096802613618505,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2909830056250525,
+      "polygon_clearance_mm": 0.29096802613618505,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.1,
+      "corner_x": 1.25,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2909830056250525,
+      "polygon_clearance_mm": 0.290968026136185,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.19235267810170464,
+      "polygon_clearance_mm": 0.1923368614393794,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": -1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.19235267810170464,
+      "polygon_clearance_mm": 0.1923368614393794,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.19235267810170464,
+      "polygon_clearance_mm": 0.19233686143937945,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.5,
+      "strap_t": 1.3,
+      "corner_x": 1.25,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.19235267810170464,
+      "polygon_clearance_mm": 0.19233686143937945,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3575571099101947,
+      "polygon_clearance_mm": 0.3575476503761867,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": -1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3575571099101947,
+      "polygon_clearance_mm": 0.35754765037618663,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": -0.45,
+      "analytic_clearance_mm": 0.3575571099101947,
+      "polygon_clearance_mm": 0.3575476503761867,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 0.9,
+      "corner_x": 1.35,
+      "corner_y": 0.45,
+      "analytic_clearance_mm": 0.3575571099101947,
+      "polygon_clearance_mm": 0.35754765037618663,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2647650044640186,
+      "polygon_clearance_mm": 0.2647492825466075,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": -1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2647650044640186,
+      "polygon_clearance_mm": 0.2647492825466075,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": -0.55,
+      "analytic_clearance_mm": 0.2647650044640186,
+      "polygon_clearance_mm": 0.2647492825466075,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.1,
+      "corner_x": 1.35,
+      "corner_y": 0.55,
+      "analytic_clearance_mm": 0.2647650044640186,
+      "polygon_clearance_mm": 0.26474928254660757,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.16992647456322774,
+      "polygon_clearance_mm": 0.16991206194273517,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": -1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.16992647456322774,
+      "polygon_clearance_mm": 0.16991206194273514,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": -0.65,
+      "analytic_clearance_mm": 0.16992647456322774,
+      "polygon_clearance_mm": 0.1699120619427352,
+      "inside_polygon": true
+    },
+    {
+      "slot_L": 4.0,
+      "slot_H": 1.7,
+      "strap_w": 2.7,
+      "strap_t": 1.3,
+      "corner_x": 1.35,
+      "corner_y": 0.65,
+      "analytic_clearance_mm": 0.16992647456322774,
+      "polygon_clearance_mm": 0.1699120619427352,
+      "inside_polygon": true
+    }
+  ],
+  "nominal_slot_mm": [
+    3.9,
+    1.6
+  ],
+  "finished_slot_bounds_mm": [
+    [
+      3.8,
+      4.0
+    ],
+    [
+      1.5,
+      1.7
+    ]
+  ],
+  "carrier_min_thickness_mm": 2.85,
+  "one_leg30N_nominal_shear_demand_MPa": 5.847953216374269,
+  "one_leg_bearing_demand_MPa": 4.576659038901602,
+  "three_times_shear_inverse_required_allowable_MPa": 17.54385964912281,
+  "material_scope": "2.85mmthickness,\u00b1.1slotposition/edge and2000kg/m3density are drawing/engineering bounds, not arbitrarysupplier guarantees. Three-times notchfactor is a demand sensitivity, not actual laminatefatigueproof.",
+  "additional_carrier_area_mm2": 13.534447897910013,
+  "additional_carrier_mass_g": 0.08526702175683308,
+  "additional_PCB_shadow_mm2": 4.881382537088712,
+  "thermal_effect": "CurrentT01positionmodel nowusescurrentcarrierplan; oldC02thermalmodels remainhistorical. No heat-safetypass followsfrom slotfit.",
+  "basic_bbox": "NominalXY\u221213..66.5,\u221215..58 unchanged; corridorsstayaboveZ\u221218.227 existingthermalbottom. NoPCB/FW/foilgeometry edited.",
+  "source_hashes": {
+    "GR86_RVB_CARRIER_C03.scad": "51d52a6309599652542f13170f09e426069ff9ecbda57db9eb88b8793a118d86",
+    "GR86_RVB_CARRIER_C03_THERMAL.scad": "4635493d51c00fbbd4befeb72014b7ebbbadb2c8e1999534400b9bae7e0dcf39",
+    "HARNESS_CORRIDORS_C03.scad": "d1c5d770315750cf451c41b18e94eb10baf446220749c171de6782536ccb7d4d",
+    "THERMAL_CONTACT_T01.scad": "18ecaa63606a8eefe36b988ebc9fd9162fc3146b9baf65e0dbae2e9a6881f7a3",
+    "carrier_slot_geometry.py": "131bcbf710d4c6c346d7f1f9f5c4726c3a8919e6102ba5fac68960382aeb157b",
+    "check_slot_correction.py": "84d7bc9095d87291f310f7e430f5ecb02e1d634efb3900095edb35b6118cc984"
+  }
+}

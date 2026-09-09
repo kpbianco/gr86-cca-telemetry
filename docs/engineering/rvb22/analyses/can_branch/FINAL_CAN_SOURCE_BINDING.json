@@ -1,0 +1,19 @@
+{
+  "status": "PASS_EXACT_CAN_SOURCE_OBJECT_EQUALITY",
+  "baseline_pcb_sha256": "d0b78f5d91297a07ee3783d0d1e3ae3d66c71459b2ed2c9669c8780bac7624cc",
+  "final_pcb_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "exact_preserved_objects": 349,
+  "net_names": [
+    "LED_CAN",
+    "CANH",
+    "CANL",
+    "CAN_RXD",
+    "CAN_RX_MCU",
+    "CAN_TERM_LINK",
+    "CAN_TXD",
+    "CAN_TX_MCU",
+    "LED_CAN_A"
+  ],
+  "model_sha256": "a801a4a8e8e64f129b875e99b68c8d790509ea22707726f5a2e7c3d75c50f40e",
+  "scope": "Fixed CAN branch source geometry/selectedloadMPNs unchanged; no nativezonefill, asbuilt or vehiclewide proof"
+}

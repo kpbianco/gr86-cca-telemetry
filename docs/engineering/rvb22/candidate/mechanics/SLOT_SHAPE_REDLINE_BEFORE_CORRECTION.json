@@ -1,0 +1,22 @@
+{
+  "id": "MECH22-31",
+  "status": "RECORDED_BEFORE_SOURCE_CORRECTION",
+  "source_hashes": {
+    "C03_CARRIER_CHECKS.json": "b25e5050ca582d69c5bd67c684f3e9df205180df81327601ae9b7da07f146791",
+    "STRUCTURAL_SERVICE_MODEL.json": "9e8ea240bc845f178b16e439cd18c4cc2a944fe829d3ebbb39c646f68d59e6dd",
+    "GR86_RVB_CARRIER_C03.scad": "d3f33207037b0b5258c5a38044f036661296adfd3fbd6c97e64748235cff7ec0",
+    "draw_c03_review.py": "ff3655071ce2fb71b6b3614f5265348a3baa4fa0d3ef6e89546b12492cdbcd9c",
+    "MECHANICAL_INSTALLATION_RVB22.md": "f3e22c43aa7596a0026eb06fb28f20249b192bb3b77202ad2b1da5c1d0b1b58f",
+    "THERMAL_CONTACT_T01_MODEL.json": "fed1099f2e3eaef158cf23709bf8216ae1c28d0ae5a4b7078a97af11aaeb881a",
+    "thermal_contact_t01_model.py": "7c89b7956af0380db11e5663d5bf08155e7a9ca7865a89ed1b6734bd571c2c45",
+    "GR86_RVB_CARRIER_C03_THERMAL.scad": "ec786f1a54029d173bb76887cb1bcfc97109cb16900375ad193d5ce4a1592e99",
+    "HARNESS_CORRIDORS_C03.scad": "b415cc36497f446e2daebb393b2a83e2e2eceebedabbcd3d4f0801458b6b6c85",
+    "finalize_dispositions.py": "5bdca7dc172afb09fe5ace38a3b03eb3b70f2d166b053f6fd8bc99e61e1785bb",
+    "build_thermal_contact.py": "2979e9bc4a069c91ca52f4bf20b65a6401bcdb78b3c66435493c4133c1f23e6a",
+    "THERMAL_CONTACT_T01_REVIEW.md": "6986864618502052859de9afd36378d7d31283b6ef627bebcd1bdb8f642adad9",
+    "REDLINE_DISPOSITIONS.json": "83ff355b3aa735a1cae81142770470f8f3b03b7e6bc754693ce870884c0f47c4"
+  },
+  "finding": "Bounding-box fit overclaimed a maximum2.7x1.3mm strap inside a3x1.5mm obround. Atminimum2.9x1.4mm slot, allfourstrapcorners lie0.1845903mm outside the roundedend.",
+  "reproducer": "For L=2.9,H=1.4,w=2.7,t=1.3: arc centre\u00b1(L-H)/2=\u00b1.75,r=.7; strapcorner(1.35,.65) hasdistance sqrt(.6\u00b2+.65\u00b2)=.8845903>r.",
+  "correction": "3.9x1.6mm nominal obround,finished3.8..4.0x1.5..1.7mm; local8mmspines retain2mm minimumweb. Exactfourcorner/tolerancesweep follows."
+}

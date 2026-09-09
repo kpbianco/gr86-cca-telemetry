@@ -1,0 +1,86 @@
+{
+  "status": "CORRECTED_SOURCE_MODEL",
+  "old_min_ligament_mm": 0.65,
+  "new_right_mounts_mm": [
+    [
+      57,
+      -11.5
+    ],
+    [
+      57,
+      54.5
+    ]
+  ],
+  "main_base_mm": [
+    -7,
+    -15,
+    66.5,
+    58
+  ],
+  "hole_max_radius_plus_position_mm": 1.85,
+  "min_external_edge_ligament_mm": 1.65,
+  "min_window_bbox_ligament_mm": 1.3515621187164242,
+  "head_radius_max_mm": 2.5,
+  "min_head_to_ear_boss_mm": 2.2169905660283016,
+  "new_basic_assembly_bbox_mm": [
+    108.454766,
+    73,
+    36.5
+  ],
+  "full_one_mount20g100g_load_N": 19.6133,
+  "conservative_two_plane_shear_MPa": 2.418596443379003,
+  "declared_material_shear_allowable_MPa": 15,
+  "checks": {
+    "ligament_above1p3mm": true,
+    "head_clears_boss": true,
+    "two_plane_shear_below15MPa": true
+  },
+  "scope": "M3 load screen retained; final carrier slot geometry and thermal fitbox supersede historical values. Actual laminate orthotropy, hot/wet strength, preload and fatigue are acceptance conditions. Current T01 uses actual updated shadow; historical C02 thermal models unchanged.",
+  "tie_slot_update": {
+    "redline": "MECH22-31",
+    "primary_centres_mm": [
+      [
+        -4,
+        31
+      ],
+      [
+        -4,
+        37
+      ]
+    ],
+    "auxiliary_centres_mm": [
+      [
+        62.5,
+        33
+      ],
+      [
+        62.5,
+        39
+      ]
+    ],
+    "nominal_obround_mm": [
+      3.9,
+      1.6
+    ],
+    "finished_slot_mm": {
+      "length": [
+        3.8,
+        4.0
+      ],
+      "height": [
+        1.5,
+        1.7
+      ]
+    },
+    "position_tolerance_mm": 0.1,
+    "edge_tolerance_mm": 0.1,
+    "minimum_side_web_mm": 1.8,
+    "local_lip_load_allocation_N": 30,
+    "carrier_min_thickness_mm": 2.85,
+    "nominal_shear_MPa": 5.847953216374269,
+    "three_times_notch_sensitivity_required_allowable_MPa": 17.54385964912281,
+    "corner_cases": 324,
+    "checks_sha256": "d139b6bc70fd4188d27c8151beb5ccf0d860dbb9f4195b47563f6c9c6bf20ae5",
+    "scope": "Actual curved slots checked, with hot retained tension, jacket grip and notched laminate allowable remaining conditional."
+  }
+}
