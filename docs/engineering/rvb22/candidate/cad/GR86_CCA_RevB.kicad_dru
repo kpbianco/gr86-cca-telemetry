@@ -17,3 +17,9 @@
 (rule "JLC component drilled hole spacing"
   (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole' && A.Reference != 'U201' && B.Type == 'Pad' && B.Pad_Type == 'Through-hole' && B.Reference != 'U201'")
   (constraint hole_to_hole (min 0.45mm)))
+
+# Mechanical NPTH holes are intentional in the copper-free mounting ears.
+# Every copper-bearing pad remains prohibited; other keepout types stay in the PCB.
+(rule "Mounting ears prohibit copper pads"
+  (condition "A.Type == 'Pad' && A.Pad_Type != 'NPTH, mechanical' && A.intersectsArea('RVB22_EAR_NO_COPPER')")
+  (constraint disallow pad))

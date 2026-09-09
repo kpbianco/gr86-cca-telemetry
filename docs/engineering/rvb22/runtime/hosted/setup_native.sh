@@ -12,6 +12,12 @@ sudo apt-get update
 sudo apt-get install --yes --no-install-recommends kicad kicad-symbols kicad-footprints kicad-packages3d xvfb xauth
 kicad-cli version
 /usr/bin/python3 -c 'import pcbnew; print(pcbnew.GetBuildVersion())'
+# Bind legacy source model aliases to the installed, version-recorded package.
+test -d /usr/share/kicad/3dmodels
+for model_version in 6 7 8 9; do
+  printf 'KICAD%s_3DMODEL_DIR=/usr/share/kicad/3dmodels\n' "$model_version" >> "$GITHUB_ENV"
+done
+dpkg-query -W kicad-packages3d > native_setup/model-package.txt
 exit 0
 fi
 cd "$build_root"

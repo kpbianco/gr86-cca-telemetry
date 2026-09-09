@@ -1,5 +1,5 @@
-# I07 native source compatibility candidate
+# I08 native correction candidate — review only
 
-This candidate corrects I06 serialization without changing any parsed PCB object and promotes two C532 local labels to existing global net names. Firmware, component values, placement, routing and mechanical geometry are unchanged. Native ERC and full schematic netlist parity against I06 must confirm the label correction. Native refill/DRC/export verification is pending; do not fabricate from this engineering candidate.
+This candidate responds to the complete I07 native finding freeze. It orders net declarations before footprints, assigns stable mounting-pad IDs, repairs source custom-clearance and U.FL keepout route conflicts, removes open stubs, sets distinct thermal-zone priorities, corrects the oil via diameter and clips the affected silk segment. Mounting ears still prohibit copper pads while explicitly permitting their mechanical NPTH holes.
 
-The PCB is line-separated because the I06 one-line output exceeded KiCad9.0.9's1,000,000-byte line-reader limit. All original source records are preserved. The parent I06 candidate and the failed native runs remain available. See the adjacent REDLINE_FREEZE.json and SOURCE_DELTA.json for the exact change.
+The crowded power-area via and trace changes preserve circuit nets and route widths. A ground branch is replaced by native planes and relocated stitching; native connectivity and return-path/thermal regression are required. Source custom-clearance checks report zero findings, but native ERC/DRC/round-trip and populated-model checks are not yet adjudicated. Existing library-footprint differences and missing exact models remain recorded redlines. Do not fabricate from this engineering candidate.

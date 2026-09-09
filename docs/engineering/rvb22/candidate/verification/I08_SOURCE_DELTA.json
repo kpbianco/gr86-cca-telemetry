@@ -1,0 +1,51 @@
+{
+  "iteration": "I08",
+  "status": "APPLIED_NATIVE_AND_ANALYTICAL_REGRESSION_PENDING",
+  "parent": "I07",
+  "files_changed": [
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/CANDIDATE_README.md",
+      "local_path": "/workspace/scratch/76a6bb0577cc/work/rvb22/iterations/I08_native_corrections/candidate_kicad/CANDIDATE_README.md",
+      "source": "iterations/I08_native_corrections/candidate_kicad/CANDIDATE_README.md",
+      "bytes": 987,
+      "sha256": "08314e80693bcc34174581a75a47e9658d83eeb0720f645ed50e5b9f6a3f2af3",
+      "git_blob_sha": "58a81b74961ab1540aa65ba98937b31316a32a80",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_dru",
+      "local_path": "/workspace/scratch/76a6bb0577cc/work/rvb22/iterations/I08_native_corrections/candidate_kicad/GR86_CCA_RevB.kicad_dru",
+      "source": "iterations/I08_native_corrections/candidate_kicad/GR86_CCA_RevB.kicad_dru",
+      "bytes": 1918,
+      "sha256": "954e1b8035e4823b6c970039e6db78a787f8a7212c17e9a863dca43472ffd640",
+      "git_blob_sha": "1614aba0dce25e8bc629553bf430cd5c88ac8b96",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb",
+      "local_path": "/workspace/scratch/76a6bb0577cc/work/rvb22/iterations/I08_native_corrections/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+      "source": "iterations/I08_native_corrections/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+      "bytes": 1173061,
+      "sha256": "3fd3b93c283b71f4448d049bcd932fcdb65defb8d1995a55c0dff9f90c2e3792",
+      "git_blob_sha": "4a846ba2a94e0fa3b893bba26730d2005fb24a3c",
+      "mode": "100644"
+    }
+  ],
+  "native_redline_freeze": "REDLINE_FREEZE.json",
+  "stage_evidence": [
+    "APPLIED_STAGE1.json",
+    "ROUTE_STAGE.json",
+    "VIA_REROUTE_STAGE.json",
+    "GROUND_RETURN_STAGE.json",
+    "POWER_CORNER_STAGE.json",
+    "VSEL_STAGE.json",
+    "ADDED_PAD_IDENTITIES.json"
+  ],
+  "source_custom_clearance_findings": 0,
+  "remaining_work": [
+    "Native full pad-net identity, refill, ERC, DRC, connectivity, artifacts",
+    "Library footprint reconciliation and exact/populated model coverage",
+    "Updated return/rail/RF/thermal effectivity and refinement",
+    "Formal criterion register reconciliation"
+  ]
+}

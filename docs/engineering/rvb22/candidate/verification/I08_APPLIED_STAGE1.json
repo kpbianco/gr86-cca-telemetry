@@ -1,0 +1,80 @@
+[
+  {
+    "kind": "declaration_order",
+    "nets": 134,
+    "reason": "KiCad parser assigns footprint pad nets while reading."
+  },
+  {
+    "kind": "ear_pad_rule",
+    "uuid": "6821ef76-7bef-5905-8faf-f60a1802f310",
+    "replacement": "Custom copper-pad disallow excludes only NPTH mechanical pads; track/via/pour prohibition retained."
+  },
+  {
+    "kind": "ear_pad_rule",
+    "uuid": "96a8219f-536f-578e-b254-2a0228855af1",
+    "replacement": "Custom copper-pad disallow excludes only NPTH mechanical pads; track/via/pour prohibition retained."
+  },
+  {
+    "kind": "ear_pad_rule",
+    "uuid": "00737372-b873-5dd0-8112-a4c8a60784f4",
+    "replacement": "Custom copper-pad disallow excludes only NPTH mechanical pads; track/via/pour prohibition retained."
+  },
+  {
+    "kind": "ear_pad_rule",
+    "uuid": "3bb4eea7-3154-525b-ad2a-c8cfe5ec355c",
+    "replacement": "Custom copper-pad disallow excludes only NPTH mechanical pads; track/via/pour prohibition retained."
+  },
+  {
+    "kind": "wing_priority",
+    "uuid": "134c9ab9-e117-5eaf-98d2-b4abd2832612",
+    "priority": 1
+  },
+  {
+    "kind": "wing_priority",
+    "uuid": "b0888c9d-194c-56f7-9068-c1c90cdcd80c",
+    "priority": 1
+  },
+  {
+    "kind": "wing_priority",
+    "uuid": "2fe17068-db9d-535b-90bb-c97bd3281718",
+    "priority": 1
+  },
+  {
+    "kind": "wing_priority",
+    "uuid": "4d3a0773-3148-5ce0-9317-b6d911b544a3",
+    "priority": 1
+  },
+  {
+    "kind": "wing_priority",
+    "uuid": "dd323d65-0713-5686-a3cb-1ab14aced4cb",
+    "priority": 1
+  },
+  {
+    "kind": "wing_priority",
+    "uuid": "e8b9068f-470c-537d-af54-6c229a10635d",
+    "priority": 1
+  },
+  {
+    "kind": "wing_priority",
+    "uuid": "3d6f56bf-8bca-55af-9494-76e5a3ae62ec",
+    "priority": 1
+  },
+  {
+    "kind": "wing_priority",
+    "uuid": "2cbe24e5-7152-51c6-872a-dcf9024643b0",
+    "priority": 1
+  },
+  {
+    "kind": "via_diameter",
+    "uuid": "01e89423-c2f4-5f5e-a70e-37a3ecedbbe6",
+    "before": 0.5,
+    "after": 0.6,
+    "drill_unchanged": [
+      0.2
+    ]
+  },
+  {
+    "kind": "silk_clipping",
+    "uuid": "a8f17d30-9f77-54a5-abe9-be61f67e8ebe"
+  }
+]

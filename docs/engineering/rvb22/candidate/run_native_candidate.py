@@ -35,14 +35,49 @@ project, board = map(Path, sys.argv[1:3])
 assert '9.0.9' in p.GetBuildVersion(), p.GetBuildVersion()
 manager = p.GetSettingsManager()
 manager.LoadProject(str(project))
+# Compare pad identities/names before accepting native load or refill.
+# A balanced lexer is sufficient for these quoted scalar fields; no CAD edits occur.
+import re
+def children(text):
+ depth=0; quoted=False; escaped=False; start=None
+ for i,ch in enumerate(text):
+  if quoted:
+   if escaped: escaped=False
+   elif ch=='\\': escaped=True
+   elif ch=='"': quoted=False
+  elif ch=='"': quoted=True
+  elif ch=='(':
+   if depth==1:start=i
+   depth+=1
+  elif ch==')':
+   depth-=1
+   if depth==1 and start is not None:yield text[start:i+1]
+ assert depth==0 and not quoted
+expected={}
+for fp in children(board.read_text()):
+ if not fp.startswith('(footprint '):continue
+ fields=list(children(fp))
+ ref=json.loads(next(re.match(r'\(property\s+"Reference"\s+("(?:[^"\\]|\\.)*")',x).group(1) for x in fields if x.startswith('(property "Reference"')))
+ for pad in fields:
+  if not pad.startswith('(pad '):continue
+  pf=list(children(pad)); ident=next(json.loads(re.match(r'\(uuid\s+("[^"]+")',x).group(1)) for x in pf if x.startswith('(uuid '))
+  net=next((json.loads(re.match(r'\(net\s+\d+\s+("(?:[^"\\]|\\.)*")',x).group(1)) for x in pf if x.startswith('(net ')), '')
+  expected[(ref,ident)]=net
+def check_pad_nets(board_obj,stage):
+ actual={(f.GetReference(),pad.m_Uuid.AsString()):pad.GetNetname() for f in board_obj.GetFootprints() for pad in f.Pads()}
+ differences=[{'reference':key[0],'pad_uuid':key[1],'source':expected.get(key),'native':actual.get(key)} for key in expected.keys()|actual.keys() if expected.get(key)!=actual.get(key)]
+ assert not differences, stage+' pad-net identity changed: '+json.dumps(differences)
+
 b = p.LoadBoard(str(board))
 assert b is not None, "Native PCB parser rejected input; inspect parser-isolation diagnostic"
+check_pad_nets(b,"native load/reload")
 b.SetProject(manager.GetProject(str(project)))
 b.SynchronizeNetsAndNetClasses(False)
 p.ZONE_FILLER(b).Fill(b.Zones())
 p.SaveBoard(str(board), b)
 b = p.LoadBoard(str(board))
 assert b is not None, "Native PCB parser rejected input; inspect parser-isolation diagnostic"
+check_pad_nets(b,"native load/reload")
 zones = [z for z in b.Zones() if not z.GetIsRuleArea()]
 details = []
 for z in zones:
@@ -111,6 +146,14 @@ def validate_refill(log: str, pcb: Path, original: Path) -> dict:
     require({'In1.Cu','In2.Cu'} <= set(filled_layers), 'RVB reference planes are absent')
     return {'copper_zones':d['copper_zones'], 'zone_layer_pairs':len(details),
             'saved_filled_polygon_count':len(filled_layers), 'details':details}
+
+
+def validate_component_log(path: Path) -> dict:
+    log = path.read_text()
+    missing = re.findall(r"Could not add 3D model for ([^.]+)\.", log)
+    require(not missing, 'Missing component models: '+', '.join(missing))
+    require('File not found:' not in log, 'Unresolved model path in STEP export')
+    return {'missing_model_log_entries':0, 'scope':'Exporter log only; source model presence and envelope correctness remain separate checks.'}
 
 
 def validate_native_report(path: Path, kind: str) -> dict:
@@ -378,7 +421,8 @@ def main() -> int:
                           {'Ref','Val','Package','PosX','PosY','Rot','Side'})
             postcondition('schematic_pdf',validate_magic,output/'REVIEW_SCHEMATIC.pdf',b'%PDF-')
             if args.component_step:
-                postcondition('component_step',validate_magic,output/'REVIEW_COMPONENTS.step',b'ISO-10303-21;')
+                postcondition('component_step_file',validate_magic,output/'REVIEW_COMPONENTS.step',b'ISO-10303-21;')
+                postcondition('component_model_log',validate_component_log,output/'logs/component_step.stdout')
             result['copied_source_inventories']['cad_after_native'] = inventory(target)
         if fw and fw_ready:
             target_fw = output/'candidate_firmware'

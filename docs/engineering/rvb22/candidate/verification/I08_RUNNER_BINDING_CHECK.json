@@ -1,0 +1,6 @@
+{
+  "source_pads": 566,
+  "identical_mock_pass": true,
+  "dropped_net_mock_rejected": true,
+  "scope": "Lexer and comparison negative control; native execution remains required"
+}

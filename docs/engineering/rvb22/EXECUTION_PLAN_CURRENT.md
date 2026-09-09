@@ -1,54 +1,51 @@
-# RVB22 corrective engineering plan and current handoff
+# GR86 Rev B corrective engineering — current execution plan
 
-The current handoff is I06, carrying the electrically unchanged I04 PCB. The goal remains zero unaddressed engineering work. Completed source checks, conditional models, native execution and actual acceptance retain separate evidence states; the original 290 criteria are preserved.
+The active working candidate is I08, following I07 native evaluation on draft PR45 at commit ab52ea36230885688f92c235ea1d5289245703c7. The objective is zero unaddressed engineering redlines, with each original review criterion retaining its actual evidence and any model, supplier or installed-unit condition. No criterion is closed merely to change the count.
 
-## Inputs now incorporated
+## Fixed design inputs
 
-Honeywell MIPAN2XX150PSAAX 150 psi sealed-gauge sensor; GR86 ASC tap per Timurrr; Adafruit U.FL–SMA cable and external GPS puck; JLCPCB fabrication; dashboard PCB environment. ADS is unavailable in this runtime, so executable nodal, differential-equation and field models are used. Exact Adafruit product IDs are still an explicit input condition.
+- Honeywell MIPAN2XX150PSAAX, distributor 480-MIPAN2XX150PSAAX-ND: 150 psi sealed-gauge, 5 V ratiometric pressure sensor.
+- GR86 ASC connection per Timurrr, using the controlled single full-current return and fused switched power requirements.
+- Adafruit U.FL–SMA adapter and external GPS puck. Exact accessory PIDs remain an identity condition; 851 and 960 are inferred.
+- JLCPCB construction and dashboard installation. The board is not assigned an engine-bay environment.
+- Firmware, CAD, mechanics and assembly may change. Power analysis uses executable circuit and numerical models because ADS is unavailable; private device behavior retains explicit bounds.
 
-## Iteration record
+## Iteration rule
 
-| Iteration | Recorded problem / corrective scope | Disposition |
-|---|---|---|
-| Baseline RVB21 | 172 of 290 original criteria open; CAD and firmware candidates differed from older native/compiled manufacturing package. | Immutable baseline retained. |
-| RVB22 lane revisions | Oil response/clamp topology, firmware blocking/rate arithmetic, RF launch/matching, power/setpoint/storage/OV, return model, carrier and assembly corrections. | Source and executable evidence reconstructed after unexpected working-file loss; historical lost hashes not reused as current passes. |
-| I03 combined | C157 move cleared a footprint courtyard in isolation but shorted six new power-route objects in the merged board. | Rejected; failed report retained. |
-| I04 electrical | Compact adequately rated 10 mΩ R153, corrected position, original C157 restored; all lane corrections combined; no GPS status reroute adopted. | Fixed-copper and courtyard screens pass. Final rail model rerun includes new resistance bounds and bypassed via/pad branch. |
-| I05 historical handoff | Old active RVB21 candidate instruction had obsolete scope and broken relative paths. | Replaced instruction only; PCB and all common source files unchanged from I04. |
-| I06 current handoff | New Molex primary requirements exposed the old two-return schematic note and missing relaxed wire exit. | One guarded schematic-note correction; single-return harness and separate connector-exit CAN model updated. All electrical objects and PCB remain unchanged. |
+For each batch: record all known redlines and source hashes; resolve interacting items in one coordinated candidate; run native and affected analytical checks; retain failures; freeze the resulting evidence and repeat. Intermediate source compatibility fixes are permitted when needed to expose the complete native findings. They do not imply that the rest of the board has passed.
 
-## Work completed in this pass
+## Completed corrective scope
 
-- CAD: centered straight U.FL entry and matching correction; explicit oil OUT capacitance/return network; regulator and OV corrections; bulk storage/damping; wider parallel rail; exact compact shunt lands; captured board mounts and thermal wings.
-- Firmware: bounded/cooperative GPS writes and diagnostics, protected virtual channels, rate arithmetic, oil acquisition/publication/gap handling, calibration error bound, GPS configuration/readback and consistent source identity.
-- Analysis: actual-tap rail model, coupled startup and charging losses, thermal and fault bounds, oil distributed contact model, ground-loss paths, complete CAN branch, RF field/refinement/accessory loading, conducted/radiated/ESD sensitivities and mechanical/retention calculations.
-- Documentation: current ASC harness/source-derived maps, one full-current F1 power return and the controlled relaxed connector exit, part/land/handling reconciliation, factory-local fuse process, 13 specifically located filled/capped vias, dashboard exposure/service contract, full criterion/redline traceability and a fail-closed native runner.
+The current source incorporates the oil clamp/OUT capacitor and return corrections; cooperative GPS diagnostics and firmware arithmetic fixes; centered straight 0.7 mm U.FL entry and revised RF matching; regulator, storage, damping and overvoltage changes; compact current shunt; captured mounting ears and thermal-contact/carrier changes; exact harness return and relaxed connector exit; and assembly/part reconciliation. I03's conflicting copper move was rejected and retained; I04 corrected it. I06 corrected the harness note without changing electrical objects.
 
-The disposition of every recovery action is in `control/DESKTOP_ACTION_DISPOSITIONS_CURRENT.json`. The earlier `REMAINING_DESKTOP_ACTIONS.json` is a historical snapshot. Complete populated geometry and the actual full-load thermal network remain engineering work, alongside the native and external acceptance gates.
+Actual target compilation now passes with Arduino CLI 1.3.1, ESP32 core 3.3.6 and NimBLE 2.3.6. Returned ELF/BIN and input hashes are verified in runtime/hosted/TARGET_BUILD_VERIFICATION.json. This is build evidence, not target execution.
 
-## What removes the remaining roadblocks
+I07 reflows the original one-line PCB below KiCad's line-reader limit without changing its parsed tree, and promotes two oil local labels to the already-used global names. Native netlist parity, refill, ERC/DRC and matched exports are being evaluated by workflow run 34381221292. See iterations/I07_source_compatibility/FORWARDED.json and SOURCE_DELTA.json.
 
-| Work | What I can finish with the needed inputs/runtime | What you or the supplier supplies |
-|---|---|---|
-| Native CAD / target compilation | Execute the supplied job, repair real ERC/DRC/build findings, regenerate matched outputs and rerun effectivity. | A working pinned KiCad/pcbnew/Arduino environment, or its runner output. This session's actual preflight found those programs unavailable. |
-| Full-load heat safety | Build the actual copper/interlayer/package thermal network; iterate the heat path or operating envelope. | Finished stackup/metal properties and a credible dashboard air/chassis landing bound; subsequent temperature correlation. The dimensioned T01 path alone is insufficient. |
-| Regulator / clamp correlation | Compare exact manufacturer models or measured transfer/transient data against the current finite model and revise margins. | Unpublished control-loop/private-RTN information or bounded measurements; resistor pulse/process acceptance where no published guarantee exists. |
-| Accessory / vehicle applicability | Bind supplied part identities and traces to the controlled RF/harness/decoder model; check every mismatch. | Actual Adafruit labels/order links, power/return endpoints and representative vehicle/phone profile evidence. |
-| Manufacturing / assembly | Reconcile native fabrication data, exact BOM/CPL, limits and incoming records; correct discrepancies. | JLC final construction and 13-via capability, actual compatible profiles, exact handling/lot declarations, crimp/process and first-article evidence. |
-| Installed physical behavior | Analyze measurement data and update the source/model evidence; revise if results violate bounds. | Continuity/isolation, thermal/retention, RF/ESD/vehicle non-interference and unit identity data. Source copper cannot reveal an unmade solder or crimp joint. |
+## Remaining execution sequence
 
-Run the native job from the unpacked checkpoint root using an already provisioned environment. It copies inputs, uses a new output directory and does not flash hardware:
+1. **Native source and manufacturing checks.** The hosted review route is working with KiCad/pcbnew 9.0.9; no further user setup is needed. Inspect the I07 results, compare native schematic netlists, inventory every real ERC/DRC finding, and correct the complete batch. Regenerate matching Gerbers, drills, placement/BOM, drawings and populated STEP. Never substitute old exports.
+2. **Thermal engineering.** Replace provisional pours with native filled copper. T02 already models four source copper layers, three dielectrics, 299 plated barrels and side-specific heat allocation. Its 0.25 mm estimate is 111.877 C at the C206 board region and 130.848 C at the hottest board cell; increasing mesh differences prevent closure. Resolve local mesh sensitivity, package heat paths and full-load margins; revise cooling or an enforceable operating condition when necessary. Do not quietly reduce the requested load. Exact fabrication and installed landing/air conditions remain explicit.
+3. **Populated mechanical clearance.** Use native component placement plus primary height bounds for all 153 fitted references. Complete carrier, contact, mounting, mated connector, wire-exit and service envelopes. Missing vendor models can be replaced by conservative dimensioned envelopes with documented uncertainty; any unresolved collision is a redline.
+4. **Combined regression.** Recheck changed copper connectivity/isolation, rail and oil models, RF launch and nearby thermal metal, return paths, assembly outputs and firmware only where source or assumptions changed. Preserve failed cases and bind every result to the candidate.
+5. **Release records and final review.** Reconcile all original criteria, redlines, evidence hashes, current plan and source/export manifests. Report design closures, conditional model conclusions and actual supplier/installed-unit acceptance separately. Review remaining conditions with the user; do not claim a fabricated board's plating, solder, crimps or vehicle behavior was measured.
 
-```bash
-python runtime/run_native_candidate.py \
-  --cad-dir iterations/I06_harness_handoff/candidate_kicad \
-  --firmware-dir lanes/firmware_oil/candidate \
-  --output native_I06_run \
-  --kicad-cli kicad-cli \
-  --pcbnew-python python3 \
-  --arduino-cli arduino-cli \
-  --nimble-dir /absolute/path/to/NimBLE-Arduino \
-  --component-step
-```
+## Inputs that can narrow the remaining conditions
 
-Required pinned versions are KiCad 9.0.9, Arduino CLI 1.3.1, ESP32 core 3.3.6 and NimBLE-Arduino 2.3.6. The runner validates actual nonempty outputs; a zero exit code without outputs fails. Resolve its findings as the next recorded redline batch, produce a coordinated revision, then repeat the combined checks. No ordering, manufacturing release, PR merge or vehicle fault testing is authorized by this handoff.
+| Input | Work it enables |
+|---|---|
+| Actual Adafruit order links or labels | Exact RF bias, connector, cable and puck applicability |
+| Actual fused switched power endpoint and single return path | Installed power/ground and unintended-bond verification |
+| JLC finished stackup, 13 filled/capped via capability and process acceptance | Bind geometry, thermal and assembly assumptions to the delivered construction |
+| Dashboard air/landing bounds and installation envelope | Bind full-load temperature and retention/clearance models |
+| First-article or supplier measurements when available | Correlate private device behavior, thermal/RF estimates and as-built joint integrity |
+
+These inputs do not stop the available CAD, firmware and numerical work. Draft forwarding and review jobs are authorized; merging, manufacturing, flashing and vehicle fault injection are not part of this execution.
+
+## I08 corrective batch underway
+
+I07 native evaluation loaded/refilled the board, returned zero ERC findings and an identical schematic netlist, but exposed 181 DRC findings. All are frozen in iterations/I08_native_corrections/REDLINE_FREEZE.json. Seven pad-net losses arose from late net declarations. I08 orders the declarations first and gives the four mechanical mounting pads stable UUIDs; the runner now compares all 566 pad/net identities before and after native processing.
+
+I08 repairs the crowded power-area clearance routes and the inner rail crossing the U.FL keepout, corrects zone priorities and the oil via diameter, trims open stubs, corrects silk clipping and distinguishes mechanical NPTH holes from copper pads in the ear rule. The full source custom-clearance screen now has zero findings without reducing the clearance rules. The explicit-copper connectivity screen retains one changed GND group after replacement of a narrow branch by native planes; native plane connectivity and return-path regression are mandatory. This is not a continuity closure yet.
+
+Exact footprint-library reconciliation, populated models and analytical effectivity remain part of the current batch. The I07 STEP was a valid file with missing component models; model aliases are being bound to the installed package and missing-model logs now fail the corresponding runner postcondition. The original criterion counts remain unchanged until this candidate's evidence is adjudicated.

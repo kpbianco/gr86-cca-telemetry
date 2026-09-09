@@ -1,0 +1,32 @@
+{
+  "via": "a8e3cb8d-468f-5f58-b0a2-2f89ef9c3fb9",
+  "before": [
+    35.7,
+    26.5
+  ],
+  "after": [
+    36.15,
+    27.05
+  ],
+  "removed_ground_segments": [
+    "(segment (start 35.2 25.7) (end 35.2 26.0) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"7747c65d-d008-5cb8-a19e-5378df37b6cb\"))",
+    "(segment (start 35.2 26.0) (end 35.7 26.5) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"8e15d1ef-c26b-54a8-89b2-c1155489e0b0\"))",
+    "(segment (start 33.3 25.5) (end 35.0 25.5) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"91956fb8-42ed-559d-80c7-006bb1a14652\"))",
+    "(segment (start 35.7 26.5) (end 34.3 25.1) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"d1fcf2fa-5514-59ac-a7d8-b21dff6f149a\"))",
+    "(segment (start 34.3 25.1) (end 30.8 25.1) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"5ddd2253-b953-5c1a-be03-783e658f8baa\"))",
+    "(segment (start 30.8 25.1) (end 29.8 24.1) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"a11ac978-5248-5f85-a177-90fcccc1dd3a\"))",
+    "(segment (start 29.8 24.1) (end 26.1 24.1) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"b45f8586-819f-5c69-a12b-8d8d3fb661d2\"))",
+    "(segment (start 26.1 24.1) (end 25.3 23.3) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"1077d93f-d5a9-5b85-8723-4953752d5bd5\"))",
+    "(segment (start 25.3 23.3) (end 25.3 22.7) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"0e2e8e74-682c-55ba-8c81-21df7b8e4c7c\"))",
+    "(segment (start 25.3 22.7) (end 25.5 22.5) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"e79ee98f-0187-5c06-8a43-b9eccb899e2f\"))",
+    "(segment (start 25.5 22.5) (end 25.5 21.7) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"08ac6f73-ba4e-58a7-b385-b86e06ee0204\"))",
+    "(segment (start 25.5 21.7) (end 25.6 21.6) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"1005890e-0632-5f77-8291-3ddc20e5a51a\"))",
+    "(segment (start 25.6 21.6) (end 25.6 21.5) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"56c9c74f-c4df-51b3-a658-e470858a7c9b\"))",
+    "(segment (start 25.6 21.5) (end 25.9 21.2) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"ef810bbe-893d-5708-acd6-791a2d90bde0\"))",
+    "(segment (start 25.9 21.2) (end 25.9 20.9) (width 0.2) (layer \"In2.Cu\") (net 30) (uuid \"31646a39-7e66-539b-a443-2f1bedf549a7\"))",
+    "(segment (start 35.0 25.5) (end 35.2 25.7) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"0e653de4-863e-5ece-9880-a144aa99861c\"))",
+    "(segment (start 32.7 26.1) (end 33.3 25.5) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"ed78510f-3e13-5ba9-9c73-528c61641fde\"))"
+  ],
+  "reason": "Resolve raw-voltage clearance and R105 copper gap. Replace narrow ground stub branch with native ground planes and moved ground stitching via.",
+  "required_verification": "Native refill/zero-unconnected/zero-dangling and source-bound return-path reanalysis before closure."
+}

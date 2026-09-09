@@ -1,5 +1,5 @@
 {
-  "candidate": "I07 source compatibility; exact parsed PCB tree retained from I06/I04; two schematic label scopes corrected",
+  "candidate": "I08 native correction candidate; source clearance zero; native and model reevaluation pending",
   "files": [
     {
       "bytes": 43883,
@@ -11,10 +11,10 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/CANDIDATE_README.md",
-      "source": "iterations/I07_source_compatibility/candidate_kicad/CANDIDATE_README.md",
-      "bytes": 777,
-      "sha256": "253aa44d24b3611c331682517b539de33b8e74ffa47d5c04073a5e3ad1e398c2",
-      "git_blob_sha": "50ff16c5aac482ff6f86731eade41f5d795e200d",
+      "source": "iterations/I08_native_corrections/candidate_kicad/CANDIDATE_README.md",
+      "bytes": 987,
+      "sha256": "08314e80693bcc34174581a75a47e9658d83eeb0720f645ed50e5b9f6a3f2af3",
+      "git_blob_sha": "58a81b74961ab1540aa65ba98937b31316a32a80",
       "mode": "100644"
     },
     {
@@ -34,19 +34,19 @@
       "source": "iterations/I06_harness_handoff/candidate_kicad/GPS.kicad_sch"
     },
     {
-      "bytes": 1576,
-      "git_blob_sha": "f290524eb20feea6a41913a5e664ea4a23a12685",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_dru",
-      "sha256": "c11bc6e9875604e9e5dcd25415a7ad47a8fb9308ecc69ad212bb04ccdc76927a",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/GR86_CCA_RevB.kicad_dru"
+      "source": "iterations/I08_native_corrections/candidate_kicad/GR86_CCA_RevB.kicad_dru",
+      "bytes": 1918,
+      "sha256": "954e1b8035e4823b6c970039e6db78a787f8a7212c17e9a863dca43472ffd640",
+      "git_blob_sha": "1614aba0dce25e8bc629553bf430cd5c88ac8b96",
+      "mode": "100644"
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb",
-      "source": "iterations/I07_source_compatibility/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
-      "bytes": 1167288,
-      "sha256": "0cefceab108aeaa3db48dbdb003e0e42bef438f44c7a464f5e880ef82fe10f33",
-      "git_blob_sha": "a9f56aa4b5e77820c6a88005cb1f5f26ca399c21",
+      "source": "iterations/I08_native_corrections/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+      "bytes": 1173061,
+      "sha256": "3fd3b93c283b71f4448d049bcd932fcdb65defb8d1995a55c0dff9f90c2e3792",
+      "git_blob_sha": "4a846ba2a94e0fa3b893bba26730d2005fb24a3c",
       "mode": "100644"
     },
     {
@@ -1492,18 +1492,18 @@
     {
       "path": "docs/engineering/rvb22/candidate/run_native_candidate.py",
       "source": "runtime/run_native_candidate.py",
-      "bytes": 24381,
-      "sha256": "7c3ad95a33bf89328694c2f3a2c6c3f94afe158bd8e6429a0cf8e6db14efa8ea",
-      "git_blob_sha": "2c55ad822035fb38258df6a161a42436e12fe0e8",
+      "bytes": 26643,
+      "sha256": "a8b0d7d34a8a3c21b56c25c2c7c1cde392894a31ec3ac443cfa185722532a35b",
+      "git_blob_sha": "6191723155567b45808bc17823b549289b57d4b3",
       "mode": "100644"
     },
     {
-      "bytes": 6538,
-      "git_blob_sha": "ba234a01026e776430e50627ed8f0c11aa11f021",
-      "mode": "100644",
       "path": "docs/engineering/rvb22/EXECUTION_PLAN_CURRENT.md",
-      "sha256": "1192d782bd1143528e8f98fc62f6c43b1d1e98cdb0117394d4d53c671081dd55",
-      "source": "control/EXECUTION_PLAN_CURRENT.md"
+      "source": "control/EXECUTION_PLAN_CURRENT.md",
+      "bytes": 7196,
+      "sha256": "0e867079a6b7113d46c7ca4db787275098126036ec3d0d67e972584c6d307c90",
+      "git_blob_sha": "69398d4507e692ed8722f32742e60b0cece54976",
+      "mode": "100644"
     },
     {
       "bytes": 1787,
@@ -1728,7 +1728,127 @@
       "sha256": "845f0d66ba140fabf3c9e1fdafdd38bb95fa8d459cb6e522c05a73311d6faf56",
       "git_blob_sha": "cf18ba0ddcb97d30790e0266c3c604d159700d70",
       "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_SOURCE_DELTA.json",
+      "source": "iterations/I08_native_corrections/SOURCE_DELTA.json",
+      "bytes": 2287,
+      "sha256": "af8ff523f41253becb909ed01f84730e5735809a8505e91d40b7dfa85863ab77",
+      "git_blob_sha": "6e806ca5fd34b6e55bc61b22c6497e18028630d6",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_CANDIDATE_MANIFEST.json",
+      "source": "iterations/I08_native_corrections/CANDIDATE_MANIFEST.json",
+      "bytes": 11081,
+      "sha256": "8b2f616d18f27b2fa2412860b6310be23ef283e14473ea44b03836125233cd10",
+      "git_blob_sha": "7089e0983bfd938b615ce17db0ba635e178148ca",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_REDLINE_FREEZE.json",
+      "source": "iterations/I08_native_corrections/REDLINE_FREEZE.json",
+      "bytes": 137787,
+      "sha256": "604bd9e6e7021c1c055aeae86da27b0baf5c85047f630d1a1cec16f9a6c8039a",
+      "git_blob_sha": "4916371651a2e020198d61f61133ff67a4b80584",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_APPLIED_STAGE1.json",
+      "source": "iterations/I08_native_corrections/APPLIED_STAGE1.json",
+      "bytes": 2093,
+      "sha256": "9f0df4455e2e0a310f5789a62d009b7a0a43fcfed736f4aba73e2fc68c5af017",
+      "git_blob_sha": "4d24bb4e2aa90d0cb5f00e0b6de2a2d20a572220",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_ROUTE_STAGE.json",
+      "source": "iterations/I08_native_corrections/ROUTE_STAGE.json",
+      "bytes": 6578,
+      "sha256": "da6a3e9a6fca32258b6012daae19d7e305fb30d46eb3386fd36e69bae3cddc65",
+      "git_blob_sha": "ef1f391e1e6be2b1d8ce9ca21b843af67d5062cd",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_VIA_REROUTE_STAGE.json",
+      "source": "iterations/I08_native_corrections/VIA_REROUTE_STAGE.json",
+      "bytes": 4079,
+      "sha256": "dabed07d8495e41f10d20fbb0b18b1224db7729f6097acfd8c4dd54af5e44492",
+      "git_blob_sha": "ad514694e73df9be87a6781b79827a3fbe49a257",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_GROUND_RETURN_STAGE.json",
+      "source": "iterations/I08_native_corrections/GROUND_RETURN_STAGE.json",
+      "bytes": 2806,
+      "sha256": "09b61ed489f6f54ffeda5ae0404e7e5d6043564e76b72795696f97317da88b21",
+      "git_blob_sha": "f794c0e587ba37bb05a5ee49cf95c7572d08fe20",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_POWER_CORNER_STAGE.json",
+      "source": "iterations/I08_native_corrections/POWER_CORNER_STAGE.json",
+      "bytes": 290,
+      "sha256": "c4c1a4b8af492867866796121043dcf2a468fe8cf158e64a5669d43f21cbec0f",
+      "git_blob_sha": "db9e5aefece1f7afb30af78b9ce3dcb13d8b5c67",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_VSEL_STAGE.json",
+      "source": "iterations/I08_native_corrections/VSEL_STAGE.json",
+      "bytes": 3411,
+      "sha256": "2f044cecc23869b28d7bd50655c7376d48c5c8f07f00a05ad9717e88a43f7f08",
+      "git_blob_sha": "bd5724b1e18988da5ef428153d81426eb0a7f218",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_ADDED_PAD_IDENTITIES.json",
+      "source": "iterations/I08_native_corrections/ADDED_PAD_IDENTITIES.json",
+      "bytes": 347,
+      "sha256": "512074e6a800270553340b4fdab4c4d0b05f2972ae93db95dea66646f03d1afe",
+      "git_blob_sha": "589bae0787ef1b38db1581616bdbf4d515cf5a86",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_SOURCE_CLEARANCE.json",
+      "source": "iterations/I08_native_corrections/SOURCE_CLEARANCE.json",
+      "bytes": 42,
+      "sha256": "202e9422dce6c1ea3254f4c94f65bbd0dce43095bcb7109bc1fe25b456868cae",
+      "git_blob_sha": "80ea09a72d3dc5e7f9e1b0a94ba504d8cb498fb0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_RUNNER_BINDING_CHECK.json",
+      "source": "iterations/I08_native_corrections/RUNNER_BINDING_CHECK.json",
+      "bytes": 180,
+      "sha256": "cb4541d90aff4b264fc7cd89fd8f4bec639f03fbfb6d95de083144d04293100d",
+      "git_blob_sha": "ec3561cff7259dffddcc5d42494c653c5a78ccfe",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I08_EXPLICIT_CONNECTIVITY.json",
+      "source": "iterations/I08_native_corrections/EXPLICIT_CONNECTIVITY.json",
+      "bytes": 37307,
+      "sha256": "be96e2ae7c5aeb3911eff0ae9b940660840c7b36b9d7494a146db30efa638007",
+      "git_blob_sha": "d1a21706339154933cedf9cf58e6977a730110b4",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/runtime/hosted/setup_native.sh",
+      "source": "runtime/hosted/setup_native.sh",
+      "bytes": 2737,
+      "sha256": "3cd613a09626f5b45239ff0082fdb141852dd05d510f4705d002acf991b3ba6f",
+      "git_blob_sha": "d152f1e7654c1ddd2d96eda93fa447586465923f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I07_NATIVE_REVIEW.json",
+      "source": "iterations/I07_source_compatibility/NATIVE_REVIEW.json",
+      "bytes": 550,
+      "sha256": "31e8dcff129adea325e49d110c8d0c4043e1b9486b37f4563a85ceee5560e88c",
+      "git_blob_sha": "f523da2f1a18344841145f4c8f4c9653ef778b72",
+      "mode": "100644"
     }
   ],
-  "scope": "Manifest of listed source/evidence files. Additional hosted workflow diagnostic records are tracked separately. Native I07 reevaluation pending."
+  "scope": "Listed source/evidence manifest; no manufacturing or installed-unit release."
 }
