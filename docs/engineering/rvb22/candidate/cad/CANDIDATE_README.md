@@ -1,5 +1,7 @@
-# I08 native correction candidate — review only
+# I09 drill-aware native correction candidate
 
-This candidate responds to the complete I07 native finding freeze. It orders net declarations before footprints, assigns stable mounting-pad IDs, repairs source custom-clearance and U.FL keepout route conflicts, removes open stubs, sets distinct thermal-zone priorities, corrects the oil via diameter and clips the affected silk segment. Mounting ears still prohibit copper pads while explicitly permitting their mechanical NPTH holes.
+I08 reduced native DRC from 181 to 13 findings: one rail-to-Tag-Connect-NPTH conflict and 12 footprint-library differences. ERC, unconnected nets and schematic parity were zero, and all 566 pad/net identities survived native load/refill.
 
-The crowded power-area via and trace changes preserve circuit nets and route widths. A ground branch is replaced by native planes and relocated stitching; native connectivity and return-path/thermal regression are required. Source custom-clearance checks report zero findings, but native ERC/DRC/round-trip and populated-model checks are not yet adjudicated. Existing library-footprint differences and missing exact models remain recorded redlines. Do not fabricate from this engineering candidate.
+I09 reroutes the 2 mm inner rail with every NPTH hole included as an obstacle. Source custom clearance and hole-to-copper checks must pass, followed by native verification. The export runner resolves actual installed model files in a separate export-only PCB copy and generates native footprint-variant proposals for review. These proposals are not silently adopted and DRC is not suppressed.
+
+Native reevaluation, library-variant adoption, populated model coverage and affected rail/return/RF/thermal regression remain open. No manufacturing release is implied.

@@ -148,6 +148,29 @@ def validate_refill(log: str, pcb: Path, original: Path) -> dict:
             'saved_filled_polygon_count':len(filled_layers), 'details':details}
 
 
+def resolve_model_export(pcb: Path, output: Path) -> Path:
+    """Resolve actual installed STEP names in an export-only board copy."""
+    export_dir=output/'model_export';export_dir.mkdir()
+    records=[];cache={}
+    def replace(match):
+        original=json.loads(match.group(2))
+        expanded=os.path.expandvars(original.replace('${KIPRJMOD}',str(pcb.parent)))
+        source=Path(expanded)
+        candidates=[source.with_suffix('.step'),source.with_suffix('.stp'),source] if source.suffix.lower()=='.wrl' else [source]
+        chosen=next((q for q in candidates if q.is_file()),None)
+        row={'source_reference':original,'expanded':expanded,'resolved':str(chosen) if chosen else None}
+        if chosen:
+            resolved=chosen.resolve()
+            if str(resolved) not in cache:cache[str(resolved)]=sha(resolved)
+            row.update(sha256=cache[str(resolved)],bytes=resolved.stat().st_size)
+        records.append(row)
+        return match.group(1)+json.dumps(str(chosen.resolve()) if chosen else original)
+    text=re.sub(r'(\(model\s+)("(?:[^"\\]|\\.)*")',replace,pcb.read_text())
+    target=export_dir/pcb.name;target.write_text(text)
+    (output/'MODEL_RESOLUTION.json').write_text(json.dumps({'source_pcb_sha256':sha(pcb),'export_copy_sha256':sha(target),'model_entries':records,'resolved_entries':sum(x['resolved'] is not None for x in records),'unresolved_entries':sum(x['resolved'] is None for x in records),'scope':'Only model file references differ. Missing footprint model entries and exact manufacturer envelope correctness remain separate checks.'},indent=2)+'\n')
+    return target
+
+
 def validate_component_log(path: Path) -> dict:
     log = path.read_text()
     missing = re.findall(r"Could not add 3D model for ([^.]+)\.", log)
@@ -402,8 +425,9 @@ def main() -> int:
                     '--units','mm','--side','both','--exclude-dnp','--use-drill-file-origin',
                     '-o',output/'REVIEW_POSITIONS.csv',pcb], cwd=target)
                 if args.component_step:
+                    model_pcb=resolve_model_export(pcb,output)
                     run('component_step', [args.kicad_cli,'pcb','export','step','--no-dnp',
-                        '--subst-models','-o',output/'REVIEW_COMPONENTS.step',pcb], cwd=target)
+                        '--subst-models','-o',output/'REVIEW_COMPONENTS.step',model_pcb], cwd=target)
             if refill[0] != 0 or not refill_valid:
                 run('unfilled_input_drc_diagnostic', [args.kicad_cli,'pcb','drc','--format','json',
                     '--severity-all','--exit-code-violations','-o',output/'UNFILLED_INPUT_DRC_DIAGNOSTIC.json',

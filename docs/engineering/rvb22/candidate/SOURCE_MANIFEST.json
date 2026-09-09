@@ -1,5 +1,5 @@
 {
-  "candidate": "I08 native correction candidate; source clearance zero; native and model reevaluation pending",
+  "candidate": "I09 drill-aware native correction candidate; native and model/library review pending",
   "files": [
     {
       "bytes": 43883,
@@ -11,10 +11,10 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/CANDIDATE_README.md",
-      "source": "iterations/I08_native_corrections/candidate_kicad/CANDIDATE_README.md",
-      "bytes": 987,
-      "sha256": "08314e80693bcc34174581a75a47e9658d83eeb0720f645ed50e5b9f6a3f2af3",
-      "git_blob_sha": "58a81b74961ab1540aa65ba98937b31316a32a80",
+      "source": "iterations/I09_native_hole_and_models/candidate_kicad/CANDIDATE_README.md",
+      "bytes": 849,
+      "sha256": "7e48674c73fe96377cf5a8ad954ebd89adb2a1256d2b947a3c4148d107844905",
+      "git_blob_sha": "b5dbe47be089a89cf9894ac778d570c6fcc2ad49",
       "mode": "100644"
     },
     {
@@ -43,10 +43,10 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb",
-      "source": "iterations/I08_native_corrections/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
-      "bytes": 1173061,
-      "sha256": "3fd3b93c283b71f4448d049bcd932fcdb65defb8d1995a55c0dff9f90c2e3792",
-      "git_blob_sha": "4a846ba2a94e0fa3b893bba26730d2005fb24a3c",
+      "source": "iterations/I09_native_hole_and_models/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+      "bytes": 1179436,
+      "sha256": "95ec9fca6a90460d0bcadbebdbf453bce36df15ef4e840a56b4a941985af4375",
+      "git_blob_sha": "fdc8dd9a1cabc770fa9993122e3b9288075787a6",
       "mode": "100644"
     },
     {
@@ -1492,9 +1492,9 @@
     {
       "path": "docs/engineering/rvb22/candidate/run_native_candidate.py",
       "source": "runtime/run_native_candidate.py",
-      "bytes": 26643,
-      "sha256": "a8b0d7d34a8a3c21b56c25c2c7c1cde392894a31ec3ac443cfa185722532a35b",
-      "git_blob_sha": "6191723155567b45808bc17823b549289b57d4b3",
+      "bytes": 28333,
+      "sha256": "81d7232b133b86ebebab83f64cb8107aba8167f5bb81d136568e61f7af9bfa3e",
+      "git_blob_sha": "f4514aebafcaff903de6ca7fc1c3e83bfe213c53",
       "mode": "100644"
     },
     {
@@ -1836,9 +1836,9 @@
     {
       "path": "docs/engineering/rvb22/runtime/hosted/setup_native.sh",
       "source": "runtime/hosted/setup_native.sh",
-      "bytes": 2737,
-      "sha256": "3cd613a09626f5b45239ff0082fdb141852dd05d510f4705d002acf991b3ba6f",
-      "git_blob_sha": "d152f1e7654c1ddd2d96eda93fa447586465923f",
+      "bytes": 3701,
+      "sha256": "4d303711a69005793621189b0fe72d9cdb4cbeb8b437d83e419d2371d6c4d7d4",
+      "git_blob_sha": "bab5354881438aab370b8c3dabcb0b3c105cfb94",
       "mode": "100644"
     },
     {
@@ -1847,6 +1847,62 @@
       "bytes": 550,
       "sha256": "31e8dcff129adea325e49d110c8d0c4043e1b9486b37f4563a85ceee5560e88c",
       "git_blob_sha": "f523da2f1a18344841145f4c8f4c9653ef778b72",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I09_REDLINE_FREEZE.json",
+      "source": "iterations/I09_native_hole_and_models/REDLINE_FREEZE.json",
+      "bytes": 6007,
+      "sha256": "03d878bbecffd8a1b457500d17507b944c03c9d349e5d0064d95d78aea2ff450",
+      "git_blob_sha": "eaa8f10e0b3d98522f0d73d02891c31e7eccfac6",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I09_SOURCE_DELTA.json",
+      "source": "iterations/I09_native_hole_and_models/SOURCE_DELTA.json",
+      "bytes": 1308,
+      "sha256": "4b10fa277b9ec21401f912a88862d7cd8a0d50dc67c00a0d8b24958649ced60f",
+      "git_blob_sha": "879db2082301f64e1f0f9e636b9fe4acf2904e3a",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I09_CANDIDATE_MANIFEST.json",
+      "source": "iterations/I09_native_hole_and_models/CANDIDATE_MANIFEST.json",
+      "bytes": 11081,
+      "sha256": "e1bfe4f3879111ece4a1f442ef223d256d3c270df172d9a5f3e51b64ca40ad44",
+      "git_blob_sha": "668c17fc15a1c7f539c2b4d40dbbb20a6e053e26",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I09_ROUTE_STAGE.json",
+      "source": "iterations/I09_native_hole_and_models/ROUTE_STAGE.json",
+      "bytes": 4865,
+      "sha256": "4f8760158b8ee154cb492963f40d81bd158e4c334cd8006163511557b6ece781",
+      "git_blob_sha": "51575b56410eb88e5f25520679c35578713ef073",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I09_SOURCE_CLEARANCE.json",
+      "source": "iterations/I09_native_hole_and_models/SOURCE_CLEARANCE.json",
+      "bytes": 42,
+      "sha256": "202e9422dce6c1ea3254f4c94f65bbd0dce43095bcb7109bc1fe25b456868cae",
+      "git_blob_sha": "80ea09a72d3dc5e7f9e1b0a94ba504d8cb498fb0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/runtime/hosted/export_footprint_variants.py",
+      "source": "runtime/hosted/export_footprint_variants.py",
+      "bytes": 1871,
+      "sha256": "ddae0019ecb7a4bd38eb90239bfc39c7c10b44e878aa61900714c1a313d11399",
+      "git_blob_sha": "64700745ad1847cbf83846481aec12039333b823",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/rvb22-native.yml",
+      "source": "runtime/hosted/rvb22-native.yml",
+      "bytes": 4331,
+      "sha256": "8c6cdec3d1d634018a28fd55bcb753a511af5a5c8b92076a8f72d08166499216",
+      "git_blob_sha": "da6caebb50fd98292bd966bfe60055ec045a0daa",
       "mode": "100644"
     }
   ],

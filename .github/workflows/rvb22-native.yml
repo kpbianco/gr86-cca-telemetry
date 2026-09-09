@@ -39,6 +39,14 @@ jobs:
             --kicad-cli kicad-cli \
             --pcbnew-python /usr/bin/python3 \
             --component-step
+      - name: Export controlled footprint variant proposals
+        if: always() && steps.cad_setup.conclusion == 'success'
+        run: |
+          if test -f native_I06_cad_only/DRC.json; then
+            xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/runtime/hosted/export_footprint_variants.py \
+              native_I06_cad_only/candidate_kicad/GR86_CCA_RevB.kicad_pcb \
+              native_I06_cad_only/DRC.json native_footprint_variants
+          fi
       - name: Isolate PCB parser records if loading fails
         if: always() && steps.cad_setup.conclusion == 'success'
         run: |
@@ -75,6 +83,7 @@ jobs:
           path: |
             native_setup/
             native_parser_diagnostic/
+            native_footprint_variants/
             native_I06_cad_only/
             native_I06_hosted/
           retention-days: 7
