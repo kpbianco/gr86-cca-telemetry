@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/rvb22-native.yml'
       - 'docs/engineering/rvb22/runtime/**'
+      - 'docs/engineering/rvb22/candidate/run_native_candidate.py'
       - 'docs/engineering/rvb22/candidate/cad/**'
       - 'docs/engineering/rvb22/candidate/firmware/**'
 permissions:
@@ -32,7 +33,7 @@ jobs:
         run: bash docs/engineering/rvb22/runtime/hosted/setup_native.sh cad
       - name: Obtain CAD findings independently of firmware downloads
         run: |
-          xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/runtime/run_native_candidate.py \
+          xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/candidate/run_native_candidate.py \
             --cad-dir docs/engineering/rvb22/candidate/cad \
             --output native_I06_cad_only \
             --kicad-cli kicad-cli \
@@ -45,7 +46,7 @@ jobs:
       - name: Run CAD verification and target firmware compilation
         if: always() && steps.cad_setup.conclusion == 'success' && steps.firmware_setup.conclusion == 'success'
         run: |
-          xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/runtime/run_native_candidate.py \
+          xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/candidate/run_native_candidate.py \
             --cad-dir docs/engineering/rvb22/candidate/cad \
             --firmware-dir docs/engineering/rvb22/candidate/firmware \
             --output native_I06_hosted \
