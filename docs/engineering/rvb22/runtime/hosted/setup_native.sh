@@ -7,9 +7,28 @@ build_root="${RUNNER_TEMP}/rvb22-native-tools"
 mkdir -p "$build_root/bin" "$build_root/config" native_setup
 exec > >(tee "native_setup/install-${phase}.log") 2>&1
 if [[ "$phase" == cad ]]; then
-sudo add-apt-repository --yes ppa:kicad/kicad-9.0-releases
-sudo apt-get update
-sudo apt-get install --yes --no-install-recommends kicad kicad-symbols kicad-footprints kicad-packages3d xvfb xauth
+sudo add-apt-repository --yes --no-update ppa:kicad/kicad-9.0-releases
+# The hosted image also contains unrelated vendor repositories. Scope this job's
+# APT reads to Ubuntu and KiCad; retain normal signed-index/hash verification.
+mkdir -p "$build_root/apt-sources"
+/usr/bin/python3 - "$build_root/apt-sources" <<'PYAPT'
+from pathlib import Path
+import shutil,sys
+out=Path(sys.argv[1]);sources=Path('/etc/apt/sources.list.d')
+ubuntu=sources/'ubuntu.sources'
+assert ubuntu.is_file(), 'Expected Ubuntu distribution source definition'
+shutil.copy2(ubuntu,out/ubuntu.name)
+selected=[]
+for p in sources.iterdir():
+ if p.suffix not in ['.sources','.list']:continue
+ if 'ppa.launchpadcontent.net/kicad/kicad-9.0-releases/ubuntu' in p.read_text():
+  shutil.copy2(p,out/p.name);selected.append(p.name)
+assert len(selected)==1, selected
+print('Scoped package sources:', ubuntu.name, *selected)
+PYAPT
+apt_scope=(-o Dir::Etc::sourcelist=/dev/null -o "Dir::Etc::sourceparts=$build_root/apt-sources")
+sudo apt-get "${apt_scope[@]}" update
+sudo apt-get "${apt_scope[@]}" install --yes --no-install-recommends kicad kicad-symbols kicad-footprints kicad-packages3d xvfb xauth
 kicad-cli version
 /usr/bin/python3 -c 'import pcbnew; print(pcbnew.GetBuildVersion())'
 # Bind legacy source model aliases to the installed, version-recorded package.
