@@ -1,5 +1,5 @@
 {
-  "candidate": "I11 controlled native footprint variants; thermal and mechanical redlines remain",
+  "candidate": "I11 native verified with one library warning; coupled thermal/mechanical engineering remains",
   "files": [
     {
       "bytes": 43883,
@@ -1500,9 +1500,9 @@
     {
       "path": "docs/engineering/rvb22/EXECUTION_PLAN_CURRENT.md",
       "source": "control/EXECUTION_PLAN_CURRENT.md",
-      "bytes": 7527,
-      "sha256": "42e90b64a5e41d48449ac9a98c548f394715f489ddc19987f0525b9f6f65b3ba",
-      "git_blob_sha": "aaf13cb1069f882b1d938409d946d3af017389fe",
+      "bytes": 7735,
+      "sha256": "89758bbb5d9333244a3350a1c38e9b8161519fd4d49e8693048d14001ee83909",
+      "git_blob_sha": "73e5db45fddc5374151b05899d332ae0e0f616aa",
       "mode": "100644"
     },
     {
@@ -1692,9 +1692,9 @@
     {
       "path": "docs/engineering/rvb22/candidate/README.md",
       "source": "iterations/I11_controlled_footprint_variants/REPOSITORY_README.md",
-      "bytes": 1121,
-      "sha256": "adf4e865024fde14f19e44fabe65ce1cfc6e0de5390059e4297abc005afb0619",
-      "git_blob_sha": "da8229f5a3bb49de6c171e3066789160eaf6e1a6",
+      "bytes": 1421,
+      "sha256": "62100090fa4aaf1ee0f5e223c1df182962ce39d2a96e00790bfce033920e80e5",
+      "git_blob_sha": "4756437b20ddf663059810433a86e843d0a076c9",
       "mode": "100644"
     },
     {
@@ -2084,9 +2084,9 @@
     {
       "path": "docs/engineering/rvb22/candidate/verification/thermal_native/RESULTS.json",
       "source": "analyses/thermal_native/RESULTS.json",
-      "bytes": 2294,
-      "sha256": "1a138c3ad8a9fe007e3d0bf4d5b156d4fbb5678daa57b94c3bc97a77ece630d7",
-      "git_blob_sha": "739ca15b01277739be6a4c494003107cc0f1f52e",
+      "bytes": 3439,
+      "sha256": "662f4b2f8466225c612e52359c8130a23932042a9c5e014b5d7480ea5e0ed8b8",
+      "git_blob_sha": "a563928bd9d906a0a7aec2eaa61471b9ad5f33f2",
       "mode": "100644"
     },
     {
@@ -2100,9 +2100,9 @@
     {
       "path": "docs/engineering/rvb22/candidate/verification/thermal_native/EXECUTION_LIMIT.md",
       "source": "analyses/thermal_native/EXECUTION_LIMIT.md",
-      "bytes": 372,
-      "sha256": "b35f7c5c897e6f4559de4ef8f9b069f84f9e493e32cf98f41a1929efc4bdbd66",
-      "git_blob_sha": "d94405770401756477384ee246e39c5859f344f7",
+      "bytes": 361,
+      "sha256": "a97a91d766faf1fbc1164e6b92d86bbfaec3c9b0f6ed361175a5dd1f2958a72a",
+      "git_blob_sha": "2181887d92c81842e9dd379435f2a333e24ab4d8",
       "mode": "100644"
     },
     {
@@ -2119,6 +2119,38 @@
       "bytes": 6850,
       "sha256": "d32eac1c937cb9e74f87248a00e807c72a6fa1ddea410197b758dffb63301c85",
       "git_blob_sha": "839c8486fd71e023db05418755468ae71deed709",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I11_NATIVE_REVIEW.json",
+      "source": "iterations/I11_controlled_footprint_variants/NATIVE_REVIEW.json",
+      "bytes": 7409,
+      "sha256": "2267fad69207b3eef9dc03d08b6765f1d44613d096d1c5d9e49be3295ef891ea",
+      "git_blob_sha": "2f600f2b4b0c88f1269d667038787bf5de62dbfd",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I11_RF_SIGNAL_GEOMETRY_PARITY.json",
+      "source": "iterations/I11_controlled_footprint_variants/RF_SIGNAL_GEOMETRY_PARITY.json",
+      "bytes": 501,
+      "sha256": "d3aa604b4086bdd50728adb664f8d1c56da4e595dbf2438a9ecb2e0d75484e23",
+      "git_blob_sha": "ddf3c24d3492db7b3df0d571fa07c10c5a0ac9e4",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/thermal_native/MESH_DISPOSITION.json",
+      "source": "analyses/thermal_native/MESH_DISPOSITION.json",
+      "bytes": 389,
+      "sha256": "f3e26a31635712b6ab3f5d1f8d599673b3cd1805fe1146a302cecda852a3e09e",
+      "git_blob_sha": "c91d6c36520e788a483f2d4258ab97ef2dff14b6",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/thermal_native/REFINEMENT_EXIT.json",
+      "source": "analyses/thermal_native/REFINEMENT_EXIT.json",
+      "bytes": 19,
+      "sha256": "52bc11601f828944017af38be43d76f460973e26dba309b7dd579079b04e65ba",
+      "git_blob_sha": "c97e6bbc8fc77c341b1c0d31964cf8b94cd7a8fc",
       "mode": "100644"
     }
   ],

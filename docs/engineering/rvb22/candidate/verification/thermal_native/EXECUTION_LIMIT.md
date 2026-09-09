@@ -1,3 +1,3 @@
 # Native thermal execution status
 
-The1.0mm and0.5mm meshes completed and wrote finite converged energy-balanced solutions. The0.25mm process ended without a captured completion/exit report; no0.25mm result exists. Cause is not established. Preserve the two completed results and treat refinement as incomplete. No mesh-independent/package-temperature closure is claimed.
+The retry completed all1.0/0.5/0.25mm results; REFINE­MENT_EXIT.json records return0. The first0.25mm attempt ended without a captured result; that failure is retained in the earlier checkpoint. Completed refinements are energy-balanced but changes increase, so no grid-independent or package-temperature closure is claimed.

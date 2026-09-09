@@ -60,5 +60,36 @@
     "package_temperature_proven": false,
     "barrel_area_capture_ratio": 0.9998996042161415,
     "source_pcb_sha256": "0760afe6a757fc39fb63a261eab259f07aecde3c826d51b281e81779aa65e21a"
+  },
+  {
+    "mesh_mm": 0.25,
+    "mode": "native_filled_plus_explicit",
+    "solver": "newton",
+    "plating_um_condition": 20.0,
+    "heat_scale": 1.0,
+    "nodes": 296928,
+    "C206_board_region_max_C": 113.18897849972545,
+    "C206_board_region_mean_C": 110.76340479313274,
+    "max_board_C": 132.5158279050828,
+    "min_board_C": 79.29672587470098,
+    "source_region_mean_C": {
+      "U201": 129.72147879763932,
+      "U151": 100.72366924047034,
+      "U121": 113.1914655850771,
+      "U403": 95.4234135171915,
+      "U401": 95.60840435747595,
+      "other5V_allocation": 91.35844227400901
+    },
+    "heat_W": 4.814999999999979,
+    "heat_to_landing_W": 3.281828748544868,
+    "heat_to_air_W": 1.5331712513919364,
+    "energy_balance_residual_W": -6.317524281485021e-11,
+    "max_nodal_residual_W": 3.642580486372393e-15,
+    "iterations": 4,
+    "last_iteration_change_K": 2.7895907805941533e-11,
+    "max_front_back_difference_K": 21.33108125708236,
+    "package_temperature_proven": false,
+    "barrel_area_capture_ratio": 0.9998996042161422,
+    "source_pcb_sha256": "0760afe6a757fc39fb63a261eab259f07aecde3c826d51b281e81779aa65e21a"
   }
 ]
