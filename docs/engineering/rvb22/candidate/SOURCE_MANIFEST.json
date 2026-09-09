@@ -1,5 +1,5 @@
 {
-  "candidate": "I13 thermal-via trial; I12 native zero findings preserved; thermal and mechanical qualification remain open",
+  "candidate": "I14 service-header source correction; native validation and coupled thermal/installation review pending",
   "files": [
     {
       "path": ".github/workflows/rvb22-native.yml",
@@ -123,18 +123,18 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_dru",
-      "source": "iterations/I08_native_corrections/candidate_kicad/GR86_CCA_RevB.kicad_dru",
-      "bytes": 1918,
-      "sha256": "954e1b8035e4823b6c970039e6db78a787f8a7212c17e9a863dca43472ffd640",
-      "git_blob_sha": "1614aba0dce25e8bc629553bf430cd5c88ac8b96",
+      "source": "I14_service_clearance/candidate/cad/GR86_CCA_RevB.kicad_dru",
+      "bytes": 2349,
+      "sha256": "156050fc0fd321f299a2db28d9cda78f453029e537d201247cc71d9abf7d65da",
+      "git_blob_sha": "2b6f11396b05dae5191ecf394809d9495819d377",
       "mode": "100644"
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb",
-      "source": "I13 hosted continuation",
-      "bytes": 1253650,
-      "sha256": "ff62a6529fcbee5bf3bc6bfac166d613b8917af28ab99deb520bbe5195c97d58",
-      "git_blob_sha": "911487444725a5c016ee4a170fccc61c74752733",
+      "source": "I14_service_clearance/candidate/cad/GR86_CCA_RevB.kicad_pcb",
+      "bytes": 1253464,
+      "sha256": "cf75a438a51751a452254c206c5cb897bb87066f670627c1fe72f510f5842253",
+      "git_blob_sha": "c348adf3d60eaf65734bd54ccc9788d55839c422",
       "mode": "100644"
     },
     {
@@ -2331,10 +2331,10 @@
     },
     {
       "path": "docs/engineering/rvb22/EXECUTION_PLAN_CURRENT.md",
-      "source": "control/EXECUTION_PLAN_CURRENT.md",
-      "bytes": 7735,
-      "sha256": "89758bbb5d9333244a3350a1c38e9b8161519fd4d49e8693048d14001ee83909",
-      "git_blob_sha": "73e5db45fddc5374151b05899d332ae0e0f616aa",
+      "source": "I14_service_clearance/EXECUTION_PLAN_CURRENT.md",
+      "bytes": 1466,
+      "sha256": "8c3a29e16774e6e9b3fa31d62170f0906100d80d61d180fedf0b05c5b2508b12",
+      "git_blob_sha": "bd55790c222d4feca5fd768bf4a12acb0ae1612c",
       "mode": "100644"
     },
     {
@@ -2432,6 +2432,46 @@
       "sha256": "4d303711a69005793621189b0fe72d9cdb4cbeb8b437d83e419d2371d6c4d7d4",
       "git_blob_sha": "bab5354881438aab370b8c3dabcb0b3c105cfb94",
       "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/I14_CONTINUATION.md",
+      "bytes": 1307,
+      "sha256": "ffed1c25eaf3ce5d48030a49108937f6a9872419a03569b20e3697e5bb2c9d0d",
+      "git_blob_sha": "8d63c3e34b9e5665f60bdff401ad4721f2f2710a",
+      "mode": "100644",
+      "source": "I14_service_clearance/I14_CONTINUATION.md"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I13/NATIVE_REVIEW.json",
+      "bytes": 1043,
+      "sha256": "4d2ec6e40359ba086807b929b0c8f248ce615aa29598ab8963f72a19414066a1",
+      "git_blob_sha": "46f8be91c89f392f4cc5a745a124591efc1d9aac",
+      "mode": "100644",
+      "source": "I14_service_clearance/candidate/verification/I13/NATIVE_REVIEW.json"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I14/REDLINE_FREEZE.json",
+      "bytes": 2878,
+      "sha256": "43d9a8a947829689d38e9f8defba3192e4dd70a120d9524630b57a16e4a5a1dc",
+      "git_blob_sha": "3d0527a63a598315bac27bf6c2389e5a3734eb95",
+      "mode": "100644",
+      "source": "I14_service_clearance/candidate/verification/I14/REDLINE_FREEZE.json"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I14/SOURCE_CHANGE_CHECK.json",
+      "bytes": 2454,
+      "sha256": "8439a46ed4f2d21036f4a37716910ae87cd09f33ba7fea54bcd4c15b25720d5b",
+      "git_blob_sha": "f5fe34908cd27d244331aa32fb30e6368f564570",
+      "mode": "100644",
+      "source": "I14_service_clearance/candidate/verification/I14/SOURCE_CHANGE_CHECK.json"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I14/build_i14_tagconnect.py",
+      "bytes": 6218,
+      "sha256": "32c3231eb5d326b098dd6b2c877074ef4afee4ec8a21682f97d4954ea50daf6a",
+      "git_blob_sha": "e50b0530c01a771414653f5b754ee2c23ae2aef1",
+      "mode": "100644",
+      "source": "I14_service_clearance/candidate/verification/I14/build_i14_tagconnect.py"
     }
   ],
   "scope": "Listed source/evidence manifest; no manufacturing or installed-unit release."

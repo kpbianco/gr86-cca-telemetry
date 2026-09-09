@@ -1,0 +1,25 @@
+{
+  "status": "NATIVE_OUTPUTS_COMPLETE",
+  "inputs_unchanged": true,
+  "refilled_pcb_sha256": "f207f2985864a4222e1c31d90ff682d0b051ee500e6eef8bb1a74c29799f1938",
+  "native_report_finding_count": 0,
+  "incomplete_outputs": [],
+  "nonzero_commands": [],
+  "fitted_step": {
+    "pass": true,
+    "details": {
+      "fitted_count": 153,
+      "exporter_added_count": 153,
+      "step_occurrence_reference_count": 154,
+      "all_fitted_present": true,
+      "expected_inventory_sha256": "087ff2fdf0f3d8d45b508277863fc8a830b78d1d002d22966811328ccc7de82e",
+      "scope": "Native STEP inclusion only. Explicit envelope models remain envelopes, and solder/cable/installed bounds are checked separately."
+    }
+  },
+  "source_pcb_sha256": "ff62a6529fcbee5bf3bc6bfac166d613b8917af28ab99deb520bbe5195c97d58",
+  "firmware_compile_exit": 0,
+  "workflow_run_id": 34404813451,
+  "commit": "69f806fe4ac1f32d2d7bdd529b1a620f41176a12",
+  "artifact_sha256": "7059430a8d4478f272eb6466168e5734f996e613a5585a67f1196c7f8269d53a",
+  "manufacturing_release": false
+}

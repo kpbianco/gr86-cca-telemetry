@@ -23,3 +23,10 @@
 (rule "Mounting ears prohibit copper pads"
   (condition "A.Type == 'Pad' && A.Pad_Type != 'NPTH, mechanical' && A.intersectsArea('RVB22_EAR_NO_COPPER')")
   (constraint disallow pad))
+
+# Tag-Connect TC2030-IDC-NL RevB, footprint note2:0.020in.
+# Adjacent intended contact pads are the manufacturer's array; other copper
+# is kept0.508mm away. Different-net clearance is evaluated natively.
+(rule "J201 programming contact foreign-copper clearance"
+  (condition "A.Type == 'Pad' && A.Reference == 'J201' && A.Pad_Type == 'SMD' && !(B.Type == 'Pad' && B.Reference == 'J201')")
+  (constraint clearance (min 0.508mm)))
