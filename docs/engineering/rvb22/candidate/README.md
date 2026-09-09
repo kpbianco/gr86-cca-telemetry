@@ -1,22 +1,24 @@
-# RVB-22 corrective engineering candidate
+# RVB22 I07 native compatibility candidate
 
-This is the editable engineering handoff for draft PR45. `cad/` is the complete I06 harness handoff directory. Its PCB bytes remain unchanged from the final I04 compact-shunt iteration. I05 replaced obsolete candidate instructions; I06 corrects the schematic return-contact note and matching handoff documentation while preserving electrical objects. `firmware/` contains the recovered corrected firmware candidate. The repository's main `firmware/` is unchanged.
+The cad directory contains I07: the complete I06/I04 PCB records are preserved, with line breaks added to satisfy KiCad's line-reader limit, plus two C532 local labels promoted to the existing global GND/OIL_EFUSE_OUT nets. The full PCB parsed tree is identical to I06; no component, trace, via, zone or outline object changed. Native netlist parity and refill/ERC/DRC remain the required verification for this iteration.
 
-The final PCB SHA-256 is `c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1`. `SOURCE_MANIFEST.json` binds every forwarded file to its source, byte count, SHA-256 and Git blob identity. It excludes itself to avoid a recursive hash.
+PCB SHA256: 0cefceab108aeaa3db48dbdb003e0e42bef438f44c7a464f5e880ef82fe10f33. See verification/I07_SOURCE_DELTA.json and verification/I07_CANDIDATE_MANIFEST.json for the exact source change. The earlier I06 manifest and source-geometry reports are historical evidence; the parsed-tree identity establishes their unchanged geometry scope.
 
-The current source geometry checks report zero prior pad-connectivity regressions, zero new or worsened foreign-copper gaps below 0.15 mm, and zero courtyard overlaps within their documented scope. These are source calculations. Native KiCad refill/ERC/DRC, matched Gerber/drill/placement exports, target firmware build, and populated mechanical solid checks remain unexecuted in this environment. The attached native preflight reports the actual missing tools. Older manufacturing outputs do not describe this candidate.
+Firmware source is unchanged and has now compiled successfully using ArduinoCLI1.3.1, ESP32core3.3.6 and NimBLE2.3.6. The verified application SHA256 is5733442b4f66b6ec2ec60ce9e3fc9823fb709a0ddd5bf643f10bdd0027a11880. This is a target build, not live execution or flashing. See verification/TARGET_BUILD_VERIFICATION.json.
 
-The C03 carrier adds positive board retention, outboard heat-spreading geometry, defined harness corridors and insulating RF accessory mounts. T01 specifies an insulated PCB-to-landing thermal path allocated at 10 K/W. Its thermal model is a conductivity sensitivity: actual filled-copper, interlayer and package heat transfer has not established full-load temperature margin. The 65 C dashboard screen and specified installation boundaries remain model conditions. `verification/FINAL_GATES.json` preserves the other circuit, accessory, supplier, assembly and physical acceptance gates.
+The actual hosted native route replaces the earlier missing-runtime condition. Its failed setup/path/parser attempts and fixes remain documented. I07 is being evaluated by the same pinned job; it is not a fabrication release. Historical FINAL_GATES and original criterion counts are pending reconciliation to the completed native evidence.
 
-Open `cad/GR86_CCA_RevB.kicad_pro` in the pinned KiCad environment. The native runner copies its inputs to a new output directory before attempting execution. From this directory:
+The C03 carrier, T01 contact, sensor/ASC harness and RF setup are unchanged. T02 now models four board layers and actual barrel locations, with provisional pours and explicit mesh sensitivity. Package, exact native fill, installed thermal, accessory and supplier conditions remain. No ordering, merge or hardware operation is performed by this review job.
 
-```sh
-python run_native_candidate.py --cad-dir cad --firmware-dir firmware --output /path/to/new/native-evidence --preflight-only
-python run_native_candidate.py --cad-dir cad --firmware-dir firmware --output /path/to/new/native-evidence-full
+Run the portable checker from the repository root with an already provisioned pinned environment:
+
+```bash
+python docs/engineering/rvb22/candidate/run_native_candidate.py \
+  --cad-dir docs/engineering/rvb22/candidate/cad \
+  --firmware-dir docs/engineering/rvb22/candidate/firmware \
+  --output native_I07_review \
+  --pcbnew-python /path/to/python-with-pcbnew \
+  --arduino-cli /path/to/arduino-cli \
+  --arduino-config /path/to/arduino-cli.yaml \
+  --nimble-dir /path/to/NimBLE-Arduino --component-step
 ```
-
-Use the runner's `--help` for explicit tool, library and component-STEP options. Required tools and pinned firmware dependencies must first be present; the second command has not succeeded on this candidate here. The bring-up contract is in `verification/BRING_UP_AND_MEASUREMENT_CONTRACT.md`.
-
-Use `mechanics/GR86_RVB_CARRIER_C03_THERMAL.scad` with its adjacent includes for the current carrier source; read the assembly and installation documents before interpreting the accessory and cable envelope solids. Earlier C02 and alternative thermal model files are retained as comparison evidence, not as the selected carrier. Python model dependencies are NumPy, SciPy, Shapely, sexpdata and Matplotlib. The final source-body screen can be rerun from `mechanics/` as `python final_component_envelopes.py --pcb ../cad/GR86_CCA_RevB.kicad_pcb`, followed by `python apply_height_supersession.py` to retain the authoritative primary-source height addendum. Current primary-source height coverage is153 of153 fitted references. Eighteen missing model references and native populated-solid checks remain. Do not apply `rebuild_mechanics.py` to this already modified final board: it is a historical patch generator requiring the pre-mechanics input. Source-generated SCAD does not establish a successful native solid export.
-
-This commit forwards source and evidence for review. It is neither a production release nor a declaration of zero qualification gates. The updated execution plan is at `../EXECUTION_PLAN_CURRENT.md`; the final single-return/free-exit harness contract and current CAN/handling evidence are under `../interfaces/` and `../analyses/`. The complete checkpoint controls the broader model and primary-source context. The final review register, its verification record and the board vetting summary are included one directory above this candidate. The register records110 closed,176 open and4 not-applicable original criteria: evidence statuses, not separate board-defect counts. Actual-source full-load thermal analysis remains unfinished desktop engineering; native, conditional-model, supplier and physical gates are also retained.

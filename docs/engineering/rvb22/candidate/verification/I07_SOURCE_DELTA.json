@@ -1,0 +1,32 @@
+{
+  "status": "APPLIED_AWAITING_NATIVE_REEVALUATION",
+  "parent": "I06_harness_handoff",
+  "PCB_parsed_tree_identical": true,
+  "PCB_records": 3269,
+  "old_max_line_bytes": 1167286,
+  "new_max_line_bytes": 16392,
+  "label_objects_changed": 2,
+  "all_other_schematic_objects_identical": true,
+  "intended_label_nets": [
+    "GND",
+    "OIL_EFUSE_OUT"
+  ],
+  "native_netlist_equivalence": "PENDING",
+  "files_changed": [
+    {
+      "path": "CANDIDATE_README.md",
+      "before_sha256": "847bd4584e9cdc2de05fa78e97a9820cc3792d8f0df7c093f9ec4042261ef509",
+      "after_sha256": "253aa44d24b3611c331682517b539de33b8e74ffa47d5c04073a5e3ad1e398c2"
+    },
+    {
+      "path": "GR86_CCA_RevB.kicad_pcb",
+      "before_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+      "after_sha256": "0cefceab108aeaa3db48dbdb003e0e42bef438f44c7a464f5e880ef82fe10f33"
+    },
+    {
+      "path": "Oil_Pressure.kicad_sch",
+      "before_sha256": "e417113e2dda89b0a514909fe57a4588da0162f43b1ad12f005a22f7079274bf",
+      "after_sha256": "de0c8f81adbcb074200e27a78609317bd0667109c7538589fed6a4b4b9f59c27"
+    }
+  ]
+}
