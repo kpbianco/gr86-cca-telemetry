@@ -1,0 +1,26 @@
+{
+  "iteration": "I15",
+  "base_source_sha256": "cf75a438a51751a452254c206c5cb897bb87066f670627c1fe72f510f5842253",
+  "known_redlines": [
+    {
+      "id": "I15-01",
+      "finding": "I14 native DRC has one unconnected GND pour island after close J201.3 via removal; all other native checks including0.508mm rule pass.",
+      "correction": "Restore a GND stitching via at71/7.5mm outside the contact area; move three ESP_EN back traces clear of it."
+    },
+    {
+      "id": "I15-02",
+      "finding": "Mated service envelope intersects C201 broad courtyard and J401 broad courtyard.",
+      "correction": "Use primary body dimensions and bounded tool positioning instead of treating each courtyard as a solid; retain explicit dimensional acceptance."
+    },
+    {
+      "id": "I15-03",
+      "finding": "The full150mm coax route intersects the upper-right carrier support.",
+      "correction": "C05 support relief,15mm-radius S bend and complete rerouted150mm loop; recalculate reduced ligament and confirm3D envelopes."
+    },
+    {
+      "id": "I15-04",
+      "finding": "Thermal/package margins, exact adapter identity and formal register remain unresolved.",
+      "correction": "Carry all forward explicitly; no implication that native zero closes these."
+    }
+  ]
+}

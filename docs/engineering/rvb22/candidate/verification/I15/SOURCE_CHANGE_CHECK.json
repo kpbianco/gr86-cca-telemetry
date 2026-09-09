@@ -1,0 +1,19 @@
+{
+  "source_before_sha256": "cf75a438a51751a452254c206c5cb897bb87066f670627c1fe72f510f5842253",
+  "source_after_sha256": "afa66b6813cedfd30681dec114055de2bda6f33f6b51cbeb9d56197521790a49",
+  "removed": [
+    "5310347d-239f-5f4d-87dc-98ba5c70e3b1",
+    "867107fb-d94b-5c75-9188-b4804768d2c3",
+    "b977b17d-0144-5b8a-a54a-901ec3afe7bb"
+  ],
+  "added_objects": [
+    "(segment (start 69.5 6.3) (end 69.5 7.2) (width 0.2) (layer \"B.Cu\") (net 27) (uuid \"216ad428-8531-53e8-8d25-d8d937367888\"))",
+    "(segment (start 69.5 7.2) (end 70.6 8.3) (width 0.2) (layer \"B.Cu\") (net 27) (uuid \"9eb7ba66-0b0e-5dd6-87b0-bda4927e94ec\"))",
+    "(segment (start 70.6 8.3) (end 72.2 8.3) (width 0.2) (layer \"B.Cu\") (net 27) (uuid \"8c1b322c-8ffa-544c-84a5-c6aa51404195\"))",
+    "(segment (start 72.2 8.3) (end 73.6 9.7) (width 0.2) (layer \"B.Cu\") (net 27) (uuid \"6d51af25-7197-57ed-a5a4-5bc6a02838b6\"))",
+    "(via (at 71 7.5) (size 0.6) (drill 0.3) (layers \"F.Cu\" \"B.Cu\") (net 30) (uuid \"84ed6f0f-5ac2-5d03-9052-bb5cc4e4fefb\"))"
+  ],
+  "explicit_copper_preflight": [],
+  "native_required": true,
+  "footprints_pads_schematics_RF_and_logo_unchanged": true
+}

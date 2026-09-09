@@ -1,5 +1,5 @@
 {
-  "candidate": "I14 service-header source correction; native validation and coupled thermal/installation review pending",
+  "candidate": "I15 service ground stitching; native validation pending, thermal corrective engineering still open",
   "files": [
     {
       "path": ".github/workflows/rvb22-native.yml",
@@ -131,10 +131,10 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb",
-      "source": "I14_service_clearance/candidate/cad/GR86_CCA_RevB.kicad_pcb",
-      "bytes": 1253464,
-      "sha256": "cf75a438a51751a452254c206c5cb897bb87066f670627c1fe72f510f5842253",
-      "git_blob_sha": "c348adf3d60eaf65734bd54ccc9788d55839c422",
+      "source": "I15_service_mechanics/candidate/cad/GR86_CCA_RevB.kicad_pcb",
+      "bytes": 1253711,
+      "sha256": "afa66b6813cedfd30681dec114055de2bda6f33f6b51cbeb9d56197521790a49",
+      "git_blob_sha": "c28c684e4e80e6eba77c627294515df699985aa1",
       "mode": "100644"
     },
     {
@@ -2082,6 +2082,14 @@
       "mode": "100644"
     },
     {
+      "path": "docs/engineering/rvb22/candidate/verification/I13/NATIVE_REVIEW.json",
+      "bytes": 1043,
+      "sha256": "4d2ec6e40359ba086807b929b0c8f248ce615aa29598ab8963f72a19414066a1",
+      "git_blob_sha": "46f8be91c89f392f4cc5a745a124591efc1d9aac",
+      "mode": "100644",
+      "source": "I14_service_clearance/candidate/verification/I13/NATIVE_REVIEW.json"
+    },
+    {
       "path": "docs/engineering/rvb22/candidate/verification/I13/REDLINE_FREEZE.json",
       "source": "I13 hosted continuation",
       "bytes": 1430,
@@ -2103,6 +2111,54 @@
       "bytes": 8944,
       "sha256": "b6c9abdd848ad734910309638986dfae9e853bd6aa698be3801adeb38048ba53",
       "git_blob_sha": "947a994bce95c2b9ca2db2e148f6a66f79b94e9b",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I14/build_i14_tagconnect.py",
+      "bytes": 6218,
+      "sha256": "32c3231eb5d326b098dd6b2c877074ef4afee4ec8a21682f97d4954ea50daf6a",
+      "git_blob_sha": "e50b0530c01a771414653f5b754ee2c23ae2aef1",
+      "mode": "100644",
+      "source": "I14_service_clearance/candidate/verification/I14/build_i14_tagconnect.py"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I14/REDLINE_FREEZE.json",
+      "bytes": 2878,
+      "sha256": "43d9a8a947829689d38e9f8defba3192e4dd70a120d9524630b57a16e4a5a1dc",
+      "git_blob_sha": "3d0527a63a598315bac27bf6c2389e5a3734eb95",
+      "mode": "100644",
+      "source": "I14_service_clearance/candidate/verification/I14/REDLINE_FREEZE.json"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I14/SOURCE_CHANGE_CHECK.json",
+      "bytes": 2454,
+      "sha256": "8439a46ed4f2d21036f4a37716910ae87cd09f33ba7fea54bcd4c15b25720d5b",
+      "git_blob_sha": "f5fe34908cd27d244331aa32fb30e6368f564570",
+      "mode": "100644",
+      "source": "I14_service_clearance/candidate/verification/I14/SOURCE_CHANGE_CHECK.json"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I15/build_i15_service_mechanics.py",
+      "source": "I15_service_mechanics/candidate/verification/I15/build_i15_service_mechanics.py",
+      "bytes": 6159,
+      "sha256": "04302f560e9b64a434e3a728d1c68689bc63f4889817612b10f0a021df93cbbf",
+      "git_blob_sha": "90382ae65c2b00aaaa0150da85d5611a92fd11fb",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I15/REDLINE_FREEZE.json",
+      "source": "I15_service_mechanics/candidate/verification/I15/REDLINE_FREEZE.json",
+      "bytes": 1276,
+      "sha256": "50fea6540525acbd63457288917f90f36ee866552de3756f56134ed5ec3d4a39",
+      "git_blob_sha": "0fcff3c24fb32bddf3cf17f11b48edf5820e3b51",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I15/SOURCE_CHANGE_CHECK.json",
+      "source": "I15_service_mechanics/candidate/verification/I15/SOURCE_CHANGE_CHECK.json",
+      "bytes": 1160,
+      "sha256": "7c18289647a1f2f05d2399ffde6e4a1386ba58a52868fc4b6cce7db3c45cb6c8",
+      "git_blob_sha": "90049cb7917ce27772d90b34b24beea91fcf2243",
       "mode": "100644"
     },
     {
@@ -2378,6 +2434,22 @@
       "mode": "100644"
     },
     {
+      "path": "docs/engineering/rvb22/I14_CONTINUATION.md",
+      "bytes": 1307,
+      "sha256": "ffed1c25eaf3ce5d48030a49108937f6a9872419a03569b20e3697e5bb2c9d0d",
+      "git_blob_sha": "8d63c3e34b9e5665f60bdff401ad4721f2f2710a",
+      "mode": "100644",
+      "source": "I14_service_clearance/I14_CONTINUATION.md"
+    },
+    {
+      "path": "docs/engineering/rvb22/I15_CONTINUATION.md",
+      "source": "I15_service_mechanics/I15_CONTINUATION.md",
+      "bytes": 1004,
+      "sha256": "abb187a178b5a35d2c9a4803d587edc946490d2ce736de96713c68bb13e6c6e3",
+      "git_blob_sha": "d51a204ae1cab085080ce77da07c59926f54cb4d",
+      "mode": "100644"
+    },
+    {
       "bytes": 1787,
       "git_blob_sha": "4276184467e01e4a7e852d2321143a153fc9d279",
       "mode": "100644",
@@ -2432,46 +2504,6 @@
       "sha256": "4d303711a69005793621189b0fe72d9cdb4cbeb8b437d83e419d2371d6c4d7d4",
       "git_blob_sha": "bab5354881438aab370b8c3dabcb0b3c105cfb94",
       "mode": "100644"
-    },
-    {
-      "path": "docs/engineering/rvb22/I14_CONTINUATION.md",
-      "bytes": 1307,
-      "sha256": "ffed1c25eaf3ce5d48030a49108937f6a9872419a03569b20e3697e5bb2c9d0d",
-      "git_blob_sha": "8d63c3e34b9e5665f60bdff401ad4721f2f2710a",
-      "mode": "100644",
-      "source": "I14_service_clearance/I14_CONTINUATION.md"
-    },
-    {
-      "path": "docs/engineering/rvb22/candidate/verification/I13/NATIVE_REVIEW.json",
-      "bytes": 1043,
-      "sha256": "4d2ec6e40359ba086807b929b0c8f248ce615aa29598ab8963f72a19414066a1",
-      "git_blob_sha": "46f8be91c89f392f4cc5a745a124591efc1d9aac",
-      "mode": "100644",
-      "source": "I14_service_clearance/candidate/verification/I13/NATIVE_REVIEW.json"
-    },
-    {
-      "path": "docs/engineering/rvb22/candidate/verification/I14/REDLINE_FREEZE.json",
-      "bytes": 2878,
-      "sha256": "43d9a8a947829689d38e9f8defba3192e4dd70a120d9524630b57a16e4a5a1dc",
-      "git_blob_sha": "3d0527a63a598315bac27bf6c2389e5a3734eb95",
-      "mode": "100644",
-      "source": "I14_service_clearance/candidate/verification/I14/REDLINE_FREEZE.json"
-    },
-    {
-      "path": "docs/engineering/rvb22/candidate/verification/I14/SOURCE_CHANGE_CHECK.json",
-      "bytes": 2454,
-      "sha256": "8439a46ed4f2d21036f4a37716910ae87cd09f33ba7fea54bcd4c15b25720d5b",
-      "git_blob_sha": "f5fe34908cd27d244331aa32fb30e6368f564570",
-      "mode": "100644",
-      "source": "I14_service_clearance/candidate/verification/I14/SOURCE_CHANGE_CHECK.json"
-    },
-    {
-      "path": "docs/engineering/rvb22/candidate/verification/I14/build_i14_tagconnect.py",
-      "bytes": 6218,
-      "sha256": "32c3231eb5d326b098dd6b2c877074ef4afee4ec8a21682f97d4954ea50daf6a",
-      "git_blob_sha": "e50b0530c01a771414653f5b754ee2c23ae2aef1",
-      "mode": "100644",
-      "source": "I14_service_clearance/candidate/verification/I14/build_i14_tagconnect.py"
     }
   ],
   "scope": "Listed source/evidence manifest; no manufacturing or installed-unit release."
