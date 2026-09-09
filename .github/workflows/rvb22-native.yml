@@ -39,6 +39,17 @@ jobs:
             --kicad-cli kicad-cli \
             --pcbnew-python /usr/bin/python3 \
             --component-step
+      - name: Isolate PCB parser records if loading fails
+        if: always() && steps.cad_setup.conclusion == 'success'
+        run: |
+          if test -f native_I06_cad_only/RESULT.json; then
+            /usr/bin/python3 - <<'PYCODE'
+          import json,pathlib,subprocess
+          r=json.loads(pathlib.Path('native_I06_cad_only/RESULT.json').read_text())
+          if not r['output_postconditions'].get('refilled_copper',{}).get('pass',False):
+              subprocess.run(['xvfb-run','-a','/usr/bin/python3','docs/engineering/rvb22/runtime/hosted/diagnose_parser.py','docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb','native_parser_diagnostic'],check=True,timeout=600)
+          PYCODE
+          fi
       - name: Provision pinned Arduino toolchain
         id: firmware_setup
         if: always() && steps.checkout.conclusion == 'success'
@@ -63,6 +74,7 @@ jobs:
           name: rvb22-native-${{ github.event.pull_request.head.sha }}
           path: |
             native_setup/
+            native_parser_diagnostic/
             native_I06_cad_only/
             native_I06_hosted/
           retention-days: 7

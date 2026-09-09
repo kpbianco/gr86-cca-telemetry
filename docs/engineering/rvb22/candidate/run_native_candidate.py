@@ -35,14 +35,14 @@ project, board = map(Path, sys.argv[1:3])
 assert '9.0.9' in p.GetBuildVersion(), p.GetBuildVersion()
 manager = p.GetSettingsManager()
 manager.LoadProject(str(project))
-b = p.PCB_IO_MGR.Load(p.PCB_IO_MGR.KICAD_SEXP, str(board))
-assert b is not None, "Native PCB loader returned no board"
+b = p.LoadBoard(str(board))
+assert b is not None, "Native PCB parser rejected input; inspect parser-isolation diagnostic"
 b.SetProject(manager.GetProject(str(project)))
 b.SynchronizeNetsAndNetClasses(False)
 p.ZONE_FILLER(b).Fill(b.Zones())
 p.SaveBoard(str(board), b)
-b = p.PCB_IO_MGR.Load(p.PCB_IO_MGR.KICAD_SEXP, str(board))
-assert b is not None, "Native PCB loader returned no board"
+b = p.LoadBoard(str(board))
+assert b is not None, "Native PCB parser rejected input; inspect parser-isolation diagnostic"
 zones = [z for z in b.Zones() if not z.GetIsRuleArea()]
 details = []
 for z in zones:
