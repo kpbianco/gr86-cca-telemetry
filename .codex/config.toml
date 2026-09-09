@@ -1,0 +1,3 @@
+# Supported ChatGPT-signed-in clients apply this opt-in to new tasks.
+[features.context_management]
+experimental_mode = true
