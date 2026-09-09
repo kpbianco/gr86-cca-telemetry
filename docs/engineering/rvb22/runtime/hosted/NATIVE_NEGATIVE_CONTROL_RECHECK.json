@@ -1,0 +1,24 @@
+{
+  "status": "NEGATIVE_CONTROL_PASS",
+  "native_execution": false,
+  "fake_tools_are_only_checker_test": true,
+  "runner_sha256": "25505805bc748e874bfa38160a42e578fa4d78b0d69950ec3a97dc8cb424902d",
+  "returncode": 2,
+  "runner_status": "INCOMPLETE_NATIVE_OUTPUT",
+  "native_gates_run": false,
+  "failed_postconditions": [
+    "refilled_copper",
+    "erc_report",
+    "drc_report",
+    "schematic_netlist",
+    "pcb_netlist",
+    "requested_gerbers",
+    "separate_drills",
+    "schematic_bom",
+    "component_positions",
+    "schematic_pdf"
+  ],
+  "reproducer_output": "/workspace/scratch/76a6bb0577cc/work/rvb22/runtime/negative_control_7fehuwpj",
+  "stdout": "kicad_version 0\npcbnew_version 0\nzone_refill 0\nerc 0\nschematic_netlist 0\nschematic_bom 0\nschematic_pdf 0\nunfilled_input_drc_diagnostic 0\n{\"status\": \"INCOMPLETE_NATIVE_OUTPUT\", \"output\": \"/workspace/scratch/76a6bb0577cc/work/rvb22/runtime/negative_control_7fehuwpj/output\", \"inputs_unchanged\": true}\n",
+  "stderr": ""
+}

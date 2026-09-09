@@ -35,12 +35,14 @@ project, board = map(Path, sys.argv[1:3])
 assert '9.0.9' in p.GetBuildVersion(), p.GetBuildVersion()
 manager = p.GetSettingsManager()
 manager.LoadProject(str(project))
-b = p.LoadBoard(str(board))
+b = p.PCB_IO_MGR.Load(p.PCB_IO_MGR.KICAD_SEXP, str(board))
+assert b is not None, "Native PCB loader returned no board"
 b.SetProject(manager.GetProject(str(project)))
 b.SynchronizeNetsAndNetClasses(False)
 p.ZONE_FILLER(b).Fill(b.Zones())
 p.SaveBoard(str(board), b)
-b = p.LoadBoard(str(board))
+b = p.PCB_IO_MGR.Load(p.PCB_IO_MGR.KICAD_SEXP, str(board))
+assert b is not None, "Native PCB loader returned no board"
 zones = [z for z in b.Zones() if not z.GetIsRuleArea()]
 details = []
 for z in zones:
@@ -329,16 +331,22 @@ def main() -> int:
                 pro.write_bytes(original_pro)
             refill_valid = postcondition('refilled_copper', validate_refill, refill[1], pcb,
                                         cad/'GR86_CCA_RevB.kicad_pcb')
+            run('erc', [args.kicad_cli,'sch','erc','--format','json','--severity-all',
+                '--exit-code-violations','-o',output/'ERC.json',sch], cwd=target)
+            run('schematic_netlist', [args.kicad_cli,'sch','export','netlist','--format',
+                'kicadxml','-o',output/'SCHEMATIC_NETLIST.xml',sch], cwd=target)
+            run('schematic_bom', [args.kicad_cli,'sch','export','bom','--exclude-dnp',
+                '--fields','Reference,Value,Footprint,Manufacturer,MPN,LCSC,${QUANTITY}',
+                '--labels','Reference,Value,Footprint,Manufacturer,MPN,LCSC,Quantity',
+                '-o',output/'REVIEW_BOM.csv',sch], cwd=target)
+            run('schematic_pdf', [args.kicad_cli,'sch','export','pdf',
+                '-o',output/'REVIEW_SCHEMATIC.pdf',sch], cwd=target)
             if refill[0] == 0 and refill_valid:
                 result['refilled_pcb_sha256'] = sha(pcb)
                 result['native_gates_run'] = True
-                run('erc', [args.kicad_cli,'sch','erc','--format','json','--severity-all',
-                    '--exit-code-violations','-o',output/'ERC.json',sch], cwd=target)
                 run('drc', [args.kicad_cli,'pcb','drc','--format','json','--severity-all',
                     '--all-track-errors','--schematic-parity','--exit-code-violations',
                     '-o',output/'DRC.json',pcb], cwd=target)
-                run('schematic_netlist', [args.kicad_cli,'sch','export','netlist','--format',
-                    'kicadxml','-o',output/'SCHEMATIC_NETLIST.xml',sch], cwd=target)
                 run('pcb_netlist', [args.kicad_cli,'pcb','export','ipcd356','-o',
                     output/'PCB_NETLIST.d356',pcb], cwd=target)
                 gerbers = output/'review_gerbers'
@@ -347,18 +355,17 @@ def main() -> int:
                     '-o',str(gerbers)+os.sep,pcb], cwd=target)
                 run('drills', [args.kicad_cli,'pcb','export','drill','--format','excellon',
                     '--excellon-units','mm','--excellon-separate-th','-o',str(gerbers)+os.sep,pcb], cwd=target)
-                run('schematic_bom', [args.kicad_cli,'sch','export','bom','--exclude-dnp',
-                    '--fields','Reference,Value,Footprint,Manufacturer,MPN,LCSC,${QUANTITY}',
-                    '--labels','Reference,Value,Footprint,Manufacturer,MPN,LCSC,Quantity',
-                    '-o',output/'REVIEW_BOM.csv',sch], cwd=target)
                 run('component_positions', [args.kicad_cli,'pcb','export','pos','--format','csv',
                     '--units','mm','--side','both','--exclude-dnp','--use-drill-file-origin',
                     '-o',output/'REVIEW_POSITIONS.csv',pcb], cwd=target)
-                run('schematic_pdf', [args.kicad_cli,'sch','export','pdf',
-                    '-o',output/'REVIEW_SCHEMATIC.pdf',sch], cwd=target)
                 if args.component_step:
                     run('component_step', [args.kicad_cli,'pcb','export','step','--no-dnp',
                         '--subst-models','-o',output/'REVIEW_COMPONENTS.step',pcb], cwd=target)
+            if refill[0] != 0 or not refill_valid:
+                run('unfilled_input_drc_diagnostic', [args.kicad_cli,'pcb','drc','--format','json',
+                    '--severity-all','--exit-code-violations','-o',output/'UNFILLED_INPUT_DRC_DIAGNOSTIC.json',
+                    cad/'GR86_CCA_RevB.kicad_pcb'], cwd=cad)
+                result['unfilled_diagnostic_is_not_final_DRC'] = True
             postcondition('erc_report',validate_native_report,output/'ERC.json','erc')
             postcondition('drc_report',validate_native_report,output/'DRC.json','drc')
             postcondition('schematic_netlist',validate_xml,output/'SCHEMATIC_NETLIST.xml')
