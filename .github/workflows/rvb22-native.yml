@@ -18,7 +18,8 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 35
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - id: checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
@@ -26,9 +27,23 @@ jobs:
         run: |
           mkdir -p native_setup
           git rev-parse HEAD > native_setup/commit.txt
-      - name: Provision pinned native toolchain
-        run: bash docs/engineering/rvb22/runtime/hosted/setup_native.sh
+      - name: Provision KiCad 9.0.9
+        id: cad_setup
+        run: bash docs/engineering/rvb22/runtime/hosted/setup_native.sh cad
+      - name: Obtain CAD findings independently of firmware downloads
+        run: |
+          xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/runtime/run_native_candidate.py \
+            --cad-dir docs/engineering/rvb22/candidate/cad \
+            --output native_I06_cad_only \
+            --kicad-cli kicad-cli \
+            --pcbnew-python /usr/bin/python3 \
+            --component-step
+      - name: Provision pinned Arduino toolchain
+        id: firmware_setup
+        if: always() && steps.checkout.conclusion == 'success'
+        run: bash docs/engineering/rvb22/runtime/hosted/setup_native.sh firmware
       - name: Run CAD verification and target firmware compilation
+        if: always() && steps.cad_setup.conclusion == 'success' && steps.firmware_setup.conclusion == 'success'
         run: |
           xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/runtime/run_native_candidate.py \
             --cad-dir docs/engineering/rvb22/candidate/cad \
@@ -47,6 +62,7 @@ jobs:
           name: rvb22-native-${{ github.event.pull_request.head.sha }}
           path: |
             native_setup/
+            native_I06_cad_only/
             native_I06_hosted/
           retention-days: 7
           if-no-files-found: error
