@@ -1,0 +1,715 @@
+{
+  "pcb_sha256": "0760afe6a757fc39fb63a261eab259f07aecde3c826d51b281e81779aa65e21a",
+  "filled_polygons": [
+    {
+      "zone_uuid": "134c9ab9-e117-5eaf-98d2-b4abd2832612",
+      "layer": "F.Cu",
+      "vertices": 18,
+      "area_mm2": 435.59299714529743,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "3e129aa9-5bc5-4696-8564-1325ebdf93be",
+      "layer": "F.Cu",
+      "vertices": 29,
+      "area_mm2": 3.1367415856534997,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "3e129aa9-5bc5-4696-8564-1325ebdf93be",
+      "layer": "F.Cu",
+      "vertices": 39,
+      "area_mm2": 4.698891275732996,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 8166,
+      "area_mm2": 1524.7581577846092,
+      "source_polygon_valid": false,
+      "repaired_parts": 1,
+      "holes": 31
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 132,
+      "area_mm2": 66.15471759772154,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 245,
+      "area_mm2": 22.716125986635486,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 494,
+      "area_mm2": 53.41696027492601,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 210,
+      "area_mm2": 24.06823732925249,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 34,
+      "area_mm2": 11.175266808593008,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 1488,
+      "area_mm2": 141.85825782710918,
+      "source_polygon_valid": false,
+      "repaired_parts": 1,
+      "holes": 1
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 184,
+      "area_mm2": 23.373341107206507,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 153,
+      "area_mm2": 9.387693085959986,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 201,
+      "area_mm2": 15.178766146773997,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 85,
+      "area_mm2": 8.81942257601701,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 40,
+      "area_mm2": 2.264339504786001,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 33,
+      "area_mm2": 4.862524428380003,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 99,
+      "area_mm2": 4.136708436183997,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 555,
+      "area_mm2": 40.83609666091802,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 238,
+      "area_mm2": 16.733341551804,
+      "source_polygon_valid": false,
+      "repaired_parts": 1,
+      "holes": 1
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 52,
+      "area_mm2": 3.3825911867309997,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 32,
+      "area_mm2": 6.1225985324355,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 93,
+      "area_mm2": 11.942882178940502,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 103,
+      "area_mm2": 4.067203646781501,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 143,
+      "area_mm2": 12.659941386246993,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 160,
+      "area_mm2": 2.768583776568001,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 131,
+      "area_mm2": 5.506945521718493,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+      "layer": "F.Cu",
+      "vertices": 54,
+      "area_mm2": 2.0252779291795084,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "dd323d65-0713-5686-a3cb-1ab14aced4cb",
+      "layer": "F.Cu",
+      "vertices": 89,
+      "area_mm2": 429.9846701570194,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "dd323d65-0713-5686-a3cb-1ab14aced4cb",
+      "layer": "F.Cu",
+      "vertices": 8,
+      "area_mm2": 0.012869401326499365,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "2838a140-f9bc-4f26-80b8-7066701e2a62",
+      "layer": "B.Cu",
+      "vertices": 16,
+      "area_mm2": 16.989897070303993,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "2cbe24e5-7152-51c6-872a-dcf9024643b0",
+      "layer": "B.Cu",
+      "vertices": 96,
+      "area_mm2": 433.1463346454468,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "4d3a0773-3148-5ce0-9317-b6d911b544a3",
+      "layer": "B.Cu",
+      "vertices": 18,
+      "area_mm2": 435.59299714529743,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 6019,
+      "area_mm2": 1379.7781137895822,
+      "source_polygon_valid": false,
+      "repaired_parts": 1,
+      "holes": 16
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 458,
+      "area_mm2": 29.683201273063084,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 94,
+      "area_mm2": 63.044036534935024,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 42,
+      "area_mm2": 10.270571442975983,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 522,
+      "area_mm2": 28.132581148954984,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 55,
+      "area_mm2": 1.3107196921304984,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 326,
+      "area_mm2": 22.504758837530044,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 144,
+      "area_mm2": 16.092367184521972,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 157,
+      "area_mm2": 8.658084242237498,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 251,
+      "area_mm2": 18.032904087015492,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 115,
+      "area_mm2": 18.296922357611482,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 957,
+      "area_mm2": 85.40143814417905,
+      "source_polygon_valid": false,
+      "repaired_parts": 1,
+      "holes": 2
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 167,
+      "area_mm2": 33.47729407958302,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 163,
+      "area_mm2": 13.868750382066494,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 324,
+      "area_mm2": 39.23412140178194,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 767,
+      "area_mm2": 175.74434130616564,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 75,
+      "area_mm2": 12.935424222127493,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 50,
+      "area_mm2": 5.424144517886482,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 140,
+      "area_mm2": 5.130863819455996,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 54,
+      "area_mm2": 4.1541965482515,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 66,
+      "area_mm2": 11.391331008431004,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 456,
+      "area_mm2": 32.50029606181948,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 383,
+      "area_mm2": 40.68821759111746,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 120,
+      "area_mm2": 17.515692967663497,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 133,
+      "area_mm2": 8.428202342417508,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 143,
+      "area_mm2": 16.48224833081795,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 241,
+      "area_mm2": 16.92391277840699,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 470,
+      "area_mm2": 29.597164315574993,
+      "source_polygon_valid": false,
+      "repaired_parts": 1,
+      "holes": 1
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 50,
+      "area_mm2": 0.796954278709997,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 37,
+      "area_mm2": 1.0660759790604997,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 74,
+      "area_mm2": 6.904199510775502,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+      "layer": "B.Cu",
+      "vertices": 128,
+      "area_mm2": 16.02437193109602,
+      "source_polygon_valid": false,
+      "repaired_parts": 1,
+      "holes": 1
+    },
+    {
+      "zone_uuid": "93e88f7c-8fff-4c7f-b1d5-661fb50aaf19",
+      "layer": "In1.Cu",
+      "vertices": 16,
+      "area_mm2": 16.989897070303993,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "b0888c9d-194c-56f7-9068-c1c90cdcd80c",
+      "layer": "In1.Cu",
+      "vertices": 18,
+      "area_mm2": 435.59299714529743,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "e8b9068f-470c-537d-af54-6c229a10635d",
+      "layer": "In1.Cu",
+      "vertices": 26,
+      "area_mm2": 435.9494810156413,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "f5ad958c-f9cd-468c-9e6c-951ecb335b1e",
+      "layer": "In1.Cu",
+      "vertices": 721,
+      "area_mm2": 113.32671734542257,
+      "source_polygon_valid": false,
+      "repaired_parts": 1,
+      "holes": 3
+    },
+    {
+      "zone_uuid": "f5ad958c-f9cd-468c-9e6c-951ecb335b1e",
+      "layer": "In1.Cu",
+      "vertices": 20,
+      "area_mm2": 0.7522654386365004,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "f5ad958c-f9cd-468c-9e6c-951ecb335b1e",
+      "layer": "In1.Cu",
+      "vertices": 107,
+      "area_mm2": 10.175245330557518,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "f5ad958c-f9cd-468c-9e6c-951ecb335b1e",
+      "layer": "In1.Cu",
+      "vertices": 211,
+      "area_mm2": 19.11929652655798,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "f5ad958c-f9cd-468c-9e6c-951ecb335b1e",
+      "layer": "In1.Cu",
+      "vertices": 8881,
+      "area_mm2": 3023.0521353361496,
+      "source_polygon_valid": false,
+      "repaired_parts": 1,
+      "holes": 114
+    },
+    {
+      "zone_uuid": "2fe17068-db9d-535b-90bb-c97bd3281718",
+      "layer": "In2.Cu",
+      "vertices": 18,
+      "area_mm2": 435.59299714529743,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "3d6f56bf-8bca-55af-9494-76e5a3ae62ec",
+      "layer": "In2.Cu",
+      "vertices": 26,
+      "area_mm2": 435.9494810156413,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    },
+    {
+      "zone_uuid": "52337a10-bc47-4de1-8eb5-c1a2aa4c9592",
+      "layer": "In2.Cu",
+      "vertices": 10040,
+      "area_mm2": 3200.777321448289,
+      "source_polygon_valid": false,
+      "repaired_parts": 1,
+      "holes": 140
+    },
+    {
+      "zone_uuid": "7127fb96-ee09-43d1-976f-58e8e95c3b43",
+      "layer": "In2.Cu",
+      "vertices": 16,
+      "area_mm2": 16.989897070303993,
+      "source_polygon_valid": true,
+      "repaired_parts": 1,
+      "holes": 0
+    }
+  ],
+  "union_zone_copper_area_mm2": {
+    "F.Cu": 2891.6421508305134,
+    "In1.Cu": 4054.958035208563,
+    "In2.Cu": 4089.309696679528,
+    "B.Cu": 3055.2227309689965
+  },
+  "scope": "KiCad9.0.9 native filled copper plus explicit copper, all source NPTH and plated holes removed from material. Same-cell area homogenization remains; no package/junction or installed proof.",
+  "copper_mm": [
+    0.07,
+    0.03,
+    0.03,
+    0.07
+  ],
+  "dielectric_mm": [
+    0.203,
+    1.03,
+    0.203
+  ],
+  "barrel_count": 298,
+  "npth_count": 10,
+  "native_plus_explicit_area_mm2": {
+    "F.Cu": 3644.564486604575,
+    "In1.Cu": 4164.660733235494,
+    "In2.Cu": 4239.1673807484985,
+    "B.Cu": 3632.8697572575825
+  }
+}

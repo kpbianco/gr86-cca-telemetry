@@ -1,0 +1,152 @@
+(footprint "R_0603_1608Metric_RVB22_R155"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "R155"
+		(at 0 1.6 -90)
+		(layer "F.Fab")
+		(uuid "12c6dac5-d1f0-551c-a964-7fa6353272c9")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "23.7k /0.1% 25ppm FB TOP"
+		(at 0 1.6 -90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1d06049b-a558-59b7-b04a-700e97e039c0")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.vishay.com/docs/28758/tnpw_e3.pdf"
+		(at 0 1.6 -90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6c17d8a3-8f24-5a0d-9768-f4236510d271")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 180)
+		(layer "B.Fab")
+		(hide yes)
+		(uuid "8f3c4dc8-8817-4a0e-9124-3be764060020")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "MPN" "TNPW060323K7BEEA"
+		(at 0 1.6 -90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bced70de-7737-5a49-9512-0a79c9022fa6")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Manufacturer" "Vishay"
+		(at 0 1.6 -90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1e916010-69fc-5640-8540-2fcf3eab1ef1")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "LCSC" ""
+		(at 0 1.6 -90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "104c90e0-4d01-5e29-a3c0-7638301445f1")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Assembly" "FACTORY"
+		(at 0 1.6 -90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1b4800cb-9b49-5d21-9b7b-b4705f53dfb8")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Qualification" "RVB22 reconstructed power candidate; native validation pending"
+		(at 0 1.6 -90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ae82f805-e054-51dc-ae26-b5c22a9c9bd0")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.1)
+			)
+		)
+	)
+	(attr smd)
+	(fp_rect
+		(start -1.505 0.755)
+		(end 1.505 -0.755)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "22216ae5-de00-5355-ad8b-7e5d4cb84241")
+	)
+	(fp_rect
+		(start -0.8 0.4)
+		(end 0.8 -0.4)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "c25346cf-ebd6-55c0-9af8-7e4fa9b0f1e5")
+	)
+	(pad "1" smd roundrect
+		(at -0.825 0)
+		(size 0.8 0.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.1)
+		(uuid "5b770fa9-9182-50b7-a79d-80b38fa82b04")
+	)
+	(pad "2" smd roundrect
+		(at 0.825 0)
+		(size 0.8 0.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.1)
+		(uuid "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f")
+	)
+	(embedded_fonts no)
+)

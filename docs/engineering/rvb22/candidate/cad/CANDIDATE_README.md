@@ -1,5 +1,5 @@
-# I10 native library and rail cleanup candidate
+# I11 controlled footprint variants
 
-I09 native evaluation has zero ERC/DRC errors, zero unconnected and schematic parity items, 12 library differences and one dangling warning. I10 removes exact duplicate route segments and an obsolete open rail branch. Native library export selects the KiCad format explicitly because automatic format detection failed for the new empty library. No findings are suppressed.
+Twelve native-exported footprint variants reconcile board and library identities. Their normalized pad geometry matches the existing controlled land patterns; PCB edits change library IDs only. Schematic footprint fields change together. Native DRC and schematic parity must be rerun.
 
-All redlines are retained in REDLINE_FREEZE.json. Model coverage, foil interference and RF extent correction, native thermal/package analysis and affected rail/return checks remain open. Engineering review only; not a manufacturing release.
+Firmware builds; I10 has zero ERC/DRC errors and zero unconnected items, with12 library warnings. Full thermal, populated model, foil/antenna and installed-condition redlines remain. Engineering review only.
