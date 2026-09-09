@@ -1,0 +1,9 @@
+# NATIVE-T02-01 — execute the candidate in a provisioned review job
+
+Problem recorded before implementation: the restored session has no callable KiCad, pcbnew or Arduino CLI; its ordinary package install fails under runtime permissions. Draft PR45 contains the candidate and validated native runner, but no repository workflow exists.
+
+Implement a bounded Ubuntu 24.04 GitHub Actions review job on the existing draft branch. Use the official KiCad 9 release PPA, require KiCad/pcbnew 9.0.9 through the unchanged runner, and install Arduino CLI1.3.1 with the official release checksum, ESP32 core3.3.6 and NimBLE2.3.6. Run the exact PR head with read-only repository permission, no persisted checkout credentials, no secrets, no hardware ports, no deployment or merge. Upload logs and all runner artifacts even when checks fail. A setup or version mismatch must fail, not weaken a pin. Do not change repository settings or Actions permissions if access is rejected.
+
+Acceptance is actual returned native outputs matched to candidate source and an inspected firmware build result, followed by correction of real findings. A workflow file, queued run or installed executable alone is not closure. This is a review-compute route within the authorized corrective work; the user's local machine is not modified.
+
+Primary installation references: https://www.kicad.org/download/linux-distros/ ; https://github.com/arduino/arduino-cli/releases/tag/v1.3.1 . Exact checkout/upload action refs were resolved through their official repository Git refs before staging.
