@@ -1,5 +1,5 @@
 {
-  "candidate": "I17 RF and locating-hole correction; native validation pending; thermal engineering open",
+  "candidate": "I18 capacitor thermal tab candidate; native and affected model verification pending",
   "files": [
     {
       "bytes": 4331,
@@ -130,12 +130,12 @@
       "source": "I14_service_clearance/candidate/cad/GR86_CCA_RevB.kicad_dru"
     },
     {
-      "bytes": 1254184,
-      "git_blob_sha": "130cc7fa462a574f23d8f5ba6ad97cf134996d5e",
+      "bytes": 1260379,
+      "git_blob_sha": "43a534c12bb652d78375db584bca9e04e1ed8ed0",
       "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb",
-      "sha256": "2c5ba2b59223163360baa22ce6c75e643dcbf365697d83a75d58c2b8c52ee264",
-      "source": "iterations/I17_RF_hole_clearance/candidate_kicad/GR86_CCA_RevB.kicad_pcb"
+      "sha256": "9d1791a0f1be4c7a7d5218acdbaed6e1283d9841d72bbb805785971051924962",
+      "source": "iterations/I18_capacitor_thermal_tab/candidate_kicad/GR86_CCA_RevB.kicad_pcb"
     },
     {
       "bytes": 2123,
