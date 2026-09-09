@@ -1,0 +1,46 @@
+{
+  "iteration": "I19",
+  "PCB_before_sha256": "9d1791a0f1be4c7a7d5218acdbaed6e1283d9841d72bbb805785971051924962",
+  "PCB_after_sha256": "ec5909fac5999e97e1a18136821ceb0c81214bf09cfb2f8357d95dea58742c1b",
+  "schematic_after_sha256": "793816c129e3fae62d555b1e2f66a56b20dbc23628d11f082345f61ef99dc3f3",
+  "all_explicit_copper_shapes_nets_layers_equal": true,
+  "all_zones_edges_arcs_silkscreen_equal": true,
+  "all_pad_and_component_positions_equal": true,
+  "property_changes": {
+    "R155": {
+      "old_mpn": "TNPW060323K7BEEA",
+      "mpn": "TNPU060311K8HWEA00",
+      "old_value": "23.7k /0.1% 25ppm FB TOP",
+      "value": "11.8k /0.02% 2ppm FB TOP",
+      "ohms": 11800
+    },
+    "R156": {
+      "old_mpn": "TNPW060310K0BEEA",
+      "mpn": "TNPU06034K99HWEA00",
+      "old_value": "10k /0.1% 25ppm FB BOTTOM",
+      "value": "4.99k /0.02% 2ppm FB BOTTOM",
+      "ohms": 4990
+    }
+  },
+  "setpoint": {
+    "nominal_V": 3.364729458917836,
+    "source_min_V": 3.3065640591146597,
+    "source_max_V": 3.4231120359001856,
+    "resistor_tolerance_fraction": 0.0002,
+    "resistor_TCR_per_K": 2e-06,
+    "maximum_deltaT_K": 100,
+    "independent_drift_fraction_each": 0.001,
+    "reference_interval_V": [
+      0.985,
+      1.015
+    ],
+    "FB_current_abs_A": 1e-07,
+    "resistor_film_max_C": 125,
+    "component_internal_thermal_resistance_K_W": 63,
+    "R155_power_at_maxrail_W": 0.000492129963087928,
+    "R156_power_at_maxreference_W": 0.00020674736213865738,
+    "source": "https://www.vishay.com/docs/28779/tnpue3.pdf",
+    "qualification_scope": "Part-code construction matches manufacturer size, resistance, H tolerance, W TCR and EA packaging with standard00 suffix. Exact availability/supplier procurement remains a supplier acceptance condition.0.1% drift is a stated allocation corresponding to the8000h rated-power stability row, not a mission-life guarantee or arbitrary combined-stress proof."
+  },
+  "native_required": true
+}

@@ -1,0 +1,25 @@
+{
+  "iteration": "I19",
+  "base_source_PCB_sha256": "9d1791a0f1be4c7a7d5218acdbaed6e1283d9841d72bbb805785971051924962",
+  "frozen_before_edit": true,
+  "redlines": [
+    {
+      "id": "I19-01",
+      "finding": "I18 full rail model leaves0.278mV above maximum falling reset threshold. Its zero-DC-credit release envelope exceeds3.6V, even though realizable modeled releases remain below3.6V.",
+      "correction": "Select same0603 land-compatible TNPU060311K8HWEA00 / TNPU06034K99HWEA00:11.8k/4.99k,0.02%,2ppm/K. Include0.1% independent drift and hot copper up to150C in the revised source interval and full rail sweep."
+    },
+    {
+      "id": "I19-02",
+      "finding": "Long C206 lead needs updated copper/RL source binding; component and copper temperature scopes differ.",
+      "correction": "Retain0..25nH branch sensitivity, expand branch R excludingR158 to0..0.12ohm, extract exact changed rail geometry at150C with15um minimum plated wall, and repeat separate numerical methods at controlling extrema."
+    },
+    {
+      "id": "I19-03",
+      "finding": "I18 finer-mesh thermal, return-reference and mechanical closure still need final effectivity.",
+      "correction": "Finish them against unchanged I18 copper/placement geometry, then prove I19 changes only these two resistor properties and schematic notes. Re-run native ERC/DRC/BOM/STEP exports."
+    }
+  ],
+  "sources": [
+    "https://www.vishay.com/docs/28779/tnpue3.pdf"
+  ]
+}

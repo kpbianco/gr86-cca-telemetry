@@ -1,5 +1,5 @@
 {
-  "candidate": "I18 capacitor thermal tab candidate; native and affected model verification pending",
+  "candidate": "I19 precision feedback candidate; current native and affected model verification required",
   "files": [
     {
       "bytes": 4331,
@@ -130,12 +130,11 @@
       "source": "I14_service_clearance/candidate/cad/GR86_CCA_RevB.kicad_dru"
     },
     {
-      "bytes": 1260379,
-      "git_blob_sha": "43a534c12bb652d78375db584bca9e04e1ed8ed0",
+      "bytes": 1260383,
       "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb",
-      "sha256": "9d1791a0f1be4c7a7d5218acdbaed6e1283d9841d72bbb805785971051924962",
-      "source": "iterations/I18_capacitor_thermal_tab/candidate_kicad/GR86_CCA_RevB.kicad_pcb"
+      "sha256": "ec5909fac5999e97e1a18136821ceb0c81214bf09cfb2f8357d95dea58742c1b",
+      "source": "I19 precision feedback continuation"
     },
     {
       "bytes": 2123,
@@ -826,12 +825,11 @@
       "source": "iterations/I07_source_compatibility/candidate_kicad/Oil_Pressure.kicad_sch"
     },
     {
-      "bytes": 66782,
-      "git_blob_sha": "e8ba6d923694a563e4a088a500fb0e883b94326a",
+      "bytes": 66786,
       "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/Power_3V3.kicad_sch",
-      "sha256": "33bda8cd4635018c26b9e8fb9826b21dc84bac2e353b16a689085b4e4b4c978f",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/Power_3V3.kicad_sch"
+      "sha256": "793816c129e3fae62d555b1e2f66a56b20dbc23628d11f082345f61ef99dc3f3",
+      "source": "I19 precision feedback continuation"
     },
     {
       "bytes": 62466,
@@ -2504,6 +2502,41 @@
       "path": "docs/engineering/rvb22/runtime/hosted/setup_native.sh",
       "sha256": "4d303711a69005793621189b0fe72d9cdb4cbeb8b437d83e419d2371d6c4d7d4",
       "source": "runtime/hosted/setup_native.sh"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I19/SOURCE_CHANGE_CHECK.json",
+      "mode": "100644",
+      "bytes": 1944,
+      "sha256": "b8f88b81c3c61075bcec8d45ffea7e3855a633068a4127e0880740299240ca5e",
+      "source": "I19 precision feedback continuation"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I19/REDLINE_FREEZE.json",
+      "mode": "100644",
+      "bytes": 1448,
+      "sha256": "23f29c52be40197d1de8efb5740eb8e286570306e115f8a8648927546f7354a7",
+      "source": "I19 precision feedback continuation"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I19/SETPOINT_BOUNDS.json",
+      "mode": "100644",
+      "bytes": 971,
+      "sha256": "acd786b584bf9032294ed26f96768cbb39a149e95c328ac6e8cfc193981e817c",
+      "source": "I19 precision feedback continuation"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I19/build_i19_precision_feedback.py",
+      "mode": "100644",
+      "bytes": 5618,
+      "sha256": "19cf2726e647d0b6b2ac35ee478f7cfd80e16bc34b20348c9e5f9e02c184f23c",
+      "source": "I19 precision feedback continuation"
+    },
+    {
+      "path": "docs/engineering/rvb22/I19_CONTINUATION.md",
+      "mode": "100644",
+      "bytes": 1402,
+      "sha256": "c9c96d0cae3efc7abc1c19d17a3bee69a4be10a4cf6b9f2320c18bdfdf42a94b",
+      "source": "I19 precision feedback continuation"
     }
   ],
   "scope": "Listed source/evidence manifest; no manufacturing or installed-unit release."
