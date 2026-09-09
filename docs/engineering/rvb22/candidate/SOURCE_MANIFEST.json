@@ -1,5 +1,5 @@
 {
-  "candidate": "I09 drill-aware native correction candidate; native and model/library review pending",
+  "candidate": "I10 rail cleanup and explicit native footprint export; cross-domain redlines retained",
   "files": [
     {
       "bytes": 43883,
@@ -11,10 +11,10 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/CANDIDATE_README.md",
-      "source": "iterations/I09_native_hole_and_models/candidate_kicad/CANDIDATE_README.md",
-      "bytes": 849,
-      "sha256": "7e48674c73fe96377cf5a8ad954ebd89adb2a1256d2b947a3c4148d107844905",
-      "git_blob_sha": "b5dbe47be089a89cf9894ac778d570c6fcc2ad49",
+      "source": "iterations/I10_library_and_rail_cleanup/candidate_kicad/CANDIDATE_README.md",
+      "bytes": 664,
+      "sha256": "a5c08e3ffe4cb6c9e1cededf3d1b40ba758ffdecd193e34d552936f4a3e5ced1",
+      "git_blob_sha": "9c9f044a5e8d3c525e3fb1dca118936626e6bf9b",
       "mode": "100644"
     },
     {
@@ -43,10 +43,10 @@
     },
     {
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb",
-      "source": "iterations/I09_native_hole_and_models/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
-      "bytes": 1179436,
-      "sha256": "95ec9fca6a90460d0bcadbebdbf453bce36df15ef4e840a56b4a941985af4375",
-      "git_blob_sha": "fdc8dd9a1cabc770fa9993122e3b9288075787a6",
+      "source": "iterations/I10_library_and_rail_cleanup/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+      "bytes": 1176530,
+      "sha256": "92b38b5bbff3d3601ca89ec1fa9858dde4c46a08d6ac39beba4cd375c7c4b334",
+      "git_blob_sha": "1d0092113aa664d922e2e44094051c8ee7f27e4e",
       "mode": "100644"
     },
     {
@@ -1892,9 +1892,9 @@
     {
       "path": "docs/engineering/rvb22/runtime/hosted/export_footprint_variants.py",
       "source": "runtime/hosted/export_footprint_variants.py",
-      "bytes": 1835,
-      "sha256": "ab8a1f63bb2d7645a6d7041e4441dcc97d6de2f6e0430879b71731e66a2c30d0",
-      "git_blob_sha": "225c2ca592e8cc342289c87016c19061b19078ae",
+      "bytes": 1932,
+      "sha256": "78cc05c0df2295a91755402358abb281a3cb50d52ab4226700d1dfd193d88b8e",
+      "git_blob_sha": "63938be157fa17ceab4e5671cb2a39070fcb74fc",
       "mode": "100644"
     },
     {
@@ -1903,6 +1903,30 @@
       "bytes": 4331,
       "sha256": "8c6cdec3d1d634018a28fd55bcb753a511af5a5c8b92076a8f72d08166499216",
       "git_blob_sha": "da6caebb50fd98292bd966bfe60055ec045a0daa",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I10_REDLINE_FREEZE.json",
+      "source": "iterations/I10_library_and_rail_cleanup/REDLINE_FREEZE.json",
+      "bytes": 714,
+      "sha256": "33e33ee3d60f12e5bf4646e6723b001ff49b36cf2ec9b1eec0800364954b3b95",
+      "git_blob_sha": "b8ae355ac2faaa33735be0da2fb8fe3d12f5f5fb",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I10_RAIL_CLEANUP.json",
+      "source": "iterations/I10_library_and_rail_cleanup/RAIL_CLEANUP.json",
+      "bytes": 5074,
+      "sha256": "b1355352323332014c899047d02de5ce917a3d6fbf2e45923ba9dd67104dc213",
+      "git_blob_sha": "1b1f5d654ca476a11796d459ba3fbb9e5bde68f7",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I10_SOURCE_CLEARANCE.json",
+      "source": "iterations/I10_library_and_rail_cleanup/SOURCE_CLEARANCE.json",
+      "bytes": 42,
+      "sha256": "202e9422dce6c1ea3254f4c94f65bbd0dce43095bcb7109bc1fe25b456868cae",
+      "git_blob_sha": "80ea09a72d3dc5e7f9e1b0a94ba504d8cb498fb0",
       "mode": "100644"
     }
   ],

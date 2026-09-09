@@ -1,0 +1,14 @@
+{
+  "source": "I09 native run9/10",
+  "native_report": "work/rvb22/iterations/I09_native_hole_and_models/NATIVE_REVIEW.json",
+  "known_redlines": [
+    "12 footprint-library mismatches",
+    "Duplicate/backtracking inner-rail branch causes dangling warning",
+    "Four missing referenced models and complete fitted model coverage",
+    "T01 maximum bow produces four possible component interferences",
+    "T01 actual bend exceeds RF extent assumption",
+    "Native thermal mesh/package closure",
+    "Affected power/return/RF regression and full criteria reconciliation"
+  ],
+  "sequence": "Freeze all known findings before coordinated source candidate; open cross-domain findings are retained until verified."
+}
