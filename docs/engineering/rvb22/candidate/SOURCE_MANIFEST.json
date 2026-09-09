@@ -1892,9 +1892,9 @@
     {
       "path": "docs/engineering/rvb22/runtime/hosted/export_footprint_variants.py",
       "source": "runtime/hosted/export_footprint_variants.py",
-      "bytes": 1871,
-      "sha256": "ddae0019ecb7a4bd38eb90239bfc39c7c10b44e878aa61900714c1a313d11399",
-      "git_blob_sha": "64700745ad1847cbf83846481aec12039333b823",
+      "bytes": 1835,
+      "sha256": "ab8a1f63bb2d7645a6d7041e4441dcc97d6de2f6e0430879b71731e66a2c30d0",
+      "git_blob_sha": "225c2ca592e8cc342289c87016c19061b19078ae",
       "mode": "100644"
     },
     {

@@ -18,8 +18,8 @@ for v in report['violations']:
 lib=out/'RevB_variants.pretty';lib.mkdir();rows=[]
 for ref in sorted(refs):
  f=b.FindFootprintByReference(ref);assert f is not None
- old=f.GetFPID().GetLibItemName();name=str(old)+'_RVB22_'+ref
- ident=p.LIB_ID();ident.SetLibNickname('RevB');ident.SetLibItemName(name);f.SetFPID(ident)
+ old=f.GetFPID().GetUniStringLibItemName();name=str(old)+'_RVB22_'+ref
+ ident=p.LIB_ID('RevB',name);f.SetFPID(ident)
  p.FootprintSave(str(lib),f);q=lib/(name+'.kicad_mod');assert q.is_file() and q.stat().st_size>100
  rows.append({'reference':ref,'previous_library_item':str(old),'proposed_library_item':name,'path':str(q.relative_to(out)),'sha256':sha(q),'bytes':q.stat().st_size})
 assert sha(board_path)==original
