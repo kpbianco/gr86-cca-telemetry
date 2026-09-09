@@ -1,5 +1,5 @@
 {
-  "candidate": "I16 RF ground-reference correction; native validation pending; thermal engineering open",
+  "candidate": "I17 RF and locating-hole correction; native validation pending; thermal engineering open",
   "files": [
     {
       "bytes": 4331,
@@ -130,12 +130,12 @@
       "source": "I14_service_clearance/candidate/cad/GR86_CCA_RevB.kicad_dru"
     },
     {
-      "bytes": 1249045,
-      "git_blob_sha": "acfd78deeeb3f92a317d385b0aac730a838e5c4c",
+      "bytes": 1254184,
+      "git_blob_sha": "130cc7fa462a574f23d8f5ba6ad97cf134996d5e",
       "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb",
-      "sha256": "b3347647db80dadc9a09fe751ffbb674f098222cf37ac08ea24d0d00ad99f181",
-      "source": "iterations/I16_RF_reference/candidate_kicad/GR86_CCA_RevB.kicad_pcb"
+      "sha256": "2c5ba2b59223163360baa22ce6c75e643dcbf365697d83a75d58c2b8c52ee264",
+      "source": "iterations/I17_RF_hole_clearance/candidate_kicad/GR86_CCA_RevB.kicad_pcb"
     },
     {
       "bytes": 2123,

@@ -1,0 +1,17 @@
+{
+  "iteration": "I17",
+  "base_source_sha256": "b3347647db80dadc9a09fe751ffbb674f098222cf37ac08ea24d0d00ad99f181",
+  "known_redlines": [
+    {
+      "id": "I17-01",
+      "finding": "I16 has one native hole-clearance error: In2 +3V3 crosses J201 locating NPTH at68.46/6.",
+      "correction": "Replace short66.5/5.1 to70.7/9 detour using all NPTH holes as physical routing obstacles; retain .25mm hole clearance and RF reference corridor. Update preflight to include NPTH."
+    },
+    {
+      "id": "I17-02",
+      "finding": "RF, digital reference, power/thermal and documentation need final effectivity after corrected routing.",
+      "correction": "Run final native checks; recalculate all affected geometric and model bindings. Preserve unresolved thermal and supplier/physical conditions."
+    }
+  ],
+  "frozen_before_edit": true
+}
