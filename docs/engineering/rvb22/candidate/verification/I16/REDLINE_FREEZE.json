@@ -1,0 +1,28 @@
+{
+  "base_source_sha256": "afa66b6813cedfd30681dec114055de2bda6f33f6b51cbeb9d56197521790a49",
+  "frozen_before_edit": true,
+  "iteration": "I16",
+  "known_redlines": [
+    {
+      "correction": "Reroute complete In2 power detour; reserve >=1 mm of filled ground past RF edge after 0.15 mm clearance. Preserve RF launch and matching geometry.",
+      "finding": "4.6791307 mm of GPS_EXT_ANT centerline above +3V3 on In2 instead of model-assumed ground.",
+      "id": "I16-RF-01"
+    },
+    {
+      "correction": "Power reroute also removes UART underlap. Classify signal-via antipads and bound remaining digital crossings against both ground planes.",
+      "finding": "Digital crossings of LED/oil/power copper require return-path bounds. Broad UART0_RX underlap present.",
+      "id": "I16-SI-02"
+    },
+    {
+      "correction": "Keep full-load requirement and failed trials. Determine remaining cooling/package requirements.",
+      "finding": "Full4.815W thermal .25mm estimate yields124.562659C near C206 before ripple/package margin.",
+      "id": "I16-TH-03"
+    },
+    {
+      "correction": "Reconcile all290 criteria, C05/W02/T03,49 filled/capped vias and current native evidence.",
+      "finding": "Register and final mechanics/effectivity stale.",
+      "id": "I16-DOC-04"
+    }
+  ],
+  "reconstruction": "I16 route geometry recovered unchanged from executed pre-reset preflight; new deterministic UUIDs and source hash. The lost hash da3de978... is not reused."
+}

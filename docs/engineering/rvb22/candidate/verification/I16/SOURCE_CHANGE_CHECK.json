@@ -1,0 +1,17 @@
+{
+  "iteration": "I16",
+  "source_before_sha256": "afa66b6813cedfd30681dec114055de2bda6f33f6b51cbeb9d56197521790a49",
+  "source_after_sha256": "b3347647db80dadc9a09fe751ffbb674f098222cf37ac08ea24d0d00ad99f181",
+  "removed_count": 74,
+  "added_count": 37,
+  "old_route_squares": 18.17305482209181,
+  "new_route_squares": 13.336401145198815,
+  "old_R125C_24um_ohm": 0.018441172500830775,
+  "new_R125C_24um_ohm": 0.01353316085086127,
+  "new_foreign_clearance_findings": [],
+  "lost_explicit_pad_groups": [],
+  "all_non_3V3_objects_preserved": true,
+  "footprints_schematics_RF_logo_unchanged": true,
+  "native_required": true,
+  "reconstruction": "I16 route geometry recovered unchanged from executed pre-reset preflight; new deterministic UUIDs and source hash. The lost hash da3de978... is not reused."
+}
