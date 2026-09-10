@@ -1,0 +1,31 @@
+{
+  "iteration": "I21",
+  "date": "2026-09-10",
+  "baseline_commit": "e36523bb1bd374a58b0071e761b7a46c8cc4385e",
+  "baseline_source_PCB_sha256": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+  "scope": "Finish interrupted current-source verification and reconcile the controlled review. Record any newly observed design defects before changing CAD.",
+  "redlines": [
+    {
+      "id": "I21-01",
+      "finding": "Current README, execution plan, PR body and formal register still identify I06/I11/I14 despite an I20 source-bound native pass.",
+      "action": "Replace current pointers and adjudicate all 290 unchanged original criteria against I20 evidence. Retain historical evidence as history."
+    },
+    {
+      "id": "I21-02",
+      "finding": "The 0.125 mm thermal refinement was interrupted. The 0.25 mm result has 135.423874 C maximum board temperature and 102.642279 C at the relocated C206 region. Package temperatures and mesh independence are not established.",
+      "action": "Finish the existing full-load refinement, evaluate numerical sensitivity and explicit package/installation limits, and record any required cooling correction. Preserve 4.815 W, 65 C air and 70 C landings."
+    },
+    {
+      "id": "I21-03",
+      "finding": "Current fabrication, mechanical and assembly instructions are scattered across revisions, including obsolete 13-via, C206 position and feedback-divider notes.",
+      "action": "Publish one current assembly and fabrication specification, including C05/W02/T03, relocated C206, precision divider, 49 filled/capped vias, and matching source/export identities."
+    },
+    {
+      "id": "I21-04",
+      "finding": "Restored evidence must be verified against the actual remote candidate before its claims are carried forward.",
+      "action": "Check archive digests, native input inventory, fitted BOM/placement, independent copper/Gerber/drill reconstruction, firmware hashes and TranquilWorks artwork identity."
+    }
+  ],
+  "physical_observations_claimed": false,
+  "fabrication_or_vehicle_release": false
+}

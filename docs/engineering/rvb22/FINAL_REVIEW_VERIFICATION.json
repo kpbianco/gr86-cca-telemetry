@@ -1,14 +1,18 @@
 {
-  "status": "PASS_COMPLETE_REGISTER_SOURCE_RECONCILIATION",
-  "original_A_through_F_unchanged": 290,
-  "counts": {
-    "open": 176,
-    "closed": 110,
+  "checkpoint": "RVB22_I21_RECONCILIATION_I20_CAD",
+  "original_criteria_preserved": 290,
+  "user_baseline": {
+    "closed": 73,
+    "open": 213,
     "na": 4
   },
-  "redlines": 99,
-  "criterion_evidence_hash_mismatches": [],
-  "current_PCB_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
-  "thermal_engineering_gate_retained": "DESKTOP_WORK_REMAINING",
-  "register_sha256": "22319ac40e57eb321432745d849f695bfc9359f11a4b9f6c7658a4a3782cbd60"
+  "current": {
+    "open": 152,
+    "closed": 134,
+    "na": 4
+  },
+  "redlines": 351,
+  "all_current_row_evidence_present_and_hashed": true,
+  "physical_tests_claimed": 0,
+  "overall_zero": false
 }

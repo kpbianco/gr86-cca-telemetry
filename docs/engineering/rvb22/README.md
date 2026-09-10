@@ -1,34 +1,23 @@
-# RVB-22 corrective engineering handoff
+# GR86 CCA RVB22 — I21 review checkpoint
 
-This is the user's authorized continuation of the GR86 dashboard CCA engineering hold. It begins from the recovered RVB-21 engineering checkpoint, which is ahead of the older firmware in this repository. See `EXECUTION_PLAN.md` for confirmed interfaces, the complete iteration protocol and acceptance boundaries.
+The controlling hardware source is **I20** at commit `e36523bb1bd374a58b0071e761b7a46c8cc4385e`. I21 reconciles its evidence, completes the interrupted thermal refinement and corrects the stale I06/I11 status. CAD and firmware are unchanged in this checkpoint.
 
-The user selected Honeywell MIPAN2XX150PSAAX, the GR86 ASC connector following Timurrr's guide, Adafruit U.FL-to-SMA and external GPS puck accessories, the existing JLCPCB setup, and dashboard installation. Firmware, CAD, mechanics and assembly corrections are authorized. Failed cases and redlines are retained before each coordinated revision.
+| Result | Current evidence |
+|---|---|
+| Native CAD | Zero ERC, DRC, warnings, unconnected and parity findings. |
+| Target firmware | Pinned Arduino CLI 1.3.1 / ESP32 3.3.6 / NimBLE 2.3.6 build passes; ELF/BIN hashes verified. |
+| Recovery integrity | 1,042 fresh digest checks pass across source and 774 archived native outputs. |
+| Manufacturing | Separate copper/Gerber/drill/netlist reconstruction passes; 153 fitted BOM references, 151 automatic placements and two manual exceptions agree. |
+| Models and branding | All 153 fitted references resolve. The original 8 mm Compact TW logo is present on F.SilkS and matches its vector source. |
+| Power and RF | Finite source-bound sweeps pass their declared component/controller/return and RF allocations. |
+| Mechanics | C05/W02/T03; 49 filled/capped vias; 776 declared mated checks and 37 probe approaches pass. |
+| Review register | 134 closed, 152 open, four not applicable. All 290 original criteria and 351 recorded redlines are retained. User baseline remains 73/213/4. |
+| Thermal | Still open. The completed 0.125 mm model reaches 143.800°C maximum board region and 105.171°C near C206 at 4.815 W, 65°C bulk air and 70°C landings. Mesh and package/local-air closure are unresolved. |
 
-## Scope and effectivity
+Start with [the current execution plan](current/EXECUTION_PLAN.md), [thermal review](current/THERMAL_REVIEW.md), and [manufacturing/assembly instructions](current/MANUFACTURING_AND_ASSEMBLY.md). The updated review workbook and complete recovery archive carry the full evidence history. JSON evidence paths are relative to the recovery archive root; selected current results are mirrored in this repository. Historical summaries and candidate-directory notes are superseded by this current handoff.
 
-This new hardware/firmware corrective batch is distinct from the historical CCA-M0-01 host-only, behavior-preserving contract. That older batch remains historical; its exclusions do not describe the user's new request. This handoff does not replace the repository's older firmware or assert that staged engineering CAD is ready to order.
+The source candidate remains `candidate/cad` and `candidate/firmware`. The pinned [native workflow](../../../.github/workflows/rvb22-native.yml) has already produced [I20 run 34420381540](https://github.com/tranquilWorks/gr86-cca-telemetry/actions/runs/34420381540). There is no missing native-runtime gate. A future source change must rerun the workflow and regenerate matched outputs.
 
-The downloadable RVB-22 engineering checkpoint carries the full baseline, corrected candidate, redline history and executable model evidence. Candidate source hashes and the final integration manifest identify what to run. Never combine a new candidate with predecessor Gerbers, placement files or compiled binaries.
+Confirmed inputs are the Honeywell MIPAN2XX150PSAAX sensor, GR86 ASC harness per Timurrr, Adafruit adapter/GPS puck by product type, JLCPCB and dashboard use. Exact accessory PIDs/temperature/polarity, supplier construction/material acceptance and actual-unit/installation qualification remain explicit conditions. The nearly ideal contact sensitivity is an unadopted analysis, not a physical cooling correction.
 
-## Native job
-
-`run_native_candidate.py` runs on the local engineering machine where the required tools are installed. It receives explicit candidate directories, copies them into a new output directory, refills the board, runs native ERC/DRC and schematic parity, exports review artifacts and builds the embedded application. It never modifies the input candidates or flashes hardware.
-
-```bash
-python3 docs/engineering/rvb22/run_native_candidate.py \
-  --cad-dir /path/to/rvb22/candidate_kicad \
-  --firmware-dir /path/to/rvb22/candidate_firmware \
-  --pcbnew-python /path/to/python_with_pcbnew \
-  --nimble-dir /path/to/NimBLE-Arduino \
-  --output /path/to/new_rvb22_native_results
-```
-
-Required versions: KiCad CLI and pcbnew 9.0.9, Arduino CLI 1.3.1, ESP32 core 3.3.6, NimBLE-Arduino 2.3.6. The full ESP32-S3 board configuration is pinned in the script. Explicit executable/configuration options are available through `--help`. `--component-step` also requests the available component models; a component inventory must still establish completeness.
-
-The job verifies artifact structure and source identity. A zero process exit without real filled copper, reports, netlists, Gerber layers, drill files or requested ELF/BIN files fails with `INCOMPLETE_NATIVE_OUTPUT`. It does not silently waive native findings. JLC panel generation, supplier BOM/CPL reconciliation, controlled drawings and populated collision checks remain project-specific follow-on gates.
-
-The Work session ran the actual preflight and obtained `BLOCKED_RUNTIME`; no callable KiCad/Arduino service was exposed. The runner's negative controls and archived-format tests passed. These checker tests are distinct from a new native board or embedded build. Return the whole result directory, including `RESULT.json`, `OUTPUT_MANIFEST.json`, source inventories and logs, for the next corrective iteration.
-
-## Acceptance
-
-Review the exact combined candidate after all known redlines have been applied. Any new failure creates a recorded redline and a further revision. Numerical evidence is accepted for the stated modeled design claim; missing device guarantees, installation facts and actual-unit observations remain explicit. Manufacturing adoption requires a matching source, build and export set. This draft does not authorize fabrication, ordering, live vehicle faults or merging.
+The full thermal and supplier/physical evidence required for overall zero is not yet present. PR #45 remains a draft engineering candidate.

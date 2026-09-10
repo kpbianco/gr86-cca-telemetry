@@ -1,7 +1,7 @@
 {
   "status": "CURRENT_DISPOSITION_OF_RECOVERY_ACTIONS",
   "historical_action_list": "control/REMAINING_DESKTOP_ACTIONS.json",
-  "historical_action_list_sha256": "b84855bbad787f85bb09585ac7bad085918336926d159b2f8ad1e18ab9f7dcfe",
+  "historical_action_list_sha256": "b00396872482a5576fe0c0443e77d2eb2e78d4ef9acde80c34619508d047f2c4",
   "history_notice": "The earlier action list records unperformed work at the file-loss checkpoint. Its tense is historical; this file controls current work disposition.",
   "rows": [
     {
@@ -36,9 +36,9 @@
     },
     {
       "id": "RDA-06",
-      "status": "Partially complete; native geometry and body-data gates",
-      "work": "Carrier checks and primary maximum heights for all 153 fitted references completed. Full populated solids, 18 missing model references, mated accessories and installed service/fit remain.",
-      "evidence": "lanes/mechanics/FINAL_COMPONENT_ENVELOPES.json"
+      "status": "Completed declared populated/mated/service geometry",
+      "work": "All 153 fitted references have resolved envelope models. 776 mated checks and 37 probe approaches pass. Exact material/accessory dimensions and actual installed fit remain conditions.",
+      "evidence": "analyses/service_i19/RESULTS.json"
     },
     {
       "id": "RDA-07",
@@ -60,28 +60,29 @@
     },
     {
       "id": "RDA-I01",
-      "status": "Completed source integration",
-      "work": "I05 handoff carries corrected I04 electrical source and current firmware.",
-      "evidence": "iterations/I06_harness_handoff/CANDIDATE_MANIFEST.json"
+      "status": "Completed I20 source integration",
+      "work": "I20 carries current I18 geometry and I19 precision feedback, with matching native CAD and target firmware outputs.",
+      "evidence": "iterations/I20_controlled_handoff/NATIVE_BINDING.json"
     },
     {
       "id": "RDA-I02",
-      "status": "Blocked runtime",
-      "work": "Native CAD and target compilation require the pinned executable environment.",
-      "evidence": "runtime/final_I06_actual_preflight/RESULT.json"
+      "status": "Completed pinned native CAD and target build",
+      "work": "Zero I20 native findings. Fresh source/output digest and independent copper/export reconstruction pass.",
+      "evidence": "current/I21_SOURCE_VERIFICATION.json"
     },
     {
       "id": "RDA-I03",
-      "status": "Completed register reconciliation",
-      "work": "All 290 original criteria preserved; evidence states and real remaining gates retained.",
+      "status": "Completed I21 register reconciliation",
+      "work": "All 290 original criteria preserved; 134 closed, 152 open, 4 not applicable. All 351 recorded redlines remain visible.",
       "evidence": "control/FINAL_REVIEW_REGISTER.json"
     },
     {
       "id": "THERMAL",
-      "status": "Open engineering with runtime/input dependencies",
-      "work": "Actual source-copper, interlayer and package heat network has not established full-load safety; ideal copper sweeps retain a failure.",
-      "evidence": "lanes/mechanics/THERMAL_CONTACT_T01_REVIEW.md"
+      "status": "Open package/local-ambient engineering and mesh bound",
+      "work": "The 0.125 mm actual-copper solve is complete: 143.800 C maximum board region, 105.171 C C206 region. Nearly ideal contacts lower the same-mesh maximum by 16.768 C but are not an adopted construction.",
+      "evidence": "current/THERMAL_REVIEW.md"
     }
   ],
-  "not_a_claim_of_zero_original_criteria": true
+  "not_a_claim_of_zero_original_criteria": true,
+  "checkpoint": "I21"
 }

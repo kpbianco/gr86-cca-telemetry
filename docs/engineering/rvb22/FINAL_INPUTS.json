@@ -1,54 +1,105 @@
 {
+  "checkpoint": "RVB22_I21_RECONCILIATION_I20_CAD",
   "inputs": [
     {
-      "item": "Pressure sensor",
-      "value": "Honeywell MIPAN2XX150PSAAX / 480-MIPAN2XX150PSAAX-ND",
-      "basis": "User confirmed; 150 psi sealed gauge, 5 V ratiometric"
+      "item": "Oil sensor",
+      "value": "Honeywell MIPAN2XX150PSAAX, 150 psi sealed gauge, 5 V ratiometric",
+      "basis": "User-confirmed 480-MIPAN2XX150PSAAX-ND"
     },
     {
       "item": "Vehicle connector",
-      "value": "GR86 ASC according to Timurrr",
-      "basis": "User confirmed"
+      "value": "GR86 ASC connector per Timurrr; switched fused power and one full-current return",
+      "basis": "interfaces/HARNESS_CHECKS.json"
     },
     {
-      "item": "RF accessories",
-      "value": "Adafruit U.FL\u2013SMA adapter and external GPS puck",
-      "basis": "User confirmed product types; exact product IDs unconfirmed"
+      "item": "RF accessory",
+      "value": "Adafruit U.FL/SMA adapter and external GPS puck; exact PIDs not confirmed",
+      "basis": "User product-type selection; G22-06"
     },
     {
-      "item": "Location",
-      "value": "Dashboard",
-      "basis": "User confirmed; 65\u00b0C bulk air is a model bound, not a measured hot soak"
+      "item": "Dashboard thermal load (W)",
+      "value": 4.815,
+      "basis": "analyses/thermal_i18/face_15.0/RESULTS.json"
     },
     {
-      "item": "Fabrication",
-      "value": "Existing JLCPCB setup",
-      "basis": "User authorization; finished construction needs native and supplier confirmation"
+      "item": "Bulk air (C)",
+      "value": 65,
+      "basis": "analyses/thermal_i18/face_15.0/RESULTS.json"
     },
     {
-      "item": "Simulation",
-      "value": "Executable nodal, differential-equation and field models",
-      "basis": "ADS unavailable; models and source inputs included"
+      "item": "Cold landing (C)",
+      "value": 70,
+      "basis": "analyses/thermal_i18/face_15.0/RESULTS.json"
     },
     {
-      "item": "CAD handoff",
-      "value": "I06 handoff, carrying I04 electrical source",
-      "basis": "Fixed-copper and courtyard checks pass; native execution blocked"
+      "item": "Atmospheric pressure (kPa)",
+      "value": 70,
+      "basis": "analyses/thermal_i18/model_fast.py"
     },
     {
-      "item": "Firmware",
-      "value": "2.1.4-revb-recovered-20260909",
-      "basis": "Reconstructed source; host checks complete, target build unavailable"
+      "item": "Finished minimum via wall (um)",
+      "value": 15,
+      "basis": "Explicit construction condition, not JLC average plating"
     },
     {
-      "item": "Review basis",
-      "value": "290 original criteria; 114 closed / 172 open / 4 NA at RVB21",
-      "basis": "Evidence closures, not independent defects"
+      "item": "Filled/capped/planarized vias",
+      "value": 49,
+      "basis": "48 U201 pad-41 vias plus one R153 via"
     },
     {
-      "item": "Workflow",
-      "value": "Record all redlines \u2192 coordinated revision \u2192 combined recheck",
-      "basis": "User authorized; failed iterations preserved"
+      "item": "Mechanical construction",
+      "value": "C05 / W02 / T03; 200 unbonded 0.010\u20130.011 mm C110 laminae per flex member",
+      "basis": "iterations/I15_service_mechanics/candidate_mechanics/FLEX_CONSTRUCTION_W02_T03.json"
+    },
+    {
+      "item": "Current rail source",
+      "value": "R155 11.8 kohm / R156 4.99 kohm TNPU, 0.02%, 2 ppm/K with independent 0.1% drift bound",
+      "basis": "analyses/power_i19/SUMMARY.json"
+    },
+    {
+      "item": "Local rail minimum (V)",
+      "value": 3.121028568,
+      "basis": "analyses/power_i19/SUMMARY.json"
+    },
+    {
+      "item": "Zero-DC-credit release maximum (V)",
+      "value": 3.594820346,
+      "basis": "analyses/power_i19/SUMMARY.json"
+    },
+    {
+      "item": "Target reset maximum (V)",
+      "value": 3.11605,
+      "basis": "analyses/power_i19/SUMMARY.json"
+    },
+    {
+      "item": "Thermal mesh minimum (mm)",
+      "value": 0.125,
+      "basis": "analyses/thermal_i18/face_15.0/RESULTS.json"
+    },
+    {
+      "item": "Maximum board-region temperature (C)",
+      "value": 143.79976755011293,
+      "basis": "Finite mesh estimate; not package proof"
+    },
+    {
+      "item": "C206-region maximum (C)",
+      "value": 105.17145726815708,
+      "basis": "Finite mesh estimate; self-heating/package margin separate"
+    },
+    {
+      "item": "Native findings",
+      "value": 0,
+      "basis": "iterations/I20_controlled_handoff/NATIVE_BINDING.json"
+    },
+    {
+      "item": "Fitted model count",
+      "value": 153,
+      "basis": "iterations/I20_controlled_handoff/NATIVE_BINDING.json"
+    },
+    {
+      "item": "Brand artwork",
+      "value": "Compact TW, one-color F.SilkS, 8 mm; original SVG polygon identity verified",
+      "basis": "current/SOURCE_EFFECTIVITY.json"
     }
   ]
 }
