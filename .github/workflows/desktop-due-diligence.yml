@@ -1,0 +1,44 @@
+name: Desktop respin-risk due diligence
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/desktop-due-diligence.yml'
+      - 'docs/engineering/rvb22/analyses/desktop_wave1/**'
+permissions:
+  contents: read
+concurrency:
+  group: desktop-due-diligence-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+jobs:
+  desktop:
+    if: github.head_ref == 'codex/rvb24-coordinated-closure' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Preserve exact tracked source for reproducible full-wave review
+        run: |
+          mkdir -p desktop_evidence
+          git rev-parse HEAD > desktop_evidence/commit.txt
+          git ls-tree -r -l HEAD > desktop_evidence/tracked-tree.txt
+          git archive --format=tar.gz --output=desktop_evidence/source.tar.gz HEAD
+          sha256sum desktop_evidence/source.tar.gz > desktop_evidence/source.sha256
+      - name: Run available full-wave desktop review entry point
+        run: |
+          if test -f docs/engineering/rvb22/analyses/desktop_wave1/run_review.py; then
+            python3 docs/engineering/rvb22/analyses/desktop_wave1/run_review.py --out desktop_evidence/review
+          else
+            printf '%s\n' 'Source recovery only: engineering review not yet executed.' > desktop_evidence/REVIEW_NOT_EXECUTED.txt
+          fi
+      - name: Preserve evidence without changing source or release state
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: desktop-wave1-${{ github.event.pull_request.head.sha }}
+          path: desktop_evidence/
+          retention-days: 14
+          if-no-files-found: error
