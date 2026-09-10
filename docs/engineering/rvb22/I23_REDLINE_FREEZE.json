@@ -556,5 +556,21 @@
         "GPS-14"
       ]
     }
+  ],
+  "supplemental_findings": [
+    {
+      "id": "I23-R05",
+      "finding": "First native candidate failed the CAD gate; the source-only routing preflight omitted board/footprint track keepouts. Grid staircases also need continuous-clearance simplification.",
+      "criteria": [
+        "GND-02",
+        "GPS-11",
+        "LAY-01",
+        "DFM-04"
+      ],
+      "frozen_before_corrective_edit": true,
+      "first_candidate_sha256": "1c3c81e35b4a3bc418e55a8cad55f98c0407dc957a356329c246b53349351e93",
+      "native_run": 34444157108,
+      "native_detail": "Native DRC reported three errors: two violations of the existing 0.25mm protected-voltage rule near the5V_VIN via, and one LED_BLE track through the PA1616D keepout. No unconnected or schematic-parity findings."
+    }
   ]
 }

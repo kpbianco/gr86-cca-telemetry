@@ -18,6 +18,27 @@ outer=unary_union([LineString([c.get(s,'start'),c.get(s,'end')]).buffer(c.get(s,
 outline=Polygon(json.loads((W/'iterations/I18_capacitor_thermal_tab/CURRENT_OUTLINE_GEOMETRY.json').read_text())['outline_mm'])
 holes=unary_union([c.pad_shape(f,p)for f in c.child(b,'footprint')for p in c.child(f,'pad')if str(p[2])=='np_thru_hole'])
 
+# Zones embedded in a .kicad_pcb footprint are expressed in board XY.
+# Library-local zones must not be fed into this board-source reader.
+keepouts={l:[]for l in c.L}
+for parent in [b]+c.child(b,'footprint'):
+ for zone in c.child(parent,'zone'):
+  ko=c.child(zone,'keepout')
+  if not ko or str((c.get(ko[0],'tracks')or [''])[0])!='not_allowed':continue
+  for poly in c.child(zone,'polygon'):
+   g=Polygon([p[1:]for p in c.child(c.child(poly,'pts')[0],'xy')])
+   for layer in (c.get(zone,'layers')or c.get(zone,'layer')or []):
+    if layer in keepouts:keepouts[layer].append(g)
+keepouts={l:unary_union(gs)for l,gs in keepouts.items()}
+
+# Net-specific source rules apply in addition to the generic .15mm rule.
+protected_names={'PROTECTED_12V','PROTECT_CTRL_VIN','INPUT_GATE','INPUT_GATE_DRIVE','INPUT_GATE_SLEW','BUCK_FEED','5V_VIN','5V_SW','5V_BST'}
+raw_names={'RAW_12V','FUSED_12V','REV_BLOCKED_12V'}
+dru=P.with_suffix('.kicad_dru').read_text()
+assert all("A.NetName == '"+n+"'" in dru for n in protected_names|raw_names)
+def voltage_obstacles(layer,width):
+ return unary_union([unary_union([i['geometry']for i in items if i['layer']==layer and names[i['net']]in nn]).buffer(width/2+gap+.00002)for nn,gap in [(protected_names,.25),(raw_names,.6)]])
+
 def route(a,z,ob,width):
  step=.1;xs=np.round(np.arange(0,89,step),5);ys=np.round(np.arange(-9.5,51.6,step),5);X,Y=np.meshgrid(xs,ys)
  allowed=outline.buffer(-(width/2+.25));free=sh.contains_xy(allowed,X,Y)&~sh.intersects_xy(ob,X,Y)
@@ -63,6 +84,26 @@ def route(a,z,ob,width):
     aa,zz=clean[-2:]
     if abs((zz[0]-aa[0])*(pt[1]-zz[1])-(zz[1]-aa[1])*(pt[0]-zz[0]))<1e-9:clean[-1]=pt;continue
    clean.append(pt)
+  # Simplify grid staircases into exact-clearance 45-degree doglegs. Every
+  # accepted replacement is checked as a complete continuous line geometry.
+  smooth=[clean[0]];i=0
+  while i<len(clean)-1:
+   accepted=None
+   for j in range(len(clean)-1,i,-1):
+    aa,zz=clean[i],clean[j];dx=zz[0]-aa[0];dy=zz[1]-aa[1];sx0=1 if dx>=0 else -1;sy0=1 if dy>=0 else -1
+    candidates=[]
+    if abs(dx)>=abs(dy):
+     candidates=[(aa[0]+sx0*(abs(dx)-abs(dy)),aa[1]),(aa[0]+sx0*abs(dy),zz[1])]
+    else:
+     candidates=[(aa[0],aa[1]+sy0*(abs(dy)-abs(dx))),(zz[0],aa[1]+sy0*abs(dx))]
+    for bend in candidates:
+     pp=[aa]+([bend]if math.dist(aa,bend)>1e-8 and math.dist(bend,zz)>1e-8 else [])+[zz]
+     candidate=LineString(pp)
+     if not candidate.intersects(ob)and allowed.covers(candidate):accepted=(j,pp);break
+    if accepted:break
+   if accepted is None:accepted=(i+1,[clean[i],clean[i+1]])
+   i,pp=accepted;smooth.extend(pp[1:])
+  clean=smooth
   line=LineString(clean);assert not line.intersects(ob)and allowed.covers(line)
   return [key(p)for p in clean],dict(start_access=len(starts),end_access=len(ends),visited=len(cost),exact_edges_checked=len(qs)-1)
  return None,dict(failure='Exact edge retry budget exhausted')
@@ -89,16 +130,16 @@ removed=[];added=[];newitems=[];results=[]
 for index,(net,seq,pts)in enumerate(chains):
  width=c.get(seq[0],'width')[0];assert all(c.get(s,'width')==[width]for s in seq)
  foreign=unary_union([i['geometry']for i in items+newitems if i['layer']=='In1.Cu'and i['net']!=net and i.get('id')not in removed])
- ob=unary_union([foreign.buffer(width/2+.15002),holes.buffer(width/2+.25002),outer.buffer(width/2+.155)])
+ ob=unary_union([foreign.buffer(width/2+.15002),holes.buffer(width/2+.25002),outer.buffer(width/2+.155),keepouts['In1.Cu'].buffer(width/2+.01),voltage_obstacles('In1.Cu',width)])
  path,diag=route(pts[0],pts[-1],ob,width)
  target_layer='In1.Cu'
- if not path and names[net]=='LED_CAN':
+ if not path and names[net].startswith('LED_'):
   # Both retained chain ends are through-via centers. Moving this complete
   # chain to In2 needs no added hole or unreviewed layer transition.
-  assert all(any(c.get(v,'net')==[net]and math.dist(c.get(v,'at')[:2],q)<1e-6 for v in c.child(b,'via'))for q in [pts[0],pts[-1]])
+  assert all(any(c.get(v,'net')==[net]and math.dist(c.get(v,'at')[:2],q)<c.get(v,'size')[0]/2-.02 for v in c.child(b,'via'))for q in [pts[0],pts[-1]])
   protected=unary_union([LineString([c.get(s,'start'),c.get(s,'end')]).buffer(c.get(s,'width')[0]/2+(.95 if names[c.get(s,'net')[0]]in ['GPS_EXT_ANT','GPS_ANT_RF_BIASED']else .05))for s in segments if c.get(s,'layer')[0]in ['B.Cu','In1.Cu']and names[c.get(s,'net')[0]]in critical])
   foreign2=unary_union([i['geometry']for i in items+newitems if i['layer']=='In2.Cu'and i['net']!=net and i.get('id')not in removed])
-  ob2=unary_union([foreign2.buffer(width/2+.15002),holes.buffer(width/2+.25002),protected.buffer(width/2+.155)])
+  ob2=unary_union([foreign2.buffer(width/2+.15002),holes.buffer(width/2+.25002),protected.buffer(width/2+.155),keepouts['In2.Cu'].buffer(width/2+.01),voltage_obstacles('In2.Cu',width)])
   path,diag2=route(pts[0],pts[-1],ob2,width);diag={'In1':diag,'In2':diag2}
   if path:target_layer='In2.Cu';foreign=foreign2;outer_check=protected
   else:outer_check=outer
