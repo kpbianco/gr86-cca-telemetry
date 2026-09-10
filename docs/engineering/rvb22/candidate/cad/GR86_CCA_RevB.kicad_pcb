@@ -3945,10 +3945,10 @@
 (segment (start 50.6 27.6) (end 51.2 27.6) (width 0.2) (layer "In2.Cu") (net 56) (uuid "f48fa5b5-0ba0-5ec2-98d0-b0bd11db1891"))
 (segment (start 51.2 27.6) (end 68.4 27.6) (width 0.2) (layer "In2.Cu") (net 56) (uuid "dc875773-6511-5149-a37f-3e7f3fd78fc0"))
 (segment (start 68.4 27.6) (end 79.9 16.1) (width 0.2) (layer "In2.Cu") (net 56) (uuid "c3f86a08-78da-5f40-9301-dceb102a211b"))
-(segment (start 79.9 16.1) (end 80.5 16.1) (width 0.2) (layer "In2.Cu") (net 56) (uuid "02e53b7a-2d40-57c7-9d75-faedada2f2e0"))
-(segment (start 80.5 16.1) (end 80.8 15.8) (width 0.2) (layer "In2.Cu") (net 56) (uuid "8e67c8d3-470c-5ab5-89d3-01e6f52bb5af"))
-(segment (start 80.8 15.8) (end 80.8 13.85) (width 0.2) (layer "In2.Cu") (net 56) (uuid "02837ab8-c764-5353-a2f8-0c1aa8532b66"))
-(segment (start 80.8 13.85) (end 79.85 12.9) (width 0.2) (layer "In2.Cu") (net 56) (uuid "986dc74b-679c-58b6-8afd-8eff27b52625"))
+
+
+
+
 
 (segment (start 20.75 28.7) (end 20.75 28.15) (width 0.4) (layer "In2.Cu") (net 66) (uuid "8b432fd4-f8d1-5ff8-a717-91873c092dda"))
 (segment (start 20.75 28.15) (end 22.0 26.9) (width 0.4) (layer "In2.Cu") (net 66) (uuid "925f693c-f19e-5a92-9a75-4309527f8faa"))
@@ -3956,4 +3956,11 @@
 (segment (start 23.156 25.744) (end 24.5522 25.744) (width 0.4) (layer "In2.Cu") (net 66) (uuid "6bf8c2b9-86f3-5b41-b7ca-af7b509e707b"))
 (segment (start 21.15 37.3) (end 22.45 38.6) (width 0.2) (layer "In2.Cu") (net 80) (uuid "a69b11a7-8794-5f14-a40e-2fb7cc3d5d62"))
 (segment (start 22.45 38.6) (end 42.75 38.6) (width 0.2) (layer "In2.Cu") (net 80) (uuid "a279b19f-49eb-5985-a8a8-8b83de32a12e"))
+
+(segment (start 79.9 16.1) (end 80.8 16.1) (width 0.2) (layer "In2.Cu") (net 56) (uuid "d89d7823-be6c-56c1-b207-48d203e5d527"))
+(segment (start 80.8 16.1) (end 81.7 15.2) (width 0.2) (layer "In2.Cu") (net 56) (uuid "209aa889-f751-5cf6-9c81-64f7e19a0884"))
+(segment (start 81.7 15.2) (end 82.2 14.7) (width 0.2) (layer "In2.Cu") (net 56) (uuid "2d0555c5-51d3-51c3-8791-a27368f16484"))
+(segment (start 82.2 14.7) (end 82.2 14.1) (width 0.2) (layer "In2.Cu") (net 56) (uuid "93224600-ee42-5b2a-96f8-c9c35529edae"))
+(segment (start 82.2 14.1) (end 81.0 12.9) (width 0.2) (layer "In2.Cu") (net 56) (uuid "1fa819d7-1658-5d83-a02d-f87421d079a7"))
+(segment (start 81.0 12.9) (end 79.85 12.9) (width 0.2) (layer "In2.Cu") (net 56) (uuid "25762f23-a492-5125-afea-3ffa3aa3f646"))
 )

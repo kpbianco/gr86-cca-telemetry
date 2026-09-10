@@ -5,9 +5,11 @@ The recovered I23 baseline is 139 closed, 147 open and four not applicable
 original criteria. MECH-03 was reopened in I23; the I22 mechanical acceptance
 is historical. All 290 criteria and 363 prior redlines are preserved.
 
-The first I24 native candidate moves two complete oil inner-layer chains
-between their existing through-via anchors. Eleven segments are replaced with
-six shorter segments. No component, via, RF geometry, outline or logo changes.
+The final I24 native candidate relocates two complete oil inner-layer chains
+between existing through-vias and adjusts LED_CAN around the remaining CAN_TX
+reference gaps. Fifteen segments are replaced with twelve. Oil excitation is
+6.705 mm shorter, raw oil signal length is unchanged, and the LED chain gains
+2.009 mm. No component, via, RF geometry, outline or logo changes.
 Independent source clearance/connectivity, all seven track keepouts and the
 protected/raw voltage rules pass. Native refill and affected power/thermal
 revalidation are pending; source-only evidence is not native acceptance.

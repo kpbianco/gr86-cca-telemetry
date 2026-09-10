@@ -1,0 +1,10 @@
+{
+  "id": "I24-RET-03",
+  "frozen_before_candidate_edit": true,
+  "date": "2026-09-10T15:59:36.939892+00:00",
+  "input_sha256": "e0e370d81a8a095b65583806051c69362ce3a131567fbcc0cfb6d0bf683caf71",
+  "finding": "I23 LED_CAN In2 segment02837ab8-c764-5353-a2f8-0c1aa8532b66 causes0.057977mm simultaneous inner-plane gap on CAN_TX_MCU segment871a1d07. Preserve alternate plane beneath all six remaining adjacent-In1 interruptions, without crediting alternate copper as established return transfer.",
+  "chosen_correction": "Local LED_CAN In2 detour preserving both original through-via anchors, all components and all earlier oil corrections.",
+  "six_CAN_TX_adjacent_findings_remain": true,
+  "signal_via_trial_rejected": "Nearest feasible same-size0.60/0.30mm all-layer signalvia is2.393mm from TX launch; added transfer route is not justified merely to reduce reported reference gaps."
+}
