@@ -1,0 +1,37 @@
+{
+  "status": "I25_CONSERVATIVE_SHOE_ALLOCATION_SCREEN",
+  "assumptions": {
+    "solder_mask_thickness_um": 25.0,
+    "solder_mask_k_W_mK": 0.2,
+    "TIM_thickness_mm": 0.3,
+    "TIM_k_W_mK": 3.0,
+    "spreader_thickness_mm": 1.0,
+    "spreader_k_W_mK": 300.0,
+    "lumped_interface_conductance_W_m2K": 10000.0,
+    "allocation_K_W": 5.0
+  },
+  "cases": [
+    {"side_mm":3.9,"mask_present":true,"total_board_back_to_landing_k_w":21.5866754328,"meets_5_k_w_allocation":false},
+    {"side_mm":5.0,"mask_present":true,"total_board_back_to_landing_k_w":13.1333333333,"meets_5_k_w_allocation":false},
+    {"side_mm":5.5,"mask_present":true,"total_board_back_to_landing_k_w":10.8539944904,"meets_5_k_w_allocation":false},
+    {"side_mm":6.0,"mask_present":true,"total_board_back_to_landing_k_w":9.1203703704,"meets_5_k_w_allocation":false},
+    {"side_mm":6.5,"mask_present":true,"total_board_back_to_landing_k_w":7.7712031558,"meets_5_k_w_allocation":false},
+    {"side_mm":7.0,"mask_present":true,"total_board_back_to_landing_k_w":6.7006802721,"meets_5_k_w_allocation":false},
+    {"side_mm":8.0,"mask_present":true,"total_board_back_to_landing_k_w":5.1302083333,"meets_5_k_w_allocation":false},
+    {"side_mm":3.9,"mask_present":false,"total_board_back_to_landing_k_w":13.3683979838,"meets_5_k_w_allocation":false},
+    {"side_mm":5.0,"mask_present":false,"total_board_back_to_landing_k_w":8.1333333333,"meets_5_k_w_allocation":false},
+    {"side_mm":5.5,"mask_present":false,"total_board_back_to_landing_k_w":6.7217630854,"meets_5_k_w_allocation":false},
+    {"side_mm":6.0,"mask_present":false,"total_board_back_to_landing_k_w":5.6481481481,"meets_5_k_w_allocation":false},
+    {"side_mm":6.5,"mask_present":false,"total_board_back_to_landing_k_w":4.8126232742,"meets_5_k_w_allocation":true},
+    {"side_mm":7.0,"mask_present":false,"total_board_back_to_landing_k_w":4.1496598639,"meets_5_k_w_allocation":true},
+    {"side_mm":8.0,"mask_present":false,"total_board_back_to_landing_k_w":3.1770833333,"meets_5_k_w_allocation":true}
+  ],
+  "decision": {
+    "masked_i24_style_contact": "REJECT_AS_PRIMARY_CLOSURE_DIRECTION",
+    "preferred_candidate": "6.5x6.5 mm or larger exposed grounded backside land plus compliant shoe, subject to native copper/mask/assembly clearance and supplier-qualified interface data.",
+    "minimum_screened_exposed_side_mm_at_h_10000": 6.5,
+    "qualification_warning": "The 10 kW/m2K interface conductance is an allocation, not a measured material/contact value. No closure is allowed until the selected stack and pressure are bounded by supplier data or test correlation."
+  },
+  "physical_test_claimed": false,
+  "thermal_qualification_claimed": false
+}
