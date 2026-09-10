@@ -1,3 +1,7 @@
+# I23 candidate — native verification in progress
+
+The candidate PCB now reroutes three LED chains to remove internal-plane intrusions beneath CAN/GPS routes. Independent source checks pass; native refill, full DRC, reference review and coupled-model reassessment are pending. The I22 review below is historical for the prior PCB until I23 verification is recorded. Firmware, components, vias, RF traces, outline and mechanical source are unchanged.
+
 # GR86 CCA RVB22 I22 checkpoint
 
 I22 closes six original criteria: **140 closed, 146 open, four not applicable**. All 290 original criteria and 357 recorded redlines remain traceable. See [the I22 review](analyses/review_i22/REVIEW_REPORT.md), [current plan](current/EXECUTION_PLAN.md), [assembly instructions](current/MANUFACTURING_AND_ASSEMBLY.md), [accessory review](current/ACCESSORY_REVIEW.md) and [thermal review](current/THERMAL_REVIEW.md).

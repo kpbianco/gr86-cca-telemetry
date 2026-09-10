@@ -1,0 +1,58 @@
+{
+  "status": "PASS_INDEPENDENT_SOURCE_PREFLIGHT_NATIVE_REQUIRED",
+  "source_before_sha256": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+  "source_after_sha256": "1c3c81e35b4a3bc418e55a8cad55f98c0407dc957a356329c246b53349351e93",
+  "removed_segments": 205,
+  "added_segments": 294,
+  "changed_nets": [
+    "LED_BLE",
+    "LED_CAN",
+    "LED_PWR"
+  ],
+  "all_nonsegment_objects_exact": true,
+  "unchanged_segment_objects_exact": true,
+  "new_clearance_regressions": [],
+  "lost_explicit_pad_groups": [],
+  "trace_current_screen_A": 0.02,
+  "trace_copper_min_um": 24,
+  "trace_resistivity_ohm_m": 4e-08,
+  "trace_rows": [
+    {
+      "net": "LED_BLE",
+      "old_layer": "In1.Cu",
+      "new_layer": "In1.Cu",
+      "old_length_mm": 64.34751801064718,
+      "new_length_mm": 62.16318215070762,
+      "old_R_hot_ohm": 0.5362293167553931,
+      "new_R_hot_ohm": 0.5180265179225635,
+      "added_drop_at20mA_V": -0.00036405597665659193,
+      "added_heat_at20mA_W": -7.281119533131839e-06
+    },
+    {
+      "net": "LED_PWR",
+      "old_layer": "In1.Cu",
+      "new_layer": "In1.Cu",
+      "old_length_mm": 43.240916292848986,
+      "new_length_mm": 43.28335918293881,
+      "old_R_hot_ohm": 0.36034096910707486,
+      "new_R_hot_ohm": 0.36069465985782334,
+      "added_drop_at20mA_V": 7.07381501497082e-06,
+      "added_heat_at20mA_W": 1.414763002994164e-07
+    },
+    {
+      "net": "LED_CAN",
+      "old_layer": "In1.Cu",
+      "new_layer": "In2.Cu",
+      "old_length_mm": 60.798159695877054,
+      "new_length_mm": 84.74863452388888,
+      "old_R_hot_ohm": 0.5066513307989755,
+      "new_R_hot_ohm": 0.7062386210324074,
+      "added_drop_at20mA_V": 0.003991745804668639,
+      "added_heat_at20mA_W": 7.983491609337277e-05
+    }
+  ],
+  "total_added_indicator_trace_heat_W": 7.269527286054035e-05,
+  "native_required": true,
+  "thermal_and_filled_ground_model_required": true,
+  "physical_test_claimed": false
+}
