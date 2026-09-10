@@ -1,0 +1,18 @@
+{
+  "accessed": "2026-09-10",
+  "method": "Public product/capability pages read through web retrieval. Direct HTML download returned403; no raw HTML snapshot is claimed.",
+  "sources": [
+    {
+      "url": "https://www.adafruit.com/product/851",
+      "observation": "PID851 is described as a150mmRG178 cable with a panel SMA connector; the page distinguishes SMA fromRP-SMA. Its datasheet link is C934-001_datasheet.pdf."
+    },
+    {
+      "url": "https://www.adafruit.com/product/960",
+      "observation": "PID960 is a GPS active antenna with5m cable and standardSMA. Its adapter recommendation links directly toPID851. Technical specifications link GPS-01.pdf."
+    },
+    {
+      "url": "https://jlcpcb.com/capabilities/pcb-capabilities",
+      "observation": "Published through-hole diameter tolerance is+0.13/-0.08mm; holeposition\u00b10.05mm; board thickness>=1mm has\u00b110%tolerance. Through-hole copper is stated as18um average. These public capabilities are not approval of this design or a15um guaranteed minimum wall."
+    }
+  ]
+}

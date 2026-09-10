@@ -1,3 +1,7 @@
+# Historical mechanical mirror
+
+Current C05/W02/T03 source is in `../../current/mechanics`. Read the current assembly instructions and I22 review before using any file in this historical directory.
+
 # RVB22 mechanics lane
 
 The current deliverable is the C03 carrier with the T01 thermal correction candidate. It preserves positive board capture, corrects the fuse process and provides source-bound mechanical, thermal and RF-isolation evidence. Actual-source full-load thermal safety and populated native solid validation remain explicit gates.

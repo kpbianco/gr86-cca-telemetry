@@ -1,0 +1,3887 @@
+{
+  "status": "PASS_DECLARED_VIA_SELF_HEATING_BUDGET",
+  "via_count": 322,
+  "each_via_current_screen_A": 2.0,
+  "maximum_board_thickness_mm": 1.76,
+  "minimum_wall_um": 15.0,
+  "negative_finished_hole_allowance_mm": 0.08,
+  "copper_resistivity_ohm_m": 4e-08,
+  "copper_conductivity_W_m_K": 300.0,
+  "allocated_self_rise_limit_K": 10,
+  "maximum_self_rise_K": 5.102514835348361,
+  "maximum_single_barrel_R_ohm": 0.01106618073448833,
+  "equation": "I^2*rho*L^2/(8*k*A^2), A=pi*((d/2+t)^2-(d/2)^2)",
+  "rows": [
+    {
+      "net": "+3V3",
+      "xy_mm": [
+        79.8,
+        25.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+3V3",
+      "xy_mm": [
+        66.055499,
+        15.3
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+3V3",
+      "xy_mm": [
+        23.125,
+        11.35
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+3V3",
+      "xy_mm": [
+        78.5,
+        34
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+3V3",
+      "xy_mm": [
+        77.4287,
+        5.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+3V3",
+      "xy_mm": [
+        41.4,
+        21
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+3V3",
+      "xy_mm": [
+        74.9908,
+        9
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+3V3",
+      "xy_mm": [
+        75.225,
+        25.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+3V3",
+      "xy_mm": [
+        25.9,
+        9.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+3V3",
+      "xy_mm": [
+        16.425,
+        12.7
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+3V3",
+      "xy_mm": [
+        67.0837,
+        35.7947
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+5V",
+      "xy_mm": [
+        69.4999,
+        33.3091
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+5V",
+      "xy_mm": [
+        40.2842,
+        9.7483
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+5V",
+      "xy_mm": [
+        66.7175,
+        33.3091
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+5V",
+      "xy_mm": [
+        10.4391,
+        19.0988
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+5V",
+      "xy_mm": [
+        35.184,
+        17.447
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+5V",
+      "xy_mm": [
+        69.4625,
+        36.3937
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+5V",
+      "xy_mm": [
+        38.3383,
+        15.9371
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "+5V",
+      "xy_mm": [
+        36.4679,
+        9.4071
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_PGOOD",
+      "xy_mm": [
+        30.3362,
+        11.0452
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_PGOOD",
+      "xy_mm": [
+        33.3353,
+        17.0087
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_SOURCE",
+      "xy_mm": [
+        25.4276,
+        13.1375
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_SOURCE",
+      "xy_mm": [
+        29.8644,
+        8.1602
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_SOURCE",
+      "xy_mm": [
+        34.9,
+        23.35
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_SOURCE",
+      "xy_mm": [
+        40.7,
+        24.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "5V_EN",
+      "xy_mm": [
+        43.2365,
+        27.7525
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "5V_EN",
+      "xy_mm": [
+        45.6677,
+        33.4902
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "5V_PGOOD",
+      "xy_mm": [
+        46.1463,
+        31.2501
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "5V_PGOOD",
+      "xy_mm": [
+        49.2825,
+        38.7975
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "5V_PGOOD",
+      "xy_mm": [
+        50.9472,
+        27.0009
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "5V_SOURCE",
+      "xy_mm": [
+        55,
+        36.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "5V_SOURCE",
+      "xy_mm": [
+        51.4,
+        31.525
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "5V_SOURCE",
+      "xy_mm": [
+        47.5123,
+        32.8373
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "5V_VIN",
+      "xy_mm": [
+        45.2068,
+        35.1818
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "5V_VIN",
+      "xy_mm": [
+        43.2,
+        25.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "5V_VIN",
+      "xy_mm": [
+        43.1,
+        25.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ADC_NODE",
+      "xy_mm": [
+        85.9,
+        32.95
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ADC_NODE",
+      "xy_mm": [
+        85,
+        29.1
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "CANL",
+      "xy_mm": [
+        14.5,
+        11.6
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "CANL",
+      "xy_mm": [
+        21.5,
+        4.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "CAN_RX_MCU",
+      "xy_mm": [
+        82.7281,
+        15.5354
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "CAN_RX_MCU",
+      "xy_mm": [
+        77.8,
+        33.1
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "CAN_RX_MCU",
+      "xy_mm": [
+        25.2,
+        18.7
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "xy_mm": [
+        57,
+        24.75
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "xy_mm": [
+        73.8,
+        16.7
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "xy_mm": [
+        26.9727,
+        7.0603
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "xy_mm": [
+        47.55,
+        22.85
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "xy_mm": [
+        67.75,
+        22.75
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "xy_mm": [
+        44.35,
+        22.65
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_EN",
+      "xy_mm": [
+        8.7,
+        25.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_EN",
+      "xy_mm": [
+        49.8,
+        23.6
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_EN",
+      "xy_mm": [
+        26.3,
+        23
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_EN",
+      "xy_mm": [
+        8.7,
+        31
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_EN",
+      "xy_mm": [
+        59.8,
+        25.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_EN",
+      "xy_mm": [
+        69.103,
+        4.738
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_EN",
+      "xy_mm": [
+        43.4,
+        23
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_EN",
+      "xy_mm": [
+        55.9,
+        25.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_EN",
+      "xy_mm": [
+        10.4,
+        25.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_EN",
+      "xy_mm": [
+        83.4992,
+        9.0175
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_GPIO0",
+      "xy_mm": [
+        46.2,
+        29.6
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_GPIO0",
+      "xy_mm": [
+        47.7,
+        31.3
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_GPIO0",
+      "xy_mm": [
+        54.1,
+        32.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_GPIO0",
+      "xy_mm": [
+        68.9377,
+        30.9107
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_GPIO0",
+      "xy_mm": [
+        25.8,
+        37.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_GPIO0",
+      "xy_mm": [
+        30.1,
+        34
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_GPIO0",
+      "xy_mm": [
+        74.5887,
+        6
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "ESP_GPIO0",
+      "xy_mm": [
+        81.4988,
+        3.6162
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        31.2125,
+        3.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        43,
+        6.525
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        45.3,
+        12.75
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        19.2125,
+        2.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        40.5,
+        12
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        26.4625,
+        38
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        76.651,
+        17.301
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        26.95,
+        20.9
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        22.2125,
+        3.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        36.2,
+        11.2
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.719766,
+        21.275
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        72.6,
+        28.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.919766,
+        21.275
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        14.71,
+        9.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        36.2,
+        14.8
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        85.12,
+        -6.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.819766,
+        23.075
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.819766,
+        21.725
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        80.169766,
+        21.725
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        81.8,
+        40.3
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        26.475,
+        22
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        35.9,
+        40.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        18.775,
+        13.7
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        24.45,
+        29.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        24.275,
+        8.865
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        45.7,
+        39.7
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.819766,
+        20.825
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        20,
+        7.9
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        47.6,
+        35.975
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        85.125,
+        36.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        27.9179,
+        28.8929
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        15.7,
+        12.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        22.625,
+        23.95
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        11.2179,
+        28.3071
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        34.9,
+        6.525
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.269766,
+        22.625
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        21.199,
+        7.401
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        31.401,
+        7.799
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        85.95,
+        34.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.719766,
+        21.725
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        17.925,
+        6.795
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        41.7737,
+        24.7
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        59.25,
+        19.85
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.919766,
+        20.825
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.469766,
+        23.075
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        86.3,
+        10.025
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        62.2,
+        17.35
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.369766,
+        23.075
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        20,
+        38.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        39.8485,
+        19
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.819766,
+        22.175
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        35,
+        14.8
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        65.475,
+        38
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        23.98,
+        5.279
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        47.65,
+        28.5
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        31.7,
+        36
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.269766,
+        21.275
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.369766,
+        21.275
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        45.3,
+        5.25
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        80.6125,
+        34.275
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        64.55,
+        20.35
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        25.2125,
+        3.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        28.2125,
+        3.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        60.475,
+        38
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        86.275,
+        5.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        80.75,
+        34.9
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        43.351,
+        37.999
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.819766,
+        21.275
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        74.239659,
+        34.910943
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.269766,
+        20.375
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.269766,
+        22.175
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        87.5648,
+        14.25
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        80.169766,
+        22.625
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        71,
+        7.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.469766,
+        20.825
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        20.6,
+        7.9
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        35,
+        11.2
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        66.425,
+        18
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.919766,
+        21.725
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        33.8,
+        11.2
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        67.65,
+        19.35
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        50.3,
+        29.85
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.469766,
+        22.175
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        38.875,
+        34.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.719766,
+        20.375
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        44.6,
+        1.625
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.469766,
+        21.725
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        24.8514,
+        9.1816
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.719766,
+        22.625
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.819766,
+        20.375
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.469766,
+        22.625
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.369766,
+        22.625
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        42.3515,
+        29.95
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        65.775,
+        11.075
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        62.35,
+        20.35
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        41.6,
+        22.725
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        31.575,
+        22
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        36.15,
+        27.05
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        65.775,
+        6.525
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        85.7,
+        16.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        70.725,
+        36.3
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.269766,
+        20.825
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.369766,
+        21.725
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        84,
+        40.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.369766,
+        22.175
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.919766,
+        22.175
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        33.85,
+        14.7
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        57.375,
+        21.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        31,
+        36
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.819766,
+        22.625
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        47.65,
+        24.5
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.719766,
+        22.175
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        21.6,
+        20
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.719766,
+        23.075
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        80.169766,
+        20.825
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        45.2,
+        14.575
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.269766,
+        21.725
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.469766,
+        20.375
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.719766,
+        20.825
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        64.55,
+        18.85
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        37.675,
+        24
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        63.7,
+        3.75
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.919766,
+        22.625
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.1,
+        13
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        62.35,
+        18.85
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.7,
+        -5.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        16.2125,
+        2.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        27.575,
+        10.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        32.4,
+        36
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.919766,
+        23.075
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        87.475,
+        29.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        45.625,
+        19
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        46.35,
+        28.5
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        20.93,
+        36.479
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        67.8,
+        15.525
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.369766,
+        20.375
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        69.7071,
+        39.9071
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        15.7032,
+        21.15
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        79.269766,
+        23.075
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.575,
+        26.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        64.2,
+        12.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        38.8625,
+        6
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        80.2145,
+        16.661999
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        45.7,
+        30.3
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        80.169766,
+        22.175
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.919766,
+        20.375
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        46.35,
+        24.5
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        42.3515,
+        15.895
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        80.169766,
+        20.375
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.469766,
+        21.275
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        29.2321,
+        12.7071
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.369766,
+        20.825
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        77.575,
+        29
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        78.225,
+        36.3
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        80.975,
+        9
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GND",
+      "xy_mm": [
+        80.169766,
+        21.275
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "GPS_3V3",
+      "xy_mm": [
+        43.9491,
+        19.7001
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_3V3",
+      "xy_mm": [
+        51.6155,
+        21.2312
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_ANT_RF_BIASED",
+      "xy_mm": [
+        62.6764,
+        16.7254
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_FIX_RAW",
+      "xy_mm": [
+        44.8369,
+        8.9561
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_FIX_RAW",
+      "xy_mm": [
+        47.2383,
+        17.3297
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_PPS_BUFFER",
+      "xy_mm": [
+        73.3925,
+        10.6309
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_PPS_BUFFER",
+      "xy_mm": [
+        65.3696,
+        20.388
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_PPS_RAW",
+      "xy_mm": [
+        65.007,
+        15.5586
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_SEARCH_BUFFER",
+      "xy_mm": [
+        31.3289,
+        16.3539
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_SEARCH_BUFFER",
+      "xy_mm": [
+        40.738,
+        22.0382
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_SEARCH_BUFFER",
+      "xy_mm": [
+        46.8818,
+        22.2413
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_SEARCH_BUFFER",
+      "xy_mm": [
+        50.8512,
+        21.5316
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_SEARCH_BUFFER",
+      "xy_mm": [
+        33.65,
+        23.1203
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_SEARCH_BUFFER",
+      "xy_mm": [
+        28.6127,
+        19.109
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_TX_BUFFER",
+      "xy_mm": [
+        69.3568,
+        12.2761
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_TX_BUFFER",
+      "xy_mm": [
+        65.2557,
+        17.0485
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_TX_MCU",
+      "xy_mm": [
+        71.8179,
+        16.0654
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_TX_MCU",
+      "xy_mm": [
+        61.69,
+        21
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "GPS_TX_RAW",
+      "xy_mm": [
+        45.2129,
+        15.4388
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "INPUT_FAULT_N",
+      "xy_mm": [
+        38.8317,
+        37.9906
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "INPUT_FAULT_N",
+      "xy_mm": [
+        36.8248,
+        36.2116
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "INPUT_GATE",
+      "xy_mm": [
+        37.9197,
+        28.1377
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_BLE",
+      "xy_mm": [
+        80.2145,
+        15.462
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_BLE",
+      "xy_mm": [
+        21.8,
+        6.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_CAN",
+      "xy_mm": [
+        24.2,
+        6.1
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_CAN",
+      "xy_mm": [
+        30.8,
+        8.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_CAN",
+      "xy_mm": [
+        79.85,
+        12.9
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_CAN",
+      "xy_mm": [
+        27.7,
+        5.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_GPS",
+      "xy_mm": [
+        39.8121,
+        7.9612
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_GPS",
+      "xy_mm": [
+        31.0566,
+        5.2219
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_GPS",
+      "xy_mm": [
+        64.9113,
+        23.5253
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_GPS",
+      "xy_mm": [
+        72.3973,
+        16.7048
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_OIL",
+      "xy_mm": [
+        70.2362,
+        18.555
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_OIL",
+      "xy_mm": [
+        42.4138,
+        12.7247
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_OIL",
+      "xy_mm": [
+        32.9787,
+        6.6391
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_OIL",
+      "xy_mm": [
+        65.5041,
+        22.9612
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_PWR",
+      "xy_mm": [
+        76.05,
+        16.7
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_PWR",
+      "xy_mm": [
+        35.75,
+        23.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_PWR",
+      "xy_mm": [
+        77.85,
+        12.9
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_PWR",
+      "xy_mm": [
+        18.9,
+        7.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_PWR",
+      "xy_mm": [
+        31.25,
+        20.9
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_SYS",
+      "xy_mm": [
+        54.5167,
+        24.1171
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "LED_SYS",
+      "xy_mm": [
+        48.7137,
+        22.0971
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_5V",
+      "xy_mm": [
+        20.75,
+        28.7
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_5V",
+      "xy_mm": [
+        13.7,
+        20.3
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_5V",
+      "xy_mm": [
+        29.0996,
+        33.1404
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_5V",
+      "xy_mm": [
+        24.5522,
+        25.744
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_5V",
+      "xy_mm": [
+        47.7375,
+        37.5847
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_5V",
+      "xy_mm": [
+        39.7129,
+        33.1404
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_5V",
+      "xy_mm": [
+        14.5375,
+        17.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_5V",
+      "xy_mm": [
+        64.6483,
+        40.0342
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_DVDT",
+      "xy_mm": [
+        23.1427,
+        28.2865
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_DVDT",
+      "xy_mm": [
+        21.4471,
+        35.6123
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_EFUSE_RTN",
+      "xy_mm": [
+        19.6,
+        27.5
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "OIL_EFUSE_RTN",
+      "xy_mm": [
+        19.6,
+        23.5
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "OIL_EFUSE_RTN",
+      "xy_mm": [
+        17.4,
+        27.5
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "OIL_EFUSE_RTN",
+      "xy_mm": [
+        17.4,
+        23.5
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "OIL_EXCITATION_ADC",
+      "xy_mm": [
+        85.4,
+        26.9
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_EXCITATION_ADC",
+      "xy_mm": [
+        72,
+        30.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_EXC_AMP_OUT",
+      "xy_mm": [
+        81.4,
+        26.3
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_EXC_AMP_OUT",
+      "xy_mm": [
+        74.8,
+        30.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_ILIM",
+      "xy_mm": [
+        24.9268,
+        27.2223
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_ILIM",
+      "xy_mm": [
+        24.38,
+        27.7691
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_OVP",
+      "xy_mm": [
+        11.1623,
+        32.2213
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_OVP",
+      "xy_mm": [
+        19.5724,
+        29.932
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_POWER_FAULT_N",
+      "xy_mm": [
+        21.368,
+        39.8446
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_POWER_FAULT_N",
+      "xy_mm": [
+        22.9801,
+        27.2389
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_SHDN",
+      "xy_mm": [
+        9.8115,
+        34.419
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_SHDN",
+      "xy_mm": [
+        10.3495,
+        31.7212
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_SIG",
+      "xy_mm": [
+        8.1,
+        28.25
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_SIG",
+      "xy_mm": [
+        13.7,
+        22.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_SIG",
+      "xy_mm": [
+        21.15,
+        37.3
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_SIG",
+      "xy_mm": [
+        42.75,
+        38.6
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_UVLO",
+      "xy_mm": [
+        11.5185,
+        29.0728
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_UVLO",
+      "xy_mm": [
+        19.1593,
+        28.481
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "PROTECTED_12V",
+      "xy_mm": [
+        25.2,
+        36.575
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "PROTECTED_12V",
+      "xy_mm": [
+        24.625,
+        32.925
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "PROTECTED_12V",
+      "xy_mm": [
+        37.9951,
+        29.7595
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "REV_BLOCKED_12V",
+      "xy_mm": [
+        25,
+        34.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "REV_BLOCKED_12V",
+      "xy_mm": [
+        27.905,
+        25.105
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "UART0_RX",
+      "xy_mm": [
+        71,
+        4.79
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "UART0_RX",
+      "xy_mm": [
+        84.2423,
+        24.8242
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "UART0_TX",
+      "xy_mm": [
+        78.4234,
+        8.2321
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "UART0_TX",
+      "xy_mm": [
+        82.9548,
+        26.8261
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_EFUSE_OUT",
+      "xy_mm": [
+        21.6,
+        28.3
+      ],
+      "nominal_drill_mm": 0.2,
+      "minimum_drill_mm": 0.12000000000000001,
+      "barrel_resistance_ohm": 0.01106618073448833,
+      "loss_at2A_W": 0.04426472293795332,
+      "self_rise_at2A_K": 5.102514835348361
+    },
+    {
+      "net": "OIL_EFUSE_OUT",
+      "xy_mm": [
+        22.3,
+        14.2
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_EFUSE_OUT",
+      "xy_mm": [
+        20.8,
+        20
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_EFUSE_OUT",
+      "xy_mm": [
+        22.277309,
+        28.301764
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_EFUSE_OUT",
+      "xy_mm": [
+        21.6,
+        17
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "OIL_EFUSE_OUT",
+      "xy_mm": [
+        18.2,
+        9.5
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "SUP_RESET_RAW",
+      "xy_mm": [
+        77.7,
+        10.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "SUP_RESET_RAW",
+      "xy_mm": [
+        72.6,
+        10.6
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_VSEL_ADJ",
+      "xy_mm": [
+        31,
+        12
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_FB_ADJ",
+      "xy_mm": [
+        39.1,
+        10.725
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_FB_ADJ",
+      "xy_mm": [
+        31,
+        24.6
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_FB_ADJ",
+      "xy_mm": [
+        35.8,
+        7.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_FB_ADJ",
+      "xy_mm": [
+        40.9,
+        20
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_BULK_DAMPED",
+      "xy_mm": [
+        79.48,
+        18.4
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    },
+    {
+      "net": "3V3_BULK_DAMPED",
+      "xy_mm": [
+        78.88,
+        -6.8
+      ],
+      "nominal_drill_mm": 0.3,
+      "minimum_drill_mm": 0.21999999999999997,
+      "barrel_resistance_ohm": 0.006357167655982654,
+      "loss_at2A_W": 0.025428670623930616,
+      "self_rise_at2A_K": 1.6838991919279993
+    }
+  ],
+  "applicability": [
+    "2A in every individual via is a conservative normal-load screen against the1A LM5164 and1.5A LM63615 stage ratings; no parallel current sharing credit.",
+    "Two board-end temperatures are prescribed. Add calculated rise to the hotter end; board/package absolute temperatures remain THERM02/REG02.",
+    "Plated-wall minimum15um and intact annular rings are fabrication acceptance conditions. JLCPCB average18um is not a guaranteed minimum.",
+    "This is not fuse-clearing, abnormal fault survival, solder-joint or transient ground-bounce proof."
+  ],
+  "physical_measurement_claimed": false
+}

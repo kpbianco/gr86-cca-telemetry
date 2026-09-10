@@ -1,5 +1,5 @@
 {
-  "checkpoint": "RVB22_I21_RECONCILIATION_I20_CAD",
+  "checkpoint": "RVB22_I22_ACCESSORY_PACKAGE_MECHANICAL_REVIEW_I20_CAD",
   "inputs": [
     {
       "item": "Oil sensor",
@@ -13,8 +13,8 @@
     },
     {
       "item": "RF accessory",
-      "value": "Adafruit U.FL/SMA adapter and external GPS puck; exact PIDs not confirmed",
-      "basis": "User product-type selection; G22-06"
+      "value": "Adafruit 851 U.FL/SMA adapter and 960 active GPS L1 puck; exact PIDs user-confirmed",
+      "basis": "User links 2026-09-10; current/ACCESSORY_REVIEW.md"
     },
     {
       "item": "Dashboard thermal load (W)",
@@ -100,6 +100,46 @@
       "item": "Brand artwork",
       "value": "Compact TW, one-color F.SilkS, 8 mm; original SVG polygon identity verified",
       "basis": "current/SOURCE_EFFECTIVITY.json"
+    },
+    {
+      "item": "Adapter cable nominal length (mm)",
+      "value": 150,
+      "basis": "851C934-001drawing, \u00b13mmtoSMAshoulder"
+    },
+    {
+      "item": "Cable maximum OD allocation (mm)",
+      "value": 2.0,
+      "basis": "Engineering receiving envelope; nominal1.8mm, plus0.5mmrouteuncertainty separately"
+    },
+    {
+      "item": "Added populated height stack (mm)",
+      "value": 1.71,
+      "basis": "analyses/review_i22/POPULATED_CLEARANCE_RESULTS.json"
+    },
+    {
+      "item": "Minimum populated model clearance (mm)",
+      "value": 0.12,
+      "basis": "R408toT03; fullstackandbow"
+    },
+    {
+      "item": "Minimum RF metal setback (mm)",
+      "value": 16.421208884692774,
+      "basis": "analyses/mated_i22/RESULTS.json"
+    },
+    {
+      "item": "851 operating ceiling (C)",
+      "value": 60,
+      "basis": "https://cdn-shop.adafruit.com/product-files/851/C934-001_datasheet.pdf"
+    },
+    {
+      "item": "Typical antenna current at3.3V (mA)",
+      "value": 9.8,
+      "basis": "analyses/review_i22/ACCESSORY_APPLICABILITY.json; interpolation, not guaranteed maximum"
+    },
+    {
+      "item": "Maximum via self-rise at2A (K)",
+      "value": 5.102514835348361,
+      "basis": "analyses/review_i22/VIA_CURRENT_THERMAL_BUDGET.json"
     }
   ]
 }

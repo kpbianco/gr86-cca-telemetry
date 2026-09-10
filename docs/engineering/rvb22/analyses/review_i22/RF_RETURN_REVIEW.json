@@ -1,0 +1,18 @@
+{
+  "status": "RF_REFERENCE_RECONFIRMED_DIGITAL_GAPS_REMAIN",
+  "RF_segments": 12,
+  "RF_adjacent_reference_gaps": 0,
+  "digital_segment_findings": 54,
+  "digital_both_plane_gap_count": 0,
+  "digital_affected_length_mm": 31.76439588657623,
+  "SI12_disposition": "Analysis-only board impedance acceptance under the existing user-approved model workflow, limited to documented stack/etch/device allocations. Native geometry agrees with the finite RF network. This does not close GPS09/12/13 or supplier stackup acceptance.",
+  "current_network_evidence": "analyses/rf_i18/EXTENDED_NETWORK_RESULTS.json",
+  "current_network_cases": 3981312,
+  "min_both_port_return_loss_dB": 10.219006917189077,
+  "max_board_insertion_loss_dB": 0.8672405610112812,
+  "current_network_sha256": "74c5bb43e910fb4145f5f2a8e72934d4fc36e6c5e6d00f7f8bf45b80fb486252",
+  "RL_acceptance_dB": 10,
+  "IL_acceptance_dB": 1,
+  "GND02_disposition": "OPEN. Alternate-plane availability is useful evidence but does not erase54 adjacent-plane interruptions or establish return-current transfer across them.",
+  "physical_measurement_claimed": false
+}

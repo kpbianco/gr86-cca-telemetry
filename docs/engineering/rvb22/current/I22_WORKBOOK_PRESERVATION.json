@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "original_criteria_preserved": 290,
+  "original_user_input_cells_preserved": 870,
+  "original_sheet_order_preserved": true,
+  "unmodified_sheets_compared": [
+    "Known Baseline",
+    "Gate Decisions",
+    "Sources",
+    "ERB Findings",
+    "Assembly Cost"
+  ],
+  "closure_cells_match_controlled_JSON": 290,
+  "original_drawing_chart_counts_preserved": {
+    "drawings": 0,
+    "charts": 0
+  },
+  "current_counts": {
+    "open": 146,
+    "closed": 140,
+    "na": 4
+  },
+  "native_excel_execution_claimed": false,
+  "scope": "Exported XML static values and formulas compared; artifact-tool status-change recalculation was separately executed."
+}

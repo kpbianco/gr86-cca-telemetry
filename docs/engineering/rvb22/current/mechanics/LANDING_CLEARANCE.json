@@ -1,0 +1,3749 @@
+{
+  "status": "COMPLETE_AUTHORED_SOLIDS_AND_CONDITIONAL_ENVELOPE_CHECK",
+  "landings": [
+    {
+      "name": "UPPER",
+      "bounds_xy_mm": [
+        7.4,
+        -9,
+        61.5,
+        0
+      ],
+      "Z_mm": [
+        -14.427,
+        -12.427
+      ],
+      "holes_xy_mm": [
+        [
+          11,
+          -4.6
+        ],
+        [
+          57.5,
+          -4.6
+        ]
+      ],
+      "material": "C11000",
+      "plate_thickness_mm": 2
+    },
+    {
+      "name": "UPPER_M3_HEAD",
+      "bounds_xy_mm": [
+        8.0,
+        -7.6,
+        14.0,
+        -1.5999999999999996
+      ],
+      "Z_mm": [
+        -12.427,
+        -10.027
+      ],
+      "max_head_D_mm": 6,
+      "max_head_height_mm": 2.4,
+      "installed_part_condition": true
+    },
+    {
+      "name": "UPPER_M3_HEAD",
+      "bounds_xy_mm": [
+        54.5,
+        -7.6,
+        60.5,
+        -1.5999999999999996
+      ],
+      "Z_mm": [
+        -12.427,
+        -10.027
+      ],
+      "max_head_D_mm": 6,
+      "max_head_height_mm": 2.4,
+      "installed_part_condition": true
+    },
+    {
+      "name": "LOWER",
+      "bounds_xy_mm": [
+        7.4,
+        42,
+        61.5,
+        51
+      ],
+      "Z_mm": [
+        -14.427,
+        -12.427
+      ],
+      "holes_xy_mm": [
+        [
+          11,
+          46.6
+        ],
+        [
+          57.5,
+          46.6
+        ]
+      ],
+      "material": "C11000",
+      "plate_thickness_mm": 2
+    },
+    {
+      "name": "LOWER_M3_HEAD",
+      "bounds_xy_mm": [
+        8.0,
+        43.6,
+        14.0,
+        49.6
+      ],
+      "Z_mm": [
+        -12.427,
+        -10.027
+      ],
+      "max_head_D_mm": 6,
+      "max_head_height_mm": 2.4,
+      "installed_part_condition": true
+    },
+    {
+      "name": "LOWER_M3_HEAD",
+      "bounds_xy_mm": [
+        54.5,
+        43.6,
+        60.5,
+        49.6
+      ],
+      "Z_mm": [
+        -12.427,
+        -10.027
+      ],
+      "max_head_D_mm": 6,
+      "max_head_height_mm": 2.4,
+      "installed_part_condition": true
+    },
+    {
+      "name": "CENTRAL",
+      "bounds_xy_mm": [
+        51,
+        4,
+        66.5,
+        35.8
+      ],
+      "Z_mm": [
+        -15.327,
+        -13.327
+      ],
+      "holes_xy_mm": [
+        [
+          54,
+          7.5
+        ],
+        [
+          54,
+          32.3
+        ]
+      ],
+      "material": "C11000",
+      "plate_thickness_mm": 2
+    },
+    {
+      "name": "CENTRAL_M3_HEAD",
+      "bounds_xy_mm": [
+        51.0,
+        4.5,
+        57.0,
+        10.5
+      ],
+      "Z_mm": [
+        -13.327,
+        -10.927
+      ],
+      "max_head_D_mm": 6,
+      "max_head_height_mm": 2.4,
+      "installed_part_condition": true
+    },
+    {
+      "name": "CENTRAL_M3_HEAD",
+      "bounds_xy_mm": [
+        51.0,
+        29.299999999999997,
+        57.0,
+        35.3
+      ],
+      "Z_mm": [
+        -13.327,
+        -10.927
+      ],
+      "max_head_D_mm": 6,
+      "max_head_height_mm": 2.4,
+      "installed_part_condition": true
+    }
+  ],
+  "checks": [
+    {
+      "a": "UPPER",
+      "b": "C04_base",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "L151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R408",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C122",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R104",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "D501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "D402",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R525",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R515",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R513",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R504",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R505",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R106",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R105",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "U301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R103",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "D301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "L406",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R411",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R506",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "U502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R409",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "U501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C129",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R410",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R107",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C531",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R303",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "J401",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "D102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C157",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "U101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R523",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R407",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R108",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "U151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "U202",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R203",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C205",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "R156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER",
+      "b": "C206",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C04_base",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "L151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R408",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C122",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R104",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "D501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "D402",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R525",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R515",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R513",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R504",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R505",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R106",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R105",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R103",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "D301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "L406",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R411",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R506",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R409",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C129",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R410",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R107",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C531",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R303",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "J401",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "D102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C157",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R523",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R407",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R108",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U202",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R203",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C205",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C206",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C04_base",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "L151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R408",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C122",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R104",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "D501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "D402",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R525",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R515",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R513",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R504",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R505",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R106",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R105",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R103",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "D301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "L406",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R411",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R506",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R409",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C129",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R410",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R107",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C531",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R303",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "J401",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "D102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C157",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R523",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R407",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R108",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "U202",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R203",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C205",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "R156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "UPPER_M3_HEAD",
+      "b": "C206",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C04_base",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "L151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R408",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C122",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R104",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "D501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "D402",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R525",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R515",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R513",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R504",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R505",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R106",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R105",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "U301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R103",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "D301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "L406",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R411",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R506",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "U502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R409",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "U501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C129",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R410",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R107",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C531",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R303",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "J401",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "D102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C157",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "U101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R523",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R407",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R108",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "U151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "U202",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R203",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C205",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "R156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER",
+      "b": "C206",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C04_base",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "L151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R408",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C122",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R104",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "D501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "D402",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R525",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R515",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R513",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R504",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R505",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R106",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R105",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R103",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "D301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "L406",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R411",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R506",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R409",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C129",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R410",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R107",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C531",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R303",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "J401",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "D102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C157",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R523",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R407",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R108",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U202",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R203",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C205",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C206",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C04_base",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "L151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R408",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C122",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R104",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "D501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "D402",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R525",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R515",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R513",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R504",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R505",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R106",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R105",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R103",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "D301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "L406",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R411",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R506",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R409",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C129",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R410",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R107",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C531",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R303",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "J401",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "D102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C157",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R523",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R407",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R108",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "U202",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R203",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C205",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "R156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "LOWER_M3_HEAD",
+      "b": "C206",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C04_base",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "L151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R408",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C122",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R104",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "D501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "D402",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R525",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R515",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R513",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R504",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R505",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R106",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R105",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "U301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R103",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "D301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "L406",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R411",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R506",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "U502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R409",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "U501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C129",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R410",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R107",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C531",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R303",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "J401",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "D102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C157",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "U101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R523",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R407",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R108",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "U151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "U202",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R203",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C205",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "R156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL",
+      "b": "C206",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C04_base",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "L151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R408",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C122",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R104",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "D501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "D402",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R525",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R515",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R513",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R504",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R505",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R106",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R105",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R103",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "D301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "L406",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R411",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R506",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R409",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C129",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R410",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R107",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C531",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R303",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "J401",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "D102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C157",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R523",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R407",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R108",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U202",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R203",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C205",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C206",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C04_base",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C511",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "L151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R408",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C122",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R104",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "D501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "D402",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R525",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R515",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R513",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R504",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R505",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R106",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R105",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R103",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "D301",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "L406",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R411",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R506",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R522",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C153",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R409",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C129",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R410",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R107",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C531",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R303",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C154",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "J401",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "D102",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R302",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C152",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R503",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R502",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C157",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U101",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R523",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R514",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R501",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R407",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R108",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R512",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U151",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C521",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R524",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "U202",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R203",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C205",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R158",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R155",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "R156",
+      "overlap_mm3": 0.0
+    },
+    {
+      "a": "CENTRAL_M3_HEAD",
+      "b": "C206",
+      "overlap_mm3": 0.0
+    }
+  ],
+  "potential_interferences": [],
+  "RF_min_landing_metal_setback_mm": 21.454766000000003,
+  "assembly_basic_bounds_mm": [
+    -13,
+    -15,
+    -18.427,
+    95.454766,
+    58,
+    17.76
+  ],
+  "mandatory_conditions": [
+    "Cold terminal packets welded/brazed to landing bars before adhesive application; no loose foil-to-bar interface credited.",
+    "Six landing M3 fasteners positively attached to installed structure; max head6x2.4mm, nuts/support below the plate add installation space.",
+    "All three landing surfaces<=70C at combined4.815W; an unconnected floating plate is not a heat sink.",
+    "Landing mounting joint and chassis dimensions are interface requirements; actual dashboard placement remains unobserved."
+  ]
+}

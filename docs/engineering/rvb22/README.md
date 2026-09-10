@@ -1,23 +1,13 @@
-# GR86 CCA RVB22 — I21 review checkpoint
+# GR86 CCA RVB22 I22 checkpoint
 
-The controlling hardware source is **I20** at commit `e36523bb1bd374a58b0071e761b7a46c8cc4385e`. I21 reconciles its evidence, completes the interrupted thermal refinement and corrects the stale I06/I11 status. CAD and firmware are unchanged in this checkpoint.
+I22 closes six original criteria: **140 closed, 146 open, four not applicable**. All 290 original criteria and 357 recorded redlines remain traceable. See [the I22 review](analyses/review_i22/REVIEW_REPORT.md), [current plan](current/EXECUTION_PLAN.md), [assembly instructions](current/MANUFACTURING_AND_ASSEMBLY.md), [accessory review](current/ACCESSORY_REVIEW.md) and [thermal review](current/THERMAL_REVIEW.md).
 
-| Result | Current evidence |
-|---|---|
-| Native CAD | Zero ERC, DRC, warnings, unconnected and parity findings. |
-| Target firmware | Pinned Arduino CLI 1.3.1 / ESP32 3.3.6 / NimBLE 2.3.6 build passes; ELF/BIN hashes verified. |
-| Recovery integrity | 1,042 fresh digest checks pass across source and 774 archived native outputs. |
-| Manufacturing | Separate copper/Gerber/drill/netlist reconstruction passes; 153 fitted BOM references, 151 automatic placements and two manual exceptions agree. |
-| Models and branding | All 153 fitted references resolve. The original 8 mm Compact TW logo is present on F.SilkS and matches its vector source. |
-| Power and RF | Finite source-bound sweeps pass their declared component/controller/return and RF allocations. |
-| Mechanics | C05/W02/T03; 49 filled/capped vias; 776 declared mated checks and 37 probe approaches pass. |
-| Review register | 134 closed, 152 open, four not applicable. All 290 original criteria and 351 recorded redlines are retained. User baseline remains 73/213/4. |
-| Thermal | Still open. The completed 0.125 mm model reaches 143.800°C maximum board region and 105.171°C near C206 at 4.815 W, 65°C bulk air and 70°C landings. Mesh and package/local-air closure are unresolved. |
+The user has confirmed **Adafruit 851 and 960**. The revised model uses those parts, a 150 ±3 mm cable, 2.0 mm OD receiving envelope and the complete 1.71 mm populated height allowance. All 1,154 populated and 776 mated checks pass. All 12 IC/module orientation overlays and 151 signal lands pass. The exposed-pad review, conditional via heating budget and original analysis-only RF scope are complete. The six newly closed criteria are LIB-02, LIB-08, VIA-06, SI-12, GPS-01 and MECH-03.
 
-Start with [the current execution plan](current/EXECUTION_PLAN.md), [thermal review](current/THERMAL_REVIEW.md), and [manufacturing/assembly instructions](current/MANUFACTURING_AND_ASSEMBLY.md). The updated review workbook and complete recovery archive carry the full evidence history. JSON evidence paths are relative to the recovery archive root; selected current results are mirrored in this repository. Historical summaries and candidate-directory notes are superseded by this current handoff.
+The controlling electrical source remains **I20**, source commit `e36523bb1bd374a58b0071e761b7a46c8cc4385e`, PCB SHA256 `b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c`. I22 changes models, calculations and controlled instructions. Native run [34420381540](https://github.com/tranquilWorks/gr86-cca-telemetry/actions/runs/34420381540) has zero ERC/DRC/warning/unconnected/parity findings and a passing pinned target firmware build. All 153 fitted model references resolve. The original 8 mm Compact TW logo remains on F.SilkS. A future CAD/firmware change must rerun the pinned workflow.
 
-The source candidate remains `candidate/cad` and `candidate/firmware`. The pinned [native workflow](../../../.github/workflows/rvb22-native.yml) has already produced [I20 run 34420381540](https://github.com/tranquilWorks/gr86-cca-telemetry/actions/runs/34420381540). There is no missing native-runtime gate. A future source change must rerun the workflow and regenerate matched outputs.
+Thermal closure remains open: the retained fine model reaches 143.800°C maximum board region and has material mesh dependence. The selected 851 adapter's documented 60°C ceiling conflicts with the 65°C modeled air case. Digital return, exact accessory bias/plug/retention, supplier construction and original physical/human qualification conditions remain visible. The dashboard load/environment requirement has not been reduced.
 
-Confirmed inputs are the Honeywell MIPAN2XX150PSAAX sensor, GR86 ASC harness per Timurrr, Adafruit adapter/GPS puck by product type, JLCPCB and dashboard use. Exact accessory PIDs/temperature/polarity, supplier construction/material acceptance and actual-unit/installation qualification remain explicit conditions. The nearly ideal contact sensitivity is an unadopted analysis, not a physical cooling correction.
+Use `candidate/cad`, `candidate/firmware`, and `current/mechanics` for the current hardware, firmware and C05/W02/T03 source. Native exports are in `runtime/hosted/run22/extracted/native_I06_hosted`; its legacy folder name does not change its hash identity. Current I22 evidence is under `analyses/review_i22` and `analyses/mated_i22`. Evidence paths in JSON/workbook cells are relative to the complete recovery root, not this selected repository mirror. The public PDF URLs and hashes are included; PDF copies and numerical runtimes are in the recovery archive.
 
-The full thermal and supplier/physical evidence required for overall zero is not yet present. PR #45 remains a draft engineering candidate.
+The updated workbook preserves the original A–F questions/evidence requirements and K–M user fields. Earlier records, including the full thermal maps and native archives, remain historical evidence. PR [#45](https://github.com/tranquilWorks/gr86-cca-telemetry/pull/45) remains the draft engineering handoff; fabrication and physical qualification have not been performed.

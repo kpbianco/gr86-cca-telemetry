@@ -1,0 +1,7065 @@
+{
+  "status": "PASS_DECLARED_FULL_STACK_CLEARANCE",
+  "PCB_sha256": "62c08e7050fe95df0a576ece85a051b4049e9684bf8ea5f73e8949657363276b",
+  "total_fitted_references": 153,
+  "bottom_references": 77,
+  "height_stack_mm": {
+    "solder": 0.25,
+    "capture_freedom": 0.51,
+    "warp": 0.75,
+    "local_deflection": 0.2
+  },
+  "full_extra_height_mm": 1.71,
+  "checks_count": 1154,
+  "interferences": [],
+  "nearest": [
+    {
+      "ref": "R408",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.12000000000000456
+    },
+    {
+      "ref": "L406",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.23009600384333298
+    },
+    {
+      "ref": "C524",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.370000000000001
+    },
+    {
+      "ref": "C531",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.0190512986136042
+    },
+    {
+      "ref": "C205",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.1940512986136156
+    },
+    {
+      "ref": "R203",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.2449999999999992
+    },
+    {
+      "ref": "R158",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.29405129861361
+    },
+    {
+      "ref": "U502",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.2990512986136054
+    },
+    {
+      "ref": "J401",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.4499999999999993
+    },
+    {
+      "ref": "D102",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.0
+    },
+    {
+      "ref": "R410",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.0692146069119928
+    },
+    {
+      "ref": "U202",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.199051298613611
+    },
+    {
+      "ref": "D402",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.2000000000000033
+    },
+    {
+      "ref": "D102",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.250000000000007
+    },
+    {
+      "ref": "J401",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.84
+    },
+    {
+      "ref": "L406",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.29
+    },
+    {
+      "ref": "R523",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.4499999999999993
+    },
+    {
+      "ref": "R101",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.5800000000000054
+    },
+    {
+      "ref": "R101",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.59
+    },
+    {
+      "ref": "R506",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.77000000000001
+    }
+  ],
+  "all_checks": [
+    {
+      "ref": "R126",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.74
+    },
+    {
+      "ref": "C204",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.59
+    },
+    {
+      "ref": "D606",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.44
+    },
+    {
+      "ref": "R403",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.74
+    },
+    {
+      "ref": "R604",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    },
+    {
+      "ref": "R110",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.401
+    },
+    {
+      "ref": "C202",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.39
+    },
+    {
+      "ref": "R124",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.74
+    },
+    {
+      "ref": "D604",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.44
+    },
+    {
+      "ref": "D511",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.19
+    },
+    {
+      "ref": "C523",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.34
+    },
+    {
+      "ref": "U201",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.04
+    },
+    {
+      "ref": "C506",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.49
+    },
+    {
+      "ref": "R128",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.69
+    },
+    {
+      "ref": "D502",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.0
+    },
+    {
+      "ref": "R603",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    },
+    {
+      "ref": "C128",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.59
+    },
+    {
+      "ref": "R125",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.69
+    },
+    {
+      "ref": "U403",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.84
+    },
+    {
+      "ref": "R201",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    },
+    {
+      "ref": "D522",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.19
+    },
+    {
+      "ref": "R402",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.74
+    },
+    {
+      "ref": "R121",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.74
+    },
+    {
+      "ref": "D104",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.09
+    },
+    {
+      "ref": "J202",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.350000000000001
+    },
+    {
+      "ref": "C125",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.29
+    },
+    {
+      "ref": "C401",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.59
+    },
+    {
+      "ref": "C504",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.49
+    },
+    {
+      "ref": "F101",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.39
+    },
+    {
+      "ref": "J203",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.350000000000001
+    },
+    {
+      "ref": "R404",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.74
+    },
+    {
+      "ref": "D605",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.44
+    },
+    {
+      "ref": "C402",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.59
+    },
+    {
+      "ref": "R606",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    },
+    {
+      "ref": "R202",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    },
+    {
+      "ref": "R602",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    },
+    {
+      "ref": "R123",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.74
+    },
+    {
+      "ref": "U402",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.39
+    },
+    {
+      "ref": "D512",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.19
+    },
+    {
+      "ref": "R601",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    },
+    {
+      "ref": "C513",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.34
+    },
+    {
+      "ref": "C403",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.39
+    },
+    {
+      "ref": "C103",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.79
+    },
+    {
+      "ref": "R111",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.69
+    },
+    {
+      "ref": "R401",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    },
+    {
+      "ref": "C123",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.84
+    },
+    {
+      "ref": "D103",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.67
+    },
+    {
+      "ref": "R405",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    },
+    {
+      "ref": "R507",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.59
+    },
+    {
+      "ref": "U121",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.59
+    },
+    {
+      "ref": "D401",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.44
+    },
+    {
+      "ref": "U404",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.39
+    },
+    {
+      "ref": "D602",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.44
+    },
+    {
+      "ref": "C405",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.39
+    },
+    {
+      "ref": "D601",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.44
+    },
+    {
+      "ref": "C201",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.59
+    },
+    {
+      "ref": "D521",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.19
+    },
+    {
+      "ref": "C505",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.49
+    },
+    {
+      "ref": "R605",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    },
+    {
+      "ref": "C126",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.39
+    },
+    {
+      "ref": "R109",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.69
+    },
+    {
+      "ref": "U401",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.390000000000001
+    },
+    {
+      "ref": "L121",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.49
+    },
+    {
+      "ref": "C404",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.39
+    },
+    {
+      "ref": "C121",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.79
+    },
+    {
+      "ref": "D603",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.44
+    },
+    {
+      "ref": "D101",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.67
+    },
+    {
+      "ref": "Q101",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.89
+    },
+    {
+      "ref": "R122",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.74
+    },
+    {
+      "ref": "F1",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.02
+    },
+    {
+      "ref": "R127",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    },
+    {
+      "ref": "C124",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.39
+    },
+    {
+      "ref": "C127",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.59
+    },
+    {
+      "ref": "R511",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.461967362706902
+    },
+    {
+      "ref": "R511",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.099212978557409
+    },
+    {
+      "ref": "R511",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 43.17365850840069
+    },
+    {
+      "ref": "R511",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 77.56064200997822
+    },
+    {
+      "ref": "R511",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 44.522389749428314
+    },
+    {
+      "ref": "R511",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.761543810125225
+    },
+    {
+      "ref": "R511",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 67.1759866991174
+    },
+    {
+      "ref": "R511",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.890710107257817
+    },
+    {
+      "ref": "R511",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.007092741472725
+    },
+    {
+      "ref": "R511",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.795975173923566
+    },
+    {
+      "ref": "R511",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.2432919604397
+    },
+    {
+      "ref": "R511",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.395824769250364
+    },
+    {
+      "ref": "R511",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 46.63405300850442
+    },
+    {
+      "ref": "R511",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.981751240421733
+    },
+    {
+      "ref": "C511",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.100315310836887
+    },
+    {
+      "ref": "C511",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.779540063443807
+    },
+    {
+      "ref": "C511",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.13659143308217
+    },
+    {
+      "ref": "C511",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 73.16300423711427
+    },
+    {
+      "ref": "C511",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.44273963272024
+    },
+    {
+      "ref": "C511",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.323891662913038
+    },
+    {
+      "ref": "C511",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 64.04502470137707
+    },
+    {
+      "ref": "C511",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.610078760678142
+    },
+    {
+      "ref": "C511",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.158248216730058
+    },
+    {
+      "ref": "C511",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.4435169024568
+    },
+    {
+      "ref": "C511",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.863688824166886
+    },
+    {
+      "ref": "C511",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.0317617522842575
+    },
+    {
+      "ref": "C511",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 42.33756369939112
+    },
+    {
+      "ref": "C511",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.244778819366452
+    },
+    {
+      "ref": "L151",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.024413816616283
+    },
+    {
+      "ref": "L151",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.472016263953186
+    },
+    {
+      "ref": "L151",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.162149880541348
+    },
+    {
+      "ref": "L151",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.72933413865281
+    },
+    {
+      "ref": "L151",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.905873821040576
+    },
+    {
+      "ref": "L151",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.38526863219664
+    },
+    {
+      "ref": "L151",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.692592103561683
+    },
+    {
+      "ref": "L151",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.21563983516415
+    },
+    {
+      "ref": "L151",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.600410780323298
+    },
+    {
+      "ref": "L151",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.992822554005848
+    },
+    {
+      "ref": "L151",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.706393686655282
+    },
+    {
+      "ref": "L151",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.05775096118718
+    },
+    {
+      "ref": "L151",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.909999999999998
+    },
+    {
+      "ref": "L151",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.91
+    },
+    {
+      "ref": "R408",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.79
+    },
+    {
+      "ref": "R408",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.32
+    },
+    {
+      "ref": "R408",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.866514263956827
+    },
+    {
+      "ref": "R408",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 52.99915838011015
+    },
+    {
+      "ref": "R408",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.30519118353728
+    },
+    {
+      "ref": "R408",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.18567825173664
+    },
+    {
+      "ref": "R408",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 55.38728002890194
+    },
+    {
+      "ref": "R408",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.906385100974624
+    },
+    {
+      "ref": "R408",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.117
+    },
+    {
+      "ref": "R408",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.413194149774666
+    },
+    {
+      "ref": "R408",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.754639575401358
+    },
+    {
+      "ref": "R408",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.12000000000000456
+    },
+    {
+      "ref": "R408",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.019522971339754
+    },
+    {
+      "ref": "R408",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.49551529190968
+    },
+    {
+      "ref": "C102",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 4.925444142409903
+    },
+    {
+      "ref": "C102",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.289874458234127
+    },
+    {
+      "ref": "C102",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.5780738185342
+    },
+    {
+      "ref": "C102",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.549199619246586
+    },
+    {
+      "ref": "C102",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.74276692493711
+    },
+    {
+      "ref": "C102",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.88390461927392
+    },
+    {
+      "ref": "C102",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.237161323059272
+    },
+    {
+      "ref": "C102",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.02908271567498
+    },
+    {
+      "ref": "C102",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.99597727555276
+    },
+    {
+      "ref": "C102",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.913910696886855
+    },
+    {
+      "ref": "C102",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.5061948490981
+    },
+    {
+      "ref": "C102",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.550452398857693
+    },
+    {
+      "ref": "C102",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.970000000000006
+    },
+    {
+      "ref": "C102",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.5700000000000065
+    },
+    {
+      "ref": "C122",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.194043058698677
+    },
+    {
+      "ref": "C122",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.086567390927407
+    },
+    {
+      "ref": "C122",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.047434145870945
+    },
+    {
+      "ref": "C122",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.77663328207393
+    },
+    {
+      "ref": "C122",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.21171602453619
+    },
+    {
+      "ref": "C122",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.40606866375976
+    },
+    {
+      "ref": "C122",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.72405391545849
+    },
+    {
+      "ref": "C122",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.111625717479928
+    },
+    {
+      "ref": "C122",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.805494017617391
+    },
+    {
+      "ref": "C122",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.740968489899213
+    },
+    {
+      "ref": "C122",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.179297077892953
+    },
+    {
+      "ref": "C122",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.367243611771883
+    },
+    {
+      "ref": "C122",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.399999999999995
+    },
+    {
+      "ref": "C122",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.000000000000004
+    },
+    {
+      "ref": "R104",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.030836063178203
+    },
+    {
+      "ref": "R104",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.619403273884245
+    },
+    {
+      "ref": "R104",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.32511812013269
+    },
+    {
+      "ref": "R104",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.39214861310964
+    },
+    {
+      "ref": "R104",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.894380418800836
+    },
+    {
+      "ref": "R104",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.252697761379785
+    },
+    {
+      "ref": "R104",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.313922154756657
+    },
+    {
+      "ref": "R104",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.14710258327575
+    },
+    {
+      "ref": "R104",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.110057839001545
+    },
+    {
+      "ref": "R104",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.333567614594717
+    },
+    {
+      "ref": "R104",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.10699653784541
+    },
+    {
+      "ref": "R104",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.102720313165413
+    },
+    {
+      "ref": "R104",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.369999999999997
+    },
+    {
+      "ref": "R104",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.17
+    },
+    {
+      "ref": "C158",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.202779351158128
+    },
+    {
+      "ref": "C158",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.195492264044294
+    },
+    {
+      "ref": "C158",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.604958275905616
+    },
+    {
+      "ref": "C158",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.89289529302908
+    },
+    {
+      "ref": "C158",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.830126640836934
+    },
+    {
+      "ref": "C158",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.979879683457245
+    },
+    {
+      "ref": "C158",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.94738854462888
+    },
+    {
+      "ref": "C158",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.586740087410785
+    },
+    {
+      "ref": "C158",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.515878608702769
+    },
+    {
+      "ref": "C158",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.392263933547921
+    },
+    {
+      "ref": "C158",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.335910388554737
+    },
+    {
+      "ref": "C158",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.414952864452307
+    },
+    {
+      "ref": "C158",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.77
+    },
+    {
+      "ref": "C158",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.770000000000003
+    },
+    {
+      "ref": "D501",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.247358898962666
+    },
+    {
+      "ref": "D501",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.986345181050066
+    },
+    {
+      "ref": "D501",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.841123026363046
+    },
+    {
+      "ref": "D501",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.349632526111545
+    },
+    {
+      "ref": "D501",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 43.65653684157735
+    },
+    {
+      "ref": "D501",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.733669938599878
+    },
+    {
+      "ref": "D501",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.29364952178086
+    },
+    {
+      "ref": "D501",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 44.12587913005247
+    },
+    {
+      "ref": "D501",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.138115736712116
+    },
+    {
+      "ref": "D501",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.40518931416234
+    },
+    {
+      "ref": "D501",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.16044536506706
+    },
+    {
+      "ref": "D501",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.77513223767643
+    },
+    {
+      "ref": "D501",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.3
+    },
+    {
+      "ref": "D501",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.3
+    },
+    {
+      "ref": "C301",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.795671876111768
+    },
+    {
+      "ref": "C301",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.590612179558942
+    },
+    {
+      "ref": "C301",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.433629033139184
+    },
+    {
+      "ref": "C301",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.392829142168761
+    },
+    {
+      "ref": "C301",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.648020301434336
+    },
+    {
+      "ref": "C301",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.29808646034622
+    },
+    {
+      "ref": "C301",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.18717872243921
+    },
+    {
+      "ref": "C301",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 43.970685564362086
+    },
+    {
+      "ref": "C301",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.494662918464744
+    },
+    {
+      "ref": "C301",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.650982889942348
+    },
+    {
+      "ref": "C301",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.19937559953609
+    },
+    {
+      "ref": "C301",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.780770742699115
+    },
+    {
+      "ref": "C301",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.969999999999999
+    },
+    {
+      "ref": "C301",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.570000000000004
+    },
+    {
+      "ref": "D402",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.84
+    },
+    {
+      "ref": "D402",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.5
+    },
+    {
+      "ref": "D402",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.204400317013492
+    },
+    {
+      "ref": "D402",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 50.95235214393934
+    },
+    {
+      "ref": "D402",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.142397069156521
+    },
+    {
+      "ref": "D402",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.36369195272538
+    },
+    {
+      "ref": "D402",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 57.81524183984704
+    },
+    {
+      "ref": "D402",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.23703233343398
+    },
+    {
+      "ref": "D402",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.167
+    },
+    {
+      "ref": "D402",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.477251023049892
+    },
+    {
+      "ref": "D402",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.988754277203125
+    },
+    {
+      "ref": "D402",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.2000000000000033
+    },
+    {
+      "ref": "D402",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.900083892381282
+    },
+    {
+      "ref": "D402",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.669732636591405
+    },
+    {
+      "ref": "R525",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.084393463041046
+    },
+    {
+      "ref": "R525",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.343046034369817
+    },
+    {
+      "ref": "R525",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.54031252030009
+    },
+    {
+      "ref": "R525",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 74.57188202667275
+    },
+    {
+      "ref": "R525",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.72751865159403
+    },
+    {
+      "ref": "R525",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.453632263737433
+    },
+    {
+      "ref": "R525",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 71.74135201541716
+    },
+    {
+      "ref": "R525",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.365142414093615
+    },
+    {
+      "ref": "R525",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.134321170578357
+    },
+    {
+      "ref": "R525",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.168769449562802
+    },
+    {
+      "ref": "R525",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.820139988864177
+    },
+    {
+      "ref": "R525",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.119051298613597
+    },
+    {
+      "ref": "R525",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.05451702428286
+    },
+    {
+      "ref": "R525",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.562945341551895
+    },
+    {
+      "ref": "C151",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.6691424210196
+    },
+    {
+      "ref": "C151",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.38472738657357
+    },
+    {
+      "ref": "C151",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.01873127131583
+    },
+    {
+      "ref": "C151",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.326198125530656
+    },
+    {
+      "ref": "C151",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.011126810946614
+    },
+    {
+      "ref": "C151",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.39847020983744
+    },
+    {
+      "ref": "C151",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.91214434716137
+    },
+    {
+      "ref": "C151",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.935652650331974
+    },
+    {
+      "ref": "C151",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.692188223184251
+    },
+    {
+      "ref": "C151",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.062079728186017
+    },
+    {
+      "ref": "C151",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.39587750017344
+    },
+    {
+      "ref": "C151",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.844099384542304
+    },
+    {
+      "ref": "C151",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.499999999999998
+    },
+    {
+      "ref": "C151",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.900000000000002
+    },
+    {
+      "ref": "R515",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.208239892971527
+    },
+    {
+      "ref": "R515",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.93238204392089
+    },
+    {
+      "ref": "R515",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.78295378296854
+    },
+    {
+      "ref": "R515",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 76.39952937682273
+    },
+    {
+      "ref": "R515",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.018786001133705
+    },
+    {
+      "ref": "R515",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.316314890889316
+    },
+    {
+      "ref": "R515",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 72.39859176116617
+    },
+    {
+      "ref": "R515",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.156407340411473
+    },
+    {
+      "ref": "R515",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.104487413817942
+    },
+    {
+      "ref": "R515",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.13147580473891
+    },
+    {
+      "ref": "R515",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.807198562164977
+    },
+    {
+      "ref": "R515",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.269051298613604
+    },
+    {
+      "ref": "R515",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.30711560978326
+    },
+    {
+      "ref": "R515",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.66044860069456
+    },
+    {
+      "ref": "R154",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.089322198033525
+    },
+    {
+      "ref": "R154",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.858420468621613
+    },
+    {
+      "ref": "R154",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.67142929262512
+    },
+    {
+      "ref": "R154",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.22014748691437
+    },
+    {
+      "ref": "R154",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.806332212786874
+    },
+    {
+      "ref": "R154",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.229485941719854
+    },
+    {
+      "ref": "R154",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.59014217850206
+    },
+    {
+      "ref": "R154",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.318981534246344
+    },
+    {
+      "ref": "R154",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.281534472532334
+    },
+    {
+      "ref": "R154",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.610923399973533
+    },
+    {
+      "ref": "R154",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.753813616593762
+    },
+    {
+      "ref": "R154",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.446341100834834
+    },
+    {
+      "ref": "R154",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.77
+    },
+    {
+      "ref": "R154",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.770000000000003
+    },
+    {
+      "ref": "R513",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.721339001497292
+    },
+    {
+      "ref": "R513",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.464266234842214
+    },
+    {
+      "ref": "R513",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.2871621957021
+    },
+    {
+      "ref": "R513",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 75.63051757723201
+    },
+    {
+      "ref": "R513",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.56848732261571
+    },
+    {
+      "ref": "R513",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.43167593514616
+    },
+    {
+      "ref": "R513",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 69.14170368887362
+    },
+    {
+      "ref": "R513",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.02529098731921
+    },
+    {
+      "ref": "R513",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.98038168741609
+    },
+    {
+      "ref": "R513",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.25937144625557
+    },
+    {
+      "ref": "R513",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.384148441820138
+    },
+    {
+      "ref": "R513",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.956804985476442
+    },
+    {
+      "ref": "R513",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 42.262712880268346
+    },
+    {
+      "ref": "R513",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.69742244707443
+    },
+    {
+      "ref": "R504",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 6.100819617067864
+    },
+    {
+      "ref": "R504",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.370935345477113
+    },
+    {
+      "ref": "R504",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.54770914682552
+    },
+    {
+      "ref": "R504",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.47839307450392
+    },
+    {
+      "ref": "R504",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 49.63053081521494
+    },
+    {
+      "ref": "R504",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.918544383946672
+    },
+    {
+      "ref": "R504",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.385458772286157
+    },
+    {
+      "ref": "R504",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.786632411475885
+    },
+    {
+      "ref": "R504",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.06768100414233
+    },
+    {
+      "ref": "R504",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.67626732695504
+    },
+    {
+      "ref": "R504",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.365330644248075
+    },
+    {
+      "ref": "R504",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.711339281921
+    },
+    {
+      "ref": "R504",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.77
+    },
+    {
+      "ref": "R504",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.77000000000001
+    },
+    {
+      "ref": "C101",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 4.182164511350557
+    },
+    {
+      "ref": "C101",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.50014772633107
+    },
+    {
+      "ref": "C101",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.48834134892545
+    },
+    {
+      "ref": "C101",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.13870321050508
+    },
+    {
+      "ref": "C101",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.73804228236797
+    },
+    {
+      "ref": "C101",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.160900008511861
+    },
+    {
+      "ref": "C101",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.507898118454484
+    },
+    {
+      "ref": "C101",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.545688922718686
+    },
+    {
+      "ref": "C101",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.380863990028928
+    },
+    {
+      "ref": "C101",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.13373798536673
+    },
+    {
+      "ref": "C101",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.236674285625654
+    },
+    {
+      "ref": "C101",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.575332213990116
+    },
+    {
+      "ref": "C101",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.02
+    },
+    {
+      "ref": "C101",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.020000000000009
+    },
+    {
+      "ref": "R102",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.856068605915262
+    },
+    {
+      "ref": "R102",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.125179071255175
+    },
+    {
+      "ref": "R102",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.73104912357831
+    },
+    {
+      "ref": "R102",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.981851027841547
+    },
+    {
+      "ref": "R102",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.303791425284615
+    },
+    {
+      "ref": "R102",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.4655053816569
+    },
+    {
+      "ref": "R102",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.194496817905108
+    },
+    {
+      "ref": "R102",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.983423570366337
+    },
+    {
+      "ref": "R102",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.739425872259837
+    },
+    {
+      "ref": "R102",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.375426873256732
+    },
+    {
+      "ref": "R102",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.861571055164355
+    },
+    {
+      "ref": "R102",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.63924715527824
+    },
+    {
+      "ref": "R102",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.48
+    },
+    {
+      "ref": "R102",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.28
+    },
+    {
+      "ref": "R153",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.95157659334376
+    },
+    {
+      "ref": "R153",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.635462101368958
+    },
+    {
+      "ref": "R153",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.35450415464409
+    },
+    {
+      "ref": "R153",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.012836635599804
+    },
+    {
+      "ref": "R153",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.676118398231456
+    },
+    {
+      "ref": "R153",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.35450415464409
+    },
+    {
+      "ref": "R153",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.012836635599804
+    },
+    {
+      "ref": "R153",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.676118398231456
+    },
+    {
+      "ref": "R153",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.775610912043065
+    },
+    {
+      "ref": "R153",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.188293386684363
+    },
+    {
+      "ref": "R153",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.93428347637581
+    },
+    {
+      "ref": "R153",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.890042668287583
+    },
+    {
+      "ref": "R153",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.7
+    },
+    {
+      "ref": "R153",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.700000000000003
+    },
+    {
+      "ref": "C501",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.226471084776044
+    },
+    {
+      "ref": "C501",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.462502930704973
+    },
+    {
+      "ref": "C501",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.194549112395094
+    },
+    {
+      "ref": "C501",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.696750398320575
+    },
+    {
+      "ref": "C501",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 46.68284469695479
+    },
+    {
+      "ref": "C501",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.116236585672969
+    },
+    {
+      "ref": "C501",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.033571613337617
+    },
+    {
+      "ref": "C501",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.78572843479309
+    },
+    {
+      "ref": "C501",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.23547996869557
+    },
+    {
+      "ref": "C501",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.127892119524496
+    },
+    {
+      "ref": "C501",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.447700944013032
+    },
+    {
+      "ref": "C501",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.851826966945225
+    },
+    {
+      "ref": "C501",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.57
+    },
+    {
+      "ref": "C501",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.970000000000012
+    },
+    {
+      "ref": "R151",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.29584233215651
+    },
+    {
+      "ref": "R151",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.03652072796477
+    },
+    {
+      "ref": "R151",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.93305741752326
+    },
+    {
+      "ref": "R151",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.707926366543997
+    },
+    {
+      "ref": "R151",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.2514888241047
+    },
+    {
+      "ref": "R151",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.262279011613984
+    },
+    {
+      "ref": "R151",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.59039419144762
+    },
+    {
+      "ref": "R151",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.33632986697846
+    },
+    {
+      "ref": "R151",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.278057216025669
+    },
+    {
+      "ref": "R151",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.179837375911267
+    },
+    {
+      "ref": "R151",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.712013824061707
+    },
+    {
+      "ref": "R151",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.546906990158307
+    },
+    {
+      "ref": "R151",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.379999999999999
+    },
+    {
+      "ref": "R151",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.38
+    },
+    {
+      "ref": "C302",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.052714598685698
+    },
+    {
+      "ref": "C302",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.20854908838722
+    },
+    {
+      "ref": "C302",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.028174849308325
+    },
+    {
+      "ref": "C302",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.145005078971018
+    },
+    {
+      "ref": "C302",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.991219383343214
+    },
+    {
+      "ref": "C302",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.983208742304573
+    },
+    {
+      "ref": "C302",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.841333566045606
+    },
+    {
+      "ref": "C302",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 46.36980902483856
+    },
+    {
+      "ref": "C302",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.76587758373829
+    },
+    {
+      "ref": "C302",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.15360898906784
+    },
+    {
+      "ref": "C302",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.14882832126097
+    },
+    {
+      "ref": "C302",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.30538459538032
+    },
+    {
+      "ref": "C302",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.469999999999997
+    },
+    {
+      "ref": "C302",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.07
+    },
+    {
+      "ref": "C155",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.034314084786175
+    },
+    {
+      "ref": "C155",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.38111872000065
+    },
+    {
+      "ref": "C155",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.63983107605048
+    },
+    {
+      "ref": "C155",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.306391937101644
+    },
+    {
+      "ref": "C155",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.252747174496825
+    },
+    {
+      "ref": "C155",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.79601699837621
+    },
+    {
+      "ref": "C155",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.53887062387998
+    },
+    {
+      "ref": "C155",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.021972821138355
+    },
+    {
+      "ref": "C155",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.10960159355604
+    },
+    {
+      "ref": "C155",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.226797042034487
+    },
+    {
+      "ref": "C155",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.94559017856941
+    },
+    {
+      "ref": "C155",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.520534514626476
+    },
+    {
+      "ref": "C155",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.899999999999995
+    },
+    {
+      "ref": "C155",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.900000000000002
+    },
+    {
+      "ref": "C512",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.100315310836887
+    },
+    {
+      "ref": "C512",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.047148258423144
+    },
+    {
+      "ref": "C512",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.909079542321656
+    },
+    {
+      "ref": "C512",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 74.1694356793956
+    },
+    {
+      "ref": "C512",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 42.23618340948908
+    },
+    {
+      "ref": "C512",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.855577132509097
+    },
+    {
+      "ref": "C512",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 63.855189209648415
+    },
+    {
+      "ref": "C512",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.98091644257463
+    },
+    {
+      "ref": "C512",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.17304811170122
+    },
+    {
+      "ref": "C512",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.94792760979675
+    },
+    {
+      "ref": "C512",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.89497177435952
+    },
+    {
+      "ref": "C512",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.747895366366004
+    },
+    {
+      "ref": "C512",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 44.01760216095375
+    },
+    {
+      "ref": "C512",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.80607695526502
+    },
+    {
+      "ref": "C522",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 4.573510686551411
+    },
+    {
+      "ref": "C522",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 4.413565309236647
+    },
+    {
+      "ref": "C522",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.652332258222145
+    },
+    {
+      "ref": "C522",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 67.89002275003301
+    },
+    {
+      "ref": "C522",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.8665923926287
+    },
+    {
+      "ref": "C522",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.265850481593707
+    },
+    {
+      "ref": "C522",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 56.439659717259104
+    },
+    {
+      "ref": "C522",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.873429574126705
+    },
+    {
+      "ref": "C522",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.210325106793292
+    },
+    {
+      "ref": "C522",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.090061299372593
+    },
+    {
+      "ref": "C522",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.242696250991818
+    },
+    {
+      "ref": "C522",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.770000000000007
+    },
+    {
+      "ref": "C522",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.52775962226385
+    },
+    {
+      "ref": "C522",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.48269698805387
+    },
+    {
+      "ref": "R505",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 6.985527897016808
+    },
+    {
+      "ref": "R505",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.436837189351575
+    },
+    {
+      "ref": "R505",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.10249817381819
+    },
+    {
+      "ref": "R505",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.52266679427518
+    },
+    {
+      "ref": "R505",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 44.93327485283039
+    },
+    {
+      "ref": "R505",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.611406576838418
+    },
+    {
+      "ref": "R505",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.491003726450424
+    },
+    {
+      "ref": "R505",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.24483702772507
+    },
+    {
+      "ref": "R505",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.198611079981184
+    },
+    {
+      "ref": "R505",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.68717038041587
+    },
+    {
+      "ref": "R505",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.37599846701434
+    },
+    {
+      "ref": "R505",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.55129489304399
+    },
+    {
+      "ref": "R505",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.250000000000004
+    },
+    {
+      "ref": "R505",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.850000000000009
+    },
+    {
+      "ref": "R106",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.599817706602558
+    },
+    {
+      "ref": "R106",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.797084922346432
+    },
+    {
+      "ref": "R106",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.777642435223107
+    },
+    {
+      "ref": "R106",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.805010104482186
+    },
+    {
+      "ref": "R106",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.94361190268354
+    },
+    {
+      "ref": "R106",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.737470857796687
+    },
+    {
+      "ref": "R106",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.18416430571299
+    },
+    {
+      "ref": "R106",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.492528678589686
+    },
+    {
+      "ref": "R106",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.794812091316572
+    },
+    {
+      "ref": "R106",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.51833450768507
+    },
+    {
+      "ref": "R106",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.208254255889429
+    },
+    {
+      "ref": "R106",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.586126250512777
+    },
+    {
+      "ref": "R106",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.77
+    },
+    {
+      "ref": "R106",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.770000000000003
+    },
+    {
+      "ref": "C502",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.767567041815898
+    },
+    {
+      "ref": "C502",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.06379784179023
+    },
+    {
+      "ref": "C502",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.325578352436164
+    },
+    {
+      "ref": "C502",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.13006675241236
+    },
+    {
+      "ref": "C502",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 49.49910291106294
+    },
+    {
+      "ref": "C502",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.587054862150783
+    },
+    {
+      "ref": "C502",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.706668997738596
+    },
+    {
+      "ref": "C502",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 43.367190236398756
+    },
+    {
+      "ref": "C502",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.060011678926216
+    },
+    {
+      "ref": "C502",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.75693547115631
+    },
+    {
+      "ref": "C502",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.461070313059665
+    },
+    {
+      "ref": "C502",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 42.72273971785985
+    },
+    {
+      "ref": "C502",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.369999999999997
+    },
+    {
+      "ref": "C502",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.17
+    },
+    {
+      "ref": "R105",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.346761652559731
+    },
+    {
+      "ref": "R105",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.99378045744248
+    },
+    {
+      "ref": "R105",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.229250613999646
+    },
+    {
+      "ref": "R105",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.933683693345166
+    },
+    {
+      "ref": "R105",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.279109172962
+    },
+    {
+      "ref": "R105",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.17579951559752
+    },
+    {
+      "ref": "R105",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.85712453077488
+    },
+    {
+      "ref": "R105",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.64396094143281
+    },
+    {
+      "ref": "R105",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.75227414412742
+    },
+    {
+      "ref": "R105",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.259479979529132
+    },
+    {
+      "ref": "R105",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.326757289133278
+    },
+    {
+      "ref": "R105",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.814305160666123
+    },
+    {
+      "ref": "R105",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.079999999999995
+    },
+    {
+      "ref": "R105",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.680000000000003
+    },
+    {
+      "ref": "U301",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.9020420195047745
+    },
+    {
+      "ref": "U301",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.18172695571193
+    },
+    {
+      "ref": "U301",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.005106788363024
+    },
+    {
+      "ref": "U301",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.065798315901022
+    },
+    {
+      "ref": "U301",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.805080816350674
+    },
+    {
+      "ref": "U301",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.9152015346919
+    },
+    {
+      "ref": "U301",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.08717257488164
+    },
+    {
+      "ref": "U301",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 45.737960044147144
+    },
+    {
+      "ref": "U301",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.272812703810665
+    },
+    {
+      "ref": "U301",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.51680180846157
+    },
+    {
+      "ref": "U301",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.4170246970885
+    },
+    {
+      "ref": "U301",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.69872027899588
+    },
+    {
+      "ref": "U301",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.85
+    },
+    {
+      "ref": "U301",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.2
+    },
+    {
+      "ref": "C524",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 6.73531736446026
+    },
+    {
+      "ref": "C524",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.761833704719276
+    },
+    {
+      "ref": "C524",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.584954948564835
+    },
+    {
+      "ref": "C524",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 66.4409639379201
+    },
+    {
+      "ref": "C524",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.748210159947746
+    },
+    {
+      "ref": "C524",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.450251831993715
+    },
+    {
+      "ref": "C524",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 59.950760537294265
+    },
+    {
+      "ref": "C524",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.850313414615442
+    },
+    {
+      "ref": "C524",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.267639911572234
+    },
+    {
+      "ref": "C524",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.560482957096095
+    },
+    {
+      "ref": "C524",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.56397987359357
+    },
+    {
+      "ref": "C524",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.370000000000001
+    },
+    {
+      "ref": "C524",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.22478956644028
+    },
+    {
+      "ref": "C524",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.260239885758583
+    },
+    {
+      "ref": "R103",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.97679370308106
+    },
+    {
+      "ref": "R103",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.876172700999472
+    },
+    {
+      "ref": "R103",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.35540140784468
+    },
+    {
+      "ref": "R103",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.50764334252881
+    },
+    {
+      "ref": "R103",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.330896010920476
+    },
+    {
+      "ref": "R103",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.876278884872697
+    },
+    {
+      "ref": "R103",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.78248274388794
+    },
+    {
+      "ref": "R103",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.140298422543857
+    },
+    {
+      "ref": "R103",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.110057839001545
+    },
+    {
+      "ref": "R103",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.088684358652326
+    },
+    {
+      "ref": "R103",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.11982242578865
+    },
+    {
+      "ref": "R103",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.102720313165413
+    },
+    {
+      "ref": "R103",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.269999999999996
+    },
+    {
+      "ref": "R103",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.270000000000001
+    },
+    {
+      "ref": "D301",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 6.21863329036212
+    },
+    {
+      "ref": "D301",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.287029281577937
+    },
+    {
+      "ref": "D301",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.180000369458122
+    },
+    {
+      "ref": "D301",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.602017453874131
+    },
+    {
+      "ref": "D301",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.42574297334167
+    },
+    {
+      "ref": "D301",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.974246027076234
+    },
+    {
+      "ref": "D301",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.89691184594688
+    },
+    {
+      "ref": "D301",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 50.01988813462101
+    },
+    {
+      "ref": "D301",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.75555074390549
+    },
+    {
+      "ref": "D301",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.12597057733779
+    },
+    {
+      "ref": "D301",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.37859582311182
+    },
+    {
+      "ref": "D301",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.38511370542369
+    },
+    {
+      "ref": "D301",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.3
+    },
+    {
+      "ref": "D301",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.300000000000004
+    },
+    {
+      "ref": "R101",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.59
+    },
+    {
+      "ref": "R101",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.297648634203663
+    },
+    {
+      "ref": "R101",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.19376588585388
+    },
+    {
+      "ref": "R101",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.994966627173135
+    },
+    {
+      "ref": "R101",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 44.45118096293955
+    },
+    {
+      "ref": "R101",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.395609121162646
+    },
+    {
+      "ref": "R101",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.802435723188667
+    },
+    {
+      "ref": "R101",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.915005093574646
+    },
+    {
+      "ref": "R101",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.56173357374198
+    },
+    {
+      "ref": "R101",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.13656724828328
+    },
+    {
+      "ref": "R101",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.55024809176165
+    },
+    {
+      "ref": "R101",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.205490405238482
+    },
+    {
+      "ref": "R101",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.57999999999999
+    },
+    {
+      "ref": "R101",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.5800000000000054
+    },
+    {
+      "ref": "R521",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.3867787295951866
+    },
+    {
+      "ref": "R521",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 6.482040608178693
+    },
+    {
+      "ref": "R521",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.035116534500055
+    },
+    {
+      "ref": "R521",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 71.5248851030185
+    },
+    {
+      "ref": "R521",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 42.29892657030435
+    },
+    {
+      "ref": "R521",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.433106913385908
+    },
+    {
+      "ref": "R521",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 59.60695587764904
+    },
+    {
+      "ref": "R521",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.045902731308612
+    },
+    {
+      "ref": "R521",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.040375339690186
+    },
+    {
+      "ref": "R521",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.02665270656413
+    },
+    {
+      "ref": "R521",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.42063486962379
+    },
+    {
+      "ref": "R521",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.349999999999998
+    },
+    {
+      "ref": "R521",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 43.344329502254375
+    },
+    {
+      "ref": "R521",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.351250605581026
+    },
+    {
+      "ref": "L406",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.29
+    },
+    {
+      "ref": "L406",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.799999999999997
+    },
+    {
+      "ref": "L406",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.258197436132486
+    },
+    {
+      "ref": "L406",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 52.38206743724421
+    },
+    {
+      "ref": "L406",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.412040390551798
+    },
+    {
+      "ref": "L406",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.244018003687522
+    },
+    {
+      "ref": "L406",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 58.45922501196882
+    },
+    {
+      "ref": "L406",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.18494639716957
+    },
+    {
+      "ref": "L406",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.617
+    },
+    {
+      "ref": "L406",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.966384499916098
+    },
+    {
+      "ref": "L406",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.355423966773415
+    },
+    {
+      "ref": "L406",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.23009600384333298
+    },
+    {
+      "ref": "L406",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.069303034046
+    },
+    {
+      "ref": "L406",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.10352969337649
+    },
+    {
+      "ref": "C503",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.555144651027241
+    },
+    {
+      "ref": "C503",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.411550761962381
+    },
+    {
+      "ref": "C503",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.702620911293334
+    },
+    {
+      "ref": "C503",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.32535856139559
+    },
+    {
+      "ref": "C503",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 42.713324490140074
+    },
+    {
+      "ref": "C503",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.55217128128995
+    },
+    {
+      "ref": "C503",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.012435448737957
+    },
+    {
+      "ref": "C503",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.15943438902419
+    },
+    {
+      "ref": "C503",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.19677089668248
+    },
+    {
+      "ref": "C503",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.64988038262928
+    },
+    {
+      "ref": "C503",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.42291539935169
+    },
+    {
+      "ref": "C503",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.59763624866073
+    },
+    {
+      "ref": "C503",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.02
+    },
+    {
+      "ref": "C503",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.020000000000001
+    },
+    {
+      "ref": "R411",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.79
+    },
+    {
+      "ref": "R411",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.97
+    },
+    {
+      "ref": "R411",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.238914496743938
+    },
+    {
+      "ref": "R411",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 50.734709903575876
+    },
+    {
+      "ref": "R411",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.678419891680296
+    },
+    {
+      "ref": "R411",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.29841897982904
+    },
+    {
+      "ref": "R411",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 51.224786861440435
+    },
+    {
+      "ref": "R411",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.801795740686742
+    },
+    {
+      "ref": "R411",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.117
+    },
+    {
+      "ref": "R411",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.253872408345043
+    },
+    {
+      "ref": "R411",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.615394483184803
+    },
+    {
+      "ref": "R411",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 4.68497784178207
+    },
+    {
+      "ref": "R411",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.34653041675656
+    },
+    {
+      "ref": "R411",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.494866829082714
+    },
+    {
+      "ref": "R506",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.79
+    },
+    {
+      "ref": "R506",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.392134842377726
+    },
+    {
+      "ref": "R506",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.35580776101581
+    },
+    {
+      "ref": "R506",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.44805177698895
+    },
+    {
+      "ref": "R506",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 52.15130668545133
+    },
+    {
+      "ref": "R506",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.639924294843455
+    },
+    {
+      "ref": "R506",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.454564453215179
+    },
+    {
+      "ref": "R506",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.39772293523977
+    },
+    {
+      "ref": "R506",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.690594809516696
+    },
+    {
+      "ref": "R506",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.47728762829122
+    },
+    {
+      "ref": "R506",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.97645053785676
+    },
+    {
+      "ref": "R506",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.028502323914886
+    },
+    {
+      "ref": "R506",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.77
+    },
+    {
+      "ref": "R506",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.77000000000001
+    },
+    {
+      "ref": "R522",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.55992724832719
+    },
+    {
+      "ref": "R522",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.792586528852465
+    },
+    {
+      "ref": "R522",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.71494787546537
+    },
+    {
+      "ref": "R522",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 70.2959429056898
+    },
+    {
+      "ref": "R522",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.953843231909495
+    },
+    {
+      "ref": "R522",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.146429605333807
+    },
+    {
+      "ref": "R522",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 60.03481980484325
+    },
+    {
+      "ref": "R522",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.09253208789717
+    },
+    {
+      "ref": "R522",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.947466508935252
+    },
+    {
+      "ref": "R522",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.011388053423218
+    },
+    {
+      "ref": "R522",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.39114430915053
+    },
+    {
+      "ref": "R522",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 6.770026805853797
+    },
+    {
+      "ref": "R522",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.141819356951146
+    },
+    {
+      "ref": "R522",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.12235821170074
+    },
+    {
+      "ref": "U502",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.250703000350935
+    },
+    {
+      "ref": "U502",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.351805142618664
+    },
+    {
+      "ref": "U502",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.712096887465513
+    },
+    {
+      "ref": "U502",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 67.45506273809254
+    },
+    {
+      "ref": "U502",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.953535303514855
+    },
+    {
+      "ref": "U502",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.934801058277728
+    },
+    {
+      "ref": "U502",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 61.687806647667415
+    },
+    {
+      "ref": "U502",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.469853518639503
+    },
+    {
+      "ref": "U502",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.702664641719863
+    },
+    {
+      "ref": "U502",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.51482096742989
+    },
+    {
+      "ref": "U502",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.026457605135015
+    },
+    {
+      "ref": "U502",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.2990512986136054
+    },
+    {
+      "ref": "U502",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.06251559714448
+    },
+    {
+      "ref": "U502",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.693170778892934
+    },
+    {
+      "ref": "C153",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.449047571051802
+    },
+    {
+      "ref": "C153",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.042315611187142
+    },
+    {
+      "ref": "C153",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.721222401689339
+    },
+    {
+      "ref": "C153",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.894903593634222
+    },
+    {
+      "ref": "C153",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.59552842400377
+    },
+    {
+      "ref": "C153",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.5881413132606
+    },
+    {
+      "ref": "C153",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.239263850147246
+    },
+    {
+      "ref": "C153",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.217766241845034
+    },
+    {
+      "ref": "C153",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.619913549790592
+    },
+    {
+      "ref": "C153",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.591660172390633
+    },
+    {
+      "ref": "C153",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.03131127045079
+    },
+    {
+      "ref": "C153",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.565550794214676
+    },
+    {
+      "ref": "C153",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.77
+    },
+    {
+      "ref": "C153",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.77
+    },
+    {
+      "ref": "R152",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.296944139271737
+    },
+    {
+      "ref": "R152",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.958405493568193
+    },
+    {
+      "ref": "R152",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.808280818889862
+    },
+    {
+      "ref": "R152",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.831861452385297
+    },
+    {
+      "ref": "R152",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.845265109170718
+    },
+    {
+      "ref": "R152",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.13976907212952
+    },
+    {
+      "ref": "R152",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.28560034584601
+    },
+    {
+      "ref": "R152",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.158961254990814
+    },
+    {
+      "ref": "R152",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.253729223192067
+    },
+    {
+      "ref": "R152",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.104067341799237
+    },
+    {
+      "ref": "R152",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.702110737796765
+    },
+    {
+      "ref": "R152",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.719464980496358
+    },
+    {
+      "ref": "R152",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.77
+    },
+    {
+      "ref": "R152",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.770000000000003
+    },
+    {
+      "ref": "R409",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 6.131598486528615
+    },
+    {
+      "ref": "R409",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.471761760986217
+    },
+    {
+      "ref": "R409",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.368022841182013
+    },
+    {
+      "ref": "R409",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.510961784250593
+    },
+    {
+      "ref": "R409",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.511677676960721
+    },
+    {
+      "ref": "R409",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.51677836936698
+    },
+    {
+      "ref": "R409",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 45.30517397604826
+    },
+    {
+      "ref": "R409",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.499709437199634
+    },
+    {
+      "ref": "R409",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.281534472532334
+    },
+    {
+      "ref": "R409",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.160437441370329
+    },
+    {
+      "ref": "R409",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.67393633668402
+    },
+    {
+      "ref": "R409",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.770438954514127
+    },
+    {
+      "ref": "R409",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.77
+    },
+    {
+      "ref": "R409",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.769999999999996
+    },
+    {
+      "ref": "U501",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.753515704177868
+    },
+    {
+      "ref": "U501",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.863955575264145
+    },
+    {
+      "ref": "U501",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.383924807134722
+    },
+    {
+      "ref": "U501",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.082746839212007
+    },
+    {
+      "ref": "U501",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.500545539535636
+    },
+    {
+      "ref": "U501",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.47652235758505
+    },
+    {
+      "ref": "U501",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.650651308582496
+    },
+    {
+      "ref": "U501",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.89420829326091
+    },
+    {
+      "ref": "U501",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.15632419576365
+    },
+    {
+      "ref": "U501",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.74846120680497
+    },
+    {
+      "ref": "U501",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.423201542320303
+    },
+    {
+      "ref": "U501",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.60421779205535
+    },
+    {
+      "ref": "U501",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.249999999999996
+    },
+    {
+      "ref": "U501",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.250000000000004
+    },
+    {
+      "ref": "C129",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 6.022175686577077
+    },
+    {
+      "ref": "C129",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.655589865508365
+    },
+    {
+      "ref": "C129",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.084860133753434
+    },
+    {
+      "ref": "C129",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.612528719595886
+    },
+    {
+      "ref": "C129",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.50313459006897
+    },
+    {
+      "ref": "C129",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.113178319499804
+    },
+    {
+      "ref": "C129",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.822432647253983
+    },
+    {
+      "ref": "C129",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.24622868121819
+    },
+    {
+      "ref": "C129",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.859543682862554
+    },
+    {
+      "ref": "C129",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.56241521387377
+    },
+    {
+      "ref": "C129",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.940251059114614
+    },
+    {
+      "ref": "C129",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.937452956436207
+    },
+    {
+      "ref": "C129",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.7
+    },
+    {
+      "ref": "C129",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.700000000000008
+    },
+    {
+      "ref": "R410",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.79
+    },
+    {
+      "ref": "R410",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.97
+    },
+    {
+      "ref": "R410",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.265850300422976
+    },
+    {
+      "ref": "R410",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 53.188333203814544
+    },
+    {
+      "ref": "R410",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.777024337590294
+    },
+    {
+      "ref": "R410",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.324076442262957
+    },
+    {
+      "ref": "R410",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 53.656004221335756
+    },
+    {
+      "ref": "R410",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.895562648688067
+    },
+    {
+      "ref": "R410",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.117
+    },
+    {
+      "ref": "R410",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.15087027538482
+    },
+    {
+      "ref": "R410",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.558080625637025
+    },
+    {
+      "ref": "R410",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.0692146069119928
+    },
+    {
+      "ref": "R410",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.308432603079936
+    },
+    {
+      "ref": "R410",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.40752775296731
+    },
+    {
+      "ref": "R107",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.369294403129794
+    },
+    {
+      "ref": "R107",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.624961264935724
+    },
+    {
+      "ref": "R107",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.13733014735356
+    },
+    {
+      "ref": "R107",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.790938528765565
+    },
+    {
+      "ref": "R107",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.142340668528924
+    },
+    {
+      "ref": "R107",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.930828726245975
+    },
+    {
+      "ref": "R107",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.026501666570564
+    },
+    {
+      "ref": "R107",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.008218036596872
+    },
+    {
+      "ref": "R107",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.794812091316572
+    },
+    {
+      "ref": "R107",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.508679870609107
+    },
+    {
+      "ref": "R107",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.20825425588943
+    },
+    {
+      "ref": "R107",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.670216629701972
+    },
+    {
+      "ref": "R107",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.269999999999996
+    },
+    {
+      "ref": "R107",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.27000000000001
+    },
+    {
+      "ref": "C531",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.294395698301347
+    },
+    {
+      "ref": "C531",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.13058387278032
+    },
+    {
+      "ref": "C531",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.030131351694084
+    },
+    {
+      "ref": "C531",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 66.39910533282809
+    },
+    {
+      "ref": "C531",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.154954485603085
+    },
+    {
+      "ref": "C531",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.69001588288953
+    },
+    {
+      "ref": "C531",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 62.79274790133014
+    },
+    {
+      "ref": "C531",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.465956222693926
+    },
+    {
+      "ref": "C531",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.208046373328646
+    },
+    {
+      "ref": "C531",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.224322260901335
+    },
+    {
+      "ref": "C531",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.2145202646332
+    },
+    {
+      "ref": "C531",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.0190512986136042
+    },
+    {
+      "ref": "C531",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.19405519065123
+    },
+    {
+      "ref": "C531",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.55803787461002
+    },
+    {
+      "ref": "R303",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 4.60743963606687
+    },
+    {
+      "ref": "R303",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.296939505986536
+    },
+    {
+      "ref": "R303",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.275636966486637
+    },
+    {
+      "ref": "R303",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.357255622158435
+    },
+    {
+      "ref": "R303",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.559425571954346
+    },
+    {
+      "ref": "R303",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.62398106432452
+    },
+    {
+      "ref": "R303",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.956216307541986
+    },
+    {
+      "ref": "R303",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 46.12045954888134
+    },
+    {
+      "ref": "R303",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.74404958432142
+    },
+    {
+      "ref": "R303",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.802308138558395
+    },
+    {
+      "ref": "R303",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.46722858260002
+    },
+    {
+      "ref": "R303",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.28948644331891
+    },
+    {
+      "ref": "R303",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.569999999999999
+    },
+    {
+      "ref": "R303",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.97
+    },
+    {
+      "ref": "C154",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.768814723666948
+    },
+    {
+      "ref": "C154",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.865711399685573
+    },
+    {
+      "ref": "C154",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.627383708809994
+    },
+    {
+      "ref": "C154",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.666830148920248
+    },
+    {
+      "ref": "C154",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.591278198079916
+    },
+    {
+      "ref": "C154",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.877014138479
+    },
+    {
+      "ref": "C154",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.572285140610273
+    },
+    {
+      "ref": "C154",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.06224048780109
+    },
+    {
+      "ref": "C154",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.40006671865064
+    },
+    {
+      "ref": "C154",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.554762559582972
+    },
+    {
+      "ref": "C154",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.65489381441339
+    },
+    {
+      "ref": "C154",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.326431376090454
+    },
+    {
+      "ref": "C154",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.219999999999999
+    },
+    {
+      "ref": "C154",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.820000000000004
+    },
+    {
+      "ref": "J401",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.84
+    },
+    {
+      "ref": "J401",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.399999999999999
+    },
+    {
+      "ref": "J401",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.925200794955195
+    },
+    {
+      "ref": "J401",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 51.27849270405673
+    },
+    {
+      "ref": "J401",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.608566405891814
+    },
+    {
+      "ref": "J401",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.88784599209866
+    },
+    {
+      "ref": "J401",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 60.39009698617812
+    },
+    {
+      "ref": "J401",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.94464337712211
+    },
+    {
+      "ref": "J401",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.167
+    },
+    {
+      "ref": "J401",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.506279741183366
+    },
+    {
+      "ref": "J401",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.492892173925775
+    },
+    {
+      "ref": "J401",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.4499999999999993
+    },
+    {
+      "ref": "J401",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.930511397466077
+    },
+    {
+      "ref": "J401",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.84727647832245
+    },
+    {
+      "ref": "D102",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.0
+    },
+    {
+      "ref": "D102",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.585677514059842
+    },
+    {
+      "ref": "D102",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.411453179474336
+    },
+    {
+      "ref": "D102",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 42.189657844073594
+    },
+    {
+      "ref": "D102",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.60068784287106
+    },
+    {
+      "ref": "D102",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.550837912158082
+    },
+    {
+      "ref": "D102",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.478831916547104
+    },
+    {
+      "ref": "D102",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.091437300590027
+    },
+    {
+      "ref": "D102",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.370602753308019
+    },
+    {
+      "ref": "D102",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.499590319189185
+    },
+    {
+      "ref": "D102",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.076428133585596
+    },
+    {
+      "ref": "D102",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.331832898191944
+    },
+    {
+      "ref": "D102",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.25
+    },
+    {
+      "ref": "D102",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.250000000000007
+    },
+    {
+      "ref": "C514",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.17913780150227
+    },
+    {
+      "ref": "C514",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.103208180433615
+    },
+    {
+      "ref": "C514",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.91123624995385
+    },
+    {
+      "ref": "C514",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 74.746607207284
+    },
+    {
+      "ref": "C514",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.169816908346476
+    },
+    {
+      "ref": "C514",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.62995296523191
+    },
+    {
+      "ref": "C514",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 70.01186248772417
+    },
+    {
+      "ref": "C514",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.385618980800885
+    },
+    {
+      "ref": "C514",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.232654237000155
+    },
+    {
+      "ref": "C514",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.704824380526063
+    },
+    {
+      "ref": "C514",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.793532596505447
+    },
+    {
+      "ref": "C514",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.269051298613604
+    },
+    {
+      "ref": "C514",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.249613662742156
+    },
+    {
+      "ref": "C514",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.999564513070183
+    },
+    {
+      "ref": "R302",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.783889819494084
+    },
+    {
+      "ref": "R302",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.47846193754488
+    },
+    {
+      "ref": "R302",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.137899094656431
+    },
+    {
+      "ref": "R302",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.128066333726824
+    },
+    {
+      "ref": "R302",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.629018740403684
+    },
+    {
+      "ref": "R302",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.530312625323706
+    },
+    {
+      "ref": "R302",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.983189491011935
+    },
+    {
+      "ref": "R302",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.19952413560137
+    },
+    {
+      "ref": "R302",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.74404958432142
+    },
+    {
+      "ref": "R302",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.811356049196505
+    },
+    {
+      "ref": "R302",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.55333126738845
+    },
+    {
+      "ref": "R302",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.845001072206383
+    },
+    {
+      "ref": "R302",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.969999999999999
+    },
+    {
+      "ref": "R302",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.570000000000004
+    },
+    {
+      "ref": "C152",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.601609547611153
+    },
+    {
+      "ref": "C152",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.26215089890859
+    },
+    {
+      "ref": "C152",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.65539887706474
+    },
+    {
+      "ref": "C152",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.47566477621837
+    },
+    {
+      "ref": "C152",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.65804477679338
+    },
+    {
+      "ref": "C152",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.020947771265693
+    },
+    {
+      "ref": "C152",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.12947434728153
+    },
+    {
+      "ref": "C152",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.808753732266847
+    },
+    {
+      "ref": "C152",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.637451588305941
+    },
+    {
+      "ref": "C152",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.09375477088219
+    },
+    {
+      "ref": "C152",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.76274004510002
+    },
+    {
+      "ref": "C152",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.287943457797407
+    },
+    {
+      "ref": "C152",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.994999999999997
+    },
+    {
+      "ref": "C152",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.044999999999998
+    },
+    {
+      "ref": "R503",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 6.100819617067864
+    },
+    {
+      "ref": "R503",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.718918926810985
+    },
+    {
+      "ref": "R503",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.54770914682552
+    },
+    {
+      "ref": "R503",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.456801781360966
+    },
+    {
+      "ref": "R503",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 52.73402686122121
+    },
+    {
+      "ref": "R503",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.918544383946672
+    },
+    {
+      "ref": "R503",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.32522571801426
+    },
+    {
+      "ref": "R503",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.7793919175471
+    },
+    {
+      "ref": "R503",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.06435194509425
+    },
+    {
+      "ref": "R503",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 43.15662392958931
+    },
+    {
+      "ref": "R503",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.437057696886384
+    },
+    {
+      "ref": "R503",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 42.814200786654894
+    },
+    {
+      "ref": "R503",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.77
+    },
+    {
+      "ref": "R503",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.77000000000001
+    },
+    {
+      "ref": "R502",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.220097323024833
+    },
+    {
+      "ref": "R502",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.498336518395819
+    },
+    {
+      "ref": "R502",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.17448939437501
+    },
+    {
+      "ref": "R502",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.049330554630934
+    },
+    {
+      "ref": "R502",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 47.97488498162346
+    },
+    {
+      "ref": "R502",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.594135431741066
+    },
+    {
+      "ref": "R502",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.404846024862605
+    },
+    {
+      "ref": "R502",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.495838593281746
+    },
+    {
+      "ref": "R502",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.06768100414233
+    },
+    {
+      "ref": "R502",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.38106550110353
+    },
+    {
+      "ref": "R502",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.365330644248075
+    },
+    {
+      "ref": "R502",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.580665999953915
+    },
+    {
+      "ref": "R502",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.27
+    },
+    {
+      "ref": "R502",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.270000000000001
+    },
+    {
+      "ref": "C157",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.034314084786175
+    },
+    {
+      "ref": "C157",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.1924455720882
+    },
+    {
+      "ref": "C157",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.63983107605048
+    },
+    {
+      "ref": "C157",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.775840693421237
+    },
+    {
+      "ref": "C157",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.366598053101153
+    },
+    {
+      "ref": "C157",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.79601699837621
+    },
+    {
+      "ref": "C157",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.351378961172244
+    },
+    {
+      "ref": "C157",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.809507724867593
+    },
+    {
+      "ref": "C157",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.111349674995946
+    },
+    {
+      "ref": "C157",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.836605625838008
+    },
+    {
+      "ref": "C157",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.848275623788778
+    },
+    {
+      "ref": "C157",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.662821035416915
+    },
+    {
+      "ref": "C157",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.899999999999995
+    },
+    {
+      "ref": "C157",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.900000000000002
+    },
+    {
+      "ref": "U101",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.061593304630342
+    },
+    {
+      "ref": "U101",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.717038080976653
+    },
+    {
+      "ref": "U101",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.031469977342102
+    },
+    {
+      "ref": "U101",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.58262553653206
+    },
+    {
+      "ref": "U101",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.774404104051825
+    },
+    {
+      "ref": "U101",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.482922123931447
+    },
+    {
+      "ref": "U101",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.37297202177434
+    },
+    {
+      "ref": "U101",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.33624831971565
+    },
+    {
+      "ref": "U101",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.928683415131186
+    },
+    {
+      "ref": "U101",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.472813262884184
+    },
+    {
+      "ref": "U101",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.63478551109091
+    },
+    {
+      "ref": "U101",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.384706895349307
+    },
+    {
+      "ref": "U101",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.249999999999996
+    },
+    {
+      "ref": "U101",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.250000000000005
+    },
+    {
+      "ref": "R523",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.135951713168648
+    },
+    {
+      "ref": "R523",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 7.854741637666549
+    },
+    {
+      "ref": "R523",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.816078024384076
+    },
+    {
+      "ref": "R523",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 65.98831479133256
+    },
+    {
+      "ref": "R523",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.95688653095537
+    },
+    {
+      "ref": "R523",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.249894720948078
+    },
+    {
+      "ref": "R523",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 57.40642550272574
+    },
+    {
+      "ref": "R523",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.295021706424613
+    },
+    {
+      "ref": "R523",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.65964789348289
+    },
+    {
+      "ref": "R523",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.7822383119858
+    },
+    {
+      "ref": "R523",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.765969332711517
+    },
+    {
+      "ref": "R523",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.4499999999999993
+    },
+    {
+      "ref": "R523",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.79238236374481
+    },
+    {
+      "ref": "R523",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.286590715603612
+    },
+    {
+      "ref": "R514",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.527153634842408
+    },
+    {
+      "ref": "R514",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.185848623586324
+    },
+    {
+      "ref": "R514",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.65254222062871
+    },
+    {
+      "ref": "R514",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 76.7942809654469
+    },
+    {
+      "ref": "R514",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.9720334151206
+    },
+    {
+      "ref": "R514",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.45815826104002
+    },
+    {
+      "ref": "R514",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 68.60537580248358
+    },
+    {
+      "ref": "R514",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.895346597193356
+    },
+    {
+      "ref": "R514",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.81825945723993
+    },
+    {
+      "ref": "R514",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.038381654979446
+    },
+    {
+      "ref": "R514",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.1953295264633
+    },
+    {
+      "ref": "R514",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.9135833596339
+    },
+    {
+      "ref": "R514",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 44.43659865471253
+    },
+    {
+      "ref": "R514",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.77685354586217
+    },
+    {
+      "ref": "R501",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.220097323024833
+    },
+    {
+      "ref": "R501",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.19200793955114
+    },
+    {
+      "ref": "R501",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.17448939437501
+    },
+    {
+      "ref": "R501",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.02610168284613
+    },
+    {
+      "ref": "R501",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 51.178878348396815
+    },
+    {
+      "ref": "R501",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.594135431741066
+    },
+    {
+      "ref": "R501",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.353089876399437
+    },
+    {
+      "ref": "R501",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 42.42189987494667
+    },
+    {
+      "ref": "R501",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.06435194509425
+    },
+    {
+      "ref": "R501",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.96896697561188
+    },
+    {
+      "ref": "R501",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.437057696886384
+    },
+    {
+      "ref": "R501",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 42.69608634289565
+    },
+    {
+      "ref": "R501",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.27
+    },
+    {
+      "ref": "R501",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.270000000000001
+    },
+    {
+      "ref": "R407",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.079942052841147
+    },
+    {
+      "ref": "R407",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.5564039091778
+    },
+    {
+      "ref": "R407",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.026200075178256
+    },
+    {
+      "ref": "R407",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.55731695446101
+    },
+    {
+      "ref": "R407",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.590502655926226
+    },
+    {
+      "ref": "R407",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.840631307776647
+    },
+    {
+      "ref": "R407",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 41.60157195347311
+    },
+    {
+      "ref": "R407",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.495171327788157
+    },
+    {
+      "ref": "R407",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.738849560327454
+    },
+    {
+      "ref": "R407",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.996668895187037
+    },
+    {
+      "ref": "R407",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.397837153314745
+    },
+    {
+      "ref": "R407",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.321468621881081
+    },
+    {
+      "ref": "R407",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.42
+    },
+    {
+      "ref": "R407",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.620000000000005
+    },
+    {
+      "ref": "R108",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.8776926128820493
+    },
+    {
+      "ref": "R108",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.959122480890198
+    },
+    {
+      "ref": "R108",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.3928868770519
+    },
+    {
+      "ref": "R108",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 45.378615988150194
+    },
+    {
+      "ref": "R108",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 40.42782196705631
+    },
+    {
+      "ref": "R108",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.961203811625802
+    },
+    {
+      "ref": "R108",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.05261578037799
+    },
+    {
+      "ref": "R108",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.935143206134052
+    },
+    {
+      "ref": "R108",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.443856444869567
+    },
+    {
+      "ref": "R108",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.455498396619245
+    },
+    {
+      "ref": "R108",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.706037501912235
+    },
+    {
+      "ref": "R108",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.314392946532525
+    },
+    {
+      "ref": "R108",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.77
+    },
+    {
+      "ref": "R108",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 4.77000000000001
+    },
+    {
+      "ref": "R512",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.527153634842408
+    },
+    {
+      "ref": "R512",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.647945903622533
+    },
+    {
+      "ref": "R512",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 42.07537509042552
+    },
+    {
+      "ref": "R512",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 77.59194280980468
+    },
+    {
+      "ref": "R512",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 43.41427863042297
+    },
+    {
+      "ref": "R512",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.069399407006678
+    },
+    {
+      "ref": "R512",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 68.43368753033845
+    },
+    {
+      "ref": "R512",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.397854367441475
+    },
+    {
+      "ref": "R512",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.81825945723993
+    },
+    {
+      "ref": "R512",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.18972490915067
+    },
+    {
+      "ref": "R512",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.195881145706856
+    },
+    {
+      "ref": "R512",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.881504263125123
+    },
+    {
+      "ref": "R512",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 45.77159927291158
+    },
+    {
+      "ref": "R512",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.413012863827028
+    },
+    {
+      "ref": "U151",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.38976161759081
+    },
+    {
+      "ref": "U151",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.68184892662345
+    },
+    {
+      "ref": "U151",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.768652403194729
+    },
+    {
+      "ref": "U151",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.59384609095841
+    },
+    {
+      "ref": "U151",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.44857425347792
+    },
+    {
+      "ref": "U151",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.64011195708151
+    },
+    {
+      "ref": "U151",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.04382225167058
+    },
+    {
+      "ref": "U151",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.30703002443896
+    },
+    {
+      "ref": "U151",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.74019977636879
+    },
+    {
+      "ref": "U151",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.265773340411661
+    },
+    {
+      "ref": "U151",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.46984306562331
+    },
+    {
+      "ref": "U151",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.82290862220821
+    },
+    {
+      "ref": "U151",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.75
+    },
+    {
+      "ref": "U151",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.75
+    },
+    {
+      "ref": "C521",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 4.573510686551411
+    },
+    {
+      "ref": "C521",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.995145772714625
+    },
+    {
+      "ref": "C521",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.77122229407122
+    },
+    {
+      "ref": "C521",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 66.78903494586518
+    },
+    {
+      "ref": "C521",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.96136442489917
+    },
+    {
+      "ref": "C521",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.923461818096822
+    },
+    {
+      "ref": "C521",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 56.654348367976134
+    },
+    {
+      "ref": "C521",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.784236975618203
+    },
+    {
+      "ref": "C521",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.190285474464
+    },
+    {
+      "ref": "C521",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.381891920730027
+    },
+    {
+      "ref": "C521",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.19772644180701
+    },
+    {
+      "ref": "C521",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.770000000000007
+    },
+    {
+      "ref": "C521",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.69650242592992
+    },
+    {
+      "ref": "C521",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.110210401979288
+    },
+    {
+      "ref": "C156",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.034314084786175
+    },
+    {
+      "ref": "C156",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.79994965155506
+    },
+    {
+      "ref": "C156",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.63983107605048
+    },
+    {
+      "ref": "C156",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.696267323354398
+    },
+    {
+      "ref": "C156",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.579089080611933
+    },
+    {
+      "ref": "C156",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.79601699837621
+    },
+    {
+      "ref": "C156",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.097623174316727
+    },
+    {
+      "ref": "C156",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.193846766056716
+    },
+    {
+      "ref": "C156",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.462859219549426
+    },
+    {
+      "ref": "C156",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.83077744588521
+    },
+    {
+      "ref": "C156",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.25931694012018
+    },
+    {
+      "ref": "C156",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.55527306146121
+    },
+    {
+      "ref": "C156",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.899999999999995
+    },
+    {
+      "ref": "C156",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.900000000000002
+    },
+    {
+      "ref": "R524",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.08681024879401
+    },
+    {
+      "ref": "R524",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.662035745726103
+    },
+    {
+      "ref": "R524",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.81574648163473
+    },
+    {
+      "ref": "R524",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 69.62550961393389
+    },
+    {
+      "ref": "R524",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 38.03553061283621
+    },
+    {
+      "ref": "R524",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.348867081166997
+    },
+    {
+      "ref": "R524",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 60.900045886682214
+    },
+    {
+      "ref": "R524",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.544389103072238
+    },
+    {
+      "ref": "R524",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.268793803507533
+    },
+    {
+      "ref": "R524",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.528938162419593
+    },
+    {
+      "ref": "R524",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.921661898469694
+    },
+    {
+      "ref": "R524",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 4.512662685191002
+    },
+    {
+      "ref": "R524",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 39.43046157477744
+    },
+    {
+      "ref": "R524",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.403394590578383
+    },
+    {
+      "ref": "U202",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.19935323813582
+    },
+    {
+      "ref": "U202",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 14.003565949888651
+    },
+    {
+      "ref": "U202",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.023598213797516
+    },
+    {
+      "ref": "U202",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 62.70251740560342
+    },
+    {
+      "ref": "U202",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.58713069849691
+    },
+    {
+      "ref": "U202",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.2080907159686
+    },
+    {
+      "ref": "U202",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 68.81283084570784
+    },
+    {
+      "ref": "U202",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.45657686131924
+    },
+    {
+      "ref": "U202",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.512138579810381
+    },
+    {
+      "ref": "U202",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.97213781746962
+    },
+    {
+      "ref": "U202",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.590746159500707
+    },
+    {
+      "ref": "U202",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.199051298613611
+    },
+    {
+      "ref": "U202",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.76068180839936
+    },
+    {
+      "ref": "U202",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.56241239305744
+    },
+    {
+      "ref": "R203",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.765685128412754
+    },
+    {
+      "ref": "R203",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 10.784860687767935
+    },
+    {
+      "ref": "R203",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.409696493232286
+    },
+    {
+      "ref": "R203",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 58.43368496851795
+    },
+    {
+      "ref": "R203",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.61958299717535
+    },
+    {
+      "ref": "R203",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.21683999144281
+    },
+    {
+      "ref": "R203",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 66.24446798790069
+    },
+    {
+      "ref": "R203",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 35.355968930295205
+    },
+    {
+      "ref": "R203",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.991359972913834
+    },
+    {
+      "ref": "R203",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.48775648776995
+    },
+    {
+      "ref": "R203",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.81457513236928
+    },
+    {
+      "ref": "R203",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.2449999999999992
+    },
+    {
+      "ref": "R203",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.618258077617398
+    },
+    {
+      "ref": "R203",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.36688122454275
+    },
+    {
+      "ref": "C205",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.45441452733423
+    },
+    {
+      "ref": "C205",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 16.170432483560273
+    },
+    {
+      "ref": "C205",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.67966486672355
+    },
+    {
+      "ref": "C205",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 62.5397948429638
+    },
+    {
+      "ref": "C205",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.371498286269034
+    },
+    {
+      "ref": "C205",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.529137936201177
+    },
+    {
+      "ref": "C205",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 67.25402544829566
+    },
+    {
+      "ref": "C205",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.68973751806521
+    },
+    {
+      "ref": "C205",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.31108988775901
+    },
+    {
+      "ref": "C205",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.423118673374788
+    },
+    {
+      "ref": "C205",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.032010714877774
+    },
+    {
+      "ref": "C205",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.1940512986136156
+    },
+    {
+      "ref": "C205",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.705061222348764
+    },
+    {
+      "ref": "C205",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 34.63377036939525
+    },
+    {
+      "ref": "C532",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.39
+    },
+    {
+      "ref": "R158",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 8.698222462089596
+    },
+    {
+      "ref": "R158",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.329167174104082
+    },
+    {
+      "ref": "R158",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.164641648491294
+    },
+    {
+      "ref": "R158",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 63.95784319377883
+    },
+    {
+      "ref": "R158",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.03638763879486
+    },
+    {
+      "ref": "R158",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.7024169703656
+    },
+    {
+      "ref": "R158",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 65.48908081504887
+    },
+    {
+      "ref": "R158",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.723417380249174
+    },
+    {
+      "ref": "R158",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.666568003708909
+    },
+    {
+      "ref": "R158",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.79754567250665
+    },
+    {
+      "ref": "R158",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 21.739225055185386
+    },
+    {
+      "ref": "R158",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.29405129861361
+    },
+    {
+      "ref": "R158",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.72185148939371
+    },
+    {
+      "ref": "R158",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.97345718514484
+    },
+    {
+      "ref": "R155",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 11.7557911260791
+    },
+    {
+      "ref": "R155",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.764130287763926
+    },
+    {
+      "ref": "R155",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.15218755668443
+    },
+    {
+      "ref": "R155",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 36.037776554610026
+    },
+    {
+      "ref": "R155",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.4358068563986
+    },
+    {
+      "ref": "R155",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 17.541804753217388
+    },
+    {
+      "ref": "R155",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 29.851957038023492
+    },
+    {
+      "ref": "R155",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.77622310656444
+    },
+    {
+      "ref": "R155",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.494918973650684
+    },
+    {
+      "ref": "R155",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.43077299028528
+    },
+    {
+      "ref": "R155",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.974080971570185
+    },
+    {
+      "ref": "R155",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.22732876754024
+    },
+    {
+      "ref": "R155",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.895
+    },
+    {
+      "ref": "R155",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.095000000000006
+    },
+    {
+      "ref": "R156",
+      "obstacle": "C05_base",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 12.3260952860182
+    },
+    {
+      "ref": "R156",
+      "obstacle": "C05_supports",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.253684814956863
+    },
+    {
+      "ref": "R156",
+      "obstacle": "UPPER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.600447535150632
+    },
+    {
+      "ref": "R156",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.645399965871817
+    },
+    {
+      "ref": "R156",
+      "obstacle": "UPPER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.47297923699054
+    },
+    {
+      "ref": "R156",
+      "obstacle": "LOWER",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 18.034104191780635
+    },
+    {
+      "ref": "R156",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.3723735389498
+    },
+    {
+      "ref": "R156",
+      "obstacle": "LOWER_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.618224761921248
+    },
+    {
+      "ref": "R156",
+      "obstacle": "CENTRAL",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 20.490693350884932
+    },
+    {
+      "ref": "R156",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.267508224990486
+    },
+    {
+      "ref": "R156",
+      "obstacle": "CENTRAL_M3_HEAD",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 19.424853641662267
+    },
+    {
+      "ref": "R156",
+      "obstacle": "T03_full_packet_plus_bow",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.13320355858293
+    },
+    {
+      "ref": "R156",
+      "obstacle": "W02_upper",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 24.294999999999998
+    },
+    {
+      "ref": "R156",
+      "obstacle": "W02_lower",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 15.695000000000002
+    },
+    {
+      "ref": "C206",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 9.99
+    },
+    {
+      "ref": "R157",
+      "obstacle": "16mm_front_component_reservation",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 13.79
+    }
+  ],
+  "scope": "Design clearance for complete declared maximum component/lead XY+0.3mm and manufacturer maximum heights. Full1.71mm solder/capture/warp/deflection stack; actual installed fit and supplier material/process acceptance remain separate.",
+  "physical_measurement_claimed": false
+}
