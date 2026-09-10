@@ -1,0 +1,77 @@
+{
+  "iteration": "I14",
+  "base_source_sha256": "ff62a6529fcbee5bf3bc6bfac166d613b8917af28ab99deb520bbe5195c97d58",
+  "known_redlines": [
+    {
+      "id": "I14-01",
+      "finding": "Tag-Connect manufacturer requires .508mm from contact pads to other traces/signals; native generic clearance did not encode this.",
+      "evidence": [
+        {
+          "pad": "2",
+          "object": "723d44f4-5450-4ee5-9f8a-76d1ca3c9a84",
+          "type": "segment",
+          "gap_mm": 0.4098181194198369
+        },
+        {
+          "pad": "2",
+          "object": "850dccfb-508a-4950-a8e6-054933156fe8",
+          "type": "segment",
+          "gap_mm": 0.4098181194198366
+        },
+        {
+          "pad": "2",
+          "object": "2fc920da-e441-49b3-99ee-0bc322e4db58",
+          "type": "via",
+          "gap_mm": 0.2829070227030391
+        },
+        {
+          "pad": "3",
+          "object": "f883f0b5-c956-4186-b9bd-acb9e6f1e802",
+          "type": "segment",
+          "gap_mm": 0.20430417169549395
+        },
+        {
+          "pad": "5",
+          "object": "7b76a129-7f14-4d8e-bb4b-aea648cfc3ce",
+          "type": "segment",
+          "gap_mm": 0.43568713898235145
+        },
+        {
+          "pad": "5",
+          "object": "b37841d1-de70-443f-a429-904a0690b650",
+          "type": "segment",
+          "gap_mm": 0.4606859406434901
+        },
+        {
+          "pad": "5",
+          "object": "2095b26c-025b-4bdb-96b9-d0ecc052ee30",
+          "type": "segment",
+          "gap_mm": 0.3596971821355215
+        },
+        {
+          "pad": "5",
+          "object": "2baf002d-c43e-4d38-8231-a298760823f0",
+          "type": "via",
+          "gap_mm": 0.20970847685964858
+        }
+      ],
+      "action": "Outward contact exits, remove close ground via, move pin4 via, add dedicated rule; full native refill and DRC."
+    },
+    {
+      "id": "I14-02",
+      "finding": "Full-load thermal calculation remains mesh-sensitive and package temperatures unproven; I13 via trial lowers MCU hotspot but increases local capacitor-board heating.",
+      "action": "Retain full4.815W corner and complete native-fill thermal comparison; no thermal approval from DRC."
+    },
+    {
+      "id": "I14-03",
+      "finding": "Inferred Adafruit851 PDF limits cable to60C and calls its interface RP-SMA while product page calls SMA. Exact purchased adapter identity was not given.",
+      "action": "Document incompatibility with65C design air; dimension an explicit SMA/U.FL compatible high-temperature alternative for review."
+    },
+    {
+      "id": "I14-04",
+      "finding": "Mated connector/service geometry and updated 290-criterion register still incomplete.",
+      "action": "Complete assembly-envelope and controlled-evidence disposition."
+    }
+  ],
+  "rule": "Freeze before source edits; retain all failed trials and keep physical/supplier conditions distinct."
+}

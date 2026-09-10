@@ -1,0 +1,83 @@
+{
+  "source_before_sha256": "ff62a6529fcbee5bf3bc6bfac166d613b8917af28ab99deb520bbe5195c97d58",
+  "source_after_sha256": "cf75a438a51751a452254c206c5cb897bb87066f670627c1fe72f510f5842253",
+  "removed_objects": [
+    "f883f0b5-c956-4186-b9bd-acb9e6f1e802",
+    "2095b26c-025b-4bdb-96b9-d0ecc052ee30",
+    "2baf002d-c43e-4d38-8231-a298760823f0",
+    "723d44f4-5450-4ee5-9f8a-76d1ca3c9a84",
+    "850dccfb-508a-4950-a8e6-054933156fe8",
+    "03b76b6e-cd21-473b-b571-ac336050385e",
+    "5d39fb2f-ff7b-4a91-96c2-f2b556eeb54f",
+    "7b76a129-7f14-4d8e-bb4b-aea648cfc3ce",
+    "b37841d1-de70-443f-a429-904a0690b650",
+    "ca9632d6-af98-427a-970d-2ac7c090de17"
+  ],
+  "modified_objects": [
+    "2fc920da-e441-49b3-99ee-0bc322e4db58",
+    "aafc8db5-4786-4911-a842-6b7277ddfa88"
+  ],
+  "added_segments": 9,
+  "pin_nets": {
+    "1": 1,
+    "2": 27,
+    "3": 30,
+    "4": 86,
+    "5": 87,
+    "6": 28
+  },
+  "manufacturer_clearance_findings_before": [
+    {
+      "pad": "2",
+      "object": "723d44f4-5450-4ee5-9f8a-76d1ca3c9a84",
+      "type": "segment",
+      "gap_mm": 0.4098181194198369
+    },
+    {
+      "pad": "2",
+      "object": "850dccfb-508a-4950-a8e6-054933156fe8",
+      "type": "segment",
+      "gap_mm": 0.4098181194198366
+    },
+    {
+      "pad": "2",
+      "object": "2fc920da-e441-49b3-99ee-0bc322e4db58",
+      "type": "via",
+      "gap_mm": 0.2829070227030391
+    },
+    {
+      "pad": "3",
+      "object": "f883f0b5-c956-4186-b9bd-acb9e6f1e802",
+      "type": "segment",
+      "gap_mm": 0.20430417169549395
+    },
+    {
+      "pad": "5",
+      "object": "7b76a129-7f14-4d8e-bb4b-aea648cfc3ce",
+      "type": "segment",
+      "gap_mm": 0.43568713898235145
+    },
+    {
+      "pad": "5",
+      "object": "b37841d1-de70-443f-a429-904a0690b650",
+      "type": "segment",
+      "gap_mm": 0.4606859406434901
+    },
+    {
+      "pad": "5",
+      "object": "2095b26c-025b-4bdb-96b9-d0ecc052ee30",
+      "type": "segment",
+      "gap_mm": 0.3596971821355215
+    },
+    {
+      "pad": "5",
+      "object": "2baf002d-c43e-4d38-8231-a298760823f0",
+      "type": "via",
+      "gap_mm": 0.20970847685964858
+    }
+  ],
+  "manufacturer_clearance_findings_after": [],
+  "changed_copper_general_preflight": [],
+  "native_refill_and_DRC_required": true,
+  "scope": "Explicit copper only; native custom-rule refill must validate zones, no-fly areas, holes and connectivity. Removed pin3 GND via is replaced by outward front copper connection to native GND pour."
+}

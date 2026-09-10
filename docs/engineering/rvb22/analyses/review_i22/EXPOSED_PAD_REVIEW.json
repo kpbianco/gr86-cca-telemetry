@@ -1,0 +1,569 @@
+{
+  "status": "PASS_EXACT_EP_NET_AND_LAND_REVIEW",
+  "rows": [
+    {
+      "ref": "U121",
+      "EP": "9",
+      "net": "GND",
+      "nearby_same_net_vias": [
+        {
+          "xy_mm": [
+            47.65,
+            28.5
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            47.65,
+            24.5
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            46.35,
+            28.5
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            46.35,
+            24.5
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        }
+      ]
+    },
+    {
+      "ref": "U151",
+      "EP": "17",
+      "net": "GND",
+      "nearby_same_net_vias": [
+        {
+          "xy_mm": [
+            36.2,
+            11.2
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            36.2,
+            14.8
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            35,
+            14.8
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            35,
+            11.2
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            33.8,
+            11.2
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            33.85,
+            14.7
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        }
+      ]
+    },
+    {
+      "ref": "U201",
+      "EP": "41",
+      "net": "GND",
+      "nearby_same_net_vias": [
+        {
+          "xy_mm": [
+            79.719766,
+            21.275
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            77.919766,
+            21.275
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            78.819766,
+            23.075
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            78.819766,
+            21.725
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            80.169766,
+            21.725
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            78.819766,
+            20.825
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            79.269766,
+            22.625
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545927
+        },
+        {
+          "xy_mm": [
+            79.719766,
+            21.725
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            77.919766,
+            20.825
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            77.469766,
+            23.075
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            78.369766,
+            23.075
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            78.819766,
+            22.175
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            79.269766,
+            21.275
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545927
+        },
+        {
+          "xy_mm": [
+            78.369766,
+            21.275
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            78.819766,
+            21.275
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            79.269766,
+            20.375
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545927
+        },
+        {
+          "xy_mm": [
+            79.269766,
+            22.175
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            80.169766,
+            22.625
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            77.469766,
+            20.825
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            77.919766,
+            21.725
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            77.469766,
+            22.175
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            79.719766,
+            20.375
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            77.469766,
+            21.725
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            79.719766,
+            22.625
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            78.819766,
+            20.375
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            77.469766,
+            22.625
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            78.369766,
+            22.625
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            79.269766,
+            20.825
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            78.369766,
+            21.725
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            78.369766,
+            22.175
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            77.919766,
+            22.175
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            78.819766,
+            22.625
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            79.719766,
+            22.175
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            79.719766,
+            23.075
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            80.169766,
+            20.825
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            79.269766,
+            21.725
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545927
+        },
+        {
+          "xy_mm": [
+            77.469766,
+            20.375
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            79.719766,
+            20.825
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            77.919766,
+            22.625
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            77.919766,
+            23.075
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            78.369766,
+            20.375
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            79.269766,
+            23.075
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545927
+        },
+        {
+          "xy_mm": [
+            80.169766,
+            22.175
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            77.919766,
+            20.375
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            80.169766,
+            20.375
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            77.469766,
+            21.275
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        },
+        {
+          "xy_mm": [
+            78.369766,
+            20.825
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            80.169766,
+            21.275
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.03136548490545923
+        }
+      ]
+    },
+    {
+      "ref": "U301",
+      "EP": "9",
+      "net": "GND",
+      "nearby_same_net_vias": [
+        {
+          "xy_mm": [
+            20,
+            7.9
+          ],
+          "distance_from_EP_mm": 0.40000000000000036,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            21.199,
+            7.401
+          ],
+          "distance_from_EP_mm": 0.8993034433143526,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            20.6,
+            7.9
+          ],
+          "distance_from_EP_mm": 0.40000000000000036,
+          "drill_to_paste_overlap_mm2": 0.0
+        }
+      ]
+    },
+    {
+      "ref": "U501",
+      "EP": "17",
+      "net": "OIL_EFUSE_RTN",
+      "nearby_same_net_vias": [
+        {
+          "xy_mm": [
+            19.6,
+            27.5
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            19.6,
+            23.5
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            17.4,
+            27.5
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        },
+        {
+          "xy_mm": [
+            17.4,
+            23.5
+          ],
+          "distance_from_EP_mm": 0.0,
+          "drill_to_paste_overlap_mm2": 0.0
+        }
+      ]
+    }
+  ],
+  "mask_and_paste_quantities": "PACKAGE_ORIENTATION_RESULTS.json",
+  "interpretation": [
+    "U121,U151 GND thermal copper uses manufacturer-size mask windows. Oversized buried copper is not exposed solder area.",
+    "U201 retains the nine manufacturer .9mm paste/mask lands;48 filled/capped thermal vias are controlled separately.",
+    "U301 EP connects to GND and two through vias .4mm from the pad edge; the datasheet recommends multiple returns, not a mandatory via-in-pad topology.",
+    "U501 EP is RTN, not indiscriminately shorted to system GND. This preserves TPS2660 reverse-current/protection topology.",
+    "Component limits, thermal performance, fill/capping and stencil/reflow approval remain separate gates."
+  ],
+  "physical_measurement_claimed": false
+}

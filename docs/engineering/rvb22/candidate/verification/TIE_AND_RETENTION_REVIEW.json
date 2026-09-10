@@ -1,0 +1,349 @@
+{
+  "id": "RDA-07",
+  "status": "EXACT_COMPONENT_FIT_AND_CONDITIONAL_RETENTION_CALCULATION_COMPLETE",
+  "source_retrieved_date": "2026-09-09",
+  "source_facts": [
+    {
+      "url": "https://www.hellermanntyton.us/products/cable-ties/t18r/111-01905",
+      "facts": {
+        "MPN": "T18R0HSC2",
+        "article": "111-01905",
+        "material": "PA66HS black",
+        "length_mm": 100.0,
+        "strap_nominal_width_mm": 2.5,
+        "strap_nominal_thickness_mm": 1.0,
+        "head_nominal_length_width_height_mm": [
+          4.8,
+          4.45,
+          3.7
+        ],
+        "bundle_nominal_range_mm": [
+          1.5,
+          22.0
+        ],
+        "minimum_tensile_N": 80.0,
+        "temperature_range_C": [
+          -40,
+          125
+        ]
+      }
+    },
+    {
+      "url": "https://www.hellermanntyton.com/shared/assets/TDS_111-01905_us.pdf",
+      "document": "Exact product technical datasheet created2026-08-11",
+      "facts": "Confirms exactMPN,80N,nominaldimensions,PA66HS and\u221240..125\u00b0C."
+    },
+    {
+      "url": "https://www.hellermanntyton.com/shared/assets/CAD_10-0585-001-CSC.pdf",
+      "document": "T18R Series drawing10-0585-001-CSC,Rev10.1,2025-12-05",
+      "facts": {
+        "minimum_loop_tensile_N": 80.0,
+        "strap_width_mm": [
+          2.3,
+          2.7
+        ],
+        "strap_thickness_mm": [
+          0.9,
+          1.3
+        ],
+        "maximum_head_length_width_height_allocation_mm": [
+          5.0,
+          5.0,
+          3.7
+        ],
+        "HS_series_continuous_temperature_C": [
+          -40,
+          105
+        ]
+      },
+      "effectivity": "Family drawing linked by exactproductpage; dimensions and105\u00b0C used as conservative bounds, not an assertion that all regional variants have identical qualification."
+    }
+  ],
+  "source_archive": "Manufacturer webpages/PDF text inspected with web tool. Binary PDF download returned403; no nonexistent PDF archive is claimed. Exact URLs and numeric facts retained here.",
+  "selected_component": "HellermannTyton T18R0HSC2 /111-01905, no general-purpose85\u00b0C substitution",
+  "controlled_geometry": {
+    "carrier_thickness_mm": 3.0,
+    "slot_nominal_mm": [
+      3.9,
+      1.6
+    ],
+    "slot_minimum_finished_width_thickness_mm": [
+      3.8,
+      1.5
+    ],
+    "slot_edge_finish": "No burr; break sharp routed edges without reducing the specified minimum ligament.",
+    "worst_total_slot_width_clearance_mm": 1.0999999999999996,
+    "worst_total_slot_thickness_clearance_mm": 0.19999999999999996,
+    "head_reserved_mm": [
+      5.2,
+      5.2,
+      3.9
+    ],
+    "left_slot_centres_mm": [
+      [
+        -4,
+        31
+      ],
+      [
+        -4,
+        37
+      ]
+    ],
+    "right_slot_centres_mm": [
+      [
+        62.5,
+        33
+      ],
+      [
+        62.5,
+        39
+      ]
+    ],
+    "left_round_bundle_max_mm": 6.0,
+    "left_bundle_and_strap_depth_mm": 7.3,
+    "left_corridor_xyz_mm": {
+      "x": [
+        -7.5,
+        -0.5
+      ],
+      "y": [
+        25,
+        42
+      ],
+      "z": [
+        -16.3,
+        -9
+      ]
+    },
+    "head_side_parking_x_mm": [
+      -12.5,
+      -7.3
+    ],
+    "right_coax_jacket_and_strap_max_depth_mm": 2.8,
+    "right_coax_round_diameter_max_from_depth_mm": 1.5,
+    "tie_count_rule": "One closed tie loop uses each pair of slots; only one locking head per loop. Park the head in either reserved side volume.",
+    "scope": "Mechanical owner must bind these reservations to the final carrier. Max6mm harness is an installation requirement, not a measurement of the user harness.",
+    "actual_curved_slot_verification": "../../lanes/mechanics/SLOT_SHAPE_CORRECTION_CHECKS.json",
+    "carrier_min_thickness_mm": 2.85,
+    "F1_relaxed_exit": {
+      "minimum_length_mm": 25.4,
+      "measured_from": "Actual mated plug wire-exit plane, not PCB pin or carrier anchor.",
+      "no_bend_tie_twist": "First25.4mm free wire; no terminal bias.",
+      "following_min_bend_radius_mm": 30,
+      "scope": "External installation/service envelope. Actual plugexit and harness path unknown; no in-basic-box fit claim.",
+      "source": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/430/43045/430450001-AS-000.pdf",
+      "pages": [
+        2,
+        3
+      ]
+    }
+  },
+  "thermal_contract": {
+    "tie_continuous_max_C": 105.0,
+    "exact_US_datasheet_max_C": 125.0,
+    "reason_for105": "Conservative resolution of exact product versus linked family drawing.",
+    "CAN_wire_max_C": 80.0,
+    "CAN_wire_source": "Current controlled Sumitomo AVSS0.3 specification,80\u00b0C/10000h; incomingOD1.30..1.50mm.",
+    "CAN_routing": "Use left anchor and keep actualwire\u226480\u00b0C. Preserve15..25mm twist and\u226530mm bend radius; F1 requires\u226525.4mm relaxed exit before bend/tie/twist; ASC end\u226415mm untwist. Do not flatten an unspecified length of twistedpair to fit the old2.8mm clearance.",
+    "right_anchor": "Can lie near90\u00b0C only with an accessory jacket rated for that localtemperature; adapterjacket material/rating is not inferred from the tie rating."
+  },
+  "force_path": {
+    "coax": "External cablepull \u2192 SMA nut/shoulder \u2192 electrically insulating bulkhead \u2192 carrier mounting. U.FL socket is not the force anchor; righttie retains only the protectedservice loop. Bulkhead must restrain bothaxialdirections.",
+    "F1_harness": "Each loaded conductor/jacket \u2192 controlledjacketgrip or specifiedintegralstrain-reliefshoulder \u2192 closedtie \u2192 carrier slotligaments \u2192 carrierfasteners. Anouterbundle tie doesnot byitself prove eachinnerwirecannot slip.",
+    "positive_shoulder_option": "A molded/crimped harnessshoulder may replace friction credit only when itsattachment to the loaded wires is specified and rated\u226520N at the actualtemperature. A loosecollar, tape buildup or anunbonded sleeve is not positivejacketretention. This optionalharnessfeature is not claimed present.",
+    "service": "Disconnectpower and release ties before unmating. Maintainslack betweenanchor and F1/U.FL for permittedrelative motion, with the controlled30mm CAN bendradius envelope."
+  },
+  "retention_model": {
+    "load_N": 10.0,
+    "conservative_friction_equation": "For a round bundle tangent to the flat carrier, a strap contacting its lower arc between exits separated by s has contactangle theta=4*atan(D/s). Thus F_axial\u2264mu*T*theta. Use s\u22647.9mm (6mm slotpitch plus1.7mm finishedslotheight maximum plus.2mm relative slotposition allowance); D is loaded/compressed diameter. T is retainedtension aftercreep/temperature, not gunsetting. No unconditionalpiwrap or2T normalforce is assumed.",
+    "nominal_design_target": {
+      "retained_T_N": 20.0,
+      "loaded_bundle_diameter_range_mm": [
+        3.0,
+        6.0
+      ],
+      "required_mu_min": 0.3444230473122256,
+      "minimum_integrated_normal_force_N": 29.034061680938624,
+      "required_hot_loop_minimum_break_N_conservative": 60.0,
+      "comparison_to_catalogue80N": 0.75,
+      "meaning": "The calculated target requires at least75% of the catalogue minimum loop strength under actual serviceconditions; thatretainedhotstrength is not guaranteed by the inspectedtable."
+    },
+    "jacket_damage_equation": "For circular uniformband pressurep=2*T/(w*D). Requiredjacketallowablepressure must exceed the table value withoutcutting, extrusion or insulationdamage. Asoftspreader changespressure distribution and must be modeled withits actualfootprint.",
+    "no_fabricated_properties": "No frictioncoefficient, hotretention, jacketpressureallowance orinstalledtension is assigned to AVSS/PVC or the unknownaccessory merely to satisfy10N."
+  },
+  "inverse_cases": [
+    {
+      "round_bundle_diameter_mm": 3.0,
+      "retained_strap_tension_N": 5.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 1.4517030840469312,
+      "integrated_normal_force_N": 7.258515420234656,
+      "minimum_friction_coefficient_for10N": 1.3776921892489025,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.6366197723675814,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 1.4492753623188408,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 30.0
+    },
+    {
+      "round_bundle_diameter_mm": 3.0,
+      "retained_strap_tension_N": 10.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 1.4517030840469312,
+      "integrated_normal_force_N": 14.517030840469312,
+      "minimum_friction_coefficient_for10N": 0.6888460946244512,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.3183098861837907,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 2.8985507246376816,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 40.0
+    },
+    {
+      "round_bundle_diameter_mm": 3.0,
+      "retained_strap_tension_N": 15.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 1.4517030840469312,
+      "integrated_normal_force_N": 21.77554626070397,
+      "minimum_friction_coefficient_for10N": 0.45923072974963414,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.2122065907891938,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 4.347826086956522,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 50.0
+    },
+    {
+      "round_bundle_diameter_mm": 3.0,
+      "retained_strap_tension_N": 20.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 1.4517030840469312,
+      "integrated_normal_force_N": 29.034061680938624,
+      "minimum_friction_coefficient_for10N": 0.3444230473122256,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.15915494309189535,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 5.797101449275363,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 60.0
+    },
+    {
+      "round_bundle_diameter_mm": 4.5,
+      "retained_strap_tension_N": 5.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 2.0711274344507458,
+      "integrated_normal_force_N": 10.35563717225373,
+      "minimum_friction_coefficient_for10N": 0.9656576252780851,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.6366197723675814,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 0.9661835748792271,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 30.0
+    },
+    {
+      "round_bundle_diameter_mm": 4.5,
+      "retained_strap_tension_N": 10.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 2.0711274344507458,
+      "integrated_normal_force_N": 20.71127434450746,
+      "minimum_friction_coefficient_for10N": 0.48282881263904254,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.3183098861837907,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 1.9323671497584543,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 40.0
+    },
+    {
+      "round_bundle_diameter_mm": 4.5,
+      "retained_strap_tension_N": 15.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 2.0711274344507458,
+      "integrated_normal_force_N": 31.066911516761188,
+      "minimum_friction_coefficient_for10N": 0.321885875092695,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.2122065907891938,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 2.898550724637681,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 50.0
+    },
+    {
+      "round_bundle_diameter_mm": 4.5,
+      "retained_strap_tension_N": 20.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 2.0711274344507458,
+      "integrated_normal_force_N": 41.42254868901492,
+      "minimum_friction_coefficient_for10N": 0.24141440631952127,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.15915494309189535,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 3.8647342995169085,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 60.0
+    },
+    {
+      "round_bundle_diameter_mm": 6.0,
+      "retained_strap_tension_N": 5.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 2.5981976885426254,
+      "integrated_normal_force_N": 12.990988442713128,
+      "minimum_friction_coefficient_for10N": 0.7697643673610667,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.6366197723675814,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 0.7246376811594204,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 30.0
+    },
+    {
+      "round_bundle_diameter_mm": 6.0,
+      "retained_strap_tension_N": 10.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 2.5981976885426254,
+      "integrated_normal_force_N": 25.981976885426256,
+      "minimum_friction_coefficient_for10N": 0.38488218368053334,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.3183098861837907,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 1.4492753623188408,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 40.0
+    },
+    {
+      "round_bundle_diameter_mm": 6.0,
+      "retained_strap_tension_N": 15.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 2.5981976885426254,
+      "integrated_normal_force_N": 38.97296532813938,
+      "minimum_friction_coefficient_for10N": 0.2565881224536889,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.2122065907891938,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 2.173913043478261,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 50.0
+    },
+    {
+      "round_bundle_diameter_mm": 6.0,
+      "retained_strap_tension_N": 20.0,
+      "maximum_strap_exit_spacing_mm": 7.9,
+      "minimum_contact_angle_rad": 2.5981976885426254,
+      "integrated_normal_force_N": 51.96395377085251,
+      "minimum_friction_coefficient_for10N": 0.19244109184026667,
+      "full_pi_wrap_minimum_mu_for10N_not_credited": 0.15915494309189535,
+      "uniform_circular_band_pressure_MPa_at_min2p3mm_width": 2.8985507246376816,
+      "conservative_required_hot_loop_break_strength_N_with_all10N_added_to_one_leg": 60.0
+    }
+  ],
+  "carrier_inverse_screen": {
+    "maximum_one_leg_force_N": 30.0,
+    "minimum_strap_width_mm": 2.3,
+    "bearing_stress_MPa": 4.576659038901602,
+    "left_spine_x_mm": [
+      -8,
+      0
+    ],
+    "left_reinforcement_y_mm": [
+      28,
+      40
+    ],
+    "right_reinforcement_x_mm": [
+      58.5,
+      66.5
+    ],
+    "right_reinforcement_y_mm": [
+      30,
+      42
+    ],
+    "maximum_finished_slot_width_mm": 4.0,
+    "minimum_remaining_ligament_mm": 1.8,
+    "one_ligament_nominal_shear_stress_MPa": 5.847953216374269,
+    "superseded0p95mm_web_shear_demand_MPa": 10.526315789473685,
+    "scope": "Simplified load-path demand, excluding edge stressconcentration. Actualcarrier material/temperature and edgegeometry must sustain these demands; flexural strength is not automatically a bearingallowable.",
+    "three_times_notch_shear_required_allowable_MPa": 17.54385964912281
+  },
+  "remaining_specific_acceptance": [
+    "Actual assembledharness bundle\u22646mm in the primarycorridor, everyloadedwirecaptured, preservedCANtwist/bendradius, and accessoryjacket diameter/temperature fit.",
+    "Either source-backedretainedtension/friction/pressurelimits meeting the chosenrow or aninstalled10Npull check showing no jacket/individualwire slip, no insulationdamage and no load at the PCBconnector.",
+    "Actual hot/agedloopcapacity\u2265thecomputed requiredlevel forselectedpreload, without claiming80Nhotstrength from the ambientcatalogueminimum."
+  ],
+  "original_criteria_implications": {
+    "HAR-09": "Exacttie,slot/head/bundlecorrection andforce-path/inversefrictionanalysis supplied. Installedroutingandretention evidence remains originalrequirement.",
+    "GPS-14": "SMApositivebulkhead takes externalpull; U.FL service-loop restraint doesnot certify accessorydrawing, matingdurability or actual jackettemperature."
+  },
+  "source_hashes": {
+    "harness_contract": "6d2f8741b6d79c3d4ace2f2f879887a0f04b64f14dce468ddfa339db9b9a3690",
+    "calculate_tie_retention.py": "150e000703cac3492847d14b07b406602c6516ad815abec16c74d05b35de6e13",
+    "slot_checks": "d139b6bc70fd4188d27c8151beb5ccf0d860dbb9f4195b47563f6c9c6bf20ae5"
+  }
+}

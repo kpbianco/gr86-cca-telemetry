@@ -1,0 +1,52 @@
+{
+  "source_pcb_sha256": "e75b73f72187100fdc9b8c5e6c39b971fc7e349bc1ad0262703baa2ab5952729",
+  "iteration": "I12",
+  "known_redlines": [
+    {
+      "id": "I12-01",
+      "issue": "U201 library antenna keepout retains board translation",
+      "action": "Restore local library coordinates and prove board polygon invariance; native parity rerun"
+    },
+    {
+      "id": "I12-02",
+      "issue": "Four missing referenced STEP models and eighteen fitted references without a model",
+      "action": "Dimensioned conservative envelopes with source-bound height and explicit XY uncertainty; populated export completeness check"
+    },
+    {
+      "id": "I12-03",
+      "issue": "TranquilWorks product branding requested",
+      "action": "Approved compact TW artwork, one-color F.SilkS, geometric and native manufacturing checks"
+    },
+    {
+      "id": "I12-04",
+      "issue": "T01 foil can intersect four component envelopes and infringes allocated RF setback",
+      "action": "Coordinated foil/contact geometry and thermal correction"
+    },
+    {
+      "id": "I12-05",
+      "issue": "Native thermal mesh dependence, package paths and hot self-heating unresolved",
+      "action": "Topology-sensitive thermal discretization, numerical bounds and package/installation disposition"
+    },
+    {
+      "id": "I12-06",
+      "issue": "Thermal plating allocation is not a published guaranteed JLC minimum",
+      "action": "Explicit supplier construction minimum and lower-plating sensitivity"
+    },
+    {
+      "id": "I12-07",
+      "issue": "Mated connector/cable/service envelopes and full manufacturer XY coverage incomplete",
+      "action": "Dimensioned assembly and installation envelopes; preserve actual identity conditions"
+    },
+    {
+      "id": "I12-08",
+      "issue": "Affected RF returns, rail, thermal metal and source/export bindings need regression",
+      "action": "Reevaluate changed paths and regenerate native exports"
+    },
+    {
+      "id": "I12-09",
+      "issue": "Formal 290-criterion register is stale at I06",
+      "action": "Reconcile every criterion with current evidence and retain distinct as-built conditions"
+    }
+  ],
+  "rule": "All known redlines recorded before edits. Native/analytical results may expose another iteration. No fabricated measurement or acceptance."
+}

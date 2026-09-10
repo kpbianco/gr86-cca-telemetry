@@ -1,0 +1,98 @@
+{
+  "removed": [
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 76.97500000000001 13.9) (end 77.0 13.9) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"37dda48e-1782-5450-8f13-e42405cd2c06\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 77.3 13.5) (end 77.3 12.6) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"94071c4b-439e-5869-b262-eed029382a61\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 77.3 12.6) (end 77.5 12.4) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"cf8f79bb-0abd-5d45-8fad-31102d85b986\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 77.5 12.4) (end 77.6 12.4) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"6cacfb7f-d2c5-5bd4-9334-a023f7409a1a\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 77.6 12.4) (end 78.4 11.6) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"ce7d7cbf-597b-557f-bd95-90eee5a7d429\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 78.4 11.6) (end 78.5 11.6) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"8a5ea0d5-a9ef-55da-8dcf-c493199ad48a\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 78.5 11.6) (end 78.6 11.5) (width 0.2) (layer \"B.Cu\") (net 30) (uuid \"108cc1f3-f0bf-5c9e-b264-7f84970a72d8\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 76.2 11.2) (end 75.7 11.7) (width 0.2) (layer \"B.Cu\") (net 1) (uuid \"9e58fd5b-4148-5fc8-b854-1e6022e21504\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 75.7 11.7) (end 75.7 11.8) (width 0.2) (layer \"B.Cu\") (net 1) (uuid \"207fe0ec-893d-573e-92d3-37434d99a305\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 75.7 11.8) (end 75.6 11.9) (width 0.2) (layer \"B.Cu\") (net 1) (uuid \"692e8e1a-8519-5ffb-b7f5-5203c84cc924\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 75.425 13.9) (end 75.4 13.9) (width 0.2) (layer \"B.Cu\") (net 1) (uuid \"36f8f9da-a5f7-5104-8b54-0b64b0d6b22d\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 39.1 25.075) (end 39.1 25.1) (width 0.2) (layer \"B.Cu\") (net 132) (uuid \"5589c867-2dc6-5c2e-9e83-6b781976587c\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 32.1375 13.325) (end 32.1 13.3) (width 0.2) (layer \"B.Cu\") (net 7) (uuid \"6cb40955-9589-515e-80be-85d28b271489\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 72.3 9.1) (end 72.2 9.2) (width 2.0) (layer \"In2.Cu\") (net 1) (uuid \"928d8d52-1777-5879-8b3f-bb0a2de6129c\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 72.2 9.2) (end 72.0 9.2) (width 2.0) (layer \"In2.Cu\") (net 1) (uuid \"6efe0383-a90a-51d1-92ef-862700c90ad5\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 72.0 9.2) (end 71.9 9.3) (width 2.0) (layer \"In2.Cu\") (net 1) (uuid \"ddc01df6-2955-596c-97cf-3f12abcd81dc\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 71.9 9.3) (end 71.8 9.3) (width 2.0) (layer \"In2.Cu\") (net 1) (uuid \"9c13fd1b-f068-579a-b28c-5e38fbcde5f0\"))"
+    },
+    {
+      "reason": "exact coincident duplicate",
+      "segment": "(segment (start 71.8 9.3) (end 71.5 9.6) (width 2.0) (layer \"In2.Cu\") (net 1) (uuid \"720df30b-364c-5971-86c8-28566469951f\"))"
+    },
+    {
+      "reason": "backtracking branch to obsolete handoff endpoint",
+      "segment": "(segment (start 71.5 9.6) (end 71.8 9.3) (width 2.0) (layer \"In2.Cu\") (net 1) (uuid \"1bb95c72-c34d-561d-b78d-693bbb024a80\"))"
+    },
+    {
+      "reason": "backtracking branch to obsolete handoff endpoint",
+      "segment": "(segment (start 71.9 9.3) (end 72.0 9.2) (width 2.0) (layer \"In2.Cu\") (net 1) (uuid \"25302f48-d7ed-5f24-bf6b-274e8ee5fc55\"))"
+    },
+    {
+      "reason": "backtracking branch to obsolete handoff endpoint",
+      "segment": "(segment (start 72.2 9.2) (end 72.3 9.1) (width 2.0) (layer \"In2.Cu\") (net 1) (uuid \"5220007d-43f8-5af4-a349-9cf8e5992b74\"))"
+    },
+    {
+      "reason": "backtracking branch to obsolete handoff endpoint",
+      "segment": "(segment (start 71.8 9.3) (end 71.9 9.3) (width 2.0) (layer \"In2.Cu\") (net 1) (uuid \"57cc58c8-9f3c-5e6b-abd0-a32214659fdf\"))"
+    },
+    {
+      "reason": "backtracking branch to obsolete handoff endpoint",
+      "segment": "(segment (start 72.0 9.2) (end 72.2 9.2) (width 2.0) (layer \"In2.Cu\") (net 1) (uuid \"d2d9accb-c99f-5f7b-bfdc-e65240550ae1\"))"
+    }
+  ],
+  "source_pcb_sha256": "92b38b5bbff3d3601ca89ec1fa9858dde4c46a08d6ac39beba4cd375c7c4b334",
+  "status": "Native continuity/DRC reevaluation required"
+}

@@ -1,0 +1,29 @@
+// Recovered C02. PCB bottomZ0. This is source geometry, not native solid/actual vehicle fit.
+$fn=64;
+include <MECH_GEOMETRY.scad>
+part="assembly";
+board_t=1.60;sleeve_t=1.90;base_top=-6;base_bottom=-9;
+under_module_clearance=7; //X-case C206 is outside the carrier; no material added here.
+module base(){difference(){union(){
+ translate([-5,-12,base_bottom])cube([71.5,67,3]);
+ for(p=mounts)translate([p[0]-3.5,p[1]-3.5,base_top])cube([7,7,6]);
+ translate([-13,-12,base_bottom])cube([8,11,3]);
+ translate([-13,42.5,base_bottom])cube([8,12.5,3]);
+ }
+ translate([13.5,-9.5,base_bottom-1])linear_extrude(5)offset(r=1)translate([1,1])square([39,7]);
+ translate([13.5,41.8,base_bottom-1])linear_extrude(5)offset(r=1)translate([1,1])square([39,7]);
+ translate([0,2,base_bottom-1])linear_extrude(5)offset(r=2)translate([2,2])square([55.5,33]);
+ for(p=mounts)translate([p[0],p[1],base_bottom-1])cylinder(d=2.2,h=12);
+ for(p=[[-9,-6],[-9,47.5],[57,-8],[57,50.5]])translate([p[0],p[1],base_bottom-1])cylinder(d=3.4,h=5);
+ for(p=[[-2.5,31],[-2.5,37],[63,16],[63,22],[63,30],[63,36]])translate([p[0],p[1],base_bottom-1])linear_extrude(5)hull(){translate([-.75,0])circle(r=.75);translate([.75,0])circle(r=.75);}
+}}
+module sleeve(p){translate([p[0],p[1],0])difference(){cylinder(d=4,h=sleeve_t);translate([0,0,-1])cylinder(d=2.2,h=sleeve_t+2);}}
+module washer(p){translate([p[0],p[1],sleeve_t])difference(){cylinder(d=6,h=.5);translate([0,0,-1])cylinder(d=2.2,h=3);}}
+if(part=="base"||part=="assembly")color("ivory")base();
+if(part=="hardware"||part=="assembly")for(p=mounts){color("silver")sleeve(p);color("silver")washer(p);}
+if(part=="assembly"){
+ color([0,.4,.2,.5])difference(){linear_extrude(board_t)polygon(outline);for(p=mounts)translate([p[0],p[1],-1])cylinder(d=4.4,h=4);}
+ color([1,.4,0,.1])translate([0,0,board_t])cube([94.454766,41.288863,16]);
+ color([1,0,0,.1])translate([68.029766,-1.025,-6])cube([41.25,48.05,25]);
+ for(p=mounts)color([.2,.2,1,.1])translate([p[0],p[1],3.9])cylinder(d=6,h=20);
+}

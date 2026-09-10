@@ -1,0 +1,16 @@
+{
+  "commit": "ab52ea36230885688f92c235ea1d5289245703c7",
+  "run": 34381221292,
+  "artifact_sha256": "bcb63df8d1fa9bcd88abb42e838bdb3b1d1a7d6478c868822c61a84f7dcc71e6",
+  "erc_findings": 0,
+  "native_schematic_netlist_parity_with_I06": true,
+  "nets": 133,
+  "drc_findings": 181,
+  "unconnected_items": 0,
+  "pad_net_assignment_losses": 7,
+  "native_refill": true,
+  "release": false,
+  "STEP_status": "VALID_FILE_BUT_MISSING_COMPONENT_MODELS",
+  "firmware_compile": "PASS",
+  "next_redline_freeze": "../I08_native_corrections/REDLINE_FREEZE.json"
+}

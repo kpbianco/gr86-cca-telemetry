@@ -1,0 +1,28 @@
+{
+  "checkpoint": "RVB22_I22_ACCESSORY_PACKAGE_MECHANICAL_REVIEW_I20_CAD",
+  "original_criteria_preserved": 290,
+  "prior_I21": {
+    "open": 152,
+    "closed": 134,
+    "na": 4
+  },
+  "current": {
+    "open": 146,
+    "closed": 140,
+    "na": 4
+  },
+  "newly_closed": [
+    "LIB-02",
+    "LIB-08",
+    "VIA-06",
+    "SI-12",
+    "GPS-01",
+    "MECH-03"
+  ],
+  "reopened": [],
+  "redlines": 357,
+  "all_current_row_evidence_present_and_hashed": true,
+  "physical_tests_claimed": 0,
+  "fresh_native_executions_claimed": 0,
+  "overall_zero": false
+}

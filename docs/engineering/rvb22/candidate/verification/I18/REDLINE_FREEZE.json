@@ -1,0 +1,17 @@
+{
+  "iteration": "I18",
+  "base_source_sha256": "2c5ba2b59223163360baa22ce6c75e643dcbf365697d83a75d58c2b8c52ee264",
+  "known_redlines": [
+    {
+      "id": "I18-01",
+      "finding": "C206 on B.Cu next to the MCU has only0.43C modeled margin to125C at65C air/70C cold landings/full4.815W on0.25mm mesh, without convergence.",
+      "correction": "Relocate C206 to F.Cu on added top-right FR4 tab, using same qualified part and footprint. Keep original power load, cooling boundaries and all existing TP/service locations."
+    },
+    {
+      "id": "I18-02",
+      "finding": "Relocation affects outline, current path inductance/resistance, thermal field, fabrication and assembly.",
+      "correction": "Recompute all affected source-bound analyses, native DRC/ERC and exports, drill/gerber continuity; verify tab mechanics, clearance and revision identity. Native pass is required before any desktop closure."
+    }
+  ],
+  "frozen_before_edit": true
+}

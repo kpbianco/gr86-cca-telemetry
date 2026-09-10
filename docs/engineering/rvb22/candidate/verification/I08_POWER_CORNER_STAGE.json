@@ -1,0 +1,18 @@
+{
+  "net": "5V_VIN",
+  "before": [
+    39.8,
+    25.15
+  ],
+  "after": [
+    39.7,
+    25.275
+  ],
+  "width_mm": 0.8,
+  "segments": [
+    "c66e3909-69c2-45f7-aea2-3fe5ef96dbe5",
+    "f801144e-5940-477d-b870-7e73a1919435"
+  ],
+  "source_rules_pass": true,
+  "native_validation": "PENDING"
+}

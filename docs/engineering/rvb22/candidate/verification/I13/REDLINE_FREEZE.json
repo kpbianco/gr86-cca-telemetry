@@ -1,0 +1,16 @@
+{
+  "base_commit": "6434a003c574dec368804d912077fad231355a86",
+  "base_pcb_sha256": "dd1a7bc6b5d7d6ba72056fb82b61cdc6f2c34aaa40f6a71211a7abc2ba08ef27",
+  "findings": [
+    "I12 native checks pass with zero findings; full thermal closure is not established.",
+    "0.25mm actual-fill face-conductance model at4.815W/65C air/70C landings predicts C206 board-region118.407C and hottest board143.966C; strong mesh dependence remains.",
+    "U201 exposed pad contains12 x0.2mm plated holes. Increase parallel barrel area while keeping the same pad/MPN and thermal geometry.",
+    "C04/W02/T03 thermal mechanics are separate unfinished candidate evidence; hosted I12 mechanics still old C03/T01.",
+    "Original290-criterion register remains stale I06, not an overallzero."
+  ],
+  "iteration": "I13 thermal via density trial",
+  "local_execution_status": "Local shell commands are not returning; existing hosted review path remains available.",
+  "status": "FROZEN_BEFORE_CANDIDATE_MUTATION",
+  "supplier_requirements": "65 filled/capped via locations including R153;0.25mm nominal hole-edge spacing; no solder-wicking credit or fill-conductivity credit without evidence.",
+  "trial": "Replace12 footprint heat holes with64 globalGNDvias:8x8 at0.45mm pitch,0.6mm lands,0.2mm drills. Retain all other pads, traces, vias, symbol connectivity, logo and device identities. Native clearance and re-filling gate must pass before adoption."
+}

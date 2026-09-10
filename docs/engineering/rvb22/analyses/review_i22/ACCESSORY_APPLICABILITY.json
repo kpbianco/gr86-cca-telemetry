@@ -1,0 +1,67 @@
+{
+  "status": "IDENTITIES_BOUND_DC_COMPATIBILITY_PARTIAL",
+  "adapter_PID": 851,
+  "antenna_PID": 960,
+  "manufacturer_recommended_pair": "PID960 product page explicitly links PID851 as the required U.FL/SMA adapter.",
+  "cable_mm": {
+    "nominal_length": 150,
+    "tolerance": 3,
+    "outer_diameter": 1.8,
+    "allocated_maximum_outer_diameter": 2.0
+  },
+  "cable_envelope_basis": "2.0mm OD is an engineering receiving allocation, not a published manufacturer tolerance; 0.5mm lateral route uncertainty is added independently.",
+  "SMA_mating": "Product-level standard SMA jack to SMA male is documented. Linked851 drawing still labels RP-SMA; incoming center-contact inspection remains mandatory.",
+  "antenna_operating_V": [
+    2.3,
+    5.5
+  ],
+  "antenna_temperature_C": [
+    -30,
+    85
+  ],
+  "adapter_temperature_C": [
+    -10,
+    60
+  ],
+  "GPS_supply_operating_contract_V": [
+    3.0,
+    3.6
+  ],
+  "PA1616D_external_detection_mA": 4,
+  "PA1616D_documented_current_limit_mA_at_V": {
+    "3.0": 25,
+    "3.3": 28,
+    "3.6": 31
+  },
+  "PID960_typical_current_mA": [
+    {
+      "V": 2.5,
+      "mA": 6.6
+    },
+    {
+      "V": 3,
+      "mA": 8.6
+    },
+    {
+      "V": 4,
+      "mA": 12.6
+    },
+    {
+      "V": 5,
+      "mA": 16.6
+    }
+  ],
+  "interpolated_typical_current_at3p3V_mA": 9.799999999999999,
+  "typical_detection_margin_mA": 5.799999999999999,
+  "typical_current_limit_headroom_at3p3V_mA": 18.200000000000003,
+  "available_external_path_drop_at3p0V_V": 0.7000000000000002,
+  "maximum_combined_internal_feed_cable_contact_R_at25mA_ohm": 28.000000000000007,
+  "RF_band": "PID960 is GPS L1. No GLONASS antenna gain/noise coverage is asserted.",
+  "unresolved": [
+    "Antenna min/max hot/cold current and PA1616D bias source drop are not guaranteed by the typical current table.",
+    "The .7V/28ohm calculation is the complete allowable bias-feed drop, not a measured cable resistance.",
+    "Open/short/hot-plug device behavior is described by the module datasheet, but exact response timing and actual-unit behavior are unmeasured.",
+    "851 full operating range does not cover the declared65C air case or cold cases below-10C."
+  ],
+  "physical_measurement_claimed": false
+}

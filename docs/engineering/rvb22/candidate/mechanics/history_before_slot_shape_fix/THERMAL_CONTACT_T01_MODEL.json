@@ -1,0 +1,144 @@
+{
+  "status": "EXPLORATORY_SOURCE_POSITION_SENSITIVITY_NOT_NATIVE_THERMAL_PROOF",
+  "contact_mm": [
+    66.6,
+    11.8,
+    72,
+    28.8
+  ],
+  "total_contact_R_design_K_W": 10,
+  "cases": [
+    {
+      "mesh_mm": 0.5,
+      "effective_continuous_Cu_um": 96,
+      "epsilon": 0.3,
+      "chassis_contacts": true,
+      "direct_R_K_W": 10,
+      "landing_C": 70,
+      "direct_contact_mean_C": 92.25971029272918,
+      "cells": 18681,
+      "iterations": 30,
+      "max_temperature_C": 132.4000193413231,
+      "C206_region_mean_C": 118.87612990701541,
+      "C206_region_max_C": 131.5847440116724,
+      "C206_region_max_plus10K_C": 141.5847440116724,
+      "source_region_mean_C": {
+        "U201_main_allocation": 128.65364674538887,
+        "U151_main_conversion": 98.84052356227662,
+        "U121_fiveV_and_corner_residual": 106.2813226743146,
+        "U403_GPS_LDO": 93.54453312650674,
+        "U401_GPS_all_local": 93.78414347476622,
+        "other5V_allocation": 89.27895226446289
+      },
+      "heat_to_chassis_W": 3.354324904433202,
+      "total_heat_W": 4.814999999999998,
+      "max_energy_residual_W": 3.897427519605756e-11,
+      "temperature_iteration_change_K": 5.5997020353970584e-08,
+      "probe_region_mm": [
+        78.95,
+        16.25,
+        86.25,
+        20.55
+      ]
+    },
+    {
+      "mesh_mm": 0.5,
+      "effective_continuous_Cu_um": 120,
+      "epsilon": 0.3,
+      "chassis_contacts": true,
+      "direct_R_K_W": 10,
+      "landing_C": 70,
+      "direct_contact_mean_C": 92.29961894410829,
+      "cells": 18681,
+      "iterations": 29,
+      "max_temperature_C": 124.74375610485563,
+      "C206_region_mean_C": 113.91583720893375,
+      "C206_region_max_C": 124.09340983840359,
+      "C206_region_max_plus10K_C": 134.0934098384036,
+      "source_region_mean_C": {
+        "U201_main_allocation": 121.73282584589485,
+        "U151_main_conversion": 96.99163173580156,
+        "U121_fiveV_and_corner_residual": 103.14905620413111,
+        "U403_GPS_LDO": 92.75043121466473,
+        "U401_GPS_all_local": 93.21137224589782,
+        "other5V_allocation": 89.14464372363608
+      },
+      "heat_to_chassis_W": 3.3978807626749905,
+      "total_heat_W": 4.814999999999998,
+      "max_energy_residual_W": 7.829594611541424e-11,
+      "temperature_iteration_change_K": 9.401846057244256e-08,
+      "probe_region_mm": [
+        78.95,
+        16.25,
+        86.25,
+        20.55
+      ]
+    },
+    {
+      "mesh_mm": 0.5,
+      "effective_continuous_Cu_um": 140,
+      "epsilon": 0.3,
+      "chassis_contacts": true,
+      "direct_R_K_W": 10,
+      "landing_C": 70,
+      "direct_contact_mean_C": 92.28453295234478,
+      "cells": 18681,
+      "iterations": 29,
+      "max_temperature_C": 120.25943644399939,
+      "C206_region_mean_C": 110.97292120407663,
+      "C206_region_max_C": 119.70216877761969,
+      "C206_region_max_plus10K_C": 129.7021687776197,
+      "source_region_mean_C": {
+        "U201_main_allocation": 117.67122422016777,
+        "U151_main_conversion": 95.94707626753956,
+        "U121_fiveV_and_corner_residual": 101.34530486183934,
+        "U403_GPS_LDO": 92.3126761603455,
+        "U401_GPS_all_local": 92.87159712446591,
+        "other5V_allocation": 89.1084950464621
+      },
+      "heat_to_chassis_W": 3.4223512275768346,
+      "total_heat_W": 4.814999999999998,
+      "max_energy_residual_W": 7.847168054242459e-11,
+      "temperature_iteration_change_K": 8.256556327523867e-08,
+      "probe_region_mm": [
+        78.95,
+        16.25,
+        86.25,
+        20.55
+      ]
+    },
+    {
+      "mesh_mm": 0.5,
+      "effective_continuous_Cu_um": 160,
+      "epsilon": 0.3,
+      "chassis_contacts": true,
+      "direct_R_K_W": 10,
+      "landing_C": 70,
+      "direct_contact_mean_C": 92.24870279324351,
+      "cells": 18681,
+      "iterations": 29,
+      "max_temperature_C": 116.83813608881349,
+      "C206_region_mean_C": 108.70678859488955,
+      "C206_region_max_C": 116.34881273102835,
+      "C206_region_max_plus10K_C": 126.34881273102835,
+      "source_region_mean_C": {
+        "U201_main_allocation": 114.56682618520935,
+        "U151_main_conversion": 95.1742637254127,
+        "U121_fiveV_and_corner_residual": 99.98781525465036,
+        "U403_GPS_LDO": 91.99644548542787,
+        "U401_GPS_all_local": 92.61060887526826,
+        "other5V_allocation": 89.1080282834486
+      },
+      "heat_to_chassis_W": 3.4403386672496508,
+      "total_heat_W": 4.814999999999998,
+      "max_energy_residual_W": 7.859776718355249e-11,
+      "temperature_iteration_change_K": 7.355450293289323e-08,
+      "probe_region_mm": [
+        78.95,
+        16.25,
+        86.25,
+        20.55
+      ]
+    }
+  ]
+}

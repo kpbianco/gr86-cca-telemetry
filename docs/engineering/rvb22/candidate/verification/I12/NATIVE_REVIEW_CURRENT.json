@@ -1,0 +1,18 @@
+{
+  "status": "NATIVE_OUTPUTS_COMPLETE",
+  "commit": "6434a003c574dec368804d912077fad231355a86",
+  "run_id": 34399157112,
+  "job_id": 102626403196,
+  "artifact_id": 10122832039,
+  "artifact_sha256": "27bbebb56ae043017a07c9161fb978f435f67fe2873ffb0aabeb7d96720ac97f",
+  "source_pcb_sha256": "dd1a7bc6b5d7d6ba72056fb82b61cdc6f2c34aaa40f6a71211a7abc2ba08ef27",
+  "native_pcb_sha256": "8e0f771ce0ebb5c7c644885c28f6180b21e3c43239db37c5a37bcbd9191e7bf1",
+  "ERC_DRC_findings": 0,
+  "unconnected": 0,
+  "footprint_library_parity_findings": 0,
+  "input_sources_unchanged": true,
+  "fitted_references": 153,
+  "STEP_fitted_reference_occurrences": 153,
+  "firmware_compilation": "PASS",
+  "overall_thermal_or_release_approval": false
+}

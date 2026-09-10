@@ -1,0 +1,37 @@
+{
+  "finalI04_PCB_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "thermal_geometry_scope": "FinalI04changes compactR153 andC157restoration nearpowerconverter. U201/C206/contact/carrieroutline andallthermalheat-sourcecentres remain unchanged; finiteposition sensitivities are reused with explicit4.815Wheatheadroom, not claimedpackage thermal proof.",
+  "R153_C157": {
+    "R153_MPN": "WSLP0603R0100FEA",
+    "R153_at_mm": [
+      41,
+      21
+    ],
+    "R153_pad2_at_mm": [
+      41.76,
+      21
+    ],
+    "C157_at_mm": [
+      36.2,
+      22
+    ],
+    "pad_gap_mm": 1.48,
+    "max_body_X_gap_mm": 2.1629999999999967,
+    "scope": "Body maximums fromprimary30122andexactTaiyoYuden; native finalcopper/courtpassisrootowned."
+  },
+  "filled_capped_vias": {
+    "total": 13,
+    "U201_pad41_subgroup": 12,
+    "additional_source_rail": {
+      "at_mm": [
+        41.4,
+        21
+      ],
+      "net": "+3V3",
+      "diameter_mm": 0.6,
+      "drill_mm": 0.3,
+      "land": "R153.2"
+    }
+  },
+  "native_execution": "KiCad/pcbnew/OpenSCAD/FreeCAD absent; actualfilledcopper/packageheat andnativepopulatedsolid gatesremainexplicit."
+}

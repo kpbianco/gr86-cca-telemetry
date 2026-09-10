@@ -1,0 +1,104 @@
+{
+  "input_sha256": "b4af9dfdf977c9cf463821b3c24722575f001a01b1a1074159c65ccbed4909ee",
+  "contract_sha256": "84d7aa87d80d2efaf108d651c802ddaf597d28337430c677bc1c352539b159d3",
+  "criterion_count": 290,
+  "expected_counts": {
+    "closed": 140,
+    "open": 146,
+    "na": 4
+  },
+  "original_A_F_values_sha256": "2f2981e12437d6b57690b68d741df609a15129152f1e11d9f19853ee2216c784",
+  "preserved_A_F": true,
+  "preserved_K_M": true,
+  "recalculation_status_change_verified": true,
+  "updated_sheets": [
+    "RVB22 Current",
+    "RVB22 Criteria",
+    "RVB22 Redlines",
+    "RVB22 Inputs",
+    "RVB22 Iterations",
+    "RVB22 Gates",
+    "RVB22 Evidence"
+  ],
+  "updated_columns": [
+    "G",
+    "H",
+    "I",
+    "J",
+    "N"
+  ],
+  "summary_values": [
+    [
+      "CRITERIA",
+      null,
+      "CLOSED",
+      null,
+      "OPEN",
+      null,
+      "N/A",
+      null
+    ],
+    [
+      290,
+      null,
+      140,
+      null,
+      146,
+      null,
+      4,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  ],
+  "start_values": [
+    [
+      "QUESTIONS",
+      "QUESTIONS",
+      "CRITERIA CLOSED",
+      "CRITERIA CLOSED",
+      "CRITERIA OPEN",
+      "CRITERIA OPEN",
+      "N/A",
+      "N/A"
+    ],
+    [
+      290,
+      null,
+      140,
+      null,
+      146,
+      null,
+      4,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      "NET CRITERIA CLOSED SINCE USER BASELINE",
+      "ADDITIONAL CRITERIA CLOSED THIS PASS",
+      "ADDITIONAL CRITERIA CLOSED THIS PASS",
+      "ADDITIONAL CRITERIA CLOSED THIS PASS",
+      "ADDITIONAL CRITERIA CLOSED THIS PASS",
+      "ADDITIONAL CRITERIA CLOSED THIS PASS",
+      67,
+      null
+    ]
+  ]
+}

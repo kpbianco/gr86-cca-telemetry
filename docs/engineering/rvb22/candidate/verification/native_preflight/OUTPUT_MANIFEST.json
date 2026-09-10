@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "excludes": [
+    "RESULT.json",
+    "OUTPUT_MANIFEST.json"
+  ],
+  "files": {
+    "COPIED_SOURCE_INVENTORY.json": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "bytes": 3
+    },
+    "logs/arduino_core_list.stderr": {
+      "sha256": "140b786eb493b5b15ce93a90733fbff9e20ee328b77eb0ad15acf2909e7bceac",
+      "bytes": 50
+    },
+    "logs/arduino_core_list.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "logs/arduino_version.stderr": {
+      "sha256": "140b786eb493b5b15ce93a90733fbff9e20ee328b77eb0ad15acf2909e7bceac",
+      "bytes": 50
+    },
+    "logs/arduino_version.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "logs/kicad_version.stderr": {
+      "sha256": "24d81a9fd153237eff5ca1e02cb3434d688ac0a0f1c5c0afe285aa701442ca6b",
+      "bytes": 48
+    },
+    "logs/kicad_version.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "logs/pcbnew_version.stderr": {
+      "sha256": "a8986cfe5170de2944c2b19dd70e9b874ad251640559781fb92aaea6573c000b",
+      "bytes": 120
+    },
+    "logs/pcbnew_version.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  }
+}

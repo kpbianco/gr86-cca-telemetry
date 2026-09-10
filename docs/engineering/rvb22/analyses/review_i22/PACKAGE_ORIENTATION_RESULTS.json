@@ -1,0 +1,3283 @@
+{
+  "status": "PASS_ALL_12_IC_MODULE_ORIENTATIONS",
+  "source_PCB_sha256": "62c08e7050fe95df0a576ece85a051b4049e9684bf8ea5f73e8949657363276b",
+  "placement_sha256": "386953f33110bce7e5d220bc1dbd2f28c3146c03aef570ebfef3ff2e94f886ad",
+  "references": 12,
+  "numbered_signal_lands": 151,
+  "manufacturer_drawing_transcription": {
+    "U101": {
+      "mpn": "LTC4367HMS8#WTRPBF",
+      "source": "ltc4367",
+      "pages": [
+        2,
+        19
+      ],
+      "pads": {
+        "1": [
+          -2.1695,
+          -0.9750000000000001,
+          0.889,
+          0.42
+        ],
+        "8": [
+          2.1695,
+          -0.9750000000000001,
+          0.889,
+          0.42
+        ],
+        "2": [
+          -2.1695,
+          -0.325,
+          0.889,
+          0.42
+        ],
+        "7": [
+          2.1695,
+          -0.325,
+          0.889,
+          0.42
+        ],
+        "3": [
+          -2.1695,
+          0.325,
+          0.889,
+          0.42
+        ],
+        "6": [
+          2.1695,
+          0.325,
+          0.889,
+          0.42
+        ],
+        "4": [
+          -2.1695,
+          0.9750000000000001,
+          0.889,
+          0.42
+        ],
+        "5": [
+          2.1695,
+          0.9750000000000001,
+          0.889,
+          0.42
+        ]
+      },
+      "body": [
+        3,
+        3
+      ],
+      "note": "MS8 drawing rotated 90 degrees into left/right-row convention. 3.45mm inner span and .889mm land length selected from the published range; IPC source lands are longer."
+    },
+    "U121": {
+      "mpn": "LM5164DDAR",
+      "source": "lm5164",
+      "pages": [
+        3,
+        28,
+        29
+      ],
+      "pads": {
+        "1": [
+          -2.7,
+          -1.905,
+          1.55,
+          0.6
+        ],
+        "8": [
+          2.7,
+          -1.905,
+          1.55,
+          0.6
+        ],
+        "2": [
+          -2.7,
+          -0.635,
+          1.55,
+          0.6
+        ],
+        "7": [
+          2.7,
+          -0.635,
+          1.55,
+          0.6
+        ],
+        "3": [
+          -2.7,
+          0.635,
+          1.55,
+          0.6
+        ],
+        "6": [
+          2.7,
+          0.635,
+          1.55,
+          0.6
+        ],
+        "4": [
+          -2.7,
+          1.905,
+          1.55,
+          0.6
+        ],
+        "5": [
+          2.7,
+          1.905,
+          1.55,
+          0.6
+        ]
+      },
+      "body": [
+        3.9,
+        4.9
+      ],
+      "note": ""
+    },
+    "U151": {
+      "mpn": "LM63615DQPWPRQ1",
+      "source": "lm63615_q1",
+      "pages": [
+        4,
+        53,
+        54
+      ],
+      "pads": {
+        "1": [
+          -2.9,
+          -2.275,
+          1.5,
+          0.45
+        ],
+        "16": [
+          2.9,
+          -2.275,
+          1.5,
+          0.45
+        ],
+        "2": [
+          -2.9,
+          -1.625,
+          1.5,
+          0.45
+        ],
+        "15": [
+          2.9,
+          -1.625,
+          1.5,
+          0.45
+        ],
+        "3": [
+          -2.9,
+          -0.9750000000000001,
+          1.5,
+          0.45
+        ],
+        "14": [
+          2.9,
+          -0.9750000000000001,
+          1.5,
+          0.45
+        ],
+        "4": [
+          -2.9,
+          -0.325,
+          1.5,
+          0.45
+        ],
+        "13": [
+          2.9,
+          -0.325,
+          1.5,
+          0.45
+        ],
+        "5": [
+          -2.9,
+          0.325,
+          1.5,
+          0.45
+        ],
+        "12": [
+          2.9,
+          0.325,
+          1.5,
+          0.45
+        ],
+        "6": [
+          -2.9,
+          0.9750000000000001,
+          1.5,
+          0.45
+        ],
+        "11": [
+          2.9,
+          0.9750000000000001,
+          1.5,
+          0.45
+        ],
+        "7": [
+          -2.9,
+          1.625,
+          1.5,
+          0.45
+        ],
+        "10": [
+          2.9,
+          1.625,
+          1.5,
+          0.45
+        ],
+        "8": [
+          -2.9,
+          2.275,
+          1.5,
+          0.45
+        ],
+        "9": [
+          2.9,
+          2.275,
+          1.5,
+          0.45
+        ]
+      },
+      "body": [
+        4.4,
+        5
+      ],
+      "note": "PWP0016K. Source signal lands .4mm wide versus .45mm TI example, with the same .65mm pitch and numbering; assembly process acceptance is separate."
+    },
+    "U202": {
+      "mpn": "TPS3808G33QDBVRQ1",
+      "source": "tps3808_q1",
+      "pages": [
+        3,
+        20,
+        21
+      ],
+      "pads": {
+        "1": [
+          -1.3,
+          -0.95,
+          1.1,
+          0.6
+        ],
+        "6": [
+          1.3,
+          -0.95,
+          1.1,
+          0.6
+        ],
+        "2": [
+          -1.3,
+          0.0,
+          1.1,
+          0.6
+        ],
+        "5": [
+          1.3,
+          0.0,
+          1.1,
+          0.6
+        ],
+        "3": [
+          -1.3,
+          0.95,
+          1.1,
+          0.6
+        ],
+        "4": [
+          1.3,
+          0.95,
+          1.1,
+          0.6
+        ]
+      },
+      "body": [
+        1.6,
+        2.9
+      ],
+      "note": ""
+    },
+    "U301": {
+      "mpn": "TCAN3403DRBRQ1",
+      "source": "tcan3403_q1",
+      "pages": [
+        3,
+        43,
+        44
+      ],
+      "pads": {
+        "1": [
+          -1.4,
+          -0.9750000000000001,
+          0.6,
+          0.31
+        ],
+        "8": [
+          1.4,
+          -0.9750000000000001,
+          0.6,
+          0.31
+        ],
+        "2": [
+          -1.4,
+          -0.325,
+          0.6,
+          0.31
+        ],
+        "7": [
+          1.4,
+          -0.325,
+          0.6,
+          0.31
+        ],
+        "3": [
+          -1.4,
+          0.325,
+          0.6,
+          0.31
+        ],
+        "6": [
+          1.4,
+          0.325,
+          0.6,
+          0.31
+        ],
+        "4": [
+          -1.4,
+          0.9750000000000001,
+          0.6,
+          0.31
+        ],
+        "5": [
+          1.4,
+          0.9750000000000001,
+          0.6,
+          0.31
+        ]
+      },
+      "body": [
+        3,
+        3
+      ],
+      "note": ""
+    },
+    "U402": {
+      "mpn": "SN74LVC2G125DCUR",
+      "source": "sn74lvc2g125",
+      "pages": [
+        4,
+        24,
+        25
+      ],
+      "pads": {
+        "1": [
+          -1.55,
+          -0.75,
+          0.85,
+          0.3
+        ],
+        "8": [
+          1.55,
+          -0.75,
+          0.85,
+          0.3
+        ],
+        "2": [
+          -1.55,
+          -0.25,
+          0.85,
+          0.3
+        ],
+        "7": [
+          1.55,
+          -0.25,
+          0.85,
+          0.3
+        ],
+        "3": [
+          -1.55,
+          0.25,
+          0.85,
+          0.3
+        ],
+        "6": [
+          1.55,
+          0.25,
+          0.85,
+          0.3
+        ],
+        "4": [
+          -1.55,
+          0.75,
+          0.85,
+          0.3
+        ],
+        "5": [
+          1.55,
+          0.75,
+          0.85,
+          0.3
+        ]
+      },
+      "body": [
+        2,
+        2.3
+      ],
+      "note": "DCU0008A, not DCT or YZP. Source land length .8mm versus TI .85mm example; numbering/pitch/centerline agree."
+    },
+    "U403": {
+      "mpn": "MIC5504-3.3YM5-TR",
+      "source": "mic5504",
+      "pages": [
+        1,
+        7,
+        18,
+        19,
+        20
+      ],
+      "pads": {
+        "1": [
+          -1.4,
+          -0.95,
+          1.1,
+          0.6
+        ],
+        "2": [
+          -1.4,
+          0,
+          1.1,
+          0.6
+        ],
+        "3": [
+          -1.4,
+          0.95,
+          1.1,
+          0.6
+        ],
+        "4": [
+          1.4,
+          0.95,
+          1.1,
+          0.6
+        ],
+        "5": [
+          1.4,
+          -0.95,
+          1.1,
+          0.6
+        ]
+      },
+      "body": [
+        1.6,
+        2.9
+      ],
+      "note": "Five-lead M5/SOT-23. Rev C drawing C04-2091-6BX differs from generic KiCad example lands; pin order and nominal package lead coverage agree."
+    },
+    "U501": {
+      "mpn": "TPS26600PWPR",
+      "source": "tps2660",
+      "pages": [
+        4,
+        5,
+        52,
+        53
+      ],
+      "pads": {
+        "1": [
+          -2.9,
+          -2.275,
+          1.5,
+          0.45
+        ],
+        "16": [
+          2.9,
+          -2.275,
+          1.5,
+          0.45
+        ],
+        "2": [
+          -2.9,
+          -1.625,
+          1.5,
+          0.45
+        ],
+        "15": [
+          2.9,
+          -1.625,
+          1.5,
+          0.45
+        ],
+        "3": [
+          -2.9,
+          -0.9750000000000001,
+          1.5,
+          0.45
+        ],
+        "14": [
+          2.9,
+          -0.9750000000000001,
+          1.5,
+          0.45
+        ],
+        "4": [
+          -2.9,
+          -0.325,
+          1.5,
+          0.45
+        ],
+        "13": [
+          2.9,
+          -0.325,
+          1.5,
+          0.45
+        ],
+        "5": [
+          -2.9,
+          0.325,
+          1.5,
+          0.45
+        ],
+        "12": [
+          2.9,
+          0.325,
+          1.5,
+          0.45
+        ],
+        "6": [
+          -2.9,
+          0.9750000000000001,
+          1.5,
+          0.45
+        ],
+        "11": [
+          2.9,
+          0.9750000000000001,
+          1.5,
+          0.45
+        ],
+        "7": [
+          -2.9,
+          1.625,
+          1.5,
+          0.45
+        ],
+        "10": [
+          2.9,
+          1.625,
+          1.5,
+          0.45
+        ],
+        "8": [
+          -2.9,
+          2.275,
+          1.5,
+          0.45
+        ],
+        "9": [
+          2.9,
+          2.275,
+          1.5,
+          0.45
+        ]
+      },
+      "body": [
+        4.4,
+        5
+      ],
+      "note": ""
+    },
+    "U502": {
+      "mpn": "OPA2333AIDR",
+      "source": "opa2333",
+      "pages": [
+        3,
+        46,
+        47
+      ],
+      "pads": {
+        "1": [
+          -2.7,
+          -1.905,
+          1.55,
+          0.6
+        ],
+        "8": [
+          2.7,
+          -1.905,
+          1.55,
+          0.6
+        ],
+        "2": [
+          -2.7,
+          -0.635,
+          1.55,
+          0.6
+        ],
+        "7": [
+          2.7,
+          -0.635,
+          1.55,
+          0.6
+        ],
+        "3": [
+          -2.7,
+          0.635,
+          1.55,
+          0.6
+        ],
+        "6": [
+          2.7,
+          0.635,
+          1.55,
+          0.6
+        ],
+        "4": [
+          -2.7,
+          1.905,
+          1.55,
+          0.6
+        ],
+        "5": [
+          2.7,
+          1.905,
+          1.55,
+          0.6
+        ]
+      },
+      "body": [
+        3.9,
+        4.9
+      ],
+      "note": "D0008A SOIC, not OPA333 five-pin option. Source uses longer IPC lands; outer edges differ by .025mm from TI example."
+    },
+    "U401": {
+      "mpn": "PA1616D",
+      "source": "pa1616d",
+      "pages": [
+        7,
+        8,
+        9
+      ],
+      "pads": {
+        "1": [
+          -7.8,
+          -6.75,
+          2,
+          1
+        ],
+        "20": [
+          7.8,
+          -6.75,
+          2,
+          1
+        ],
+        "2": [
+          -7.8,
+          -5.25,
+          2,
+          1
+        ],
+        "19": [
+          7.8,
+          -5.25,
+          2,
+          1
+        ],
+        "3": [
+          -7.8,
+          -3.75,
+          2,
+          1
+        ],
+        "18": [
+          7.8,
+          -3.75,
+          2,
+          1
+        ],
+        "4": [
+          -7.8,
+          -2.25,
+          2,
+          1
+        ],
+        "17": [
+          7.8,
+          -2.25,
+          2,
+          1
+        ],
+        "5": [
+          -7.8,
+          -0.75,
+          2,
+          1
+        ],
+        "16": [
+          7.8,
+          -0.75,
+          2,
+          1
+        ],
+        "6": [
+          -7.8,
+          0.75,
+          2,
+          1
+        ],
+        "15": [
+          7.8,
+          0.75,
+          2,
+          1
+        ],
+        "7": [
+          -7.8,
+          2.25,
+          2,
+          1
+        ],
+        "14": [
+          7.8,
+          2.25,
+          2,
+          1
+        ],
+        "8": [
+          -7.8,
+          3.75,
+          2,
+          1
+        ],
+        "13": [
+          7.8,
+          3.75,
+          2,
+          1
+        ],
+        "9": [
+          -7.8,
+          5.25,
+          2,
+          1
+        ],
+        "12": [
+          7.8,
+          5.25,
+          2,
+          1
+        ],
+        "10": [
+          -7.8,
+          6.75,
+          2,
+          1
+        ],
+        "11": [
+          7.8,
+          6.75,
+          2,
+          1
+        ]
+      },
+      "body": [
+        16,
+        16
+      ],
+      "note": "Current Adafruit-linked manufacturer PDF is V.05. Its numbered top-view drawing is independently checked; the legacy footprint name v06 is not treated as a drawing revision assertion."
+    },
+    "U404": {
+      "mpn": "SN74LVC2G125DCUR",
+      "source": "sn74lvc2g125",
+      "pages": [
+        4,
+        24,
+        25
+      ],
+      "pads": {
+        "1": [
+          -1.55,
+          -0.75,
+          0.85,
+          0.3
+        ],
+        "8": [
+          1.55,
+          -0.75,
+          0.85,
+          0.3
+        ],
+        "2": [
+          -1.55,
+          -0.25,
+          0.85,
+          0.3
+        ],
+        "7": [
+          1.55,
+          -0.25,
+          0.85,
+          0.3
+        ],
+        "3": [
+          -1.55,
+          0.25,
+          0.85,
+          0.3
+        ],
+        "6": [
+          1.55,
+          0.25,
+          0.85,
+          0.3
+        ],
+        "4": [
+          -1.55,
+          0.75,
+          0.85,
+          0.3
+        ],
+        "5": [
+          1.55,
+          0.75,
+          0.85,
+          0.3
+        ]
+      },
+      "body": [
+        2,
+        2.3
+      ],
+      "note": "DCU0008A, not DCT or YZP. Source land length .8mm versus TI .85mm example; numbering/pitch/centerline agree."
+    },
+    "U201": {
+      "mpn": "ESP32-S3-WROOM-1-N8R2",
+      "source": "esp32_s3",
+      "pages": [
+        8,
+        9,
+        43,
+        45
+      ],
+      "pads": {
+        "1": [
+          -8.75,
+          -5.26,
+          1.5,
+          0.9
+        ],
+        "40": [
+          8.75,
+          -5.26,
+          1.5,
+          0.9
+        ],
+        "2": [
+          -8.75,
+          -3.9899999999999998,
+          1.5,
+          0.9
+        ],
+        "39": [
+          8.75,
+          -3.9899999999999998,
+          1.5,
+          0.9
+        ],
+        "3": [
+          -8.75,
+          -2.7199999999999998,
+          1.5,
+          0.9
+        ],
+        "38": [
+          8.75,
+          -2.7199999999999998,
+          1.5,
+          0.9
+        ],
+        "4": [
+          -8.75,
+          -1.4499999999999997,
+          1.5,
+          0.9
+        ],
+        "37": [
+          8.75,
+          -1.4499999999999997,
+          1.5,
+          0.9
+        ],
+        "5": [
+          -8.75,
+          -0.17999999999999972,
+          1.5,
+          0.9
+        ],
+        "36": [
+          8.75,
+          -0.17999999999999972,
+          1.5,
+          0.9
+        ],
+        "6": [
+          -8.75,
+          1.0899999999999999,
+          1.5,
+          0.9
+        ],
+        "35": [
+          8.75,
+          1.0899999999999999,
+          1.5,
+          0.9
+        ],
+        "7": [
+          -8.75,
+          2.3600000000000003,
+          1.5,
+          0.9
+        ],
+        "34": [
+          8.75,
+          2.3600000000000003,
+          1.5,
+          0.9
+        ],
+        "8": [
+          -8.75,
+          3.630000000000001,
+          1.5,
+          0.9
+        ],
+        "33": [
+          8.75,
+          3.630000000000001,
+          1.5,
+          0.9
+        ],
+        "9": [
+          -8.75,
+          4.9,
+          1.5,
+          0.9
+        ],
+        "32": [
+          8.75,
+          4.9,
+          1.5,
+          0.9
+        ],
+        "10": [
+          -8.75,
+          6.17,
+          1.5,
+          0.9
+        ],
+        "31": [
+          8.75,
+          6.17,
+          1.5,
+          0.9
+        ],
+        "11": [
+          -8.75,
+          7.4399999999999995,
+          1.5,
+          0.9
+        ],
+        "30": [
+          8.75,
+          7.4399999999999995,
+          1.5,
+          0.9
+        ],
+        "12": [
+          -8.75,
+          8.71,
+          1.5,
+          0.9
+        ],
+        "29": [
+          8.75,
+          8.71,
+          1.5,
+          0.9
+        ],
+        "13": [
+          -8.75,
+          9.98,
+          1.5,
+          0.9
+        ],
+        "28": [
+          8.75,
+          9.98,
+          1.5,
+          0.9
+        ],
+        "14": [
+          -8.75,
+          11.250000000000002,
+          1.5,
+          0.9
+        ],
+        "27": [
+          8.75,
+          11.250000000000002,
+          1.5,
+          0.9
+        ],
+        "15": [
+          -6.985,
+          12.5,
+          0.9,
+          1.5
+        ],
+        "16": [
+          -5.715,
+          12.5,
+          0.9,
+          1.5
+        ],
+        "17": [
+          -4.445,
+          12.5,
+          0.9,
+          1.5
+        ],
+        "18": [
+          -3.1750000000000003,
+          12.5,
+          0.9,
+          1.5
+        ],
+        "19": [
+          -1.9050000000000002,
+          12.5,
+          0.9,
+          1.5
+        ],
+        "20": [
+          -0.6350000000000007,
+          12.5,
+          0.9,
+          1.5
+        ],
+        "21": [
+          0.6349999999999998,
+          12.5,
+          0.9,
+          1.5
+        ],
+        "22": [
+          1.9050000000000002,
+          12.5,
+          0.9,
+          1.5
+        ],
+        "23": [
+          3.175,
+          12.5,
+          0.9,
+          1.5
+        ],
+        "24": [
+          4.444999999999999,
+          12.5,
+          0.9,
+          1.5
+        ],
+        "25": [
+          5.714999999999999,
+          12.5,
+          0.9,
+          1.5
+        ],
+        "26": [
+          6.985,
+          12.5,
+          0.9,
+          1.5
+        ]
+      },
+      "body": [
+        18,
+        25.5
+      ],
+      "note": "Figure11-1 nine .9mm solder lands on1.4mm pitch form3.7x3.7mm array; source retains them within3.9x3.9mm grounded copper pad41 with48 filled/capped vias. Module antenna is at negative localY."
+    }
+  },
+  "method": "Manufacturer-numbered example lands are independently transformed through native placement CSV, then intersected with actual KiCad copper. Manual PA1616D has an explicit datum instruction. Bottom-view transforms are shown explicitly.",
+  "negative_controls": [
+    {
+      "ref": "U101",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    },
+    {
+      "ref": "U121",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    },
+    {
+      "ref": "U151",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    },
+    {
+      "ref": "U201",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    },
+    {
+      "ref": "U202",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    },
+    {
+      "ref": "U301",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    },
+    {
+      "ref": "U401",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    },
+    {
+      "ref": "U402",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    },
+    {
+      "ref": "U403",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    },
+    {
+      "ref": "U404",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    },
+    {
+      "ref": "U501",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    },
+    {
+      "ref": "U502",
+      "wrong_rotation_degrees": 180,
+      "pin1_overlap_mm2": 0.0,
+      "rejected": true
+    }
+  ],
+  "results": [
+    {
+      "ref": "U101",
+      "MPN": "LTC4367HMS8#WTRPBF",
+      "side": "bottom",
+      "rotation_deg": 0.0,
+      "placement_XY_mm": [
+        33.0,
+        10.788863
+      ],
+      "manual_instruction": false,
+      "drawing": {
+        "name": "ltc4367",
+        "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ltc4367.pdf",
+        "path": "ltc4367.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 1655189,
+        "sha256": "19f4e8fa5eaad9a29bff1fea1437aab169195583ed4b03a1b15c798982d1654b"
+      },
+      "drawing_pages": [
+        2,
+        19
+      ],
+      "notes": "MS8 drawing rotated 90 degrees into left/right-row convention. 3.45mm inner span and .889mm land length selected from the published range; IPC source lands are longer.",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": null,
+          "actual_net": "PROTECT_CTRL_VIN",
+          "example_land_overlap_fraction": 0.9523809523809531,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            30.887500000000003,
+            31.474999999999987
+          ]
+        },
+        {
+          "pin": "8",
+          "manufacturer_function": null,
+          "actual_net": "INPUT_GATE_DRIVE",
+          "example_land_overlap_fraction": 0.9523809523809531,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            35.1125,
+            31.475000000000012
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": null,
+          "actual_net": "INPUT_UV",
+          "example_land_overlap_fraction": 0.9523809523809451,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            30.887499999999992,
+            30.824999999999978
+          ]
+        },
+        {
+          "pin": "7",
+          "manufacturer_function": null,
+          "actual_net": "PROTECTED_12V",
+          "example_land_overlap_fraction": 0.952380952380945,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            35.11249999999999,
+            30.824999999999974
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": null,
+          "actual_net": "INPUT_OV",
+          "example_land_overlap_fraction": 0.9523809523809451,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            30.887499999999992,
+            30.174999999999972
+          ]
+        },
+        {
+          "pin": "6",
+          "manufacturer_function": null,
+          "actual_net": "INPUT_FAULT_N",
+          "example_land_overlap_fraction": 0.952380952380945,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            35.11249999999999,
+            30.174999999999983
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9523809523809531,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            30.887500000000003,
+            29.524999999999974
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": null,
+          "actual_net": "INPUT_SHDN",
+          "example_land_overlap_fraction": 0.9523809523809531,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            35.1125,
+            29.525000000000002
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.952380952380945,
+      "exposed_pad": null,
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    },
+    {
+      "ref": "U121",
+      "MPN": "LM5164DDAR",
+      "side": "top",
+      "rotation_deg": 0.0,
+      "placement_XY_mm": [
+        47.0,
+        14.788863
+      ],
+      "manual_instruction": false,
+      "drawing": {
+        "name": "lm5164",
+        "url": "https://www.ti.com/lit/ds/symlink/lm5164.pdf",
+        "path": "lm5164.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 2153326,
+        "sha256": "cce03619fbe13951eea47458cd45e140361637d8fef32ae143b82b16d597e32d"
+      },
+      "drawing_pages": [
+        3,
+        28,
+        29
+      ],
+      "notes": "",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9925208018629594,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            44.29999999999999,
+            24.595000000000017
+          ]
+        },
+        {
+          "pin": "8",
+          "manufacturer_function": null,
+          "actual_net": "5V_SW",
+          "example_land_overlap_fraction": 0.9925208018629591,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            49.7,
+            24.595000000000017
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": null,
+          "actual_net": "5V_VIN",
+          "example_land_overlap_fraction": 0.9925208018629591,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            44.3,
+            25.865000000000002
+          ]
+        },
+        {
+          "pin": "7",
+          "manufacturer_function": null,
+          "actual_net": "5V_BST",
+          "example_land_overlap_fraction": 0.9925208018629592,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            49.699999999999974,
+            25.865000000000002
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": null,
+          "actual_net": "5V_EN",
+          "example_land_overlap_fraction": 0.9925208018629594,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            44.3,
+            27.13500000000001
+          ]
+        },
+        {
+          "pin": "6",
+          "manufacturer_function": null,
+          "actual_net": "5V_PGOOD",
+          "example_land_overlap_fraction": 0.9925208018629592,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            49.699999999999974,
+            27.13500000000001
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": null,
+          "actual_net": "5V_RON",
+          "example_land_overlap_fraction": 0.9925208018629595,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            44.29999999999999,
+            28.404999999999976
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": null,
+          "actual_net": "5V_FB",
+          "example_land_overlap_fraction": 0.9925208018629592,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            49.7,
+            28.404999999999976
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.9925208018629591,
+      "exposed_pad": {
+        "pin": "9",
+        "net": "GND",
+        "copper_mm2": 14.28685671871545,
+        "mask_opening_mm2": 9.213999999999976,
+        "paste_mm2": 5.422130326766113,
+        "paste_fraction_of_opening": 0.5884664995404957,
+        "via_centers_in_pad": 4,
+        "manufacturer_example_mask_mm": [
+          2.71,
+          3.4
+        ],
+        "scope": "Exposed-pad net, mask and paste geometry. Thermal performance and assembler process acceptance remain separate."
+      },
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    },
+    {
+      "ref": "U151",
+      "MPN": "LM63615DQPWPRQ1",
+      "side": "bottom",
+      "rotation_deg": 0.0,
+      "placement_XY_mm": [
+        35.0,
+        28.288863
+      ],
+      "manual_instruction": false,
+      "drawing": {
+        "name": "lm63615_q1",
+        "url": "https://www.ti.com/lit/ds/symlink/lm63615-q1.pdf",
+        "path": "lm63615_q1.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 4579882,
+        "sha256": "7222b3f5bc6892f2a19a110a985096c342dc70084df5bfe0cebc3b4fb59a7351"
+      },
+      "drawing_pages": [
+        4,
+        53,
+        54
+      ],
+      "notes": "PWP0016K. Source signal lands .4mm wide versus .45mm TI example, with the same .65mm pitch and numbering; assembly process acceptance is separate.",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": null,
+          "actual_net": "3V3_SW",
+          "example_land_overlap_fraction": 0.8824497063811421,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            32.1375,
+            15.275000000000002
+          ]
+        },
+        {
+          "pin": "16",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.882449706381142,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            37.86250000000003,
+            15.275000000000006
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": null,
+          "actual_net": "3V3_SW",
+          "example_land_overlap_fraction": 0.8824497063811421,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            32.1375,
+            14.62499999999999
+          ]
+        },
+        {
+          "pin": "15",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.882449706381142,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            37.86250000000002,
+            14.624999999999986
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": null,
+          "actual_net": "3V3_BOOT",
+          "example_land_overlap_fraction": 0.8824497063811421,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            32.1375,
+            13.97499999999999
+          ]
+        },
+        {
+          "pin": "14",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U151-NC-Pad14)",
+          "example_land_overlap_fraction": 0.882449706381142,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            37.86250000000003,
+            13.974999999999994
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": null,
+          "actual_net": "3V3_VCC_INTERNAL",
+          "example_land_overlap_fraction": 0.8824497063811386,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            32.1375,
+            13.325000000000003
+          ]
+        },
+        {
+          "pin": "13",
+          "manufacturer_function": null,
+          "actual_net": "3V3_VIN",
+          "example_land_overlap_fraction": 0.8824497063811384,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            37.86250000000002,
+            13.325000000000003
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": null,
+          "actual_net": "3V3_VCC_INTERNAL",
+          "example_land_overlap_fraction": 0.8824497063811386,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            32.1375,
+            12.674999999999995
+          ]
+        },
+        {
+          "pin": "12",
+          "manufacturer_function": null,
+          "actual_net": "3V3_VIN",
+          "example_land_overlap_fraction": 0.8824497063811384,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            37.86250000000002,
+            12.674999999999997
+          ]
+        },
+        {
+          "pin": "6",
+          "manufacturer_function": null,
+          "actual_net": "3V3_VSEL_ADJ",
+          "example_land_overlap_fraction": 0.8824497063811421,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            32.1375,
+            12.025000000000007
+          ]
+        },
+        {
+          "pin": "11",
+          "manufacturer_function": null,
+          "actual_net": "3V3_VIN",
+          "example_land_overlap_fraction": 0.882449706381142,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            37.86250000000003,
+            12.025000000000013
+          ]
+        },
+        {
+          "pin": "7",
+          "manufacturer_function": null,
+          "actual_net": "3V3_VCC_INTERNAL",
+          "example_land_overlap_fraction": 0.8824497063811421,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            32.1375,
+            11.375000000000002
+          ]
+        },
+        {
+          "pin": "10",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.882449706381142,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            37.86250000000002,
+            11.37500000000001
+          ]
+        },
+        {
+          "pin": "8",
+          "manufacturer_function": null,
+          "actual_net": "3V3_PGOOD",
+          "example_land_overlap_fraction": 0.8824497063811421,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            32.1375,
+            10.724999999999996
+          ]
+        },
+        {
+          "pin": "9",
+          "manufacturer_function": null,
+          "actual_net": "3V3_FB_ADJ",
+          "example_land_overlap_fraction": 0.882449706381142,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            37.86250000000003,
+            10.724999999999996
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.8824497063811384,
+      "exposed_pad": {
+        "pin": "17",
+        "net": "GND",
+        "copper_mm2": 17.00000000000003,
+        "mask_opening_mm2": 5.682599999999982,
+        "paste_mm2": 3.5899613367914753,
+        "paste_fraction_of_opening": 0.631746266988964,
+        "via_centers_in_pad": 6,
+        "manufacturer_example_mask_mm": [
+          2.46,
+          2.3
+        ],
+        "scope": "Exposed-pad net, mask and paste geometry. Thermal performance and assembler process acceptance remain separate."
+      },
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    },
+    {
+      "ref": "U201",
+      "MPN": "ESP32-S3-WROOM-1-N8R2",
+      "side": "top",
+      "rotation_deg": -90.0,
+      "placement_XY_mm": [
+        81.504766,
+        18.288863
+      ],
+      "manual_instruction": false,
+      "drawing": {
+        "name": "esp32_s3",
+        "url": "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+        "path": "esp32_s3.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 1280501,
+        "sha256": "27d71971da07c280c6068d08c74720d1a25b8f20cf8494dc1765bdd28d40d435"
+      },
+      "drawing_pages": [
+        8,
+        9,
+        43,
+        45
+      ],
+      "notes": "Figure11-1 nine .9mm solder lands on1.4mm pitch form3.7x3.7mm array; source retains them within3.9x3.9mm grounded copper pad41 with48 filled/capped vias. Module antenna is at negative localY.",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            86.76476600000001,
+            14.25
+          ]
+        },
+        {
+          "pin": "40",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            86.76476600000001,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": null,
+          "actual_net": "+3V3",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            85.494766,
+            14.25
+          ]
+        },
+        {
+          "pin": "39",
+          "manufacturer_function": null,
+          "actual_net": "ADC_NODE",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            85.494766,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": null,
+          "actual_net": "ESP_EN",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            84.224766,
+            14.25
+          ]
+        },
+        {
+          "pin": "38",
+          "manufacturer_function": null,
+          "actual_net": "OIL_EXCITATION_ADC",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            84.224766,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": null,
+          "actual_net": "CAN_RX_MCU",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            82.95476600000002,
+            14.25
+          ]
+        },
+        {
+          "pin": "37",
+          "manufacturer_function": null,
+          "actual_net": "UART0_TX",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            82.95476600000002,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": null,
+          "actual_net": "CAN_TX_MCU",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            81.68476600000001,
+            14.25
+          ]
+        },
+        {
+          "pin": "36",
+          "manufacturer_function": null,
+          "actual_net": "UART0_RX",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            81.68476600000001,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "6",
+          "manufacturer_function": null,
+          "actual_net": "LED_BLE",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            80.414766,
+            14.25
+          ]
+        },
+        {
+          "pin": "35",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO42-Pad35)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            80.414766,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "7",
+          "manufacturer_function": null,
+          "actual_net": "LED_CAN",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            79.144766,
+            14.25
+          ]
+        },
+        {
+          "pin": "34",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO41-Pad34)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            79.144766,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "8",
+          "manufacturer_function": null,
+          "actual_net": "LED_PWR",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            77.87476600000001,
+            14.25
+          ]
+        },
+        {
+          "pin": "33",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO40-Pad33)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            77.87476600000001,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "9",
+          "manufacturer_function": null,
+          "actual_net": "GPS_PPS_MCU",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            76.604766,
+            14.25
+          ]
+        },
+        {
+          "pin": "32",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO39-Pad32)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            76.604766,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "10",
+          "manufacturer_function": null,
+          "actual_net": "GPS_TX_MCU",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            75.33476600000002,
+            14.25
+          ]
+        },
+        {
+          "pin": "31",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO38-Pad31)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            75.33476600000002,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "11",
+          "manufacturer_function": null,
+          "actual_net": "GPS_TX_MODULE_BUFFERED",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            74.064766,
+            14.25
+          ]
+        },
+        {
+          "pin": "30",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO37-Pad30)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            74.064766,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "12",
+          "manufacturer_function": null,
+          "actual_net": "LED_GPS",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            72.79476600000001,
+            14.25
+          ]
+        },
+        {
+          "pin": "29",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO36-Pad29)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            72.79476600000001,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "13",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO19-Pad13)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            71.524766,
+            14.25
+          ]
+        },
+        {
+          "pin": "28",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO35-Pad28)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            71.524766,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "14",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO20-Pad14)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            70.254766,
+            14.25
+          ]
+        },
+        {
+          "pin": "27",
+          "manufacturer_function": null,
+          "actual_net": "ESP_GPIO0",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            70.254766,
+            31.750000000000004
+          ]
+        },
+        {
+          "pin": "15",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO3-Pad15)",
+          "example_land_overlap_fraction": 0.999999999999998,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            16.015
+          ]
+        },
+        {
+          "pin": "16",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO46-Pad16)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            17.285000000000004
+          ]
+        },
+        {
+          "pin": "17",
+          "manufacturer_function": null,
+          "actual_net": "LED_OIL",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            18.555
+          ]
+        },
+        {
+          "pin": "18",
+          "manufacturer_function": null,
+          "actual_net": "LED_SYS",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            19.825
+          ]
+        },
+        {
+          "pin": "19",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO11-Pad19)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            21.095000000000002
+          ]
+        },
+        {
+          "pin": "20",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO12-Pad20)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            22.365
+          ]
+        },
+        {
+          "pin": "21",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO13-Pad21)",
+          "example_land_overlap_fraction": 0.999999999999996,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            23.635000000000005
+          ]
+        },
+        {
+          "pin": "22",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO14-Pad22)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            24.905
+          ]
+        },
+        {
+          "pin": "23",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO21-Pad23)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            26.175
+          ]
+        },
+        {
+          "pin": "24",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO47-Pad24)",
+          "example_land_overlap_fraction": 0.999999999999996,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            27.445
+          ]
+        },
+        {
+          "pin": "25",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO48-Pad25)",
+          "example_land_overlap_fraction": 1.0,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            28.715
+          ]
+        },
+        {
+          "pin": "26",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U201-IO45-Pad26)",
+          "example_land_overlap_fraction": 0.999999999999996,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            69.00476599999999,
+            29.984999999999996
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.999999999999996,
+      "exposed_pad": {
+        "pin": "41",
+        "net": "GND",
+        "copper_mm2": 15.210000000000017,
+        "mask_opening_mm2": 7.290000000000036,
+        "paste_mm2": 7.290000000000036,
+        "paste_fraction_of_opening": 1.0,
+        "via_centers_in_pad": 48,
+        "manufacturer_example_mask_mm": [
+          3.7,
+          3.7
+        ],
+        "scope": "Exposed-pad net, mask and paste geometry. Thermal performance and assembler process acceptance remain separate."
+      },
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    },
+    {
+      "ref": "U202",
+      "MPN": "TPS3808G33QDBVRQ1",
+      "side": "bottom",
+      "rotation_deg": 180.0,
+      "placement_XY_mm": [
+        77.8,
+        30.088863
+      ],
+      "manual_instruction": false,
+      "drawing": {
+        "name": "tps3808_q1",
+        "url": "https://www.ti.com/lit/ds/symlink/tps3808-q1.pdf",
+        "path": "tps3808_q1.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 1537744,
+        "sha256": "878d1dfe86ddc9da705fa77ee4fdbca73c96298e11c32e5a9fe6c50f1beea49a"
+      },
+      "drawing_pages": [
+        3,
+        20,
+        21
+      ],
+      "notes": "",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": null,
+          "actual_net": "SUP_RESET_RAW",
+          "example_land_overlap_fraction": 0.9967472623143998,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            79.09999999999992,
+            10.249999999999996
+          ]
+        },
+        {
+          "pin": "6",
+          "manufacturer_function": null,
+          "actual_net": "+3V3",
+          "example_land_overlap_fraction": 0.9967472623143998,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            76.5,
+            10.249999999999996
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9967472623143995,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            79.09999999999992,
+            11.200000000000001
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": null,
+          "actual_net": "+3V3",
+          "example_land_overlap_fraction": 0.9967472623143995,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            76.5,
+            11.200000000000001
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": null,
+          "actual_net": "+3V3",
+          "example_land_overlap_fraction": 0.9967472623144001,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            79.09999999999992,
+            12.150000000000002
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U202-CT-Pad4)",
+          "example_land_overlap_fraction": 0.9967472623144001,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            76.5,
+            12.150000000000002
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.9967472623143995,
+      "exposed_pad": null,
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    },
+    {
+      "ref": "U301",
+      "MPN": "TCAN3403DRBRQ1",
+      "side": "bottom",
+      "rotation_deg": 180.0,
+      "placement_XY_mm": [
+        20.4,
+        31.788863
+      ],
+      "manual_instruction": false,
+      "drawing": {
+        "name": "tcan3403_q1",
+        "url": "https://www.ti.com/lit/ds/symlink/tcan3403-q1.pdf",
+        "path": "tcan3403_q1.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 2067877,
+        "sha256": "b1f664b052f46baf09f312c1b667cbf36db2ce29ecc4644d5b41324b9e3cb399"
+      },
+      "drawing_pages": [
+        3,
+        43,
+        44
+      ],
+      "notes": "",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": null,
+          "actual_net": "CAN_TXD",
+          "example_land_overlap_fraction": 0.9884580275635273,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.8,
+            8.524999999999995
+          ]
+        },
+        {
+          "pin": "8",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9884580275635273,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            19.000000000000004,
+            8.524999999999995
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9884580275635273,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.800000000000004,
+            9.174999999999999
+          ]
+        },
+        {
+          "pin": "7",
+          "manufacturer_function": null,
+          "actual_net": "CANH",
+          "example_land_overlap_fraction": 0.9884580275635276,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            19.000000000000004,
+            9.174999999999999
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": null,
+          "actual_net": "+3V3",
+          "example_land_overlap_fraction": 0.9884580275635273,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.800000000000004,
+            9.825
+          ]
+        },
+        {
+          "pin": "6",
+          "manufacturer_function": null,
+          "actual_net": "CANL",
+          "example_land_overlap_fraction": 0.9884580275635276,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            19.000000000000004,
+            9.825
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": null,
+          "actual_net": "CAN_RXD",
+          "example_land_overlap_fraction": 0.9884580275635273,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.8,
+            10.475
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": null,
+          "actual_net": "+3V3",
+          "example_land_overlap_fraction": 0.9884580275635273,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            19.000000000000004,
+            10.475
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.9884580275635273,
+      "exposed_pad": {
+        "pin": "9",
+        "net": "GND",
+        "copper_mm2": 3.957853193127757,
+        "mask_opening_mm2": 3.957853193127758,
+        "paste_mm2": 3.1969063862584344,
+        "paste_fraction_of_opening": 0.8077374855159868,
+        "via_centers_in_pad": 0,
+        "manufacturer_example_mask_mm": [
+          1.65,
+          2.4
+        ],
+        "scope": "Exposed-pad net, mask and paste geometry. Thermal performance and assembler process acceptance remain separate."
+      },
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    },
+    {
+      "ref": "U401",
+      "MPN": "PA1616D",
+      "side": "top",
+      "rotation_deg": 0.0,
+      "placement_XY_mm": [
+        54.5,
+        32.288863
+      ],
+      "manual_instruction": true,
+      "drawing": {
+        "name": "pa1616d",
+        "url": "https://cdn-shop.adafruit.com/product-files/5186/5186_PA1616D_Datasheet.pdf",
+        "path": "pa1616d.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 1522670,
+        "sha256": "b32e14f2147645ce443c14d7ff1d2aec2b278ef177b913d2880b3a551cb55e08"
+      },
+      "drawing_pages": [
+        7,
+        8,
+        9
+      ],
+      "notes": "Current Adafruit-linked manufacturer PDF is V.05. Its numbered top-view drawing is independently checked; the legacy footprint name v06 is not treated as a drawing revision assertion.",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": "VCC",
+          "actual_net": "GPS_3V3",
+          "example_land_overlap_fraction": 0.9903393690729935,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            46.700000000000024,
+            2.2499999999999996
+          ]
+        },
+        {
+          "pin": "20",
+          "manufacturer_function": "NC",
+          "actual_net": "unconnected-(U401-NC-Pad20)",
+          "example_land_overlap_fraction": 0.9903393690729935,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            62.29999999999999,
+            2.2499999999999996
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": "NRESET",
+          "actual_net": "unconnected-(U401-NRESET-Pad2)",
+          "example_land_overlap_fraction": 0.9903393690729937,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            46.69999999999997,
+            3.7499999999999987
+          ]
+        },
+        {
+          "pin": "19",
+          "manufacturer_function": "GND",
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9903393690729937,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            62.299999999999976,
+            3.7499999999999987
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": "GND",
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            46.699999999999946,
+            5.249999999999993
+          ]
+        },
+        {
+          "pin": "18",
+          "manufacturer_function": "NC",
+          "actual_net": "unconnected-(U401-NC-Pad18)",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            62.299999999999955,
+            5.249999999999993
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": "VBACKUP",
+          "actual_net": "unconnected-(U401-VBACKUP-Pad4)",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            46.699999999999946,
+            6.749999999999991
+          ]
+        },
+        {
+          "pin": "17",
+          "manufacturer_function": "NC",
+          "actual_net": "unconnected-(U401-NC-Pad17)",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            62.299999999999955,
+            6.749999999999991
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": "3D-FIX",
+          "actual_net": "GPS_FIX_RAW",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            46.69999999999996,
+            8.249999999999995
+          ]
+        },
+        {
+          "pin": "16",
+          "manufacturer_function": "NC",
+          "actual_net": "unconnected-(U401-NC-Pad16)",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            62.3,
+            8.249999999999995
+          ]
+        },
+        {
+          "pin": "6",
+          "manufacturer_function": "NC",
+          "actual_net": "unconnected-(U401-NC-Pad6)",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            46.69999999999996,
+            9.749999999999982
+          ]
+        },
+        {
+          "pin": "15",
+          "manufacturer_function": "TX1/SDA",
+          "actual_net": "unconnected-(U401-TX1_SDA-Pad15)",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            62.29999999999996,
+            9.749999999999982
+          ]
+        },
+        {
+          "pin": "7",
+          "manufacturer_function": "NC",
+          "actual_net": "unconnected-(U401-NC-Pad7)",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            46.69999999999996,
+            11.249999999999993
+          ]
+        },
+        {
+          "pin": "14",
+          "manufacturer_function": "RX1/SCL",
+          "actual_net": "unconnected-(U401-RX1_SCL-Pad14)",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            62.29999999999996,
+            11.249999999999993
+          ]
+        },
+        {
+          "pin": "8",
+          "manufacturer_function": "GND",
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            46.69999999999996,
+            12.749999999999996
+          ]
+        },
+        {
+          "pin": "13",
+          "manufacturer_function": "1PPS",
+          "actual_net": "GPS_PPS_RAW",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            62.29999999999996,
+            12.749999999999996
+          ]
+        },
+        {
+          "pin": "9",
+          "manufacturer_function": "TX0",
+          "actual_net": "GPS_TX_RAW",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            46.69999999999996,
+            14.249999999999977
+          ]
+        },
+        {
+          "pin": "12",
+          "manufacturer_function": "GND",
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9903393690729936,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            62.29999999999996,
+            14.249999999999977
+          ]
+        },
+        {
+          "pin": "10",
+          "manufacturer_function": "RX0",
+          "actual_net": "GPS_RX_MODULE",
+          "example_land_overlap_fraction": 0.9903393690729934,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            46.699999999999946,
+            15.749999999999996
+          ]
+        },
+        {
+          "pin": "11",
+          "manufacturer_function": "EX_ANT",
+          "actual_net": "GPS_ANT_RF_BIASED",
+          "example_land_overlap_fraction": 0.9903393690729934,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            62.29999999999997,
+            15.749999999999996
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.9903393690729934,
+      "exposed_pad": null,
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    },
+    {
+      "ref": "U402",
+      "MPN": "SN74LVC2G125DCUR",
+      "side": "top",
+      "rotation_deg": 0.0,
+      "placement_XY_mm": [
+        65.3,
+        21.688863
+      ],
+      "manual_instruction": false,
+      "drawing": {
+        "name": "sn74lvc2g125",
+        "url": "https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf",
+        "path": "sn74lvc2g125.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 813417,
+        "sha256": "0592da7d851d40f70a2c500a88553d33883cfb37a606a205f1c95422c050452b"
+      },
+      "drawing_pages": [
+        4,
+        24,
+        25
+      ],
+      "notes": "DCU0008A, not DCT or YZP. Source land length .8mm versus TI .85mm example; numbering/pitch/centerline agree.",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9411764705882276,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            63.75,
+            18.85
+          ]
+        },
+        {
+          "pin": "8",
+          "manufacturer_function": null,
+          "actual_net": "+3V3",
+          "example_land_overlap_fraction": 0.9411764705882437,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            66.84999999999998,
+            18.85
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": null,
+          "actual_net": "GPS_TX_RAW",
+          "example_land_overlap_fraction": 0.9411764705882276,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            63.75,
+            19.35
+          ]
+        },
+        {
+          "pin": "7",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9411764705882437,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            66.84999999999998,
+            19.35
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": null,
+          "actual_net": "GPS_PPS_BUFFER",
+          "example_land_overlap_fraction": 0.9411764705882276,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            63.75,
+            19.85
+          ]
+        },
+        {
+          "pin": "6",
+          "manufacturer_function": null,
+          "actual_net": "GPS_TX_BUFFER",
+          "example_land_overlap_fraction": 0.9411764705882437,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            66.84999999999998,
+            19.850000000000005
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9411764705882276,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            63.75,
+            20.35
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": null,
+          "actual_net": "GPS_PPS_RAW",
+          "example_land_overlap_fraction": 0.9411764705882437,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            66.84999999999998,
+            20.35
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.9411764705882276,
+      "exposed_pad": null,
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    },
+    {
+      "ref": "U403",
+      "MPN": "MIC5504-3.3YM5-TR",
+      "side": "top",
+      "rotation_deg": 0.0,
+      "placement_XY_mm": [
+        39.0,
+        35.288863
+      ],
+      "manual_instruction": false,
+      "drawing": {
+        "name": "mic5504",
+        "url": "https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MIC5501-02-03-04-300mA-Single-Output-LDO-in-Small-Packages-DS20006006.pdf",
+        "path": "mic5504.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 2735823,
+        "sha256": "98db303190e6575f4c08d633df00883e1dcc28d22b6ce09c1490796883ad9017"
+      },
+      "drawing_pages": [
+        1,
+        7,
+        18,
+        19,
+        20
+      ],
+      "notes": "Five-lead M5/SOT-23. Rev C drawing C04-2091-6BX differs from generic KiCad example lands; pin order and nominal package lead coverage agree.",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": null,
+          "actual_net": "GPS_5V_IN",
+          "example_land_overlap_fraction": 0.848999044049991,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            37.86250000000001,
+            5.050000000000001
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.8489990440499909,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            37.86250000000002,
+            5.9999999999999964
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": null,
+          "actual_net": "GPS_5V_IN",
+          "example_land_overlap_fraction": 0.848999044049991,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            37.86250000000001,
+            6.949999999999988
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U403-NC-Pad4)",
+          "example_land_overlap_fraction": 0.8489990440499913,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            40.13749999999995,
+            6.949999999999988
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": null,
+          "actual_net": "GPS_3V3",
+          "example_land_overlap_fraction": 0.8489990440499913,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            40.13749999999995,
+            5.050000000000001
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.8489990440499909,
+      "exposed_pad": null,
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    },
+    {
+      "ref": "U404",
+      "MPN": "SN74LVC2G125DCUR",
+      "side": "top",
+      "rotation_deg": 180.0,
+      "placement_XY_mm": [
+        60.0,
+        21.688863
+      ],
+      "manual_instruction": false,
+      "drawing": {
+        "name": "sn74lvc2g125",
+        "url": "https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf",
+        "path": "sn74lvc2g125.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 813417,
+        "sha256": "0592da7d851d40f70a2c500a88553d33883cfb37a606a205f1c95422c050452b"
+      },
+      "drawing_pages": [
+        4,
+        24,
+        25
+      ],
+      "notes": "DCU0008A, not DCT or YZP. Source land length .8mm versus TI .85mm example; numbering/pitch/centerline agree.",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9411764705882192,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            61.55,
+            20.35
+          ]
+        },
+        {
+          "pin": "8",
+          "manufacturer_function": null,
+          "actual_net": "GPS_3V3",
+          "example_land_overlap_fraction": 0.9411764705882192,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            58.45,
+            20.35
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": null,
+          "actual_net": "GPS_TX_MCU",
+          "example_land_overlap_fraction": 0.9411764705882192,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            61.55,
+            19.85
+          ]
+        },
+        {
+          "pin": "7",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9411764705882192,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            58.45,
+            19.85
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": null,
+          "actual_net": "GPS_SEARCH_BUFFER",
+          "example_land_overlap_fraction": 0.9411764705882192,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            61.55,
+            19.350000000000005
+          ]
+        },
+        {
+          "pin": "6",
+          "manufacturer_function": null,
+          "actual_net": "GPS_RX_BUFFER",
+          "example_land_overlap_fraction": 0.9411764705882192,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            58.45,
+            19.350000000000005
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9411764705882192,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            61.55,
+            18.85
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": null,
+          "actual_net": "GPS_FIX_RAW",
+          "example_land_overlap_fraction": 0.9411764705882192,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            58.45,
+            18.85
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.9411764705882192,
+      "exposed_pad": null,
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    },
+    {
+      "ref": "U501",
+      "MPN": "TPS26600PWPR",
+      "side": "bottom",
+      "rotation_deg": 0.0,
+      "placement_XY_mm": [
+        18.5,
+        15.788863
+      ],
+      "manual_instruction": false,
+      "drawing": {
+        "name": "tps2660",
+        "url": "https://www.ti.com/lit/ds/symlink/tps2660.pdf",
+        "path": "tps2660.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 4118722,
+        "sha256": "b781cbce51984715771bde540df2b36404b4fae4b41e27166c84c19b6598e1de"
+      },
+      "drawing_pages": [
+        4,
+        5,
+        52,
+        53
+      ],
+      "notes": "",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": null,
+          "actual_net": "+5V",
+          "example_land_overlap_fraction": 0.9942036214437947,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            15.600000000000005,
+            27.775000000000013
+          ]
+        },
+        {
+          "pin": "16",
+          "manufacturer_function": null,
+          "actual_net": "OIL_EFUSE_OUT",
+          "example_land_overlap_fraction": 0.9942036214437951,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.4,
+            27.775000000000013
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": null,
+          "actual_net": "+5V",
+          "example_land_overlap_fraction": 0.9942036214437941,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            15.600000000000005,
+            27.124999999999986
+          ]
+        },
+        {
+          "pin": "15",
+          "manufacturer_function": null,
+          "actual_net": "OIL_EFUSE_OUT",
+          "example_land_overlap_fraction": 0.9942036214437946,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.4,
+            27.125000000000004
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": null,
+          "actual_net": "OIL_UVLO",
+          "example_land_overlap_fraction": 0.994203621443795,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            15.600000000000005,
+            26.47500000000001
+          ]
+        },
+        {
+          "pin": "14",
+          "manufacturer_function": null,
+          "actual_net": "OIL_POWER_FAULT_N",
+          "example_land_overlap_fraction": 0.9942036214437955,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.4,
+            26.474999999999994
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U501-NC1-Pad4)",
+          "example_land_overlap_fraction": 0.9942036214437949,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            15.600000000000001,
+            25.825000000000003
+          ]
+        },
+        {
+          "pin": "13",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U501-NC2-Pad13)",
+          "example_land_overlap_fraction": 0.9942036214437955,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.399999999999995,
+            25.825000000000003
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": null,
+          "actual_net": "OIL_OVP",
+          "example_land_overlap_fraction": 0.9942036214437953,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            15.600000000000001,
+            25.17500000000001
+          ]
+        },
+        {
+          "pin": "12",
+          "manufacturer_function": null,
+          "actual_net": "OIL_DVDT",
+          "example_land_overlap_fraction": 0.9942036214437958,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.399999999999995,
+            25.174999999999997
+          ]
+        },
+        {
+          "pin": "6",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U501-MODE-Pad6)",
+          "example_land_overlap_fraction": 0.9942036214437947,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            15.600000000000005,
+            24.525000000000013
+          ]
+        },
+        {
+          "pin": "11",
+          "manufacturer_function": null,
+          "actual_net": "OIL_ILIM",
+          "example_land_overlap_fraction": 0.9942036214437951,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.4,
+            24.525
+          ]
+        },
+        {
+          "pin": "7",
+          "manufacturer_function": null,
+          "actual_net": "OIL_SHDN",
+          "example_land_overlap_fraction": 0.9942036214437941,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            15.600000000000005,
+            23.875000000000032
+          ]
+        },
+        {
+          "pin": "10",
+          "manufacturer_function": null,
+          "actual_net": "unconnected-(U501-IMON-Pad10)",
+          "example_land_overlap_fraction": 0.9942036214437946,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.4,
+            23.87500000000001
+          ]
+        },
+        {
+          "pin": "8",
+          "manufacturer_function": null,
+          "actual_net": "OIL_EFUSE_RTN",
+          "example_land_overlap_fraction": 0.994203621443795,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            15.600000000000005,
+            23.225000000000005
+          ]
+        },
+        {
+          "pin": "9",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9942036214437955,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            21.4,
+            23.22500000000001
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.9942036214437941,
+      "exposed_pad": {
+        "pin": "17",
+        "net": "OIL_EFUSE_RTN",
+        "copper_mm2": 16.776646212967606,
+        "mask_opening_mm2": 10.889999999999981,
+        "paste_mm2": 6.701950342163032,
+        "paste_fraction_of_opening": 0.615422437296882,
+        "via_centers_in_pad": 4,
+        "manufacturer_example_mask_mm": [
+          3.3,
+          3.3
+        ],
+        "scope": "Exposed-pad net, mask and paste geometry. Thermal performance and assembler process acceptance remain separate."
+      },
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    },
+    {
+      "ref": "U502",
+      "MPN": "OPA2333AIDR",
+      "side": "bottom",
+      "rotation_deg": 180.0,
+      "placement_XY_mm": [
+        78.5,
+        10.788863
+      ],
+      "manual_instruction": false,
+      "drawing": {
+        "name": "opa2333",
+        "url": "https://www.ti.com/lit/ds/symlink/opa2333.pdf",
+        "path": "opa2333.pdf",
+        "date": "2026-09-10",
+        "size_bytes": 1944689,
+        "sha256": "df60da7154848c5706e2c7743b5d532fb9b4db97b74b88d0b62b657f73c1f1b7"
+      },
+      "drawing_pages": [
+        3,
+        46,
+        47
+      ],
+      "notes": "D0008A SOIC, not OPA333 five-pin option. Source uses longer IPC lands; outer edges differ by .025mm from TI example.",
+      "pins": [
+        {
+          "pin": "1",
+          "manufacturer_function": null,
+          "actual_net": "OIL_AMP_OUT",
+          "example_land_overlap_fraction": 0.9734831925516048,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            80.97500000000001,
+            28.59500000000003
+          ]
+        },
+        {
+          "pin": "8",
+          "manufacturer_function": null,
+          "actual_net": "+3V3",
+          "example_land_overlap_fraction": 0.9734831925516045,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            76.02500000000009,
+            28.59500000000003
+          ]
+        },
+        {
+          "pin": "2",
+          "manufacturer_function": null,
+          "actual_net": "OIL_FB",
+          "example_land_overlap_fraction": 0.9734831925516045,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            80.97500000000002,
+            29.865000000000023
+          ]
+        },
+        {
+          "pin": "7",
+          "manufacturer_function": null,
+          "actual_net": "OIL_EXC_AMP_OUT",
+          "example_land_overlap_fraction": 0.9734831925516045,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            76.02500000000009,
+            29.865000000000023
+          ]
+        },
+        {
+          "pin": "3",
+          "manufacturer_function": null,
+          "actual_net": "OIL_FILTERED",
+          "example_land_overlap_fraction": 0.9734831925516045,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            80.97500000000002,
+            31.13500000000003
+          ]
+        },
+        {
+          "pin": "6",
+          "manufacturer_function": null,
+          "actual_net": "OIL_EXC_FB",
+          "example_land_overlap_fraction": 0.9734831925516045,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            76.02500000000009,
+            31.13500000000003
+          ]
+        },
+        {
+          "pin": "4",
+          "manufacturer_function": null,
+          "actual_net": "GND",
+          "example_land_overlap_fraction": 0.9734831925515939,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            80.97500000000008,
+            32.40500000000002
+          ]
+        },
+        {
+          "pin": "5",
+          "manufacturer_function": null,
+          "actual_net": "OIL_EXC_FILTERED",
+          "example_land_overlap_fraction": 0.9734831925515939,
+          "example_land_to_actual_gap_mm": 0.0,
+          "PCB_pin_center_mm": [
+            76.02500000000006,
+            32.40500000000002
+          ]
+        }
+      ],
+      "minimum_example_land_overlap_fraction": 0.9734831925515939,
+      "exposed_pad": null,
+      "status": "PASS_NUMBERING_AND_PLACEMENT_ORIENTATION"
+    }
+  ],
+  "physical_measurement_claimed": false,
+  "independent_human_review_claimed": false,
+  "limitations": [
+    "Alternative land sizes are documented and do not imply assembler stencil/process approval.",
+    "LIB-02 independent check means a separate drawing/PnP calculation, not another human reviewer. DRW-03 human-review requirement stays open.",
+    "Source PDFs are hashed snapshots; top/bottom nomenclature is not inferred from generic STEP bodies."
+  ]
+}

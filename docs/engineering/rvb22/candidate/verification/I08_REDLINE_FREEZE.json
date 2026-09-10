@@ -1,0 +1,4829 @@
+{
+  "revision": "I08_PRECHANGE_FREEZE",
+  "source_revision": "I07",
+  "commit": "ab52ea36230885688f92c235ea1d5289245703c7",
+  "native_run": 34381221292,
+  "artifact_sha256": "bcb63df8d1fa9bcd88abb42e838bdb3b1d1a7d6478c868822c61a84f7dcc71e6",
+  "DRC_sha256": "9720e858a50c5bb2b0c751fca8ecfc00bfbc34b926b5301d05ac2a929e92d801",
+  "native_findings": [
+    {
+      "id": "N08-001",
+      "section": "violations",
+      "native_finding": {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 34.5,
+              "y": 13.4
+            },
+            "uuid": "37283f8a-441c-5df7-9189-e04293a28adf"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-002",
+      "section": "violations",
+      "native_finding": {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 34.8,
+              "y": 13.6
+            },
+            "uuid": "63668012-5b44-5c90-97cc-1280428a6e33"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-003",
+      "section": "violations",
+      "native_finding": {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.0250 mm",
+            "pos": {
+              "x": 35.1,
+              "y": 13.7
+            },
+            "uuid": "ad9ac26b-b0d7-5293-921f-b0754777b0ab"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-004",
+      "section": "violations",
+      "native_finding": {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 34.4,
+              "y": 13.4
+            },
+            "uuid": "bc2c59c4-d992-5e28-9c0e-38ad7366b567"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-005",
+      "section": "violations",
+      "native_finding": {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 34.7,
+              "y": 13.5
+            },
+            "uuid": "bffb1e5f-4128-52bc-85af-8304ae233e2f"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-006",
+      "section": "violations",
+      "native_finding": {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 34.6,
+              "y": 13.5
+            },
+            "uuid": "c92477ed-764b-565c-bb5d-7e3d48c07d6e"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-007",
+      "section": "violations",
+      "native_finding": {
+        "description": "Front solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 35.0,
+              "y": 13.6
+            },
+            "uuid": "d4fb1480-5de4-5c2b-a411-b20f7d3e0832"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-008",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Via [3V3_VSEL_ADJ] on F.Cu - B.Cu",
+            "pos": {
+              "x": 31.0,
+              "y": 12.0
+            },
+            "uuid": "cb6f9158-b472-597b-aece-bcb534eba41c"
+          },
+          {
+            "description": "Pad 6 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 32.1375,
+              "y": 12.025
+            },
+            "uuid": "5b73f571-a0c7-5357-9ed9-f075e3995588"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-009",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_VSEL_ADJ] on B.Cu, length 1.1000 mm",
+            "pos": {
+              "x": 32.1,
+              "y": 12.0
+            },
+            "uuid": "381a3444-ab10-51ab-97c1-d2e97620571b"
+          },
+          {
+            "description": "Pad 6 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 32.1375,
+              "y": 12.025
+            },
+            "uuid": "5b73f571-a0c7-5357-9ed9-f075e3995588"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-010",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_VSEL_ADJ] on B.Cu, length 0.0451 mm",
+            "pos": {
+              "x": 32.1375,
+              "y": 12.025
+            },
+            "uuid": "746b4251-5aaf-56d8-8d64-d83c44780fb2"
+          },
+          {
+            "description": "Pad 6 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 32.1375,
+              "y": 12.025
+            },
+            "uuid": "5b73f571-a0c7-5357-9ed9-f075e3995588"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-011",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 33.1,
+              "y": 24.7
+            },
+            "uuid": "0c374b0c-2ab1-5c2c-a038-77948c461466"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-012",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 4.0000 mm",
+            "pos": {
+              "x": 35.0,
+              "y": 25.0
+            },
+            "uuid": "107898ee-3767-5e39-b4c8-a3f7d4bca833"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R155 on B.Cu",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-013",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.0250 mm",
+            "pos": {
+              "x": 39.1,
+              "y": 25.1
+            },
+            "uuid": "12769914-0373-5e3c-972f-5ec335aa186a"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R155 on B.Cu",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-014",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 33.0,
+              "y": 24.6
+            },
+            "uuid": "466b2ba5-6e4e-5337-be6c-822c245abdb6"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-015",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 33.2,
+              "y": 24.7
+            },
+            "uuid": "49d65f02-3318-5df1-8885-593051c599d2"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-016",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.0250 mm",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "5589c867-2dc6-5c2e-9e83-6b781976587c"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R155 on B.Cu",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-017",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 5.1000 mm",
+            "pos": {
+              "x": 39.1,
+              "y": 25.1
+            },
+            "uuid": "56e585ee-c8e8-5909-ac37-e09fc1b79958"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R155 on B.Cu",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-018",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.0250 mm",
+            "pos": {
+              "x": 32.7,
+              "y": 24.5
+            },
+            "uuid": "61e75f19-1f50-509f-8350-02161093f9a7"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-019",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 32.8,
+              "y": 24.5
+            },
+            "uuid": "719baa8a-a726-5831-ae61-bdbd9c27d885"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-020",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 33.3,
+              "y": 24.8
+            },
+            "uuid": "77c61541-9fa9-58bc-98dd-72b99e84b4e5"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-021",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 3.5000 mm",
+            "pos": {
+              "x": 31.0,
+              "y": 24.5
+            },
+            "uuid": "9b36e567-8898-5632-bd18-4a718c40972b"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-022",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 1.2375 mm",
+            "pos": {
+              "x": 37.8625,
+              "y": 10.725
+            },
+            "uuid": "9dada98e-9744-4f7b-825e-06ca18936914"
+          },
+          {
+            "description": "Pad 9 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 37.8625,
+              "y": 10.725
+            },
+            "uuid": "313f41ed-83ca-5c52-8f7c-457fa34b6b62"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-023",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 39.0,
+              "y": 25.0
+            },
+            "uuid": "bbee3297-b4a3-5671-92af-5b4c8496ea0f"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R155 on B.Cu",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-024",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 33.4,
+              "y": 24.8
+            },
+            "uuid": "c65b71f9-6e3c-5ddc-a5a5-220ad88d70bb"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-025",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 32.9,
+              "y": 24.6
+            },
+            "uuid": "d1d79775-b7e1-5921-a35a-58cd70687e3a"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-026",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.7000 mm",
+            "pos": {
+              "x": 78.7,
+              "y": 18.6
+            },
+            "uuid": "0a31b7a9-2868-540f-8839-21f998f8f076"
+          },
+          {
+            "description": "Pad 1 [<no net>] of C206 on B.Cu",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "37bb14ad-796b-5c22-97ed-8235b3f60edc"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-027",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.5800 mm",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "41b67005-78a3-52f8-8c16-076b3cf265ad"
+          },
+          {
+            "description": "Pad 1 [<no net>] of C206 on B.Cu",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "37bb14ad-796b-5c22-97ed-8235b3f60edc"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-028",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.8400 mm",
+            "pos": {
+              "x": 77.9,
+              "y": 18.7
+            },
+            "uuid": "7519cb00-95dd-5527-b8e7-ea1a895ece47"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R158 on B.Cu",
+            "pos": {
+              "x": 77.06,
+              "y": 18.7
+            },
+            "uuid": "a2839c70-2f26-58e8-a05f-4ee721ee6a3a"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-029",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.2828 mm",
+            "pos": {
+              "x": 78.9,
+              "y": 18.4
+            },
+            "uuid": "a494530a-3e46-5086-b2c2-3031461df77b"
+          },
+          {
+            "description": "Pad 1 [<no net>] of C206 on B.Cu",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "37bb14ad-796b-5c22-97ed-8235b3f60edc"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-030",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 78.0,
+              "y": 18.6
+            },
+            "uuid": "bb8173f3-3da6-50fd-b748-05727e7e1e1b"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R158 on B.Cu",
+            "pos": {
+              "x": 77.06,
+              "y": 18.7
+            },
+            "uuid": "a2839c70-2f26-58e8-a05f-4ee721ee6a3a"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-031",
+      "section": "violations",
+      "native_finding": {
+        "description": "Rear solder mask aperture bridges items with different nets",
+        "items": [
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 78.0,
+              "y": 18.6
+            },
+            "uuid": "bb8173f3-3da6-50fd-b748-05727e7e1e1b"
+          },
+          {
+            "description": "Pad 1 [<no net>] of C206 on B.Cu",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "37bb14ad-796b-5c22-97ed-8235b3f60edc"
+          }
+        ],
+        "severity": "error",
+        "type": "solder_mask_bridge"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-032",
+      "section": "violations",
+      "native_finding": {
+        "description": "Via diameter (board setup constraints min diameter 0.6000 mm; actual 0.5000 mm)",
+        "items": [
+          {
+            "description": "Via [OIL_EFUSE_OUT] on F.Cu - B.Cu",
+            "pos": {
+              "x": 21.6,
+              "y": 28.3
+            },
+            "uuid": "01e89423-c2f4-5f5e-a70e-37a3ecedbbe6"
+          }
+        ],
+        "severity": "error",
+        "type": "via_diameter"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-033",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2393 mm)",
+        "items": [
+          {
+            "description": "Track [PROTECTED_12V] on F.Cu, length 1.8825 mm",
+            "pos": {
+              "x": 36.0825,
+              "y": 24.4625
+            },
+            "uuid": "19909cbd-d2fb-4b77-9741-fbd167d71211"
+          },
+          {
+            "description": "Via [3V3_SOURCE] on F.Cu - B.Cu",
+            "pos": {
+              "x": 36.9,
+              "y": 24.0
+            },
+            "uuid": "a716cc31-b88d-57ba-9a34-b142e1a002dd"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-034",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2051 mm)",
+        "items": [
+          {
+            "description": "Track [PROTECTED_12V] on F.Cu, length 3.1926 mm",
+            "pos": {
+              "x": 38.34,
+              "y": 26.72
+            },
+            "uuid": "7b9079ed-76d2-4786-aacb-13afea599b1f"
+          },
+          {
+            "description": "Via [3V3_SOURCE] on F.Cu - B.Cu",
+            "pos": {
+              "x": 36.9,
+              "y": 24.0
+            },
+            "uuid": "a716cc31-b88d-57ba-9a34-b142e1a002dd"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-035",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1907 mm)",
+        "items": [
+          {
+            "description": "Track [PROTECTED_12V] on F.Cu, length 2.6163 mm",
+            "pos": {
+              "x": 37.475,
+              "y": 27.475
+            },
+            "uuid": "9076ca3d-6e31-4e7c-b7d6-02c812f72a53"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 35.7,
+              "y": 26.5
+            },
+            "uuid": "a8e3cb8d-468f-5f58-b0a2-2f89ef9c3fb9"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-036",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1573 mm)",
+        "items": [
+          {
+            "description": "Via [3V3_FB_ADJ] on F.Cu - B.Cu",
+            "pos": {
+              "x": 31.0,
+              "y": 24.5
+            },
+            "uuid": "793f2128-9826-5fe1-842b-15470c4341ee"
+          },
+          {
+            "description": "Track [PROTECTED_12V] on F.Cu, length 7.1229 mm",
+            "pos": {
+              "x": 26.5573,
+              "y": 23.9427
+            },
+            "uuid": "bb9f560e-74e2-4c74-b39a-e90b2faa6e22"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-037",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2000 mm)",
+        "items": [
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 25.9,
+              "y": 20.9
+            },
+            "uuid": "0bfdb3fb-08e8-572f-91c9-77f3be7c580d"
+          },
+          {
+            "description": "Pad 1 [PROTECTED_12V] of C103 on F.Cu",
+            "pos": {
+              "x": 24.825,
+              "y": 21.0
+            },
+            "uuid": "ded5b136-7863-54d4-bf9c-902b7656834f"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-038",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1839 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.8485 mm",
+            "pos": {
+              "x": 39.8,
+              "y": 25.15
+            },
+            "uuid": "c66e3909-69c2-45f7-aea2-3fe5ef96dbe5"
+          },
+          {
+            "description": "Via [3V3_SOURCE] on F.Cu - B.Cu",
+            "pos": {
+              "x": 40.7,
+              "y": 24.8
+            },
+            "uuid": "cde2df06-5907-51c2-b56a-8a2e8439f87b"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-039",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2000 mm)",
+        "items": [
+          {
+            "description": "Via [3V3_SOURCE] on F.Cu - B.Cu",
+            "pos": {
+              "x": 40.7,
+              "y": 24.8
+            },
+            "uuid": "cde2df06-5907-51c2-b56a-8a2e8439f87b"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 1.4750 mm",
+            "pos": {
+              "x": 39.8,
+              "y": 23.675
+            },
+            "uuid": "f801144e-5940-477d-b870-7e73a1919435"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-040",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Raw vehicle transient clearance' clearance 0.6000 mm; actual 0.1600 mm)",
+        "items": [
+          {
+            "description": "Pad 2 [REV_BLOCKED_12V] of Q101 on F.Cu",
+            "pos": {
+              "x": 33.714999,
+              "y": 27.475
+            },
+            "uuid": "65164084-c302-5065-841d-3d454ff640d0"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 35.7,
+              "y": 26.5
+            },
+            "uuid": "a8e3cb8d-468f-5f58-b0a2-2f89ef9c3fb9"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-041",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Raw vehicle transient clearance' clearance 0.6000 mm; actual 0.1600 mm)",
+        "items": [
+          {
+            "description": "Pad 2 [REV_BLOCKED_12V] of Q101 on F.Cu",
+            "pos": {
+              "x": 32.039999,
+              "y": 29.0
+            },
+            "uuid": "8802ca8a-2681-5bf4-95cb-6823b15f3f7a"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 35.7,
+              "y": 26.5
+            },
+            "uuid": "a8e3cb8d-468f-5f58-b0a2-2f89ef9c3fb9"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-042",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets 3V3_VSEL_ADJ and )",
+        "items": [
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 34.5,
+              "y": 13.4
+            },
+            "uuid": "37283f8a-441c-5df7-9189-e04293a28adf"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-043",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1778 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.4243 mm",
+            "pos": {
+              "x": 33.1,
+              "y": 15.2
+            },
+            "uuid": "283c8cec-4a04-535f-8ddb-90f33276292d"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 33.8,
+              "y": 14.8
+            },
+            "uuid": "b8d7ddee-8ac9-46c4-bd1a-d795e74a6abf"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-044",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_VSEL_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          },
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 34.8,
+              "y": 13.6
+            },
+            "uuid": "63668012-5b44-5c90-97cc-1280428a6e33"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-045",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_VSEL_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          },
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.0250 mm",
+            "pos": {
+              "x": 35.1,
+              "y": 13.7
+            },
+            "uuid": "ad9ac26b-b0d7-5293-921f-b0754777b0ab"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-046",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1616 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 33.5,
+              "y": 15.5
+            },
+            "uuid": "4580ea8b-6484-575b-8af0-b825521e812b"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 33.8,
+              "y": 14.8
+            },
+            "uuid": "b8d7ddee-8ac9-46c4-bd1a-d795e74a6abf"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-047",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1616 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 2.4042 mm",
+            "pos": {
+              "x": 31.4,
+              "y": 13.4
+            },
+            "uuid": "26c49d89-57ff-569f-b5ab-d7afbc9a668f"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 33.8,
+              "y": 14.8
+            },
+            "uuid": "b8d7ddee-8ac9-46c4-bd1a-d795e74a6abf"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-048",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Logic clearance' clearance 0.1500 mm; actual 0.0750 mm)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          },
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 34.4,
+              "y": 13.4
+            },
+            "uuid": "bc2c59c4-d992-5e28-9c0e-38ad7366b567"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-049",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_VSEL_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          },
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 34.7,
+              "y": 13.5
+            },
+            "uuid": "bffb1e5f-4128-52bc-85af-8304ae233e2f"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-050",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_VSEL_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          },
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 34.6,
+              "y": 13.5
+            },
+            "uuid": "c92477ed-764b-565c-bb5d-7e3d48c07d6e"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-051",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_VSEL_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          },
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 35.0,
+              "y": 13.6
+            },
+            "uuid": "d4fb1480-5de4-5c2b-a411-b20f7d3e0832"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-052",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2000 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.7000 mm",
+            "pos": {
+              "x": 33.6,
+              "y": 15.6
+            },
+            "uuid": "753088a1-6540-5ae4-b406-3137e16a6067"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 33.8,
+              "y": 14.8
+            },
+            "uuid": "b8d7ddee-8ac9-46c4-bd1a-d795e74a6abf"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-053",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2250 mm)",
+        "items": [
+          {
+            "description": "Pad 2 [5V_VIN] of R110 on F.Cu",
+            "pos": {
+              "x": 31.4,
+              "y": 13.437499
+            },
+            "uuid": "095c4503-73b0-521c-838f-01b8cb796e1c"
+          },
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.7000 mm",
+            "pos": {
+              "x": 32.4,
+              "y": 12.5
+            },
+            "uuid": "e02efd5f-1377-5d4e-8647-c8e73cd705f9"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-054",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1616 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 33.1,
+              "y": 15.1
+            },
+            "uuid": "a691dcab-73dc-5051-835d-54a9ef0b3ff1"
+          },
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 33.8,
+              "y": 14.8
+            },
+            "uuid": "b8d7ddee-8ac9-46c4-bd1a-d795e74a6abf"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-055",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2250 mm)",
+        "items": [
+          {
+            "description": "Pad 2 [5V_VIN] of R110 on F.Cu",
+            "pos": {
+              "x": 31.4,
+              "y": 13.437499
+            },
+            "uuid": "095c4503-73b0-521c-838f-01b8cb796e1c"
+          },
+          {
+            "description": "Track [3V3_VSEL_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 32.3,
+              "y": 12.4
+            },
+            "uuid": "e8eded5e-2eb4-56b1-9cdf-72369d45b0c0"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-056",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1616 mm)",
+        "items": [
+          {
+            "description": "Via [GND] on F.Cu - B.Cu",
+            "pos": {
+              "x": 33.8,
+              "y": 14.8
+            },
+            "uuid": "b8d7ddee-8ac9-46c4-bd1a-d795e74a6abf"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 33.4,
+              "y": 15.5
+            },
+            "uuid": "b9ae3b2e-749e-57fe-b1bd-8ce1bf60c1bb"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-057",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Logic clearance' clearance 0.1500 mm; actual 0.0500 mm)",
+        "items": [
+          {
+            "description": "Pad 6 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 32.1375,
+              "y": 12.025
+            },
+            "uuid": "5b73f571-a0c7-5357-9ed9-f075e3995588"
+          },
+          {
+            "description": "Via [3V3_VSEL_ADJ] on F.Cu - B.Cu",
+            "pos": {
+              "x": 31.0,
+              "y": 12.0
+            },
+            "uuid": "cb6f9158-b472-597b-aece-bcb534eba41c"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-058",
+      "section": "violations",
+      "native_finding": {
+        "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.2000 mm)",
+        "items": [
+          {
+            "description": "Pad 6 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 32.1375,
+              "y": 12.025
+            },
+            "uuid": "5b73f571-a0c7-5357-9ed9-f075e3995588"
+          },
+          {
+            "description": "Via [3V3_VSEL_ADJ] on F.Cu - B.Cu",
+            "pos": {
+              "x": 31.0,
+              "y": 12.0
+            },
+            "uuid": "cb6f9158-b472-597b-aece-bcb534eba41c"
+          }
+        ],
+        "severity": "error",
+        "type": "hole_clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-059",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets 3V3_VSEL_ADJ and )",
+        "items": [
+          {
+            "description": "Track [3V3_VSEL_ADJ] on B.Cu, length 1.1000 mm",
+            "pos": {
+              "x": 32.1,
+              "y": 12.0
+            },
+            "uuid": "381a3444-ab10-51ab-97c1-d2e97620571b"
+          },
+          {
+            "description": "Pad 6 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 32.1375,
+              "y": 12.025
+            },
+            "uuid": "5b73f571-a0c7-5357-9ed9-f075e3995588"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-060",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_VSEL_ADJ)",
+        "items": [
+          {
+            "description": "Pad 6 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 32.1375,
+              "y": 12.025
+            },
+            "uuid": "5b73f571-a0c7-5357-9ed9-f075e3995588"
+          },
+          {
+            "description": "Track [3V3_VSEL_ADJ] on B.Cu, length 0.0451 mm",
+            "pos": {
+              "x": 32.1375,
+              "y": 12.025
+            },
+            "uuid": "746b4251-5aaf-56d8-8d64-d83c44780fb2"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-061",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.9,
+              "y": 16.1
+            },
+            "uuid": "0426ad5d-e2fc-5440-b99f-10da8a33cd0a"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.8,
+              "y": 16.8
+            },
+            "uuid": "26fb8b52-f411-5a84-b941-05c84dbe3cf7"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-062",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.9,
+              "y": 16.1
+            },
+            "uuid": "0426ad5d-e2fc-5440-b99f-10da8a33cd0a"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.9,
+              "y": 16.8
+            },
+            "uuid": "d84d195c-dc92-59ef-8fb2-5c8437d07099"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-063",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2364 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.9,
+              "y": 16.1
+            },
+            "uuid": "0426ad5d-e2fc-5440-b99f-10da8a33cd0a"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.5,
+              "y": 16.6
+            },
+            "uuid": "3bdb69d1-ed5a-5d64-b419-3232c6eaa1f2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-064",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.9,
+              "y": 16.1
+            },
+            "uuid": "0426ad5d-e2fc-5440-b99f-10da8a33cd0a"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.7
+            },
+            "uuid": "ac16cc05-481b-51c4-ae42-c42f95b71493"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-065",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2051 mm)",
+        "items": [
+          {
+            "description": "Track [GND] on B.Cu, length 0.3000 mm",
+            "pos": {
+              "x": 35.2,
+              "y": 25.7
+            },
+            "uuid": "7747c65d-d008-5cb8-a19e-5378df37b6cb"
+          },
+          {
+            "description": "Pad 1 [PROTECT_CTRL_VIN] of R105 on B.Cu",
+            "pos": {
+              "x": 34.3375,
+              "y": 26.7
+            },
+            "uuid": "b7bc821e-2c80-5465-a351-c366114fe6e4"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-066",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2364 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.9,
+              "y": 16.1
+            },
+            "uuid": "0426ad5d-e2fc-5440-b99f-10da8a33cd0a"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.4,
+              "y": 16.6
+            },
+            "uuid": "bae7cae0-5f9a-5394-bb23-904ae8a3d7a6"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-067",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.9,
+              "y": 16.1
+            },
+            "uuid": "0426ad5d-e2fc-5440-b99f-10da8a33cd0a"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.6,
+              "y": 16.7
+            },
+            "uuid": "f47d4868-fa52-5b05-8fa3-3dd149df2b85"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-068",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2051 mm)",
+        "items": [
+          {
+            "description": "Track [GND] on B.Cu, length 0.7071 mm",
+            "pos": {
+              "x": 35.2,
+              "y": 26.0
+            },
+            "uuid": "8e15d1ef-c26b-54a8-89b2-c1155489e0b0"
+          },
+          {
+            "description": "Pad 1 [PROTECT_CTRL_VIN] of R105 on B.Cu",
+            "pos": {
+              "x": 34.3375,
+              "y": 26.7
+            },
+            "uuid": "b7bc821e-2c80-5465-a351-c366114fe6e4"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-069",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2364 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.3,
+              "y": 16.5
+            },
+            "uuid": "1afdbe6e-1e1e-552d-8c2b-7ce1dfff0976"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.8,
+              "y": 16.1
+            },
+            "uuid": "b76fb389-076a-5aca-91da-f6c114e8a215"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-070",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.3,
+              "y": 16.5
+            },
+            "uuid": "1afdbe6e-1e1e-552d-8c2b-7ce1dfff0976"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 1.4142 mm",
+            "pos": {
+              "x": 35.6,
+              "y": 15.0
+            },
+            "uuid": "2071d843-24c6-5add-b3b0-85874c16e1bd"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-071",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 1.4142 mm",
+            "pos": {
+              "x": 35.6,
+              "y": 15.0
+            },
+            "uuid": "2071d843-24c6-5add-b3b0-85874c16e1bd"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 36.1,
+              "y": 16.5
+            },
+            "uuid": "664efd5a-a6a9-50a5-8df2-8b139389e465"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-072",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2250 mm)",
+        "items": [
+          {
+            "description": "Track [GND] on B.Cu, length 1.7000 mm",
+            "pos": {
+              "x": 33.3,
+              "y": 25.5
+            },
+            "uuid": "91956fb8-42ed-559d-80c7-006bb1a14652"
+          },
+          {
+            "description": "Pad 1 [PROTECT_CTRL_VIN] of R105 on B.Cu",
+            "pos": {
+              "x": 34.3375,
+              "y": 26.7
+            },
+            "uuid": "b7bc821e-2c80-5465-a351-c366114fe6e4"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-073",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2364 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.3,
+              "y": 16.5
+            },
+            "uuid": "1afdbe6e-1e1e-552d-8c2b-7ce1dfff0976"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.0
+            },
+            "uuid": "d68e1ec2-e4c2-5b83-a035-31ca8971c0b2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-074",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 1.4142 mm",
+            "pos": {
+              "x": 35.6,
+              "y": 15.0
+            },
+            "uuid": "2071d843-24c6-5add-b3b0-85874c16e1bd"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.5,
+              "y": 16.6
+            },
+            "uuid": "3bdb69d1-ed5a-5d64-b419-3232c6eaa1f2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-075",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.3,
+              "y": 16.5
+            },
+            "uuid": "1afdbe6e-1e1e-552d-8c2b-7ce1dfff0976"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.6,
+              "y": 16.0
+            },
+            "uuid": "f43b8a2d-5f1a-5ef0-801e-e260f500c52f"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-076",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 1.4142 mm",
+            "pos": {
+              "x": 35.6,
+              "y": 15.0
+            },
+            "uuid": "2071d843-24c6-5add-b3b0-85874c16e1bd"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.4,
+              "y": 16.6
+            },
+            "uuid": "bae7cae0-5f9a-5394-bb23-904ae8a3d7a6"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-077",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.8,
+              "y": 16.8
+            },
+            "uuid": "26fb8b52-f411-5a84-b941-05c84dbe3cf7"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.3000 mm",
+            "pos": {
+              "x": 37.2,
+              "y": 16.3
+            },
+            "uuid": "f6b67a29-4d19-5265-9042-b6d98d6b4b3a"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-078",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.8,
+              "y": 16.8
+            },
+            "uuid": "26fb8b52-f411-5a84-b941-05c84dbe3cf7"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 37.0,
+              "y": 16.2
+            },
+            "uuid": "49cf450f-4a71-5b1f-8506-fe4f9c85cd35"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-079",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1708 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.9899 mm",
+            "pos": {
+              "x": 37.3,
+              "y": 17.0
+            },
+            "uuid": "3270c681-e880-4428-a185-d4cdaa9bbe19"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 37.6,
+              "y": 16.4
+            },
+            "uuid": "4737aa6f-9198-5f8a-a548-be61ac1e2996"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-080",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2403 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 37.6,
+              "y": 16.4
+            },
+            "uuid": "4737aa6f-9198-5f8a-a548-be61ac1e2996"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 37.0,
+              "y": 16.9
+            },
+            "uuid": "4be20686-a231-55cf-a6b8-ffd48391c4fe"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-081",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.8,
+              "y": 16.8
+            },
+            "uuid": "26fb8b52-f411-5a84-b941-05c84dbe3cf7"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.1,
+              "y": 16.2
+            },
+            "uuid": "b664f75c-fe17-5485-9f5c-a41d59b5727d"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-082",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2403 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 37.6,
+              "y": 16.4
+            },
+            "uuid": "4737aa6f-9198-5f8a-a548-be61ac1e2996"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.2,
+              "y": 16.9
+            },
+            "uuid": "585335c3-d779-563e-8d36-0f8df12cb58d"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-083",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1708 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.9899 mm",
+            "pos": {
+              "x": 37.3,
+              "y": 17.0
+            },
+            "uuid": "3270c681-e880-4428-a185-d4cdaa9bbe19"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.5,
+              "y": 16.3
+            },
+            "uuid": "9b550a68-3d39-5d76-bca2-532dbf4c2f4b"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-084",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2000 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.9899 mm",
+            "pos": {
+              "x": 37.3,
+              "y": 17.0
+            },
+            "uuid": "3270c681-e880-4428-a185-d4cdaa9bbe19"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.3000 mm",
+            "pos": {
+              "x": 37.2,
+              "y": 16.3
+            },
+            "uuid": "f6b67a29-4d19-5265-9042-b6d98d6b4b3a"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-085",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 37.0,
+              "y": 16.2
+            },
+            "uuid": "49cf450f-4a71-5b1f-8506-fe4f9c85cd35"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.9,
+              "y": 16.8
+            },
+            "uuid": "d84d195c-dc92-59ef-8fb2-5c8437d07099"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-086",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2071 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.9899 mm",
+            "pos": {
+              "x": 37.3,
+              "y": 17.0
+            },
+            "uuid": "3270c681-e880-4428-a185-d4cdaa9bbe19"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.1,
+              "y": 16.2
+            },
+            "uuid": "b664f75c-fe17-5485-9f5c-a41d59b5727d"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-087",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2364 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.5,
+              "y": 16.6
+            },
+            "uuid": "3bdb69d1-ed5a-5d64-b419-3232c6eaa1f2"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 37.0,
+              "y": 16.2
+            },
+            "uuid": "49cf450f-4a71-5b1f-8506-fe4f9c85cd35"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-088",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2071 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.9899 mm",
+            "pos": {
+              "x": 37.3,
+              "y": 17.0
+            },
+            "uuid": "3270c681-e880-4428-a185-d4cdaa9bbe19"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 2.8284 mm",
+            "pos": {
+              "x": 37.7,
+              "y": 16.4
+            },
+            "uuid": "80937bf7-aa58-59d1-96d4-e7fcef7cfd7f"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-089",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 37.0,
+              "y": 16.2
+            },
+            "uuid": "49cf450f-4a71-5b1f-8506-fe4f9c85cd35"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.7
+            },
+            "uuid": "ac16cc05-481b-51c4-ae42-c42f95b71493"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-090",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.5,
+              "y": 16.6
+            },
+            "uuid": "3bdb69d1-ed5a-5d64-b419-3232c6eaa1f2"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.8,
+              "y": 16.1
+            },
+            "uuid": "b76fb389-076a-5aca-91da-f6c114e8a215"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-091",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.5,
+              "y": 16.6
+            },
+            "uuid": "3bdb69d1-ed5a-5d64-b419-3232c6eaa1f2"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.0
+            },
+            "uuid": "d68e1ec2-e4c2-5b83-a035-31ca8971c0b2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-092",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2403 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 37.0,
+              "y": 16.2
+            },
+            "uuid": "49cf450f-4a71-5b1f-8506-fe4f9c85cd35"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.4,
+              "y": 16.6
+            },
+            "uuid": "bae7cae0-5f9a-5394-bb23-904ae8a3d7a6"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-093",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.5,
+              "y": 16.6
+            },
+            "uuid": "3bdb69d1-ed5a-5d64-b419-3232c6eaa1f2"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.6,
+              "y": 16.0
+            },
+            "uuid": "f43b8a2d-5f1a-5ef0-801e-e260f500c52f"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-094",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 37.0,
+              "y": 16.2
+            },
+            "uuid": "49cf450f-4a71-5b1f-8506-fe4f9c85cd35"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.6,
+              "y": 16.7
+            },
+            "uuid": "f47d4868-fa52-5b05-8fa3-3dd149df2b85"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-095",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2403 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 37.0,
+              "y": 16.9
+            },
+            "uuid": "4be20686-a231-55cf-a6b8-ffd48391c4fe"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.5,
+              "y": 16.3
+            },
+            "uuid": "9b550a68-3d39-5d76-bca2-532dbf4c2f4b"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-096",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2000 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 37.0,
+              "y": 16.9
+            },
+            "uuid": "4be20686-a231-55cf-a6b8-ffd48391c4fe"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.3000 mm",
+            "pos": {
+              "x": 37.2,
+              "y": 16.3
+            },
+            "uuid": "f6b67a29-4d19-5265-9042-b6d98d6b4b3a"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-097",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2000 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 37.0,
+              "y": 16.9
+            },
+            "uuid": "4be20686-a231-55cf-a6b8-ffd48391c4fe"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.1,
+              "y": 16.2
+            },
+            "uuid": "b664f75c-fe17-5485-9f5c-a41d59b5727d"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-098",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2403 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.2,
+              "y": 16.9
+            },
+            "uuid": "585335c3-d779-563e-8d36-0f8df12cb58d"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.5,
+              "y": 16.3
+            },
+            "uuid": "9b550a68-3d39-5d76-bca2-532dbf4c2f4b"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-099",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2000 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.2,
+              "y": 16.9
+            },
+            "uuid": "585335c3-d779-563e-8d36-0f8df12cb58d"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.3000 mm",
+            "pos": {
+              "x": 37.2,
+              "y": 16.3
+            },
+            "uuid": "f6b67a29-4d19-5265-9042-b6d98d6b4b3a"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-100",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2000 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.2,
+              "y": 16.9
+            },
+            "uuid": "585335c3-d779-563e-8d36-0f8df12cb58d"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.1,
+              "y": 16.2
+            },
+            "uuid": "b664f75c-fe17-5485-9f5c-a41d59b5727d"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-101",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2403 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 36.1,
+              "y": 16.5
+            },
+            "uuid": "664efd5a-a6a9-50a5-8df2-8b139389e465"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.8,
+              "y": 16.1
+            },
+            "uuid": "b76fb389-076a-5aca-91da-f6c114e8a215"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-102",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2364 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 36.1,
+              "y": 16.5
+            },
+            "uuid": "664efd5a-a6a9-50a5-8df2-8b139389e465"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.0
+            },
+            "uuid": "d68e1ec2-e4c2-5b83-a035-31ca8971c0b2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-103",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.1,
+              "y": 16.2
+            },
+            "uuid": "b664f75c-fe17-5485-9f5c-a41d59b5727d"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.9,
+              "y": 16.8
+            },
+            "uuid": "d84d195c-dc92-59ef-8fb2-5c8437d07099"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-104",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 36.1,
+              "y": 16.5
+            },
+            "uuid": "664efd5a-a6a9-50a5-8df2-8b139389e465"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.6,
+              "y": 16.0
+            },
+            "uuid": "f43b8a2d-5f1a-5ef0-801e-e260f500c52f"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-105",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2364 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.7
+            },
+            "uuid": "ac16cc05-481b-51c4-ae42-c42f95b71493"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.1,
+              "y": 16.2
+            },
+            "uuid": "b664f75c-fe17-5485-9f5c-a41d59b5727d"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-106",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2364 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.7
+            },
+            "uuid": "ac16cc05-481b-51c4-ae42-c42f95b71493"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.3000 mm",
+            "pos": {
+              "x": 37.2,
+              "y": 16.3
+            },
+            "uuid": "f6b67a29-4d19-5265-9042-b6d98d6b4b3a"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-107",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2364 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 37.1,
+              "y": 16.2
+            },
+            "uuid": "b664f75c-fe17-5485-9f5c-a41d59b5727d"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.6,
+              "y": 16.7
+            },
+            "uuid": "f47d4868-fa52-5b05-8fa3-3dd149df2b85"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-108",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.7
+            },
+            "uuid": "ac16cc05-481b-51c4-ae42-c42f95b71493"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.8,
+              "y": 16.1
+            },
+            "uuid": "b76fb389-076a-5aca-91da-f6c114e8a215"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-109",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.8,
+              "y": 16.1
+            },
+            "uuid": "b76fb389-076a-5aca-91da-f6c114e8a215"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.4,
+              "y": 16.6
+            },
+            "uuid": "bae7cae0-5f9a-5394-bb23-904ae8a3d7a6"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-110",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.7
+            },
+            "uuid": "ac16cc05-481b-51c4-ae42-c42f95b71493"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.0
+            },
+            "uuid": "d68e1ec2-e4c2-5b83-a035-31ca8971c0b2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-111",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.4,
+              "y": 16.6
+            },
+            "uuid": "bae7cae0-5f9a-5394-bb23-904ae8a3d7a6"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.0
+            },
+            "uuid": "d68e1ec2-e4c2-5b83-a035-31ca8971c0b2"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-112",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.8,
+              "y": 16.1
+            },
+            "uuid": "b76fb389-076a-5aca-91da-f6c114e8a215"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.6,
+              "y": 16.7
+            },
+            "uuid": "f47d4868-fa52-5b05-8fa3-3dd149df2b85"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-113",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.4,
+              "y": 16.6
+            },
+            "uuid": "bae7cae0-5f9a-5394-bb23-904ae8a3d7a6"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.6,
+              "y": 16.0
+            },
+            "uuid": "f43b8a2d-5f1a-5ef0-801e-e260f500c52f"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-114",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2083 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.7,
+              "y": 16.0
+            },
+            "uuid": "d68e1ec2-e4c2-5b83-a035-31ca8971c0b2"
+          },
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.6,
+              "y": 16.7
+            },
+            "uuid": "f47d4868-fa52-5b05-8fa3-3dd149df2b85"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-115",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.1831 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 36.9,
+              "y": 16.8
+            },
+            "uuid": "d84d195c-dc92-59ef-8fb2-5c8437d07099"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.3000 mm",
+            "pos": {
+              "x": 37.2,
+              "y": 16.3
+            },
+            "uuid": "f6b67a29-4d19-5265-9042-b6d98d6b4b3a"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-116",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Protected automotive voltage clearance' clearance 0.2500 mm; actual 0.2403 mm)",
+        "items": [
+          {
+            "description": "Track [5V_VIN] on F.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 36.6,
+              "y": 16.7
+            },
+            "uuid": "f47d4868-fa52-5b05-8fa3-3dd149df2b85"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 0.3000 mm",
+            "pos": {
+              "x": 37.2,
+              "y": 16.3
+            },
+            "uuid": "f6b67a29-4d19-5265-9042-b6d98d6b4b3a"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-117",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets 3V3_FB_ADJ and )",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 33.1,
+              "y": 24.7
+            },
+            "uuid": "0c374b0c-2ab1-5c2c-a038-77948c461466"
+          },
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-118",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets 3V3_FB_ADJ and )",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 4.0000 mm",
+            "pos": {
+              "x": 35.0,
+              "y": 25.0
+            },
+            "uuid": "107898ee-3767-5e39-b4c8-a3f7d4bca833"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R155 on B.Cu",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-119",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets 3V3_FB_ADJ and )",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.0250 mm",
+            "pos": {
+              "x": 39.1,
+              "y": 25.1
+            },
+            "uuid": "12769914-0373-5e3c-972f-5ec335aa186a"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R155 on B.Cu",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-120",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_FB_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 33.0,
+              "y": 24.6
+            },
+            "uuid": "466b2ba5-6e4e-5337-be6c-822c245abdb6"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-121",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_FB_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 33.2,
+              "y": 24.7
+            },
+            "uuid": "49d65f02-3318-5df1-8885-593051c599d2"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-122",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets 3V3_FB_ADJ and )",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.0250 mm",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "5589c867-2dc6-5c2e-9e83-6b781976587c"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R155 on B.Cu",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-123",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets 3V3_FB_ADJ and )",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 5.1000 mm",
+            "pos": {
+              "x": 39.1,
+              "y": 25.1
+            },
+            "uuid": "56e585ee-c8e8-5909-ac37-e09fc1b79958"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R155 on B.Cu",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-124",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_FB_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.0250 mm",
+            "pos": {
+              "x": 32.7,
+              "y": 24.5
+            },
+            "uuid": "61e75f19-1f50-509f-8350-02161093f9a7"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-125",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_FB_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 32.8,
+              "y": 24.5
+            },
+            "uuid": "719baa8a-a726-5831-ae61-bdbd9c27d885"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-126",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_FB_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 33.3,
+              "y": 24.8
+            },
+            "uuid": "77c61541-9fa9-58bc-98dd-72b99e84b4e5"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-127",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_FB_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 3.5000 mm",
+            "pos": {
+              "x": 31.0,
+              "y": 24.5
+            },
+            "uuid": "9b36e567-8898-5632-bd18-4a718c40972b"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-128",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_FB_ADJ)",
+        "items": [
+          {
+            "description": "Pad 9 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 37.8625,
+              "y": 10.725
+            },
+            "uuid": "313f41ed-83ca-5c52-8f7c-457fa34b6b62"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 1.2375 mm",
+            "pos": {
+              "x": 37.8625,
+              "y": 10.725
+            },
+            "uuid": "9dada98e-9744-4f7b-825e-06ca18936914"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-129",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_FB_ADJ)",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of R155 on B.Cu",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 39.0,
+              "y": 25.0
+            },
+            "uuid": "bbee3297-b4a3-5671-92af-5b4c8496ea0f"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-130",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Logic clearance' clearance 0.1500 mm; actual 0.1250 mm)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 33.5,
+              "y": 24.9
+            },
+            "uuid": "c4400418-fb0b-5ab1-8948-b20646d52b9a"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-131",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Logic clearance' clearance 0.1500 mm; actual 0.0251 mm)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 33.4,
+              "y": 24.8
+            },
+            "uuid": "c65b71f9-6e3c-5ddc-a5a5-220ad88d70bb"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-132",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_FB_ADJ)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          },
+          {
+            "description": "Track [3V3_FB_ADJ] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 32.9,
+              "y": 24.6
+            },
+            "uuid": "d1d79775-b7e1-5921-a35a-58cd70687e3a"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-133",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets 3V3_BULK_DAMPED and )",
+        "items": [
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.7000 mm",
+            "pos": {
+              "x": 78.7,
+              "y": 18.6
+            },
+            "uuid": "0a31b7a9-2868-540f-8839-21f998f8f076"
+          },
+          {
+            "description": "Pad 1 [<no net>] of C206 on B.Cu",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "37bb14ad-796b-5c22-97ed-8235b3f60edc"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-134",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Logic clearance' clearance 0.1500 mm; actual 0.1300 mm)",
+        "items": [
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.7000 mm",
+            "pos": {
+              "x": 78.7,
+              "y": 18.6
+            },
+            "uuid": "0a31b7a9-2868-540f-8839-21f998f8f076"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R158 on B.Cu",
+            "pos": {
+              "x": 77.06,
+              "y": 18.7
+            },
+            "uuid": "a2839c70-2f26-58e8-a05f-4ee721ee6a3a"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-135",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_BULK_DAMPED)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of C206 on B.Cu",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "37bb14ad-796b-5c22-97ed-8235b3f60edc"
+          },
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.5800 mm",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "41b67005-78a3-52f8-8c16-076b3cf265ad"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-136",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Logic clearance' clearance 0.1500 mm; actual 0.0950 mm)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of C206 on B.Cu",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "37bb14ad-796b-5c22-97ed-8235b3f60edc"
+          },
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.8400 mm",
+            "pos": {
+              "x": 77.9,
+              "y": 18.7
+            },
+            "uuid": "7519cb00-95dd-5527-b8e7-ea1a895ece47"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-137",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets 3V3_BULK_DAMPED and )",
+        "items": [
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.8400 mm",
+            "pos": {
+              "x": 77.9,
+              "y": 18.7
+            },
+            "uuid": "7519cb00-95dd-5527-b8e7-ea1a895ece47"
+          },
+          {
+            "description": "Pad 2 [<no net>] of R158 on B.Cu",
+            "pos": {
+              "x": 77.06,
+              "y": 18.7
+            },
+            "uuid": "a2839c70-2f26-58e8-a05f-4ee721ee6a3a"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-138",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_BULK_DAMPED)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of C206 on B.Cu",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "37bb14ad-796b-5c22-97ed-8235b3f60edc"
+          },
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.2828 mm",
+            "pos": {
+              "x": 78.9,
+              "y": 18.4
+            },
+            "uuid": "a494530a-3e46-5086-b2c2-3031461df77b"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-139",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items shorting two nets (nets  and 3V3_BULK_DAMPED)",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of C206 on B.Cu",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "37bb14ad-796b-5c22-97ed-8235b3f60edc"
+          },
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 78.0,
+              "y": 18.6
+            },
+            "uuid": "bb8173f3-3da6-50fd-b748-05727e7e1e1b"
+          }
+        ],
+        "severity": "error",
+        "type": "shorting_items"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-140",
+      "section": "violations",
+      "native_finding": {
+        "description": "Clearance violation (rule 'Logic clearance' clearance 0.1500 mm; actual 0.0300 mm)",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of R158 on B.Cu",
+            "pos": {
+              "x": 77.06,
+              "y": 18.7
+            },
+            "uuid": "a2839c70-2f26-58e8-a05f-4ee721ee6a3a"
+          },
+          {
+            "description": "Track [3V3_BULK_DAMPED] on B.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 78.0,
+              "y": 18.6
+            },
+            "uuid": "bb8173f3-3da6-50fd-b748-05727e7e1e1b"
+          }
+        ],
+        "severity": "error",
+        "type": "clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-141",
+      "section": "violations",
+      "native_finding": {
+        "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.2000 mm)",
+        "items": [
+          {
+            "description": "Pad 6 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 32.1375,
+              "y": 12.025
+            },
+            "uuid": "5b73f571-a0c7-5357-9ed9-f075e3995588"
+          },
+          {
+            "description": "Via [3V3_VSEL_ADJ] on F.Cu - B.Cu",
+            "pos": {
+              "x": 31.0,
+              "y": 12.0
+            },
+            "uuid": "cb6f9158-b472-597b-aece-bcb534eba41c"
+          }
+        ],
+        "severity": "error",
+        "type": "hole_clearance"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-142",
+      "section": "violations",
+      "native_finding": {
+        "description": "Copper zones intersect (intersecting zones must have distinct priorities)",
+        "items": [
+          {
+            "description": "Zone 'RVB22_THERMAL_WING_TOP' [GND] on F.Cu, priority 0",
+            "pos": {
+              "x": 13.25,
+              "y": -9.75
+            },
+            "uuid": "134c9ab9-e117-5eaf-98d2-b4abd2832612"
+          },
+          {
+            "description": "Zone 'GND_OUTER_RETURN' [GND] on F.Cu, priority 0",
+            "pos": {
+              "x": 0.25,
+              "y": 0.25
+            },
+            "uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe"
+          }
+        ],
+        "severity": "error",
+        "type": "zones_intersect"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-143",
+      "section": "violations",
+      "native_finding": {
+        "description": "Copper zones intersect (intersecting zones must have distinct priorities)",
+        "items": [
+          {
+            "description": "Zone 'GND_OUTER_RETURN' [GND] on F.Cu, priority 0",
+            "pos": {
+              "x": 0.25,
+              "y": 0.25
+            },
+            "uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe"
+          },
+          {
+            "description": "Zone 'RVB22_THERMAL_WING_BOTTOM' [GND] on F.Cu, priority 0",
+            "pos": {
+              "x": 13.25,
+              "y": 40.517256
+            },
+            "uuid": "dd323d65-0713-5686-a3cb-1ab14aced4cb"
+          }
+        ],
+        "severity": "error",
+        "type": "zones_intersect"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-144",
+      "section": "violations",
+      "native_finding": {
+        "description": "Copper zones intersect (intersecting zones must have distinct priorities)",
+        "items": [
+          {
+            "description": "Zone 'RVB22_THERMAL_WING_TOP' [GND] on In1.Cu, priority 0",
+            "pos": {
+              "x": 13.25,
+              "y": -9.75
+            },
+            "uuid": "b0888c9d-194c-56f7-9068-c1c90cdcd80c"
+          },
+          {
+            "description": "Zone 'GND_REFERENCE' [GND] on In1.Cu, priority 0",
+            "pos": {
+              "x": 0.25,
+              "y": 0.25
+            },
+            "uuid": "f5ad958c-f9cd-468c-9e6c-951ecb335b1e"
+          }
+        ],
+        "severity": "error",
+        "type": "zones_intersect"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-145",
+      "section": "violations",
+      "native_finding": {
+        "description": "Copper zones intersect (intersecting zones must have distinct priorities)",
+        "items": [
+          {
+            "description": "Zone 'RVB22_THERMAL_WING_BOTTOM' [GND] on In1.Cu, priority 0",
+            "pos": {
+              "x": 13.25,
+              "y": 40.517256
+            },
+            "uuid": "e8b9068f-470c-537d-af54-6c229a10635d"
+          },
+          {
+            "description": "Zone 'GND_REFERENCE' [GND] on In1.Cu, priority 0",
+            "pos": {
+              "x": 0.25,
+              "y": 0.25
+            },
+            "uuid": "f5ad958c-f9cd-468c-9e6c-951ecb335b1e"
+          }
+        ],
+        "severity": "error",
+        "type": "zones_intersect"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-146",
+      "section": "violations",
+      "native_finding": {
+        "description": "Copper zones intersect (intersecting zones must have distinct priorities)",
+        "items": [
+          {
+            "description": "Zone 'RVB22_THERMAL_WING_TOP' [GND] on In2.Cu, priority 0",
+            "pos": {
+              "x": 13.25,
+              "y": -9.75
+            },
+            "uuid": "2fe17068-db9d-535b-90bb-c97bd3281718"
+          },
+          {
+            "description": "Zone 'GND_REFERENCE' [GND] on In2.Cu, priority 0",
+            "pos": {
+              "x": 0.25,
+              "y": 0.25
+            },
+            "uuid": "52337a10-bc47-4de1-8eb5-c1a2aa4c9592"
+          }
+        ],
+        "severity": "error",
+        "type": "zones_intersect"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-147",
+      "section": "violations",
+      "native_finding": {
+        "description": "Copper zones intersect (intersecting zones must have distinct priorities)",
+        "items": [
+          {
+            "description": "Zone 'RVB22_THERMAL_WING_BOTTOM' [GND] on In2.Cu, priority 0",
+            "pos": {
+              "x": 13.25,
+              "y": 40.517256
+            },
+            "uuid": "3d6f56bf-8bca-55af-9494-76e5a3ae62ec"
+          },
+          {
+            "description": "Zone 'GND_REFERENCE' [GND] on In2.Cu, priority 0",
+            "pos": {
+              "x": 0.25,
+              "y": 0.25
+            },
+            "uuid": "52337a10-bc47-4de1-8eb5-c1a2aa4c9592"
+          }
+        ],
+        "severity": "error",
+        "type": "zones_intersect"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-148",
+      "section": "violations",
+      "native_finding": {
+        "description": "Copper zones intersect (intersecting zones must have distinct priorities)",
+        "items": [
+          {
+            "description": "Zone 'RVB22_THERMAL_WING_BOTTOM' [GND] on B.Cu, priority 0",
+            "pos": {
+              "x": 13.25,
+              "y": 40.517256
+            },
+            "uuid": "2cbe24e5-7152-51c6-872a-dcf9024643b0"
+          },
+          {
+            "description": "Zone 'GND_OUTER_RETURN' [GND] on B.Cu, priority 0",
+            "pos": {
+              "x": 0.25,
+              "y": 0.25
+            },
+            "uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb"
+          }
+        ],
+        "severity": "error",
+        "type": "zones_intersect"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-149",
+      "section": "violations",
+      "native_finding": {
+        "description": "Copper zones intersect (intersecting zones must have distinct priorities)",
+        "items": [
+          {
+            "description": "Zone 'RVB22_THERMAL_WING_TOP' [GND] on B.Cu, priority 0",
+            "pos": {
+              "x": 13.25,
+              "y": -9.75
+            },
+            "uuid": "4d3a0773-3148-5ce0-9317-b6d911b544a3"
+          },
+          {
+            "description": "Zone 'GND_OUTER_RETURN' [GND] on B.Cu, priority 0",
+            "pos": {
+              "x": 0.25,
+              "y": 0.25
+            },
+            "uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb"
+          }
+        ],
+        "severity": "error",
+        "type": "zones_intersect"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-150",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Track [+3V3] on In2.Cu, length 0.1000 mm",
+            "pos": {
+              "x": 64.7,
+              "y": 10.0
+            },
+            "uuid": "0d400ed2-4344-5abd-9c8e-d5fcac721e54"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-151",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Track [+3V3] on In2.Cu, length 0.2000 mm",
+            "pos": {
+              "x": 65.1,
+              "y": 9.7
+            },
+            "uuid": "1bcf26bc-629a-54f9-8dd1-4a2304ba5e39"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-152",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Track [+3V3] on In2.Cu, length 9.6167 mm",
+            "pos": {
+              "x": 57.9,
+              "y": 16.8
+            },
+            "uuid": "57c6390a-973b-5fb8-8e47-2cb9e2e575fb"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-153",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Track [+3V3] on In2.Cu, length 0.1414 mm",
+            "pos": {
+              "x": 65.3,
+              "y": 9.7
+            },
+            "uuid": "6da254bf-7c76-5f95-9359-c4b96eeb3951"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-154",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Track [+3V3] on In2.Cu, length 0.4243 mm",
+            "pos": {
+              "x": 64.8,
+              "y": 10.0
+            },
+            "uuid": "e2516879-5809-5833-bcfb-a3e4e7314f3b"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-155",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items not allowed (keepout area)",
+        "items": [
+          {
+            "description": "Track [+3V3] on In2.Cu, length 6.1000 mm",
+            "pos": {
+              "x": 65.4,
+              "y": 9.6
+            },
+            "uuid": "faa7b2ff-7813-5a1b-a915-4b014ae045e6"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-156",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items not allowed (keepout area 'RVB22_EAR_NO_COPPER')",
+        "items": [
+          {
+            "description": "NPTH pad of MH903",
+            "pos": {
+              "x": 6.2,
+              "y": 45.287355
+            },
+            "uuid": "4870381f-3e45-4f43-a452-b535ee9908ef"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-157",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items not allowed (keepout area 'RVB22_EAR_NO_COPPER')",
+        "items": [
+          {
+            "description": "NPTH pad of MH901",
+            "pos": {
+              "x": 6.2,
+              "y": -4.0
+            },
+            "uuid": "a6330735-c578-48bb-af2d-1323f4d22ad0"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-158",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items not allowed (keepout area 'RVB22_EAR_NO_COPPER')",
+        "items": [
+          {
+            "description": "NPTH pad of MH902",
+            "pos": {
+              "x": 63.0,
+              "y": -4.0
+            },
+            "uuid": "9e248ff6-a9ff-41b5-8163-75943f2c44e7"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-159",
+      "section": "violations",
+      "native_finding": {
+        "description": "Items not allowed (keepout area 'RVB22_EAR_NO_COPPER')",
+        "items": [
+          {
+            "description": "NPTH pad of MH904",
+            "pos": {
+              "x": 63.0,
+              "y": 45.263841
+            },
+            "uuid": "4c7b3dd8-384c-4fd6-9735-4cb7f7d4db9d"
+          }
+        ],
+        "severity": "error",
+        "type": "items_not_allowed"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-160",
+      "section": "violations",
+      "native_finding": {
+        "description": "Silkscreen clipped by solder mask",
+        "items": [
+          {
+            "description": "Segment of C206 on B.Silkscreen",
+            "pos": {
+              "x": 78.85,
+              "y": 16.15
+            },
+            "uuid": "a8f17d30-9f77-54a5-abe9-be61f67e8ebe"
+          }
+        ],
+        "severity": "warning",
+        "type": "silk_over_copper"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-161",
+      "section": "violations",
+      "native_finding": {
+        "description": "Footprint 'ESP32-S3-WROOM-1' does not match copy in library 'RevB'.",
+        "items": [
+          {
+            "description": "Footprint U201",
+            "pos": {
+              "x": 81.504766,
+              "y": 23.0
+            },
+            "uuid": "200a800d-75ef-5203-be84-6c9cd2eca914"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_mismatch"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-162",
+      "section": "violations",
+      "native_finding": {
+        "description": "Footprint 'D_SMC' does not match copy in library 'RevB'.",
+        "items": [
+          {
+            "description": "Footprint D103",
+            "pos": {
+              "x": 37.5,
+              "y": 37.5
+            },
+            "uuid": "b1b242e1-278c-5511-91d5-0124c0d6bbba"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_mismatch"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-163",
+      "section": "violations",
+      "native_finding": {
+        "description": "Footprint 'Coilcraft_MSS1246T_12x12' does not match copy in library 'RevB'.",
+        "items": [
+          {
+            "description": "Footprint L121",
+            "pos": {
+              "x": 60.0,
+              "y": 29.0
+            },
+            "uuid": "dd96e8c1-9284-5b82-9e58-3fce7ba1a8e8"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_mismatch"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-164",
+      "section": "violations",
+      "native_finding": {
+        "description": "Footprint 'R_0603_1608Metric' does not match copy in library 'RevB'.",
+        "items": [
+          {
+            "description": "Footprint R157",
+            "pos": {
+              "x": 35.9,
+              "y": 13.7
+            },
+            "uuid": "eb32f814-dfe0-5dd1-a5e0-180f23fae109"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_mismatch"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-165",
+      "section": "violations",
+      "native_finding": {
+        "description": "Footprint 'Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal' does not match copy in library 'RevB'.",
+        "items": [
+          {
+            "description": "Footprint F1",
+            "pos": {
+              "x": 8.3,
+              "y": 23.5
+            },
+            "uuid": "f3a3efa9-8533-514c-a000-09896fe9446b"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_mismatch"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-166",
+      "section": "violations",
+      "native_finding": {
+        "description": "Footprint 'R_0603_1608Metric' does not match copy in library 'RevB'.",
+        "items": [
+          {
+            "description": "Footprint R155",
+            "pos": {
+              "x": 39.1,
+              "y": 25.9
+            },
+            "uuid": "480c7ee7-3d7d-57ab-a2b2-dcd9d1ab783d"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_mismatch"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-167",
+      "section": "violations",
+      "native_finding": {
+        "description": "Footprint 'R_0603_1608Metric' does not match copy in library 'RevB'.",
+        "items": [
+          {
+            "description": "Footprint R156",
+            "pos": {
+              "x": 32.7,
+              "y": 25.3
+            },
+            "uuid": "5cac18a1-9548-5389-b360-7caf5a801922"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_mismatch"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-168",
+      "section": "violations",
+      "native_finding": {
+        "description": "Footprint 'C_0603_1608Metric' does not match copy in library 'RevB'.",
+        "items": [
+          {
+            "description": "Footprint C205",
+            "pos": {
+              "x": 76.2,
+              "y": 13.9
+            },
+            "uuid": "8043f661-bac3-59be-a03a-55d2474aa020"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_mismatch"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-169",
+      "section": "violations",
+      "native_finding": {
+        "description": "Footprint 'C_0603_1608Metric' does not match copy in library 'RevB'.",
+        "items": [
+          {
+            "description": "Footprint C154",
+            "pos": {
+              "x": 30.3,
+              "y": 15.2
+            },
+            "uuid": "b78155f5-4a19-5d64-8257-0f0a675298d0"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_mismatch"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-170",
+      "section": "violations",
+      "native_finding": {
+        "description": "Footprint 'R_0603_1608Metric' does not match copy in library 'RevB'.",
+        "items": [
+          {
+            "description": "Footprint R203",
+            "pos": {
+              "x": 72.8,
+              "y": 9.7
+            },
+            "uuid": "c5c555e4-78c9-5dea-8bb8-074b5de17521"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_mismatch"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-171",
+      "section": "violations",
+      "native_finding": {
+        "description": "Footprint 'HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm' does not match copy in library 'RevB'.",
+        "items": [
+          {
+            "description": "Footprint U151",
+            "pos": {
+              "x": 35.0,
+              "y": 13.0
+            },
+            "uuid": "f3716883-150a-5277-ba5b-787d5644dd70"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_mismatch"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-172",
+      "section": "violations",
+      "native_finding": {
+        "description": "Via is not connected or connected on only one layer",
+        "items": [
+          {
+            "description": "Via [3V3_SOURCE] on F.Cu - B.Cu",
+            "pos": {
+              "x": 37.8,
+              "y": 18.75
+            },
+            "uuid": "6825417f-1f11-4662-a2d6-86341be0c983"
+          }
+        ],
+        "severity": "warning",
+        "type": "via_dangling"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-173",
+      "section": "violations",
+      "native_finding": {
+        "description": "Track has unconnected end",
+        "items": [
+          {
+            "description": "Track [3V3_VCC_INTERNAL] on B.Cu, length 1.2875 mm",
+            "pos": {
+              "x": 32.1375,
+              "y": 13.325
+            },
+            "uuid": "7dbcdc6f-064c-410e-95c6-09186e530fec"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_dangling"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-174",
+      "section": "violations",
+      "native_finding": {
+        "description": "Track has unconnected end",
+        "items": [
+          {
+            "description": "Track [3V3_FB_ADJ] on F.Cu, length 6.1750 mm",
+            "pos": {
+              "x": 39.4,
+              "y": 11.025
+            },
+            "uuid": "09fe53d9-1be1-47cf-a4ca-7920a4219e34"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_dangling"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-175",
+      "section": "schematic_parity",
+      "native_finding": {
+        "description": "Pad missing net given by schematic (3V3_BULK_DAMPED).",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of C206 on B.Cu",
+            "pos": {
+              "x": 79.48,
+              "y": 18.4
+            },
+            "uuid": "37bb14ad-796b-5c22-97ed-8235b3f60edc"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-176",
+      "section": "schematic_parity",
+      "native_finding": {
+        "description": "Pad missing net given by schematic (3V3_FB_ADJ).",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of R155 on B.Cu",
+            "pos": {
+              "x": 39.1,
+              "y": 25.075
+            },
+            "uuid": "7eaa7bfc-84c5-5e6f-b57f-0839b390d03f"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-177",
+      "section": "schematic_parity",
+      "native_finding": {
+        "description": "Pad missing net given by schematic (3V3_FB_ADJ).",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R156 on B.Cu",
+            "pos": {
+              "x": 32.7,
+              "y": 24.475
+            },
+            "uuid": "20022e64-319a-505c-bb14-e7c85c2a6261"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-178",
+      "section": "schematic_parity",
+      "native_finding": {
+        "description": "Pad missing net given by schematic (3V3_VSEL_ADJ).",
+        "items": [
+          {
+            "description": "Pad 1 [<no net>] of R157 on F.Cu",
+            "pos": {
+              "x": 35.075,
+              "y": 13.7
+            },
+            "uuid": "5c77665a-a3e8-5ac1-a2b0-cfe7f3608761"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-179",
+      "section": "schematic_parity",
+      "native_finding": {
+        "description": "Pad missing net given by schematic (3V3_BULK_DAMPED).",
+        "items": [
+          {
+            "description": "Pad 2 [<no net>] of R158 on B.Cu",
+            "pos": {
+              "x": 77.06,
+              "y": 18.7
+            },
+            "uuid": "a2839c70-2f26-58e8-a05f-4ee721ee6a3a"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-180",
+      "section": "schematic_parity",
+      "native_finding": {
+        "description": "Pad missing net given by schematic (3V3_VSEL_ADJ).",
+        "items": [
+          {
+            "description": "Pad 6 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 32.1375,
+              "y": 12.025
+            },
+            "uuid": "5b73f571-a0c7-5357-9ed9-f075e3995588"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": "N08-181",
+      "section": "schematic_parity",
+      "native_finding": {
+        "description": "Pad missing net given by schematic (3V3_FB_ADJ).",
+        "items": [
+          {
+            "description": "Pad 9 [<no net>] of U151 on B.Cu",
+            "pos": {
+              "x": 37.8625,
+              "y": 10.725
+            },
+            "uuid": "313f41ed-83ca-5c52-8f7c-457fa34b6b62"
+          }
+        ],
+        "severity": "warning",
+        "type": "net_conflict"
+      },
+      "status": "OPEN"
+    }
+  ],
+  "additional_redlines": [
+    {
+      "id": "N08-SERIAL",
+      "problem": "Net declarations 131-133 follow footprint references; native loading loses seven pad net names. Order declarations before all references and verify complete pad-net round trip."
+    },
+    {
+      "id": "N08-STEP",
+      "problem": "STEP exists but missing model log means it is not populated-fit proof. Bind actual model paths, enumerate missing bodies and validate component coverage."
+    },
+    {
+      "id": "N08-THERMAL",
+      "problem": "T02 grid independence and package paths unresolved; use corrected native filled geometry after electrical fixes."
+    }
+  ],
+  "other_open_conditions": "All original unresolved criteria remain in FINAL_REVIEW_REGISTER; this native batch is additive and does not replace them."
+}

@@ -1,0 +1,1354 @@
+{
+  "filled_PCB_sha256": "62c08e7050fe95df0a576ece85a051b4049e9684bf8ea5f73e8949657363276b",
+  "source_PCB_sha256": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+  "native_status": "NATIVE_OUTPUTS_COMPLETE",
+  "native_DRC": 0,
+  "native_unconnected": 0,
+  "native_parity": 0,
+  "native_ERC": 0,
+  "scope": "Intended CAD and matched export evidence; no manufactured continuity, plating, solder or cable-contact measurement.",
+  "continuity": {
+    "nets": 133,
+    "copper_objects": 4542,
+    "disconnected_pad_nets": {},
+    "padless_components": []
+  },
+  "reference": {
+    "RF": [
+      {
+        "net": "GPS_ANT_RF_BIASED",
+        "uuid": "5579210d-815d-45d8-ba21-48a259443068",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          62.3,
+          15.75
+        ],
+        "end": [
+          62.3,
+          16.349
+        ],
+        "length_mm": 0.5990000000000002,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_ANT_RF_BIASED",
+        "uuid": "ce8f5504-9d75-48ff-92e7-1e7fdd6f5c7a",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          62.3,
+          16.349
+        ],
+        "end": [
+          62.6764,
+          16.7254
+        ],
+        "length_mm": 0.5323099848772359,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_ANT_RF_BIASED",
+        "uuid": "f547afa8-9c33-4193-96f9-c10a93855724",
+        "layer": "B.Cu",
+        "reference": "In2.Cu",
+        "start": [
+          62.6764,
+          16.4486
+        ],
+        "end": [
+          62.6764,
+          16.7254
+        ],
+        "length_mm": 0.2768000000000015,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_ANT_RF_BIASED",
+        "uuid": "fe406ddc-ae50-4568-947a-8003c3cbdd73",
+        "layer": "B.Cu",
+        "reference": "In2.Cu",
+        "start": [
+          65.3,
+          13.825
+        ],
+        "end": [
+          62.6764,
+          16.4486
+        ],
+        "length_mm": 3.7103307022420493,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_EXT_ANT",
+        "uuid": "14edda0b-4835-4ed5-8ebf-2db6b6a3454d",
+        "layer": "B.Cu",
+        "reference": "In2.Cu",
+        "start": [
+          63.6,
+          10.65
+        ],
+        "end": [
+          63.6,
+          11.95
+        ],
+        "length_mm": 1.299999999999999,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_EXT_ANT",
+        "uuid": "16f24cdf-4e3c-5b79-966c-6eb4ad3368fb",
+        "layer": "B.Cu",
+        "reference": "In2.Cu",
+        "start": [
+          63.2,
+          10.25
+        ],
+        "end": [
+          63.2,
+          9.15
+        ],
+        "length_mm": 1.0999999999999996,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_EXT_ANT",
+        "uuid": "2445e50b-3846-5383-8be4-88eaf9f9dbf2",
+        "layer": "B.Cu",
+        "reference": "In2.Cu",
+        "start": [
+          63.55,
+          8.8
+        ],
+        "end": [
+          64.25,
+          8.8
+        ],
+        "length_mm": 0.7000000000000028,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_EXT_ANT",
+        "uuid": "58d68dd9-6d2a-447c-81dd-d3834bdadbdf",
+        "layer": "B.Cu",
+        "reference": "In2.Cu",
+        "start": [
+          63.7,
+          12.05
+        ],
+        "end": [
+          65.175,
+          12.05
+        ],
+        "length_mm": 1.4749999999999943,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_EXT_ANT",
+        "uuid": "bfc9bdb6-6408-4009-9cef-dfa07a495501",
+        "layer": "B.Cu",
+        "reference": "In2.Cu",
+        "start": [
+          63.6,
+          11.95
+        ],
+        "end": [
+          63.7,
+          12.05
+        ],
+        "length_mm": 0.14142135623731153,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_EXT_ANT",
+        "uuid": "db2a776c-ea37-49f6-a21a-8deb0c23d3a1",
+        "layer": "B.Cu",
+        "reference": "In2.Cu",
+        "start": [
+          65.175,
+          12.05
+        ],
+        "end": [
+          65.3,
+          12.175
+        ],
+        "length_mm": 0.1767766952966369,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_EXT_ANT",
+        "uuid": "dd4bc803-303d-5b77-b813-641a254d9000",
+        "layer": "B.Cu",
+        "reference": "In2.Cu",
+        "start": [
+          63.6,
+          10.65
+        ],
+        "end": [
+          63.2,
+          10.25
+        ],
+        "length_mm": 0.5656854249492372,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_EXT_ANT",
+        "uuid": "fe999440-1ad9-5ab5-8933-38159642a0c2",
+        "layer": "B.Cu",
+        "reference": "In2.Cu",
+        "start": [
+          63.2,
+          9.15
+        ],
+        "end": [
+          63.55,
+          8.8
+        ],
+        "length_mm": 0.494974746830579,
+        "adjacent_gap_after_own_antipads_mm": 0.0,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING EMPTY",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      }
+    ],
+    "other_findings": [
+      {
+        "net": "CAN_RX_MCU",
+        "uuid": "045a8466-bd32-4eaa-b1f0-600ad27ea23b",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          25.5,
+          27.5
+        ],
+        "end": [
+          25.6,
+          27.4
+        ],
+        "length_mm": 0.14142135623731153,
+        "adjacent_gap_after_own_antipads_mm": 0.14142135623731153,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (25.5 27.5, 25.6 27.4)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_RX_MCU",
+        "uuid": "2af2bbcd-0762-43fc-990f-932f16c948dc",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          25.6,
+          25.8
+        ],
+        "end": [
+          24.9,
+          25.1
+        ],
+        "length_mm": 0.989949493661168,
+        "adjacent_gap_after_own_antipads_mm": 0.5748749846775447,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (25.6 25.8, 25.193501999999995 25.393501999999998)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_RX_MCU",
+        "uuid": "3cb08c20-61e0-4499-9533-e8c53f87870f",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          25.6,
+          27.4
+        ],
+        "end": [
+          25.6,
+          25.8
+        ],
+        "length_mm": 1.5999999999999979,
+        "adjacent_gap_after_own_antipads_mm": 1.5999999999999979,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (25.6 27.4, 25.6 25.8)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_RX_MCU",
+        "uuid": "532a64af-95c7-4e97-8200-a2b6caad1c40",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          38.6,
+          38.6
+        ],
+        "end": [
+          38.5,
+          38.6
+        ],
+        "length_mm": 0.10000000000000142,
+        "adjacent_gap_after_own_antipads_mm": 0.10000000000000142,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (38.6 38.6, 38.5 38.6)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_RX_MCU",
+        "uuid": "6b8bcaa8-cd83-445e-9672-248530cf9ab1",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          23.9,
+          31
+        ],
+        "end": [
+          25.1,
+          29.8
+        ],
+        "length_mm": 1.6970562748477156,
+        "adjacent_gap_after_own_antipads_mm": 0.9913580503692976,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (24.249501999999996 30.650498000000002, 24.950498000000003 29.949502)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_RX_MCU",
+        "uuid": "9e2e97fc-9590-4daf-80c6-69c69e27069f",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          25.1,
+          28
+        ],
+        "end": [
+          25.5,
+          27.6
+        ],
+        "length_mm": 0.565685424949236,
+        "adjacent_gap_after_own_antipads_mm": 0.354257668947336,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (25.249502 27.850498, 25.5 27.6)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_RX_MCU",
+        "uuid": "a7d99572-0ff2-4ca3-9f29-3ee86f5182bc",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          39.6,
+          39.6
+        ],
+        "end": [
+          38.6,
+          38.6
+        ],
+        "length_mm": 1.4142135623730951,
+        "adjacent_gap_after_own_antipads_mm": 0.35425766894732597,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (38.850497999999995 38.850497999999995, 38.6 38.6)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_RX_MCU",
+        "uuid": "df746851-8e9b-46eb-9007-0b9aef9e0fc6",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          25.5,
+          27.6
+        ],
+        "end": [
+          25.5,
+          27.5
+        ],
+        "length_mm": 0.10000000000000142,
+        "adjacent_gap_after_own_antipads_mm": 0.10000000000000142,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (25.5 27.6, 25.5 27.5)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_RX_MCU",
+        "uuid": "e290dfec-5c37-43ea-8644-3d01c3213a09",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          38.5,
+          38.6
+        ],
+        "end": [
+          36.8,
+          36.9
+        ],
+        "length_mm": 2.4041630560342657,
+        "adjacent_gap_after_own_antipads_mm": 0.354257668947336,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (38.5 38.6, 38.249502 38.349502)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "072c6d8e-2a6f-4e7a-9f1b-b812ffe223f4",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          80.55,
+          15.95
+        ],
+        "end": [
+          80.45,
+          16.05
+        ],
+        "length_mm": 0.1414213562373065,
+        "adjacent_gap_after_own_antipads_mm": 0.1414213562373065,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (80.55 15.95, 80.45 16.05)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "0eec71a5-dda0-408b-9559-9ccd0314bf57",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          80.75,
+          15.8
+        ],
+        "end": [
+          80.6,
+          15.95
+        ],
+        "length_mm": 0.21213203435596725,
+        "adjacent_gap_after_own_antipads_mm": 0.21213203435596725,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (80.75 15.8, 80.6 15.95)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "1e022bfe-d6e7-4f42-8d71-4fb4fd26698b",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          74.7,
+          16.45
+        ],
+        "end": [
+          74.65,
+          16.45
+        ],
+        "length_mm": 0.04999999999999716,
+        "adjacent_gap_after_own_antipads_mm": 0.04999999999999716,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (74.7 16.45, 74.65 16.45)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "3cd9494b-1d5d-47a2-aa04-327840a5c89e",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          81.684766,
+          14.25
+        ],
+        "end": [
+          81.7,
+          14.25
+        ],
+        "length_mm": 0.015234000000006631,
+        "adjacent_gap_after_own_antipads_mm": 0.015234000000006631,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (81.684766 14.25, 81.7 14.25)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "4f41a1a1-3925-4a4f-a382-cd3b39df0961",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          74.75,
+          16.4
+        ],
+        "end": [
+          74.7,
+          16.45
+        ],
+        "length_mm": 0.07071067811865325,
+        "adjacent_gap_after_own_antipads_mm": 0.07071067811865325,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (74.75 16.4, 74.7 16.45)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "6e2aaa09-c44c-4e4f-ba78-c2933e8e23ce",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          81.7,
+          14.25
+        ],
+        "end": [
+          81.2,
+          14.75
+        ],
+        "length_mm": 0.7071067811865476,
+        "adjacent_gap_after_own_antipads_mm": 0.7071067811865476,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (81.7 14.25, 81.2 14.75)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "72210dcc-1fd3-439b-9607-58e3dfff71d0",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          80.85,
+          15.5
+        ],
+        "end": [
+          80.8,
+          15.55
+        ],
+        "length_mm": 0.07071067811865325,
+        "adjacent_gap_after_own_antipads_mm": 0.07071067811865325,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (80.85 15.5, 80.8 15.55)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "725c830d-d2ae-4878-bbdc-56775aa17cc3",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          74.8,
+          16.4
+        ],
+        "end": [
+          74.75,
+          16.4
+        ],
+        "length_mm": 0.04999999999999716,
+        "adjacent_gap_after_own_antipads_mm": 0.04999999999999716,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (74.8 16.4, 74.75 16.4)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "871a1d07-8555-46ec-8b60-8f49faecf1a8",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          81.15,
+          15.15
+        ],
+        "end": [
+          80.85,
+          15.45
+        ],
+        "length_mm": 0.4242640687119358,
+        "adjacent_gap_after_own_antipads_mm": 0.4242640687119358,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (81.15 15.15, 80.85 15.45)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "956c6792-0061-4c9c-8585-c63ebefd8fac",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          80.75,
+          15.75
+        ],
+        "end": [
+          80.75,
+          15.8
+        ],
+        "length_mm": 0.05000000000000071,
+        "adjacent_gap_after_own_antipads_mm": 0.05000000000000071,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (80.75 15.75, 80.75 15.8)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "95963305-6d4d-40ef-a89e-319eb932f057",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          81.2,
+          14.75
+        ],
+        "end": [
+          81.2,
+          15.05
+        ],
+        "length_mm": 0.3000000000000007,
+        "adjacent_gap_after_own_antipads_mm": 0.3000000000000007,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (81.2 14.75, 81.2 15.05)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "ac66323b-6daf-456b-be43-527f22f87912",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          80.25,
+          16.1
+        ],
+        "end": [
+          75.1,
+          16.1
+        ],
+        "length_mm": 5.150000000000006,
+        "adjacent_gap_after_own_antipads_mm": 5.150000000000006,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (80.25 16.1, 75.1 16.1)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "af0da207-d5cb-4577-8a99-cb952df6384c",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          80.3,
+          16.05
+        ],
+        "end": [
+          80.25,
+          16.1
+        ],
+        "length_mm": 0.07071067811865325,
+        "adjacent_gap_after_own_antipads_mm": 0.07071067811865325,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (80.3 16.05, 80.25 16.1)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "be7d2d0c-cb53-4982-a131-9d9c1571c818",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          80.8,
+          15.55
+        ],
+        "end": [
+          80.8,
+          15.7
+        ],
+        "length_mm": 0.14999999999999858,
+        "adjacent_gap_after_own_antipads_mm": 0.14999999999999858,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (80.8 15.55, 80.8 15.7)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "c0e67caa-392c-4430-ad96-d9433202b6d0",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          80.8,
+          15.7
+        ],
+        "end": [
+          80.75,
+          15.75
+        ],
+        "length_mm": 0.07071067811865325,
+        "adjacent_gap_after_own_antipads_mm": 0.07071067811865325,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (80.8 15.7, 80.75 15.75)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "c40ec842-5bc6-4d58-a6d1-c5903c6221f3",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          80.45,
+          16.05
+        ],
+        "end": [
+          80.3,
+          16.05
+        ],
+        "length_mm": 0.15000000000000568,
+        "adjacent_gap_after_own_antipads_mm": 0.15000000000000568,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (80.45 16.05, 80.3 16.05)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "d792afe7-e69c-4a7d-a033-a2b995d506c1",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          75.1,
+          16.1
+        ],
+        "end": [
+          74.8,
+          16.4
+        ],
+        "length_mm": 0.42426406871192446,
+        "adjacent_gap_after_own_antipads_mm": 0.42426406871192446,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (75.1 16.1, 74.8 16.4)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "d940ea9d-cb9c-43f3-a104-0c43f56d70f9",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          81.15,
+          15.1
+        ],
+        "end": [
+          81.15,
+          15.15
+        ],
+        "length_mm": 0.05000000000000071,
+        "adjacent_gap_after_own_antipads_mm": 0.05000000000000071,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (81.15 15.1, 81.15 15.15)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "e40f0733-22d1-4330-8ecb-7f89cb97dde9",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          74.6,
+          16.5
+        ],
+        "end": [
+          74,
+          16.5
+        ],
+        "length_mm": 0.5999999999999943,
+        "adjacent_gap_after_own_antipads_mm": 0.39133793507703274,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (74.6 16.5, 74.20866206492296 16.5)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "e763499f-993d-4103-b304-2d553d232aa2",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          74.65,
+          16.45
+        ],
+        "end": [
+          74.6,
+          16.5
+        ],
+        "length_mm": 0.0707106781186633,
+        "adjacent_gap_after_own_antipads_mm": 0.0707106781186633,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (74.65 16.45, 74.6 16.5)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "eebb0223-b76c-4307-ac5f-534ba2222d94",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          80.85,
+          15.45
+        ],
+        "end": [
+          80.85,
+          15.5
+        ],
+        "length_mm": 0.05000000000000071,
+        "adjacent_gap_after_own_antipads_mm": 0.05000000000000071,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (80.85 15.45, 80.85 15.5)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "fcc8fd83-008f-4b65-baf6-c8835bc41ffa",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          80.6,
+          15.95
+        ],
+        "end": [
+          80.55,
+          15.95
+        ],
+        "length_mm": 0.04999999999999716,
+        "adjacent_gap_after_own_antipads_mm": 0.04999999999999716,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (80.6 15.95, 80.55 15.95)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "CAN_TX_MCU",
+        "uuid": "ff83a906-e673-4cf7-a47a-ba6b8551df15",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          81.2,
+          15.05
+        ],
+        "end": [
+          81.15,
+          15.1
+        ],
+        "length_mm": 0.07071067811865199,
+        "adjacent_gap_after_own_antipads_mm": 0.07071067811865199,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (81.2 15.05, 81.15 15.1)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_PPS_RAW",
+        "uuid": "25582b89-db2e-43d7-981f-02020b9d8e1b",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          66.1384,
+          20.35
+        ],
+        "end": [
+          65.2204,
+          19.432
+        ],
+        "length_mm": 1.2982480502585079,
+        "adjacent_gap_after_own_antipads_mm": 1.2982480502585079,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (66.1384 20.35, 65.2204 19.432)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_PPS_RAW",
+        "uuid": "8185e7db-ee07-4fd7-a826-8414a6865e61",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          66.85,
+          20.35
+        ],
+        "end": [
+          66.1384,
+          20.35
+        ],
+        "length_mm": 0.71159999999999,
+        "adjacent_gap_after_own_antipads_mm": 0.4658564299294312,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (66.60425642992944 20.35, 66.1384 20.35)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_PPS_RAW",
+        "uuid": "c4ce6319-1191-41be-aa07-efa4e330b188",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          65.2204,
+          18.2666
+        ],
+        "end": [
+          64.6817,
+          17.7279
+        ],
+        "length_mm": 0.7618368460503793,
+        "adjacent_gap_after_own_antipads_mm": 0.708515337894662,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (65.204298 18.250498, 64.70330200000001 17.749502)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_PPS_RAW",
+        "uuid": "cc218c46-0308-40e5-9d51-4d705694dc81",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          65.2204,
+          19.432
+        ],
+        "end": [
+          65.2204,
+          18.2666
+        ],
+        "length_mm": 1.1653999999999982,
+        "adjacent_gap_after_own_antipads_mm": 0.18249799999999894,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (65.2204 19.432, 65.2204 19.249502)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_RX_MODULE",
+        "uuid": "96f6de5e-b182-4273-8f97-522f12d5181c",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          48.608,
+          19.6
+        ],
+        "end": [
+          46.208,
+          17.2
+        ],
+        "length_mm": 3.3941125496954285,
+        "adjacent_gap_after_own_antipads_mm": 2.1927353000323584,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (47.758497999999996 18.750498, 46.208 17.2)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_RX_MODULE",
+        "uuid": "d987c617-804a-4679-9bd8-28283068ff10",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          46.208,
+          16.242
+        ],
+        "end": [
+          46.208,
+          17.2
+        ],
+        "length_mm": 0.9579999999999984,
+        "adjacent_gap_after_own_antipads_mm": 0.34625717157287283,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (46.208 16.853742828427126, 46.208 17.2)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_RX_MODULE",
+        "uuid": "dd8c3ed9-3961-4d01-a35c-466b756a5d82",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          46.208,
+          17.2
+        ],
+        "end": [
+          43.2,
+          17.2
+        ],
+        "length_mm": 3.0079999999999956,
+        "adjacent_gap_after_own_antipads_mm": 1.0622577043446384,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (46.208 17.2, 45.14574229565536 17.2)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_BUFFER",
+        "uuid": "41a7764a-5a47-4ef5-9c04-5601c37a983b",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          65.6221,
+          19.2838
+        ],
+        "end": [
+          65.6221,
+          17.4149
+        ],
+        "length_mm": 1.8689,
+        "adjacent_gap_after_own_antipads_mm": 0.8399598611247576,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "MULTILINESTRING ((65.6221 19.2838, 65.6221 19.249502), (65.6221 18.220561861124757, 65.6221 17.4149))",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_BUFFER",
+        "uuid": "4c2c9bcc-465f-48f7-8aba-edc2c78e60f9",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          66.85,
+          19.85
+        ],
+        "end": [
+          66.1883,
+          19.85
+        ],
+        "length_mm": 0.6616999999999962,
+        "adjacent_gap_after_own_antipads_mm": 0.6616999999999962,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (66.85 19.85, 66.1883 19.85)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_BUFFER",
+        "uuid": "7b76e172-33fa-481a-b7df-69239475d3cd",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          65.6221,
+          17.4149
+        ],
+        "end": [
+          65.2557,
+          17.0485
+        ],
+        "length_mm": 0.5181678492535002,
+        "adjacent_gap_after_own_antipads_mm": 0.06317952046842774,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (65.6221 17.4149, 65.57742533264467 17.370225332644658)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_BUFFER",
+        "uuid": "b07d2578-1af3-428d-b99a-5edf88c15e23",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          66.1883,
+          19.85
+        ],
+        "end": [
+          65.6221,
+          19.2838
+        ],
+        "length_mm": 0.8007277190156442,
+        "adjacent_gap_after_own_antipads_mm": 0.8007277190156442,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (66.1883 19.85, 65.6221 19.2838)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_MCU",
+        "uuid": "2ebc15b0-b51a-41bf-946c-ff6f3a81e3fd",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          75.3348,
+          15.2617
+        ],
+        "end": [
+          74.5311,
+          16.0654
+        ],
+        "length_mm": 1.1366034400792617,
+        "adjacent_gap_after_own_antipads_mm": 1.1366034400792617,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (75.3348 15.2617, 74.5311 16.0654)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_MCU",
+        "uuid": "b6cdb1a1-8e4b-4783-a3ca-8e1fe8b535a8",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          75.3348,
+          14.25
+        ],
+        "end": [
+          75.3348,
+          15.2617
+        ],
+        "length_mm": 1.0116999999999994,
+        "adjacent_gap_after_own_antipads_mm": 0.11219799999999935,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (75.3348 15.149502, 75.3348 15.2617)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_MCU",
+        "uuid": "c95780ba-0e27-468a-9cda-7a43529cb9ca",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          74.5311,
+          16.0654
+        ],
+        "end": [
+          71.8179,
+          16.0654
+        ],
+        "length_mm": 2.7132000000000005,
+        "adjacent_gap_after_own_antipads_mm": 2.258211671214937,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (74.5311 16.0654, 72.27288832878506 16.0654)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_RAW",
+        "uuid": "5ab8b250-f249-46ef-9333-0ca5a0fd8853",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          43.9412,
+          15.4412
+        ],
+        "end": [
+          45.126,
+          15.4412
+        ],
+        "length_mm": 1.1847999999999956,
+        "adjacent_gap_after_own_antipads_mm": 0.6835687909030312,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "MULTILINESTRING ((43.9412 15.4412, 44.59612632378241 15.4412), (44.729275314695265 15.4412, 44.75791778181589 15.4412))",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_RAW",
+        "uuid": "7340a8b1-5549-475e-b83e-7c513d27e970",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          63.0883,
+          20.4079
+        ],
+        "end": [
+          60.8967,
+          22.5995
+        ],
+        "length_mm": 3.099390443296869,
+        "adjacent_gap_after_own_antipads_mm": 1.5284057547768863,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (62.60888627481127 20.88731372518873, 61.52814020120399 21.96805979879601)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_RAW",
+        "uuid": "8e383894-8184-4892-bc76-56f1221146ca",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          41.784,
+          15.6812
+        ],
+        "end": [
+          42.7652,
+          14.7
+        ],
+        "length_mm": 1.3876263474004824,
+        "adjacent_gap_after_own_antipads_mm": 0.22589103942463612,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (42.60547091421356 14.859729085786437, 42.7652 14.7)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_RAW",
+        "uuid": "9ca3e057-35fe-4351-b57b-00f28cbcf28c",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          63.75,
+          19.35
+        ],
+        "end": [
+          63.0883,
+          19.35
+        ],
+        "length_mm": 0.6617000000000033,
+        "adjacent_gap_after_own_antipads_mm": 0.6617000000000033,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (63.75 19.35, 63.0883 19.35)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_RAW",
+        "uuid": "aa15d57b-ad4e-4826-b670-9248d4b162aa",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          42.7652,
+          14.7
+        ],
+        "end": [
+          43.2,
+          14.7
+        ],
+        "length_mm": 0.43480000000000274,
+        "adjacent_gap_after_own_antipads_mm": 0.43480000000000274,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (42.7652 14.7, 43.2 14.7)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_RAW",
+        "uuid": "c11d9b75-9d8c-4439-9f9c-4508fe69e679",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          43.2,
+          14.7
+        ],
+        "end": [
+          43.9412,
+          15.4412
+        ],
+        "length_mm": 1.0482150924309381,
+        "adjacent_gap_after_own_antipads_mm": 1.0482150924309381,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (43.2 14.7, 43.9412 15.4412)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_RAW",
+        "uuid": "df4a467a-353f-453a-b068-ee9e3853c059",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          63.0883,
+          19.35
+        ],
+        "end": [
+          63.0883,
+          20.4079
+        ],
+        "length_mm": 1.0579,
+        "adjacent_gap_after_own_antipads_mm": 0.4004979999999989,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (63.0883 19.35, 63.0883 19.750498)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      },
+      {
+        "net": "GPS_TX_RAW",
+        "uuid": "f10d72db-9df2-4749-8643-8c2518e40473",
+        "layer": "F.Cu",
+        "reference": "In1.Cu",
+        "start": [
+          60.8967,
+          22.5995
+        ],
+        "end": [
+          51.1248,
+          22.5995
+        ],
+        "length_mm": 9.771900000000002,
+        "adjacent_gap_after_own_antipads_mm": 1.2919172919864366,
+        "both_ground_planes_gap_mm": 0.0,
+        "adjacent_gap_WKT": "LINESTRING (60.152237885111376 22.5995, 58.86032059312494 22.5995)",
+        "both_gap_WKT": "LINESTRING EMPTY"
+      }
+    ],
+    "all_checked_segments": 313,
+    "own_antipad_allowance": "Native lands +0.155mm, including0.150mm clearance and up to0.005mm polygon/zone-resolution envelope; not credited as ground."
+  },
+  "Gerbers": [
+    {
+      "layer": "F.Cu",
+      "segments": 1058,
+      "flashes": 590,
+      "regions": 30,
+      "missing_segments": [],
+      "unexpected_segments": [],
+      "missing_flashes": [],
+      "unexpected_flashes": [],
+      "filled_zone_difference_mm2": 0.0,
+      "sha256": "a97f6ca47e634f8e9a5a9df1203bb5b5f905327bf6d40111ee3b4de93a87496b"
+    },
+    {
+      "layer": "In1.Cu",
+      "segments": 336,
+      "flashes": 338,
+      "regions": 10,
+      "missing_segments": [],
+      "unexpected_segments": [],
+      "missing_flashes": [],
+      "unexpected_flashes": [],
+      "filled_zone_difference_mm2": 0.0,
+      "sha256": "4a421ee47204fccb638084e30a0711dc0124f3ca7d6045a9ae855414aa01f567"
+    },
+    {
+      "layer": "In2.Cu",
+      "segments": 168,
+      "flashes": 338,
+      "regions": 5,
+      "missing_segments": [],
+      "unexpected_segments": [],
+      "missing_flashes": [],
+      "unexpected_flashes": [],
+      "filled_zone_difference_mm2": 0.0,
+      "sha256": "d1015dda42460e6a917a7c17e9c0a3b5e76cd8caaa7e707eeae98d318718b475"
+    },
+    {
+      "layer": "B.Cu",
+      "segments": 1057,
+      "flashes": 577,
+      "regions": 35,
+      "missing_segments": [],
+      "unexpected_segments": [],
+      "missing_flashes": [],
+      "unexpected_flashes": [],
+      "filled_zone_difference_mm2": 0.0,
+      "sha256": "b49134b050c2e7115c10b7887b6fea5ab2fc1ac350519d91b45017ac3862b190"
+    }
+  ],
+  "drills": [
+    {
+      "plated": true,
+      "expected": 338,
+      "actual": 338,
+      "missing": [],
+      "unexpected": [],
+      "rounding_tolerance_mm": 0.00050001
+    },
+    {
+      "plated": false,
+      "expected": 10,
+      "actual": 10,
+      "missing": [],
+      "unexpected": [],
+      "rounding_tolerance_mm": 0.00050001
+    }
+  ],
+  "netlist": {
+    "schematic_components": 195,
+    "schematic_nets": 133,
+    "pad_net_mismatches": [],
+    "two_terminal_same_node": [],
+    "two_terminal_checked": 141
+  },
+  "independent_manufacturing_status": "PASS_INTENDED_COPPER_AND_EXPORTS"
+}

@@ -1,0 +1,18 @@
+{
+  "meshes_mm": [
+    1.0,
+    0.5,
+    0.25
+  ],
+  "C206_change_K": [
+    1.2125504617463037,
+    1.7885355830256344
+  ],
+  "max_board_change_K": [
+    1.48483880888341,
+    1.9568095513017738
+  ],
+  "energy_balance_pass": true,
+  "status": "Completed native-fill refinement; increasing mesh differences prevent mesh-independent thermal closure",
+  "package_temperature_proven": false
+}

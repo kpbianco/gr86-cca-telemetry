@@ -1,0 +1,74 @@
+{
+  "status": "SINGLE_RETURN_EFFECTIVITY_AND_HOT_ALLOCATION_SCREEN",
+  "PCB_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "original_model_sha256": "8c63ebfe5bbfc1e7cb0910fc5d869e744117966682ee6809aed30a8af1effb78",
+  "original_results_sha256": "6ec9e99b4e2287669bd61062f5f19192e51c8c3a6296adf6456426cd3586e7c8",
+  "original_one_return_case_count": 810,
+  "original_zero_return_case_count": 810,
+  "current_case_count": 12960,
+  "powered_equilibrium_count": 12564,
+  "no_full_load_equilibrium_count": 396,
+  "current_normal_case_count": 216,
+  "checks": {
+    "retained810_exact_one_return_cases": true,
+    "retained810_zero_return_cases": true,
+    "new_case_count": true,
+    "all_KCL_and_power_residuals_below1e_10": true,
+    "all_current_normal_allocated_cases_have_equilibrium": true
+  },
+  "raw_cases": "SINGLE_RETURN_HOT_CURRENT_CASES.jsonl.gz",
+  "raw_sha256": "c9eff690185a18108e4b442f3f6c775f663b82c8df65e1f0f370bb480df64fd2",
+  "normal_extrema": {
+    "input_current_A": {
+      "min": 0.3925067856456752,
+      "max": 0.6973563070415054
+    },
+    "total_main_return_A": {
+      "min": 0.3923345366923026,
+      "max": 0.6977194527248289
+    },
+    "board_ground_chassis_V": {
+      "min": 0.01961672683461513,
+      "max": 0.1395438905449658
+    },
+    "sensor_excitation_V": {
+      "min": 4.744000000045233,
+      "max": 5.247000000282087
+    },
+    "pressure_error_psi": {
+      "min": -5.626745291920088e-09,
+      "max": -7.541984814452007e-10
+    }
+  },
+  "all_powered_case_extrema": {
+    "board_ground_chassis_V": {
+      "min": 0.005491990751030469,
+      "max": 6.705085753478982
+    },
+    "sensor_return_wire_A": {
+      "min": -0.014999999908000466,
+      "max": 0.6900992238361808
+    },
+    "pressure_error_psi": {
+      "min": -2.7536811467217603,
+      "max": -2.7498003873915877e-10
+    }
+  },
+  "pressure_scope": "Existing pressure_error_psi field is only the true75psi midpoint, where symmetric excitation/return drop cancels. Added pressure_error_by_true_psi evaluates0/75/150psi on each powered case; these are finite transfer points, not sensor accuracy guarantees.",
+  "normal_all_pressure_error_psi": {
+    "min": -0.09473684323062226,
+    "max": 0.09473684049828186
+  },
+  "retained_case_mapping": {
+    "one_main_return": "Current normal primary-return architecture; installed bonds must match.",
+    "two_main_returns": "Historical/prohibited common-load current sharing; no current redundancy credit.",
+    "both_returns_lost_*": "CurrentF1.1 primary-return-open faults; names retained only to identify historical numerical cases."
+  },
+  "remaining": [
+    "6.1/6.2W are finite steady constant-power budgets, not a current-limit/startup/load-dump silicon model.6.2W is an additional analysis allocation.",
+    "The15mA sensor current is a hot sensitivity allocation, not a manufacturer guaranteed maximum.",
+    "20mA antenna remote current and13kOhm powered CAN input assumptions are retained. Unknown off-state/negative-bus die clamps remain unbounded.",
+    "No-equilibrium result is not safe shutdown proof. Powered-model CAN injection is not universal vehicle non-interference.",
+    "F1.1 wire/contact/fuse thermal and installed endpoint acceptance remain; no load splitting or redundant-return survival is claimed."
+  ]
+}

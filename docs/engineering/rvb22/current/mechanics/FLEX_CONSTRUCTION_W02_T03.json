@@ -1,0 +1,44 @@
+{
+  "status": "CONDITIONAL_W02_T03_CONSTRUCTION_SELECTED",
+  "source_geometry_unchanged": true,
+  "thermal_path_R_and_contact_geometry_unchanged": true,
+  "old_40_leaf_wing_2mm_reaction_N": 25.171568803871963,
+  "construction": {
+    "C110_annealed_unbonded_laminae": 200,
+    "individual_t_mm": [
+      0.01,
+      0.011
+    ],
+    "total_t_mm": [
+      2,
+      2.2
+    ],
+    "thermal_k_min_W_mK": 300,
+    "welded_or_brazed_terminal_packets_only": true
+  },
+  "delivery_force_requirements": {
+    "wing_each_max_abs_Z_N_at2mm": 2.013747035188226,
+    "central_max_abs_Z_N_at2mm": 1.0835141654529112,
+    "wing_actual_cut_path_max_mm": 26,
+    "central_actual_cut_path_max_mm": 27
+  },
+  "modeled_hot_inertial_reaction_sum_N_at20g": 5.01631480203164,
+  "allocated_spring_reaction_sum_N": 5.111008235829363,
+  "populated_PCB_mass_max_g_excluding_cold_supported_hardware": 100,
+  "one_ear_all_PCB_and_hot_strap_reactions_N": 29.740623037861003,
+  "one_ear_Kt3_stress_MPa": 147.5229317354216,
+  "required_hot_notched_flexural_allowable_MPa": 150,
+  "C04_carrier_total_mass_max_g": 220,
+  "carrier_gross_bending_MPa": 22.77322055555556,
+  "right_mount_double_ligament_Kt3_shear_MPa": 10.562854345165238,
+  "central_summed_lateral_2mm_plus30g_mm": 0.49452140012654755,
+  "wing_summed_lateral_2mm_plus30g_mm": 0.3501514932333026,
+  "lateral_bow_allocation_mm": 0.5,
+  "scope": [
+    "Curved frame is validated against an analytic fixed-guided beam. Common centerline leaf approximation retains a2x force acceptance allocation.",
+    "Cold terminal supports are mandatory. Their rigidity must be at least the hot PCB terminal rigidity; credited hot inertial reactions require this load path.",
+    "All200 leaves remain free in the flex region. Bonding or solder wicking into the span invalidates the low stiffness.",
+    "Elastic static deflection/load screen does not prove fatigue, creep, solder life or supplier force/adhesive acceptance.",
+    "2mm axial displacement and30g transverse sensitivity are separate declared bounds; arbitrary simultaneous multiaxis shock is not covered."
+  ]
+}

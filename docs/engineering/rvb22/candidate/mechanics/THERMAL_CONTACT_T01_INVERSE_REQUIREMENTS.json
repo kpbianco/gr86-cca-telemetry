@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "effective_copper_um": 96,
+      "sheet_conductance_W_K_per_square": 0.02916,
+      "C206_region_max_C": 131.59520149438097,
+      "remaining_to125C_K": -6.595201494380973,
+      "remaining_after3K_body_allowance_K": -9.595201494380973,
+      "maximum_additional_module_path_R_K_W_after3K_body_allowance": 0
+    },
+    {
+      "effective_copper_um": 120,
+      "sheet_conductance_W_K_per_square": 0.036359999999999996,
+      "C206_region_max_C": 124.10392256824132,
+      "remaining_to125C_K": 0.8960774317586839,
+      "remaining_after3K_body_allowance_K": -2.103922568241316,
+      "maximum_additional_module_path_R_K_W_after3K_body_allowance": 0
+    },
+    {
+      "effective_copper_um": 140,
+      "sheet_conductance_W_K_per_square": 0.042359999999999995,
+      "C206_region_max_C": 119.71267742470508,
+      "remaining_to125C_K": 5.2873225752949224,
+      "remaining_after3K_body_allowance_K": 2.2873225752949224,
+      "maximum_additional_module_path_R_K_W_after3K_body_allowance": 0.8811875494094892
+    },
+    {
+      "effective_copper_um": 160,
+      "sheet_conductance_W_K_per_square": 0.04836,
+      "C206_region_max_C": 116.359295323135,
+      "remaining_to125C_K": 8.640704676864999,
+      "remaining_after3K_body_allowance_K": 5.640704676864999,
+      "maximum_additional_module_path_R_K_W_after3K_body_allowance": 2.173072912773759
+    }
+  ],
+  "sampled_requirement": "140um equivalent continuous Cu with perfect layer coupling gives C206119.713C and2.287K after an allocated3K body rise;160um gives116.359C and5.641K. These remain inverse requirements, not native board passes.",
+  "body_rise_scope": "3K is a displayed allocation only,notanassumedmanufacturerRtheta. Actualhotripple/localboard-cap thermalpathmustjustifyit.",
+  "interlayer_scope": "AdditionalR is a worst-localheat sensitivity based onmainheatdeposit. Actualmultilayer/package heatflowmustbeexecuted,notboundedbythisperfectcouplingmodelalone.",
+  "finalI04_PCB_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "source_T01_model_sha256": "a5fc11981a3bca81c2dc343bd87a0b618e391770088be932934004bc68df4f88"
+}

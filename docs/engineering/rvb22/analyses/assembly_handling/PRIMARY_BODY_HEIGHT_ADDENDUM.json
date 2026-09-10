@@ -1,0 +1,1939 @@
+{
+  "status": "EXECUTED_PRIMARY_SOURCE_HEIGHT_BOUNDS_ALL_FITTED_REFS_NOT_FULL_SOLIDS",
+  "PCB_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "mechanics_inventory_path": "lanes/mechanics/history_before_height_addendum/FINAL_COMPONENT_ENVELOPES.json",
+  "mechanics_inventory_sha256": "77a09dce9c7214c54402483e91573868924f7445941d4f6728a9b6c0bb3539d7",
+  "handling_inventory_sha256": "8b75ad02a30de0d34ab9ac955fc38228d618ae520889c8d6955a7b978bdd9e06",
+  "scope": "Guaranteed upper dimensions or explicit tolerance sums from manufacturer exact/family documents: first pass existing sources, then four targeted primary lookups authorized to resolve D104/F1/J401/U202. No CAD changes, manufacturer lot/as-built acceptance or native STEP proof.",
+  "counts": {
+    "fitted_refs": 153,
+    "prior_bound_fitted_refs": 16,
+    "newly_bound_fitted_refs": 137,
+    "newly_bound_unique_MPNs": 67,
+    "total_bound_fitted_refs": 153,
+    "remaining_unbound_fitted_refs": 0,
+    "newly_bound_bottom_refs": 70,
+    "remaining_unbound_bottom_refs": 0,
+    "physical_inventory_unbound_count_at_read": 140,
+    "physical_inventory_unbound_after_addendum": 3,
+    "nonfitted_unbound_refs_excluded": [
+      "C203",
+      "R301",
+      "R306"
+    ],
+    "missing_3D_model_references_still_not_resolved": 18
+  },
+  "rows": [
+    {
+      "mpn": "CRCW06030000Z0EA",
+      "references": [
+        "R401"
+      ],
+      "sides": {
+        "R401": "F.Cu"
+      },
+      "maximum_height_mm": 0.5,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.05 mm",
+      "binding": "exact_CRCW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/crcw_e3.pdf",
+      "source_sha256": "1804e6a377018f1afcb80ea2ae6069c59157e7c1baf181eab053102f95a0d3b0",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.05 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R401": null
+      }
+    },
+    {
+      "mpn": "CRCW0603100KFKEA",
+      "references": [
+        "R108",
+        "R127",
+        "R152",
+        "R407",
+        "R408",
+        "R409",
+        "R411",
+        "R506"
+      ],
+      "sides": {
+        "R108": "B.Cu",
+        "R127": "F.Cu",
+        "R152": "B.Cu",
+        "R407": "B.Cu",
+        "R408": "B.Cu",
+        "R409": "B.Cu",
+        "R411": "B.Cu",
+        "R506": "B.Cu"
+      },
+      "maximum_height_mm": 0.5,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.05 mm",
+      "binding": "exact_CRCW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/crcw_e3.pdf",
+      "source_sha256": "1804e6a377018f1afcb80ea2ae6069c59157e7c1baf181eab053102f95a0d3b0",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.05 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R108": null,
+        "R127": null,
+        "R152": null,
+        "R407": null,
+        "R408": null,
+        "R409": null,
+        "R411": null,
+        "R506": null
+      }
+    },
+    {
+      "mpn": "CRCW060310K0FKEA",
+      "references": [
+        "R157",
+        "R201",
+        "R202",
+        "R303",
+        "R410"
+      ],
+      "sides": {
+        "R157": "F.Cu",
+        "R201": "F.Cu",
+        "R202": "F.Cu",
+        "R303": "B.Cu",
+        "R410": "B.Cu"
+      },
+      "maximum_height_mm": 0.5,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.05 mm",
+      "binding": "exact_CRCW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/crcw_e3.pdf",
+      "source_sha256": "1804e6a377018f1afcb80ea2ae6069c59157e7c1baf181eab053102f95a0d3b0",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.05 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R157": null,
+        "R201": null,
+        "R202": null,
+        "R303": null,
+        "R410": null
+      }
+    },
+    {
+      "mpn": "CRCW060310R0FKEA",
+      "references": [
+        "R106"
+      ],
+      "sides": {
+        "R106": "B.Cu"
+      },
+      "maximum_height_mm": 0.5,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.05 mm",
+      "binding": "exact_CRCW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/crcw_e3.pdf",
+      "source_sha256": "1804e6a377018f1afcb80ea2ae6069c59157e7c1baf181eab053102f95a0d3b0",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.05 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R106": null
+      }
+    },
+    {
+      "mpn": "CRCW06031K00FKEA",
+      "references": [
+        "R154",
+        "R203",
+        "R302",
+        "R405",
+        "R601",
+        "R602",
+        "R603",
+        "R604",
+        "R605",
+        "R606"
+      ],
+      "sides": {
+        "R154": "B.Cu",
+        "R203": "B.Cu",
+        "R302": "B.Cu",
+        "R405": "F.Cu",
+        "R601": "F.Cu",
+        "R602": "F.Cu",
+        "R603": "F.Cu",
+        "R604": "F.Cu",
+        "R605": "F.Cu",
+        "R606": "F.Cu"
+      },
+      "maximum_height_mm": 0.5,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.05 mm",
+      "binding": "exact_CRCW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/crcw_e3.pdf",
+      "source_sha256": "1804e6a377018f1afcb80ea2ae6069c59157e7c1baf181eab053102f95a0d3b0",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.05 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R154": null,
+        "R203": null,
+        "R302": null,
+        "R405": null,
+        "R601": null,
+        "R602": null,
+        "R603": null,
+        "R604": null,
+        "R605": null,
+        "R606": null
+      }
+    },
+    {
+      "mpn": "CRCW06035K10FKEA",
+      "references": [
+        "R107"
+      ],
+      "sides": {
+        "R107": "B.Cu"
+      },
+      "maximum_height_mm": 0.5,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.05 mm",
+      "binding": "exact_CRCW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/crcw_e3.pdf",
+      "source_sha256": "1804e6a377018f1afcb80ea2ae6069c59157e7c1baf181eab053102f95a0d3b0",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.05 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R107": null
+      }
+    },
+    {
+      "mpn": "CRCW12060000Z0EA",
+      "references": [
+        "R109",
+        "R128",
+        "R151"
+      ],
+      "sides": {
+        "R109": "F.Cu",
+        "R128": "F.Cu",
+        "R151": "B.Cu"
+      },
+      "maximum_height_mm": 0.6,
+      "units": "mm",
+      "dimension": "H = 0.55 \u00b1 0.05 mm",
+      "binding": "exact_CRCW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/crcw_e3.pdf",
+      "source_sha256": "1804e6a377018f1afcb80ea2ae6069c59157e7c1baf181eab053102f95a0d3b0",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "H = 0.55 \u00b1 0.05 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R109": null,
+        "R128": null,
+        "R151": null
+      }
+    },
+    {
+      "mpn": "CRCW1206100KFKEA",
+      "references": [
+        "R111",
+        "R125"
+      ],
+      "sides": {
+        "R111": "F.Cu",
+        "R125": "F.Cu"
+      },
+      "maximum_height_mm": 0.6,
+      "units": "mm",
+      "dimension": "H = 0.55 \u00b1 0.05 mm",
+      "binding": "exact_CRCW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/crcw_e3.pdf",
+      "source_sha256": "1804e6a377018f1afcb80ea2ae6069c59157e7c1baf181eab053102f95a0d3b0",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "H = 0.55 \u00b1 0.05 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R111": null,
+        "R125": null
+      }
+    },
+    {
+      "mpn": "CRCW1206510KFKEA",
+      "references": [
+        "R105"
+      ],
+      "sides": {
+        "R105": "B.Cu"
+      },
+      "maximum_height_mm": 0.6,
+      "units": "mm",
+      "dimension": "H = 0.55 \u00b1 0.05 mm",
+      "binding": "exact_CRCW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/crcw_e3.pdf",
+      "source_sha256": "1804e6a377018f1afcb80ea2ae6069c59157e7c1baf181eab053102f95a0d3b0",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "H = 0.55 \u00b1 0.05 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R105": null
+      }
+    },
+    {
+      "mpn": "CRCW25126K81FKEG",
+      "references": [
+        "R101"
+      ],
+      "sides": {
+        "R101": "B.Cu"
+      },
+      "maximum_height_mm": 0.7,
+      "units": "mm",
+      "dimension": "H = 0.6 \u00b1 0.10 mm",
+      "binding": "exact_CRCW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/crcw_e3.pdf",
+      "source_sha256": "1804e6a377018f1afcb80ea2ae6069c59157e7c1baf181eab053102f95a0d3b0",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "H = 0.6 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R101": null
+      }
+    },
+    {
+      "mpn": "CRCW25124R70FKEGHP",
+      "references": [
+        "R507"
+      ],
+      "sides": {
+        "R507": "F.Cu"
+      },
+      "maximum_height_mm": 0.7,
+      "units": "mm",
+      "dimension": "CRCW2512-HP e3 H = 0.6 \u00b1 0.10 mm",
+      "binding": "exact_CRCW_HP_size_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/audit/productization/power_close/oil_parts/crcwhpe3.pdf",
+      "source_sha256": "2a69d35f97f45909f069bb7fc8a9eb51bc189621bf0cd9672dc39f6e61385b14",
+      "source_page": 9,
+      "source_excerpt_or_table_field": "CRCW2512-HP e3 H = 0.6 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R507": null
+      }
+    },
+    {
+      "mpn": "TNPW0603100KBEEA",
+      "references": [
+        "R123"
+      ],
+      "sides": {
+        "R123": "F.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R123": null
+      }
+    },
+    {
+      "mpn": "TNPW060310K0BEEA",
+      "references": [
+        "R156",
+        "R502",
+        "R504"
+      ],
+      "sides": {
+        "R156": "B.Cu",
+        "R502": "B.Cu",
+        "R504": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R156": null,
+        "R502": null,
+        "R504": null
+      }
+    },
+    {
+      "mpn": "TNPW06031K00BEEA",
+      "references": [
+        "R514",
+        "R524"
+      ],
+      "sides": {
+        "R514": "B.Cu",
+        "R524": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R514": null,
+        "R524": null
+      }
+    },
+    {
+      "mpn": "TNPW060323K7BEEA",
+      "references": [
+        "R155"
+      ],
+      "sides": {
+        "R155": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R155": null
+      }
+    },
+    {
+      "mpn": "TNPW060324K3BEEA",
+      "references": [
+        "R103"
+      ],
+      "sides": {
+        "R103": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R103": null
+      }
+    },
+    {
+      "mpn": "TNPW060327K4BEEA",
+      "references": [
+        "R501"
+      ],
+      "sides": {
+        "R501": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R501": null
+      }
+    },
+    {
+      "mpn": "TNPW060331K6BEEA",
+      "references": [
+        "R121"
+      ],
+      "sides": {
+        "R121": "F.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R121": null
+      }
+    },
+    {
+      "mpn": "TNPW060336K5BEEA",
+      "references": [
+        "R503"
+      ],
+      "sides": {
+        "R503": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R503": null
+      }
+    },
+    {
+      "mpn": "TNPW060343K2BEEA",
+      "references": [
+        "R124"
+      ],
+      "sides": {
+        "R124": "F.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R124": null
+      }
+    },
+    {
+      "mpn": "TNPW06034K02BEEA",
+      "references": [
+        "R512",
+        "R522"
+      ],
+      "sides": {
+        "R512": "B.Cu",
+        "R522": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R512": null,
+        "R522": null
+      }
+    },
+    {
+      "mpn": "TNPW0805118KBEEA",
+      "references": [
+        "R505"
+      ],
+      "sides": {
+        "R505": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R505": null
+      }
+    },
+    {
+      "mpn": "TNPW0805124KBEEA",
+      "references": [
+        "R513",
+        "R523"
+      ],
+      "sides": {
+        "R513": "B.Cu",
+        "R523": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R513": null,
+        "R523": null
+      }
+    },
+    {
+      "mpn": "TNPW08051M00BEEA",
+      "references": [
+        "R511",
+        "R521"
+      ],
+      "sides": {
+        "R511": "B.Cu",
+        "R521": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R511": null,
+        "R521": null
+      }
+    },
+    {
+      "mpn": "TNPW0805309KBEEA",
+      "references": [
+        "R122"
+      ],
+      "sides": {
+        "R122": "F.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R122": null
+      }
+    },
+    {
+      "mpn": "TNPW1206549KBEEA",
+      "references": [
+        "R102"
+      ],
+      "sides": {
+        "R102": "B.Cu"
+      },
+      "maximum_height_mm": 0.65,
+      "units": "mm",
+      "dimension": "H = 0.55 \u00b1 0.10 mm",
+      "binding": "exact_TNPW_size_e3_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "source_sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842",
+      "source_page": 15,
+      "source_excerpt_or_table_field": "H = 0.55 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R102": null
+      }
+    },
+    {
+      "mpn": "WSL2512R4700FEA",
+      "references": [
+        "R110"
+      ],
+      "sides": {
+        "R110": "F.Cu"
+      },
+      "maximum_height_mm": 0.889,
+      "units": "mm",
+      "dimension": "WSL2512 H = 0.025 \u00b1 0.010 inch = 0.635 \u00b1 0.254 mm",
+      "binding": "exact_WSL2512_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/wsl.pdf",
+      "source_sha256": "3cd1ffe15a236217fe3eefb0ad69304b164446264b4b70cb5bcbfeca2b3fa9c1",
+      "source_page": 2,
+      "source_excerpt_or_table_field": "WSL2512 H = 0.025 \u00b1 0.010 inch = 0.635 \u00b1 0.254 mm",
+      "note": "H is vertical thickness; T is terminal length, not height.",
+      "prior_values_mm": {
+        "R110": null
+      }
+    },
+    {
+      "mpn": "AA0603FR-07220RL",
+      "references": [
+        "R402",
+        "R403",
+        "R404",
+        "R515",
+        "R525"
+      ],
+      "sides": {
+        "R402": "F.Cu",
+        "R403": "F.Cu",
+        "R404": "F.Cu",
+        "R515": "B.Cu",
+        "R525": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "AA0603 H = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_AA0603_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/audit/productization/root/analog/Yageo_AA_manufacturer_JLCcopy.pdf",
+      "source_sha256": "1622e2ba6997cb0cc4b13229940c5276fd27bbd8b2a3eb9c5f48f951b5275bbe",
+      "source_page": 4,
+      "source_excerpt_or_table_field": "AA0603 H = 0.45 \u00b1 0.10 mm",
+      "note": "Manufacturer-authored archived 2015 V3 PDF mirrored by JLC; current lot acceptance not inferred.",
+      "prior_values_mm": {
+        "R402": null,
+        "R403": null,
+        "R404": null,
+        "R515": null,
+        "R525": null
+      }
+    },
+    {
+      "mpn": "ERA3AEB1472V",
+      "references": [
+        "R104"
+      ],
+      "sides": {
+        "R104": "B.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "ERA3A T = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_ERA3A_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "analyses/assembly_handling/expanded_sources/panasonic_era.pdf",
+      "source_sha256": "2ffb715174964a986d8cd22f38607a14465c938bb5ff9817e0948124ebb69a5b",
+      "source_page": 3,
+      "source_excerpt_or_table_field": "ERA3A T = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R104": null
+      }
+    },
+    {
+      "mpn": "ERA3AEB2612V",
+      "references": [
+        "R126"
+      ],
+      "sides": {
+        "R126": "F.Cu"
+      },
+      "maximum_height_mm": 0.55,
+      "units": "mm",
+      "dimension": "ERA3A T = 0.45 \u00b1 0.10 mm",
+      "binding": "exact_ERA3A_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "analyses/assembly_handling/expanded_sources/panasonic_era.pdf",
+      "source_sha256": "2ffb715174964a986d8cd22f38607a14465c938bb5ff9817e0948124ebb69a5b",
+      "source_page": 3,
+      "source_excerpt_or_table_field": "ERA3A T = 0.45 \u00b1 0.10 mm",
+      "note": "",
+      "prior_values_mm": {
+        "R126": null
+      }
+    },
+    {
+      "mpn": "CGA3E2C0G1H101J080AA",
+      "references": [
+        "C126",
+        "C514",
+        "C524"
+      ],
+      "sides": {
+        "C126": "F.Cu",
+        "C514": "B.Cu",
+        "C524": "B.Cu"
+      },
+      "maximum_height_mm": 0.9,
+      "units": "mm",
+      "dimension": "0.80mm \u00b10.10mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E2C0G1H101J080AA.html",
+      "source_sha256": "ff30f86f476b673caf8b2d5ac619a7c3311f4256e3b35a0cea23b0aa622c6d07",
+      "source_page": "HTML Size / Thickness(T)",
+      "source_excerpt_or_table_field": "0.80mm \u00b10.10mm",
+      "note": "Exact saved TDK product Size/Thickness(T) field; no package-size-only inference.",
+      "prior_values_mm": {
+        "C126": null,
+        "C514": null,
+        "C524": null
+      }
+    },
+    {
+      "mpn": "CGA3E2C0G1H222J080AA",
+      "references": [
+        "C124"
+      ],
+      "sides": {
+        "C124": "F.Cu"
+      },
+      "maximum_height_mm": 0.9,
+      "units": "mm",
+      "dimension": "0.80mm \u00b10.10mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E2C0G1H222J080AA.html",
+      "source_sha256": "eca5cac7dd4ce52568e78e5a6cad8f6176c56c409b09850ca501472807d66fb6",
+      "source_page": "HTML Size / Thickness(T)",
+      "source_excerpt_or_table_field": "0.80mm \u00b10.10mm",
+      "note": "Exact saved TDK product Size/Thickness(T) field; no package-size-only inference.",
+      "prior_values_mm": {
+        "C124": null
+      }
+    },
+    {
+      "mpn": "CGA3E2C0G2A332J080AA",
+      "references": [
+        "C125"
+      ],
+      "sides": {
+        "C125": "F.Cu"
+      },
+      "maximum_height_mm": 1.0,
+      "units": "mm",
+      "dimension": "0.80mm \u00b10.20mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E2C0G2A332J080AA.html",
+      "source_sha256": "f6fbe1894e015e34e775ecda6f94984f0a7aeb23cb146022e2c01b9c3e189aac",
+      "source_page": "HTML Size / Thickness(T)",
+      "source_excerpt_or_table_field": "0.80mm \u00b10.20mm",
+      "note": "Exact saved TDK product Size/Thickness(T) field; no package-size-only inference.",
+      "prior_values_mm": {
+        "C125": null
+      }
+    },
+    {
+      "mpn": "CGA3E2X7R1H223K080AE",
+      "references": [
+        "C501",
+        "C513",
+        "C523"
+      ],
+      "sides": {
+        "C501": "B.Cu",
+        "C513": "F.Cu",
+        "C523": "F.Cu"
+      },
+      "maximum_height_mm": 0.95,
+      "units": "mm",
+      "dimension": "0.80mm +0.15,-0.10mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E2X7R1H223K080AE.html",
+      "source_sha256": "95fc2abeebd2c1904907014de2d0ef41d30a63fe8138a9ae2e484b44e42ce90e",
+      "source_page": "HTML Size / Thickness(T)",
+      "source_excerpt_or_table_field": "0.80mm +0.15,-0.10mm",
+      "note": "Exact saved TDK product Size/Thickness(T) field; no package-size-only inference.",
+      "prior_values_mm": {
+        "C501": null,
+        "C513": null,
+        "C523": null
+      }
+    },
+    {
+      "mpn": "CGA3E2X7R2A103K080AE",
+      "references": [
+        "C102"
+      ],
+      "sides": {
+        "C102": "B.Cu"
+      },
+      "maximum_height_mm": 0.95,
+      "units": "mm",
+      "dimension": "0.80mm +0.15,-0.10mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E2X7R2A103K080AE.html",
+      "source_sha256": "21e6d3e92c5013f6e479eff73b2c9d148de3672aff18d6c1b722811b34897973",
+      "source_page": "HTML Size / Thickness(T)",
+      "source_excerpt_or_table_field": "0.80mm +0.15,-0.10mm",
+      "note": "Exact saved TDK product Size/Thickness(T) field; no package-size-only inference.",
+      "prior_values_mm": {
+        "C102": null
+      }
+    },
+    {
+      "mpn": "CGA3E3X7R1H224K080AB",
+      "references": [
+        "C152",
+        "C154"
+      ],
+      "sides": {
+        "C152": "B.Cu",
+        "C154": "B.Cu"
+      },
+      "maximum_height_mm": 0.9,
+      "units": "mm",
+      "dimension": "0.80mm \u00b10.10mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E3X7R1H224K080AB.html",
+      "source_sha256": "fbdef64662f0b5d2f37c4f3cfbd3358c9128918e838d3098fb0fb4b82db9c8c9",
+      "source_page": "HTML Size / Thickness(T)",
+      "source_excerpt_or_table_field": "0.80mm \u00b10.10mm",
+      "note": "Exact saved TDK product Size/Thickness(T) field; no package-size-only inference.",
+      "prior_values_mm": {
+        "C152": null,
+        "C154": null
+      }
+    },
+    {
+      "mpn": "CGA4J2X7R2A104K125AA",
+      "references": [
+        "C101",
+        "C123",
+        "C503"
+      ],
+      "sides": {
+        "C101": "B.Cu",
+        "C123": "F.Cu",
+        "C503": "B.Cu"
+      },
+      "maximum_height_mm": 1.45,
+      "units": "mm",
+      "dimension": "1.25mm \u00b10.20mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "analyses/assembly_handling/expanded_sources/tdk_CGA4J2X7R2A104K125AA.html",
+      "source_sha256": "f528dadbbfe1cebbd503edb2c5bdbdaca8cf71abaca974fe9da55c47b17158bf",
+      "source_page": "HTML Size / Thickness(T)",
+      "source_excerpt_or_table_field": "1.25mm \u00b10.20mm",
+      "note": "Exact saved TDK product Size/Thickness(T) field; no package-size-only inference.",
+      "prior_values_mm": {
+        "C101": null,
+        "C123": null,
+        "C503": null
+      }
+    },
+    {
+      "mpn": "CGA6N3X7R2A225K230AB",
+      "references": [
+        "C103",
+        "C121",
+        "C122",
+        "C129"
+      ],
+      "sides": {
+        "C103": "F.Cu",
+        "C121": "F.Cu",
+        "C122": "B.Cu",
+        "C129": "B.Cu"
+      },
+      "maximum_height_mm": 2.5,
+      "units": "mm",
+      "dimension": "2.30mm \u00b10.20mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "analyses/assembly_handling/expanded_sources/tdk_CGA6N3X7R2A225K230AB.html",
+      "source_sha256": "156dfc58b41e7ca5435a326f5648249ebee24b2abec1033a1c49de74b6297269",
+      "source_page": "HTML Size / Thickness(T)",
+      "source_excerpt_or_table_field": "2.30mm \u00b10.20mm",
+      "note": "Exact saved TDK product Size/Thickness(T) field; no package-size-only inference.",
+      "prior_values_mm": {
+        "C103": null,
+        "C121": null,
+        "C122": null,
+        "C129": null
+      }
+    },
+    {
+      "mpn": "GCM188R71C105KA64D",
+      "references": [
+        "C153",
+        "C302",
+        "C511",
+        "C512",
+        "C521",
+        "C522"
+      ],
+      "sides": {
+        "C153": "B.Cu",
+        "C302": "B.Cu",
+        "C511": "B.Cu",
+        "C512": "B.Cu",
+        "C521": "B.Cu",
+        "C522": "B.Cu"
+      },
+      "maximum_height_mm": 0.9,
+      "units": "mm",
+      "dimension": "T = 0.8 \u00b1 0.1 mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/gcm188_1u.pdf",
+      "source_sha256": "0f79179df5733be0f8754ee0cc563c7f10c1ebb7abfadee226e1a6163ffdbecd",
+      "source_page": 2,
+      "source_excerpt_or_table_field": "T = 0.8 \u00b1 0.1 mm",
+      "note": "Exact electrical suffix listed; D is packaging suffix. Public reference sheet; supplier approval specification remains controlling for ordering.",
+      "prior_values_mm": {
+        "C153": null,
+        "C302": null,
+        "C511": null,
+        "C512": null,
+        "C521": null,
+        "C522": null
+      }
+    },
+    {
+      "mpn": "GCM188R71H104KA57D",
+      "references": [
+        "C158",
+        "C202",
+        "C205",
+        "C301",
+        "C403",
+        "C404",
+        "C405",
+        "C502",
+        "C531"
+      ],
+      "sides": {
+        "C158": "B.Cu",
+        "C202": "F.Cu",
+        "C205": "B.Cu",
+        "C301": "B.Cu",
+        "C403": "F.Cu",
+        "C404": "F.Cu",
+        "C405": "F.Cu",
+        "C502": "B.Cu",
+        "C531": "B.Cu"
+      },
+      "maximum_height_mm": 0.9,
+      "units": "mm",
+      "dimension": "T = 0.8 \u00b1 0.1 mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/gcm188_100n.pdf",
+      "source_sha256": "5a29828795fe4b9b8282c7c7fc77e7859fd5e25a64e208257ed25be08ef2402a",
+      "source_page": 2,
+      "source_excerpt_or_table_field": "T = 0.8 \u00b1 0.1 mm",
+      "note": "Exact electrical suffix listed; D is packaging suffix. Public reference sheet; supplier approval specification remains controlling for ordering.",
+      "prior_values_mm": {
+        "C158": null,
+        "C202": null,
+        "C205": null,
+        "C301": null,
+        "C403": null,
+        "C404": null,
+        "C405": null,
+        "C502": null,
+        "C531": null
+      }
+    },
+    {
+      "mpn": "GRM1885C1H103JA01D",
+      "references": [
+        "C532"
+      ],
+      "sides": {
+        "C532": "F.Cu"
+      },
+      "maximum_height_mm": 0.9,
+      "units": "mm",
+      "dimension": "T = 0.8 \u00b1 0.1 mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "lanes/oil_cap/Murata_GRM1885C1H103JA01D_manufacturer.pdf",
+      "source_sha256": "ce79a36f2dbd941b7f18ccf32e841bbd5f98e9e03f79941f08f2072b3c4b2c27",
+      "source_page": 1,
+      "source_excerpt_or_table_field": "T = 0.8 \u00b1 0.1 mm",
+      "note": "Manufacturer summary dated 2015-12-04 mirrored by Farnell; this is archived source, not current lot measurement.",
+      "prior_values_mm": {
+        "C532": null
+      }
+    },
+    {
+      "mpn": "C1210C106K5RACTU",
+      "references": [
+        "C504",
+        "C505",
+        "C506"
+      ],
+      "sides": {
+        "C504": "F.Cu",
+        "C505": "F.Cu",
+        "C506": "F.Cu"
+      },
+      "maximum_height_mm": 2.8,
+      "units": "mm",
+      "dimension": "T = 2.5 \u00b1 0.30 mm",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/audit/productization/power_close/oil_parts/ksim_curve/C1210C106K5RACTU_specsheet.pdf",
+      "source_sha256": "c0e49a969c2866df7040f64ed92fe30db4c26e0cdf0a737b44390283cbfd5d0c",
+      "source_page": 1,
+      "source_excerpt_or_table_field": "T = 2.5 \u00b1 0.30 mm",
+      "note": "",
+      "prior_values_mm": {
+        "C504": null,
+        "C505": null,
+        "C506": null
+      }
+    },
+    {
+      "mpn": "APT1608SGC",
+      "references": [
+        "D401",
+        "D601",
+        "D602",
+        "D603",
+        "D604",
+        "D605",
+        "D606"
+      ],
+      "sides": {
+        "D401": "F.Cu",
+        "D601": "F.Cu",
+        "D602": "F.Cu",
+        "D603": "F.Cu",
+        "D604": "F.Cu",
+        "D605": "F.Cu",
+        "D606": "F.Cu"
+      },
+      "maximum_height_mm": 0.85,
+      "units": "mm",
+      "dimension": "Overall height 0.75 mm; note 2 tolerance \u00b10.1 mm unless otherwise noted",
+      "binding": "exact_part",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/kingbright_apt1608sgc.pdf",
+      "source_sha256": "3256acec755bc1983a85e4183d22de785a223d4ed97ea438d87f6f766bed8e31",
+      "source_page": 1,
+      "source_excerpt_or_table_field": "Overall height 0.75 mm; note 2 tolerance \u00b10.1 mm unless otherwise noted",
+      "note": "Package drawing and general tolerance visually reviewed; 0.75 is not treated as a maximum.",
+      "prior_values_mm": {
+        "D401": null,
+        "D601": null,
+        "D602": null,
+        "D603": null,
+        "D604": null,
+        "D605": null,
+        "D606": null
+      }
+    },
+    {
+      "mpn": "LQW18AS1N6J0ZD",
+      "references": [
+        "L406"
+      ],
+      "sides": {
+        "L406": "B.Cu"
+      },
+      "maximum_height_mm": 1.0,
+      "units": "mm",
+      "dimension": "Overall vertical dimension = 0.8 \u00b1 0.2 mm",
+      "binding": "exact_LQW18AS_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "analyses/assembly_handling/expanded_sources/murata_lqw18as.pdf",
+      "source_sha256": "2bf7aab1b950b08c61d031785b2ee2a52e2987a43f2b1f2d6bb01b09d863ff48",
+      "source_page": 4,
+      "source_excerpt_or_table_field": "Overall vertical dimension = 0.8 \u00b1 0.2 mm",
+      "note": "Exact part appears in family table; p4 drawing visually reviewed. Horizontal 0.8\u00b10.3 is winding width, not height. Reference-only public specification.",
+      "prior_values_mm": {
+        "L406": null
+      }
+    },
+    {
+      "mpn": "MSS1246T-473MLC",
+      "references": [
+        "L121"
+      ],
+      "sides": {
+        "L121": "F.Cu"
+      },
+      "maximum_height_mm": 4.8,
+      "units": "mm",
+      "dimension": "Height 4.6 \u00b1 0.20 mm",
+      "binding": "exact_MSS1246T_family",
+      "height_reference": "body_or_package_overall_height",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/mss1246t.pdf",
+      "source_sha256": "887424ec32df41c18e2c6574ef5ad65f6e2e514dc7229bba52b8df1230f45591",
+      "source_page": 2,
+      "source_excerpt_or_table_field": "Height 4.6 \u00b1 0.20 mm",
+      "note": "Selected L termination is matte tin over nickel. Extra premount 0.3 mm note applies only to optional tin-lead/tin-silver-copper terminations, not selected L.",
+      "prior_values_mm": {
+        "L121": null
+      }
+    },
+    {
+      "mpn": "LTC4367HMS8#WTRPBF",
+      "references": [
+        "U101"
+      ],
+      "sides": {
+        "U101": "B.Cu"
+      },
+      "maximum_height_mm": 1.1,
+      "units": "mm",
+      "dimension": "MS8 1.10 mm MAX",
+      "binding": "exact_MS8_package_code",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/ltc4367.pdf",
+      "source_sha256": "b595ae2b72ddee6102afd1965ff2744e13c7981759f8cfcb7b1c02ca00bce530",
+      "source_page": 19,
+      "source_excerpt_or_table_field": "MS8 1.10 mm MAX",
+      "note": "",
+      "prior_values_mm": {
+        "U101": null
+      }
+    },
+    {
+      "mpn": "MIC5504-3.3YM5-TR",
+      "references": [
+        "U403"
+      ],
+      "sides": {
+        "U403": "F.Cu"
+      },
+      "maximum_height_mm": 1.45,
+      "units": "mm",
+      "dimension": "SOT23-5 M5 overall height 0.90 MIN / 1.45 MAX",
+      "binding": "exact_M5_package_code",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/mic5504.pdf",
+      "source_sha256": "ccd7fb69d16512749dfc3ddae750c3e763932df514742ec780bc87accc03a1f7",
+      "source_page": 16,
+      "source_excerpt_or_table_field": "SOT23-5 M5 overall height 0.90 MIN / 1.45 MAX",
+      "note": "Drawing visually reviewed; body 1.10\u00b10.20 excludes up to0.15 standoff, so overall1.45 is used.",
+      "prior_values_mm": {
+        "U403": null
+      }
+    },
+    {
+      "mpn": "TPS26600PWPR",
+      "references": [
+        "U501"
+      ],
+      "sides": {
+        "U501": "B.Cu"
+      },
+      "maximum_height_mm": 1.2,
+      "units": "mm",
+      "dimension": "PWP0016A maximum package height 1.2 mm",
+      "binding": "exact_package_code",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tps2660.pdf",
+      "source_sha256": "b781cbce51984715771bde540df2b36404b4fae4b41e27166c84c19b6598e1de",
+      "source_page": 52,
+      "source_excerpt_or_table_field": "PWP0016A maximum package height 1.2 mm",
+      "note": "Where PDF is Q1 and fitted device is non-Q1, credit is confined to the identical named package drawing, not device electrical qualification.",
+      "prior_values_mm": {
+        "U501": null
+      }
+    },
+    {
+      "mpn": "LM63615DQPWPRQ1",
+      "references": [
+        "U151"
+      ],
+      "sides": {
+        "U151": "B.Cu"
+      },
+      "maximum_height_mm": 1.2,
+      "units": "mm",
+      "dimension": "PWP0016K maximum package height 1.2 mm",
+      "binding": "exact_package_code",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/lm63615_q1.pdf",
+      "source_sha256": "7222b3f5bc6892f2a19a110a985096c342dc70084df5bfe0cebc3b4fb59a7351",
+      "source_page": 53,
+      "source_excerpt_or_table_field": "PWP0016K maximum package height 1.2 mm",
+      "note": "Where PDF is Q1 and fitted device is non-Q1, credit is confined to the identical named package drawing, not device electrical qualification.",
+      "prior_values_mm": {
+        "U151": null
+      }
+    },
+    {
+      "mpn": "LM5164DDAR",
+      "references": [
+        "U121"
+      ],
+      "sides": {
+        "U121": "F.Cu"
+      },
+      "maximum_height_mm": 1.7,
+      "units": "mm",
+      "dimension": "DDA0008B maximum package height 1.7 mm",
+      "binding": "exact_package_code",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/lm5164_q1.pdf",
+      "source_sha256": "ee02bec80b1e5730ec1f64c5195330998cad6521af4bd3a53b9b7e425a90a246",
+      "source_page": 28,
+      "source_excerpt_or_table_field": "DDA0008B maximum package height 1.7 mm",
+      "note": "Where PDF is Q1 and fitted device is non-Q1, credit is confined to the identical named package drawing, not device electrical qualification.",
+      "prior_values_mm": {
+        "U121": null
+      }
+    },
+    {
+      "mpn": "OPA2333AIDR",
+      "references": [
+        "U502"
+      ],
+      "sides": {
+        "U502": "B.Cu"
+      },
+      "maximum_height_mm": 1.75,
+      "units": "mm",
+      "dimension": "D0008A maximum package height 1.75 mm",
+      "binding": "exact_package_code",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/opa2333_q1.pdf",
+      "source_sha256": "5b2303bfa21dd4304267eda840b683caf2b43792b3a4a4f025ba2277446277b6",
+      "source_page": 21,
+      "source_excerpt_or_table_field": "D0008A maximum package height 1.75 mm",
+      "note": "Where PDF is Q1 and fitted device is non-Q1, credit is confined to the identical named package drawing, not device electrical qualification.",
+      "prior_values_mm": {
+        "U502": null
+      }
+    },
+    {
+      "mpn": "SN74LVC2G125DCUR",
+      "references": [
+        "U402",
+        "U404"
+      ],
+      "sides": {
+        "U402": "F.Cu",
+        "U404": "F.Cu"
+      },
+      "maximum_height_mm": 0.9,
+      "units": "mm",
+      "dimension": "DCU0008A maximum package height 0.9 mm",
+      "binding": "exact_package_code",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/sn74lvc2g125_q1.pdf",
+      "source_sha256": "c185786eda25c9e3d17f6777d7cd737901406b7ba6a0aaff2a06a00a5f393b58",
+      "source_page": 13,
+      "source_excerpt_or_table_field": "DCU0008A maximum package height 0.9 mm",
+      "note": "Where PDF is Q1 and fitted device is non-Q1, credit is confined to the identical named package drawing, not device electrical qualification.",
+      "prior_values_mm": {
+        "U402": null,
+        "U404": null
+      }
+    },
+    {
+      "mpn": "TCAN3403DRBRQ1",
+      "references": [
+        "U301"
+      ],
+      "sides": {
+        "U301": "B.Cu"
+      },
+      "maximum_height_mm": 1.0,
+      "units": "mm",
+      "dimension": "DRB0008J maximum package height 1.0 mm",
+      "binding": "exact_package_code",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tcan3403_q1.pdf",
+      "source_sha256": "b1f664b052f46baf09f312c1b667cbf36db2ce29ecc4644d5b41324b9e3cb399",
+      "source_page": 43,
+      "source_excerpt_or_table_field": "DRB0008J maximum package height 1.0 mm",
+      "note": "Where PDF is Q1 and fitted device is non-Q1, credit is confined to the identical named package drawing, not device electrical qualification.",
+      "prior_values_mm": {
+        "U301": null
+      }
+    },
+    {
+      "mpn": "ESD2CAN24DBZRQ1",
+      "references": [
+        "D301",
+        "D501"
+      ],
+      "sides": {
+        "D301": "B.Cu",
+        "D501": "B.Cu"
+      },
+      "maximum_height_mm": 1.12,
+      "units": "mm",
+      "dimension": "DBZ0003A maximum package height 1.12 mm",
+      "binding": "exact_package_code",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/esd2can24_q1.pdf",
+      "source_sha256": "305b0aafdec918e96476fdf7a385cd2143e8b7664383842160c3ef1522d2bc5e",
+      "source_page": 23,
+      "source_excerpt_or_table_field": "DBZ0003A maximum package height 1.12 mm",
+      "note": "Where PDF is Q1 and fitted device is non-Q1, credit is confined to the identical named package drawing, not device electrical qualification.",
+      "prior_values_mm": {
+        "D301": null,
+        "D501": null
+      }
+    },
+    {
+      "mpn": "TPD1E05U06DPYR",
+      "references": [
+        "D402"
+      ],
+      "sides": {
+        "D402": "B.Cu"
+      },
+      "maximum_height_mm": 0.45,
+      "units": "mm",
+      "dimension": "DPY0002A maximum height 0.45 mm",
+      "binding": "exact_DPY_package_code",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/audit/productization/gps_close/tpd1e05u06.pdf",
+      "source_sha256": "c167cf1e72a5473a4d2c59b6a3c0251498701da05b7785919b9ceaae3b3e02c6",
+      "source_page": 34,
+      "source_excerpt_or_table_field": "DPY0002A maximum height 0.45 mm",
+      "note": "",
+      "prior_values_mm": {
+        "D402": null
+      }
+    },
+    {
+      "mpn": "PMEG2010BEA,115",
+      "references": [
+        "D511",
+        "D512",
+        "D521",
+        "D522"
+      ],
+      "sides": {
+        "D511": "F.Cu",
+        "D512": "F.Cu",
+        "D521": "F.Cu",
+        "D522": "F.Cu"
+      },
+      "maximum_height_mm": 1.1,
+      "units": "mm",
+      "dimension": "SOD323 A = 0.8 to 1.1 mm",
+      "binding": "exact_part",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/audit/productization/root/analog/PMEG2010BEA_manufacturer_JLCcopy.pdf",
+      "source_sha256": "83b565a214fead31bac0a71f137daa1ab6479c91fb2195272121f3128e695277",
+      "source_page": 6,
+      "source_excerpt_or_table_field": "SOD323 A = 0.8 to 1.1 mm",
+      "note": "Nexperia-authored2020 PDF mirrored by JLC; exact PMEG2010BEA;115 packaging suffix.",
+      "prior_values_mm": {
+        "D511": null,
+        "D512": null,
+        "D521": null,
+        "D522": null
+      }
+    },
+    {
+      "mpn": "STD25NF20",
+      "references": [
+        "Q101"
+      ],
+      "sides": {
+        "Q101": "F.Cu"
+      },
+      "maximum_height_mm": 2.4,
+      "units": "mm",
+      "dimension": "DPAK type A2 A = 2.20 to 2.40 mm",
+      "binding": "exact_DPAK_type_A2",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/std25nf20.pdf",
+      "source_sha256": "04284094809cf003dcb73c578886913da2d187d714b600294f680d2f9afab7cd",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "DPAK type A2 A = 2.20 to 2.40 mm",
+      "note": "",
+      "prior_values_mm": {
+        "Q101": null
+      }
+    },
+    {
+      "mpn": "S5DHE3_A/H",
+      "references": [
+        "D101"
+      ],
+      "sides": {
+        "D101": "F.Cu"
+      },
+      "maximum_height_mm": 2.62,
+      "units": "mm",
+      "dimension": "Package vertical dimension upper limit 2.62 mm",
+      "binding": "exact_listed_part_family",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/s5a.pdf",
+      "source_sha256": "e67f27c05e136d909b7ed2c989d2940097aa6726577b2661aa8d3861207118dc",
+      "source_page": 3,
+      "source_excerpt_or_table_field": "Package vertical dimension upper limit 2.62 mm",
+      "note": "",
+      "prior_values_mm": {
+        "D101": null
+      }
+    },
+    {
+      "mpn": "SMAJ30AHE3_A/H",
+      "references": [
+        "D102"
+      ],
+      "sides": {
+        "D102": "B.Cu"
+      },
+      "maximum_height_mm": 2.29,
+      "units": "mm",
+      "dimension": "Package vertical dimension upper limit 2.29 mm",
+      "binding": "exact_listed_part_family",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/smaj.pdf",
+      "source_sha256": "b8617e715805bb3293892c4636279eac57c1ef18e8c87a481cec1b802731b72d",
+      "source_page": 5,
+      "source_excerpt_or_table_field": "Package vertical dimension upper limit 2.29 mm",
+      "note": "",
+      "prior_values_mm": {
+        "D102": null
+      }
+    },
+    {
+      "mpn": "SMCJ24AHE3_A/H",
+      "references": [
+        "D103"
+      ],
+      "sides": {
+        "D103": "F.Cu"
+      },
+      "maximum_height_mm": 2.62,
+      "units": "mm",
+      "dimension": "Package vertical dimension upper limit 2.62 mm",
+      "binding": "exact_listed_part_family",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/smcj.pdf",
+      "source_sha256": "d9b1dafa25c0fa45eeb22fc4258fbdee3cafffb0bd14741e3cd9e35ea98f8e4c",
+      "source_page": 5,
+      "source_excerpt_or_table_field": "Package vertical dimension upper limit 2.62 mm",
+      "note": "",
+      "prior_values_mm": {
+        "D103": null
+      }
+    },
+    {
+      "mpn": "SS16HE3_B/H",
+      "references": [
+        "D502"
+      ],
+      "sides": {
+        "D502": "F.Cu"
+      },
+      "maximum_height_mm": 2.29,
+      "units": "mm",
+      "dimension": "SMA vertical dimension 0.078 to 0.090 inch (1.98 to 2.29 mm)",
+      "binding": "exact_SS16_family",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "analyses/assembly_handling/expanded_sources/vishay_ss12.pdf",
+      "source_sha256": "b32a2d93d2d2cf9f48d6cf678ab03713956b7501029c0424c6a554425df562da",
+      "source_page": 4,
+      "source_excerpt_or_table_field": "SMA vertical dimension 0.078 to 0.090 inch (1.98 to 2.29 mm)",
+      "note": "",
+      "prior_values_mm": {
+        "D502": null
+      }
+    },
+    {
+      "mpn": "PA1616D",
+      "references": [
+        "U401"
+      ],
+      "sides": {
+        "U401": "F.Cu"
+      },
+      "maximum_height_mm": 6.9,
+      "units": "mm",
+      "dimension": "Overall protrusion 6.7 mm; general dimension tolerance \u00b10.2 mm",
+      "binding": "exact_part",
+      "height_reference": "module_PCB_underside_to_highest_antenna_protrusion",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/pa1616d_v06.pdf",
+      "source_sha256": "63cbdfee0d66f2812fa3e85ba3a3d7c55bff96f2190f215949e97b3cf08b49cb",
+      "source_page": 7,
+      "source_excerpt_or_table_field": "Overall protrusion 6.7 mm; general dimension tolerance \u00b10.2 mm",
+      "note": "Visually reviewed.6.2 labels antenna-body level;6.7 labels tallest protrusion. No through-hole connector pin is included or assumed below the module PCB. Add assembled solder separation independently.",
+      "prior_values_mm": {
+        "U401": null
+      }
+    },
+    {
+      "mpn": "61300211121",
+      "references": [
+        "J202",
+        "J203"
+      ],
+      "sides": {
+        "J202": "F.Cu",
+        "J203": "F.Cu"
+      },
+      "maximum_height_mm": 8.94,
+      "units": "mm",
+      "dimension": "Conservative top = (11.54+0.20) \u2212 (3.0\u22120.20) = 8.94 mm",
+      "binding": "exact_part",
+      "height_reference": "insulator_seating_underside_to_pin_top",
+      "source_path": "baseline/GR86_CCA_RevB/evidence/manufacturer/wurth_61300211121.pdf",
+      "source_sha256": "a054dde42f94b42e1f34117df97a37071aa9e57febcb8375058a3fb7dbae6dbe",
+      "source_page": 1,
+      "source_excerpt_or_table_field": "Conservative top = (11.54+0.20) \u2212 (3.0\u22120.20) = 8.94 mm",
+      "note": "Visually reviewed. Total terminal length11.54\u00b10.20; lower pin3.0\u00b10.20. Body thickness is not the mapped bound. Lower-pin pre-PCB projection\u22643.20mm; subtract actual PCB minimum thickness to bound underside projection; solder and mounting gap remain separate.",
+      "prior_values_mm": {
+        "J202": null,
+        "J203": null
+      }
+    },
+    {
+      "mpn": "TPS3808G33QDBVRQ1",
+      "references": [
+        "U202"
+      ],
+      "sides": {
+        "U202": "B.Cu"
+      },
+      "maximum_height_mm": 1.45,
+      "units": "mm",
+      "dimension": "DBV0006A SOT-23 maximum height1.45mm",
+      "binding": "exact_DBV0006A_package_code",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "analyses/assembly_handling/height_targeted_sources/ti_tps3808_q1.pdf",
+      "source_sha256": "878d1dfe86ddc9da705fa77ee4fdbca73c96298e11c32e5a9fe6c50f1beea49a",
+      "source_page": 20,
+      "source_excerpt_or_table_field": "DBV0006A SOT-23 maximum height1.45mm",
+      "note": "Exact orderable TPS3808G33QDBVRQ1 is listed by the same Q1 datasheet; targeted primary lookup.",
+      "prior_values_mm": {
+        "U202": null
+      }
+    },
+    {
+      "mpn": "BZT52H-B15-QX",
+      "references": [
+        "D104"
+      ],
+      "sides": {
+        "D104": "F.Cu"
+      },
+      "maximum_height_mm": 1.2,
+      "units": "mm",
+      "dimension": "SOD123F overall vertical package thickness1.0 to1.2mm",
+      "binding": "exact_BZT52H_Q_SOD123F_family",
+      "height_reference": "seating_plane_to_package_top",
+      "source_path": "analyses/assembly_handling/height_targeted_sources/nexperia_bzt52h_q.pdf",
+      "source_sha256": "89f84801f512dac0e600ead726ca7877224865bafa03606ec06bdee198cf49e4",
+      "source_page": 11,
+      "source_excerpt_or_table_field": "SOD123F overall vertical package thickness1.0 to1.2mm",
+      "note": "Figure11 visually reviewed; nominal1.1mm is not used as maximum. Exact B15-Q is listed within the family;X is orderable packing suffix.",
+      "prior_values_mm": {
+        "D104": null
+      }
+    },
+    {
+      "mpn": "0430451200",
+      "references": [
+        "F1"
+      ],
+      "sides": {
+        "F1": "F.Cu"
+      },
+      "maximum_height_mm": 9.27,
+      "units": "mm",
+      "dimension": "Conservative header top = (7.37+0.25)+(1.40+0.25)=9.27mm",
+      "binding": "explicit_43045_1200_table_row",
+      "height_reference": "header_seating_plane_to_highest_latch",
+      "source_path": "analyses/assembly_handling/height_targeted_sources/molex_430451000.pdf",
+      "source_sha256": "a21af42bbbbbb171fbea4f63aa46a91bade5ef7864e470bcc055d5d185bee045",
+      "source_page": 1,
+      "source_excerpt_or_table_field": "Conservative header top = (7.37+0.25)+(1.40+0.25)=9.27mm",
+      "note": "SD-43045-001 H1 common drawing explicitly lists43045-1200(FinishA) and43045-1202(FinishC) in the same12-circuit row; geometry shared, plating differs.7.37 body plus1.40 top latch, both2decimal general\u00b10.25mm. Header only; mated plug and cable envelope separate. Lower terminal projection3.18\u00b10.25mm before deducting actual PCB thickness. Prior different-circuit-count exclusion was incorrect and superseded.",
+      "prior_values_mm": {
+        "F1": null
+      }
+    },
+    {
+      "mpn": "U.FL-R-SMT-1(80)",
+      "references": [
+        "J401"
+      ],
+      "sides": {
+        "J401": "B.Cu"
+      },
+      "maximum_height_mm": 1.45,
+      "units": "mm",
+      "dimension": "Overall height1.25\u00b10.20mm =1.45mm maximum",
+      "binding": "exact_part",
+      "height_reference": "seating_plane_to_connector_top",
+      "source_path": "analyses/assembly_handling/height_targeted_sources/hirose_ufl80_drawing.pdf",
+      "source_sha256": "f46ab46828eb13a48c6a46b1f9f164a4f7e7b3cd9d5202ee1e3d649eba5f5341",
+      "source_page": 1,
+      "source_excerpt_or_table_field": "Overall height1.25\u00b10.20mm =1.45mm maximum",
+      "note": "Exact public drawing EDC-302540-80-80,2017-06-27, visually reviewed. Separate1.2MAX callout controls center-contact resin only. Lead coplanarity\u22640.1mm is separately specified. Mated plug/cable routing and solder height are not this bare receptacle bound.",
+      "prior_values_mm": {
+        "J401": null
+      }
+    }
+  ],
+  "remaining_unknown": [],
+  "source_manifest": [
+    {
+      "path": "analyses/assembly_handling/expanded_sources/murata_lqw18as.pdf",
+      "sha256": "2bf7aab1b950b08c61d031785b2ee2a52e2987a43f2b1f2d6bb01b09d863ff48"
+    },
+    {
+      "path": "analyses/assembly_handling/expanded_sources/panasonic_era.pdf",
+      "sha256": "2ffb715174964a986d8cd22f38607a14465c938bb5ff9817e0948124ebb69a5b"
+    },
+    {
+      "path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E2C0G1H101J080AA.html",
+      "sha256": "ff30f86f476b673caf8b2d5ac619a7c3311f4256e3b35a0cea23b0aa622c6d07"
+    },
+    {
+      "path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E2C0G1H222J080AA.html",
+      "sha256": "eca5cac7dd4ce52568e78e5a6cad8f6176c56c409b09850ca501472807d66fb6"
+    },
+    {
+      "path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E2C0G2A332J080AA.html",
+      "sha256": "f6fbe1894e015e34e775ecda6f94984f0a7aeb23cb146022e2c01b9c3e189aac"
+    },
+    {
+      "path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E2X7R1H223K080AE.html",
+      "sha256": "95fc2abeebd2c1904907014de2d0ef41d30a63fe8138a9ae2e484b44e42ce90e"
+    },
+    {
+      "path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E2X7R2A103K080AE.html",
+      "sha256": "21e6d3e92c5013f6e479eff73b2c9d148de3672aff18d6c1b722811b34897973"
+    },
+    {
+      "path": "analyses/assembly_handling/expanded_sources/tdk_CGA3E3X7R1H224K080AB.html",
+      "sha256": "fbdef64662f0b5d2f37c4f3cfbd3358c9128918e838d3098fb0fb4b82db9c8c9"
+    },
+    {
+      "path": "analyses/assembly_handling/expanded_sources/tdk_CGA4J2X7R2A104K125AA.html",
+      "sha256": "f528dadbbfe1cebbd503edb2c5bdbdaca8cf71abaca974fe9da55c47b17158bf"
+    },
+    {
+      "path": "analyses/assembly_handling/expanded_sources/tdk_CGA6N3X7R2A225K230AB.html",
+      "sha256": "156dfc58b41e7ca5435a326f5648249ebee24b2abec1033a1c49de74b6297269"
+    },
+    {
+      "path": "analyses/assembly_handling/expanded_sources/vishay_ss12.pdf",
+      "sha256": "b32a2d93d2d2cf9f48d6cf678ab03713956b7501029c0424c6a554425df562da"
+    },
+    {
+      "path": "analyses/assembly_handling/height_targeted_sources/hirose_ufl80_drawing.pdf",
+      "sha256": "f46ab46828eb13a48c6a46b1f9f164a4f7e7b3cd9d5202ee1e3d649eba5f5341"
+    },
+    {
+      "path": "analyses/assembly_handling/height_targeted_sources/molex_430451000.pdf",
+      "sha256": "a21af42bbbbbb171fbea4f63aa46a91bade5ef7864e470bcc055d5d185bee045"
+    },
+    {
+      "path": "analyses/assembly_handling/height_targeted_sources/nexperia_bzt52h_q.pdf",
+      "sha256": "89f84801f512dac0e600ead726ca7877224865bafa03606ec06bdee198cf49e4"
+    },
+    {
+      "path": "analyses/assembly_handling/height_targeted_sources/ti_tps3808_q1.pdf",
+      "sha256": "878d1dfe86ddc9da705fa77ee4fdbca73c96298e11c32e5a9fe6c50f1beea49a"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/audit/productization/gps_close/tpd1e05u06.pdf",
+      "sha256": "c167cf1e72a5473a4d2c59b6a3c0251498701da05b7785919b9ceaae3b3e02c6"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/audit/productization/power_close/oil_parts/crcwhpe3.pdf",
+      "sha256": "2a69d35f97f45909f069bb7fc8a9eb51bc189621bf0cd9672dc39f6e61385b14"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/audit/productization/power_close/oil_parts/ksim_curve/C1210C106K5RACTU_specsheet.pdf",
+      "sha256": "c0e49a969c2866df7040f64ed92fe30db4c26e0cdf0a737b44390283cbfd5d0c"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/audit/productization/root/analog/PMEG2010BEA_manufacturer_JLCcopy.pdf",
+      "sha256": "83b565a214fead31bac0a71f137daa1ab6479c91fb2195272121f3128e695277"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/audit/productization/root/analog/Yageo_AA_manufacturer_JLCcopy.pdf",
+      "sha256": "1622e2ba6997cb0cc4b13229940c5276fd27bbd8b2a3eb9c5f48f951b5275bbe"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/crcw_e3.pdf",
+      "sha256": "1804e6a377018f1afcb80ea2ae6069c59157e7c1baf181eab053102f95a0d3b0"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/esd2can24_q1.pdf",
+      "sha256": "305b0aafdec918e96476fdf7a385cd2143e8b7664383842160c3ef1522d2bc5e"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/gcm188_100n.pdf",
+      "sha256": "5a29828795fe4b9b8282c7c7fc77e7859fd5e25a64e208257ed25be08ef2402a"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/gcm188_1u.pdf",
+      "sha256": "0f79179df5733be0f8754ee0cc563c7f10c1ebb7abfadee226e1a6163ffdbecd"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/kingbright_apt1608sgc.pdf",
+      "sha256": "3256acec755bc1983a85e4183d22de785a223d4ed97ea438d87f6f766bed8e31"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/lm5164_q1.pdf",
+      "sha256": "ee02bec80b1e5730ec1f64c5195330998cad6521af4bd3a53b9b7e425a90a246"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/lm63615_q1.pdf",
+      "sha256": "7222b3f5bc6892f2a19a110a985096c342dc70084df5bfe0cebc3b4fb59a7351"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/ltc4367.pdf",
+      "sha256": "b595ae2b72ddee6102afd1965ff2744e13c7981759f8cfcb7b1c02ca00bce530"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/mic5504.pdf",
+      "sha256": "ccd7fb69d16512749dfc3ddae750c3e763932df514742ec780bc87accc03a1f7"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/mss1246t.pdf",
+      "sha256": "887424ec32df41c18e2c6574ef5ad65f6e2e514dc7229bba52b8df1230f45591"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/opa2333_q1.pdf",
+      "sha256": "5b2303bfa21dd4304267eda840b683caf2b43792b3a4a4f025ba2277446277b6"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/pa1616d_v06.pdf",
+      "sha256": "63cbdfee0d66f2812fa3e85ba3a3d7c55bff96f2190f215949e97b3cf08b49cb"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/s5a.pdf",
+      "sha256": "e67f27c05e136d909b7ed2c989d2940097aa6726577b2661aa8d3861207118dc"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/smaj.pdf",
+      "sha256": "b8617e715805bb3293892c4636279eac57c1ef18e8c87a481cec1b802731b72d"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/smcj.pdf",
+      "sha256": "d9b1dafa25c0fa45eeb22fc4258fbdee3cafffb0bd14741e3cd9e35ea98f8e4c"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/sn74lvc2g125_q1.pdf",
+      "sha256": "c185786eda25c9e3d17f6777d7cd737901406b7ba6a0aaff2a06a00a5f393b58"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/std25nf20.pdf",
+      "sha256": "04284094809cf003dcb73c578886913da2d187d714b600294f680d2f9afab7cd"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tcan3403_q1.pdf",
+      "sha256": "b1f664b052f46baf09f312c1b667cbf36db2ce29ecc4644d5b41324b9e3cb399"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tnpw_e3.pdf",
+      "sha256": "d1ea9e15d83eaeb9f20fde2cf7be79c8e3a8cc2d4e825e648dd9eb126a65a842"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/tps2660.pdf",
+      "sha256": "b781cbce51984715771bde540df2b36404b4fae4b41e27166c84c19b6598e1de"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/wsl.pdf",
+      "sha256": "3cd1ffe15a236217fe3eefb0ad69304b164446264b4b70cb5bcbfeca2b3fa9c1"
+    },
+    {
+      "path": "baseline/GR86_CCA_RevB/evidence/manufacturer/wurth_61300211121.pdf",
+      "sha256": "a054dde42f94b42e1f34117df97a37071aa9e57febcb8375058a3fb7dbae6dbe"
+    },
+    {
+      "path": "lanes/oil_cap/Murata_GRM1885C1H103JA01D_manufacturer.pdf",
+      "sha256": "ce79a36f2dbd941b7f18ccf32e841bbd5f98e9e03f79941f08f2072b3c4b2c27"
+    }
+  ],
+  "clearance_interpretation": {
+    "reserved_depth_mm": 7,
+    "reference": "Minimum reserved clear depth from PCB bottomZ0 to any external hardware/enclosure under module/C206; not a literal carrier floor or global top-side limit.",
+    "C206_existing_max_body_mm": 4.3,
+    "C206_existing_stack_mm": {
+      "body": 4.3,
+      "solder": 0.25,
+      "capture": 0.51,
+      "warp": 0.75,
+      "deflection": 0.2
+    },
+    "C206_existing_margin_mm": 0.99,
+    "newly_bound_bottom_max_mm": 2.5,
+    "unknown_bottom_refs": [],
+    "finding": "No newly bounded underside body exceeds existing C2064.3mm maximum. Existing C2067mm stack is unchanged. All fitted underside components now have source maxima. Exact spatial placement, mounting/solder/warp stack and mated J401 cable geometry still require explicit assembled binding. A body maximum alone does not prove assembled collision clearance.",
+    "front_envelope": "Largest source-bound fitted front component top is F1 conservative9.27mm, compared with existing16mm gross top reserve;6.73mm gross height headroom before solder/mounting/warp/installation stack. U4016.9mm and L1214.8mm are newly bounded from prior null fields. This comparison does not prove XY or mated cable clearance.",
+    "front_reserve_source": {
+      "path": "lanes/mechanics/GR86_RVB_CARRIER_C03_THERMAL.scad",
+      "sha256": "4635493d51c00fbbd4befeb72014b7ebbbadb2c8e1999534400b9bae7e0dcf39",
+      "line": 32,
+      "expression": "translate([0,0,board_t])cube([94.454766,41.288863,16]);",
+      "board_t_mm": 1.6,
+      "top_reserve_mm": 16
+    },
+    "gross_front_component_max_mm": 9.27,
+    "gross_front_headroom_mm": 6.73
+  },
+  "source_corrections": [
+    {
+      "ref": "U401",
+      "previous_active_height_mm": null,
+      "new_max_height_mm": 6.9,
+      "reason": "Overall6.7\u00b10.2 includes highest antenna protrusion; using6.2 or6.4 as complete height would omit it."
+    },
+    {
+      "ref": "L121",
+      "previous_active_height_mm": null,
+      "new_max_height_mm": 4.8,
+      "reason": "4.6 is nominal with\u00b10.20 tolerance, not maximum."
+    }
+  ],
+  "targeted_lookup_provenance": "analyses/assembly_handling/height_targeted_sources/TARGETED_HEIGHT_SOURCE_REVIEW.json",
+  "supersedes": "analyses/assembly_handling/history_height_existing_sources_only/PRIMARY_BODY_HEIGHT_ADDENDUM.json",
+  "checks": {
+    "all_mappings_are_fitted": true,
+    "no_duplicate_reference": true,
+    "all_sources_exist_and_hashed": true,
+    "no_prior_maximum_overwritten": true,
+    "classification_covers_all_fitted": true,
+    "no_full_solids_claim": true
+  },
+  "targeted_lookup_provenance_sha256": "4dd94b6dcaa864539ad3cf9d2379b2154cbe7ced1d45326e750d43675f050286"
+}

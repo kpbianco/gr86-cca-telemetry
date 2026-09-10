@@ -1,0 +1,112 @@
+{
+  "native_source_run": 34390225876,
+  "native_findings": 12,
+  "items": [
+    {
+      "reference": "C154",
+      "previous_library_item": "C_0603_1608Metric",
+      "proposed_library_item": "C_0603_1608Metric_RVB22_C154",
+      "path": "RevB_variants.pretty/C_0603_1608Metric_RVB22_C154.kicad_mod",
+      "sha256": "9c580f28840a78576acd1b62b1b1cba3d74d5a3577a0dff1f2c59068acd034bb",
+      "bytes": 4440
+    },
+    {
+      "reference": "C205",
+      "previous_library_item": "C_0603_1608Metric",
+      "proposed_library_item": "C_0603_1608Metric_RVB22_C205",
+      "path": "RevB_variants.pretty/C_0603_1608Metric_RVB22_C205.kicad_mod",
+      "sha256": "051830f9d3bfc858d802c1cfc0c4658a9f61e11ff4113dcb6a4bcef313ad38e2",
+      "bytes": 2553
+    },
+    {
+      "reference": "C206",
+      "previous_library_item": "KEMET_T598_X_7343_Median",
+      "proposed_library_item": "KEMET_T598_X_7343_Median_RVB22_C206",
+      "path": "RevB_variants.pretty/KEMET_T598_X_7343_Median_RVB22_C206.kicad_mod",
+      "sha256": "946965627285900b2da21d8dd6d138daa89184602e6e05666527adfcfdbd3c07",
+      "bytes": 3635
+    },
+    {
+      "reference": "D103",
+      "previous_library_item": "D_SMC",
+      "proposed_library_item": "D_SMC_RVB22_D103",
+      "path": "RevB_variants.pretty/D_SMC_RVB22_D103.kicad_mod",
+      "sha256": "e944bb83714e7c8bcd1b95c36a43a4f16cc250dbcd1532af8c0a2660ec1c28a8",
+      "bytes": 5327
+    },
+    {
+      "reference": "F1",
+      "previous_library_item": "Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal",
+      "proposed_library_item": "Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1",
+      "path": "RevB_variants.pretty/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.kicad_mod",
+      "sha256": "eb17804bae971b3edbfce7538b6d9ca6adfb8253f2d013c09ae9dfca5e382721",
+      "bytes": 8593
+    },
+    {
+      "reference": "L121",
+      "previous_library_item": "Coilcraft_MSS1246T_12x12",
+      "proposed_library_item": "Coilcraft_MSS1246T_12x12_RVB22_L121",
+      "path": "RevB_variants.pretty/Coilcraft_MSS1246T_12x12_RVB22_L121.kicad_mod",
+      "sha256": "4bf963e11b14de5baf55b4fdeb84ca6c6116f91f6f19c6eed45241200882ac5f",
+      "bytes": 2742
+    },
+    {
+      "reference": "R155",
+      "previous_library_item": "R_0603_1608Metric",
+      "proposed_library_item": "R_0603_1608Metric_RVB22_R155",
+      "path": "RevB_variants.pretty/R_0603_1608Metric_RVB22_R155.kicad_mod",
+      "sha256": "e2c1b1fa6c2a4a362b3b9c8bc5aa63fc553a5f4abbcb9a70cdbad6314a5db984",
+      "bytes": 2761
+    },
+    {
+      "reference": "R156",
+      "previous_library_item": "R_0603_1608Metric",
+      "proposed_library_item": "R_0603_1608Metric_RVB22_R156",
+      "path": "RevB_variants.pretty/R_0603_1608Metric_RVB22_R156.kicad_mod",
+      "sha256": "c988e91b0a93d27ebdceb48a575c1610de8a547bf2b26d1f2308d7da0af1d500",
+      "bytes": 2754
+    },
+    {
+      "reference": "R157",
+      "previous_library_item": "R_0603_1608Metric",
+      "proposed_library_item": "R_0603_1608Metric_RVB22_R157",
+      "path": "RevB_variants.pretty/R_0603_1608Metric_RVB22_R157.kicad_mod",
+      "sha256": "52c235ba08f95cffae8b6237c368adea02dfbbad7a86f38f0f49ef00bf3d6265",
+      "bytes": 2726
+    },
+    {
+      "reference": "R203",
+      "previous_library_item": "R_0603_1608Metric",
+      "proposed_library_item": "R_0603_1608Metric_RVB22_R203",
+      "path": "RevB_variants.pretty/R_0603_1608Metric_RVB22_R203.kicad_mod",
+      "sha256": "6fe7ba12a47c15297096e710e5e97fa2f15b6779667974b9b250579b3714e64c",
+      "bytes": 2524
+    },
+    {
+      "reference": "U151",
+      "previous_library_item": "HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm",
+      "proposed_library_item": "HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151",
+      "path": "RevB_variants.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.kicad_mod",
+      "sha256": "d747bfc68115a30d91ff8278ac011f7663975eb5208a08160c3362215826de77",
+      "bytes": 8216
+    },
+    {
+      "reference": "U201",
+      "previous_library_item": "ESP32-S3-WROOM-1",
+      "proposed_library_item": "ESP32-S3-WROOM-1_RVB22_U201",
+      "path": "RevB_variants.pretty/ESP32-S3-WROOM-1_RVB22_U201.kicad_mod",
+      "sha256": "c5b6b58e13372539f45801d259ac3524ec636e2d903bd6338d87eadf600e1dc9",
+      "bytes": 16404
+    }
+  ],
+  "retained_cross_domain_redlines": [
+    "12 footprint-library mismatches",
+    "Duplicate/backtracking inner-rail branch causes dangling warning",
+    "Four missing referenced models and complete fitted model coverage",
+    "T01 maximum bow produces four possible component interferences",
+    "T01 actual bend exceeds RF extent assumption",
+    "Native thermal mesh/package closure",
+    "Affected power/return/RF regression and full criteria reconciliation"
+  ],
+  "scope": "Library reconciliation changes identity only; no physical geometry change or global acceptance implied."
+}

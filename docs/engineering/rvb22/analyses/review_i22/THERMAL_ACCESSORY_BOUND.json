@@ -1,0 +1,18 @@
+{
+  "status": "PASSIVE_COOLING_CANNOT_CLOSE_851_TEMPERATURE_CONFLICT",
+  "minimum_boundary_C": 65,
+  "declared_air_C": 65,
+  "landing_C": 70,
+  "adapter_operating_ceiling_C": 60,
+  "minimum_shortfall_K": 5,
+  "argument": "For conductancesG>=0 and nonnegative heat, sum(G*(T-Tneighbor))+film(T-Tair)=Q>=0. A temperature below all boundaries at a global minimum makes the left side negative. Therefore Tmin>=65C for this passive steady-state case.",
+  "applicability": "No external source below65C, active refrigeration, evaporative cooling or transient thermal storage is assumed. The result does not assert actual dashboard air temperature.",
+  "design_action": "Keep851 selected but temperature qualification blocked. A verified lower installation/cable environment or an assembly rating covering the declared environment is required; contact optimization alone is insufficient.",
+  "existing_fine_model_J401_bottom_region_C": [
+    92.4376018757432,
+    94.44325055275478
+  ],
+  "map_sha256": "3a03f17e1910ab88fb925aaf454c1f82e76c72440da4cf191cfafcaa628b1a5e",
+  "temperature_is_board_region_not_cable_or_connector": true,
+  "existing_thermal_result_not_superseded": "I21 fine mesh still143.800C maximum board region. No new cooling design or package-temperature pass is claimed."
+}

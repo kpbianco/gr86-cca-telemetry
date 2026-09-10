@@ -1,0 +1,48 @@
+{
+  "status": "PASS_CURRENT_SOURCE_AND_EXPORT_EFFECTIVITY",
+  "source_PCB_sha256": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+  "filled_PCB_sha256": "62c08e7050fe95df0a576ece85a051b4049e9684bf8ea5f73e8949657363276b",
+  "I18_to_I20_native_geometry_parity": {
+    "segment": true,
+    "via": true,
+    "zone": true,
+    "gr_line": true,
+    "gr_arc": true,
+    "gr_poly": true
+  },
+  "native_UUID_exclusion": "Native KiCad generates random UUIDs for source mounting courtyard circles that lacked IDs. UUIDs alone are excluded from geometry comparisons; every coordinate, layer, stroke, fill, pad and model remains compared.",
+  "all_component_pad_position_model_geometry_equal": true,
+  "RF_model_signal_route_identity": true,
+  "fitted_BOM_count": 153,
+  "BOM_field_checks": [
+    "Reference",
+    "Value",
+    "MPN",
+    "Manufacturer",
+    "LCSC",
+    "Quantity",
+    "Footprint"
+  ],
+  "position_rows": 151,
+  "position_XY_rotation_side_value_parity": true,
+  "position_datum_mm": [
+    0,
+    41.288863
+  ],
+  "position_convention": "X=PCB X; exported Y=41.288863-PCB Y; rotation equals native footprint angle modulo360; bottom components require bottom-view interpretation, not an extra electrical mirror.",
+  "position_manual_exceptions": {
+    "F101": "Factory late/local operation; excluded from global placement/paste by the controlled assembly sequence.",
+    "U401": "PA1616D module handling uses the specified local/manual operation; excluded from automatic placement output."
+  },
+  "TranquilWorks_native_polygon_difference_mm2": 9.815767469464494e-06,
+  "firmware_host_test_source_files_match_current_target_sources": 22,
+  "firmware_manifest_sha256": "3cc361dbe9ed9dd112bf889d5a3bece277ac45287a5348ebc2ab4255bf74a90f",
+  "model_carry_forward": {
+    "thermal": "I18 native filled copper, pad/position, board outline and material geometry are identical to I20. I19 divider increases total bias dissipation by less0.5mW, within the4.815W source allocation margin. Package/mounting assumptions remain conditional.",
+    "oil": "Input_Protection/Oil_Pressure/CAN/GPS electrical source unchanged except current library qualification in predecessor revisions. New3V3 source bounds are narrower than the modeled regulator interval; local rail stays within3.11605..3.6V allocated oil/logic bounds. Excitation/ADC/private-die conditions remain explicit.",
+    "RF": "Signal route/parts/lands unchanged; I16/I17 moved power away from the RF reference; I18 branch is remote. Actual native reference check and finite-ground allowance are current.",
+    "firmware": "Exact recovered host-test source hashes match the current target build; target execution/phone behavior and actual unit calibration remain unmeasured.",
+    "mechanics": "I18 placement retained; TNPU0603 max-body dimensions are inside prior checked bounds. C05/W02/T03 and37-probe access checks apply."
+  },
+  "physical_measurement_claimed": false
+}

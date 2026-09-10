@@ -1,0 +1,46 @@
+{
+  "status": "TARGET_BUILD_VERIFIED_NO_TARGET_EXECUTION",
+  "source_matches_current_candidate": true,
+  "cad_matches_current_candidate": true,
+  "pinned_dependencies": {
+    "kicad_9_0_9_and_bindings": true,
+    "pinned_firmware_dependencies": true
+  },
+  "run_id": 34377626896,
+  "commit": "740c612233b39573121dc26cb9e47ea703fb9973",
+  "compiler_exit_code": 0,
+  "images": {
+    "elf": {
+      "bytes": 12757508,
+      "sha256": "5bbc2e5a13ec15165144c78102101a2370a9af338b3f56758c19543721160361"
+    },
+    "app_bin": {
+      "bytes": 683856,
+      "sha256": "5733442b4f66b6ec2ec60ce9e3fc9823fb709a0ddd5bf643f10bdd0027a11880"
+    }
+  },
+  "artifact_zip_sha256": "b444313770c406e7cac2e18becd27df2f7f398f25cd56dfc67e321e86ee16ac7",
+  "no_flash_or_device_port_use": true,
+  "limits": [
+    "Build verification does not establish real-time target behavior, RF, or vehicle qualification",
+    "PCB load failed before fill/ERC/DRC in this run"
+  ],
+  "static_link_memory": {
+    "program_bytes": 683703,
+    "program_limit_bytes": 3342336,
+    "global_bytes": 47884,
+    "remaining_static_RAM_bytes": 279796,
+    "RAM_limit_bytes": 327680,
+    "runtime_heap_stack_peak_proven": false
+  },
+  "compiler_warnings": {
+    "total": 44,
+    "by_header": {
+      "gpspi_flash_ll.h": 23,
+      "spimem_flash_ll.h": 15,
+      "cdc_host.h": 6
+    },
+    "project_source_warnings": [],
+    "scope": "44 vendor-header missing-field-initializer warnings are retained. A successful compile is not described as warning-free."
+  }
+}

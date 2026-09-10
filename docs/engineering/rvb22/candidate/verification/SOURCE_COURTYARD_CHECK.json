@@ -1,0 +1,11 @@
+{
+  "baseline_sha256": "d0b78f5d91297a07ee3783d0d1e3ae3d66c71459b2ed2c9669c8780bac7624cc",
+  "candidate_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "scope": "Closed same-side footprint courtyards; no body/height/native assembly claim",
+  "baseline_courtyards": 152,
+  "candidate_courtyards": 158,
+  "unparsed_baseline": [],
+  "unparsed_candidate": [],
+  "new_or_increased_overlaps": [],
+  "status": "PASS_SCOPED_SOURCE_SCREEN"
+}

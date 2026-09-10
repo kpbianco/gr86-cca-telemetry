@@ -1,0 +1,66 @@
+{
+  "status": "PASS_INDEPENDENT_SOURCE_PREFLIGHT_NATIVE_REQUIRED",
+  "source_before_sha256": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+  "source_after_sha256": "44121c54ce49ace9c82404726706ef8a8f582ad63a9dad0a29bdd99aa0cad5db",
+  "removed_segments": 205,
+  "added_segments": 46,
+  "changed_nets": [
+    "LED_BLE",
+    "LED_CAN",
+    "LED_PWR"
+  ],
+  "all_nonsegment_objects_exact": true,
+  "unchanged_segment_objects_exact": true,
+  "new_clearance_regressions": [],
+  "lost_explicit_pad_groups": [],
+  "trace_current_screen_A": 0.02,
+  "trace_copper_min_um": 24,
+  "trace_resistivity_ohm_m": 4e-08,
+  "trace_rows": [
+    {
+      "net": "LED_BLE",
+      "old_layer": "In1.Cu",
+      "new_layer": "In2.Cu",
+      "old_length_mm": 64.34751801064718,
+      "new_length_mm": 78.73158005400377,
+      "old_R_hot_ohm": 0.5362293167553931,
+      "new_R_hot_ohm": 0.6560965004500314,
+      "added_drop_at20mA_V": 0.002397343673892766,
+      "added_heat_at20mA_W": 4.794687347785532e-05
+    },
+    {
+      "net": "LED_PWR",
+      "old_layer": "In1.Cu",
+      "new_layer": "In1.Cu",
+      "old_length_mm": 43.240916292848986,
+      "new_length_mm": 43.323759005323595,
+      "old_R_hot_ohm": 0.36034096910707486,
+      "new_R_hot_ohm": 0.36103132504436325,
+      "added_drop_at20mA_V": 1.3807118745768322e-05,
+      "added_heat_at20mA_W": 2.7614237491536645e-07
+    },
+    {
+      "net": "LED_CAN",
+      "old_layer": "In1.Cu",
+      "new_layer": "In2.Cu",
+      "old_length_mm": 60.798159695877054,
+      "new_length_mm": 97.43879143724298,
+      "old_R_hot_ohm": 0.5066513307989755,
+      "new_R_hot_ohm": 0.8119899286436916,
+      "added_drop_at20mA_V": 0.006106771956894321,
+      "added_heat_at20mA_W": 0.00012213543913788642
+    }
+  ],
+  "total_added_indicator_trace_heat_W": 0.00017035845499065711,
+  "source_DRC_rules_sha256": "156050fc0fd321f299a2db28d9cda78f453029e537d201247cc71d9abf7d65da",
+  "net_specific_minimum_clearances_mm": {
+    "protected": 0.2999999999999972,
+    "raw": 0.6606601717798243
+  },
+  "net_specific_clearance_findings": [],
+  "track_keepout_polygons_checked": 7,
+  "new_track_keepout_hits": [],
+  "native_required": true,
+  "thermal_and_filled_ground_model_required": true,
+  "physical_test_claimed": false
+}

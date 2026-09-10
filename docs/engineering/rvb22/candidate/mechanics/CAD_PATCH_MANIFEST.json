@@ -1,0 +1,22 @@
+{
+  "reconstructed_after_shared_workspace_loss": true,
+  "stage": "all",
+  "input_sha256": "88a0041e4202bdf485f53f8e2b97a48436fd2192f59685bc2feecee5568f910d",
+  "output_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "output_file": "/workspace/scratch/76a6bb0577cc/work/rvb22/iterations/I04_compact_shunt/mechanical_kicad/GR86_CCA_RevB.kicad_pcb",
+  "all_original_tracks_arcs_vias_preserved": true,
+  "all_original_nonF101_footprints_preserved": true,
+  "F101_only_paste_metadata_changed": true,
+  "native_fill_required": true,
+  "old_area_preserved_mm2_error": 4.237765305269148e-10,
+  "board_bounds_mm": [
+    0.0,
+    -10.0,
+    88.254766,
+    51.275846143
+  ],
+  "board_size_mm": [
+    88.254766,
+    61.275846143
+  ]
+}

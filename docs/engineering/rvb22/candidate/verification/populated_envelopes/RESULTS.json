@@ -1,0 +1,4607 @@
+{
+  "status": "CONDITIONAL_CONSERVATIVE_PRISM_SCREEN",
+  "pcb_sha256": "95ec9fca6a90460d0bcadbebdbf453bce36df15ef4e840a56b4a941985af4375",
+  "height_addendum_sha256": "7fdd606347fd74861dc3994a18d9bf8fe090e02b338c074a8d3502b6fb382bce",
+  "fitted_count": 153,
+  "xy_assumption": "Each complete manufactured body/lead/solder envelope lies within the source courtyard plus0.3mm. Not a guaranteed manufacturer XY bound.",
+  "mount_stack_mm": {
+    "solder": 0.25,
+    "capture": 0.51,
+    "warp": 0.75,
+    "deflection": 0.2
+  },
+  "body_rows": [
+    {
+      "ref": "R126",
+      "side": "F.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        45.77,
+        35.02,
+        47.82999999999999,
+        38.57999999999999
+      ]
+    },
+    {
+      "ref": "C204",
+      "side": "F.Cu",
+      "height_max_mm": 2.7,
+      "courtyard_plus0p3_bounds_mm": [
+        81.2,
+        3.8999999999999995,
+        86.39999999999999,
+        7.7
+      ]
+    },
+    {
+      "ref": "D606",
+      "side": "F.Cu",
+      "height_max_mm": 0.85,
+      "courtyard_plus0p3_bounds_mm": [
+        30.22,
+        1.97,
+        33.779999999999994,
+        4.03
+      ]
+    },
+    {
+      "ref": "R403",
+      "side": "F.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        74.72,
+        10.77,
+        78.28,
+        12.830000000000002
+      ]
+    },
+    {
+      "ref": "R604",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        24.97,
+        4.22,
+        27.03,
+        7.78
+      ]
+    },
+    {
+      "ref": "R110",
+      "side": "F.Cu",
+      "height_max_mm": 0.889,
+      "courtyard_plus0p3_bounds_mm": [
+        29.179999999999996,
+        12.279999,
+        33.62,
+        20.519999000000002
+      ]
+    },
+    {
+      "ref": "C202",
+      "side": "F.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        84.47,
+        9.02,
+        86.53,
+        12.580000000000002
+      ]
+    },
+    {
+      "ref": "R124",
+      "side": "F.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        50.970000000000006,
+        26.919999999999998,
+        53.029999999999994,
+        30.48
+      ]
+    },
+    {
+      "ref": "D604",
+      "side": "F.Cu",
+      "height_max_mm": 0.85,
+      "courtyard_plus0p3_bounds_mm": [
+        24.22,
+        1.97,
+        27.78,
+        4.03
+      ]
+    },
+    {
+      "ref": "D511",
+      "side": "F.Cu",
+      "height_max_mm": 1.1,
+      "courtyard_plus0p3_bounds_mm": [
+        85.60000000000001,
+        32.95,
+        88.2,
+        37.25
+      ]
+    },
+    {
+      "ref": "C523",
+      "side": "F.Cu",
+      "height_max_mm": 0.95,
+      "courtyard_plus0p3_bounds_mm": [
+        80.77,
+        32.52,
+        82.83,
+        36.07999999999999
+      ]
+    },
+    {
+      "ref": "U201",
+      "side": "F.Cu",
+      "height_max_mm": 3.25,
+      "courtyard_plus0p3_bounds_mm": [
+        67.754766,
+        -1.3000000000000018,
+        109.554766,
+        47.3
+      ]
+    },
+    {
+      "ref": "C506",
+      "side": "F.Cu",
+      "height_max_mm": 2.8,
+      "courtyard_plus0p3_bounds_mm": [
+        13.6,
+        19.3,
+        18.900000000000002,
+        23.2
+      ]
+    },
+    {
+      "ref": "R128",
+      "side": "F.Cu",
+      "height_max_mm": 0.6,
+      "courtyard_plus0p3_bounds_mm": [
+        65.42,
+        36.580000000000005,
+        70.58,
+        39.419999999999995
+      ]
+    },
+    {
+      "ref": "D502",
+      "side": "F.Cu",
+      "height_max_mm": 2.29,
+      "courtyard_plus0p3_bounds_mm": [
+        14.7,
+        8.7,
+        22.3,
+        12.8
+      ]
+    },
+    {
+      "ref": "R603",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        21.97,
+        4.22,
+        24.03,
+        7.78
+      ]
+    },
+    {
+      "ref": "C128",
+      "side": "F.Cu",
+      "height_max_mm": 2.7,
+      "courtyard_plus0p3_bounds_mm": [
+        60.400000000000006,
+        36.1,
+        65.6,
+        39.9
+      ]
+    },
+    {
+      "ref": "R125",
+      "side": "F.Cu",
+      "height_max_mm": 0.6,
+      "courtyard_plus0p3_bounds_mm": [
+        42.88,
+        32.42,
+        45.71999999999999,
+        37.58
+      ]
+    },
+    {
+      "ref": "U403",
+      "side": "F.Cu",
+      "height_max_mm": 1.45,
+      "courtyard_plus0p3_bounds_mm": [
+        36.650000000000006,
+        4.0,
+        41.349999999999994,
+        8.0
+      ]
+    },
+    {
+      "ref": "R201",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        77.72,
+        10.669999999999998,
+        81.28,
+        12.73
+      ]
+    },
+    {
+      "ref": "D522",
+      "side": "F.Cu",
+      "height_max_mm": 1.1,
+      "courtyard_plus0p3_bounds_mm": [
+        80.5,
+        35.85,
+        83.1,
+        40.15
+      ]
+    },
+    {
+      "ref": "R402",
+      "side": "F.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        71.72,
+        10.77,
+        75.28,
+        12.830000000000002
+      ]
+    },
+    {
+      "ref": "R121",
+      "side": "F.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        42.970000000000006,
+        29.02,
+        45.029999999999994,
+        32.58
+      ]
+    },
+    {
+      "ref": "D104",
+      "side": "F.Cu",
+      "height_max_mm": 1.2,
+      "courtyard_plus0p3_bounds_mm": [
+        39.550000000000004,
+        29.3,
+        42.449999999999996,
+        34.3
+      ]
+    },
+    {
+      "ref": "J202",
+      "side": "F.Cu",
+      "height_max_mm": 8.94,
+      "courtyard_plus0p3_bounds_mm": [
+        3.9000000000000004,
+        36.400000000000006,
+        10.65,
+        40.599999999999994
+      ]
+    },
+    {
+      "ref": "C125",
+      "side": "F.Cu",
+      "height_max_mm": 1.0,
+      "courtyard_plus0p3_bounds_mm": [
+        51.370000000000005,
+        30.519999,
+        53.42999999999999,
+        34.079998999999994
+      ]
+    },
+    {
+      "ref": "C401",
+      "side": "F.Cu",
+      "height_max_mm": 2.7,
+      "courtyard_plus0p3_bounds_mm": [
+        33.0,
+        4.4,
+        36.8,
+        9.600000000000001
+      ]
+    },
+    {
+      "ref": "C504",
+      "side": "F.Cu",
+      "height_max_mm": 2.8,
+      "courtyard_plus0p3_bounds_mm": [
+        20.05,
+        21.599999999999998,
+        23.95,
+        26.900000000000002
+      ]
+    },
+    {
+      "ref": "F101",
+      "side": "F.Cu",
+      "height_max_mm": 2.9,
+      "courtyard_plus0p3_bounds_mm": [
+        1.3300000000000007,
+        28.32,
+        18.669999999999998,
+        36.68
+      ]
+    },
+    {
+      "ref": "J203",
+      "side": "F.Cu",
+      "height_max_mm": 8.94,
+      "courtyard_plus0p3_bounds_mm": [
+        10.899999999999999,
+        36.400000000000006,
+        17.650000000000002,
+        40.599999999999994
+      ]
+    },
+    {
+      "ref": "R404",
+      "side": "F.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        53.720000000000006,
+        18.57,
+        57.279999999999994,
+        20.630000000000003
+      ]
+    },
+    {
+      "ref": "D605",
+      "side": "F.Cu",
+      "height_max_mm": 0.85,
+      "courtyard_plus0p3_bounds_mm": [
+        27.22,
+        1.97,
+        30.78,
+        4.03
+      ]
+    },
+    {
+      "ref": "C402",
+      "side": "F.Cu",
+      "height_max_mm": 2.7,
+      "courtyard_plus0p3_bounds_mm": [
+        41.1,
+        4.4,
+        44.9,
+        9.600000000000001
+      ]
+    },
+    {
+      "ref": "R606",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        30.97,
+        4.22,
+        33.029999999999994,
+        7.78
+      ]
+    },
+    {
+      "ref": "R202",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        68.22,
+        33.57000000000001,
+        71.78,
+        35.629999999999995
+      ]
+    },
+    {
+      "ref": "R602",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        18.97,
+        4.22,
+        21.03,
+        7.78
+      ]
+    },
+    {
+      "ref": "R123",
+      "side": "F.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        47.620000000000005,
+        29.669999999999998,
+        51.17999999999999,
+        31.73
+      ]
+    },
+    {
+      "ref": "U402",
+      "side": "F.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        62.75,
+        18.05,
+        67.85,
+        21.150000000000002
+      ]
+    },
+    {
+      "ref": "D512",
+      "side": "F.Cu",
+      "height_max_mm": 1.1,
+      "courtyard_plus0p3_bounds_mm": [
+        82.7,
+        35.85,
+        85.3,
+        40.15
+      ]
+    },
+    {
+      "ref": "R601",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        15.969999999999999,
+        4.22,
+        18.03,
+        7.78
+      ]
+    },
+    {
+      "ref": "C513",
+      "side": "F.Cu",
+      "height_max_mm": 0.95,
+      "courtyard_plus0p3_bounds_mm": [
+        83.87,
+        32.52,
+        85.93,
+        36.07999999999999
+      ]
+    },
+    {
+      "ref": "C403",
+      "side": "F.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        42.77,
+        0.6199999999999999,
+        44.82999999999999,
+        4.18
+      ]
+    },
+    {
+      "ref": "C103",
+      "side": "F.Cu",
+      "height_max_mm": 2.5,
+      "courtyard_plus0p3_bounds_mm": [
+        23.7,
+        19.099999999999998,
+        28.900000000000002,
+        22.900000000000002
+      ]
+    },
+    {
+      "ref": "R111",
+      "side": "F.Cu",
+      "height_max_mm": 0.6,
+      "courtyard_plus0p3_bounds_mm": [
+        23.419999999999998,
+        36.580000000000005,
+        28.580000000000002,
+        39.419999999999995
+      ]
+    },
+    {
+      "ref": "R401",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        34.720000000000006,
+        9.169999999999998,
+        38.279999999999994,
+        11.23
+      ]
+    },
+    {
+      "ref": "C123",
+      "side": "F.Cu",
+      "height_max_mm": 1.45,
+      "courtyard_plus0p3_bounds_mm": [
+        40.870000000000005,
+        22.8,
+        43.42999999999999,
+        26.8
+      ]
+    },
+    {
+      "ref": "D103",
+      "side": "F.Cu",
+      "height_max_mm": 2.62,
+      "courtyard_plus0p3_bounds_mm": [
+        32.300000000000004,
+        33.85,
+        42.699999999999996,
+        41.15
+      ]
+    },
+    {
+      "ref": "R405",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        26.97,
+        10.419999999999998,
+        29.03,
+        13.98
+      ]
+    },
+    {
+      "ref": "R507",
+      "side": "F.Cu",
+      "height_max_mm": 0.7,
+      "courtyard_plus0p3_bounds_mm": [
+        13.379999999999999,
+        13.28,
+        21.62,
+        17.720000000000002
+      ]
+    },
+    {
+      "ref": "U121",
+      "side": "F.Cu",
+      "height_max_mm": 1.7,
+      "courtyard_plus0p3_bounds_mm": [
+        42.975,
+        23.5,
+        51.025,
+        29.5
+      ]
+    },
+    {
+      "ref": "D401",
+      "side": "F.Cu",
+      "height_max_mm": 0.85,
+      "courtyard_plus0p3_bounds_mm": [
+        28.22,
+        8.469999999999999,
+        31.78,
+        10.530000000000001
+      ]
+    },
+    {
+      "ref": "U404",
+      "side": "F.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        57.45,
+        18.05,
+        62.55,
+        21.150000000000002
+      ]
+    },
+    {
+      "ref": "D602",
+      "side": "F.Cu",
+      "height_max_mm": 0.85,
+      "courtyard_plus0p3_bounds_mm": [
+        18.22,
+        1.97,
+        21.78,
+        4.03
+      ]
+    },
+    {
+      "ref": "C405",
+      "side": "F.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        54.02,
+        20.47,
+        57.57999999999999,
+        22.53
+      ]
+    },
+    {
+      "ref": "D601",
+      "side": "F.Cu",
+      "height_max_mm": 0.85,
+      "courtyard_plus0p3_bounds_mm": [
+        15.219999999999999,
+        1.97,
+        18.78,
+        4.03
+      ]
+    },
+    {
+      "ref": "C201",
+      "side": "F.Cu",
+      "height_max_mm": 2.7,
+      "courtyard_plus0p3_bounds_mm": [
+        75.9,
+        7.1000000000000005,
+        81.1,
+        10.9
+      ]
+    },
+    {
+      "ref": "D521",
+      "side": "F.Cu",
+      "height_max_mm": 1.1,
+      "courtyard_plus0p3_bounds_mm": [
+        78.2,
+        32.95,
+        80.8,
+        37.25
+      ]
+    },
+    {
+      "ref": "C505",
+      "side": "F.Cu",
+      "height_max_mm": 2.8,
+      "courtyard_plus0p3_bounds_mm": [
+        18.599999999999998,
+        18.05,
+        23.900000000000002,
+        21.95
+      ]
+    },
+    {
+      "ref": "R605",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        27.97,
+        4.22,
+        30.03,
+        7.78
+      ]
+    },
+    {
+      "ref": "C126",
+      "side": "F.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        47.620000000000005,
+        34.17000000000001,
+        51.17999999999999,
+        36.23
+      ]
+    },
+    {
+      "ref": "R109",
+      "side": "F.Cu",
+      "height_max_mm": 0.6,
+      "courtyard_plus0p3_bounds_mm": [
+        32.78000000000001,
+        20.419999999999998,
+        35.62,
+        25.580000000000002
+      ]
+    },
+    {
+      "ref": "U401",
+      "side": "F.Cu",
+      "height_max_mm": 6.9,
+      "courtyard_plus0p3_bounds_mm": [
+        45.150000000000006,
+        0.45,
+        63.849999999999994,
+        17.55
+      ]
+    },
+    {
+      "ref": "L121",
+      "side": "F.Cu",
+      "height_max_mm": 4.8,
+      "courtyard_plus0p3_bounds_mm": [
+        53.2,
+        22.45,
+        66.8,
+        35.55
+      ]
+    },
+    {
+      "ref": "C404",
+      "side": "F.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        65.97,
+        14.52,
+        68.03,
+        18.080000000000002
+      ]
+    },
+    {
+      "ref": "C121",
+      "side": "F.Cu",
+      "height_max_mm": 2.5,
+      "courtyard_plus0p3_bounds_mm": [
+        37.1,
+        18.799999999999997,
+        40.9,
+        24.0
+      ]
+    },
+    {
+      "ref": "D603",
+      "side": "F.Cu",
+      "height_max_mm": 0.85,
+      "courtyard_plus0p3_bounds_mm": [
+        21.22,
+        1.97,
+        24.78,
+        4.03
+      ]
+    },
+    {
+      "ref": "D101",
+      "side": "F.Cu",
+      "height_max_mm": 2.62,
+      "courtyard_plus0p3_bounds_mm": [
+        18.2,
+        28.849999999999998,
+        28.599999999999998,
+        36.15
+      ]
+    },
+    {
+      "ref": "Q101",
+      "side": "F.Cu",
+      "height_max_mm": 2.4,
+      "courtyard_plus0p3_bounds_mm": [
+        28.289998999999998,
+        25.2,
+        39.989999,
+        32.8
+      ]
+    },
+    {
+      "ref": "R122",
+      "side": "F.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        47.42,
+        31.749999999999996,
+        51.379999999999995,
+        34.25
+      ]
+    },
+    {
+      "ref": "F1",
+      "side": "F.Cu",
+      "height_max_mm": 9.27,
+      "courtyard_plus0p3_bounds_mm": [
+        -1.4199999999999993,
+        4.120000000000001,
+        12.850000000000003,
+        27.88
+      ]
+    },
+    {
+      "ref": "R127",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        45.77,
+        29.52,
+        47.82999999999999,
+        33.08
+      ]
+    },
+    {
+      "ref": "C124",
+      "side": "F.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        50.57000000000001,
+        23.32,
+        52.629999999999995,
+        26.880000000000003
+      ]
+    },
+    {
+      "ref": "C127",
+      "side": "F.Cu",
+      "height_max_mm": 2.7,
+      "courtyard_plus0p3_bounds_mm": [
+        55.400000000000006,
+        36.1,
+        60.599999999999994,
+        39.9
+      ]
+    },
+    {
+      "ref": "R511",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        80.61999999999999,
+        37.35,
+        84.58,
+        39.85
+      ]
+    },
+    {
+      "ref": "C511",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        77.22,
+        34.470000000000006,
+        80.78,
+        36.529999999999994
+      ]
+    },
+    {
+      "ref": "L151",
+      "side": "B.Cu",
+      "height_max_mm": 3.1,
+      "courtyard_plus0p3_bounds_mm": [
+        22.41,
+        13.11,
+        28.99,
+        19.89
+      ]
+    },
+    {
+      "ref": "R408",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        63.02,
+        16.97,
+        66.58,
+        19.03
+      ]
+    },
+    {
+      "ref": "C102",
+      "side": "B.Cu",
+      "height_max_mm": 0.95,
+      "courtyard_plus0p3_bounds_mm": [
+        35.52,
+        33.17000000000001,
+        39.07999999999999,
+        35.23
+      ]
+    },
+    {
+      "ref": "C122",
+      "side": "B.Cu",
+      "height_max_mm": 2.5,
+      "courtyard_plus0p3_bounds_mm": [
+        39.7,
+        22.599999999999998,
+        43.5,
+        27.8
+      ]
+    },
+    {
+      "ref": "R104",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        26.02,
+        28.57,
+        29.580000000000002,
+        30.630000000000003
+      ]
+    },
+    {
+      "ref": "C158",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        36.220000000000006,
+        16.97,
+        39.779999999999994,
+        19.03
+      ]
+    },
+    {
+      "ref": "D501",
+      "side": "B.Cu",
+      "height_max_mm": 1.12,
+      "courtyard_plus0p3_bounds_mm": [
+        11.979999999999999,
+        18.5,
+        16.419999999999998,
+        22.5
+      ]
+    },
+    {
+      "ref": "C301",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        22.119999999999997,
+        9.169999999999998,
+        25.68,
+        11.23
+      ]
+    },
+    {
+      "ref": "D402",
+      "side": "B.Cu",
+      "height_max_mm": 0.45,
+      "courtyard_plus0p3_bounds_mm": [
+        62.7,
+        11.15,
+        64.5,
+        13.450000000000001
+      ]
+    },
+    {
+      "ref": "R525",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        83.32,
+        24.77,
+        86.88,
+        26.830000000000002
+      ]
+    },
+    {
+      "ref": "C151",
+      "side": "B.Cu",
+      "height_max_mm": 2.7,
+      "courtyard_plus0p3_bounds_mm": [
+        41.300000000000004,
+        12.7,
+        45.1,
+        17.900000000000002
+      ]
+    },
+    {
+      "ref": "R515",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        84.47,
+        26.869999999999997,
+        88.03,
+        28.93
+      ]
+    },
+    {
+      "ref": "R154",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        42.220000000000006,
+        17.97,
+        45.779999999999994,
+        20.03
+      ]
+    },
+    {
+      "ref": "R513",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        81.92,
+        30.75,
+        85.88000000000001,
+        33.25
+      ]
+    },
+    {
+      "ref": "R504",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        15.219999999999999,
+        31.970000000000002,
+        18.78,
+        34.029999999999994
+      ]
+    },
+    {
+      "ref": "C101",
+      "side": "B.Cu",
+      "height_max_mm": 1.45,
+      "courtyard_plus0p3_bounds_mm": [
+        30.5,
+        33.220000000000006,
+        34.5,
+        35.779999999999994
+      ]
+    },
+    {
+      "ref": "R102",
+      "side": "B.Cu",
+      "height_max_mm": 0.65,
+      "courtyard_plus0p3_bounds_mm": [
+        25.919999999999998,
+        23.68,
+        31.080000000000002,
+        26.520000000000003
+      ]
+    },
+    {
+      "ref": "R153",
+      "side": "B.Cu",
+      "height_max_mm": 0.533,
+      "courtyard_plus0p3_bounds_mm": [
+        39.18,
+        19.9,
+        42.82,
+        22.1
+      ]
+    },
+    {
+      "ref": "C501",
+      "side": "B.Cu",
+      "height_max_mm": 0.95,
+      "courtyard_plus0p3_bounds_mm": [
+        20.22,
+        32.77,
+        23.78,
+        34.82999999999999
+      ]
+    },
+    {
+      "ref": "R151",
+      "side": "B.Cu",
+      "height_max_mm": 0.6,
+      "courtyard_plus0p3_bounds_mm": [
+        40.42,
+        9.579999999999998,
+        45.58,
+        12.420000000000002
+      ]
+    },
+    {
+      "ref": "C302",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        15.419999999999998,
+        12.669999999999998,
+        18.98,
+        14.73
+      ]
+    },
+    {
+      "ref": "C155",
+      "side": "B.Cu",
+      "height_max_mm": 2.7,
+      "courtyard_plus0p3_bounds_mm": [
+        23.4,
+        20.099999999999998,
+        28.6,
+        23.900000000000002
+      ]
+    },
+    {
+      "ref": "C512",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        77.22,
+        36.470000000000006,
+        80.78,
+        38.529999999999994
+      ]
+    },
+    {
+      "ref": "C522",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        69.72,
+        36.470000000000006,
+        73.28,
+        38.529999999999994
+      ]
+    },
+    {
+      "ref": "R505",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        20.02,
+        30.45,
+        23.98,
+        32.949999999999996
+      ]
+    },
+    {
+      "ref": "R106",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        36.220000000000006,
+        27.97,
+        39.779999999999994,
+        30.03
+      ]
+    },
+    {
+      "ref": "C502",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        10.919999999999998,
+        26.57,
+        14.48,
+        28.630000000000003
+      ]
+    },
+    {
+      "ref": "R105",
+      "side": "B.Cu",
+      "height_max_mm": 0.6,
+      "courtyard_plus0p3_bounds_mm": [
+        33.22,
+        25.279999999999998,
+        38.379999999999995,
+        28.12
+      ]
+    },
+    {
+      "ref": "U301",
+      "side": "B.Cu",
+      "height_max_mm": 1.0,
+      "courtyard_plus0p3_bounds_mm": [
+        18.15,
+        7.05,
+        22.65,
+        11.600000000000001
+      ]
+    },
+    {
+      "ref": "C524",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        72.47,
+        29.07,
+        74.53,
+        32.629999999999995
+      ]
+    },
+    {
+      "ref": "R103",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        26.02,
+        26.47,
+        29.580000000000002,
+        28.53
+      ]
+    },
+    {
+      "ref": "D301",
+      "side": "B.Cu",
+      "height_max_mm": 1.12,
+      "courtyard_plus0p3_bounds_mm": [
+        12.379999999999999,
+        7.5,
+        16.82,
+        11.5
+      ]
+    },
+    {
+      "ref": "R101",
+      "side": "B.Cu",
+      "height_max_mm": 0.7,
+      "courtyard_plus0p3_bounds_mm": [
+        21.88,
+        34.78,
+        30.12,
+        39.22
+      ]
+    },
+    {
+      "ref": "R521",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        73.02,
+        38.05,
+        76.98,
+        40.55
+      ]
+    },
+    {
+      "ref": "L406",
+      "side": "B.Cu",
+      "height_max_mm": 1.0,
+      "courtyard_plus0p3_bounds_mm": [
+        64.2,
+        11.45,
+        66.39999999999999,
+        14.55
+      ]
+    },
+    {
+      "ref": "C503",
+      "side": "B.Cu",
+      "height_max_mm": 1.45,
+      "courtyard_plus0p3_bounds_mm": [
+        20.7,
+        28.22,
+        24.7,
+        30.78
+      ]
+    },
+    {
+      "ref": "R411",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        59.870000000000005,
+        18.619999999999997,
+        61.92999999999999,
+        22.18
+      ]
+    },
+    {
+      "ref": "R506",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        16.72,
+        36.970000000000006,
+        20.28,
+        39.029999999999994
+      ]
+    },
+    {
+      "ref": "R522",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        73.22,
+        35.470000000000006,
+        76.78,
+        37.529999999999994
+      ]
+    },
+    {
+      "ref": "U502",
+      "side": "B.Cu",
+      "height_max_mm": 1.75,
+      "courtyard_plus0p3_bounds_mm": [
+        74.5,
+        27.5,
+        82.5,
+        33.5
+      ]
+    },
+    {
+      "ref": "C153",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        27.52,
+        10.969999999999999,
+        31.080000000000002,
+        13.030000000000001
+      ]
+    },
+    {
+      "ref": "R152",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        31.720000000000002,
+        16.97,
+        35.279999999999994,
+        19.03
+      ]
+    },
+    {
+      "ref": "R409",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        42.220000000000006,
+        6.97,
+        45.779999999999994,
+        9.030000000000001
+      ]
+    },
+    {
+      "ref": "U501",
+      "side": "B.Cu",
+      "height_max_mm": 1.2,
+      "courtyard_plus0p3_bounds_mm": [
+        14.299999999999999,
+        22.45,
+        22.7,
+        28.55
+      ]
+    },
+    {
+      "ref": "C129",
+      "side": "B.Cu",
+      "height_max_mm": 2.5,
+      "courtyard_plus0p3_bounds_mm": [
+        41.300000000000004,
+        27.9,
+        45.1,
+        33.099999999999994
+      ]
+    },
+    {
+      "ref": "R410",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        62.57000000000001,
+        18.619999999999997,
+        64.63,
+        22.18
+      ]
+    },
+    {
+      "ref": "R107",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        36.220000000000006,
+        30.47,
+        39.779999999999994,
+        32.529999999999994
+      ]
+    },
+    {
+      "ref": "C531",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        74.22,
+        25.369999999999997,
+        77.78,
+        27.43
+      ]
+    },
+    {
+      "ref": "R303",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        24.22,
+        4.7700000000000005,
+        27.78,
+        6.829999999999999
+      ]
+    },
+    {
+      "ref": "C154",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        29.27,
+        13.419999999999998,
+        31.330000000000002,
+        16.98
+      ]
+    },
+    {
+      "ref": "J401",
+      "side": "B.Cu",
+      "height_max_mm": 1.45,
+      "courtyard_plus0p3_bounds_mm": [
+        62.98,
+        6.000000000000001,
+        67.88,
+        11.600000000000001
+      ]
+    },
+    {
+      "ref": "D102",
+      "side": "B.Cu",
+      "height_max_mm": 2.29,
+      "courtyard_plus0p3_bounds_mm": [
+        31.2,
+        36.45,
+        38.8,
+        40.55
+      ]
+    },
+    {
+      "ref": "C514",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        82.47,
+        27.45,
+        84.53,
+        31.01
+      ]
+    },
+    {
+      "ref": "R302",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        24.22,
+        11.169999999999998,
+        27.78,
+        13.23
+      ]
+    },
+    {
+      "ref": "C152",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        38.970000000000006,
+        12.194999999999999,
+        41.029999999999994,
+        15.755
+      ]
+    },
+    {
+      "ref": "R503",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        11.02,
+        31.970000000000002,
+        14.580000000000002,
+        34.029999999999994
+      ]
+    },
+    {
+      "ref": "R502",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        15.219999999999999,
+        29.47,
+        18.78,
+        31.53
+      ]
+    },
+    {
+      "ref": "C157",
+      "side": "B.Cu",
+      "height_max_mm": 2.7,
+      "courtyard_plus0p3_bounds_mm": [
+        33.60000000000001,
+        20.099999999999998,
+        38.8,
+        23.900000000000002
+      ]
+    },
+    {
+      "ref": "U101",
+      "side": "B.Cu",
+      "height_max_mm": 1.1,
+      "courtyard_plus0p3_bounds_mm": [
+        29.52,
+        28.45,
+        36.48,
+        32.55
+      ]
+    },
+    {
+      "ref": "R523",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        70.17,
+        32.15,
+        74.13000000000001,
+        34.65
+      ]
+    },
+    {
+      "ref": "R514",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        81.72,
+        33.77,
+        85.28,
+        35.82999999999999
+      ]
+    },
+    {
+      "ref": "R501",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        11.02,
+        29.47,
+        14.580000000000002,
+        31.53
+      ]
+    },
+    {
+      "ref": "R407",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        45.17000000000001,
+        13.62,
+        47.23,
+        17.18
+      ]
+    },
+    {
+      "ref": "R108",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        38.220000000000006,
+        35.970000000000006,
+        41.779999999999994,
+        38.029999999999994
+      ]
+    },
+    {
+      "ref": "R512",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        81.72,
+        35.470000000000006,
+        85.28,
+        37.529999999999994
+      ]
+    },
+    {
+      "ref": "U151",
+      "side": "B.Cu",
+      "height_max_mm": 1.2,
+      "courtyard_plus0p3_bounds_mm": [
+        30.8,
+        9.95,
+        39.199999999999996,
+        16.05
+      ]
+    },
+    {
+      "ref": "C521",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        69.72,
+        34.470000000000006,
+        73.28,
+        36.529999999999994
+      ]
+    },
+    {
+      "ref": "C156",
+      "side": "B.Cu",
+      "height_max_mm": 2.7,
+      "courtyard_plus0p3_bounds_mm": [
+        28.5,
+        20.099999999999998,
+        33.699999999999996,
+        23.900000000000002
+      ]
+    },
+    {
+      "ref": "R524",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        73.82,
+        33.17000000000001,
+        77.38,
+        35.23
+      ]
+    },
+    {
+      "ref": "U202",
+      "side": "B.Cu",
+      "height_max_mm": 1.45,
+      "courtyard_plus0p3_bounds_mm": [
+        75.4,
+        9.099999999999998,
+        80.19999999999999,
+        13.3
+      ]
+    },
+    {
+      "ref": "R203",
+      "side": "B.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        70.995,
+        8.644999999999998,
+        74.60499999999999,
+        10.755
+      ]
+    },
+    {
+      "ref": "C205",
+      "side": "B.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        74.39500000000001,
+        12.844999999999999,
+        78.005,
+        14.955000000000002
+      ]
+    },
+    {
+      "ref": "C532",
+      "side": "F.Cu",
+      "height_max_mm": 0.9,
+      "courtyard_plus0p3_bounds_mm": [
+        17.02,
+        24.47,
+        20.580000000000002,
+        26.53
+      ]
+    },
+    {
+      "ref": "R158",
+      "side": "B.Cu",
+      "height_max_mm": 0.533,
+      "courtyard_plus0p3_bounds_mm": [
+        74.495,
+        17.645,
+        78.10499999999999,
+        19.755
+      ]
+    },
+    {
+      "ref": "R155",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        38.045,
+        24.095,
+        40.155,
+        27.705
+      ]
+    },
+    {
+      "ref": "R156",
+      "side": "B.Cu",
+      "height_max_mm": 0.55,
+      "courtyard_plus0p3_bounds_mm": [
+        31.645000000000003,
+        23.495,
+        33.755,
+        27.105
+      ]
+    },
+    {
+      "ref": "C206",
+      "side": "B.Cu",
+      "height_max_mm": 4.3,
+      "courtyard_plus0p3_bounds_mm": [
+        77.74,
+        15.549999999999997,
+        87.46,
+        21.25
+      ]
+    },
+    {
+      "ref": "R157",
+      "side": "F.Cu",
+      "height_max_mm": 0.5,
+      "courtyard_plus0p3_bounds_mm": [
+        34.095,
+        12.644999999999998,
+        37.705,
+        14.755
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "ref": "R126",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.739999999999998
+    },
+    {
+      "ref": "C204",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.59
+    },
+    {
+      "ref": "D606",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.440000000000001
+    },
+    {
+      "ref": "R403",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.739999999999998
+    },
+    {
+      "ref": "R604",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    },
+    {
+      "ref": "R110",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.401
+    },
+    {
+      "ref": "C202",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.39
+    },
+    {
+      "ref": "R124",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.739999999999998
+    },
+    {
+      "ref": "D604",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.440000000000001
+    },
+    {
+      "ref": "D511",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.190000000000001
+    },
+    {
+      "ref": "C523",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.34
+    },
+    {
+      "ref": "U201",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.04
+    },
+    {
+      "ref": "C506",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.489999999999998
+    },
+    {
+      "ref": "R128",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.690000000000001
+    },
+    {
+      "ref": "D502",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 12.0
+    },
+    {
+      "ref": "R603",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    },
+    {
+      "ref": "C128",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.59
+    },
+    {
+      "ref": "R125",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.690000000000001
+    },
+    {
+      "ref": "U403",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 12.84
+    },
+    {
+      "ref": "R201",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    },
+    {
+      "ref": "D522",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.190000000000001
+    },
+    {
+      "ref": "R402",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.739999999999998
+    },
+    {
+      "ref": "R121",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.739999999999998
+    },
+    {
+      "ref": "D104",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.09
+    },
+    {
+      "ref": "J202",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 5.3500000000000005
+    },
+    {
+      "ref": "C125",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.29
+    },
+    {
+      "ref": "C401",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.59
+    },
+    {
+      "ref": "C504",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.489999999999998
+    },
+    {
+      "ref": "F101",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.39
+    },
+    {
+      "ref": "J203",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 5.3500000000000005
+    },
+    {
+      "ref": "R404",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.739999999999998
+    },
+    {
+      "ref": "D605",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.440000000000001
+    },
+    {
+      "ref": "C402",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.59
+    },
+    {
+      "ref": "R606",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    },
+    {
+      "ref": "R202",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    },
+    {
+      "ref": "R602",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    },
+    {
+      "ref": "R123",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.739999999999998
+    },
+    {
+      "ref": "U402",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.39
+    },
+    {
+      "ref": "D512",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.190000000000001
+    },
+    {
+      "ref": "R601",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    },
+    {
+      "ref": "C513",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.34
+    },
+    {
+      "ref": "C403",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.39
+    },
+    {
+      "ref": "C103",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.79
+    },
+    {
+      "ref": "R111",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.690000000000001
+    },
+    {
+      "ref": "R401",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    },
+    {
+      "ref": "C123",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 12.84
+    },
+    {
+      "ref": "D103",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.669999999999998
+    },
+    {
+      "ref": "R405",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    },
+    {
+      "ref": "R507",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.59
+    },
+    {
+      "ref": "U121",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 12.59
+    },
+    {
+      "ref": "D401",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.440000000000001
+    },
+    {
+      "ref": "U404",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.39
+    },
+    {
+      "ref": "D602",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.440000000000001
+    },
+    {
+      "ref": "C405",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.39
+    },
+    {
+      "ref": "D601",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.440000000000001
+    },
+    {
+      "ref": "C201",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.59
+    },
+    {
+      "ref": "D521",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.190000000000001
+    },
+    {
+      "ref": "C505",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.489999999999998
+    },
+    {
+      "ref": "R605",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    },
+    {
+      "ref": "C126",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.39
+    },
+    {
+      "ref": "R109",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.690000000000001
+    },
+    {
+      "ref": "U401",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 7.39
+    },
+    {
+      "ref": "L121",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 9.489999999999998
+    },
+    {
+      "ref": "C404",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.39
+    },
+    {
+      "ref": "C121",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.79
+    },
+    {
+      "ref": "D603",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.440000000000001
+    },
+    {
+      "ref": "D101",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.669999999999998
+    },
+    {
+      "ref": "Q101",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.89
+    },
+    {
+      "ref": "R122",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.739999999999998
+    },
+    {
+      "ref": "F1",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 5.0200000000000005
+    },
+    {
+      "ref": "R127",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    },
+    {
+      "ref": "C124",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.39
+    },
+    {
+      "ref": "C127",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 11.59
+    },
+    {
+      "ref": "R511",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R511",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R511",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R511",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R511",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "C511",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C511",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C511",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C511",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C511",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "L151",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.8100000000000005
+    },
+    {
+      "ref": "L151",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.8100000000000005
+    },
+    {
+      "ref": "L151",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.8100000000000005
+    },
+    {
+      "ref": "L151",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -4.3
+    },
+    {
+      "ref": "L151",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -4.3
+    },
+    {
+      "ref": "R408",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R408",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R408",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R408",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R408",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 1.6809600000000158,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "C102",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.66
+    },
+    {
+      "ref": "C102",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.66
+    },
+    {
+      "ref": "C102",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.66
+    },
+    {
+      "ref": "C102",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.15
+    },
+    {
+      "ref": "C102",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.15
+    },
+    {
+      "ref": "C122",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.21
+    },
+    {
+      "ref": "C122",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.21
+    },
+    {
+      "ref": "C122",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.21
+    },
+    {
+      "ref": "C122",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.7
+    },
+    {
+      "ref": "C122",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.7
+    },
+    {
+      "ref": "R104",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R104",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R104",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R104",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R104",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "C158",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C158",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C158",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C158",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C158",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "D501",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.83
+    },
+    {
+      "ref": "D501",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.83
+    },
+    {
+      "ref": "D501",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.83
+    },
+    {
+      "ref": "D501",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.3200000000000003
+    },
+    {
+      "ref": "D501",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.3200000000000003
+    },
+    {
+      "ref": "C301",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C301",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C301",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C301",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C301",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "D402",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.16
+    },
+    {
+      "ref": "D402",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.16
+    },
+    {
+      "ref": "D402",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.16
+    },
+    {
+      "ref": "D402",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.65
+    },
+    {
+      "ref": "D402",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.65
+    },
+    {
+      "ref": "R525",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R525",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R525",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R525",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R525",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "C151",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C151",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C151",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C151",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.9000000000000004
+    },
+    {
+      "ref": "C151",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.9000000000000004
+    },
+    {
+      "ref": "R515",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R515",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R515",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R515",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R515",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R154",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R154",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R154",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R154",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R154",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R513",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R513",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R513",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R513",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R513",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R504",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R504",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R504",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R504",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R504",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "C101",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "C101",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "C101",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "C101",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.65
+    },
+    {
+      "ref": "C101",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.65
+    },
+    {
+      "ref": "R102",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.36
+    },
+    {
+      "ref": "R102",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.36
+    },
+    {
+      "ref": "R102",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.36
+    },
+    {
+      "ref": "R102",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.85
+    },
+    {
+      "ref": "R102",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.85
+    },
+    {
+      "ref": "R153",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.243
+    },
+    {
+      "ref": "R153",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.243
+    },
+    {
+      "ref": "R153",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.243
+    },
+    {
+      "ref": "R153",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.733
+    },
+    {
+      "ref": "R153",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.733
+    },
+    {
+      "ref": "C501",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.66
+    },
+    {
+      "ref": "C501",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.66
+    },
+    {
+      "ref": "C501",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.66
+    },
+    {
+      "ref": "C501",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.15
+    },
+    {
+      "ref": "C501",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.15
+    },
+    {
+      "ref": "R151",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.31
+    },
+    {
+      "ref": "R151",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.31
+    },
+    {
+      "ref": "R151",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.31
+    },
+    {
+      "ref": "R151",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7999999999999998
+    },
+    {
+      "ref": "R151",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7999999999999998
+    },
+    {
+      "ref": "C302",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C302",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C302",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C302",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C302",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C155",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C155",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C155",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C155",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.9000000000000004
+    },
+    {
+      "ref": "C155",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.9000000000000004
+    },
+    {
+      "ref": "C512",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C512",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C512",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C512",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C512",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C522",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C522",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C522",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C522",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C522",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "R505",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R505",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R505",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R505",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R505",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R106",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R106",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R106",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R106",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R106",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "C502",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C502",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C502",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C502",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C502",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "R105",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.31
+    },
+    {
+      "ref": "R105",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.31
+    },
+    {
+      "ref": "R105",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.31
+    },
+    {
+      "ref": "R105",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7999999999999998
+    },
+    {
+      "ref": "R105",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7999999999999998
+    },
+    {
+      "ref": "U301",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.71
+    },
+    {
+      "ref": "U301",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.71
+    },
+    {
+      "ref": "U301",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.71
+    },
+    {
+      "ref": "U301",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.2
+    },
+    {
+      "ref": "U301",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.2
+    },
+    {
+      "ref": "C524",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C524",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C524",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C524",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C524",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.4793392860122147,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "R103",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R103",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R103",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R103",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R103",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "D301",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.83
+    },
+    {
+      "ref": "D301",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.83
+    },
+    {
+      "ref": "D301",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.83
+    },
+    {
+      "ref": "D301",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.3200000000000003
+    },
+    {
+      "ref": "D301",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.3200000000000003
+    },
+    {
+      "ref": "R101",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.41
+    },
+    {
+      "ref": "R101",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.41
+    },
+    {
+      "ref": "R101",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.41
+    },
+    {
+      "ref": "R101",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.9
+    },
+    {
+      "ref": "R101",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.9
+    },
+    {
+      "ref": "R521",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R521",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R521",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R521",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R521",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "L406",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.71
+    },
+    {
+      "ref": "L406",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.71
+    },
+    {
+      "ref": "L406",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.71
+    },
+    {
+      "ref": "L406",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.2
+    },
+    {
+      "ref": "L406",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 2.0459999999999816,
+      "relative_z_min_mm": -2.2
+    },
+    {
+      "ref": "C503",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "C503",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "C503",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "C503",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.65
+    },
+    {
+      "ref": "C503",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.65
+    },
+    {
+      "ref": "R411",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R411",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R411",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R411",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R411",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R506",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R506",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R506",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R506",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R506",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R522",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R522",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R522",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R522",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R522",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "U502",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.46
+    },
+    {
+      "ref": "U502",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.46
+    },
+    {
+      "ref": "U502",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.46
+    },
+    {
+      "ref": "U502",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.95
+    },
+    {
+      "ref": "U502",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.95
+    },
+    {
+      "ref": "C153",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C153",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C153",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C153",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C153",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "R152",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R152",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R152",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R152",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R152",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R409",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R409",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R409",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R409",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R409",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "U501",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.91
+    },
+    {
+      "ref": "U501",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.91
+    },
+    {
+      "ref": "U501",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.91
+    },
+    {
+      "ref": "U501",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.4
+    },
+    {
+      "ref": "U501",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.4
+    },
+    {
+      "ref": "C129",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.21
+    },
+    {
+      "ref": "C129",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.21
+    },
+    {
+      "ref": "C129",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.21
+    },
+    {
+      "ref": "C129",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.7
+    },
+    {
+      "ref": "C129",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.7
+    },
+    {
+      "ref": "R410",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R410",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R410",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R410",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R410",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R107",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R107",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R107",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R107",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R107",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "C531",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C531",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C531",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C531",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C531",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "R303",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R303",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R303",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R303",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R303",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "C154",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C154",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C154",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C154",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C154",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "J401",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "J401",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "J401",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "J401",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.65
+    },
+    {
+      "ref": "J401",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 1.4151000000000042,
+      "relative_z_min_mm": -2.65
+    },
+    {
+      "ref": "D102",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.0
+    },
+    {
+      "ref": "D102",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.0
+    },
+    {
+      "ref": "D102",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.0
+    },
+    {
+      "ref": "D102",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.49
+    },
+    {
+      "ref": "D102",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.49
+    },
+    {
+      "ref": "C514",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C514",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C514",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C514",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C514",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "R302",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R302",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R302",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R302",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R302",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "C152",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C152",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C152",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C152",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C152",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "R503",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R503",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R503",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R503",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R503",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R502",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R502",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R502",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R502",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R502",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "C157",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C157",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C157",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C157",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.9000000000000004
+    },
+    {
+      "ref": "C157",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.9000000000000004
+    },
+    {
+      "ref": "U101",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.81
+    },
+    {
+      "ref": "U101",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.81
+    },
+    {
+      "ref": "U101",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.81
+    },
+    {
+      "ref": "U101",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.3
+    },
+    {
+      "ref": "U101",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.3
+    },
+    {
+      "ref": "R523",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R523",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R523",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R523",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R523",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R514",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R514",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R514",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R514",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R514",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R501",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R501",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R501",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R501",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R501",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R407",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R407",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R407",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R407",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R407",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R108",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R108",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R108",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R108",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R108",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R512",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R512",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R512",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R512",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R512",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "U151",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.91
+    },
+    {
+      "ref": "U151",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.91
+    },
+    {
+      "ref": "U151",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.91
+    },
+    {
+      "ref": "U151",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.4
+    },
+    {
+      "ref": "U151",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.4
+    },
+    {
+      "ref": "C521",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C521",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C521",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C521",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C521",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C156",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C156",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C156",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -4.41
+    },
+    {
+      "ref": "C156",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.9000000000000004
+    },
+    {
+      "ref": "C156",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -3.9000000000000004
+    },
+    {
+      "ref": "R524",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R524",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R524",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R524",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R524",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "U202",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "U202",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "U202",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -3.16
+    },
+    {
+      "ref": "U202",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.65
+    },
+    {
+      "ref": "U202",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.65
+    },
+    {
+      "ref": "R203",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R203",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R203",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.21
+    },
+    {
+      "ref": "R203",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "R203",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "C205",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C205",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C205",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.61
+    },
+    {
+      "ref": "C205",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C205",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "C532",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.39
+    },
+    {
+      "ref": "R158",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.243
+    },
+    {
+      "ref": "R158",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.243
+    },
+    {
+      "ref": "R158",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.243
+    },
+    {
+      "ref": "R158",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.733
+    },
+    {
+      "ref": "R158",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.733
+    },
+    {
+      "ref": "R155",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R155",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R155",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R155",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R155",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R156",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R156",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R156",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -2.26
+    },
+    {
+      "ref": "R156",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "R156",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -1.75
+    },
+    {
+      "ref": "C206",
+      "obstacle": "carrier_base",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -6.01
+    },
+    {
+      "ref": "C206",
+      "obstacle": "mount_supports",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -6.01
+    },
+    {
+      "ref": "C206",
+      "obstacle": "chassis_landing",
+      "bounding_overlap_mm3": 0.0,
+      "z_min_mm": -6.01
+    },
+    {
+      "ref": "C206",
+      "obstacle": "folded_foil",
+      "bow_mm": 0,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -5.5
+    },
+    {
+      "ref": "C206",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.0,
+      "relative_z_min_mm": -5.5
+    },
+    {
+      "ref": "R157",
+      "obstacle": "top_16mm_reserved_depth",
+      "remaining_height_mm": 13.79
+    }
+  ],
+  "potential_interferences": [
+    {
+      "ref": "R408",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 1.6809600000000158,
+      "relative_z_min_mm": -1.7
+    },
+    {
+      "ref": "C524",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 0.4793392860122147,
+      "relative_z_min_mm": -2.1
+    },
+    {
+      "ref": "L406",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 2.0459999999999816,
+      "relative_z_min_mm": -2.2
+    },
+    {
+      "ref": "J401",
+      "obstacle": "folded_foil",
+      "bow_mm": 0.5,
+      "bounding_overlap_mm3": 1.4151000000000042,
+      "relative_z_min_mm": -2.65
+    }
+  ],
+  "excluded_from_pass": [
+    "Mated U.FL/Tag-Connect/Micro-Fit bodies and cables",
+    "Complete manufacturer XY tolerance proofs",
+    "Installed dashboard geometry/material retention"
+  ],
+  "scope": "Any conservative overlap requires review; lack of overlap is conditional on the stated bounds, not as-built proof."
+}

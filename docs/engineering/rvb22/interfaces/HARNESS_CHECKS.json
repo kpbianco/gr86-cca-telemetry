@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "checks": {
+    "twelve_actual_source_pads": true,
+    "exact_current_net_map": true,
+    "seven_populated": true,
+    "empty_ground_cavity2": true,
+    "one_primary_return_only": true,
+    "four_reserved_empty": true,
+    "sixty_six_pairs": true,
+    "sixteen_adjacent": true,
+    "seventy_seven_misinsertions": true,
+    "six_sensor_permutations": true,
+    "one_valid_sensor_permutation": true,
+    "all_graph_negative_controls_detected": true,
+    "oil_243cases": true,
+    "oil_retains_low_excitation_cases": true,
+    "oil_path_R_within_allocation": true,
+    "CAN_MPN_source_not_generic": true,
+    "no_supplier_ODmin_invented": true,
+    "F1_relaxed_exit_adopted": true,
+    "matching_tin_mating": true,
+    "CAN_production_tool_bound": true,
+    "no_added_termination": true,
+    "CAN_ASC_map": true,
+    "wire_delta_and_model_hash_match": true,
+    "wire_source_files_intact": true,
+    "six_ground_topologies": true,
+    "no_physical_claim": true
+  },
+  "negative_controls": [
+    {
+      "fault": "open F1.1",
+      "detected": true
+    },
+    {
+      "fault": "open F1.3",
+      "detected": true
+    },
+    {
+      "fault": "open F1.5",
+      "detected": true
+    },
+    {
+      "fault": "open F1.6",
+      "detected": true
+    },
+    {
+      "fault": "open F1.7",
+      "detected": true
+    },
+    {
+      "fault": "open F1.8",
+      "detected": true
+    },
+    {
+      "fault": "open F1.9",
+      "detected": true
+    },
+    {
+      "fault": "CAN H/L endpoints swapped",
+      "detected": true
+    },
+    {
+      "fault": "CAN H/L bridge",
+      "detected": true
+    }
+  ],
+  "PCB_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "contract_sha256": "8de240d9bfbc5862fae2984984929e0c086bc37a255289129d312548cac3576a"
+}

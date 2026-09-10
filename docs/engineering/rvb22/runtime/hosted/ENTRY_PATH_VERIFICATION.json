@@ -1,0 +1,12 @@
+{
+  "status": "PASS_STATIC_REPOSITORY_ENTRY_PATHS",
+  "paths": [
+    "docs/engineering/rvb22/candidate/run_native_candidate.py",
+    "docs/engineering/rvb22/runtime/hosted/setup_native.sh",
+    "docs/engineering/rvb22/candidate/run_native_candidate.py",
+    "docs/engineering/rvb22/runtime/hosted/setup_native.sh",
+    "docs/engineering/rvb22/candidate/run_native_candidate.py"
+  ],
+  "workflow_parsed": true,
+  "CAD_and_firmware_present": true
+}

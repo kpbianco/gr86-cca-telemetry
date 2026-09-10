@@ -1,0 +1,264 @@
+{
+  "run_id": 34391032375,
+  "commit": "ce75a76f6dcca9b99da447e3acd5adaf8da7ec05",
+  "artifact_sha256": "1157726418faf47327b66f03e7e72cb59ac468e0be8240a61ffadc8afe05bec5",
+  "postconditions": {
+    "refilled_copper": {
+      "pass": true,
+      "details": {
+        "copper_zones": 16,
+        "zone_layer_pairs": 16,
+        "saved_filled_polygon_count": 76,
+        "details": [
+          {
+            "uuid": "134c9ab9-e117-5eaf-98d2-b4abd2832612",
+            "net": "GND",
+            "layer": "F.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.5929971452975
+          },
+          {
+            "uuid": "3e129aa9-5bc5-4696-8564-1325ebdf93be",
+            "net": "OIL_EFUSE_RTN",
+            "layer": "F.Cu",
+            "outline_count": 2,
+            "outer_area_mm2": 7.835632861386472
+          },
+          {
+            "uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+            "net": "GND",
+            "layer": "F.Cu",
+            "outline_count": 24,
+            "outer_area_mm2": 2018.2159812654797
+          },
+          {
+            "uuid": "dd323d65-0713-5686-a3cb-1ab14aced4cb",
+            "net": "GND",
+            "layer": "F.Cu",
+            "outline_count": 2,
+            "outer_area_mm2": 429.9975395583467
+          },
+          {
+            "uuid": "2838a140-f9bc-4f26-80b8-7066701e2a62",
+            "net": "OIL_EFUSE_RTN",
+            "layer": "B.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 16.98989707030401
+          },
+          {
+            "uuid": "2cbe24e5-7152-51c6-872a-dcf9024643b0",
+            "net": "GND",
+            "layer": "B.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 433.14633464544727
+          },
+          {
+            "uuid": "4d3a0773-3148-5ce0-9317-b6d911b544a3",
+            "net": "GND",
+            "layer": "B.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.5929971452975
+          },
+          {
+            "uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+            "net": "GND",
+            "layer": "B.Cu",
+            "outline_count": 32,
+            "outer_area_mm2": 2169.493502107947
+          },
+          {
+            "uuid": "93e88f7c-8fff-4c7f-b1d5-661fb50aaf19",
+            "net": "OIL_EFUSE_RTN",
+            "layer": "In1.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 16.98989707030401
+          },
+          {
+            "uuid": "b0888c9d-194c-56f7-9068-c1c90cdcd80c",
+            "net": "GND",
+            "layer": "In1.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.5929971452975
+          },
+          {
+            "uuid": "e8b9068f-470c-537d-af54-6c229a10635d",
+            "net": "GND",
+            "layer": "In1.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.94948101564154
+          },
+          {
+            "uuid": "f5ad958c-f9cd-468c-9e6c-951ecb335b1e",
+            "net": "GND",
+            "layer": "In1.Cu",
+            "outline_count": 5,
+            "outer_area_mm2": 3166.425659977325
+          },
+          {
+            "uuid": "2fe17068-db9d-535b-90bb-c97bd3281718",
+            "net": "GND",
+            "layer": "In2.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.5929971452975
+          },
+          {
+            "uuid": "3d6f56bf-8bca-55af-9494-76e5a3ae62ec",
+            "net": "GND",
+            "layer": "In2.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.94948101564154
+          },
+          {
+            "uuid": "52337a10-bc47-4de1-8eb5-c1a2aa4c9592",
+            "net": "GND",
+            "layer": "In2.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 3202.9555467914097
+          },
+          {
+            "uuid": "7127fb96-ee09-43d1-976f-58e8e95c3b43",
+            "net": "OIL_EFUSE_RTN",
+            "layer": "In2.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 16.98989707030401
+          }
+        ]
+      }
+    },
+    "erc_report": {
+      "pass": true,
+      "details": {
+        "findings": 0,
+        "errors": 0,
+        "warnings": 0,
+        "exclusions": 0
+      }
+    },
+    "drc_report": {
+      "pass": true,
+      "details": {
+        "findings": 1,
+        "errors": 0,
+        "warnings": 1,
+        "exclusions": 0
+      }
+    },
+    "schematic_netlist": {
+      "pass": true,
+      "details": {
+        "components": 195,
+        "nets": 133
+      }
+    },
+    "pcb_netlist": {
+      "pass": true,
+      "details": {
+        "test_records": 799
+      }
+    },
+    "requested_gerbers": {
+      "pass": true,
+      "details": {
+        "F.Cu": "GR86_CCA_RevB-F_Cu.gtl",
+        "In1.Cu": "GR86_CCA_RevB-In1_Cu.g1",
+        "In2.Cu": "GR86_CCA_RevB-In2_Cu.g2",
+        "B.Cu": "GR86_CCA_RevB-B_Cu.gbl",
+        "F.Mask": "GR86_CCA_RevB-F_Mask.gts",
+        "B.Mask": "GR86_CCA_RevB-B_Mask.gbs",
+        "F.Paste": "GR86_CCA_RevB-F_Paste.gtp",
+        "B.Paste": "GR86_CCA_RevB-B_Paste.gbp",
+        "F.SilkS": "GR86_CCA_RevB-F_Silkscreen.gto",
+        "B.SilkS": "GR86_CCA_RevB-B_Silkscreen.gbo",
+        "Edge.Cuts": "GR86_CCA_RevB-Edge_Cuts.gm1"
+      }
+    },
+    "separate_drills": {
+      "pass": true,
+      "details": {
+        "Plated": "GR86_CCA_RevB-PTH.drl",
+        "NonPlated": "GR86_CCA_RevB-NPTH.drl"
+      }
+    },
+    "schematic_bom": {
+      "pass": true,
+      "details": {
+        "rows": 153,
+        "columns": [
+          "Reference",
+          "Value",
+          "Footprint",
+          "Manufacturer",
+          "MPN",
+          "LCSC",
+          "Quantity"
+        ]
+      }
+    },
+    "component_positions": {
+      "pass": true,
+      "details": {
+        "rows": 151,
+        "columns": [
+          "Ref",
+          "Val",
+          "Package",
+          "PosX",
+          "PosY",
+          "Rot",
+          "Side"
+        ]
+      }
+    },
+    "schematic_pdf": {
+      "pass": true,
+      "details": {
+        "bytes": 1770595,
+        "sha256": "2b2a97ab7b0c6f8e95701626dc56efce47301b7a3b6c93274fd496645aa2002c"
+      }
+    },
+    "component_step_file": {
+      "pass": true,
+      "details": {
+        "bytes": 3382463,
+        "sha256": "4b6ddd8bf0ba99dc4418b2d4db66f21e41cdf88b28efb12fb8cf36f720e83d66"
+      }
+    },
+    "component_model_log": {
+      "pass": false,
+      "reason": "Missing component models: F101, F1, U301, U151"
+    },
+    "firmware_artifacts": {
+      "pass": true,
+      "details": {
+        "elf": {
+          "bytes": 12757508,
+          "sha256": "faa409f70bf5d9658640258a54e8f289522cfd8ebcf9ca27eb5da97b7b968b16"
+        },
+        "app_bin": {
+          "bytes": 683856,
+          "sha256": "d0ef32902eff893c05a8270516ba407991a2dd66f2adf1375704800772650114"
+        }
+      }
+    }
+  },
+  "violations": [
+    {
+      "description": "Footprint 'ESP32-S3-WROOM-1_RVB22_U201' does not match copy in library 'RevB'.",
+      "items": [
+        {
+          "description": "Footprint U201",
+          "pos": {
+            "x": 81.504766,
+            "y": 23.0
+          },
+          "uuid": "200a800d-75ef-5203-be84-6c9cd2eca914"
+        }
+      ],
+      "severity": "warning",
+      "type": "lib_footprint_mismatch"
+    }
+  ],
+  "unconnected_items": [],
+  "schematic_parity": [],
+  "status": "One U201 library warning remains; no ERC/DRC errors. Same normalized native re-export except footprint name; cause not yet established. No suppression or acceptance closure."
+}

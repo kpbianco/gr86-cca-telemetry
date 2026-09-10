@@ -1,0 +1,18 @@
+{
+  "original_review": {
+    "path": "audit/online_resolution_rvb21/ONLINE_REVIEW_REGISTER.json",
+    "sha256": "64566280bcefb55497f5e28f43bf1d70eda4e088ce2a2b9ff00eb65ffd060179"
+  },
+  "candidate_PCB": {
+    "path": "audit/online_resolution_rvb21/reset/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+    "sha256": "d0b78f5d91297a07ee3783d0d1e3ae3d66c71459b2ed2c9669c8780bac7624cc"
+  },
+  "candidate_sketch": {
+    "path": "audit/online_resolution_rvb21/firmware/candidate/cca_telemetry/cca_telemetry.ino",
+    "sha256": "ee3e0305e27e3b543fcb816e4da38f1199ce7f8c878c4bb91a13b19ef995a3fd"
+  },
+  "canonical_PCB": {
+    "path": "kicad/GR86_CCA_RevB.kicad_pcb",
+    "sha256": "3440eea421acd3c2013648158e619350bd19dc207e8515ea7d90e3e31b695277"
+  }
+}

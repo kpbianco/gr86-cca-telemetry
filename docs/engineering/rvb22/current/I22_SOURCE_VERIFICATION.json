@@ -1,0 +1,2181 @@
+{
+  "status": "PASS",
+  "checkpoint": "I22",
+  "date": "2026-09-10",
+  "source_revision": "I20",
+  "source_PCB_sha256": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+  "filled_PCB_sha256": "62c08e7050fe95df0a576ece85a051b4049e9684bf8ea5f73e8949657363276b",
+  "native_run": 34420381540,
+  "native_findings": 0,
+  "checks_count": 282,
+  "checks": [
+    {
+      "item": "recovery/cad/CAN.kicad_sch",
+      "sha256": "ea1c080399a0066b8ff71deea8e129f5b3515e3787fed44052969215f2e5e1a1",
+      "expected": "ea1c080399a0066b8ff71deea8e129f5b3515e3787fed44052969215f2e5e1a1",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/CAN.kicad_sch",
+      "sha256": "ea1c080399a0066b8ff71deea8e129f5b3515e3787fed44052969215f2e5e1a1",
+      "expected": "ea1c080399a0066b8ff71deea8e129f5b3515e3787fed44052969215f2e5e1a1",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/CANDIDATE_README.md",
+      "sha256": "a4f2e6a6dde9036ff0186344769c0d4065770665c8e294c9098fee62c299d212",
+      "expected": "a4f2e6a6dde9036ff0186344769c0d4065770665c8e294c9098fee62c299d212",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/CANDIDATE_README.md",
+      "sha256": "a4f2e6a6dde9036ff0186344769c0d4065770665c8e294c9098fee62c299d212",
+      "expected": "a4f2e6a6dde9036ff0186344769c0d4065770665c8e294c9098fee62c299d212",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/ESP32.kicad_sch",
+      "sha256": "147b31aade61f7c367abd0e7c41ee76c3be494cd76d027472c710bcfaa311060",
+      "expected": "147b31aade61f7c367abd0e7c41ee76c3be494cd76d027472c710bcfaa311060",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/ESP32.kicad_sch",
+      "sha256": "147b31aade61f7c367abd0e7c41ee76c3be494cd76d027472c710bcfaa311060",
+      "expected": "147b31aade61f7c367abd0e7c41ee76c3be494cd76d027472c710bcfaa311060",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/FITTED_REFERENCES.json",
+      "sha256": "087ff2fdf0f3d8d45b508277863fc8a830b78d1d002d22966811328ccc7de82e",
+      "expected": "087ff2fdf0f3d8d45b508277863fc8a830b78d1d002d22966811328ccc7de82e",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/FITTED_REFERENCES.json",
+      "sha256": "087ff2fdf0f3d8d45b508277863fc8a830b78d1d002d22966811328ccc7de82e",
+      "expected": "087ff2fdf0f3d8d45b508277863fc8a830b78d1d002d22966811328ccc7de82e",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/GPS.kicad_sch",
+      "sha256": "55a9d87b7fac9f5c218104c7d5f063411c8f9ac93436b913c260918982f7ecaf",
+      "expected": "55a9d87b7fac9f5c218104c7d5f063411c8f9ac93436b913c260918982f7ecaf",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/GPS.kicad_sch",
+      "sha256": "55a9d87b7fac9f5c218104c7d5f063411c8f9ac93436b913c260918982f7ecaf",
+      "expected": "55a9d87b7fac9f5c218104c7d5f063411c8f9ac93436b913c260918982f7ecaf",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/GR86_CCA_RevB.kicad_dru",
+      "sha256": "156050fc0fd321f299a2db28d9cda78f453029e537d201247cc71d9abf7d65da",
+      "expected": "156050fc0fd321f299a2db28d9cda78f453029e537d201247cc71d9abf7d65da",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/GR86_CCA_RevB.kicad_dru",
+      "sha256": "156050fc0fd321f299a2db28d9cda78f453029e537d201247cc71d9abf7d65da",
+      "expected": "156050fc0fd321f299a2db28d9cda78f453029e537d201247cc71d9abf7d65da",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/GR86_CCA_RevB.kicad_pcb",
+      "sha256": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+      "expected": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/GR86_CCA_RevB.kicad_pcb",
+      "sha256": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+      "expected": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/GR86_CCA_RevB.kicad_prl",
+      "sha256": "4a3e8bf6f0f966c07be53473d0d7162aa6e1c144cf48237c3c29a8ef0cf0e78e",
+      "expected": "4a3e8bf6f0f966c07be53473d0d7162aa6e1c144cf48237c3c29a8ef0cf0e78e",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/GR86_CCA_RevB.kicad_prl",
+      "sha256": "4a3e8bf6f0f966c07be53473d0d7162aa6e1c144cf48237c3c29a8ef0cf0e78e",
+      "expected": "4a3e8bf6f0f966c07be53473d0d7162aa6e1c144cf48237c3c29a8ef0cf0e78e",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/GR86_CCA_RevB.kicad_pro",
+      "sha256": "52d0a52f7bb8ae57320f6d059c3539fd628a3cb9c84d66192c2cf9916142171f",
+      "expected": "52d0a52f7bb8ae57320f6d059c3539fd628a3cb9c84d66192c2cf9916142171f",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/GR86_CCA_RevB.kicad_pro",
+      "sha256": "52d0a52f7bb8ae57320f6d059c3539fd628a3cb9c84d66192c2cf9916142171f",
+      "expected": "52d0a52f7bb8ae57320f6d059c3539fd628a3cb9c84d66192c2cf9916142171f",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/GR86_CCA_RevB.kicad_sch",
+      "sha256": "3993d2b279b3041cf1ea64515656e1980fd30249d07c9c3b9c3a0f36e5c3b281",
+      "expected": "3993d2b279b3041cf1ea64515656e1980fd30249d07c9c3b9c3a0f36e5c3b281",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/GR86_CCA_RevB.kicad_sch",
+      "sha256": "3993d2b279b3041cf1ea64515656e1980fd30249d07c9c3b9c3a0f36e5c3b281",
+      "expected": "3993d2b279b3041cf1ea64515656e1980fd30249d07c9c3b9c3a0f36e5c3b281",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/Input_Protection.kicad_sch",
+      "sha256": "70ac2de994a57b58859715b221f4d99d937cd88fede81c529ccb0132ed964ebd",
+      "expected": "70ac2de994a57b58859715b221f4d99d937cd88fede81c529ccb0132ed964ebd",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/Input_Protection.kicad_sch",
+      "sha256": "70ac2de994a57b58859715b221f4d99d937cd88fede81c529ccb0132ed964ebd",
+      "expected": "70ac2de994a57b58859715b221f4d99d937cd88fede81c529ccb0132ed964ebd",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/LEDs_Status.kicad_sch",
+      "sha256": "62919551d080dc2172fb7f6894287fbf606264cf2a185d8e7480ac66f78d9a6e",
+      "expected": "62919551d080dc2172fb7f6894287fbf606264cf2a185d8e7480ac66f78d9a6e",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/LEDs_Status.kicad_sch",
+      "sha256": "62919551d080dc2172fb7f6894287fbf606264cf2a185d8e7480ac66f78d9a6e",
+      "expected": "62919551d080dc2172fb7f6894287fbf606264cf2a185d8e7480ac66f78d9a6e",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/Oil_Pressure.kicad_sch",
+      "sha256": "de0c8f81adbcb074200e27a78609317bd0667109c7538589fed6a4b4b9f59c27",
+      "expected": "de0c8f81adbcb074200e27a78609317bd0667109c7538589fed6a4b4b9f59c27",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/Oil_Pressure.kicad_sch",
+      "sha256": "de0c8f81adbcb074200e27a78609317bd0667109c7538589fed6a4b4b9f59c27",
+      "expected": "de0c8f81adbcb074200e27a78609317bd0667109c7538589fed6a4b4b9f59c27",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/Power_3V3.kicad_sch",
+      "sha256": "ed6c299b48849ba2eec5e8e197d8b64daa3e782f5aa9ad64bfe2ea9e64ef1019",
+      "expected": "ed6c299b48849ba2eec5e8e197d8b64daa3e782f5aa9ad64bfe2ea9e64ef1019",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/Power_3V3.kicad_sch",
+      "sha256": "ed6c299b48849ba2eec5e8e197d8b64daa3e782f5aa9ad64bfe2ea9e64ef1019",
+      "expected": "ed6c299b48849ba2eec5e8e197d8b64daa3e782f5aa9ad64bfe2ea9e64ef1019",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/Power_5V.kicad_sch",
+      "sha256": "845afc91933487ec26fb1a140825f13461d5eea36496df3dcb034ca522365364",
+      "expected": "845afc91933487ec26fb1a140825f13461d5eea36496df3dcb034ca522365364",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/Power_5V.kicad_sch",
+      "sha256": "845afc91933487ec26fb1a140825f13461d5eea36496df3dcb034ca522365364",
+      "expected": "845afc91933487ec26fb1a140825f13461d5eea36496df3dcb034ca522365364",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/Programming_Debug.kicad_sch",
+      "sha256": "486de6f9c5b7d04bba917926c68ba5ea9dbc3d4116f4a3578988283b7a2fe61f",
+      "expected": "486de6f9c5b7d04bba917926c68ba5ea9dbc3d4116f4a3578988283b7a2fe61f",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/Programming_Debug.kicad_sch",
+      "sha256": "486de6f9c5b7d04bba917926c68ba5ea9dbc3d4116f4a3578988283b7a2fe61f",
+      "expected": "486de6f9c5b7d04bba917926c68ba5ea9dbc3d4116f4a3578988283b7a2fe61f",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/RVB22_POWER_CANDIDATE_ONLY.txt",
+      "sha256": "5f5d506776d25fad066c6c63591de12e4a791c4d2f3d636e933943f1a5781f07",
+      "expected": "5f5d506776d25fad066c6c63591de12e4a791c4d2f3d636e933943f1a5781f07",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/RVB22_POWER_CANDIDATE_ONLY.txt",
+      "sha256": "5f5d506776d25fad066c6c63591de12e4a791c4d2f3d636e933943f1a5781f07",
+      "expected": "5f5d506776d25fad066c6c63591de12e4a791c4d2f3d636e933943f1a5781f07",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/Test_Points.kicad_sch",
+      "sha256": "b6263cca62138a2d94ee13314f1163d50c92c5d8e27f48cb935fb0e38b539ba4",
+      "expected": "b6263cca62138a2d94ee13314f1163d50c92c5d8e27f48cb935fb0e38b539ba4",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/Test_Points.kicad_sch",
+      "sha256": "b6263cca62138a2d94ee13314f1163d50c92c5d8e27f48cb935fb0e38b539ba4",
+      "expected": "b6263cca62138a2d94ee13314f1163d50c92c5d8e27f48cb935fb0e38b539ba4",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/Vehicle_Interconnect.kicad_sch",
+      "sha256": "bf55946e04486d888dc3ee126e71d68ff2826af1ceb2286277e4d4e99a7e4c40",
+      "expected": "bf55946e04486d888dc3ee126e71d68ff2826af1ceb2286277e4d4e99a7e4c40",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/Vehicle_Interconnect.kicad_sch",
+      "sha256": "bf55946e04486d888dc3ee126e71d68ff2826af1ceb2286277e4d4e99a7e4c40",
+      "expected": "bf55946e04486d888dc3ee126e71d68ff2826af1ceb2286277e4d4e99a7e4c40",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/fp-lib-table",
+      "sha256": "7b517306e8b610c928fc6371b9c96d9d2df8fbad166a38894c914d7b8bb51fc7",
+      "expected": "7b517306e8b610c928fc6371b9c96d9d2df8fbad166a38894c914d7b8bb51fc7",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/fp-lib-table",
+      "sha256": "7b517306e8b610c928fc6371b9c96d9d2df8fbad166a38894c914d7b8bb51fc7",
+      "expected": "7b517306e8b610c928fc6371b9c96d9d2df8fbad166a38894c914d7b8bb51fc7",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.kicad_sym",
+      "sha256": "0fbd6269100b199be48c7e22b078ba5a314b4492d23fd900021dd9310ca09c5f",
+      "expected": "0fbd6269100b199be48c7e22b078ba5a314b4492d23fd900021dd9310ca09c5f",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.kicad_sym",
+      "sha256": "0fbd6269100b199be48c7e22b078ba5a314b4492d23fd900021dd9310ca09c5f",
+      "expected": "0fbd6269100b199be48c7e22b078ba5a314b4492d23fd900021dd9310ca09c5f",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/CDTop_PA1616D_20Pad_v06.kicad_mod",
+      "sha256": "595453e700993350c3e2154261109550fd90dd2e8323077911daf3340a1fb430",
+      "expected": "595453e700993350c3e2154261109550fd90dd2e8323077911daf3340a1fb430",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/CDTop_PA1616D_20Pad_v06.kicad_mod",
+      "sha256": "595453e700993350c3e2154261109550fd90dd2e8323077911daf3340a1fb430",
+      "expected": "595453e700993350c3e2154261109550fd90dd2e8323077911daf3340a1fb430",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/C_0402_1005Metric.kicad_mod",
+      "sha256": "1aec3acfe8de50f53c01fa2f4735284e5027424485d0cf154a868f441e4436bc",
+      "expected": "1aec3acfe8de50f53c01fa2f4735284e5027424485d0cf154a868f441e4436bc",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/C_0402_1005Metric.kicad_mod",
+      "sha256": "1aec3acfe8de50f53c01fa2f4735284e5027424485d0cf154a868f441e4436bc",
+      "expected": "1aec3acfe8de50f53c01fa2f4735284e5027424485d0cf154a868f441e4436bc",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/C_0603_1608Metric.kicad_mod",
+      "sha256": "608e18fb80450783fac25cc58c9252747b9ea2194cf45d152599bf23170afeb6",
+      "expected": "608e18fb80450783fac25cc58c9252747b9ea2194cf45d152599bf23170afeb6",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/C_0603_1608Metric.kicad_mod",
+      "sha256": "608e18fb80450783fac25cc58c9252747b9ea2194cf45d152599bf23170afeb6",
+      "expected": "608e18fb80450783fac25cc58c9252747b9ea2194cf45d152599bf23170afeb6",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/C_0603_1608Metric_RVB22_C154.kicad_mod",
+      "sha256": "9c580f28840a78576acd1b62b1b1cba3d74d5a3577a0dff1f2c59068acd034bb",
+      "expected": "9c580f28840a78576acd1b62b1b1cba3d74d5a3577a0dff1f2c59068acd034bb",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/C_0603_1608Metric_RVB22_C154.kicad_mod",
+      "sha256": "9c580f28840a78576acd1b62b1b1cba3d74d5a3577a0dff1f2c59068acd034bb",
+      "expected": "9c580f28840a78576acd1b62b1b1cba3d74d5a3577a0dff1f2c59068acd034bb",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/C_0603_1608Metric_RVB22_C205.kicad_mod",
+      "sha256": "3634037f681da9a06a7ff5b4dab2349650dfb638e951fde6438c475867caf6d0",
+      "expected": "3634037f681da9a06a7ff5b4dab2349650dfb638e951fde6438c475867caf6d0",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/C_0603_1608Metric_RVB22_C205.kicad_mod",
+      "sha256": "3634037f681da9a06a7ff5b4dab2349650dfb638e951fde6438c475867caf6d0",
+      "expected": "3634037f681da9a06a7ff5b4dab2349650dfb638e951fde6438c475867caf6d0",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/C_0805_2012Metric.kicad_mod",
+      "sha256": "f9821eb1d391e3d2bc6c77832e3dcb89c12eb239a84b32afe731e7e2e61509bb",
+      "expected": "f9821eb1d391e3d2bc6c77832e3dcb89c12eb239a84b32afe731e7e2e61509bb",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/C_0805_2012Metric.kicad_mod",
+      "sha256": "f9821eb1d391e3d2bc6c77832e3dcb89c12eb239a84b32afe731e7e2e61509bb",
+      "expected": "f9821eb1d391e3d2bc6c77832e3dcb89c12eb239a84b32afe731e7e2e61509bb",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/C_1210_3225Metric.kicad_mod",
+      "sha256": "01a9cf0760a69faa989db0ff756daa38df9941e218e5f8a06ba1a5cd5ec2c37d",
+      "expected": "01a9cf0760a69faa989db0ff756daa38df9941e218e5f8a06ba1a5cd5ec2c37d",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/C_1210_3225Metric.kicad_mod",
+      "sha256": "01a9cf0760a69faa989db0ff756daa38df9941e218e5f8a06ba1a5cd5ec2c37d",
+      "expected": "01a9cf0760a69faa989db0ff756daa38df9941e218e5f8a06ba1a5cd5ec2c37d",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/Coilcraft_MSS1246T_12x12.kicad_mod",
+      "sha256": "374a5e52bb92199e80c7cf60b615f4ae3c2b600cba74612aa8f5a2b8f990cd05",
+      "expected": "374a5e52bb92199e80c7cf60b615f4ae3c2b600cba74612aa8f5a2b8f990cd05",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/Coilcraft_MSS1246T_12x12.kicad_mod",
+      "sha256": "374a5e52bb92199e80c7cf60b615f4ae3c2b600cba74612aa8f5a2b8f990cd05",
+      "expected": "374a5e52bb92199e80c7cf60b615f4ae3c2b600cba74612aa8f5a2b8f990cd05",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/Coilcraft_MSS1246T_12x12_RVB22_L121.kicad_mod",
+      "sha256": "4dc10090e2f615024b53139aafe2b754ab5c105de094d3fee4304f1db60aa045",
+      "expected": "4dc10090e2f615024b53139aafe2b754ab5c105de094d3fee4304f1db60aa045",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/Coilcraft_MSS1246T_12x12_RVB22_L121.kicad_mod",
+      "sha256": "4dc10090e2f615024b53139aafe2b754ab5c105de094d3fee4304f1db60aa045",
+      "expected": "4dc10090e2f615024b53139aafe2b754ab5c105de094d3fee4304f1db60aa045",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/D_SMA.kicad_mod",
+      "sha256": "08e475ba157dfd29f03602ae785bc21faee2586a20f96edeb9c19cb42868948f",
+      "expected": "08e475ba157dfd29f03602ae785bc21faee2586a20f96edeb9c19cb42868948f",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/D_SMA.kicad_mod",
+      "sha256": "08e475ba157dfd29f03602ae785bc21faee2586a20f96edeb9c19cb42868948f",
+      "expected": "08e475ba157dfd29f03602ae785bc21faee2586a20f96edeb9c19cb42868948f",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/D_SMB.kicad_mod",
+      "sha256": "3fe2352afdcb9d3c333fd57aba59a4eac88464beb338c81b2422b7b931073f73",
+      "expected": "3fe2352afdcb9d3c333fd57aba59a4eac88464beb338c81b2422b7b931073f73",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/D_SMB.kicad_mod",
+      "sha256": "3fe2352afdcb9d3c333fd57aba59a4eac88464beb338c81b2422b7b931073f73",
+      "expected": "3fe2352afdcb9d3c333fd57aba59a4eac88464beb338c81b2422b7b931073f73",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/D_SMC.kicad_mod",
+      "sha256": "ef70d411a94053ae633f6b30a5146218b0bf144e91ba1b4b20bdc2451864a860",
+      "expected": "ef70d411a94053ae633f6b30a5146218b0bf144e91ba1b4b20bdc2451864a860",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/D_SMC.kicad_mod",
+      "sha256": "ef70d411a94053ae633f6b30a5146218b0bf144e91ba1b4b20bdc2451864a860",
+      "expected": "ef70d411a94053ae633f6b30a5146218b0bf144e91ba1b4b20bdc2451864a860",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/D_SMC_RVB22_D103.kicad_mod",
+      "sha256": "e944bb83714e7c8bcd1b95c36a43a4f16cc250dbcd1532af8c0a2660ec1c28a8",
+      "expected": "e944bb83714e7c8bcd1b95c36a43a4f16cc250dbcd1532af8c0a2660ec1c28a8",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/D_SMC_RVB22_D103.kicad_mod",
+      "sha256": "e944bb83714e7c8bcd1b95c36a43a4f16cc250dbcd1532af8c0a2660ec1c28a8",
+      "expected": "e944bb83714e7c8bcd1b95c36a43a4f16cc250dbcd1532af8c0a2660ec1c28a8",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/D_SOD-123F.kicad_mod",
+      "sha256": "aa24a7d6bbbac5a2c0eb536a1ba5c0f023c3b35272e8a03f914873b48b3b0c07",
+      "expected": "aa24a7d6bbbac5a2c0eb536a1ba5c0f023c3b35272e8a03f914873b48b3b0c07",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/D_SOD-123F.kicad_mod",
+      "sha256": "aa24a7d6bbbac5a2c0eb536a1ba5c0f023c3b35272e8a03f914873b48b3b0c07",
+      "expected": "aa24a7d6bbbac5a2c0eb536a1ba5c0f023c3b35272e8a03f914873b48b3b0c07",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/ESP32-S3-WROOM-1.kicad_mod",
+      "sha256": "65145e12e0f08bb8c126a3915e7f641b1c79c7b0ae5aaa4c0d5bc278a18c4c04",
+      "expected": "65145e12e0f08bb8c126a3915e7f641b1c79c7b0ae5aaa4c0d5bc278a18c4c04",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/ESP32-S3-WROOM-1.kicad_mod",
+      "sha256": "65145e12e0f08bb8c126a3915e7f641b1c79c7b0ae5aaa4c0d5bc278a18c4c04",
+      "expected": "65145e12e0f08bb8c126a3915e7f641b1c79c7b0ae5aaa4c0d5bc278a18c4c04",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/ESP32-S3-WROOM-1_RVB22_U201.kicad_mod",
+      "sha256": "d6feca1219e0ee0cdd576b1fbdb003d4a9262fa38926a54b8109db2090cb2750",
+      "expected": "d6feca1219e0ee0cdd576b1fbdb003d4a9262fa38926a54b8109db2090cb2750",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/ESP32-S3-WROOM-1_RVB22_U201.kicad_mod",
+      "sha256": "d6feca1219e0ee0cdd576b1fbdb003d4a9262fa38926a54b8109db2090cb2750",
+      "expected": "d6feca1219e0ee0cdd576b1fbdb003d4a9262fa38926a54b8109db2090cb2750",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/ESP32-S3-WROOM-1_RVB22_U201_TH48.kicad_mod",
+      "sha256": "16c83584927c2242aa0557c4ff150689f6605724fe9f2a6246875d297f21a4be",
+      "expected": "16c83584927c2242aa0557c4ff150689f6605724fe9f2a6246875d297f21a4be",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/ESP32-S3-WROOM-1_RVB22_U201_TH48.kicad_mod",
+      "sha256": "16c83584927c2242aa0557c4ff150689f6605724fe9f2a6246875d297f21a4be",
+      "expected": "16c83584927c2242aa0557c4ff150689f6605724fe9f2a6246875d297f21a4be",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/Fuse_Littelfuse-NANO2-885.kicad_mod",
+      "sha256": "b041f0e9d16bafb9f833640d4f6fc49e2ba71f90d21fed23638d10ba696c0b4a",
+      "expected": "b041f0e9d16bafb9f833640d4f6fc49e2ba71f90d21fed23638d10ba696c0b4a",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/Fuse_Littelfuse-NANO2-885.kicad_mod",
+      "sha256": "b041f0e9d16bafb9f833640d4f6fc49e2ba71f90d21fed23638d10ba696c0b4a",
+      "expected": "b041f0e9d16bafb9f833640d4f6fc49e2ba71f90d21fed23638d10ba696c0b4a",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm.kicad_mod",
+      "sha256": "64ad83fbdbf19255a150892c28ccc38dac47fc9d30ae5d5ca4c791b321f6f623",
+      "expected": "64ad83fbdbf19255a150892c28ccc38dac47fc9d30ae5d5ca4c791b321f6f623",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm.kicad_mod",
+      "sha256": "64ad83fbdbf19255a150892c28ccc38dac47fc9d30ae5d5ca4c791b321f6f623",
+      "expected": "64ad83fbdbf19255a150892c28ccc38dac47fc9d30ae5d5ca4c791b321f6f623",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.kicad_mod",
+      "sha256": "cbc4631b4f422e67d772176af27ac1af4c2f5ce5a1431a3409f2df58bae9d482",
+      "expected": "cbc4631b4f422e67d772176af27ac1af4c2f5ce5a1431a3409f2df58bae9d482",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.kicad_mod",
+      "sha256": "cbc4631b4f422e67d772176af27ac1af4c2f5ce5a1431a3409f2df58bae9d482",
+      "expected": "cbc4631b4f422e67d772176af27ac1af4c2f5ce5a1431a3409f2df58bae9d482",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm.kicad_mod",
+      "sha256": "22e9c999c6c9bcd47b01724cc6b99207c24f0c7c4107a9b23347aa559fc923ab",
+      "expected": "22e9c999c6c9bcd47b01724cc6b99207c24f0c7c4107a9b23347aa559fc923ab",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm.kicad_mod",
+      "sha256": "22e9c999c6c9bcd47b01724cc6b99207c24f0c7c4107a9b23347aa559fc923ab",
+      "expected": "22e9c999c6c9bcd47b01724cc6b99207c24f0c7c4107a9b23347aa559fc923ab",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/Hirose_UFL_R_SMT_1_80_RevB.kicad_mod",
+      "sha256": "04a28fbb207e977e5eedea4d3d0f43952de1da7b014e0c80ceb839aaee695eee",
+      "expected": "04a28fbb207e977e5eedea4d3d0f43952de1da7b014e0c80ceb839aaee695eee",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/Hirose_UFL_R_SMT_1_80_RevB.kicad_mod",
+      "sha256": "04a28fbb207e977e5eedea4d3d0f43952de1da7b014e0c80ceb839aaee695eee",
+      "expected": "04a28fbb207e977e5eedea4d3d0f43952de1da7b014e0c80ceb839aaee695eee",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/KEMET_C1210_10u50V.kicad_mod",
+      "sha256": "bf19c7f0ff60f7a10572bca286f824c29a0974bfc6de0183ff90ac6c2eaf5e16",
+      "expected": "bf19c7f0ff60f7a10572bca286f824c29a0974bfc6de0183ff90ac6c2eaf5e16",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/KEMET_C1210_10u50V.kicad_mod",
+      "sha256": "bf19c7f0ff60f7a10572bca286f824c29a0974bfc6de0183ff90ac6c2eaf5e16",
+      "expected": "bf19c7f0ff60f7a10572bca286f824c29a0974bfc6de0183ff90ac6c2eaf5e16",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/KEMET_T598_X_7343_Median.kicad_mod",
+      "sha256": "e2638c7b17476fe21a06134809c9dd9aa26ba048d554a17f9a344de5de941a5e",
+      "expected": "e2638c7b17476fe21a06134809c9dd9aa26ba048d554a17f9a344de5de941a5e",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/KEMET_T598_X_7343_Median.kicad_mod",
+      "sha256": "e2638c7b17476fe21a06134809c9dd9aa26ba048d554a17f9a344de5de941a5e",
+      "expected": "e2638c7b17476fe21a06134809c9dd9aa26ba048d554a17f9a344de5de941a5e",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/KEMET_T598_X_7343_Median_RVB22_C206.kicad_mod",
+      "sha256": "3abe092b5475ee38f326e36f846186a9b839d0c11d01485e7f443a21769e888c",
+      "expected": "3abe092b5475ee38f326e36f846186a9b839d0c11d01485e7f443a21769e888c",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/KEMET_T598_X_7343_Median_RVB22_C206.kicad_mod",
+      "sha256": "3abe092b5475ee38f326e36f846186a9b839d0c11d01485e7f443a21769e888c",
+      "expected": "3abe092b5475ee38f326e36f846186a9b839d0c11d01485e7f443a21769e888c",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/LED_0603_1608Metric.kicad_mod",
+      "sha256": "fc97fced1536541b16bae010b22d0204b3c6e7680ebf76507c56f7dff2c16649",
+      "expected": "fc97fced1536541b16bae010b22d0204b3c6e7680ebf76507c56f7dff2c16649",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/LED_0603_1608Metric.kicad_mod",
+      "sha256": "fc97fced1536541b16bae010b22d0204b3c6e7680ebf76507c56f7dff2c16649",
+      "expected": "fc97fced1536541b16bae010b22d0204b3c6e7680ebf76507c56f7dff2c16649",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/L_Coilcraft_XAL5030-XXX.kicad_mod",
+      "sha256": "fb4554ae1d45c37ef0d8d21d86e363d74469b39a559860253100c06ab7e08bad",
+      "expected": "fb4554ae1d45c37ef0d8d21d86e363d74469b39a559860253100c06ab7e08bad",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/L_Coilcraft_XAL5030-XXX.kicad_mod",
+      "sha256": "fb4554ae1d45c37ef0d8d21d86e363d74469b39a559860253100c06ab7e08bad",
+      "expected": "fb4554ae1d45c37ef0d8d21d86e363d74469b39a559860253100c06ab7e08bad",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/MSOP-8_3x3mm_P0.65mm.kicad_mod",
+      "sha256": "1f7eac14be14b4813bbc1654935e31bf0a7b37885911b1811b8e7b861cc5bb35",
+      "expected": "1f7eac14be14b4813bbc1654935e31bf0a7b37885911b1811b8e7b861cc5bb35",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/MSOP-8_3x3mm_P0.65mm.kicad_mod",
+      "sha256": "1f7eac14be14b4813bbc1654935e31bf0a7b37885911b1811b8e7b861cc5bb35",
+      "expected": "1f7eac14be14b4813bbc1654935e31bf0a7b37885911b1811b8e7b861cc5bb35",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal.kicad_mod",
+      "sha256": "8d286e81ef8f67d655dc450516580447da744920eb73b6bea226b7707c8fa837",
+      "expected": "8d286e81ef8f67d655dc450516580447da744920eb73b6bea226b7707c8fa837",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal.kicad_mod",
+      "sha256": "8d286e81ef8f67d655dc450516580447da744920eb73b6bea226b7707c8fa837",
+      "expected": "8d286e81ef8f67d655dc450516580447da744920eb73b6bea226b7707c8fa837",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.kicad_mod",
+      "sha256": "e84beb0320bccedf7a1f971c3bbb7f367a862dd8206247d51e913b34cf9e7633",
+      "expected": "e84beb0320bccedf7a1f971c3bbb7f367a862dd8206247d51e913b34cf9e7633",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.kicad_mod",
+      "sha256": "e84beb0320bccedf7a1f971c3bbb7f367a862dd8206247d51e913b34cf9e7633",
+      "expected": "e84beb0320bccedf7a1f971c3bbb7f367a862dd8206247d51e913b34cf9e7633",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/MountingHole_4.4mm_Outboard.kicad_mod",
+      "sha256": "b257de739a84ff80cc31716db935e7e3e4baa453841d9ad9eb434b14472caf43",
+      "expected": "b257de739a84ff80cc31716db935e7e3e4baa453841d9ad9eb434b14472caf43",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/MountingHole_4.4mm_Outboard.kicad_mod",
+      "sha256": "b257de739a84ff80cc31716db935e7e3e4baa453841d9ad9eb434b14472caf43",
+      "expected": "b257de739a84ff80cc31716db935e7e3e4baa453841d9ad9eb434b14472caf43",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/Murata_LQW18AS_1608.kicad_mod",
+      "sha256": "bbc27566d1eda3ed63ed86d856e53e674ac58bb51aa4d60edd2994096d537fcf",
+      "expected": "bbc27566d1eda3ed63ed86d856e53e674ac58bb51aa4d60edd2994096d537fcf",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/Murata_LQW18AS_1608.kicad_mod",
+      "sha256": "bbc27566d1eda3ed63ed86d856e53e674ac58bb51aa4d60edd2994096d537fcf",
+      "expected": "bbc27566d1eda3ed63ed86d856e53e674ac58bb51aa4d60edd2994096d537fcf",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/Nexperia_SOD323_PMEG2010BEA.kicad_mod",
+      "sha256": "15eff0adf9f4fa564660b60e6cb1cbfeaab635638d6b332c366a891214eeb0a4",
+      "expected": "15eff0adf9f4fa564660b60e6cb1cbfeaab635638d6b332c366a891214eeb0a4",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/Nexperia_SOD323_PMEG2010BEA.kicad_mod",
+      "sha256": "15eff0adf9f4fa564660b60e6cb1cbfeaab635638d6b332c366a891214eeb0a4",
+      "expected": "15eff0adf9f4fa564660b60e6cb1cbfeaab635638d6b332c366a891214eeb0a4",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/PinHeader_1x02_P2.54mm_Vertical.kicad_mod",
+      "sha256": "2f3abce1a47e344cff1be30f002410ea46d00c52eb239a2e5cc8b7fe46e5acc9",
+      "expected": "2f3abce1a47e344cff1be30f002410ea46d00c52eb239a2e5cc8b7fe46e5acc9",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/PinHeader_1x02_P2.54mm_Vertical.kicad_mod",
+      "sha256": "2f3abce1a47e344cff1be30f002410ea46d00c52eb239a2e5cc8b7fe46e5acc9",
+      "expected": "2f3abce1a47e344cff1be30f002410ea46d00c52eb239a2e5cc8b7fe46e5acc9",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/R_0603_1608Metric.kicad_mod",
+      "sha256": "c9cacb54994c0aa1d42dfe9c3fb385868f53f5a8d826a51a7f08056f34d871b4",
+      "expected": "c9cacb54994c0aa1d42dfe9c3fb385868f53f5a8d826a51a7f08056f34d871b4",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/R_0603_1608Metric.kicad_mod",
+      "sha256": "c9cacb54994c0aa1d42dfe9c3fb385868f53f5a8d826a51a7f08056f34d871b4",
+      "expected": "c9cacb54994c0aa1d42dfe9c3fb385868f53f5a8d826a51a7f08056f34d871b4",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R155.kicad_mod",
+      "sha256": "73c41c8ed8b62bcf4c6baba606b61bce664d31fc130a50d9a5df7b67e9bcbef6",
+      "expected": "73c41c8ed8b62bcf4c6baba606b61bce664d31fc130a50d9a5df7b67e9bcbef6",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R155.kicad_mod",
+      "sha256": "73c41c8ed8b62bcf4c6baba606b61bce664d31fc130a50d9a5df7b67e9bcbef6",
+      "expected": "73c41c8ed8b62bcf4c6baba606b61bce664d31fc130a50d9a5df7b67e9bcbef6",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R156.kicad_mod",
+      "sha256": "c18c6b45214d5b6c56f645b69f6568d25275bd872bcf56f588dd9a7e1e5f9fd6",
+      "expected": "c18c6b45214d5b6c56f645b69f6568d25275bd872bcf56f588dd9a7e1e5f9fd6",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R156.kicad_mod",
+      "sha256": "c18c6b45214d5b6c56f645b69f6568d25275bd872bcf56f588dd9a7e1e5f9fd6",
+      "expected": "c18c6b45214d5b6c56f645b69f6568d25275bd872bcf56f588dd9a7e1e5f9fd6",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R157.kicad_mod",
+      "sha256": "ccc18a2be92a75b0406d9842522773aa5fd4767eda9419f28f497afd9796b008",
+      "expected": "ccc18a2be92a75b0406d9842522773aa5fd4767eda9419f28f497afd9796b008",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R157.kicad_mod",
+      "sha256": "ccc18a2be92a75b0406d9842522773aa5fd4767eda9419f28f497afd9796b008",
+      "expected": "ccc18a2be92a75b0406d9842522773aa5fd4767eda9419f28f497afd9796b008",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R203.kicad_mod",
+      "sha256": "f7916796ae7c2c9092f7a1ad71856a38d7b8ec22461bf40846903e745aa7e311",
+      "expected": "f7916796ae7c2c9092f7a1ad71856a38d7b8ec22461bf40846903e745aa7e311",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/R_0603_1608Metric_RVB22_R203.kicad_mod",
+      "sha256": "f7916796ae7c2c9092f7a1ad71856a38d7b8ec22461bf40846903e745aa7e311",
+      "expected": "f7916796ae7c2c9092f7a1ad71856a38d7b8ec22461bf40846903e745aa7e311",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/R_0805_2012Metric.kicad_mod",
+      "sha256": "c9e065246f39a319f005b381e48e92fe0cf15ef93d474e17a8c210566693cd97",
+      "expected": "c9e065246f39a319f005b381e48e92fe0cf15ef93d474e17a8c210566693cd97",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/R_0805_2012Metric.kicad_mod",
+      "sha256": "c9e065246f39a319f005b381e48e92fe0cf15ef93d474e17a8c210566693cd97",
+      "expected": "c9e065246f39a319f005b381e48e92fe0cf15ef93d474e17a8c210566693cd97",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/R_1206_3216Metric.kicad_mod",
+      "sha256": "fc7e92d4991b06a68d33544a7eab13e18224773057bc9e6bafdd6744529e3f71",
+      "expected": "fc7e92d4991b06a68d33544a7eab13e18224773057bc9e6bafdd6744529e3f71",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/R_1206_3216Metric.kicad_mod",
+      "sha256": "fc7e92d4991b06a68d33544a7eab13e18224773057bc9e6bafdd6744529e3f71",
+      "expected": "fc7e92d4991b06a68d33544a7eab13e18224773057bc9e6bafdd6744529e3f71",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/R_2512_6332Metric.kicad_mod",
+      "sha256": "29b787a14a222b380ee2f0308002d95acec37074f13708a80c0b4531dbc01138",
+      "expected": "29b787a14a222b380ee2f0308002d95acec37074f13708a80c0b4531dbc01138",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/R_2512_6332Metric.kicad_mod",
+      "sha256": "29b787a14a222b380ee2f0308002d95acec37074f13708a80c0b4531dbc01138",
+      "expected": "29b787a14a222b380ee2f0308002d95acec37074f13708a80c0b4531dbc01138",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/SOIC-8_3.9x4.9mm_P1.27mm.kicad_mod",
+      "sha256": "c7cfe70e1d1fdc430d5bee68c1c48c8ac9b976c676d5181211167f569fdd117e",
+      "expected": "c7cfe70e1d1fdc430d5bee68c1c48c8ac9b976c676d5181211167f569fdd117e",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/SOIC-8_3.9x4.9mm_P1.27mm.kicad_mod",
+      "sha256": "c7cfe70e1d1fdc430d5bee68c1c48c8ac9b976c676d5181211167f569fdd117e",
+      "expected": "c7cfe70e1d1fdc430d5bee68c1c48c8ac9b976c676d5181211167f569fdd117e",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/SOT-23-5.kicad_mod",
+      "sha256": "428744bf0ef6b4f15c735b90c0119d7ae4b9eef99642e9ecca7ec1a32d4240e0",
+      "expected": "428744bf0ef6b4f15c735b90c0119d7ae4b9eef99642e9ecca7ec1a32d4240e0",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/SOT-23-5.kicad_mod",
+      "sha256": "428744bf0ef6b4f15c735b90c0119d7ae4b9eef99642e9ecca7ec1a32d4240e0",
+      "expected": "428744bf0ef6b4f15c735b90c0119d7ae4b9eef99642e9ecca7ec1a32d4240e0",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/SOT-23.kicad_mod",
+      "sha256": "fab9dbbbc894bef856de100bd88ce1195435b9223f660f4021c15e00f9be8237",
+      "expected": "fab9dbbbc894bef856de100bd88ce1195435b9223f660f4021c15e00f9be8237",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/SOT-23.kicad_mod",
+      "sha256": "fab9dbbbc894bef856de100bd88ce1195435b9223f660f4021c15e00f9be8237",
+      "expected": "fab9dbbbc894bef856de100bd88ce1195435b9223f660f4021c15e00f9be8237",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm.kicad_mod",
+      "sha256": "f4ea754c90fccf90ab5b622758f985cd938cbfcba7ecb1009a1b6ff89256c933",
+      "expected": "f4ea754c90fccf90ab5b622758f985cd938cbfcba7ecb1009a1b6ff89256c933",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm.kicad_mod",
+      "sha256": "f4ea754c90fccf90ab5b622758f985cd938cbfcba7ecb1009a1b6ff89256c933",
+      "expected": "f4ea754c90fccf90ab5b622758f985cd938cbfcba7ecb1009a1b6ff89256c933",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/TI_DDA0008B_4214849B.kicad_mod",
+      "sha256": "d7153eb7b6245784529bd34fa265eea9dde51380969793584c2ce3c50f121016",
+      "expected": "d7153eb7b6245784529bd34fa265eea9dde51380969793584c2ce3c50f121016",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/TI_DDA0008B_4214849B.kicad_mod",
+      "sha256": "d7153eb7b6245784529bd34fa265eea9dde51380969793584c2ce3c50f121016",
+      "expected": "d7153eb7b6245784529bd34fa265eea9dde51380969793584c2ce3c50f121016",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/TI_DPY0002A_TPD1E05U06_SMDMask.kicad_mod",
+      "sha256": "99cf73073a296cbd9a26c6fe36d9de9b5c4cb72b3b62a6f2da18cc611a614ee2",
+      "expected": "99cf73073a296cbd9a26c6fe36d9de9b5c4cb72b3b62a6f2da18cc611a614ee2",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/TI_DPY0002A_TPD1E05U06_SMDMask.kicad_mod",
+      "sha256": "99cf73073a296cbd9a26c6fe36d9de9b5c4cb72b3b62a6f2da18cc611a614ee2",
+      "expected": "99cf73073a296cbd9a26c6fe36d9de9b5c4cb72b3b62a6f2da18cc611a614ee2",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/TI_DRB0008J_TCAN3403.kicad_mod",
+      "sha256": "6a087c283c7dfdf04838e90b35b49f0c323ece348600c172c0c3a64cf9e1202e",
+      "expected": "6a087c283c7dfdf04838e90b35b49f0c323ece348600c172c0c3a64cf9e1202e",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/TI_DRB0008J_TCAN3403.kicad_mod",
+      "sha256": "6a087c283c7dfdf04838e90b35b49f0c323ece348600c172c0c3a64cf9e1202e",
+      "expected": "6a087c283c7dfdf04838e90b35b49f0c323ece348600c172c0c3a64cf9e1202e",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/TI_PWP0016A_TPS2660.kicad_mod",
+      "sha256": "fac4eb28211a9a50ee25bbf26f3b9032ac18f7995e4f76bff63cf6a3ba873931",
+      "expected": "fac4eb28211a9a50ee25bbf26f3b9032ac18f7995e4f76bff63cf6a3ba873931",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/TI_PWP0016A_TPS2660.kicad_mod",
+      "sha256": "fac4eb28211a9a50ee25bbf26f3b9032ac18f7995e4f76bff63cf6a3ba873931",
+      "expected": "fac4eb28211a9a50ee25bbf26f3b9032ac18f7995e4f76bff63cf6a3ba873931",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/TO-252-2.kicad_mod",
+      "sha256": "4db74601b723f842b0e423dbfb2fae7b8717859c27c2219feae089447a985e29",
+      "expected": "4db74601b723f842b0e423dbfb2fae7b8717859c27c2219feae089447a985e29",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/TO-252-2.kicad_mod",
+      "sha256": "4db74601b723f842b0e423dbfb2fae7b8717859c27c2219feae089447a985e29",
+      "expected": "4db74601b723f842b0e423dbfb2fae7b8717859c27c2219feae089447a985e29",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/TPS3808_DBV0006A.kicad_mod",
+      "sha256": "2481f3a84725b6069d69c7b9b66d3281b5dfc7bef5ee133835a96124cfacac04",
+      "expected": "2481f3a84725b6069d69c7b9b66d3281b5dfc7bef5ee133835a96124cfacac04",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/TPS3808_DBV0006A.kicad_mod",
+      "sha256": "2481f3a84725b6069d69c7b9b66d3281b5dfc7bef5ee133835a96124cfacac04",
+      "expected": "2481f3a84725b6069d69c7b9b66d3281b5dfc7bef5ee133835a96124cfacac04",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical.kicad_mod",
+      "sha256": "57c6d35b43e1b88a36581eba48f1ea77345677124233631fb1b3fce3abab76c3",
+      "expected": "57c6d35b43e1b88a36581eba48f1ea77345677124233631fb1b3fce3abab76c3",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical.kicad_mod",
+      "sha256": "57c6d35b43e1b88a36581eba48f1ea77345677124233631fb1b3fce3abab76c3",
+      "expected": "57c6d35b43e1b88a36581eba48f1ea77345677124233631fb1b3fce3abab76c3",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/TestPoint_Pad_D1.5mm.kicad_mod",
+      "sha256": "15befb4e91182778cd505b79123962fdf11fe396349ca7f788ba430d0d20ca10",
+      "expected": "15befb4e91182778cd505b79123962fdf11fe396349ca7f788ba430d0d20ca10",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/TestPoint_Pad_D1.5mm.kicad_mod",
+      "sha256": "15befb4e91182778cd505b79123962fdf11fe396349ca7f788ba430d0d20ca10",
+      "expected": "15befb4e91182778cd505b79123962fdf11fe396349ca7f788ba430d0d20ca10",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/U.FL_Hirose_U.FL-R-SMT-1_Vertical.kicad_mod",
+      "sha256": "ecb0d4bf28d78d48e82afb246edd1724537b3f37576d5564404e724bdf309fcb",
+      "expected": "ecb0d4bf28d78d48e82afb246edd1724537b3f37576d5564404e724bdf309fcb",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/U.FL_Hirose_U.FL-R-SMT-1_Vertical.kicad_mod",
+      "sha256": "ecb0d4bf28d78d48e82afb246edd1724537b3f37576d5564404e724bdf309fcb",
+      "expected": "ecb0d4bf28d78d48e82afb246edd1724537b3f37576d5564404e724bdf309fcb",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/VSSOP-8_2.3x2mm_P0.5mm.kicad_mod",
+      "sha256": "e123bce97bda0be995e78f9feab2277e8edfc92577e089028da2f2702d0603c4",
+      "expected": "e123bce97bda0be995e78f9feab2277e8edfc92577e089028da2f2702d0603c4",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/VSSOP-8_2.3x2mm_P0.5mm.kicad_mod",
+      "sha256": "e123bce97bda0be995e78f9feab2277e8edfc92577e089028da2f2702d0603c4",
+      "expected": "e123bce97bda0be995e78f9feab2277e8edfc92577e089028da2f2702d0603c4",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/WSLP0603_MANUFACTURER.kicad_mod",
+      "sha256": "d762689855c072c352dba0202e4780af14db25b4964e44973fc6bbc9f03d5fbb",
+      "expected": "d762689855c072c352dba0202e4780af14db25b4964e44973fc6bbc9f03d5fbb",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/WSLP0603_MANUFACTURER.kicad_mod",
+      "sha256": "d762689855c072c352dba0202e4780af14db25b4964e44973fc6bbc9f03d5fbb",
+      "expected": "d762689855c072c352dba0202e4780af14db25b4964e44973fc6bbc9f03d5fbb",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/WSLP0603_MANUFACTURER_R153.kicad_mod",
+      "sha256": "e221b11feb82caf78a35d9d9c47d12b962a172eaf38e412357424943ca373165",
+      "expected": "e221b11feb82caf78a35d9d9c47d12b962a172eaf38e412357424943ca373165",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/WSLP0603_MANUFACTURER_R153.kicad_mod",
+      "sha256": "e221b11feb82caf78a35d9d9c47d12b962a172eaf38e412357424943ca373165",
+      "expected": "e221b11feb82caf78a35d9d9c47d12b962a172eaf38e412357424943ca373165",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/libraries/RevB.pretty/Wurth_61300211121_1x02.kicad_mod",
+      "sha256": "fae196d64558ce050e0d2caf740f7864cc78b44944d3a8f8552b6a8353dc0b8c",
+      "expected": "fae196d64558ce050e0d2caf740f7864cc78b44944d3a8f8552b6a8353dc0b8c",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/libraries/RevB.pretty/Wurth_61300211121_1x02.kicad_mod",
+      "sha256": "fae196d64558ce050e0d2caf740f7864cc78b44944d3a8f8552b6a8353dc0b8c",
+      "expected": "fae196d64558ce050e0d2caf740f7864cc78b44944d3a8f8552b6a8353dc0b8c",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_CDTop_PA1616D_20Pad_v06.step",
+      "sha256": "d3c27aeb3da18df56e080db9947eb015a1967d558c9aecd4dc6f93c79d42a8ca",
+      "expected": "d3c27aeb3da18df56e080db9947eb015a1967d558c9aecd4dc6f93c79d42a8ca",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_CDTop_PA1616D_20Pad_v06.step",
+      "sha256": "d3c27aeb3da18df56e080db9947eb015a1967d558c9aecd4dc6f93c79d42a8ca",
+      "expected": "d3c27aeb3da18df56e080db9947eb015a1967d558c9aecd4dc6f93c79d42a8ca",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_C_0603_1608Metric_RVB22_C205.step",
+      "sha256": "6f635d6a798f5b396801338bd09c561cb28c5ed77b3f3b28248ae6934f3ca326",
+      "expected": "6f635d6a798f5b396801338bd09c561cb28c5ed77b3f3b28248ae6934f3ca326",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_C_0603_1608Metric_RVB22_C205.step",
+      "sha256": "6f635d6a798f5b396801338bd09c561cb28c5ed77b3f3b28248ae6934f3ca326",
+      "expected": "6f635d6a798f5b396801338bd09c561cb28c5ed77b3f3b28248ae6934f3ca326",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_Coilcraft_MSS1246T_12x12_RVB22_L121.step",
+      "sha256": "ddd6949e37a4949979fcbfd33b7194073cb8d9f20713a929af460e011db336ed",
+      "expected": "ddd6949e37a4949979fcbfd33b7194073cb8d9f20713a929af460e011db336ed",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_Coilcraft_MSS1246T_12x12_RVB22_L121.step",
+      "sha256": "ddd6949e37a4949979fcbfd33b7194073cb8d9f20713a929af460e011db336ed",
+      "expected": "ddd6949e37a4949979fcbfd33b7194073cb8d9f20713a929af460e011db336ed",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_Fuse_Littelfuse-NANO2-885.step",
+      "sha256": "9d36a9abf86fe279bf6de0a69d7bd60e729853d406d1523e3406362177cb6003",
+      "expected": "9d36a9abf86fe279bf6de0a69d7bd60e729853d406d1523e3406362177cb6003",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_Fuse_Littelfuse-NANO2-885.step",
+      "sha256": "9d36a9abf86fe279bf6de0a69d7bd60e729853d406d1523e3406362177cb6003",
+      "expected": "9d36a9abf86fe279bf6de0a69d7bd60e729853d406d1523e3406362177cb6003",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.step",
+      "sha256": "b30c2bf603e43d6fd52a5532c80196e6ad8df4c1de639250321851f114fefc6f",
+      "expected": "b30c2bf603e43d6fd52a5532c80196e6ad8df4c1de639250321851f114fefc6f",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.step",
+      "sha256": "b30c2bf603e43d6fd52a5532c80196e6ad8df4c1de639250321851f114fefc6f",
+      "expected": "b30c2bf603e43d6fd52a5532c80196e6ad8df4c1de639250321851f114fefc6f",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_KEMET_C1210_10u50V.step",
+      "sha256": "5b0d225bb2c29ee9132422fdcf2b1dfbc044cedcc181e102344f0d5dd34e274d",
+      "expected": "5b0d225bb2c29ee9132422fdcf2b1dfbc044cedcc181e102344f0d5dd34e274d",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_KEMET_C1210_10u50V.step",
+      "sha256": "5b0d225bb2c29ee9132422fdcf2b1dfbc044cedcc181e102344f0d5dd34e274d",
+      "expected": "5b0d225bb2c29ee9132422fdcf2b1dfbc044cedcc181e102344f0d5dd34e274d",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_KEMET_T598_X_7343_Median_RVB22_C206.step",
+      "sha256": "70e116f6b72779d9d18e13b3f39b807c8d55337d3b94d25107a7c972fe799330",
+      "expected": "70e116f6b72779d9d18e13b3f39b807c8d55337d3b94d25107a7c972fe799330",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_KEMET_T598_X_7343_Median_RVB22_C206.step",
+      "sha256": "70e116f6b72779d9d18e13b3f39b807c8d55337d3b94d25107a7c972fe799330",
+      "expected": "70e116f6b72779d9d18e13b3f39b807c8d55337d3b94d25107a7c972fe799330",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.step",
+      "sha256": "2243353fd26661c62429727755fdc6f236a303e3b37a78bfb77d7062a91ec91e",
+      "expected": "2243353fd26661c62429727755fdc6f236a303e3b37a78bfb77d7062a91ec91e",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.step",
+      "sha256": "2243353fd26661c62429727755fdc6f236a303e3b37a78bfb77d7062a91ec91e",
+      "expected": "2243353fd26661c62429727755fdc6f236a303e3b37a78bfb77d7062a91ec91e",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_Murata_LQW18AS_1608.step",
+      "sha256": "8dc9860d48f1f310cbb4fedd0859e36f6b22350e2f1eb7ca433e5d2465fc130d",
+      "expected": "8dc9860d48f1f310cbb4fedd0859e36f6b22350e2f1eb7ca433e5d2465fc130d",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_Murata_LQW18AS_1608.step",
+      "sha256": "8dc9860d48f1f310cbb4fedd0859e36f6b22350e2f1eb7ca433e5d2465fc130d",
+      "expected": "8dc9860d48f1f310cbb4fedd0859e36f6b22350e2f1eb7ca433e5d2465fc130d",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R155.step",
+      "sha256": "9fa8ccd8941ac41b5cfcbfe19e4b8e011285245410a56c75a4f1b4916fcfc785",
+      "expected": "9fa8ccd8941ac41b5cfcbfe19e4b8e011285245410a56c75a4f1b4916fcfc785",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R155.step",
+      "sha256": "9fa8ccd8941ac41b5cfcbfe19e4b8e011285245410a56c75a4f1b4916fcfc785",
+      "expected": "9fa8ccd8941ac41b5cfcbfe19e4b8e011285245410a56c75a4f1b4916fcfc785",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R156.step",
+      "sha256": "34333acbfbf21749f6c9601043337101b7c1790e7a5a69842e37599ae3f07d2c",
+      "expected": "34333acbfbf21749f6c9601043337101b7c1790e7a5a69842e37599ae3f07d2c",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R156.step",
+      "sha256": "34333acbfbf21749f6c9601043337101b7c1790e7a5a69842e37599ae3f07d2c",
+      "expected": "34333acbfbf21749f6c9601043337101b7c1790e7a5a69842e37599ae3f07d2c",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R157.step",
+      "sha256": "24d98fde147dda86b6eaf5e60d7412babffba9fab808ba53cab12091fc09aabb",
+      "expected": "24d98fde147dda86b6eaf5e60d7412babffba9fab808ba53cab12091fc09aabb",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R157.step",
+      "sha256": "24d98fde147dda86b6eaf5e60d7412babffba9fab808ba53cab12091fc09aabb",
+      "expected": "24d98fde147dda86b6eaf5e60d7412babffba9fab808ba53cab12091fc09aabb",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R203.step",
+      "sha256": "379bf1889a646b97bd6172624f5cb82ead3c68097b0693b15d2cca55e3ab3494",
+      "expected": "379bf1889a646b97bd6172624f5cb82ead3c68097b0693b15d2cca55e3ab3494",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_R_0603_1608Metric_RVB22_R203.step",
+      "sha256": "379bf1889a646b97bd6172624f5cb82ead3c68097b0693b15d2cca55e3ab3494",
+      "expected": "379bf1889a646b97bd6172624f5cb82ead3c68097b0693b15d2cca55e3ab3494",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_TI_DDA0008B_4214849B.step",
+      "sha256": "9ef46c4d078c5bbb9982618e3c80d58590fa2dbcb052185ee7728a010ad4d931",
+      "expected": "9ef46c4d078c5bbb9982618e3c80d58590fa2dbcb052185ee7728a010ad4d931",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_TI_DDA0008B_4214849B.step",
+      "sha256": "9ef46c4d078c5bbb9982618e3c80d58590fa2dbcb052185ee7728a010ad4d931",
+      "expected": "9ef46c4d078c5bbb9982618e3c80d58590fa2dbcb052185ee7728a010ad4d931",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_TI_DPY0002A_TPD1E05U06_SMDMask.step",
+      "sha256": "c9d865a8b06d5de7e49b609d88e16493b0842f8623eda2073718034e07a2e374",
+      "expected": "c9d865a8b06d5de7e49b609d88e16493b0842f8623eda2073718034e07a2e374",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_TI_DPY0002A_TPD1E05U06_SMDMask.step",
+      "sha256": "c9d865a8b06d5de7e49b609d88e16493b0842f8623eda2073718034e07a2e374",
+      "expected": "c9d865a8b06d5de7e49b609d88e16493b0842f8623eda2073718034e07a2e374",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_TI_DRB0008J_TCAN3403.step",
+      "sha256": "c0ce404df93ae34fa583617fb70a787b163f8d3d2e0537580652a5badf4ff737",
+      "expected": "c0ce404df93ae34fa583617fb70a787b163f8d3d2e0537580652a5badf4ff737",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_TI_DRB0008J_TCAN3403.step",
+      "sha256": "c0ce404df93ae34fa583617fb70a787b163f8d3d2e0537580652a5badf4ff737",
+      "expected": "c0ce404df93ae34fa583617fb70a787b163f8d3d2e0537580652a5badf4ff737",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_TI_PWP0016A_TPS2660.step",
+      "sha256": "5f4c1b37c0a8362ddb61c8228a7233d601c78a2878029a100b67c8091b11d35c",
+      "expected": "5f4c1b37c0a8362ddb61c8228a7233d601c78a2878029a100b67c8091b11d35c",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_TI_PWP0016A_TPS2660.step",
+      "sha256": "5f4c1b37c0a8362ddb61c8228a7233d601c78a2878029a100b67c8091b11d35c",
+      "expected": "5f4c1b37c0a8362ddb61c8228a7233d601c78a2878029a100b67c8091b11d35c",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_TPS3808_DBV0006A.step",
+      "sha256": "49c7af653bd28289a781dbc22e2974042c1ad314726f6d6ab4da24e6050d048d",
+      "expected": "49c7af653bd28289a781dbc22e2974042c1ad314726f6d6ab4da24e6050d048d",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_TPS3808_DBV0006A.step",
+      "sha256": "49c7af653bd28289a781dbc22e2974042c1ad314726f6d6ab4da24e6050d048d",
+      "expected": "49c7af653bd28289a781dbc22e2974042c1ad314726f6d6ab4da24e6050d048d",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_WSLP0603_MANUFACTURER.step",
+      "sha256": "41b3fb49317d8023ba3e55d02a8d568e7a99ef293928d5ba4e69f481a00438b6",
+      "expected": "41b3fb49317d8023ba3e55d02a8d568e7a99ef293928d5ba4e69f481a00438b6",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_WSLP0603_MANUFACTURER.step",
+      "sha256": "41b3fb49317d8023ba3e55d02a8d568e7a99ef293928d5ba4e69f481a00438b6",
+      "expected": "41b3fb49317d8023ba3e55d02a8d568e7a99ef293928d5ba4e69f481a00438b6",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/models/ENVELOPE_WSLP0603_MANUFACTURER_R153.step",
+      "sha256": "5d3ddd582dc72c78ad5910dd196a105247bfef40a94cd49eaad1a28116cfd740",
+      "expected": "5d3ddd582dc72c78ad5910dd196a105247bfef40a94cd49eaad1a28116cfd740",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/models/ENVELOPE_WSLP0603_MANUFACTURER_R153.step",
+      "sha256": "5d3ddd582dc72c78ad5910dd196a105247bfef40a94cd49eaad1a28116cfd740",
+      "expected": "5d3ddd582dc72c78ad5910dd196a105247bfef40a94cd49eaad1a28116cfd740",
+      "passed": true
+    },
+    {
+      "item": "recovery/cad/sym-lib-table",
+      "sha256": "4668006fdd85a6fbfd2e8d258275ac0881c762a223afce22626785f03b2c718f",
+      "expected": "4668006fdd85a6fbfd2e8d258275ac0881c762a223afce22626785f03b2c718f",
+      "passed": true
+    },
+    {
+      "item": "repository/cad/sym-lib-table",
+      "sha256": "4668006fdd85a6fbfd2e8d258275ac0881c762a223afce22626785f03b2c718f",
+      "expected": "4668006fdd85a6fbfd2e8d258275ac0881c762a223afce22626785f03b2c718f",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/PROGRAMMING_AND_CALIBRATION.md",
+      "sha256": "a23b97a32983912fec60d704ec1a8d2d26dd518309b2dcd7d41d4252f2396b0b",
+      "expected": "a23b97a32983912fec60d704ec1a8d2d26dd518309b2dcd7d41d4252f2396b0b",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/PROGRAMMING_AND_CALIBRATION.md",
+      "sha256": "a23b97a32983912fec60d704ec1a8d2d26dd518309b2dcd7d41d4252f2396b0b",
+      "expected": "a23b97a32983912fec60d704ec1a8d2d26dd518309b2dcd7d41d4252f2396b0b",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/SOURCE_MANIFEST.json",
+      "sha256": "3cc361dbe9ed9dd112bf889d5a3bece277ac45287a5348ebc2ab4255bf74a90f",
+      "expected": "3cc361dbe9ed9dd112bf889d5a3bece277ac45287a5348ebc2ab4255bf74a90f",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/SOURCE_MANIFEST.json",
+      "sha256": "3cc361dbe9ed9dd112bf889d5a3bece277ac45287a5348ebc2ab4255bf74a90f",
+      "expected": "3cc361dbe9ed9dd112bf889d5a3bece277ac45287a5348ebc2ab4255bf74a90f",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/build.sh",
+      "sha256": "ffe7c9787c6f04a3dfdd544b79328cb75082526b2294973ef76a67c9b6d9c468",
+      "expected": "ffe7c9787c6f04a3dfdd544b79328cb75082526b2294973ef76a67c9b6d9c468",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/build.sh",
+      "sha256": "ffe7c9787c6f04a3dfdd544b79328cb75082526b2294973ef76a67c9b6d9c468",
+      "expected": "ffe7c9787c6f04a3dfdd544b79328cb75082526b2294973ef76a67c9b6d9c468",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/cca_telemetry.ino",
+      "sha256": "1347dd39faab8f88e237cec9cf28e1a626e8d96227b93d11ae869761515d7ace",
+      "expected": "1347dd39faab8f88e237cec9cf28e1a626e8d96227b93d11ae869761515d7ace",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/cca_telemetry.ino",
+      "sha256": "1347dd39faab8f88e237cec9cf28e1a626e8d96227b93d11ae869761515d7ace",
+      "expected": "1347dd39faab8f88e237cec9cf28e1a626e8d96227b93d11ae869761515d7ace",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/config.h",
+      "sha256": "c77669e999f655cf514f484d143e4b2c8ffc818c779145da03062d17c91e6a84",
+      "expected": "c77669e999f655cf514f484d143e4b2c8ffc818c779145da03062d17c91e6a84",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/config.h",
+      "sha256": "c77669e999f655cf514f484d143e4b2c8ffc818c779145da03062d17c91e6a84",
+      "expected": "c77669e999f655cf514f484d143e4b2c8ffc818c779145da03062d17c91e6a84",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/pidmaps/gr86_2022.h",
+      "sha256": "2852ec1ebdc901b193fd3d27782f186fb927a964cd71fe45e3b35d4045f331c0",
+      "expected": "2852ec1ebdc901b193fd3d27782f186fb927a964cd71fe45e3b35d4045f331c0",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/pidmaps/gr86_2022.h",
+      "sha256": "2852ec1ebdc901b193fd3d27782f186fb927a964cd71fe45e3b35d4045f331c0",
+      "expected": "2852ec1ebdc901b193fd3d27782f186fb927a964cd71fe45e3b35d4045f331c0",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/pidmaps/pidmap_defs.h",
+      "sha256": "5da626ecd86d54fa12d91398903c5e6dda2e5eba3139ed5ae7b2edd0db88558d",
+      "expected": "5da626ecd86d54fa12d91398903c5e6dda2e5eba3139ed5ae7b2edd0db88558d",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/pidmaps/pidmap_defs.h",
+      "sha256": "5da626ecd86d54fa12d91398903c5e6dda2e5eba3139ed5ae7b2edd0db88558d",
+      "expected": "5da626ecd86d54fa12d91398903c5e6dda2e5eba3139ed5ae7b2edd0db88558d",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/boot_diagnostics.h",
+      "sha256": "2fbed7b0ff9d11d35e0cfafc9720032d1d4c47dd2a4cdb38d44e3d62f244bc14",
+      "expected": "2fbed7b0ff9d11d35e0cfafc9720032d1d4c47dd2a4cdb38d44e3d62f244bc14",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/boot_diagnostics.h",
+      "sha256": "2fbed7b0ff9d11d35e0cfafc9720032d1d4c47dd2a4cdb38d44e3d62f244bc14",
+      "expected": "2fbed7b0ff9d11d35e0cfafc9720032d1d4c47dd2a4cdb38d44e3d62f244bc14",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/driver_loss.h",
+      "sha256": "56c09de2e058ddb7ebbca66fe88b9fd1d2e81b3ff324ca7d9ca25732c1329209",
+      "expected": "56c09de2e058ddb7ebbca66fe88b9fd1d2e81b3ff324ca7d9ca25732c1329209",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/driver_loss.h",
+      "sha256": "56c09de2e058ddb7ebbca66fe88b9fd1d2e81b3ff324ca7d9ca25732c1329209",
+      "expected": "56c09de2e058ddb7ebbca66fe88b9fd1d2e81b3ff324ca7d9ca25732c1329209",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/gps_mode_config.h",
+      "sha256": "55e5f6ebdd5435fcb7ac4137fb6e47fc2eaa3295601bf27c062ba9d84a4c25c7",
+      "expected": "55e5f6ebdd5435fcb7ac4137fb6e47fc2eaa3295601bf27c062ba9d84a4c25c7",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/gps_mode_config.h",
+      "sha256": "55e5f6ebdd5435fcb7ac4137fb6e47fc2eaa3295601bf27c062ba9d84a4c25c7",
+      "expected": "55e5f6ebdd5435fcb7ac4137fb6e47fc2eaa3295601bf27c062ba9d84a4c25c7",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/gps_nmea.cpp",
+      "sha256": "7a97575c0e8d7192ce62b424b585d162d8e1bda37950e3a3f196db5e59344023",
+      "expected": "7a97575c0e8d7192ce62b424b585d162d8e1bda37950e3a3f196db5e59344023",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/gps_nmea.cpp",
+      "sha256": "7a97575c0e8d7192ce62b424b585d162d8e1bda37950e3a3f196db5e59344023",
+      "expected": "7a97575c0e8d7192ce62b424b585d162d8e1bda37950e3a3f196db5e59344023",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/gps_nmea.h",
+      "sha256": "559026366c21fd5f11d44a50709c8d095f832c0f3b5c2ce8f9f10d4872443623",
+      "expected": "559026366c21fd5f11d44a50709c8d095f832c0f3b5c2ce8f9f10d4872443623",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/gps_nmea.h",
+      "sha256": "559026366c21fd5f11d44a50709c8d095f832c0f3b5c2ce8f9f10d4872443623",
+      "expected": "559026366c21fd5f11d44a50709c8d095f832c0f3b5c2ce8f9f10d4872443623",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/gps_solution_epoch.h",
+      "sha256": "ebb4b490eb5050f5fcdd87a74e3146fac4abe68c71900bba229c73137b2d82f4",
+      "expected": "ebb4b490eb5050f5fcdd87a74e3146fac4abe68c71900bba229c73137b2d82f4",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/gps_solution_epoch.h",
+      "sha256": "ebb4b490eb5050f5fcdd87a74e3146fac4abe68c71900bba229c73137b2d82f4",
+      "expected": "ebb4b490eb5050f5fcdd87a74e3146fac4abe68c71900bba229c73137b2d82f4",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/io_budget.h",
+      "sha256": "97a108e6189eebd561a22d0e65142a0433163b7a61c2e69886ad4a8348195c16",
+      "expected": "97a108e6189eebd561a22d0e65142a0433163b7a61c2e69886ad4a8348195c16",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/io_budget.h",
+      "sha256": "97a108e6189eebd561a22d0e65142a0433163b7a61c2e69886ad4a8348195c16",
+      "expected": "97a108e6189eebd561a22d0e65142a0433163b7a61c2e69886ad4a8348195c16",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/led_status.cpp",
+      "sha256": "0ae1552da8b7876b1344e8b29d6c1b331517e943fa08bbc68924d50a0d1882d8",
+      "expected": "0ae1552da8b7876b1344e8b29d6c1b331517e943fa08bbc68924d50a0d1882d8",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/led_status.cpp",
+      "sha256": "0ae1552da8b7876b1344e8b29d6c1b331517e943fa08bbc68924d50a0d1882d8",
+      "expected": "0ae1552da8b7876b1344e8b29d6c1b331517e943fa08bbc68924d50a0d1882d8",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/led_status.h",
+      "sha256": "6c594e044491aa64e15e7c6c02fb28487b97546dd0918d7f6463f94d1197e0b9",
+      "expected": "6c594e044491aa64e15e7c6c02fb28487b97546dd0918d7f6463f94d1197e0b9",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/led_status.h",
+      "sha256": "6c594e044491aa64e15e7c6c02fb28487b97546dd0918d7f6463f94d1197e0b9",
+      "expected": "6c594e044491aa64e15e7c6c02fb28487b97546dd0918d7f6463f94d1197e0b9",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/nvs_cfg.cpp",
+      "sha256": "0356a9d44654a218e4b06fd732854fbd27d0e71e864dbdc7eff0fc4dd940e1ec",
+      "expected": "0356a9d44654a218e4b06fd732854fbd27d0e71e864dbdc7eff0fc4dd940e1ec",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/nvs_cfg.cpp",
+      "sha256": "0356a9d44654a218e4b06fd732854fbd27d0e71e864dbdc7eff0fc4dd940e1ec",
+      "expected": "0356a9d44654a218e4b06fd732854fbd27d0e71e864dbdc7eff0fc4dd940e1ec",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/nvs_cfg.h",
+      "sha256": "57b61a85d7432a85d6fcf8b0e55cba71b27504b8c907f9a18fd7b8aa7554eeb9",
+      "expected": "57b61a85d7432a85d6fcf8b0e55cba71b27504b8c907f9a18fd7b8aa7554eeb9",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/nvs_cfg.h",
+      "sha256": "57b61a85d7432a85d6fcf8b0e55cba71b27504b8c907f9a18fd7b8aa7554eeb9",
+      "expected": "57b61a85d7432a85d6fcf8b0e55cba71b27504b8c907f9a18fd7b8aa7554eeb9",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/oil_fault_recovery.h",
+      "sha256": "3c9fc4d4deb8d8864d96e382b7fbe86d7a8ad6d5e32bca3cdb7190293ba41826",
+      "expected": "3c9fc4d4deb8d8864d96e382b7fbe86d7a8ad6d5e32bca3cdb7190293ba41826",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/oil_fault_recovery.h",
+      "sha256": "3c9fc4d4deb8d8864d96e382b7fbe86d7a8ad6d5e32bca3cdb7190293ba41826",
+      "expected": "3c9fc4d4deb8d8864d96e382b7fbe86d7a8ad6d5e32bca3cdb7190293ba41826",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/oil_model.cpp",
+      "sha256": "27939b0f6991a0f04501f13e2b9fa42ff0aae591d72bdbd42cdbc0bdf5494006",
+      "expected": "27939b0f6991a0f04501f13e2b9fa42ff0aae591d72bdbd42cdbc0bdf5494006",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/oil_model.cpp",
+      "sha256": "27939b0f6991a0f04501f13e2b9fa42ff0aae591d72bdbd42cdbc0bdf5494006",
+      "expected": "27939b0f6991a0f04501f13e2b9fa42ff0aae591d72bdbd42cdbc0bdf5494006",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/oil_model.h",
+      "sha256": "8f8a5fbbc6d57542a207d84257e0ec539cd63d827ab8deb6172061651f176b06",
+      "expected": "8f8a5fbbc6d57542a207d84257e0ec539cd63d827ab8deb6172061651f176b06",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/oil_model.h",
+      "sha256": "8f8a5fbbc6d57542a207d84257e0ec539cd63d827ab8deb6172061651f176b06",
+      "expected": "8f8a5fbbc6d57542a207d84257e0ec539cd63d827ab8deb6172061651f176b06",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/racechrono_codec.h",
+      "sha256": "7a89bf68062cccf5b336bf23a9f1ccf6497f2b94e75abc90822b6d8f168063ab",
+      "expected": "7a89bf68062cccf5b336bf23a9f1ccf6497f2b94e75abc90822b6d8f168063ab",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/racechrono_codec.h",
+      "sha256": "7a89bf68062cccf5b336bf23a9f1ccf6497f2b94e75abc90822b6d8f168063ab",
+      "expected": "7a89bf68062cccf5b336bf23a9f1ccf6497f2b94e75abc90822b6d8f168063ab",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/runtime_config.cpp",
+      "sha256": "56317143ba5bdecbae42a8e8fb84fd5feb473e681afb3ef77206d39f26b85ba1",
+      "expected": "56317143ba5bdecbae42a8e8fb84fd5feb473e681afb3ef77206d39f26b85ba1",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/runtime_config.cpp",
+      "sha256": "56317143ba5bdecbae42a8e8fb84fd5feb473e681afb3ef77206d39f26b85ba1",
+      "expected": "56317143ba5bdecbae42a8e8fb84fd5feb473e681afb3ef77206d39f26b85ba1",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/runtime_config.h",
+      "sha256": "c3a0ab6b7ac6d2fdfa4ac8c0e4c3fadd6d881854f7d71e98ab9ee780ba2ae650",
+      "expected": "c3a0ab6b7ac6d2fdfa4ac8c0e4c3fadd6d881854f7d71e98ab9ee780ba2ae650",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/runtime_config.h",
+      "sha256": "c3a0ab6b7ac6d2fdfa4ac8c0e4c3fadd6d881854f7d71e98ab9ee780ba2ae650",
+      "expected": "c3a0ab6b7ac6d2fdfa4ac8c0e4c3fadd6d881854f7d71e98ab9ee780ba2ae650",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/cca_telemetry/src/runtime_timing.h",
+      "sha256": "8c4a56f5127819eed8d161da840667141ca69339d902972e0fe72dab4cd563eb",
+      "expected": "8c4a56f5127819eed8d161da840667141ca69339d902972e0fe72dab4cd563eb",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/cca_telemetry/src/runtime_timing.h",
+      "sha256": "8c4a56f5127819eed8d161da840667141ca69339d902972e0fe72dab4cd563eb",
+      "expected": "8c4a56f5127819eed8d161da840667141ca69339d902972e0fe72dab4cd563eb",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/partitions.csv",
+      "sha256": "ab2f33c14eb855054613fd3a4ba85457ae281c6f371c25931ccc763bc79cb0e2",
+      "expected": "ab2f33c14eb855054613fd3a4ba85457ae281c6f371c25931ccc763bc79cb0e2",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/partitions.csv",
+      "sha256": "ab2f33c14eb855054613fd3a4ba85457ae281c6f371c25931ccc763bc79cb0e2",
+      "expected": "ab2f33c14eb855054613fd3a4ba85457ae281c6f371c25931ccc763bc79cb0e2",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/tests/check_release.py",
+      "sha256": "94509c2e090c86e105afe368560f6d0d4211ac423e40c384e0cc1fe065d59fa1",
+      "expected": "94509c2e090c86e105afe368560f6d0d4211ac423e40c384e0cc1fe065d59fa1",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/tests/check_release.py",
+      "sha256": "94509c2e090c86e105afe368560f6d0d4211ac423e40c384e0cc1fe065d59fa1",
+      "expected": "94509c2e090c86e105afe368560f6d0d4211ac423e40c384e0cc1fe065d59fa1",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/tests/erb_diagnostics_test.cpp",
+      "sha256": "63636e85e054ce88ad53826975fc95d28f259ee26ced7cc402bf002aef894140",
+      "expected": "63636e85e054ce88ad53826975fc95d28f259ee26ced7cc402bf002aef894140",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/tests/erb_diagnostics_test.cpp",
+      "sha256": "63636e85e054ce88ad53826975fc95d28f259ee26ced7cc402bf002aef894140",
+      "expected": "63636e85e054ce88ad53826975fc95d28f259ee26ced7cc402bf002aef894140",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/tests/erb_parser_test.cpp",
+      "sha256": "547efc04fea235fe0aca28592cf58781bf9c72efd34a28715c5e556ccc810365",
+      "expected": "547efc04fea235fe0aca28592cf58781bf9c72efd34a28715c5e556ccc810365",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/tests/erb_parser_test.cpp",
+      "sha256": "547efc04fea235fe0aca28592cf58781bf9c72efd34a28715c5e556ccc810365",
+      "expected": "547efc04fea235fe0aca28592cf58781bf9c72efd34a28715c5e556ccc810365",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/tests/io_budget_test.cpp",
+      "sha256": "2aa9346640e28d1ce040296a8ebc6b7f056644e480541096b7ecf8c0683cc1ea",
+      "expected": "2aa9346640e28d1ce040296a8ebc6b7f056644e480541096b7ecf8c0683cc1ea",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/tests/io_budget_test.cpp",
+      "sha256": "2aa9346640e28d1ce040296a8ebc6b7f056644e480541096b7ecf8c0683cc1ea",
+      "expected": "2aa9346640e28d1ce040296a8ebc6b7f056644e480541096b7ecf8c0683cc1ea",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/tests/oil_model_test.cpp",
+      "sha256": "3264e2ac7f88df8e2d5d6a57f96279c8ff9530f12729ea4cda3d0c8a936bd573",
+      "expected": "3264e2ac7f88df8e2d5d6a57f96279c8ff9530f12729ea4cda3d0c8a936bd573",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/tests/oil_model_test.cpp",
+      "sha256": "3264e2ac7f88df8e2d5d6a57f96279c8ff9530f12729ea4cda3d0c8a936bd573",
+      "expected": "3264e2ac7f88df8e2d5d6a57f96279c8ff9530f12729ea4cda3d0c8a936bd573",
+      "passed": true
+    },
+    {
+      "item": "recovery/firmware/tests/protocol_test.cpp",
+      "sha256": "9e624c7232058a98054c8f855d60d3ac6a8fe248638b3a8189bc3b57115ed651",
+      "expected": "9e624c7232058a98054c8f855d60d3ac6a8fe248638b3a8189bc3b57115ed651",
+      "passed": true
+    },
+    {
+      "item": "repository/firmware/tests/protocol_test.cpp",
+      "sha256": "9e624c7232058a98054c8f855d60d3ac6a8fe248638b3a8189bc3b57115ed651",
+      "expected": "9e624c7232058a98054c8f855d60d3ac6a8fe248638b3a8189bc3b57115ed651",
+      "passed": true
+    },
+    {
+      "item": "native output manifest",
+      "sha256": "22f6175de0c3d6d7eeb586f0ecbbdb2ada7c0a0dcbef293bb238f4f2867f900e",
+      "expected": "22f6175de0c3d6d7eeb586f0ecbbdb2ada7c0a0dcbef293bb238f4f2867f900e",
+      "passed": true
+    },
+    {
+      "item": "native filled PCB",
+      "sha256": "62c08e7050fe95df0a576ece85a051b4049e9684bf8ea5f73e8949657363276b",
+      "expected": "62c08e7050fe95df0a576ece85a051b4049e9684bf8ea5f73e8949657363276b",
+      "passed": true
+    },
+    {
+      "item": "I21 baseline register",
+      "sha256": "6ce2eab77e9976a20dfca8bb62b03b85e197ada5d41200afdc0461b55f984f00",
+      "expected": "6ce2eab77e9976a20dfca8bb62b03b85e197ada5d41200afdc0461b55f984f00",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/lm5164.pdf",
+      "sha256": "cce03619fbe13951eea47458cd45e140361637d8fef32ae143b82b16d597e32d",
+      "expected": "cce03619fbe13951eea47458cd45e140361637d8fef32ae143b82b16d597e32d",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/lm63615_q1.pdf",
+      "sha256": "7222b3f5bc6892f2a19a110a985096c342dc70084df5bfe0cebc3b4fb59a7351",
+      "expected": "7222b3f5bc6892f2a19a110a985096c342dc70084df5bfe0cebc3b4fb59a7351",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/opa2333.pdf",
+      "sha256": "df60da7154848c5706e2c7743b5d532fb9b4db97b74b88d0b62b657f73c1f1b7",
+      "expected": "df60da7154848c5706e2c7743b5d532fb9b4db97b74b88d0b62b657f73c1f1b7",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/sn74lvc2g125.pdf",
+      "sha256": "0592da7d851d40f70a2c500a88553d33883cfb37a606a205f1c95422c050452b",
+      "expected": "0592da7d851d40f70a2c500a88553d33883cfb37a606a205f1c95422c050452b",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/tps2660.pdf",
+      "sha256": "b781cbce51984715771bde540df2b36404b4fae4b41e27166c84c19b6598e1de",
+      "expected": "b781cbce51984715771bde540df2b36404b4fae4b41e27166c84c19b6598e1de",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/tps3808_q1.pdf",
+      "sha256": "878d1dfe86ddc9da705fa77ee4fdbca73c96298e11c32e5a9fe6c50f1beea49a",
+      "expected": "878d1dfe86ddc9da705fa77ee4fdbca73c96298e11c32e5a9fe6c50f1beea49a",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/tcan3403_q1.pdf",
+      "sha256": "b1f664b052f46baf09f312c1b667cbf36db2ce29ecc4644d5b41324b9e3cb399",
+      "expected": "b1f664b052f46baf09f312c1b667cbf36db2ce29ecc4644d5b41324b9e3cb399",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/ltc4367.pdf",
+      "sha256": "19f4e8fa5eaad9a29bff1fea1437aab169195583ed4b03a1b15c798982d1654b",
+      "expected": "19f4e8fa5eaad9a29bff1fea1437aab169195583ed4b03a1b15c798982d1654b",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/mic5504.pdf",
+      "sha256": "98db303190e6575f4c08d633df00883e1dcc28d22b6ce09c1490796883ad9017",
+      "expected": "98db303190e6575f4c08d633df00883e1dcc28d22b6ce09c1490796883ad9017",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/esp32_s3.pdf",
+      "sha256": "27d71971da07c280c6068d08c74720d1a25b8f20cf8494dc1765bdd28d40d435",
+      "expected": "27d71971da07c280c6068d08c74720d1a25b8f20cf8494dc1765bdd28d40d435",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/pa1616d.pdf",
+      "sha256": "b32e14f2147645ce443c14d7ff1d2aec2b278ef177b913d2880b3a551cb55e08",
+      "expected": "b32e14f2147645ce443c14d7ff1d2aec2b278ef177b913d2880b3a551cb55e08",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/adafruit851.pdf",
+      "sha256": "31796b9cafa20658755c0a0a7f1cb8aac69b2588078b59ad0ac2d18f946db383",
+      "expected": "31796b9cafa20658755c0a0a7f1cb8aac69b2588078b59ad0ac2d18f946db383",
+      "passed": true
+    },
+    {
+      "item": "manufacturer PDF/adafruit960.pdf",
+      "sha256": "718ffe363f3dea791773e58b83e51b9c0b19560332d15a5aad1df0c59bfc2665",
+      "expected": "718ffe363f3dea791773e58b83e51b9c0b19560332d15a5aad1df0c59bfc2665",
+      "passed": true
+    }
+  ],
+  "new_evidence_inventory": {
+    "analyses/review_i22/ACCESSORY_APPLICABILITY.json": {
+      "sha256": "5ee7e0b4956d9be07583378bdcd128c9f0663fee9159b017498c65c6ba1ae5bc",
+      "bytes": 2209
+    },
+    "analyses/review_i22/DRILL_RECONCILIATION.json": {
+      "sha256": "71799ff29f2e8cf826e85773586a48429493a63cea54eaf4f10f33173eae6283",
+      "bytes": 68371
+    },
+    "analyses/review_i22/EXPOSED_PAD_REVIEW.json": {
+      "sha256": "23d6196bd765c5b290890b85c06cdff74adc2c57dee89ee791d484b516e25110",
+      "bytes": 13351
+    },
+    "analyses/review_i22/PACKAGE_ORIENTATION_RESULTS.json": {
+      "sha256": "2f2d83d02b4882dbac35d4fe49db012d6510ee3b7d42c6f1f796adb8f7a5910b",
+      "bytes": 83918
+    },
+    "analyses/review_i22/POPULATED_CLEARANCE_RESULTS.json": {
+      "sha256": "b0ecac00865a5fd31a1572a6d7c18ae75981a16c76d54b4e2262f4128563d6e4",
+      "bytes": 158065
+    },
+    "analyses/review_i22/REDLINE_FREEZE.json": {
+      "sha256": "66b7740748f401c9303e12ffcfd324ccfc4e8aad767d13543e3ca7a5d9ad14b0",
+      "bytes": 13899
+    },
+    "analyses/review_i22/REVIEW_REPORT.md": {
+      "sha256": "5d8fb06624593c8d3dd04b2cfbe46bd9b0c2a93500a19973778db3c16da4e4f0",
+      "bytes": 3812
+    },
+    "analyses/review_i22/RF_RETURN_REVIEW.json": {
+      "sha256": "efaa0ba810bb4cb48237a939bdbf8789e6d9302f244346c598cccb8856397b08",
+      "bytes": 1114
+    },
+    "analyses/review_i22/THERMAL_ACCESSORY_BOUND.json": {
+      "sha256": "3d6322079825e0468dd6c85c922e44ce836cce55a3776e6e387cede821644965",
+      "bytes": 1285
+    },
+    "analyses/review_i22/VIA_CURRENT_THERMAL_BUDGET.json": {
+      "sha256": "2d3b75096afaa2aeb8d759afe2de9197ce5fde82ee5fa8c2558919e25c21b95c",
+      "bytes": 101074
+    },
+    "analyses/review_i22/electrical_audit.py": {
+      "sha256": "fbe454d85a6b63f5126cd39bc08eb131d8c888a81cc288f0e0831a479fb40887",
+      "bytes": 11231
+    },
+    "analyses/review_i22/mechanical_audit.py": {
+      "sha256": "57f7f55d5e5e084f3bd736315f7265d2e942759a32aa7371a57e971a6aa4dbb8",
+      "bytes": 6345
+    },
+    "analyses/review_i22/package_audit.py": {
+      "sha256": "cec2f1f7dbffccd15f6e4d563d7a7a4c0a2cf15ca5121e70cb6ffe275fb7e5f5",
+      "bytes": 11994
+    },
+    "analyses/review_i22/package_overlays/U101.png": {
+      "sha256": "b2400ce41b0daa88c5e941100bc165450c222b2045884c74349cd1d7e35d7f31",
+      "bytes": 103610
+    },
+    "analyses/review_i22/package_overlays/U101.svg": {
+      "sha256": "7bac300dc689f701d5ac6f3058ccff0b1bcbe17d916ce385f340282980355f0a",
+      "bytes": 189563
+    },
+    "analyses/review_i22/package_overlays/U121.png": {
+      "sha256": "230e2eceb650625d9cc7d379e8d109c75c351b9c78aad69f7943ba0926a32396",
+      "bytes": 97314
+    },
+    "analyses/review_i22/package_overlays/U121.svg": {
+      "sha256": "d44e883241db9975042d5d1a319e2c7833c35fbcbd93344c5fcfe08f7772dd51",
+      "bytes": 199822
+    },
+    "analyses/review_i22/package_overlays/U151.png": {
+      "sha256": "6da4bbdcd63ac345c5e5a9d88b33661e238ddf3703ddb0dbde893d0094cbd498",
+      "bytes": 114669
+    },
+    "analyses/review_i22/package_overlays/U151.svg": {
+      "sha256": "c11f3fe4058ae368c6977e990668038c5f0aef28432a3db3b085a264848eff9f",
+      "bytes": 303687
+    },
+    "analyses/review_i22/package_overlays/U201.png": {
+      "sha256": "dc655889ba4db57bfbef832a612c072236dfd24dc3a3fd41a0fad42f1e020ca7",
+      "bytes": 104253
+    },
+    "analyses/review_i22/package_overlays/U201.svg": {
+      "sha256": "84a0b87795c4dfd7c3f05697e68803e1cc53204864abb131add96b918705174d",
+      "bytes": 143445
+    },
+    "analyses/review_i22/package_overlays/U202.png": {
+      "sha256": "ae8ec0469155a4e154dc6365ef2b53d843a53f7738f8871c3f5e985a2c114bd8",
+      "bytes": 89877
+    },
+    "analyses/review_i22/package_overlays/U202.svg": {
+      "sha256": "33abd41cce664b3788fd7247975e0a70db943c982adc191409cda1514f8403de",
+      "bytes": 163496
+    },
+    "analyses/review_i22/package_overlays/U301.png": {
+      "sha256": "d12834fc797e656c1d84a117eb3e88a899667b8568722d8106237c1c5b33525b",
+      "bytes": 95485
+    },
+    "analyses/review_i22/package_overlays/U301.svg": {
+      "sha256": "95b19dbd83e612d3f468adaaa027f946155dd62a0f000643999c765ceff2da2c",
+      "bytes": 206842
+    },
+    "analyses/review_i22/package_overlays/U401.png": {
+      "sha256": "26a0d58d2899d47b52a4dec0713759fc9db951a3dba771cb999ebefbb34c86e4",
+      "bytes": 96566
+    },
+    "analyses/review_i22/package_overlays/U401.svg": {
+      "sha256": "2a3810a79d6d85f22a2eff53e295e288f6fbd382e41106f2b73861c1f0634154",
+      "bytes": 361850
+    },
+    "analyses/review_i22/package_overlays/U402.png": {
+      "sha256": "8be1dae6c6aca125c904582bbb2b87f142540c01286c62b1d5a55e56fc38914e",
+      "bytes": 84647
+    },
+    "analyses/review_i22/package_overlays/U402.svg": {
+      "sha256": "96532fcec19bcbf1448dd9a1b232e35bcd25e624b64e3b8139dd4488a17384bf",
+      "bytes": 88211
+    },
+    "analyses/review_i22/package_overlays/U403.png": {
+      "sha256": "c5df39c2d8fdceb351f6967b76485eae0f279a0d3ac8b3ad41dc20d75bd3e083",
+      "bytes": 100979
+    },
+    "analyses/review_i22/package_overlays/U403.svg": {
+      "sha256": "3fe8ec4ab6d61e41ae73dc34902841a7fa8a0314427a570347a4ddb69e967573",
+      "bytes": 150275
+    },
+    "analyses/review_i22/package_overlays/U404.png": {
+      "sha256": "f690d23634f301875122df11c424f5cbbaab98d19e5b8140082b254e7ec7e8e8",
+      "bytes": 85189
+    },
+    "analyses/review_i22/package_overlays/U404.svg": {
+      "sha256": "5dcd7a563c2eadd26fb8cbed639717925fe51a7d7146815566423d9055b28993",
+      "bytes": 90070
+    },
+    "analyses/review_i22/package_overlays/U501.png": {
+      "sha256": "95e14f0f13990a5d37ab5c51285ef99dff4170983c613a59ab54b46091e78598",
+      "bytes": 108385
+    },
+    "analyses/review_i22/package_overlays/U501.svg": {
+      "sha256": "ff31804a9ec3a1e1370121ba3ff0f026f90d01f6b13d766ffd77b22b6b5ada79",
+      "bytes": 316102
+    },
+    "analyses/review_i22/package_overlays/U502.png": {
+      "sha256": "f1ddcdc45f9b1bdd0a6fb5373f8b185bcd86bb557c88a9f00c3d590aeb120703",
+      "bytes": 105654
+    },
+    "analyses/review_i22/package_overlays/U502.svg": {
+      "sha256": "2a71703bb3e7269a76f65352fcdee8c33b50dbcdd7213718cfc6ee01adc1bfb5",
+      "bytes": 186216
+    },
+    "analyses/review_i22/package_overlays/contact_sheet_1.png": {
+      "sha256": "c5cf042b96e36ee08b823a58af2107aa7fe6d3cf32dd78fa30f34e1c11ecda41",
+      "bytes": 427398
+    },
+    "analyses/review_i22/package_overlays/contact_sheet_2.png": {
+      "sha256": "5f6880f4d4dd339d8e76bebcbe828026f82eac3cde1121c1b33402f4f37982f0",
+      "bytes": 370836
+    },
+    "analyses/review_i22/package_overlays/contact_sheet_3.png": {
+      "sha256": "ea59a65a63ca02fcc792514321d2f9b9eab3ec1fd81a01be49d9b150a906f320",
+      "bytes": 378524
+    },
+    "analyses/review_i22/sources/MANIFEST.json": {
+      "sha256": "ce335a69faa9a6cb6a0a5b4a565e563e74d7afa8235bd3856cb09fc948391d09",
+      "bytes": 3622
+    },
+    "analyses/review_i22/sources/WEB_OBSERVATIONS.json": {
+      "sha256": "00e6126b45c1008e01bc236490a9c85b1280eb92b75022cc5d29cea98b2b4b1f",
+      "bytes": 1047
+    },
+    "analyses/review_i22/sources/adafruit851.pdf": {
+      "sha256": "31796b9cafa20658755c0a0a7f1cb8aac69b2588078b59ad0ac2d18f946db383",
+      "bytes": 2294415
+    },
+    "analyses/review_i22/sources/adafruit851.txt": {
+      "sha256": "6b26ce321bab41b861e70895d3f90a657fe7c16ceee6cba7dad386c44992c103",
+      "bytes": 1175
+    },
+    "analyses/review_i22/sources/adafruit960.pdf": {
+      "sha256": "718ffe363f3dea791773e58b83e51b9c0b19560332d15a5aad1df0c59bfc2665",
+      "bytes": 506804
+    },
+    "analyses/review_i22/sources/adafruit960.txt": {
+      "sha256": "ab07f8ad64a463f6fb62ba6bd43702ac16de34c1d633fc5b6450c12154016f2f",
+      "bytes": 922
+    },
+    "analyses/review_i22/sources/esp32_s3.pdf": {
+      "sha256": "27d71971da07c280c6068d08c74720d1a25b8f20cf8494dc1765bdd28d40d435",
+      "bytes": 1280501
+    },
+    "analyses/review_i22/sources/esp32_s3.txt": {
+      "sha256": "b6ca9f933ce8ed580b9ac7c5e528ec28c5231e95009648a494b3a0f88e951dbe",
+      "bytes": 81777
+    },
+    "analyses/review_i22/sources/lm5164.pdf": {
+      "sha256": "cce03619fbe13951eea47458cd45e140361637d8fef32ae143b82b16d597e32d",
+      "bytes": 2153326
+    },
+    "analyses/review_i22/sources/lm5164.txt": {
+      "sha256": "c524e654fc94b1e432b61317b128a422a258fc10984458fb7bc634fcae5f1bed",
+      "bytes": 76429
+    },
+    "analyses/review_i22/sources/lm63615_q1.pdf": {
+      "sha256": "7222b3f5bc6892f2a19a110a985096c342dc70084df5bfe0cebc3b4fb59a7351",
+      "bytes": 4579882
+    },
+    "analyses/review_i22/sources/lm63615_q1.txt": {
+      "sha256": "276c50523e2134b8a419933b444b99d2d3d8f6cfe0f242e0cb65846db1589490",
+      "bytes": 113134
+    },
+    "analyses/review_i22/sources/ltc4367.pdf": {
+      "sha256": "19f4e8fa5eaad9a29bff1fea1437aab169195583ed4b03a1b15c798982d1654b",
+      "bytes": 1655189
+    },
+    "analyses/review_i22/sources/ltc4367.txt": {
+      "sha256": "e3545bb1170d707b2a54b07f2b3d935f4fe84a6c563131294c3adc27db443e9c",
+      "bytes": 45123
+    },
+    "analyses/review_i22/sources/mic5504.pdf": {
+      "sha256": "98db303190e6575f4c08d633df00883e1dcc28d22b6ce09c1490796883ad9017",
+      "bytes": 2735823
+    },
+    "analyses/review_i22/sources/mic5504.txt": {
+      "sha256": "250840708f3583c67e1bf3f44ca8142a3ce75597b0405691d9139f0bfbc2b4d7",
+      "bytes": 35620
+    },
+    "analyses/review_i22/sources/opa2333.pdf": {
+      "sha256": "df60da7154848c5706e2c7743b5d532fb9b4db97b74b88d0b62b657f73c1f1b7",
+      "bytes": 1944689
+    },
+    "analyses/review_i22/sources/opa2333.txt": {
+      "sha256": "00d4a642fe86b8ace7612317d110a0c5fdf4cbc77842979fbdfb6371ef3f3e1f",
+      "bytes": 69520
+    },
+    "analyses/review_i22/sources/pa1616d.pdf": {
+      "sha256": "b32e14f2147645ce443c14d7ff1d2aec2b278ef177b913d2880b3a551cb55e08",
+      "bytes": 1522670
+    },
+    "analyses/review_i22/sources/pa1616d.txt": {
+      "sha256": "d6319bd625837dd7da40f31314a33f18a4eb50716b7863da7aaf542dee8d1fc8",
+      "bytes": 30931
+    },
+    "analyses/review_i22/sources/pages/adafruit851_1.png": {
+      "sha256": "a5333caaea618f942b9c2a3de962d397511fc79cc64426d8dac050cdfacb5534",
+      "bytes": 112224
+    },
+    "analyses/review_i22/sources/pages/adafruit851_2.png": {
+      "sha256": "883617b227e8d3ea8ccc564a72bd3889442db2d5cae6074fc3b337eff69eefe0",
+      "bytes": 96139
+    },
+    "analyses/review_i22/sources/pages/adafruit960_2.png": {
+      "sha256": "ca35dd8e973d888d9c6ba4e1985aee2774af01bdb5917ed0d23a327f0030b616",
+      "bytes": 63688
+    },
+    "analyses/review_i22/sources/pages/adafruit960_3.png": {
+      "sha256": "544ff41e70d26e8dc41d8bb9d3af356c4572486d040073311fab57b87589f173",
+      "bytes": 76065
+    },
+    "analyses/review_i22/sources/pages/adafruit960_4.png": {
+      "sha256": "d0e016982540d2a1f2d009b1d4b4518d725def717352d6ec3882c84359844358",
+      "bytes": 260763
+    },
+    "analyses/review_i22/sources/pages/esp32_s3_45.png": {
+      "sha256": "e48e89933c7338d8e36d575146ffc405e6b0232241ce7203ac623363d3b82104",
+      "bytes": 132427
+    },
+    "analyses/review_i22/sources/pages/esp32_s3_46.png": {
+      "sha256": "4ba2007264ffae1626716eb13c785fe6a24b1f8ef4415593978e491452f25f6d",
+      "bytes": 108179
+    },
+    "analyses/review_i22/sources/pages/esp32_s3_8.png": {
+      "sha256": "512ba6b3bf0e1834ac2d9b47b8402d6ff7af946f1a36c53aa5ee2d8c418609d6",
+      "bytes": 68589
+    },
+    "analyses/review_i22/sources/pages/lm5164_28.png": {
+      "sha256": "19b48226dd76b66478290106ffbf9d7ceb08cdcf7e35ebbff62d15b52c018ccf",
+      "bytes": 95936
+    },
+    "analyses/review_i22/sources/pages/lm5164_29.png": {
+      "sha256": "21f0775854330a20a05f06b26b59d77df634f285c654e6f162be8e18a1543d0d",
+      "bytes": 101314
+    },
+    "analyses/review_i22/sources/pages/lm5164_3.png": {
+      "sha256": "07a6086eac44b729148b00e21447ab21e1eeda75b8da103bccfe70167641c776",
+      "bytes": 123340
+    },
+    "analyses/review_i22/sources/pages/lm63615_q1_4.png": {
+      "sha256": "bebdfc4d12b6f825314e2bbe0ce7d801021eed1b02915f52f7502d903ad3de88",
+      "bytes": 140428
+    },
+    "analyses/review_i22/sources/pages/lm63615_q1_53.png": {
+      "sha256": "f4957f810c0a131764143406b4c7d478bd25fb7513eb73613e6dca4bd32e5be7",
+      "bytes": 113336
+    },
+    "analyses/review_i22/sources/pages/lm63615_q1_54.png": {
+      "sha256": "71c922e37c2d8524e7e63040a9069b419a5ab2152ae0dbf9f198476729a9ffef",
+      "bytes": 117482
+    },
+    "analyses/review_i22/sources/pages/ltc4367_19.png": {
+      "sha256": "112337518306d36afa8b9c69ef12ddefdcd30b01a31318bf349f2ff675188931",
+      "bytes": 85716
+    },
+    "analyses/review_i22/sources/pages/ltc4367_2.png": {
+      "sha256": "0b190605f766d838561be752cccb18f11392aaf3541a6299845d3fa62459a2c1",
+      "bytes": 87835
+    },
+    "analyses/review_i22/sources/pages/ltc4367_20.png": {
+      "sha256": "2fe512f49910cfd00bb0a9276eb731a45e6366a70acd1b79c104982af20f88d2",
+      "bytes": 75820
+    },
+    "analyses/review_i22/sources/pages/mic5504_17.png": {
+      "sha256": "106dc0d81e2a4ce1081c17e5d6edcaa5d1b876e07340a0779d88ef8738f231bb",
+      "bytes": 100258
+    },
+    "analyses/review_i22/sources/pages/mic5504_18.png": {
+      "sha256": "2df16a61c7859dea31461cdf5bdbb5af528e12b6981757d0d606fa9d95b489df",
+      "bytes": 77848
+    },
+    "analyses/review_i22/sources/pages/mic5504_19.png": {
+      "sha256": "cab74b4580a32662092711e88e9e3b1aee0689b89f72b4027cbe4ad343f14548",
+      "bytes": 109018
+    },
+    "analyses/review_i22/sources/pages/mic5504_2.png": {
+      "sha256": "f9693827cd580a91e52242ac555bd0d6625ac7611610c7860f482687440726e7",
+      "bytes": 29342
+    },
+    "analyses/review_i22/sources/pages/mic5504_20.png": {
+      "sha256": "529d26b028e4d7d4adced8ede3e657623098ecef336aaf1233aeac7e532e33d5",
+      "bytes": 79212
+    },
+    "analyses/review_i22/sources/pages/opa2333_3.png": {
+      "sha256": "d3fad1210039bb37d76537964e815f2ec3d14232f53459597bae623e8790e605",
+      "bytes": 72980
+    },
+    "analyses/review_i22/sources/pages/opa2333_33.png": {
+      "sha256": "0fb736bdfc5629bd2df92880c92fedd6ad626bfd69085e0d59ec688f4786b564",
+      "bytes": 94938
+    },
+    "analyses/review_i22/sources/pages/opa2333_34.png": {
+      "sha256": "8baae0df53f054686e6083a288513a1d79f2833ed143f955fffd3b78bdf4224b",
+      "bytes": 76067
+    },
+    "analyses/review_i22/sources/pages/opa2333_46.png": {
+      "sha256": "8d02fed43fbb10d68157402ae5ae4d245fe89dae578ea2fd6b1bc75f63537a72",
+      "bytes": 113782
+    },
+    "analyses/review_i22/sources/pages/opa2333_47.png": {
+      "sha256": "b29e986c13ca873555754382cc2106aad6cf2d83a435917b6b251c55afd53ea8",
+      "bytes": 79142
+    },
+    "analyses/review_i22/sources/pages/opa2333_48.png": {
+      "sha256": "b57ea5ba2f2c6a79e70914bd013212be3a97ce0bd0f50ee2bf5c33384aaa63ce",
+      "bytes": 61801
+    },
+    "analyses/review_i22/sources/pages/pa1616d_7.png": {
+      "sha256": "bb7405687ee5d4813e42ccd6a991e85b27fd7f90357ea15a31e4be4cb0543212",
+      "bytes": 67755
+    },
+    "analyses/review_i22/sources/pages/pa1616d_8.png": {
+      "sha256": "c6ca077a3cc1a9402c5e4d172f67e3c21b88e729ce59b2263139d94721923339",
+      "bytes": 178978
+    },
+    "analyses/review_i22/sources/pages/sn74lvc2g125_24.png": {
+      "sha256": "31dfc74bd1d9acbda048edceab6a2c61a71d32f9b05a12193868f9a0641fadcd",
+      "bytes": 90077
+    },
+    "analyses/review_i22/sources/pages/sn74lvc2g125_25.png": {
+      "sha256": "7d1118e2921b286e36b6342c9bb67b1fa3f87ec787f7e5ec4ba17051c346b464",
+      "bytes": 80132
+    },
+    "analyses/review_i22/sources/pages/sn74lvc2g125_4.png": {
+      "sha256": "31eb5021506914f8e634cf171f550480b7b9f71425f96a4b3b42d85c20211a7d",
+      "bytes": 83930
+    },
+    "analyses/review_i22/sources/pages/tcan3403_q1_3.png": {
+      "sha256": "7c0999b47ab3b8258d9f4b952dbba9510f98a80d80ab5816c4142252b972576f",
+      "bytes": 106323
+    },
+    "analyses/review_i22/sources/pages/tcan3403_q1_43.png": {
+      "sha256": "6c7b7cb83f5d94f2dc336ebce36c1b53ea6fcc1e2e88b9cf85938689a1ecb822",
+      "bytes": 86869
+    },
+    "analyses/review_i22/sources/pages/tcan3403_q1_44.png": {
+      "sha256": "c41af4f1ddf379cb7770cdc36dc6202305202f0235838a57200e6361f2214286",
+      "bytes": 95994
+    },
+    "analyses/review_i22/sources/pages/tps2660_4.png": {
+      "sha256": "c1ac7586d93aeb1eee02ede2a277cf1afa199d8362289a0df834d576e32885a0",
+      "bytes": 141153
+    },
+    "analyses/review_i22/sources/pages/tps2660_52.png": {
+      "sha256": "f4053c2fa208dc1390ef55ffacb7acd4e3434d38883f4c30453e450a02c47238",
+      "bytes": 106147
+    },
+    "analyses/review_i22/sources/pages/tps2660_53.png": {
+      "sha256": "98cf6418a8e253d41e3e14e5b2ba120fc2861d91ef5c599587ee02fe1290c5fc",
+      "bytes": 110027
+    },
+    "analyses/review_i22/sources/pages/tps3808_q1_20.png": {
+      "sha256": "a64810ef98f43cd11664759fb94eb34ae5a1f224a2c9883c0702861d8d3955ae",
+      "bytes": 90960
+    },
+    "analyses/review_i22/sources/pages/tps3808_q1_21.png": {
+      "sha256": "bb4a924f0af06b61e716e35613a2d0ad85d29180e7f21de12db0dacb6aa63b38",
+      "bytes": 74996
+    },
+    "analyses/review_i22/sources/pages/tps3808_q1_3.png": {
+      "sha256": "c098b9bec98664318c66a3dfdd01d8c48ac9c51cb630ffc0d35225aee88da899",
+      "bytes": 170467
+    },
+    "analyses/review_i22/sources/sn74lvc2g125.pdf": {
+      "sha256": "0592da7d851d40f70a2c500a88553d33883cfb37a606a205f1c95422c050452b",
+      "bytes": 813417
+    },
+    "analyses/review_i22/sources/sn74lvc2g125.txt": {
+      "sha256": "6268fa5fff21baa02929fad7b6aa61282f45cb70ee76844a2dfb000b1e19a447",
+      "bytes": 45956
+    },
+    "analyses/review_i22/sources/tcan3403_q1.pdf": {
+      "sha256": "b1f664b052f46baf09f312c1b667cbf36db2ce29ecc4644d5b41324b9e3cb399",
+      "bytes": 2067877
+    },
+    "analyses/review_i22/sources/tcan3403_q1.txt": {
+      "sha256": "7e870995b359171243f364193b225cbd846357fbbf4060105c87495344221a41",
+      "bytes": 81719
+    },
+    "analyses/review_i22/sources/tps2660.pdf": {
+      "sha256": "b781cbce51984715771bde540df2b36404b4fae4b41e27166c84c19b6598e1de",
+      "bytes": 4118722
+    },
+    "analyses/review_i22/sources/tps2660.txt": {
+      "sha256": "a3280ae67d2b31db789657ad6bc5bdc251d266a7742340cf0444401380eec40b",
+      "bytes": 99308
+    },
+    "analyses/review_i22/sources/tps3808_q1.pdf": {
+      "sha256": "878d1dfe86ddc9da705fa77ee4fdbca73c96298e11c32e5a9fe6c50f1beea49a",
+      "bytes": 1537744
+    },
+    "analyses/review_i22/sources/tps3808_q1.txt": {
+      "sha256": "a749451cb85cd9927e43d73e6e978245f058efe948054c05b83b5b83523ec381",
+      "bytes": 45003
+    },
+    "analyses/mated_i22/MATED_SERVICE_ENVELOPES.png": {
+      "sha256": "47ac0b2ee0d4cd1a583ef684af594c1aaf63ca6c2a44d1ade7076f13630c5bdd",
+      "bytes": 87758
+    },
+    "analyses/mated_i22/MATED_SERVICE_ENVELOPES.step": {
+      "sha256": "45579fc412fa9f11e1abbab0013476d50577a71f70e35abc1d4a2a9a9b94c4f2",
+      "bytes": 81022
+    },
+    "analyses/mated_i22/RESULTS.json": {
+      "sha256": "3ec8441da107f011cbc4dc5c09289eac8ed298f871551f406e20b2709769428f",
+      "bytes": 81733
+    },
+    "analyses/mated_i22/check_mated.py": {
+      "sha256": "c19455a026b9397b548502df3e03756c46ac81c6f4e33242fc1c07951a8e018f",
+      "bytes": 11733
+    }
+  },
+  "reused_native_evidence": "current/I21_SOURCE_VERIFICATION.json",
+  "fresh_native_execution_claimed": false,
+  "freshly_executed": [
+    "12 manufacturer orientation and negative-control checks",
+    "1,154 full-stack populated-clearance checks",
+    "776 revised mated/service envelope checks",
+    "322 via-current/heating calculations",
+    "5 exposed-pad net/return reviews",
+    "GPS DC applicability and passive thermal boundary bound"
+  ],
+  "reused_model_evidence": [
+    "I19 finite power/controller and independent extrema",
+    "I18 finite RF model with current I20 route/reference identity",
+    "I21 completed fine thermal model; I22 extracts J401 board-region values"
+  ],
+  "package_overlay_visual_QA": "All12 final overlays inspected via individual figures and three contact sheets; final U401/U201/U301 figures checked at full view. Views, pin labels and captions are legible.",
+  "physical_measurements_claimed": 0,
+  "overall_zero": false
+}

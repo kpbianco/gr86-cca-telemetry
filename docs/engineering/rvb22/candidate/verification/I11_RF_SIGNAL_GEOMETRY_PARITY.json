@@ -1,0 +1,13 @@
+{
+  "source_sha256": [
+    "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+    "e75b73f72187100fdc9b8c5e6c39b971fc7e349bc1ad0262703baa2ab5952729"
+  ],
+  "RF_signal_segments_and_vias_identical": true,
+  "object_count": 13,
+  "footprints_unchanged": {
+    "J401": true,
+    "L406": true
+  },
+  "limitation": "Signal-route geometry continuity only. Updated adjacent copper, thermal foil geometry and complete RF return/matching applicability remain subject to combined regression."
+}

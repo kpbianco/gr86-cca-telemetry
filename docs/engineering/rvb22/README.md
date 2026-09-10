@@ -1,0 +1,17 @@
+# I23 candidate — native verification in progress
+
+The candidate PCB now reroutes three LED chains to remove internal-plane intrusions beneath CAN/GPS routes. Independent source checks pass; native refill, full DRC, reference review and coupled-model reassessment are pending. The I22 review below is historical for the prior PCB until I23 verification is recorded. Firmware, components, vias, RF traces, outline and mechanical source are unchanged.
+
+# GR86 CCA RVB22 I22 checkpoint
+
+I22 closes six original criteria: **140 closed, 146 open, four not applicable**. All 290 original criteria and 357 recorded redlines remain traceable. See [the I22 review](analyses/review_i22/REVIEW_REPORT.md), [current plan](current/EXECUTION_PLAN.md), [assembly instructions](current/MANUFACTURING_AND_ASSEMBLY.md), [accessory review](current/ACCESSORY_REVIEW.md) and [thermal review](current/THERMAL_REVIEW.md).
+
+The user has confirmed **Adafruit 851 and 960**. The revised model uses those parts, a 150 ±3 mm cable, 2.0 mm OD receiving envelope and the complete 1.71 mm populated height allowance. All 1,154 populated and 776 mated checks pass. All 12 IC/module orientation overlays and 151 signal lands pass. The exposed-pad review, conditional via heating budget and original analysis-only RF scope are complete. The six newly closed criteria are LIB-02, LIB-08, VIA-06, SI-12, GPS-01 and MECH-03.
+
+The controlling electrical source remains **I20**, source commit `e36523bb1bd374a58b0071e761b7a46c8cc4385e`, PCB SHA256 `b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c`. I22 changes models, calculations and controlled instructions. Native run [34420381540](https://github.com/tranquilWorks/gr86-cca-telemetry/actions/runs/34420381540) has zero ERC/DRC/warning/unconnected/parity findings and a passing pinned target firmware build. All 153 fitted model references resolve. The original 8 mm Compact TW logo remains on F.SilkS. A future CAD/firmware change must rerun the pinned workflow.
+
+Thermal closure remains open: the retained fine model reaches 143.800°C maximum board region and has material mesh dependence. The selected 851 adapter's documented 60°C ceiling conflicts with the 65°C modeled air case. Digital return, exact accessory bias/plug/retention, supplier construction and original physical/human qualification conditions remain visible. The dashboard load/environment requirement has not been reduced.
+
+Use `candidate/cad`, `candidate/firmware`, and `current/mechanics` for the current hardware, firmware and C05/W02/T03 source. Native exports are in `runtime/hosted/run22/extracted/native_I06_hosted`; its legacy folder name does not change its hash identity. Current I22 evidence is under `analyses/review_i22` and `analyses/mated_i22`. Evidence paths in JSON/workbook cells are relative to the complete recovery root, not this selected repository mirror. The public PDF URLs and hashes are included; PDF copies and numerical runtimes are in the recovery archive.
+
+The updated workbook preserves the original A–F questions/evidence requirements and K–M user fields. Earlier records, including the full thermal maps and native archives, remain historical evidence. PR [#45](https://github.com/tranquilWorks/gr86-cca-telemetry/pull/45) remains the draft engineering handoff; fabrication and physical qualification have not been performed.

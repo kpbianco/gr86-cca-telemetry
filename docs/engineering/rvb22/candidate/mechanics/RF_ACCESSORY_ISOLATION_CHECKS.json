@@ -1,0 +1,53 @@
+{
+  "SMA_plate_mm": [
+    42,
+    24,
+    3
+  ],
+  "SMA_clearance_cutout_mm": [
+    19.75,
+    20.25
+  ],
+  "SMA_metal_max_OD_mm": 10,
+  "SMA_axis_displacement_mm": 0.5,
+  "SMA_min_radial_metal_gap_mm": 4.375,
+  "SMA_min_M3_metal_gap_mm": 7.3,
+  "puck_body_candidate_mm": [
+    41.2,
+    38.5,
+    13.3
+  ],
+  "puck_body_dimension_allocation_plusminus_mm": 0.3,
+  "puck_side_clearance_mm": [
+    0.35,
+    0.65
+  ],
+  "puck_frame_gap_mm": [
+    0.9,
+    1.5
+  ],
+  "puck_frame_overlap_after_sideplay_mm": [
+    1.3,
+    1.45
+  ],
+  "puck_M2_metal_gap_mm": 3.4812195945146387,
+  "puck_M3_metal_gap_mm": 3.3999999999999986,
+  "source_files_sha256": {
+    "SMA_ISOLATOR.scad": "f51ceb3fc473a8ba9aa5c191ab24247d1d04c8a9f02d79b3efc6687a2cac9d6f",
+    "PUCK_ISOLATOR.scad": "834f83c812388d2855debea834930238c7e8a11b288a1fb5a60c2a38597850fd"
+  },
+  "checks": {
+    "SMA_positive_radial_gap": true,
+    "SMA_fasteners_clear": true,
+    "puck_M3_clear": true,
+    "puck_frame_overlap_positive": true,
+    "puck_max_body_height_clear": true,
+    "puck_M2_gap_above3mm": true
+  },
+  "conditions": [
+    "ExactpuckSKU/base/radomeshape,cableexitandRFloadingmustmatchthecage.",
+    "Allcoaxshield-connectedmetalkeptoffvehiclemetalthroughoutroute.",
+    "Do notisolateHoneywellNPTmetalhousingcontrarytomanufacturerinstructions.",
+    "NativeSCADsolidandactualmountfitnotexecuted."
+  ]
+}

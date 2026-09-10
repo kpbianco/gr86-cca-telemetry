@@ -1,0 +1,5024 @@
+{
+  "source_PCB_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "source_PCB_path": "work/rvb22/iterations/I04_compact_shunt/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+  "status": "EXECUTED_SOURCE_XY_ENVELOPE_SCREEN_WITH_ENUMERATED_Z_GAPS",
+  "contact_mm": [
+    66.6,
+    11.8,
+    72,
+    28.8
+  ],
+  "rows": [
+    {
+      "ref": "R126",
+      "MPN": "ERA3AEB2612V",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        46.07,
+        35.32,
+        47.529999999999994,
+        38.279999999999994
+      ],
+      "Fab_graphic_bounds_mm": [
+        46.387499999999996,
+        36.0,
+        47.2125,
+        37.599999999999994
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C204",
+      "MPN": "MCAST32MSB7226KPNA01",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        81.5,
+        4.199999999999999,
+        86.1,
+        7.4
+      ],
+      "Fab_graphic_bounds_mm": [
+        82.2,
+        4.55,
+        85.39999999999999,
+        7.05
+      ],
+      "manufacturer_max_body_height_mm": 2.7,
+      "height_evidence": "Exact TaiyoYuden TYCOMPAS part page:bodyL3.2\u00b1.30,W2.5\u00b1.20,T2.5\u00b1.20mm",
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D606",
+      "MPN": "APT1608SGC",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        30.52,
+        2.27,
+        33.48,
+        3.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        31.2,
+        2.6,
+        32.8,
+        3.4
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP103",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        20.25,
+        38.8,
+        20.25,
+        38.8
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R403",
+      "MPN": "AA0603FR-07220RL",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        75.02,
+        11.07,
+        77.98,
+        12.530000000000001
+      ],
+      "Fab_graphic_bounds_mm": [
+        75.7,
+        11.387500000000001,
+        77.3,
+        12.2125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R604",
+      "MPN": "CRCW06031K00FKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        25.27,
+        4.52,
+        26.73,
+        7.48
+      ],
+      "Fab_graphic_bounds_mm": [
+        25.5875,
+        5.2,
+        26.4125,
+        6.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R110",
+      "MPN": "WSL2512R4700FEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        29.479999999999997,
+        12.579999,
+        33.32,
+        20.219999
+      ],
+      "Fab_graphic_bounds_mm": [
+        29.799999999999997,
+        13.249999,
+        33.0,
+        19.549999
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_2512_6332Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C202",
+      "MPN": "GCM188R71H104KA57D",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        84.77,
+        9.32,
+        86.23,
+        12.280000000000001
+      ],
+      "Fab_graphic_bounds_mm": [
+        85.1,
+        10.0,
+        85.9,
+        11.600000000000001
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R124",
+      "MPN": "TNPW060343K2BEEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        51.27,
+        27.22,
+        52.73,
+        30.18
+      ],
+      "Fab_graphic_bounds_mm": [
+        51.5875,
+        27.9,
+        52.4125,
+        29.5
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D604",
+      "MPN": "APT1608SGC",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        24.52,
+        2.27,
+        27.48,
+        3.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        25.2,
+        2.6,
+        26.8,
+        3.4
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D511",
+      "MPN": "PMEG2010BEA,115",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        85.9,
+        33.25,
+        87.9,
+        36.95
+      ],
+      "Fab_graphic_bounds_mm": [
+        86.275,
+        34.25,
+        87.525,
+        35.95
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD9_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C523",
+      "MPN": "CGA3E2X7R1H223K080AE",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        81.07,
+        32.82,
+        82.53,
+        35.779999999999994
+      ],
+      "Fab_graphic_bounds_mm": [
+        81.39999999999999,
+        33.5,
+        82.2,
+        35.099999999999994
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U201",
+      "MPN": "ESP32-S3-WROOM-1-N8R2",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        68.054766,
+        -1.0000000000000018,
+        109.254766,
+        47.0
+      ],
+      "Fab_graphic_bounds_mm": [
+        68.754766,
+        14.0,
+        94.254766,
+        32.0
+      ],
+      "manufacturer_max_body_height_mm": 3.25,
+      "height_evidence": "Espressif ESP32-S3-WROOM-1 dimensions25.5\u00b1.2\u00d718\u00b1.2\u00d73.1\u00b1.15mm",
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/RF_Module.3dshapes/ESP32-S3-WROOM-1.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C506",
+      "MPN": "C1210C106K5RACTU",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        13.9,
+        19.6,
+        18.6,
+        22.9
+      ],
+      "Fab_graphic_bounds_mm": [
+        14.65,
+        20.0,
+        17.85,
+        22.5
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R128",
+      "MPN": "CRCW12060000Z0EA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        65.72,
+        36.88,
+        70.28,
+        39.12
+      ],
+      "Fab_graphic_bounds_mm": [
+        66.4,
+        37.2,
+        69.6,
+        38.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D502",
+      "MPN": "SS16HE3_B/H",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        15.0,
+        9.0,
+        22.0,
+        12.5
+      ],
+      "Fab_graphic_bounds_mm": [
+        16.2,
+        9.25,
+        20.8,
+        12.25
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMA.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R603",
+      "MPN": "CRCW06031K00FKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        22.27,
+        4.52,
+        23.73,
+        7.48
+      ],
+      "Fab_graphic_bounds_mm": [
+        22.5875,
+        5.2,
+        23.4125,
+        6.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C128",
+      "MPN": "MCAST32MSB7226KPNA01",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        60.7,
+        36.4,
+        65.3,
+        39.6
+      ],
+      "Fab_graphic_bounds_mm": [
+        61.4,
+        36.75,
+        64.6,
+        39.25
+      ],
+      "manufacturer_max_body_height_mm": 2.7,
+      "height_evidence": "Exact TaiyoYuden TYCOMPAS part page:bodyL3.2\u00b1.30,W2.5\u00b1.20,T2.5\u00b1.20mm",
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP121",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        73.25,
+        38.2,
+        73.25,
+        38.2
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R125",
+      "MPN": "CRCW1206100KFKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        43.18,
+        32.72,
+        45.419999999999995,
+        37.28
+      ],
+      "Fab_graphic_bounds_mm": [
+        43.5,
+        33.4,
+        45.099999999999994,
+        36.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U403",
+      "MPN": "MIC5504-3.3YM5-TR",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        36.95,
+        4.3,
+        41.05,
+        7.7
+      ],
+      "Fab_graphic_bounds_mm": [
+        38.2,
+        4.55,
+        39.8,
+        7.45
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD7_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP403",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        66.05,
+        14.0,
+        66.05,
+        14.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R201",
+      "MPN": "CRCW060310K0FKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        78.02,
+        10.969999999999999,
+        80.98,
+        12.43
+      ],
+      "Fab_graphic_bounds_mm": [
+        78.7,
+        11.2875,
+        80.3,
+        12.112499999999999
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D522",
+      "MPN": "PMEG2010BEA,115",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        80.8,
+        36.15,
+        82.8,
+        39.85
+      ],
+      "Fab_graphic_bounds_mm": [
+        81.175,
+        37.15,
+        82.425,
+        38.85
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD9_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R402",
+      "MPN": "AA0603FR-07220RL",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        72.02,
+        11.07,
+        74.98,
+        12.530000000000001
+      ],
+      "Fab_graphic_bounds_mm": [
+        72.7,
+        11.387500000000001,
+        74.3,
+        12.2125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R121",
+      "MPN": "TNPW060331K6BEEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        43.27,
+        29.32,
+        44.73,
+        32.28
+      ],
+      "Fab_graphic_bounds_mm": [
+        43.5875,
+        30.0,
+        44.4125,
+        31.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP203",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        87.75,
+        2.5,
+        87.75,
+        2.5
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D104",
+      "MPN": "BZT52H-B15-QX",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        39.85,
+        29.6,
+        42.15,
+        34.0
+      ],
+      "Fab_graphic_bounds_mm": [
+        40.1,
+        30.400000000000002,
+        41.9,
+        33.2
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-123F.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "J202",
+      "MPN": "61300211121",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        4.2,
+        36.7,
+        10.35,
+        40.3
+      ],
+      "Fab_graphic_bounds_mm": [
+        4.73,
+        37.23,
+        9.81,
+        39.77
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C125",
+      "MPN": "CGA3E2C0G2A332J080AA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        51.67,
+        30.819999,
+        53.129999999999995,
+        33.779999
+      ],
+      "Fab_graphic_bounds_mm": [
+        52.0,
+        31.499999,
+        52.8,
+        33.099999
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP101",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        16.25,
+        26.7,
+        16.25,
+        26.7
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C401",
+      "MPN": "MCAST32MSB7226KPNA01",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        33.3,
+        4.7,
+        36.5,
+        9.3
+      ],
+      "Fab_graphic_bounds_mm": [
+        33.65,
+        5.4,
+        36.15,
+        8.6
+      ],
+      "manufacturer_max_body_height_mm": 2.7,
+      "height_evidence": "Exact TaiyoYuden TYCOMPAS part page:bodyL3.2\u00b1.30,W2.5\u00b1.20,T2.5\u00b1.20mm",
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP122",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        55.45,
+        38.8,
+        55.45,
+        38.8
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C504",
+      "MPN": "C1210C106K5RACTU",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        20.35,
+        21.9,
+        23.65,
+        26.6
+      ],
+      "Fab_graphic_bounds_mm": [
+        20.75,
+        22.65,
+        23.25,
+        25.85
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "F101",
+      "MPN": "0885001.DR",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        1.6300000000000008,
+        28.62,
+        18.369999999999997,
+        36.38
+      ],
+      "Fab_graphic_bounds_mm": [
+        4.57,
+        30.11,
+        15.43,
+        34.89
+      ],
+      "manufacturer_max_body_height_mm": 2.9,
+      "height_evidence": "Littelfuse885 package drawing2.8\u00b1.1mm",
+      "model_references": [
+        "${KICAD7_3DMODEL_DIR}/Fuse.3dshapes/Fuse_Littelfuse-NANO2-885.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "J203",
+      "MPN": "61300211121",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        11.2,
+        36.7,
+        17.35,
+        40.3
+      ],
+      "Fab_graphic_bounds_mm": [
+        11.73,
+        37.23,
+        16.81,
+        39.77
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R404",
+      "MPN": "AA0603FR-07220RL",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        54.02,
+        18.87,
+        56.98,
+        20.330000000000002
+      ],
+      "Fab_graphic_bounds_mm": [
+        54.7,
+        19.1875,
+        56.3,
+        20.012500000000003
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D605",
+      "MPN": "APT1608SGC",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        27.52,
+        2.27,
+        30.48,
+        3.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        28.2,
+        2.6,
+        29.8,
+        3.4
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP124",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        51.75,
+        38.8,
+        51.75,
+        38.8
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C402",
+      "MPN": "MCAST32MSB7226KPNA01",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        41.4,
+        4.7,
+        44.6,
+        9.3
+      ],
+      "Fab_graphic_bounds_mm": [
+        41.75,
+        5.4,
+        44.25,
+        8.6
+      ],
+      "manufacturer_max_body_height_mm": 2.7,
+      "height_evidence": "Exact TaiyoYuden TYCOMPAS part page:bodyL3.2\u00b1.30,W2.5\u00b1.20,T2.5\u00b1.20mm",
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R606",
+      "MPN": "CRCW06031K00FKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        31.27,
+        4.52,
+        32.73,
+        7.48
+      ],
+      "Fab_graphic_bounds_mm": [
+        31.5875,
+        5.2,
+        32.4125,
+        6.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R202",
+      "MPN": "CRCW060310K0FKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        68.52,
+        33.870000000000005,
+        71.48,
+        35.33
+      ],
+      "Fab_graphic_bounds_mm": [
+        69.2,
+        34.1875,
+        70.8,
+        35.0125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP123",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        45.95,
+        39.7,
+        45.95,
+        39.7
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R602",
+      "MPN": "CRCW06031K00FKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        19.27,
+        4.52,
+        20.73,
+        7.48
+      ],
+      "Fab_graphic_bounds_mm": [
+        19.5875,
+        5.2,
+        20.4125,
+        6.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "J201",
+      "MPN": "TC2030-IDC-NL (tool, not assembled component)",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        67.5,
+        4.0,
+        74.5,
+        8.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP404",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        41.25,
+        2.0,
+        41.25,
+        2.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R123",
+      "MPN": "TNPW0603100KBEEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        47.92,
+        29.97,
+        50.879999999999995,
+        31.43
+      ],
+      "Fab_graphic_bounds_mm": [
+        48.6,
+        30.287499999999998,
+        50.199999999999996,
+        31.1125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP102",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        27.25,
+        24.5,
+        27.25,
+        24.5
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U402",
+      "MPN": "SN74LVC2G125DCUR",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        63.05,
+        18.35,
+        67.55,
+        20.85
+      ],
+      "Fab_graphic_bounds_mm": [
+        64.14999999999999,
+        18.6,
+        66.45,
+        20.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Package_SO.3dshapes/VSSOP-8_2.3x2mm_P0.5mm.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D512",
+      "MPN": "PMEG2010BEA,115",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        83.0,
+        36.15,
+        85.0,
+        39.85
+      ],
+      "Fab_graphic_bounds_mm": [
+        83.375,
+        37.15,
+        84.625,
+        38.85
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD9_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R601",
+      "MPN": "CRCW06031K00FKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        16.27,
+        4.52,
+        17.73,
+        7.48
+      ],
+      "Fab_graphic_bounds_mm": [
+        16.5875,
+        5.2,
+        17.4125,
+        6.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C513",
+      "MPN": "CGA3E2X7R1H223K080AE",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        84.17,
+        32.82,
+        85.63000000000001,
+        35.779999999999994
+      ],
+      "Fab_graphic_bounds_mm": [
+        84.5,
+        33.5,
+        85.30000000000001,
+        35.099999999999994
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C403",
+      "MPN": "GCM188R71H104KA57D",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        43.07,
+        0.9199999999999999,
+        44.529999999999994,
+        3.88
+      ],
+      "Fab_graphic_bounds_mm": [
+        43.4,
+        1.5999999999999999,
+        44.199999999999996,
+        3.2
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C103",
+      "MPN": "CGA6N3X7R2A225K230AB",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        24.0,
+        19.4,
+        28.6,
+        22.6
+      ],
+      "Fab_graphic_bounds_mm": [
+        24.7,
+        19.75,
+        27.900000000000002,
+        22.25
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R111",
+      "MPN": "CRCW1206100KFKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        23.72,
+        36.88,
+        28.28,
+        39.12
+      ],
+      "Fab_graphic_bounds_mm": [
+        24.4,
+        37.2,
+        27.6,
+        38.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R401",
+      "MPN": "CRCW06030000Z0EA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        35.02,
+        9.469999999999999,
+        37.98,
+        10.93
+      ],
+      "Fab_graphic_bounds_mm": [
+        35.7,
+        9.7875,
+        37.3,
+        10.612499999999999
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C123",
+      "MPN": "CGA4J2X7R2A104K125AA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        41.17,
+        23.1,
+        43.129999999999995,
+        26.5
+      ],
+      "Fab_graphic_bounds_mm": [
+        41.525,
+        23.8,
+        42.775,
+        25.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D103",
+      "MPN": "SMCJ24AHE3_A/H",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        32.6,
+        34.15,
+        42.4,
+        40.85
+      ],
+      "Fab_graphic_bounds_mm": [
+        33.95,
+        34.4,
+        41.05,
+        40.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMC.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R405",
+      "MPN": "CRCW06031K00FKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        27.27,
+        10.719999999999999,
+        28.73,
+        13.68
+      ],
+      "Fab_graphic_bounds_mm": [
+        27.5875,
+        11.399999999999999,
+        28.4125,
+        13.0
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R507",
+      "MPN": "CRCW25124R70FKEGHP",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        13.68,
+        13.58,
+        21.32,
+        17.42
+      ],
+      "Fab_graphic_bounds_mm": [
+        14.35,
+        13.9,
+        20.65,
+        17.1
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_2512_6332Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP405",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        41.75,
+        11.0,
+        41.75,
+        11.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP510",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        24.95,
+        14.2,
+        24.95,
+        14.2
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U121",
+      "MPN": "LM5164DDAR",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        43.275,
+        23.8,
+        50.725,
+        29.2
+      ],
+      "Fab_graphic_bounds_mm": [
+        45.05,
+        24.05,
+        48.95,
+        28.95
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D401",
+      "MPN": "APT1608SGC",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        28.52,
+        8.77,
+        31.48,
+        10.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        29.2,
+        9.1,
+        30.8,
+        9.9
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U404",
+      "MPN": "SN74LVC2G125DCUR",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        57.75,
+        18.35,
+        62.25,
+        20.85
+      ],
+      "Fab_graphic_bounds_mm": [
+        58.85,
+        18.6,
+        61.15,
+        20.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Package_SO.3dshapes/VSSOP-8_2.3x2mm_P0.5mm.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D602",
+      "MPN": "APT1608SGC",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        18.52,
+        2.27,
+        21.48,
+        3.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        19.2,
+        2.6,
+        20.8,
+        3.4
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C405",
+      "MPN": "GCM188R71H104KA57D",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        54.32,
+        20.77,
+        57.279999999999994,
+        22.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        55.0,
+        21.1,
+        56.599999999999994,
+        21.9
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D601",
+      "MPN": "APT1608SGC",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        15.52,
+        2.27,
+        18.48,
+        3.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        16.2,
+        2.6,
+        17.8,
+        3.4
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C201",
+      "MPN": "MCAST32MSB7226KPNA01",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        76.2,
+        7.4,
+        80.8,
+        10.6
+      ],
+      "Fab_graphic_bounds_mm": [
+        76.9,
+        7.75,
+        80.1,
+        10.25
+      ],
+      "manufacturer_max_body_height_mm": 2.7,
+      "height_evidence": "Exact TaiyoYuden TYCOMPAS part page:bodyL3.2\u00b1.30,W2.5\u00b1.20,T2.5\u00b1.20mm",
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D521",
+      "MPN": "PMEG2010BEA,115",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        78.5,
+        33.25,
+        80.5,
+        36.95
+      ],
+      "Fab_graphic_bounds_mm": [
+        78.875,
+        34.25,
+        80.125,
+        35.95
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD9_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-323.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C505",
+      "MPN": "C1210C106K5RACTU",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        18.9,
+        18.35,
+        23.6,
+        21.65
+      ],
+      "Fab_graphic_bounds_mm": [
+        19.65,
+        18.75,
+        22.85,
+        21.25
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R605",
+      "MPN": "CRCW06031K00FKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        28.27,
+        4.52,
+        29.73,
+        7.48
+      ],
+      "Fab_graphic_bounds_mm": [
+        28.5875,
+        5.2,
+        29.4125,
+        6.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C126",
+      "MPN": "CGA3E2C0G1H101J080AA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        47.92,
+        34.470000000000006,
+        50.879999999999995,
+        35.93
+      ],
+      "Fab_graphic_bounds_mm": [
+        48.6,
+        34.800000000000004,
+        50.199999999999996,
+        35.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R109",
+      "MPN": "CRCW12060000Z0EA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        33.080000000000005,
+        20.72,
+        35.32,
+        25.28
+      ],
+      "Fab_graphic_bounds_mm": [
+        33.400000000000006,
+        21.4,
+        35.0,
+        24.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U401",
+      "MPN": "PA1616D",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        45.45,
+        0.75,
+        63.55,
+        17.25
+      ],
+      "Fab_graphic_bounds_mm": [
+        46.5,
+        1.0,
+        62.5,
+        17.0
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "L121",
+      "MPN": "MSS1246T-473MLC",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        53.5,
+        22.75,
+        66.5,
+        35.25
+      ],
+      "Fab_graphic_bounds_mm": [
+        54.0,
+        23.0,
+        66.0,
+        35.0
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP401",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        44.45,
+        14.7,
+        44.45,
+        14.7
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C404",
+      "MPN": "GCM188R71H104KA57D",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        66.27,
+        14.82,
+        67.73,
+        17.78
+      ],
+      "Fab_graphic_bounds_mm": [
+        66.6,
+        15.5,
+        67.4,
+        17.1
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C121",
+      "MPN": "CGA6N3X7R2A225K230AB",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        37.4,
+        19.099999999999998,
+        40.6,
+        23.7
+      ],
+      "Fab_graphic_bounds_mm": [
+        37.75,
+        19.799999999999997,
+        40.25,
+        23.0
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D603",
+      "MPN": "APT1608SGC",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        21.52,
+        2.27,
+        24.48,
+        3.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        22.2,
+        2.6,
+        23.8,
+        3.4
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D101",
+      "MPN": "S5DHE3_A/H",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        18.5,
+        29.15,
+        28.299999999999997,
+        35.85
+      ],
+      "Fab_graphic_bounds_mm": [
+        19.849999999999998,
+        29.4,
+        26.95,
+        35.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMC.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "Q101",
+      "MPN": "STD25NF20",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        28.589999,
+        25.5,
+        39.689999,
+        32.5
+      ],
+      "Fab_graphic_bounds_mm": [
+        29.189999,
+        25.75,
+        39.109999,
+        32.25
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/TO-252-2.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R122",
+      "MPN": "TNPW0805309KBEEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        47.72,
+        32.05,
+        51.08,
+        33.95
+      ],
+      "Fab_graphic_bounds_mm": [
+        48.4,
+        32.375,
+        50.4,
+        33.625
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C203",
+      "MPN": "GCM188R71C105KA64D",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        81.97,
+        9.32,
+        83.43,
+        12.280000000000001
+      ],
+      "Fab_graphic_bounds_mm": [
+        82.3,
+        10.0,
+        83.10000000000001,
+        11.600000000000001
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "F1",
+      "MPN": "0430451200",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        -1.1199999999999992,
+        4.420000000000001,
+        12.550000000000002,
+        27.58
+      ],
+      "Fab_graphic_bounds_mm": [
+        -0.7299999999999986,
+        4.815,
+        9.400000000000002,
+        27.185
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Connector_Molex.3dshapes/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R127",
+      "MPN": "CRCW0603100KFKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        46.07,
+        29.82,
+        47.529999999999994,
+        32.78
+      ],
+      "Fab_graphic_bounds_mm": [
+        46.387499999999996,
+        30.5,
+        47.2125,
+        32.1
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C124",
+      "MPN": "CGA3E2C0G1H222J080AA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        50.870000000000005,
+        23.62,
+        52.33,
+        26.580000000000002
+      ],
+      "Fab_graphic_bounds_mm": [
+        51.2,
+        24.3,
+        52.0,
+        25.900000000000002
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C127",
+      "MPN": "MCAST32MSB7226KPNA01",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        55.7,
+        36.4,
+        60.3,
+        39.6
+      ],
+      "Fab_graphic_bounds_mm": [
+        56.4,
+        36.75,
+        59.6,
+        39.25
+      ],
+      "manufacturer_max_body_height_mm": 2.7,
+      "height_evidence": "Exact TaiyoYuden TYCOMPAS part page:bodyL3.2\u00b1.30,W2.5\u00b1.20,T2.5\u00b1.20mm",
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP402",
+      "MPN": "BARE PCB PAD",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        44.45,
+        17.2,
+        44.45,
+        17.2
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP505",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        69.65,
+        34.5,
+        69.65,
+        34.5
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 5.7,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R511",
+      "MPN": "TNPW08051M00BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        80.91999999999999,
+        37.65,
+        84.28,
+        39.550000000000004
+      ],
+      "Fab_graphic_bounds_mm": [
+        81.6,
+        37.975,
+        83.6,
+        39.225
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 12.56538499211225,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP504",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        70.25,
+        39.2,
+        70.25,
+        39.2
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 10.400000000000002,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C511",
+      "MPN": "GCM188R71C105KA64D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        77.52,
+        34.77,
+        80.48,
+        36.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        78.2,
+        35.1,
+        79.8,
+        35.9
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 8.130885560626222,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "L151",
+      "MPN": "XGL5030-153MEC",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        22.71,
+        13.41,
+        28.689999999999998,
+        19.59
+      ],
+      "Fab_graphic_bounds_mm": [
+        22.96,
+        13.66,
+        28.439999999999998,
+        19.34
+      ],
+      "manufacturer_max_body_height_mm": 3.1,
+      "height_evidence": "CoilcraftXGL5030 primary mechanical drawing",
+      "model_references": [
+        "${KICAD7_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Coilcraft_XAL5030-XXX.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 37.90999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R408",
+      "MPN": "CRCW0603100KFKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        63.32,
+        17.27,
+        66.28,
+        18.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        64.0,
+        17.5875,
+        65.6,
+        18.4125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 0.3199999999999932,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C102",
+      "MPN": "CGA3E2X7R2A103K080AE",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        35.82,
+        33.470000000000006,
+        38.779999999999994,
+        34.93
+      ],
+      "Fab_graphic_bounds_mm": [
+        36.5,
+        33.800000000000004,
+        38.099999999999994,
+        34.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 28.209241393557537,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP506",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        87.85,
+        23.4,
+        87.85,
+        23.4
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 15.849999999999996,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C122",
+      "MPN": "CGA6N3X7R2A225K230AB",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        40.0,
+        22.9,
+        43.2,
+        27.5
+      ],
+      "Fab_graphic_bounds_mm": [
+        40.35,
+        23.599999999999998,
+        42.85,
+        26.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 23.39999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R104",
+      "MPN": "ERA3AEB1472V",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        26.32,
+        28.87,
+        29.28,
+        30.330000000000002
+      ],
+      "Fab_graphic_bounds_mm": [
+        27.0,
+        29.1875,
+        28.6,
+        30.012500000000003
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 37.32006564838813,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C158",
+      "MPN": "GCM188R71H104KA57D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        36.52,
+        17.27,
+        39.48,
+        18.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        37.2,
+        17.6,
+        38.8,
+        18.4
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 27.119999999999997,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP302",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        7.25,
+        14.0,
+        7.25,
+        14.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 59.349999999999994,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D501",
+      "MPN": "ESD2CAN24DBZRQ1",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        12.28,
+        18.8,
+        16.119999999999997,
+        22.2
+      ],
+      "Fab_graphic_bounds_mm": [
+        13.549999999999999,
+        19.05,
+        14.85,
+        21.95
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD7_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 50.48,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP501",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        87.75,
+        39.0,
+        87.75,
+        39.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 18.76439447464266,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C301",
+      "MPN": "GCM188R71H104KA57D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        22.419999999999998,
+        9.469999999999999,
+        25.38,
+        10.93
+      ],
+      "Fab_graphic_bounds_mm": [
+        23.099999999999998,
+        9.799999999999999,
+        24.7,
+        10.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 41.22918020043571,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D402",
+      "MPN": "TPD1E05U06DPYR",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        63.0,
+        11.450000000000001,
+        64.2,
+        13.15
+      ],
+      "Fab_graphic_bounds_mm": [
+        63.300000000000004,
+        11.8,
+        63.9,
+        12.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 2.3999999999999915,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R525",
+      "MPN": "AA0603FR-07220RL",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        83.61999999999999,
+        25.07,
+        86.58,
+        26.53
+      ],
+      "Fab_graphic_bounds_mm": [
+        84.3,
+        25.3875,
+        85.89999999999999,
+        26.212500000000002
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 11.619999999999992,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP211",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        79.25,
+        7.0,
+        79.25,
+        7.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 8.694969810183357,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP213",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        85.25,
+        7.0,
+        85.25,
+        7.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 14.09263992302365,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "SJ301",
+      "MPN": "BARE PCB OPEN SOLDER LINK",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        17.55,
+        2.55,
+        20.849999999999998,
+        5.05
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 46.245270028403986,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C151",
+      "MPN": "MCAST32MSB7226KPNA01",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        41.6,
+        13.0,
+        44.800000000000004,
+        17.6
+      ],
+      "Fab_graphic_bounds_mm": [
+        41.95,
+        13.700000000000001,
+        44.45,
+        16.900000000000002
+      ],
+      "manufacturer_max_body_height_mm": 2.7,
+      "height_evidence": "Exact TaiyoYuden TYCOMPAS part page:bodyL3.2\u00b1.30,W2.5\u00b1.20,T2.5\u00b1.20mm",
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 21.79999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R515",
+      "MPN": "AA0603FR-07220RL",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        84.77,
+        27.169999999999998,
+        87.73,
+        28.63
+      ],
+      "Fab_graphic_bounds_mm": [
+        85.45,
+        27.487499999999997,
+        87.05,
+        28.3125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 12.769999999999994,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP303",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        28.05,
+        2.4,
+        28.05,
+        2.4
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 39.6794972246373,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R154",
+      "MPN": "CRCW06031K00FKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        42.52,
+        18.27,
+        45.48,
+        19.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        43.2,
+        18.5875,
+        44.8,
+        19.4125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 21.119999999999997,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R513",
+      "MPN": "TNPW0805124KBEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        82.22,
+        31.05,
+        85.58000000000001,
+        32.95
+      ],
+      "Fab_graphic_bounds_mm": [
+        82.9,
+        31.375,
+        84.9,
+        32.625
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 10.46474557741372,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R504",
+      "MPN": "TNPW060310K0BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        15.52,
+        32.27,
+        18.48,
+        33.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        16.2,
+        32.5875,
+        17.8,
+        33.4125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 48.24495103117008,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C101",
+      "MPN": "CGA4J2X7R2A104K125AA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        30.8,
+        33.52,
+        34.2,
+        35.48
+      ],
+      "Fab_graphic_bounds_mm": [
+        31.5,
+        33.875,
+        33.5,
+        35.125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 32.74199749557133,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP151",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        31.25,
+        6.7,
+        31.25,
+        6.7
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 35.71599781610475,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP509",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        19.75,
+        35.5,
+        19.75,
+        35.5
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 47.32665739305914,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R102",
+      "MPN": "TNPW1206549KBEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        26.22,
+        23.98,
+        30.78,
+        26.220000000000002
+      ],
+      "Fab_graphic_bounds_mm": [
+        26.9,
+        24.3,
+        30.1,
+        25.900000000000002
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 35.81999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R153",
+      "MPN": "WSLP0603R0100FEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        39.48,
+        20.2,
+        42.52,
+        21.8
+      ],
+      "Fab_graphic_bounds_mm": [
+        40.113,
+        20.493,
+        41.887,
+        21.507
+      ],
+      "manufacturer_max_body_height_mm": 0.533,
+      "height_evidence": "Vishay30100/30122 primary family:WSL/WSLP0603 H0.406\u00b1.127mm",
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 24.079999999999988,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C501",
+      "MPN": "CGA3E2X7R1H223K080AE",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        20.52,
+        33.07,
+        23.48,
+        34.529999999999994
+      ],
+      "Fab_graphic_bounds_mm": [
+        21.2,
+        33.4,
+        22.8,
+        34.199999999999996
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 43.33090467553152,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R151",
+      "MPN": "CRCW12060000Z0EA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        40.72,
+        9.879999999999999,
+        45.28,
+        12.120000000000001
+      ],
+      "Fab_graphic_bounds_mm": [
+        41.4,
+        10.2,
+        44.6,
+        11.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 21.319999999999993,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C302",
+      "MPN": "GCM188R71C105KA64D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        15.719999999999999,
+        12.969999999999999,
+        18.68,
+        14.43
+      ],
+      "Fab_graphic_bounds_mm": [
+        16.4,
+        13.299999999999999,
+        18.0,
+        14.1
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 47.919999999999995,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C155",
+      "MPN": "MCAST32MSB7226KPNA01",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        23.7,
+        20.4,
+        28.3,
+        23.6
+      ],
+      "Fab_graphic_bounds_mm": [
+        24.4,
+        20.75,
+        27.6,
+        23.25
+      ],
+      "manufacturer_max_body_height_mm": 2.7,
+      "height_evidence": "Exact TaiyoYuden TYCOMPAS part page:bodyL3.2\u00b1.30,W2.5\u00b1.20,T2.5\u00b1.20mm",
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 38.29999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C512",
+      "MPN": "GCM188R71C105KA64D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        77.52,
+        36.77,
+        80.48,
+        38.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        78.2,
+        37.1,
+        79.8,
+        37.9
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 9.694911036208635,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C522",
+      "MPN": "GCM188R71C105KA64D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        70.02,
+        36.77,
+        72.98,
+        38.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        70.7,
+        37.1,
+        72.3,
+        37.9
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 7.970000000000003,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R505",
+      "MPN": "TNPW0805118KBEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        20.32,
+        30.75,
+        23.68,
+        32.65
+      ],
+      "Fab_graphic_bounds_mm": [
+        21.0,
+        31.075,
+        23.0,
+        32.325
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 42.96427469421542,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP304",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        30.25,
+        9.9,
+        30.25,
+        9.9
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 36.399622250787154,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R106",
+      "MPN": "CRCW060310R0FKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        36.52,
+        28.27,
+        39.48,
+        29.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        37.2,
+        28.5875,
+        38.8,
+        29.4125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 27.119999999999997,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C502",
+      "MPN": "GCM188R71H104KA57D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        11.219999999999999,
+        26.87,
+        14.18,
+        28.330000000000002
+      ],
+      "Fab_graphic_bounds_mm": [
+        11.899999999999999,
+        27.200000000000003,
+        13.5,
+        28.0
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 52.419999999999995,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R105",
+      "MPN": "CRCW1206510KFKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        33.519999999999996,
+        25.58,
+        38.08,
+        27.82
+      ],
+      "Fab_graphic_bounds_mm": [
+        34.199999999999996,
+        25.9,
+        37.4,
+        27.5
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 28.519999999999992,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U301",
+      "MPN": "TCAN3403DRBRQ1",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        18.45,
+        7.35,
+        22.349999999999998,
+        11.3
+      ],
+      "Fab_graphic_bounds_mm": [
+        18.9,
+        8.0,
+        21.9,
+        11.0
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD9_3DMODEL_DIR}/Package_SON.3dshapes/VSON-8-1EP_3x3mm_P0.65mm_EP1.6x2.4mm.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 44.25282476859528,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C524",
+      "MPN": "CGA3E2C0G1H101J080AA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        72.77,
+        29.37,
+        74.23,
+        32.33
+      ],
+      "Fab_graphic_bounds_mm": [
+        73.1,
+        30.05,
+        73.9,
+        31.650000000000002
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 0.958018788959796,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R301",
+      "MPN": "CRCW06030000Z0EA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        24.52,
+        7.27,
+        27.48,
+        8.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        25.2,
+        7.5875,
+        26.8,
+        8.4125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 39.240276502593595,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R103",
+      "MPN": "TNPW060324K3BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        26.32,
+        26.77,
+        29.28,
+        28.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        27.0,
+        27.0875,
+        28.6,
+        27.9125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 37.31999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D301",
+      "MPN": "ESD2CAN24DBZRQ1",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        12.68,
+        7.8,
+        16.52,
+        11.2
+      ],
+      "Fab_graphic_bounds_mm": [
+        13.95,
+        8.05,
+        15.25,
+        10.95
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD7_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 50.08359412023063,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R101",
+      "MPN": "CRCW25126K81FKEG",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        22.18,
+        35.08,
+        29.82,
+        38.92
+      ],
+      "Fab_graphic_bounds_mm": [
+        22.85,
+        35.4,
+        29.15,
+        38.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_2512_6332Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 37.31228752033302,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP507",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        15.05,
+        36.0,
+        15.05,
+        36.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 52.0503842444991,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R521",
+      "MPN": "TNPW08051M00BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        73.32,
+        38.349999999999994,
+        76.68,
+        40.25
+      ],
+      "Fab_graphic_bounds_mm": [
+        74.0,
+        38.675,
+        76.0,
+        39.925
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 9.640793535803983,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP153",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        35.25,
+        4.0,
+        35.25,
+        4.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 32.30576573926084,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP152",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        31.25,
+        4.0,
+        31.25,
+        4.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 36.200310772146686,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "L406",
+      "MPN": "LQW18AS1N6J0ZD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        64.5,
+        11.75,
+        66.1,
+        14.25
+      ],
+      "Fab_graphic_bounds_mm": [
+        64.89999999999999,
+        12.2,
+        65.7,
+        13.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 0.5,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R306",
+      "MPN": "CRCW1206120RFKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        12.520000000000001,
+        2.6799999999999997,
+        17.080000000000002,
+        4.92
+      ],
+      "Fab_graphic_bounds_mm": [
+        13.200000000000001,
+        3.0,
+        16.400000000000002,
+        4.6
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 49.99564781058447,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP502",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        87.75,
+        36.0,
+        87.75,
+        36.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 17.317693264404472,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C503",
+      "MPN": "CGA4J2X7R2A104K125AA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        21.0,
+        28.52,
+        24.4,
+        30.48
+      ],
+      "Fab_graphic_bounds_mm": [
+        21.7,
+        28.875,
+        23.7,
+        30.125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 42.199999999999996,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R411",
+      "MPN": "CRCW0603100KFKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        60.17,
+        18.919999999999998,
+        61.629999999999995,
+        21.88
+      ],
+      "Fab_graphic_bounds_mm": [
+        60.4875,
+        19.599999999999998,
+        61.3125,
+        21.2
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 4.969999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP104",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        41.25,
+        39.5,
+        41.25,
+        39.5
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 27.515677349467516,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R506",
+      "MPN": "CRCW0603100KFKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        17.02,
+        37.27,
+        19.98,
+        38.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        17.7,
+        37.5875,
+        19.3,
+        38.4125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 47.38317528406047,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R522",
+      "MPN": "TNPW06034K02BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        73.52,
+        35.77,
+        76.48,
+        37.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        74.2,
+        36.0875,
+        75.8,
+        36.9125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 7.1338138467442525,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U502",
+      "MPN": "OPA2333AIDR",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        74.8,
+        27.8,
+        82.2,
+        33.2
+      ],
+      "Fab_graphic_bounds_mm": [
+        76.55,
+        28.05,
+        80.45,
+        32.95
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD7_3DMODEL_DIR}/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 2.799999999999997,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C153",
+      "MPN": "GCM188R71C105KA64D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        27.82,
+        11.27,
+        30.78,
+        12.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        28.5,
+        11.6,
+        30.1,
+        12.4
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 35.81999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R152",
+      "MPN": "CRCW0603100KFKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        32.02,
+        17.27,
+        34.98,
+        18.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        32.7,
+        17.5875,
+        34.3,
+        18.4125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 31.619999999999997,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R409",
+      "MPN": "CRCW0603100KFKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        42.52,
+        7.27,
+        45.48,
+        8.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        43.2,
+        7.5875,
+        44.8,
+        8.4125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 21.341961015801708,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U501",
+      "MPN": "TPS26600PWPR",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        14.6,
+        22.75,
+        22.4,
+        28.25
+      ],
+      "Fab_graphic_bounds_mm": [
+        16.3,
+        23.0,
+        20.7,
+        28.0
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 44.2,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C129",
+      "MPN": "CGA6N3X7R2A225K230AB",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        41.6,
+        28.2,
+        44.800000000000004,
+        32.8
+      ],
+      "Fab_graphic_bounds_mm": [
+        41.95,
+        28.9,
+        44.45,
+        32.1
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 21.79999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R410",
+      "MPN": "CRCW060310K0FKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        62.870000000000005,
+        18.919999999999998,
+        64.33,
+        21.88
+      ],
+      "Fab_graphic_bounds_mm": [
+        63.1875,
+        19.599999999999998,
+        64.0125,
+        21.2
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 2.269999999999996,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R107",
+      "MPN": "CRCW06035K10FKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        36.52,
+        30.77,
+        39.48,
+        32.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        37.2,
+        31.0875,
+        38.8,
+        31.9125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 27.191456378796627,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C531",
+      "MPN": "GCM188R71H104KA57D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        74.52,
+        25.669999999999998,
+        77.48,
+        27.13
+      ],
+      "Fab_graphic_bounds_mm": [
+        75.2,
+        26.0,
+        76.8,
+        26.799999999999997
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 2.519999999999996,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R303",
+      "MPN": "CRCW060310K0FKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        24.52,
+        5.07,
+        27.48,
+        6.529999999999999
+      ],
+      "Fab_graphic_bounds_mm": [
+        25.2,
+        5.3875,
+        26.8,
+        6.2124999999999995
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 39.47337457071537,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C154",
+      "MPN": "CGA3E3X7R1H224K080AB",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        29.57,
+        13.719999999999999,
+        31.03,
+        16.68
+      ],
+      "Fab_graphic_bounds_mm": [
+        29.79,
+        14.399999999999999,
+        30.810000000000002,
+        16.0
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 35.56999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "J401",
+      "MPN": "U.FL-R-SMT-1(80)",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        63.279999999999994,
+        6.300000000000001,
+        67.58,
+        11.3
+      ],
+      "Fab_graphic_bounds_mm": [
+        64.225,
+        7.300000000000001,
+        67.075,
+        10.3
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD7_3DMODEL_DIR}/Connector_Coaxial.3dshapes/U.FL_Hirose_U.FL-R-SMT-1_Vertical.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 0.49999999999999994,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP305",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        19.25,
+        19.5,
+        19.25,
+        19.5
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 47.349999999999994,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D102",
+      "MPN": "SMAJ30AHE3_A/H",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        31.5,
+        36.75,
+        38.5,
+        40.25
+      ],
+      "Fab_graphic_bounds_mm": [
+        32.7,
+        37.0,
+        37.3,
+        40.0
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SMA.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 29.202953617742157,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP301",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        8.25,
+        6.0,
+        8.25,
+        6.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 58.63755196117928,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C514",
+      "MPN": "CGA3E2C0G1H101J080AA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        82.77,
+        27.75,
+        84.23,
+        30.71
+      ],
+      "Fab_graphic_bounds_mm": [
+        83.1,
+        28.43,
+        83.9,
+        30.03
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 10.769999999999994,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R302",
+      "MPN": "CRCW06031K00FKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        24.52,
+        11.469999999999999,
+        27.48,
+        12.93
+      ],
+      "Fab_graphic_bounds_mm": [
+        25.2,
+        11.7875,
+        26.8,
+        12.612499999999999
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 39.11999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C152",
+      "MPN": "CGA3E3X7R1H224K080AB",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        39.27,
+        12.495,
+        40.73,
+        15.455
+      ],
+      "Fab_graphic_bounds_mm": [
+        39.6,
+        13.174999999999999,
+        40.4,
+        14.775
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 25.87,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R503",
+      "MPN": "TNPW060336K5BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        11.32,
+        32.27,
+        14.280000000000001,
+        33.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        12.0,
+        32.5875,
+        13.600000000000001,
+        33.4125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 52.43494350144758,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R502",
+      "MPN": "TNPW060310K0BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        15.52,
+        29.77,
+        18.48,
+        31.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        16.2,
+        30.0875,
+        17.8,
+        30.9125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 48.12977560720597,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP212",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        82.25,
+        7.0,
+        82.25,
+        7.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 11.318237495299346,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C157",
+      "MPN": "MCAST32MSB7226KPNA01",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        33.900000000000006,
+        20.4,
+        38.5,
+        23.6
+      ],
+      "Fab_graphic_bounds_mm": [
+        34.6,
+        20.75,
+        37.800000000000004,
+        23.25
+      ],
+      "manufacturer_max_body_height_mm": 2.7,
+      "height_evidence": "Exact TaiyoYuden TYCOMPAS part page:bodyL3.2\u00b1.30,W2.5\u00b1.20,T2.5\u00b1.20mm",
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 28.099999999999994,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U101",
+      "MPN": "LTC4367HMS8#WTRPBF",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        29.82,
+        28.75,
+        36.18,
+        32.25
+      ],
+      "Fab_graphic_bounds_mm": [
+        31.5,
+        29.0,
+        34.5,
+        32.0
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD7_3DMODEL_DIR}/Package_SO.3dshapes/MSOP-8_3x3mm_P0.65mm.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 30.41999999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R523",
+      "MPN": "TNPW0805124KBEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        70.47,
+        32.449999999999996,
+        73.83000000000001,
+        34.35
+      ],
+      "Fab_graphic_bounds_mm": [
+        71.15,
+        32.775,
+        73.15,
+        34.025
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 3.649999999999995,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R514",
+      "MPN": "TNPW06031K00BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        82.02,
+        34.07,
+        84.98,
+        35.529999999999994
+      ],
+      "Fab_graphic_bounds_mm": [
+        82.7,
+        34.387499999999996,
+        84.3,
+        35.2125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 11.321364758720563,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP508",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        21.05,
+        40.0,
+        21.05,
+        40.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 46.906742585688036,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R501",
+      "MPN": "TNPW060327K4BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        11.32,
+        29.77,
+        14.280000000000001,
+        31.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        12.0,
+        30.0875,
+        13.600000000000001,
+        30.9125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 52.32899100880887,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R407",
+      "MPN": "CRCW0603100KFKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        45.470000000000006,
+        13.92,
+        46.93,
+        16.88
+      ],
+      "Fab_graphic_bounds_mm": [
+        45.7875,
+        14.6,
+        46.612500000000004,
+        16.2
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 19.669999999999995,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP201",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        81.25,
+        4.0,
+        81.25,
+        4.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 12.09969007867557,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R108",
+      "MPN": "CRCW0603100KFKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        38.52,
+        36.27,
+        41.48,
+        37.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        39.2,
+        36.5875,
+        40.8,
+        37.4125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 26.207161235051764,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R512",
+      "MPN": "TNPW06034K02BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        82.02,
+        35.77,
+        84.98,
+        37.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        82.7,
+        36.0875,
+        84.3,
+        36.9125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 12.205789609853184,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U151",
+      "MPN": "LM63615DQPWPRQ1",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        31.1,
+        10.25,
+        38.9,
+        15.75
+      ],
+      "Fab_graphic_bounds_mm": [
+        32.8,
+        10.5,
+        37.2,
+        15.5
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD7_3DMODEL_DIR}/Package_SO.3dshapes/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 27.699999999999996,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C521",
+      "MPN": "GCM188R71C105KA64D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        70.02,
+        34.77,
+        72.98,
+        36.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        70.7,
+        35.1,
+        72.3,
+        35.9
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 5.970000000000002,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP202",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        84.25,
+        4.0,
+        84.25,
+        4.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 14.522482570139308,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C156",
+      "MPN": "MCAST32MSB7226KPNA01",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        28.8,
+        20.4,
+        33.4,
+        23.6
+      ],
+      "Fab_graphic_bounds_mm": [
+        29.5,
+        20.75,
+        32.7,
+        23.25
+      ],
+      "manufacturer_max_body_height_mm": 2.7,
+      "height_evidence": "Exact TaiyoYuden TYCOMPAS part page:bodyL3.2\u00b1.30,W2.5\u00b1.20,T2.5\u00b1.20mm",
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1210_3225Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 33.199999999999996,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R524",
+      "MPN": "TNPW06031K00BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        74.11999999999999,
+        33.470000000000006,
+        77.08,
+        34.93
+      ],
+      "Fab_graphic_bounds_mm": [
+        74.8,
+        33.7875,
+        76.39999999999999,
+        34.612500000000004
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 5.1286742926413265,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "TP503",
+      "MPN": "BARE PCB PAD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        88.25,
+        31.2,
+        88.25,
+        31.2
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 16.426274684175958,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "U202",
+      "MPN": "TPS3808G33QDBVRQ1",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        75.7,
+        9.399999999999999,
+        79.89999999999999,
+        13.0
+      ],
+      "Fab_graphic_bounds_mm": [
+        76.925,
+        9.674999999999999,
+        78.675,
+        12.725
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 3.700000000000003,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R203",
+      "MPN": "CRCW06031K00FKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        71.295,
+        8.944999999999999,
+        74.30499999999999,
+        10.455
+      ],
+      "Fab_graphic_bounds_mm": [
+        72.0,
+        9.299999999999999,
+        73.6,
+        10.1
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 1.3450000000000006,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C205",
+      "MPN": "GCM188R71H104KA57D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        74.69500000000001,
+        13.145,
+        77.705,
+        14.655000000000001
+      ],
+      "Fab_graphic_bounds_mm": [
+        75.4,
+        13.5,
+        77.0,
+        14.3
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 2.6950000000000074,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C532",
+      "MPN": "GRM1885C1H103JA01D",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        17.32,
+        24.77,
+        20.28,
+        26.23
+      ],
+      "Fab_graphic_bounds_mm": [
+        18.0,
+        25.1,
+        19.6,
+        25.9
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R158",
+      "MPN": "WSLP0603R0820FEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        74.795,
+        17.945,
+        77.80499999999999,
+        19.455
+      ],
+      "Fab_graphic_bounds_mm": [
+        75.5,
+        18.3,
+        77.1,
+        19.099999999999998
+      ],
+      "manufacturer_max_body_height_mm": 0.533,
+      "height_evidence": "Vishay30100/30122 primary family:WSL/WSLP0603 H0.406\u00b1.127mm",
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 2.7950000000000017,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R155",
+      "MPN": "TNPW060323K7BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        38.345,
+        24.395,
+        39.855000000000004,
+        27.404999999999998
+      ],
+      "Fab_graphic_bounds_mm": [
+        38.7,
+        25.099999999999998,
+        39.5,
+        26.7
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 26.744999999999994,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R156",
+      "MPN": "TNPW060310K0BEEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        31.945000000000004,
+        23.795,
+        33.455000000000005,
+        26.805
+      ],
+      "Fab_graphic_bounds_mm": [
+        32.300000000000004,
+        24.5,
+        33.1,
+        26.1
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 33.14499999999999,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C206",
+      "MPN": "T598X477M006ATE025",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        78.03999999999999,
+        15.849999999999998,
+        87.16,
+        20.95
+      ],
+      "Fab_graphic_bounds_mm": [
+        78.94999999999999,
+        16.25,
+        86.25,
+        20.549999999999997
+      ],
+      "manufacturer_max_body_height_mm": 4.3,
+      "height_evidence": "KEMET T2073 X-case7343-43 maxbody4.3mm",
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 6.039999999999992,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R157",
+      "MPN": "CRCW060310K0FKEA",
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        34.394999999999996,
+        12.944999999999999,
+        37.405,
+        14.455
+      ],
+      "Fab_graphic_bounds_mm": [
+        35.1,
+        13.299999999999999,
+        36.699999999999996,
+        14.1
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "MH901",
+      "MPN": null,
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        9.2,
+        -4.0,
+        9.2,
+        -4.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "MH902",
+      "MPN": null,
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        66.0,
+        -4.0,
+        66.0,
+        -4.0
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "MH903",
+      "MPN": null,
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        9.2,
+        45.287354898,
+        9.2,
+        45.287354898
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "MH904",
+      "MPN": null,
+      "side": "F.Cu",
+      "courtyard_bounds_mm": [
+        66.0,
+        45.263840608,
+        66.0,
+        45.263840608
+      ],
+      "Fab_graphic_bounds_mm": null,
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0,
+      "strip_courtyard_distance_mm": null,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    }
+  ],
+  "physical_reference_count": 156,
+  "strip_hits": [],
+  "nearest_strip_courtyards": [
+    {
+      "ref": "R408",
+      "MPN": "CRCW0603100KFKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        63.32,
+        17.27,
+        66.28,
+        18.73
+      ],
+      "Fab_graphic_bounds_mm": [
+        64.0,
+        17.5875,
+        65.6,
+        18.4125
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 0.3199999999999932,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "J401",
+      "MPN": "U.FL-R-SMT-1(80)",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        63.279999999999994,
+        6.300000000000001,
+        67.58,
+        11.3
+      ],
+      "Fab_graphic_bounds_mm": [
+        64.225,
+        7.300000000000001,
+        67.075,
+        10.3
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD7_3DMODEL_DIR}/Connector_Coaxial.3dshapes/U.FL_Hirose_U.FL-R-SMT-1_Vertical.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 0.49999999999999994,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "L406",
+      "MPN": "LQW18AS1N6J0ZD",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        64.5,
+        11.75,
+        66.1,
+        14.25
+      ],
+      "Fab_graphic_bounds_mm": [
+        64.89999999999999,
+        12.2,
+        65.7,
+        13.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 0.5,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C524",
+      "MPN": "CGA3E2C0G1H101J080AA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        72.77,
+        29.37,
+        74.23,
+        32.33
+      ],
+      "Fab_graphic_bounds_mm": [
+        73.1,
+        30.05,
+        73.9,
+        31.650000000000002
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 0.958018788959796,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R203",
+      "MPN": "CRCW06031K00FKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        71.295,
+        8.944999999999999,
+        74.30499999999999,
+        10.455
+      ],
+      "Fab_graphic_bounds_mm": [
+        72.0,
+        9.299999999999999,
+        73.6,
+        10.1
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 1.3450000000000006,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "R410",
+      "MPN": "CRCW060310K0FKEA",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        62.870000000000005,
+        18.919999999999998,
+        64.33,
+        21.88
+      ],
+      "Fab_graphic_bounds_mm": [
+        63.1875,
+        19.599999999999998,
+        64.0125,
+        21.2
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 2.269999999999996,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "D402",
+      "MPN": "TPD1E05U06DPYR",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        63.0,
+        11.450000000000001,
+        64.2,
+        13.15
+      ],
+      "Fab_graphic_bounds_mm": [
+        63.300000000000004,
+        11.8,
+        63.9,
+        12.8
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 2.3999999999999915,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    },
+    {
+      "ref": "C531",
+      "MPN": "GCM188R71H104KA57D",
+      "side": "B.Cu",
+      "courtyard_bounds_mm": [
+        74.52,
+        25.669999999999998,
+        77.48,
+        27.13
+      ],
+      "Fab_graphic_bounds_mm": [
+        75.2,
+        26.0,
+        76.8,
+        26.799999999999997
+      ],
+      "manufacturer_max_body_height_mm": null,
+      "height_evidence": null,
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0603_1608Metric.wrl"
+      ],
+      "strip_courtyard_overlap_mm2": 0.0,
+      "strip_courtyard_distance_mm": 2.519999999999996,
+      "scope": "Courtyard/Fab bounds are XY source screens, not validated package, lead, solder or cable solids."
+    }
+  ],
+  "missing_primary_height_refs": [
+    "R126",
+    "D606",
+    "R403",
+    "R604",
+    "R110",
+    "C202",
+    "R124",
+    "D604",
+    "D511",
+    "C523",
+    "C506",
+    "R128",
+    "D502",
+    "R603",
+    "R125",
+    "U403",
+    "R201",
+    "D522",
+    "R402",
+    "R121",
+    "D104",
+    "J202",
+    "C125",
+    "C504",
+    "J203",
+    "R404",
+    "D605",
+    "R606",
+    "R202",
+    "R602",
+    "R123",
+    "U402",
+    "D512",
+    "R601",
+    "C513",
+    "C403",
+    "C103",
+    "R111",
+    "R401",
+    "C123",
+    "D103",
+    "R405",
+    "R507",
+    "U121",
+    "D401",
+    "U404",
+    "D602",
+    "C405",
+    "D601",
+    "D521",
+    "C505",
+    "R605",
+    "C126",
+    "R109",
+    "U401",
+    "L121",
+    "C404",
+    "C121",
+    "D603",
+    "D101",
+    "Q101",
+    "R122",
+    "C203",
+    "F1",
+    "R127",
+    "C124",
+    "R511",
+    "C511",
+    "R408",
+    "C102",
+    "C122",
+    "R104",
+    "C158",
+    "D501",
+    "C301",
+    "D402",
+    "R525",
+    "R515",
+    "R154",
+    "R513",
+    "R504",
+    "C101",
+    "R102",
+    "C501",
+    "R151",
+    "C302",
+    "C512",
+    "C522",
+    "R505",
+    "R106",
+    "C502",
+    "R105",
+    "U301",
+    "C524",
+    "R301",
+    "R103",
+    "D301",
+    "R101",
+    "R521",
+    "L406",
+    "R306",
+    "C503",
+    "R411",
+    "R506",
+    "R522",
+    "U502",
+    "C153",
+    "R152",
+    "R409",
+    "U501",
+    "C129",
+    "R410",
+    "R107",
+    "C531",
+    "R303",
+    "C154",
+    "J401",
+    "D102",
+    "C514",
+    "R302",
+    "C152",
+    "R503",
+    "R502",
+    "U101",
+    "R523",
+    "R514",
+    "R501",
+    "R407",
+    "R108",
+    "R512",
+    "U151",
+    "C521",
+    "R524",
+    "U202",
+    "R203",
+    "C205",
+    "C532",
+    "R155",
+    "R156",
+    "R157"
+  ],
+  "missing_model_reference_refs": [
+    "C506",
+    "C504",
+    "U121",
+    "C505",
+    "U401",
+    "L121",
+    "D402",
+    "R153",
+    "L406",
+    "U501",
+    "U202",
+    "R203",
+    "C205",
+    "R158",
+    "R155",
+    "R156",
+    "C206",
+    "R157"
+  ],
+  "missing_courtyard_refs": [],
+  "important_unresolved_solids": [
+    "F1 exact0430451200 mated plug/latch/wire-exit and extraction sweep",
+    "U401 PA1616D owner-solder joint/standoff and cable routing",
+    "L121 MSS1246T-473MLC and taller power-package worst-caselead/solder geometry",
+    "Every unresolved model path or unbound manufacturer Zheight; numbers enumerated above",
+    "Actual dashboard bracket/enclosure and flexible-harness shapes"
+  ],
+  "checks": {
+    "strip_no_native_bottom_courtyard_overlap": true,
+    "new_cap_maxheight_within7mm_allocation": true
+  },
+  "required_next_execution": "Native STEP/body export with resolved model paths and exact populated/DNP effectivity; 3D collision/clearance under tolerances. Missing heights are desktop evidence gaps, not claimed unavailable physical tests."
+}

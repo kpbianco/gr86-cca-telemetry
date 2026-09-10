@@ -1,0 +1,70 @@
+{
+  "gates": [
+    {
+      "id": "G22-01",
+      "status": "BLOCKED_NATIVE_RUNTIME",
+      "description": "KiCad native refill/ERC/DRC and matched manufacturing exports have not run for the current electrical source. Fixed-copper geometry screens pass.",
+      "closure_action": "Run the bundled job with KiCad 9.0.9 and pcbnew; resolve findings and regenerate matched exports and hashes. Older Gerbers do not represent this revision."
+    },
+    {
+      "id": "G22-02",
+      "status": "BLOCKED_TARGET_BUILD",
+      "description": "Firmware 2.1.4 passes host and source checks; no current target ELF/BIN or flashed unit exists.",
+      "closure_action": "Run the pinned Arduino CLI 1.3.1, ESP32 core 3.3.6 and NimBLE 2.3.6 build; verify target drivers, timing, image identity and programming records."
+    },
+    {
+      "id": "G22-03",
+      "status": "OPEN_SOURCE_THERMAL_ENGINEERING",
+      "description": "T01 is dimensioned, but current copper, interlayer and package heat transfer has not established full-load margin. The ideal 96 \u00b5m copper screen exceeds the C206-region 125\u00b0C limit.",
+      "closure_action": "Extract the actual copper/package thermal network; establish local component and module limits against the landing/air bounds, or revise cooling, power or the allowed environment."
+    },
+    {
+      "id": "G22-04",
+      "status": "CONDITIONAL_CIRCUIT_MODEL",
+      "description": "Finite regulator, rail and oil models are source-bound estimates with explicit component and private-die assumptions.",
+      "closure_action": "Correlate unpublished regulator control/delay, private return and transient pin behavior with the declared bounds. R158 startup-pulse energy needs supplier or thermal-model correlation."
+    },
+    {
+      "id": "G22-05",
+      "status": "INSTALLED_INTERFACE_CONDITION",
+      "description": "ASC mapping is documented; actual switched fused power, return endpoints, unintended bonds and vehicle traffic remain unobserved. The updated CAN branch model retains sub-6 ns threshold recrossings in 196 deliberately fast-edge cases; receiver filtering and actual source edges are not established.",
+      "closure_action": "Confirm the fused switched accessory feed and the single full-current F1.1 return; leave F1.2 unpopulated in the harness. Apply the controlled relaxed exit, bonding and profile conditions; compare actual vehicle frames with the controlled ASC profile. Bound the actual CAN edge and receiver response against the retained fast-edge finding, or revise the branch."
+    },
+    {
+      "id": "G22-06",
+      "status": "ACCESSORY_IDENTITY_CONDITION",
+      "description": "Adafruit adapter and GPS puck product types are confirmed; PID 851 and PID 960 remain inferred identities.",
+      "closure_action": "Bind actual labels or order records to connector type, frequency, bias current, temperature and mechanical requirements."
+    },
+    {
+      "id": "G22-07",
+      "status": "SUPPLIER_PROCESS_ACCEPTANCE",
+      "description": "Corrected part, land and assembly records exist; actual JLC construction, 13 filled/capped vias, assembly profiles and lot acceptance do not.",
+      "closure_action": "Confirm finished stackup, copper and mask; the 13-via list; compatible global and local solder profiles; and the exact receiving and handling conditions before production."
+    },
+    {
+      "id": "G22-08",
+      "status": "AS_BUILT_ACCEPTANCE",
+      "description": "CAD continuity and isolation screens describe the intended copper. Physical plating, solder, crimps, contacts and population remain unmeasured.",
+      "closure_action": "Perform continuity and isolation against the current netlist, terminal crimp and pull checks, first-article population review and unit identity checks."
+    },
+    {
+      "id": "G22-09",
+      "status": "CONDITIONAL_RF_EMC_ESD",
+      "description": "RF and field/port models provide bounded estimates. Fast ESD return and trigger bounds remain material and installed performance is unobserved.",
+      "closure_action": "Satisfy the calculated parasitic and source-current bounds or revise protection; correlate installed RF noise, C/N0, radio and ADC coupling, and accessible-port behavior."
+    },
+    {
+      "id": "G22-10",
+      "status": "MECHANICAL_MATERIAL_ACCEPTANCE",
+      "description": "Carrier/contact geometry and critical tie calculations are complete. Primary maximum-height bounds cover all 153 fitted references. Complete populated solids, mated accessories, installed fit and retained cable grip are not established; 18 model references remain missing.",
+      "closure_action": "Check populated clearances and service access against current CAD; confirm clamp materials, retained tension, friction, thermal landing and installed retention."
+    },
+    {
+      "id": "G22-11",
+      "status": "PHYSICAL_VALIDATION",
+      "description": "Actual oil response, GPS availability, phone/OS behavior, sustained operation and environmental acceptance remain unobserved.",
+      "closure_action": "Apply the source-bound acceptance plan to an actual unit. Simulation does not establish lifetime or detection of every in-range stuck sensor."
+    }
+  ]
+}

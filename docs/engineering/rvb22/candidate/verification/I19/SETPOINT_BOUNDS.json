@@ -1,0 +1,20 @@
+{
+  "nominal_V": 3.364729458917836,
+  "source_min_V": 3.3065640591146597,
+  "source_max_V": 3.4231120359001856,
+  "resistor_tolerance_fraction": 0.0002,
+  "resistor_TCR_per_K": 2e-06,
+  "maximum_deltaT_K": 100,
+  "independent_drift_fraction_each": 0.001,
+  "reference_interval_V": [
+    0.985,
+    1.015
+  ],
+  "FB_current_abs_A": 1e-07,
+  "resistor_film_max_C": 125,
+  "component_internal_thermal_resistance_K_W": 63,
+  "R155_power_at_maxrail_W": 0.000492129963087928,
+  "R156_power_at_maxreference_W": 0.00020674736213865738,
+  "source": "https://www.vishay.com/docs/28779/tnpue3.pdf",
+  "qualification_scope": "Part-code construction matches manufacturer size, resistance, H tolerance, W TCR and EA packaging with standard00 suffix. Exact availability/supplier procurement remains a supplier acceptance condition.0.1% drift is a stated allocation corresponding to the8000h rated-power stability row, not a mission-life guarantee or arbitrary combined-stress proof."
+}

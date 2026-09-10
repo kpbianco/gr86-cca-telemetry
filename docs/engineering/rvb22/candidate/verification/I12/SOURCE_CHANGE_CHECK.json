@@ -1,0 +1,9 @@
+{
+  "I11_pcb_sha256": "e75b73f72187100fdc9b8c5e6c39b971fc7e349bc1ad0262703baa2ab5952729",
+  "I12_pcb_sha256": "dd1a7bc6b5d7d6ba72056fb82b61cdc6f2c34aaa40f6a71211a7abc2ba08ef27",
+  "electrical_and_edge_objects_unchanged": true,
+  "new_board_objects": "F.SilkS logo polygons only",
+  "footprint_edits": "3D model references only; U201 keepout correction is in library only",
+  "schematics_unchanged": true,
+  "native_required": true
+}

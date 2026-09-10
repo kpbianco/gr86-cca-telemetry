@@ -1,0 +1,71 @@
+{
+  "status": "I07_FROZEN_BEFORE_SOURCE_CORRECTION",
+  "source_PCB_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "native_run": 34378701296,
+  "redlines": [
+    {
+      "id": "I07-PARSE-01",
+      "finding": "PCB serialized as one1167286-byte line, exceeding KiCad9.0.9 LINE_READER_LINE_DEFAULT_MAX1000000. All native top-level record groups load after line separation.",
+      "status": "CORRECTION_QUEUED",
+      "native_isolation_run": 34379691116,
+      "primary_source": "https://github.com/KiCad/kicad-source-mirror/blob/9.0.9/include/richio.h"
+    },
+    {
+      "id": "I07-ERC-01",
+      "finding": "Duplicate local/global GND label near C532",
+      "status": "CORRECTION_QUEUED",
+      "native_finding": {
+        "description": "Local and global labels have same name",
+        "items": [
+          {
+            "description": "Global Label 'GND'",
+            "pos": {
+              "x": 1.3716,
+              "y": 0.7747
+            },
+            "uuid": "5278baa9-40bb-5c14-8122-791c75f7ee24"
+          },
+          {
+            "description": "Label 'GND'",
+            "pos": {
+              "x": 4.4958,
+              "y": 3.683
+            },
+            "uuid": "6c41eb54-f49e-59d0-bc95-dd63f0f3a980"
+          }
+        ],
+        "severity": "warning",
+        "type": "same_local_global_label"
+      }
+    },
+    {
+      "id": "I07-ERC-02",
+      "finding": "Duplicate local/global OIL_EFUSE_OUT label near C532",
+      "status": "CORRECTION_QUEUED",
+      "native_finding": {
+        "description": "Local and global labels have same name",
+        "items": [
+          {
+            "description": "Global Label 'OIL_EFUSE_OUT'",
+            "pos": {
+              "x": 1.1176,
+              "y": 0.8763
+            },
+            "uuid": "2f1639bd-af32-5747-9a68-7b22104515fc"
+          },
+          {
+            "description": "Label 'OIL_EFUSE_OUT'",
+            "pos": {
+              "x": 4.4958,
+              "y": 3.5306
+            },
+            "uuid": "7d584ab8-e355-51aa-a3d4-283f3408a39a"
+          }
+        ],
+        "severity": "warning",
+        "type": "same_local_global_label"
+      }
+    }
+  ],
+  "rule": "Collect all parser and independent schematic findings before applying the coordinated I07 source correction. Native PCB connectivity and clearance have not run."
+}

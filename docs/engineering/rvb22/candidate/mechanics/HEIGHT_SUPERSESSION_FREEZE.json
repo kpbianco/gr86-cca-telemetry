@@ -1,0 +1,37 @@
+{
+  "status": "FROZEN_PRIMARY_HEIGHT_SUPERSESSION",
+  "PCB_unchanged_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "supersedes_height_counts_only": "SLOT_CORRECTION_FREEZE.json",
+  "geometry_and_SCAD_unchanged": true,
+  "fitted_height_bounds": 153,
+  "fitted_reference_count": 153,
+  "remaining_fitted_unknown": [],
+  "current_height_evidence": "../../analyses/assembly_handling/PRIMARY_BODY_HEIGHT_ADDENDUM.json",
+  "changed_files": [
+    {
+      "path": "FINAL_COMPONENT_ENVELOPES.json",
+      "sha256": "e9b8c89e865f53a93ed458ce690dc310f3fd9df0b8eaf39658492fbd2b4bbbd1",
+      "bytes": 141758
+    },
+    {
+      "path": "MECHANICAL_INSTALLATION_RVB22.md",
+      "sha256": "c537001620be1f1ddbec9d8ea77b9dc84cb5461fb1ffca843c448cf71d2b31d8",
+      "bytes": 9546
+    },
+    {
+      "path": "README.md",
+      "sha256": "28af4ebda8538afb8b2e6b78fabd1ae6b3f5d0de4043130667cb5065667406e9",
+      "bytes": 2036
+    },
+    {
+      "path": "apply_height_supersession.py",
+      "sha256": "ae5a3aaef8d47bd814e0c90e1827d5c56805f3020575392c327e4786dbd90d58",
+      "bytes": 2097
+    },
+    {
+      "path": "history_before_height_addendum/FINAL_COMPONENT_ENVELOPES.json",
+      "sha256": "77a09dce9c7214c54402483e91573868924f7445941d4f6728a9b6c0bb3539d7",
+      "bytes": 140260
+    }
+  ]
+}

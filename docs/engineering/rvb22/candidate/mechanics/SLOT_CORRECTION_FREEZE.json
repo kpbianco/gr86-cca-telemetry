@@ -1,0 +1,147 @@
+{
+  "status": "FROZEN_SOURCE_AND_REEXECUTED_BOUNDED_CHECKS",
+  "redline": "MECH22-31",
+  "source_PCB_unchanged_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
+  "changed_files": [
+    {
+      "path": "fix_tie_slot_geometry.py",
+      "sha256": "ce38e1429be675431507669e4f65bf147ddf7170921e096a21f72eefa70cc589",
+      "bytes": 5110
+    },
+    {
+      "path": "SLOT_SHAPE_REDLINE_BEFORE_CORRECTION.json",
+      "sha256": "cb03bccb5e75eb8d29213d1cb2c0af756f168c0945d4d0344a80a48abcc382a4",
+      "bytes": 1921
+    },
+    {
+      "path": "carrier_slot_geometry.py",
+      "sha256": "131bcbf710d4c6c346d7f1f9f5c4726c3a8919e6102ba5fac68960382aeb157b",
+      "bytes": 1327
+    },
+    {
+      "path": "check_slot_correction.py",
+      "sha256": "84d7bc9095d87291f310f7e430f5ecb02e1d634efb3900095edb35b6118cc984",
+      "bytes": 5523
+    },
+    {
+      "path": "SLOT_SHAPE_CORRECTION_CHECKS.json",
+      "sha256": "d139b6bc70fd4188d27c8151beb5ccf0d860dbb9f4195b47563f6c9c6bf20ae5",
+      "bytes": 97477
+    },
+    {
+      "path": "GR86_RVB_CARRIER_C03.scad",
+      "sha256": "51d52a6309599652542f13170f09e426069ff9ecbda57db9eb88b8793a118d86",
+      "bytes": 2311
+    },
+    {
+      "path": "GR86_RVB_CARRIER_C03_THERMAL.scad",
+      "sha256": "4635493d51c00fbbd4befeb72014b7ebbbadb2c8e1999534400b9bae7e0dcf39",
+      "bytes": 2302
+    },
+    {
+      "path": "HARNESS_CORRIDORS_C03.scad",
+      "sha256": "d1c5d770315750cf451c41b18e94eb10baf446220749c171de6782536ccb7d4d",
+      "bytes": 632
+    },
+    {
+      "path": "build_thermal_contact.py",
+      "sha256": "17c2358b284ac38106a04cce89033be9f54df781d2d2c38565580414c270a8e9",
+      "bytes": 4440
+    },
+    {
+      "path": "THERMAL_CONTACT_T01_SPEC.json",
+      "sha256": "50bd17c0f28546b18acba81320fd77d3e844a90e061b7ed299c9638aed843aa6",
+      "bytes": 2419
+    },
+    {
+      "path": "thermal_contact_t01_model.py",
+      "sha256": "774ace65764d99b7143556c1913fd505ffce7432827d90be5e9fdcca526e65be",
+      "bytes": 4458
+    },
+    {
+      "path": "THERMAL_CONTACT_T01_MODEL.json",
+      "sha256": "a5fc11981a3bca81c2dc343bd87a0b618e391770088be932934004bc68df4f88",
+      "bytes": 5330
+    },
+    {
+      "path": "THERMAL_CONTACT_T01_INVERSE_REQUIREMENTS.json",
+      "sha256": "bf381e8241a51ea9e2eaf098c0cd03e2bb6e5ba870fbe88e6daa010cbeda8df9",
+      "bytes": 2147
+    },
+    {
+      "path": "draw_c03_review.py",
+      "sha256": "dca25f86b2893eab908a1b0af7eb313416c0c2174aa05031e9d6ecba4843ed42",
+      "bytes": 4305
+    },
+    {
+      "path": "C03_T01_REVIEW.png",
+      "sha256": "31ec062242ba5f213ffb25316158f3a8f6abad6b2a0b458846e90b4099883070",
+      "bytes": 254449
+    },
+    {
+      "path": "C03_T01_REVIEW.svg",
+      "sha256": "ac366ed2bf901f97b7c29a33636e67c04cc75c12f4f683b64280e27a4ca819fc",
+      "bytes": 186402
+    },
+    {
+      "path": "finalize_dispositions.py",
+      "sha256": "21f49630c1b41616f8de5fae712f443a02b40d390d5ebf1611ae7d1bf7cd438c",
+      "bytes": 9845
+    },
+    {
+      "path": "finalize_slot_evidence.py",
+      "sha256": "373c830116a19d928b6c3b224d43d24d63bf91fd528b21ff1ce5d0393bca2e26",
+      "bytes": 8412
+    },
+    {
+      "path": "MECHANICAL_INSTALLATION_RVB22.md",
+      "sha256": "33d1b8d32cf481426ba476076b399b6b0e03b9bbb8dc505dda65e7a424da10f0",
+      "bytes": 8032
+    },
+    {
+      "path": "THERMAL_CONTACT_T01_REVIEW.md",
+      "sha256": "d3c23b6dc0e48a09471cc415981a3bfd6baa1235d81735f6085eb17c194bba4f",
+      "bytes": 8878
+    },
+    {
+      "path": "C03_CARRIER_CHECKS.json",
+      "sha256": "3166345cfe697fbffdd4b0449248aad9422e63cac200a4f14f1d5ccadc1cf255",
+      "bytes": 2105
+    },
+    {
+      "path": "structural_service_model.py",
+      "sha256": "914d566e71e39ae50a9f93740cc0ed50bb68d2754f878324ba33310e0735ac15",
+      "bytes": 5495
+    },
+    {
+      "path": "STRUCTURAL_SERVICE_MODEL.json",
+      "sha256": "e701cb8641ebef7f6ddd35a96acff390868b686cd32018fd59213fa1f32c5ecc",
+      "bytes": 22953
+    },
+    {
+      "path": "STRUCTURAL_AFTER_SLOT_RUN.log",
+      "sha256": "cd8606c773c577c1a139d1cf9fe077848c541a9ab4815c9f1fa9e53a4260eae0",
+      "bytes": 604
+    },
+    {
+      "path": "T01_AFTER_SLOT_CORRECTION_RUN.log",
+      "sha256": "6e38833c404c67a638135e6591c7df18551032afcefc170028a8c921d93ca280",
+      "bytes": 3579
+    },
+    {
+      "path": "F1_FREE_EXIT_ENVELOPE.scad",
+      "sha256": "15f797913814867bb4bba9816ff46c5122988a94fde4ba4387c05b4329f3e9f6",
+      "bytes": 916
+    },
+    {
+      "path": "REDLINE_DISPOSITIONS.json",
+      "sha256": "439046b3e94acea7decb2e6a9bc0b2a1b94cea7b58e11676045fc22e4ad645c7",
+      "bytes": 15535
+    }
+  ],
+  "history_directory": "history_before_slot_shape_fix",
+  "foil_SCAD_byte_unchanged": true,
+  "checks": "324 actual64-facet curved-corner tolerance cases,16 web/position cases,unchanged bbox/foil/RF edge,new mass/126gstatic screen,currentT01 shadow rerun; preview visually inspected.",
+  "scope": "Native OpenSCAD/STEP full solids and actual installed cable/plug/tie routing were not executed. Transparent harness/head boxes reserve installation space, not a continuous fabricated tie. The local-coordinate F1 free-exit template needs the actual mated plug installation transform.",
+  "remaining_conditions": "Hot retained tie tension, jacket pressure/friction or positive capture, local notched laminate allowable, full installed25.4mm relaxed exit and actual-source thermal/package model remain explicit."
+}

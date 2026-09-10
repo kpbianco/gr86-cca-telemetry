@@ -1,0 +1,90 @@
+name: RVB22 native engineering review
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/rvb22-native.yml'
+      - 'docs/engineering/rvb22/runtime/**'
+      - 'docs/engineering/rvb22/candidate/run_native_candidate.py'
+      - 'docs/engineering/rvb22/candidate/cad/**'
+      - 'docs/engineering/rvb22/candidate/firmware/**'
+permissions:
+  contents: read
+concurrency:
+  group: rvb22-native-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+jobs:
+  native:
+    if: github.head_ref == 'codex/rvb22-corrective-engineering' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - id: checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Record exact candidate revision
+        run: |
+          mkdir -p native_setup
+          git rev-parse HEAD > native_setup/commit.txt
+      - name: Provision KiCad 9.0.9
+        id: cad_setup
+        run: bash docs/engineering/rvb22/runtime/hosted/setup_native.sh cad
+      - name: Obtain CAD findings independently of firmware downloads
+        run: |
+          xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/candidate/run_native_candidate.py \
+            --cad-dir docs/engineering/rvb22/candidate/cad \
+            --output native_I06_cad_only \
+            --kicad-cli kicad-cli \
+            --pcbnew-python /usr/bin/python3 \
+            --component-step
+      - name: Export controlled footprint variant proposals
+        if: always() && steps.cad_setup.conclusion == 'success'
+        run: |
+          if test -f native_I06_cad_only/DRC.json; then
+            xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/runtime/hosted/export_footprint_variants.py \
+              native_I06_cad_only/candidate_kicad/GR86_CCA_RevB.kicad_pcb \
+              native_I06_cad_only/DRC.json native_footprint_variants
+          fi
+      - name: Isolate PCB parser records if loading fails
+        if: always() && steps.cad_setup.conclusion == 'success'
+        run: |
+          if test -f native_I06_cad_only/RESULT.json; then
+            /usr/bin/python3 - <<'PYCODE'
+          import json,pathlib,subprocess
+          r=json.loads(pathlib.Path('native_I06_cad_only/RESULT.json').read_text())
+          if not r['output_postconditions'].get('refilled_copper',{}).get('pass',False):
+              subprocess.run(['xvfb-run','-a','/usr/bin/python3','docs/engineering/rvb22/runtime/hosted/diagnose_parser.py','docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb','native_parser_diagnostic'],check=True,timeout=600)
+          PYCODE
+          fi
+      - name: Provision pinned Arduino toolchain
+        id: firmware_setup
+        if: always() && steps.checkout.conclusion == 'success'
+        run: bash docs/engineering/rvb22/runtime/hosted/setup_native.sh firmware
+      - name: Run CAD verification and target firmware compilation
+        if: always() && steps.cad_setup.conclusion == 'success' && steps.firmware_setup.conclusion == 'success'
+        run: |
+          xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/candidate/run_native_candidate.py \
+            --cad-dir docs/engineering/rvb22/candidate/cad \
+            --firmware-dir docs/engineering/rvb22/candidate/firmware \
+            --output native_I06_hosted \
+            --kicad-cli kicad-cli \
+            --pcbnew-python /usr/bin/python3 \
+            --arduino-cli "${RUNNER_TEMP}/rvb22-native-tools/bin/arduino-cli" \
+            --arduino-config "${RUNNER_TEMP}/rvb22-native-tools/config/arduino-cli.yaml" \
+            --nimble-dir "${RUNNER_TEMP}/rvb22-native-tools/user/libraries/NimBLE-Arduino" \
+            --component-step
+      - name: Preserve returned evidence and failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rvb22-native-${{ github.event.pull_request.head.sha }}
+          path: |
+            native_setup/
+            native_parser_diagnostic/
+            native_footprint_variants/
+            native_I06_cad_only/
+            native_I06_hosted/
+          retention-days: 7
+          if-no-files-found: error

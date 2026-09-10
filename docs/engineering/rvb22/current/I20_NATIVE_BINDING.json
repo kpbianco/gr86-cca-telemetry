@@ -1,0 +1,29 @@
+{
+  "iteration": "I20",
+  "commit": "e36523bb1bd374a58b0071e761b7a46c8cc4385e",
+  "run": 34420381540,
+  "run_number": 22,
+  "artifact": 10130724554,
+  "artifact_SHA256": "187668d48d9267754b2fdd94b5ee6806aa13dcbf845cb4eac688cd1e1159a31c",
+  "source_PCB_sha256": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+  "filled_PCB_sha256": "62c08e7050fe95df0a576ece85a051b4049e9684bf8ea5f73e8949657363276b",
+  "native_status": "NATIVE_OUTPUTS_COMPLETE",
+  "all_postconditions_pass": true,
+  "nonzero_commands": [],
+  "native_finding_count": 0,
+  "firmware_outputs": {
+    "pass": true,
+    "details": {
+      "elf": {
+        "bytes": 12757508,
+        "sha256": "2a4db74da98b2f03a80e820e76612a082a695866e9ead2d531e16db40da5317b"
+      },
+      "app_bin": {
+        "bytes": 683856,
+        "sha256": "ea4fefe0f46a8ad51f8fb94242ce51c32d8537a7976aed6e1cac9168a5a49bf5"
+      }
+    }
+  },
+  "native_3D_fitted_models": 153,
+  "physical_measurements": 0
+}
