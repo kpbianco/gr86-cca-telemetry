@@ -1,0 +1,23 @@
+{
+  "iteration": "I20",
+  "redlines": [
+    {
+      "id": "I20-D01",
+      "finding": "Power schematic annotations still state superseded23.7k/10k and old voltage bounds."
+    },
+    {
+      "id": "I20-D02",
+      "finding": "Candidate labels still say native validation pending after the executed I19 pass."
+    },
+    {
+      "id": "I20-D03",
+      "finding": "Current mechanics and acceptance instructions must point to C05/W02/T03 and49 filled/capped locations; historical copies must be visibly superseded."
+    },
+    {
+      "id": "I20-D04",
+      "finding": "Final review must use the user73/213/4 baseline and preserve every original criterion, with model and physical/supplier status separately recorded."
+    }
+  ],
+  "geometry_change_authorized": false,
+  "rule": "Freeze before edit; only two schematic note objects and non-electrical qualification labels in existing candidate source. Current docs/manifest are generated separately."
+}

@@ -1,5 +1,5 @@
 {
-  "candidate": "I19 precision feedback candidate; current native and affected model verification required",
+  "candidate": "I20 controlled handoff; source geometry identical to I19; current native and explicit acceptance conditions control",
   "files": [
     {
       "bytes": 4331,
@@ -82,12 +82,11 @@
       "source": "iterations/I06_harness_handoff/candidate_kicad/CAN.kicad_sch"
     },
     {
-      "bytes": 531,
-      "git_blob_sha": "2965e5a378850a626603f244b36ff8e08d3fd6c6",
+      "bytes": 1572,
       "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/CANDIDATE_README.md",
-      "sha256": "6cbd3155ae763eaadf17cf19b4192f7a3dbc0010a7d3efdb80ce0edc03f75381",
-      "source": "iterations/I11_controlled_footprint_variants/candidate_kicad/CANDIDATE_README.md"
+      "sha256": "a4f2e6a6dde9036ff0186344769c0d4065770665c8e294c9098fee62c299d212",
+      "source": "I20 controlled handoff"
     },
     {
       "bytes": 55549,
@@ -130,11 +129,11 @@
       "source": "I14_service_clearance/candidate/cad/GR86_CCA_RevB.kicad_dru"
     },
     {
-      "bytes": 1260383,
+      "bytes": 1260483,
       "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb",
-      "sha256": "ec5909fac5999e97e1a18136821ceb0c81214bf09cfb2f8357d95dea58742c1b",
-      "source": "I19 precision feedback continuation"
+      "sha256": "b6c704c0c97685a68ba708d320347148e5136c182c221d86627ff5b319954b3c",
+      "source": "I20 controlled handoff"
     },
     {
       "bytes": 2123,
@@ -825,11 +824,11 @@
       "source": "iterations/I07_source_compatibility/candidate_kicad/Oil_Pressure.kicad_sch"
     },
     {
-      "bytes": 66786,
+      "bytes": 66944,
       "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/Power_3V3.kicad_sch",
-      "sha256": "793816c129e3fae62d555b1e2f66a56b20dbc23628d11f082345f61ef99dc3f3",
-      "source": "I19 precision feedback continuation"
+      "sha256": "ed6c299b48849ba2eec5e8e197d8b64daa3e782f5aa9ad64bfe2ea9e64ef1019",
+      "source": "I20 controlled handoff"
     },
     {
       "bytes": 62466,
@@ -848,12 +847,11 @@
       "source": "iterations/I06_harness_handoff/candidate_kicad/Programming_Debug.kicad_sch"
     },
     {
-      "bytes": 84,
-      "git_blob_sha": "4d62deb87926e0c06db2c3508fa2f7d648ee9ed6",
+      "bytes": 309,
       "mode": "100644",
       "path": "docs/engineering/rvb22/candidate/cad/RVB22_POWER_CANDIDATE_ONLY.txt",
-      "sha256": "9d01637883d8042ead42bd9739901c33461f89c4f8ceb03f378468a58d49455e",
-      "source": "iterations/I06_harness_handoff/candidate_kicad/RVB22_POWER_CANDIDATE_ONLY.txt"
+      "sha256": "5f5d506776d25fad066c6c63591de12e4a791c4d2f3d636e933943f1a5781f07",
+      "source": "I20 controlled handoff"
     },
     {
       "bytes": 1008,
@@ -2537,6 +2535,41 @@
       "bytes": 1402,
       "sha256": "c9c96d0cae3efc7abc1c19d17a3bee69a4be10a4cf6b9f2320c18bdfdf42a94b",
       "source": "I19 precision feedback continuation"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I20/REDLINE_FREEZE.json",
+      "mode": "100644",
+      "bytes": 950,
+      "sha256": "df9a5dc51a488f492853a2fff8ac56743743cfe0c0daed29717e19bec2bae343",
+      "source": "I20 controlled handoff"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I20/SOURCE_CHANGE_CHECK.json",
+      "mode": "100644",
+      "bytes": 960,
+      "sha256": "9702b3fe3cf3b77a6649f270116a445e632e21f04635d433db2e734fecba8a93",
+      "source": "I20 controlled handoff"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I20/TRANSPORT.json",
+      "mode": "100644",
+      "bytes": 961,
+      "sha256": "183ac2c11132c4d446ea8f6b1c39f8219f03c0fff04ab68e29cd3de5bd76439f",
+      "source": "I20 controlled handoff"
+    },
+    {
+      "path": "docs/engineering/rvb22/candidate/verification/I20/build_i20_controlled_handoff.py",
+      "mode": "100644",
+      "bytes": 6164,
+      "sha256": "bfc6e421a725c4d0a0dc6d151de2378be60d6050adb7cfe2cceb279cd412d101",
+      "source": "I20 controlled handoff"
+    },
+    {
+      "path": "docs/engineering/rvb22/I20_CONTINUATION.md",
+      "mode": "100644",
+      "bytes": 1125,
+      "sha256": "789a9689c9b66717d4259e3c24852d1a8a328d63dffb74112e066c20e2d3ec4a",
+      "source": "I20 controlled handoff"
     }
   ],
   "scope": "Listed source/evidence manifest; no manufacturing or installed-unit release."

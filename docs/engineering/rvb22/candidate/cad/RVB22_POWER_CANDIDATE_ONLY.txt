@@ -1,1 +1,1 @@
-RVB22 reconstructed source candidate; not a release. Native ERC/refill/DRC pending.
+RVB22 I20 engineering candidate. Current source-bound native outputs and finite circuit/thermal/RF models are provided. Assembly, controller/model correlation and installation acceptance remain explicit; no manufactured or vehicle pass is claimed. See CANDIDATE_README.md and the current controlled manifest.
