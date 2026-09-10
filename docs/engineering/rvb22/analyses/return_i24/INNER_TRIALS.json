@@ -1,0 +1,528 @@
+[
+  {
+    "net": "OIL_5V",
+    "original_uuids": [
+      "ce22655e-17bb-4132-8478-5e968081ff6c",
+      "7badc2d2-a7b9-4137-9121-f28ae1586e95",
+      "ebd693fb-4041-4ccc-8d57-eed5dae63e47",
+      "05919d90-afb2-4d6f-b53a-0f7e86d54952"
+    ],
+    "original_path_mm": [
+      [
+        20.75,
+        28.7
+      ],
+      [
+        20.75,
+        30.3
+      ],
+      [
+        25.6,
+        30.3
+      ],
+      [
+        25.6,
+        25.744
+      ],
+      [
+        24.5522,
+        25.744
+      ]
+    ],
+    "width_mm": 0.4,
+    "path_mm": [
+      [
+        20.75,
+        28.7
+      ],
+      [
+        20.75,
+        28.15
+      ],
+      [
+        22.0,
+        26.9
+      ],
+      [
+        23.156,
+        25.744
+      ],
+      [
+        24.5522,
+        25.744
+      ]
+    ],
+    "diagnostics": {
+      "start_access": 67,
+      "end_access": 81,
+      "visited": 429,
+      "exact_edges_checked": 37
+    },
+    "old_length_mm": 12.053800000000006,
+    "new_length_mm": 5.348797831069666
+  },
+  {
+    "net": "OIL_SIG",
+    "original_uuids": [
+      "58815c2d-d49d-48a7-8713-5b4e43285c73",
+      "68e72fd8-5730-4925-86be-0082a1418987",
+      "0ae02254-ad0e-46ff-ac88-8a20580e00f2",
+      "a5bd32e9-3d6f-43de-accf-5b797b4ced5f",
+      "0913e8db-a0b3-4e8b-9b21-0ce045ab5653",
+      "34e9bd74-79c4-4de0-a572-1ff5e1066dbb",
+      "7618c9a6-1473-4f15-998d-84a7980f4e9d"
+    ],
+    "original_path_mm": [
+      [
+        21.15,
+        37.3
+      ],
+      [
+        24.85,
+        37.3
+      ],
+      [
+        25.5,
+        37.95
+      ],
+      [
+        25.55,
+        37.95
+      ],
+      [
+        26.15,
+        38.55
+      ],
+      [
+        26.2,
+        38.55
+      ],
+      [
+        26.25,
+        38.6
+      ],
+      [
+        42.75,
+        38.6
+      ]
+    ],
+    "width_mm": 0.2,
+    "path_mm": [
+      [
+        21.15,
+        37.3
+      ],
+      [
+        22.45,
+        38.6
+      ],
+      [
+        42.75,
+        38.6
+      ]
+    ],
+    "diagnostics": {
+      "start_access": 71,
+      "end_access": 69,
+      "visited": 1482,
+      "exact_edges_checked": 209
+    },
+    "old_length_mm": 22.138477631085028,
+    "new_length_mm": 22.138477631085028
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "03969802-d7bb-5dda-9027-59b3452761c0"
+    ],
+    "original_path_mm": [
+      [
+        78.88,
+        -6.8
+      ],
+      [
+        79.035,
+        -4.8075
+      ]
+    ],
+    "width_mm": 1.5,
+    "path_mm": [
+      [
+        78.88,
+        -6.8
+      ],
+      [
+        79.035,
+        -6.645
+      ],
+      [
+        79.035,
+        -4.8075
+      ]
+    ],
+    "diagnostics": {
+      "start_access": 48,
+      "end_access": 78,
+      "visited": 87,
+      "exact_edges_checked": 12
+    },
+    "old_length_mm": 1.9985197647258832,
+    "new_length_mm": 2.0567031021678304
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "a7f11c5f-2542-5203-8ad5-51359046fcf9"
+    ],
+    "original_path_mm": [
+      [
+        79.035,
+        -4.8075
+      ],
+      [
+        80.00375,
+        7.645625
+      ]
+    ],
+    "width_mm": 2.0,
+    "path_mm": null,
+    "diagnostics": {
+      "start_access": 62,
+      "end_access": 0
+    }
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "59f02b55-dffb-5fbf-826e-f8df86f3da57"
+    ],
+    "original_path_mm": [
+      [
+        79.48,
+        18.4
+      ],
+      [
+        79.79,
+        18.14
+      ]
+    ],
+    "width_mm": 2.0,
+    "path_mm": [
+      [
+        79.48,
+        18.4
+      ],
+      [
+        79.53,
+        18.4
+      ],
+      [
+        79.79,
+        18.14
+      ]
+    ],
+    "diagnostics": {
+      "start_access": 35,
+      "end_access": 14,
+      "visited": 35,
+      "exact_edges_checked": 0
+    },
+    "old_length_mm": 0.4045985664828787,
+    "new_length_mm": 0.41769552621700407
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "17a91e24-65cb-5b91-a481-35f58ca01dae"
+    ],
+    "original_path_mm": [
+      [
+        79.79,
+        18.14
+      ],
+      [
+        80.1,
+        17.88
+      ]
+    ],
+    "width_mm": 1.5,
+    "path_mm": null,
+    "diagnostics": {
+      "start_access": 48,
+      "end_access": 0
+    }
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "05e587ae-dd3f-5d74-a1d1-4abd54a03f47"
+    ],
+    "original_path_mm": [
+      [
+        80.00375,
+        7.645625
+      ],
+      [
+        80.0425,
+        8.14375
+      ]
+    ],
+    "width_mm": 1.5,
+    "path_mm": null,
+    "diagnostics": {
+      "start_access": 0,
+      "end_access": 29
+    }
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "33f053c1-1199-5b38-b9c1-e9094fccf83d"
+    ],
+    "original_path_mm": [
+      [
+        80.0425,
+        8.14375
+      ],
+      [
+        80.08125,
+        8.641875
+      ]
+    ],
+    "width_mm": 1.0,
+    "path_mm": [
+      [
+        80.0425,
+        8.14375
+      ],
+      [
+        80.0425,
+        8.603125
+      ],
+      [
+        80.08125,
+        8.641875
+      ]
+    ],
+    "diagnostics": {
+      "start_access": 66,
+      "end_access": 23,
+      "visited": 66,
+      "exact_edges_checked": 0
+    },
+    "old_length_mm": 0.49962994118147025,
+    "new_length_mm": 0.5141757755419525
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "c0b95716-df1b-5c3b-9733-f365354253c9",
+      "836d3aa4-6e8a-52e0-b85c-9f6f010acafb",
+      "74fccd9a-8445-5452-a8fd-e8516400f14f",
+      "c308eb38-059c-5dfa-a3b3-651a5ecec34b"
+    ],
+    "original_path_mm": [
+      [
+        80.08125,
+        8.641875
+      ],
+      [
+        80.12,
+        9.14
+      ],
+      [
+        80.16,
+        9.3
+      ],
+      [
+        80.3,
+        9.54
+      ],
+      [
+        80.93,
+        10.17
+      ]
+    ],
+    "width_mm": 0.8,
+    "path_mm": null,
+    "diagnostics": {
+      "start_access": 41,
+      "end_access": 0
+    }
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "e2870370-271f-59d7-bee1-501c855a7b48"
+    ],
+    "original_path_mm": [
+      [
+        80.1,
+        17.88
+      ],
+      [
+        80.41,
+        17.62
+      ]
+    ],
+    "width_mm": 1.0,
+    "path_mm": null,
+    "diagnostics": {
+      "start_access": 47,
+      "end_access": 0
+    }
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "ca495f7b-7044-506f-aaed-c3d2ce2378cf",
+      "f20cf6f7-9005-5a1a-b3e4-485b5e4e8265",
+      "be52a954-2631-5e65-8bf4-f3d0e025dbc6",
+      "3c79be42-ee3c-527b-a1c6-11a2f3cc1b50",
+      "1660f95e-f5f1-5e01-bf2f-df7325484a4b",
+      "c2318da3-d4bd-5862-8ceb-1e44d04deb83"
+    ],
+    "original_path_mm": [
+      [
+        80.41,
+        17.62
+      ],
+      [
+        80.72,
+        17.36
+      ],
+      [
+        80.92,
+        17.16
+      ],
+      [
+        81.04,
+        16.92
+      ],
+      [
+        81.54,
+        15.78
+      ],
+      [
+        81.56,
+        15.7
+      ],
+      [
+        81.56,
+        14.72
+      ]
+    ],
+    "width_mm": 0.8,
+    "path_mm": null,
+    "diagnostics": {
+      "start_access": 0,
+      "end_access": 53
+    }
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "b948777e-f4db-55b5-9907-fe24b5c40f89"
+    ],
+    "original_path_mm": [
+      [
+        80.93,
+        10.17
+      ],
+      [
+        81.245,
+        10.485
+      ]
+    ],
+    "width_mm": 1.0,
+    "path_mm": null,
+    "diagnostics": {
+      "start_access": 0,
+      "end_access": 0
+    }
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "6d39cd82-f083-5010-8868-356e35dfa782",
+      "d0bd66ea-f582-5cb1-9500-891f6286e5ee"
+    ],
+    "original_path_mm": [
+      [
+        81.245,
+        10.485
+      ],
+      [
+        81.56,
+        10.8
+      ],
+      [
+        81.56,
+        13.74
+      ]
+    ],
+    "width_mm": 2.0,
+    "path_mm": null,
+    "diagnostics": {
+      "start_access": 0,
+      "end_access": 0
+    }
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "4f571ba9-0b1e-5238-9488-70ab4d627ecd"
+    ],
+    "original_path_mm": [
+      [
+        81.56,
+        13.74
+      ],
+      [
+        81.56,
+        14.23
+      ]
+    ],
+    "width_mm": 1.5,
+    "path_mm": null,
+    "diagnostics": {
+      "start_access": 0,
+      "end_access": 0
+    }
+  },
+  {
+    "net": "3V3_BULK_DAMPED",
+    "original_uuids": [
+      "31798d72-3f70-56f7-95c0-f3dc77ad85fc"
+    ],
+    "original_path_mm": [
+      [
+        81.56,
+        14.23
+      ],
+      [
+        81.56,
+        14.72
+      ]
+    ],
+    "width_mm": 1.0,
+    "path_mm": [
+      [
+        81.56,
+        14.23
+      ],
+      [
+        81.56,
+        14.72
+      ]
+    ],
+    "diagnostics": {
+      "start_access": 45,
+      "end_access": 42,
+      "visited": 45,
+      "exact_edges_checked": 0
+    },
+    "old_length_mm": 0.4900000000000002,
+    "new_length_mm": 0.4900000000000002
+  }
+]

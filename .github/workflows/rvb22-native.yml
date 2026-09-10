@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   native:
-    if: github.head_ref == 'codex/rvb22-corrective-engineering' && github.event.pull_request.head.repo.full_name == github.repository
+    if: (github.head_ref == 'codex/rvb22-corrective-engineering' || github.head_ref == 'codex/rvb24-coordinated-closure') && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-24.04
     timeout-minutes: 35
     steps:

@@ -1,0 +1,328 @@
+{
+  "iteration": "I24",
+  "frozen_before_candidate_edits": true,
+  "date": "2026-09-10T15:48:57.213840+00:00",
+  "source_pcb_sha256": "44121c54ce49ace9c82404726706ef8a8f582ad63a9dad0a29bdd99aa0cad5db",
+  "native_filled_sha256": "3703e280fdbfab602721db5c41fad83669c1bc936725ecf508a584db61373fce",
+  "prior_segment_findings": {
+    "segment_findings": 15,
+    "affected_length_mm": 5.912173034517663,
+    "by_net": {
+      "CAN_RX_MCU": 9,
+      "CAN_TX_MCU": 6
+    }
+  },
+  "remaining_segments": [
+    {
+      "net": "CAN_RX_MCU",
+      "uuid": "045a8466-bd32-4eaa-b1f0-600ad27ea23b",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        25.5,
+        27.5
+      ],
+      "end": [
+        25.6,
+        27.4
+      ],
+      "length_mm": 0.14142135623731153,
+      "adjacent_gap_after_own_antipads_mm": 0.14142135623731153,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (25.5 27.5, 25.6 27.4)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_RX_MCU",
+      "uuid": "2af2bbcd-0762-43fc-990f-932f16c948dc",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        25.6,
+        25.8
+      ],
+      "end": [
+        24.9,
+        25.1
+      ],
+      "length_mm": 0.989949493661168,
+      "adjacent_gap_after_own_antipads_mm": 0.5748749846775447,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (25.6 25.8, 25.193501999999995 25.393501999999998)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_RX_MCU",
+      "uuid": "3cb08c20-61e0-4499-9533-e8c53f87870f",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        25.6,
+        27.4
+      ],
+      "end": [
+        25.6,
+        25.8
+      ],
+      "length_mm": 1.5999999999999979,
+      "adjacent_gap_after_own_antipads_mm": 1.5999999999999979,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (25.6 27.4, 25.6 25.8)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_RX_MCU",
+      "uuid": "532a64af-95c7-4e97-8200-a2b6caad1c40",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        38.6,
+        38.6
+      ],
+      "end": [
+        38.5,
+        38.6
+      ],
+      "length_mm": 0.10000000000000142,
+      "adjacent_gap_after_own_antipads_mm": 0.10000000000000142,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (38.6 38.6, 38.5 38.6)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_RX_MCU",
+      "uuid": "6b8bcaa8-cd83-445e-9672-248530cf9ab1",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        23.9,
+        31
+      ],
+      "end": [
+        25.1,
+        29.8
+      ],
+      "length_mm": 1.6970562748477156,
+      "adjacent_gap_after_own_antipads_mm": 0.9913580503692976,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (24.249501999999996 30.650498000000002, 24.950498000000003 29.949502)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_RX_MCU",
+      "uuid": "9e2e97fc-9590-4daf-80c6-69c69e27069f",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        25.1,
+        28
+      ],
+      "end": [
+        25.5,
+        27.6
+      ],
+      "length_mm": 0.565685424949236,
+      "adjacent_gap_after_own_antipads_mm": 0.354257668947336,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (25.249502 27.850498, 25.5 27.6)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_RX_MCU",
+      "uuid": "a7d99572-0ff2-4ca3-9f29-3ee86f5182bc",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        39.6,
+        39.6
+      ],
+      "end": [
+        38.6,
+        38.6
+      ],
+      "length_mm": 1.4142135623730951,
+      "adjacent_gap_after_own_antipads_mm": 0.35425766894732597,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (38.850497999999995 38.850497999999995, 38.6 38.6)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_RX_MCU",
+      "uuid": "df746851-8e9b-46eb-9007-0b9aef9e0fc6",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        25.5,
+        27.6
+      ],
+      "end": [
+        25.5,
+        27.5
+      ],
+      "length_mm": 0.10000000000000142,
+      "adjacent_gap_after_own_antipads_mm": 0.10000000000000142,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (25.5 27.6, 25.5 27.5)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_RX_MCU",
+      "uuid": "e290dfec-5c37-43ea-8644-3d01c3213a09",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        38.5,
+        38.6
+      ],
+      "end": [
+        36.8,
+        36.9
+      ],
+      "length_mm": 2.4041630560342657,
+      "adjacent_gap_after_own_antipads_mm": 0.354257668947336,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (38.5 38.6, 38.249502 38.349502)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "3cd9494b-1d5d-47a2-aa04-327840a5c89e",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.684766,
+        14.25
+      ],
+      "end": [
+        81.7,
+        14.25
+      ],
+      "length_mm": 0.015234000000006631,
+      "adjacent_gap_after_own_antipads_mm": 0.015234000000006631,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (81.684766 14.25, 81.7 14.25)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "6e2aaa09-c44c-4e4f-ba78-c2933e8e23ce",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.7,
+        14.25
+      ],
+      "end": [
+        81.2,
+        14.75
+      ],
+      "length_mm": 0.7071067811865476,
+      "adjacent_gap_after_own_antipads_mm": 0.7071067811865476,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (81.7 14.25, 81.2 14.75)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "871a1d07-8555-46ec-8b60-8f49faecf1a8",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.15,
+        15.15
+      ],
+      "end": [
+        80.85,
+        15.45
+      ],
+      "length_mm": 0.4242640687119358,
+      "adjacent_gap_after_own_antipads_mm": 0.19869417708630266,
+      "both_ground_planes_gap_mm": 0.05797709920305593,
+      "adjacent_gap_WKT": "LINESTRING (81.15 15.15, 81.009502 15.290498000000003)",
+      "both_gap_WKT": "LINESTRING (81.050498 15.249501999999998, 81.009502 15.290498000000003)"
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "95963305-6d4d-40ef-a89e-319eb932f057",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.2,
+        14.75
+      ],
+      "end": [
+        81.2,
+        15.05
+      ],
+      "length_mm": 0.3000000000000007,
+      "adjacent_gap_after_own_antipads_mm": 0.3000000000000007,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (81.2 14.75, 81.2 15.05)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "d940ea9d-cb9c-43f3-a104-0c43f56d70f9",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.15,
+        15.1
+      ],
+      "end": [
+        81.15,
+        15.15
+      ],
+      "length_mm": 0.05000000000000071,
+      "adjacent_gap_after_own_antipads_mm": 0.05000000000000071,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (81.15 15.1, 81.15 15.15)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "ff83a906-e673-4cf7-a47a-ba6b8551df15",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.2,
+        15.05
+      ],
+      "end": [
+        81.15,
+        15.1
+      ],
+      "length_mm": 0.07071067811865199,
+      "adjacent_gap_after_own_antipads_mm": 0.07071067811865199,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (81.2 15.05, 81.15 15.1)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    }
+  ],
+  "redlines": [
+    {
+      "id": "I24-RET-01",
+      "finding": "Nine CAN_RX_MCU segments lose In1 return to OIL_5V and OIL_SIG routes. Correct complete fixed-anchor signal route without extending raw oil analog chain."
+    },
+    {
+      "id": "I24-RET-02",
+      "finding": "Six CAN_TX_MCU segments lose In1 return to 3V3_BULK_DAMPED; one0.057977mm interval lacks both inner planes after I23. Correct coordinated pad escape/power intrusion preserving PDN and native rule acceptance."
+    }
+  ],
+  "unchanged_constraints": [
+    "153 component positions",
+    "fixed original via locations where possible",
+    "selected Adafruit851/960",
+    "RF geometry and straight U.FL entry",
+    "TranquilWorks logo",
+    "outline",
+    "all native keepouts and generic/protected/raw clearance rules"
+  ],
+  "required_gates": [
+    "independent explicit source clearance/connectivity",
+    "actual native ERC/DRC/refill/parity/model/export",
+    "actual filled critical reference",
+    "affected PDN/thermal checks"
+  ],
+  "physical_tests_claimed": 0
+}

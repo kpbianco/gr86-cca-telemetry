@@ -1,0 +1,181 @@
+{
+  "status": "SOURCE_CANDIDATE_ASSEMBLED_VALIDATION_REQUIRED",
+  "source_before_sha256": "44121c54ce49ace9c82404726706ef8a8f582ad63a9dad0a29bdd99aa0cad5db",
+  "source_after_sha256": "e0e370d81a8a095b65583806051c69362ce3a131567fbcc0cfb6d0bf683caf71",
+  "removed_uuids": [
+    "05919d90-afb2-4d6f-b53a-0f7e86d54952",
+    "0913e8db-a0b3-4e8b-9b21-0ce045ab5653",
+    "0ae02254-ad0e-46ff-ac88-8a20580e00f2",
+    "34e9bd74-79c4-4de0-a572-1ff5e1066dbb",
+    "58815c2d-d49d-48a7-8713-5b4e43285c73",
+    "68e72fd8-5730-4925-86be-0082a1418987",
+    "7618c9a6-1473-4f15-998d-84a7980f4e9d",
+    "7badc2d2-a7b9-4137-9121-f28ae1586e95",
+    "a5bd32e9-3d6f-43de-accf-5b797b4ced5f",
+    "ce22655e-17bb-4132-8478-5e968081ff6c",
+    "ebd693fb-4041-4ccc-8d57-eed5dae63e47"
+  ],
+  "added_segments": [
+    "(segment (start 20.75 28.7) (end 20.75 28.15) (width 0.4) (layer \"In2.Cu\") (net 66) (uuid \"8b432fd4-f8d1-5ff8-a717-91873c092dda\"))",
+    "(segment (start 20.75 28.15) (end 22.0 26.9) (width 0.4) (layer \"In2.Cu\") (net 66) (uuid \"925f693c-f19e-5a92-9a75-4309527f8faa\"))",
+    "(segment (start 22.0 26.9) (end 23.156 25.744) (width 0.4) (layer \"In2.Cu\") (net 66) (uuid \"653301f3-3694-5007-adeb-02cb808e0649\"))",
+    "(segment (start 23.156 25.744) (end 24.5522 25.744) (width 0.4) (layer \"In2.Cu\") (net 66) (uuid \"6bf8c2b9-86f3-5b41-b7ca-af7b509e707b\"))",
+    "(segment (start 21.15 37.3) (end 22.45 38.6) (width 0.2) (layer \"In2.Cu\") (net 80) (uuid \"a69b11a7-8794-5f14-a40e-2fb7cc3d5d62\"))",
+    "(segment (start 22.45 38.6) (end 42.75 38.6) (width 0.2) (layer \"In2.Cu\") (net 80) (uuid \"a279b19f-49eb-5985-a8a8-8b83de32a12e\"))"
+  ],
+  "changed_nets": [
+    "OIL_5V",
+    "OIL_SIG"
+  ],
+  "chains": [
+    {
+      "net": "OIL_5V",
+      "original_uuids": [
+        "ce22655e-17bb-4132-8478-5e968081ff6c",
+        "7badc2d2-a7b9-4137-9121-f28ae1586e95",
+        "ebd693fb-4041-4ccc-8d57-eed5dae63e47",
+        "05919d90-afb2-4d6f-b53a-0f7e86d54952"
+      ],
+      "original_path_mm": [
+        [
+          20.75,
+          28.7
+        ],
+        [
+          20.75,
+          30.3
+        ],
+        [
+          25.6,
+          30.3
+        ],
+        [
+          25.6,
+          25.744
+        ],
+        [
+          24.5522,
+          25.744
+        ]
+      ],
+      "width_mm": 0.4,
+      "path_mm": [
+        [
+          20.75,
+          28.7
+        ],
+        [
+          20.75,
+          28.15
+        ],
+        [
+          22.0,
+          26.9
+        ],
+        [
+          23.156,
+          25.744
+        ],
+        [
+          24.5522,
+          25.744
+        ]
+      ],
+      "diagnostics": {
+        "start_access": 67,
+        "end_access": 81,
+        "visited": 429,
+        "exact_edges_checked": 37
+      },
+      "old_length_mm": 12.053800000000006,
+      "new_length_mm": 5.348797831069666,
+      "status": "ADOPTED_FIXED_VIA_IN2_CORRECTION",
+      "new_layer": "In2.Cu",
+      "old_layer": "In1.Cu",
+      "trace_resistivity_ohm_m": 4e-08,
+      "minimum_copper_um": 24,
+      "old_hot_trace_R_ohm": 0.050224166666666695,
+      "new_hot_trace_R_ohm": 0.02228665762945694
+    },
+    {
+      "net": "OIL_SIG",
+      "original_uuids": [
+        "58815c2d-d49d-48a7-8713-5b4e43285c73",
+        "68e72fd8-5730-4925-86be-0082a1418987",
+        "0ae02254-ad0e-46ff-ac88-8a20580e00f2",
+        "a5bd32e9-3d6f-43de-accf-5b797b4ced5f",
+        "0913e8db-a0b3-4e8b-9b21-0ce045ab5653",
+        "34e9bd74-79c4-4de0-a572-1ff5e1066dbb",
+        "7618c9a6-1473-4f15-998d-84a7980f4e9d"
+      ],
+      "original_path_mm": [
+        [
+          21.15,
+          37.3
+        ],
+        [
+          24.85,
+          37.3
+        ],
+        [
+          25.5,
+          37.95
+        ],
+        [
+          25.55,
+          37.95
+        ],
+        [
+          26.15,
+          38.55
+        ],
+        [
+          26.2,
+          38.55
+        ],
+        [
+          26.25,
+          38.6
+        ],
+        [
+          42.75,
+          38.6
+        ]
+      ],
+      "width_mm": 0.2,
+      "path_mm": [
+        [
+          21.15,
+          37.3
+        ],
+        [
+          22.45,
+          38.6
+        ],
+        [
+          42.75,
+          38.6
+        ]
+      ],
+      "diagnostics": {
+        "start_access": 71,
+        "end_access": 69,
+        "visited": 1482,
+        "exact_edges_checked": 209
+      },
+      "old_length_mm": 22.138477631085028,
+      "new_length_mm": 22.138477631085028,
+      "status": "ADOPTED_FIXED_VIA_IN2_CORRECTION",
+      "new_layer": "In2.Cu",
+      "old_layer": "In1.Cu",
+      "trace_resistivity_ohm_m": 4e-08,
+      "minimum_copper_um": 24,
+      "old_hot_trace_R_ohm": 0.18448731359237522,
+      "new_hot_trace_R_ohm": 0.18448731359237522
+    }
+  ],
+  "physical_tests_claimed": 0,
+  "six_CAN_TX_MCU_findings_remain": true,
+  "native_required": true,
+  "affected_PDN_ground_thermal_models_required": true
+}
