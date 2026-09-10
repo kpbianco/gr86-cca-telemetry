@@ -1,0 +1,33 @@
+{
+  "iteration": "I24",
+  "status": "PASS_EXECUTION",
+  "exit_code": 0,
+  "working_directory": "engineering",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "argv": [
+    "python",
+    "analyses/power_i24/ground_plane_refined.py",
+    "--native-dir",
+    "runtime/hosted/run28/extracted/native_I06_hosted",
+    "--expected-hash",
+    "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+    "--expected-source-hash",
+    "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8"
+  ],
+  "analyzer_sha256": "cc2e71bc98db5d157d4224a9d4eb00b22f73b73027b3c127397b88468ee2d7a1",
+  "independent_copper_parser_sha256": "5f0e5cb0ceffd8ea3a07fca51209f90225f7b708d666ca33bb5df175fe936c2a",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "filled_PCB_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+  "native_RESULT_sha256": "788a8ccd773d24f67ef733f637883cc9155cbb3f832e3747793a4aa3f53989b7",
+  "outputs": {
+    "GROUND_PLANE_REFINED.json": "ac1a9474e73be0c841030c882f99bd13fea9320dc4729e547f574ada03d42a2f",
+    "GROUND_RETURN_CONTRACT.json": "fec8222eef7b16a48269694228013fb3902c31ac89330da33fcaf0cfd1155cbc",
+    "SUPPLEMENTAL_REDLINE_FREEZE.json": "b14d91e20ccf83ec69f1487f97c0c99e1d2b53cc755428370ef8dd012ccbba9c",
+    "SUPPLEMENTAL_REDLINE_DISPOSITION.json": "129f987f52214237b6d424c39f4602891d84a743b4c020f1b3e5b7e57e98e7bf",
+    "GROUND.log": "a01ebf80ed1ad895058f3da62f235789980f00878b0fc0656e99ceea138b5b74"
+  },
+  "physical_tests_claimed": 0
+}

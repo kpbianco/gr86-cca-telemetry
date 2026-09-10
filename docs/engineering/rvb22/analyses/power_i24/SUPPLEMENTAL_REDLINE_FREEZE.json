@@ -1,0 +1,49 @@
+{
+  "iteration": "I24",
+  "finding_id": "I24-PWR-R01",
+  "status": "FROZEN_BEFORE_FINAL_NATIVE_NUMERICAL_EXECUTION",
+  "recorded_utc": "2026-09-10T16:06:58.486414+00:00",
+  "finding": "Inherited I23 restricted In1 ground solver removes via bores but represents five GND PTH lands as solid disks without removing their drilled bores.",
+  "affected_bores": [
+    {
+      "reference": "J202",
+      "pin": "2",
+      "drill_mm": 1.1
+    },
+    {
+      "reference": "J203",
+      "pin": "2",
+      "drill_mm": 1.1
+    },
+    {
+      "reference": "F1",
+      "pin": "1",
+      "drill_mm": 1.02
+    },
+    {
+      "reference": "F1",
+      "pin": "2",
+      "drill_mm": 1.02
+    },
+    {
+      "reference": "F1",
+      "pin": "9",
+      "drill_mm": 1.02
+    }
+  ],
+  "impact": "A restricted-copper argument cannot credit copper inside actual drill holes. Prior numerical terms need refreshed physically consistent geometry before retention.",
+  "correction": "Subtract all actual round footprint PTH/NPTH bores in addition to via bores; rerun final I24 native copper at 0.1 and 0.075 mm; retain only exact unchanged terminal and stack terms and original 10% margin.",
+  "acceptance": {
+    "all_actual_bores_subtracted": true,
+    "source_to_load_allocation_ohm": 0.015,
+    "C206_to_load_plane_plus_load_barrel_allocation_ohm": 0.011,
+    "max_KCL_residual_A": 1e-07,
+    "mesh_mm": [
+      0.1,
+      0.075
+    ]
+  },
+  "source_filled_PCB_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "physical_tests_claimed": 0
+}

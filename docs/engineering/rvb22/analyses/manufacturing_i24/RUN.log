@@ -1,0 +1,218 @@
+Continuity complete
+/workspace/scratch/24b5a94ff374/engineering/runtime/local/gerbonara/excellon.py:576: SyntaxWarning: /workspace/scratch/24b5a94ff374/engineering/runtime/hosted/run28/extracted/native_I06_hosted/review_gerbers/GR86_CCA_RevB-PTH.drl:18 "G90": G90 header statement found after end of header
+  warnings.warn(f'{self.filename}:{self.lineno} "{self.line}": {msg}', SyntaxWarning)
+/workspace/scratch/24b5a94ff374/engineering/runtime/local/gerbonara/excellon.py:576: SyntaxWarning: /workspace/scratch/24b5a94ff374/engineering/runtime/hosted/run28/extracted/native_I06_hosted/review_gerbers/GR86_CCA_RevB-NPTH.drl:18 "G90": G90 header statement found after end of header
+  warnings.warn(f'{self.filename}:{self.lineno} "{self.line}": {msg}', SyntaxWarning)
+{
+  "filled_PCB_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "native_status": "NATIVE_OUTPUTS_COMPLETE",
+  "native_DRC": 0,
+  "native_unconnected": 0,
+  "native_parity": 0,
+  "native_ERC": 0,
+  "scope": "Intended CAD and matched export evidence; no manufactured continuity, plating, solder or cable-contact measurement.",
+  "iteration": "I24",
+  "native_directory": "runtime/hosted/run28/extracted/native_I06_hosted",
+  "analyzer_sha256": "b24782cda0deac570112d8286237075bbcb5cd359c671cff88a455327b143082",
+  "native_postconditions_passed": 14,
+  "native_result_sha256": "788a8ccd773d24f67ef733f637883cc9155cbb3f832e3747793a4aa3f53989b7",
+  "drills": [
+    {
+      "plated": true,
+      "expected": 338,
+      "actual": 338,
+      "missing": [],
+      "unexpected": [],
+      "rounding_tolerance_mm": 0.00050001
+    },
+    {
+      "plated": false,
+      "expected": 10,
+      "actual": 10,
+      "missing": [],
+      "unexpected": [],
+      "rounding_tolerance_mm": 0.00050001
+    }
+  ],
+  "netlist": {
+    "pcb_net_bearing_pads": 502,
+    "schematic_net_nodes": 502,
+    "PCB_pads_absent_from_schematic": [],
+    "schematic_nodes_absent_from_PCB": [],
+    "critical_component_pads": {
+      "U201": {
+        "1": "GND",
+        "2": "+3V3",
+        "3": "ESP_EN",
+        "4": "CAN_RX_MCU",
+        "5": "CAN_TX_MCU",
+        "6": "LED_BLE",
+        "7": "LED_CAN",
+        "8": "LED_PWR",
+        "9": "GPS_PPS_MCU",
+        "10": "GPS_TX_MCU",
+        "11": "GPS_TX_MODULE_BUFFERED",
+        "12": "LED_GPS",
+        "13": "unconnected-(U201-IO19-Pad13)",
+        "14": "unconnected-(U201-IO20-Pad14)",
+        "15": "unconnected-(U201-IO3-Pad15)",
+        "16": "unconnected-(U201-IO46-Pad16)",
+        "17": "LED_OIL",
+        "18": "LED_SYS",
+        "19": "unconnected-(U201-IO11-Pad19)",
+        "20": "unconnected-(U201-IO12-Pad20)",
+        "21": "unconnected-(U201-IO13-Pad21)",
+        "22": "unconnected-(U201-IO14-Pad22)",
+        "23": "unconnected-(U201-IO21-Pad23)",
+        "24": "unconnected-(U201-IO47-Pad24)",
+        "25": "unconnected-(U201-IO48-Pad25)",
+        "26": "unconnected-(U201-IO45-Pad26)",
+        "27": "ESP_GPIO0",
+        "28": "unconnected-(U201-IO35-Pad28)",
+        "29": "unconnected-(U201-IO36-Pad29)",
+        "30": "unconnected-(U201-IO37-Pad30)",
+        "31": "unconnected-(U201-IO38-Pad31)",
+        "32": "unconnected-(U201-IO39-Pad32)",
+        "33": "unconnected-(U201-IO40-Pad33)",
+        "34": "unconnected-(U201-IO41-Pad34)",
+        "35": "unconnected-(U201-IO42-Pad35)",
+        "36": "UART0_RX",
+        "37": "UART0_TX",
+        "38": "OIL_EXCITATION_ADC",
+        "39": "ADC_NODE",
+        "40": "GND",
+        "41": "GND"
+      },
+      "U403": {
+        "1": "GPS_5V_IN",
+        "2": "GND",
+        "3": "GPS_5V_IN",
+        "4": "unconnected-(U403-NC-Pad4)",
+        "5": "GPS_3V3"
+      },
+      "J201": {
+        "1": "+3V3",
+        "2": "ESP_EN",
+        "3": "GND",
+        "4": "UART0_RX",
+        "5": "UART0_TX",
+        "6": "ESP_GPIO0"
+      },
+      "U402": {
+        "1": "GND",
+        "2": "GPS_TX_RAW",
+        "3": "GPS_PPS_BUFFER",
+        "4": "GND",
+        "5": "GPS_PPS_RAW",
+        "6": "GPS_TX_BUFFER",
+        "7": "GND",
+        "8": "+3V3"
+      },
+      "U404": {
+        "1": "GND",
+        "2": "GPS_TX_MCU",
+        "3": "GPS_SEARCH_BUFFER",
+        "4": "GND",
+        "5": "GPS_FIX_RAW",
+        "6": "GPS_RX_BUFFER",
+        "7": "GND",
+        "8": "GPS_3V3"
+      },
+      "U401": {
+        "1": "GPS_3V3",
+        "2": "unconnected-(U401-NRESET-Pad2)",
+        "3": "GND",
+        "4": "unconnected-(U401-VBACKUP-Pad4)",
+        "5": "GPS_FIX_RAW",
+        "6": "unconnected-(U401-NC-Pad6)",
+        "7": "unconnected-(U401-NC-Pad7)",
+        "8": "GND",
+        "9": "GPS_TX_RAW",
+        "10": "GPS_RX_MODULE",
+        "11": "GPS_ANT_RF_BIASED",
+        "12": "GND",
+        "13": "GPS_PPS_RAW",
+        "14": "unconnected-(U401-RX1_SCL-Pad14)",
+        "15": "unconnected-(U401-TX1_SDA-Pad15)",
+        "16": "unconnected-(U401-NC-Pad16)",
+        "17": "unconnected-(U401-NC-Pad17)",
+        "18": "unconnected-(U401-NC-Pad18)",
+        "19": "GND",
+        "20": "unconnected-(U401-NC-Pad20)"
+      },
+      "F1": {
+        "1": "GND",
+        "2": "GND",
+        "3": "RAW_12V",
+        "4": "unconnected-(F1-SPARE_NC-Pad4)",
+        "5": "CANL",
+        "6": "CANH",
+        "7": "OIL_SIG",
+        "8": "OIL_5V",
+        "9": "GND",
+        "10": "unconnected-(F1-SPARE_NC-Pad10)",
+        "11": "unconnected-(F1-SPARE_NC-Pad11)",
+        "12": "unconnected-(F1-SPARE_NC-Pad12)"
+      },
+      "U301": {
+        "1": "CAN_TXD",
+        "2": "GND",
+        "3": "+3V3",
+        "4": "CAN_RXD",
+        "5": "+3V3",
+        "6": "CANL",
+        "7": "CANH",
+        "8": "GND",
+        "9": "GND"
+      },
+      "U502": {
+        "1": "OIL_AMP_OUT",
+        "2": "OIL_FB",
+        "3": "OIL_FILTERED",
+        "4": "GND",
+        "5": "OIL_EXC_FILTERED",
+        "6": "OIL_EXC_FB",
+        "7": "OIL_EXC_AMP_OUT",
+        "8": "+3V3"
+      },
+      "U501": {
+        "1": "+5V",
+        "2": "+5V",
+        "3": "OIL_UVLO",
+        "4": "unconnected-(U501-NC1-Pad4)",
+        "5": "OIL_OVP",
+        "6": "unconnected-(U501-MODE-Pad6)",
+        "7": "OIL_SHDN",
+        "8": "OIL_EFUSE_RTN",
+        "9": "GND",
+        "10": "unconnected-(U501-IMON-Pad10)",
+        "11": "OIL_ILIM",
+        "12": "OIL_DVDT",
+        "13": "unconnected-(U501-NC2-Pad13)",
+        "14": "OIL_POWER_FAULT_N",
+        "15": "OIL_EFUSE_OUT",
+        "16": "OIL_EFUSE_OUT",
+        "17": "OIL_EFUSE_RTN"
+      },
+      "U202": {
+        "1": "SUP_RESET_RAW",
+        "2": "GND",
+        "3": "+3V3",
+        "4": "unconnected-(U202-CT-Pad4)",
+        "5": "+3V3",
+        "6": "+3V3"
+      },
+      "J401": {
+        "1": "GPS_EXT_ANT",
+        "2": "GND"
+      }
+    },
+    "schematic_components": 195,
+    "schematic_nets": 133,
+    "pad_net_mismatches": [],
+    "two_terminal_same_node": [],
+    "two_terminal_checked": 141
+  },
+  "independent_manufacturing_status": "PASS_INTENDED_COPPER_AND_EXPORTS"
+}

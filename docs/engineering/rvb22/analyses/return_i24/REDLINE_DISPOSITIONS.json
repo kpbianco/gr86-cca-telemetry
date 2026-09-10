@@ -1,0 +1,40 @@
+{
+  "iteration": "I24",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "filled_PCB_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+  "evidence": "analyses/return_i24/NATIVE_REFERENCE_REVIEW.json",
+  "evidence_sha256": "00554a964f2cd662a7c57b30a718e48a4ae43b84cb894b9e55a3ff1819ddcc2b",
+  "redlines": [
+    {
+      "id": "I24-RET-01",
+      "status": "RESOLVED_SCOPED_ROUTING_FINDING",
+      "disposition": "All nine prior CAN_RX adjacent-In1 gaps are zero in actual final native fill. The OIL_5V chain is shorter; raw OIL_SIG length is unchanged. No critical reference regression, native finding, intended copper discontinuity or export mismatch introduced.",
+      "broader_criterion": "GND-02 remains open."
+    },
+    {
+      "id": "I24-RET-02",
+      "status": "OPEN",
+      "disposition": "Six CAN_TX launch segments still lack nearest In1 reference over1.3417456364mm. Inner-rail and new signal-via alternatives were evaluated but not adopted. Alternate In2 ground is present throughout after the LED correction; presence alone is not proof of return-current transfer or compliance with continuous-nearest-reference wording.",
+      "next_action": "Develop and verify a coordinated bulk-rail/MCU launch correction or formally review a quantified local return-transfer treatment while retaining original criterion scope."
+    },
+    {
+      "id": "I24-RET-03",
+      "status": "RESOLVED_SCOPED_SIMULTANEOUS_GAP",
+      "disposition": "The previously0.0579770992mm simultaneous In1/In2 reference gap is zero in actual final native fill. A local LED_CAN In2 detour provides alternate ground beneath all remaining CAN_TX nearest-plane interruptions without changing vias or RF geometry.",
+      "broader_criterion": "The six In1 interruptions and GND-02 remain open."
+    }
+  ],
+  "all_original_criteria_automatically_closed": false,
+  "physical_tests_claimed": 0,
+  "preserved_failed_trials": [
+    "ROUTE_TRIALS.json",
+    "INNER_TRIALS.json",
+    "TX_TRANSITION_VIA_FEASIBILITY.json",
+    "TX_ALTERNATE_REFERENCE_TRIAL.json"
+  ],
+  "preserved_native_artifacts": [
+    "runtime/hosted/run26_retry2",
+    "runtime/hosted/run27",
+    "runtime/hosted/run28"
+  ]
+}

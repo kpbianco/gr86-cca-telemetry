@@ -1,0 +1,45 @@
+{
+  "iteration": "I24",
+  "finding_id": "I24-PWR-R01",
+  "status": "CLOSED_BY_CORRECTED_SOURCE_BOUND_NUMERICAL_REEXECUTION",
+  "freeze_sha256": "b14d91e20ccf83ec69f1487f97c0c99e1d2b53cc755428370ef8dd012ccbba9c",
+  "filled_PCB_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "actual_footprint_bores_subtracted": 26,
+  "all_actual_bores_subtracted": 348,
+  "total_native_drills": 348,
+  "mesh_mm": [
+    0.1,
+    0.075
+  ],
+  "mesh_nodes": [
+    402736,
+    720650
+  ],
+  "max_KCL_residual_A": 2.3575807972520124e-11,
+  "terminal_and_stack_geometry_unchanged": true,
+  "terminal_geometry_signature_sha256": "b2c1a7dda52b0db3d72b742841ed25a0aebbbfe84c0aa3bda5df5506f3e877cc",
+  "original_nonplane_terms_retained": true,
+  "allocations": [
+    {
+      "path": "source_to_load_ground_upper_ohm",
+      "upper_ohm": 0.012554196212606762,
+      "margin_ohm": 0.0024458037873932373,
+      "pass": true
+    },
+    {
+      "path": "C206_to_load_plane_plus_load_barrel_upper_ohm",
+      "upper_ohm": 0.010709594951036672,
+      "margin_ohm": 0.00029040504896332697,
+      "pass": true
+    }
+  ],
+  "remaining_limitations": [
+    "Includes only actual In1 ground subset. No removed copper, layer parallel paths or extra contacts are credited.",
+    "No disconnected pieces are joined within a cell. All cells fit entirely in source copper by half-diagonal erosion.",
+    "Point current injection represents one retained cell of the actual via land. Via barrels and source/terminal tracks are added separately.",
+    "Numerical centre-to-centre finite volume is not a strict continuum upper-bound theorem; use two-mesh result and explicit numerical margin."
+  ],
+  "physical_tests_claimed": 0,
+  "criteria_status_changes_claimed": 0
+}

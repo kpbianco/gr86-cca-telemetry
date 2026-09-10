@@ -1,0 +1,237 @@
+{
+  "status": "AUTHORED_REWORK_NOT_ACCEPTED",
+  "accepted_mechanical_configuration": null,
+  "baseline": "C05/W02/T03 acceptance withdrawn in I23",
+  "scope": "Findings disposition records corrections without mechanical, thermal, process or physical qualification credit.",
+  "redlines": [
+    {
+      "id": "I24-M01",
+      "finding": "Bonded terminal lengths are not free flex. Existing W02/T0313.067/14.424 mm free spans violate20 mm instruction and invalidate forces/bow.",
+      "status": "GEOMETRY_CORRECTED_QUALIFICATION_OPEN",
+      "correction": "Geometry corrected. Separate hot/cold bonded rectangles are excluded from free spans; W03/T04 free centerlines are 27.067/22.424 mm. Individual shortest offset paths remain above 20 mm in independent review.",
+      "remaining": "Supplier forming, weld heat-affected-zone isolation and individual-leaf nonlinear elasticity.",
+      "evidence": [
+        "iterations/I24_thermal_mechanics/candidate_mechanics/CANDIDATE_SPEC.json",
+        "analyses/mechanics_i24/FRAME_RESULTS.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M02",
+      "finding": "T03 hot straight approaches X71.3 rightward, but its first free arc immediately returns leftward. Buffer union hides overlapping packet material at this non-tangent reversal; manufacture requires a continuous path.",
+      "status": "GEOMETRY_CORRECTED_QUALIFICATION_OPEN",
+      "correction": "Geometry corrected. T04 now leaves the left hot-terminal edge with continuous tangent. A 12.8 mm transfer shoe puts the flex below the carrier; no buffered union hides the old reverse-tangent overlap.",
+      "remaining": "Hot-shoe bond and terminal moment/peel acceptance.",
+      "evidence": [
+        "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_CONTACT_T04.scad",
+        "iterations/I24_thermal_mechanics/candidate_mechanics/CANDIDATE_SPEC.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M03",
+      "finding": "Releasing cold straights without moving underlying landing bars does not create free spans. Cold welded terminations, landing holes, open pockets and supported reaction paths must be coordinated.",
+      "status": "GEOMETRY_CORRECTED_JOINT_OPEN",
+      "correction": "Geometry corrected; joint acceptance open. Authored 4 mm distal packets, three new landing bars, six bolt/head locations and open space beneath cold free straights replace the broad clamping plates. Conservative welded-plane registration overlaps remain visible in ASSEMBLY_CLEARANCE.json.",
+      "remaining": "Manufactured weld/terminal geometry, restraint and correlated mating-plane clearance.",
+      "evidence": [
+        "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_LANDINGS_C06.scad",
+        "analyses/mechanics_i24/ASSEMBLY_CLEARANCE.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M04",
+      "finding": "One-ear PCB stress has insufficient margin when hot rigid terminals, transfer hardware and correct free-span reactions are counted. Root bearing surfaces and positive capture must be authored.",
+      "status": "PARTIAL_ANALYTICAL_CORRECTION_ACCEPTANCE_OPEN",
+      "correction": "Partial analytical correction. Positive root capture and separate XY keys are authored. LOCATING_MOTION.json includes robust all-pose bearing material and root-line tilt: force-only root maximum 143.036 MPa after the M18/M19 relief. Complete terminal moments, contact dynamics and material acceptance remain open.",
+      "remaining": "Full terminal moments, joint dynamics, load sharing and hot material properties.",
+      "evidence": [
+        "analyses/mechanics_i24/LOCATING_MOTION.json",
+        "analyses/mechanics_i24/JOINT_AND_ELASTIC_DEMANDS.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M05",
+      "finding": "A direct metal contact near U201 EP would enter the adopted15 mm antenna metal exclusion beginning X73.254766. No such contact may be credited without a separately reviewed RF/electrical redesign.",
+      "status": "OPTION_REJECTED",
+      "correction": "Unsupported direct-contact option rejected. A near-U201-EP metal contact would enter the adopted 15 mm antenna exclusion. No corresponding thermal credit or quiet RF requirement reduction was taken.",
+      "remaining": "A closer metal heat path requires a separately reviewed RF/electrical geometry redesign.",
+      "evidence": [
+        "iterations/I24_thermal_mechanics/candidate_mechanics/CANDIDATE_SPEC.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M06",
+      "finding": "Current thermal resistances include declared hot joint and terminal allocations, not supplier-qualified assemblies. New cut length, individual concentric paths and transfer shoe must be included explicitly.",
+      "status": "PATH_ACCOUNTING_CORRECTED_INTERFACES_OPEN",
+      "correction": "Path accounting corrected; physical interfaces open. Thermal allocations include all bonded/free/concentric/cutting lengths, 12.8 mm shoe, actual central contact material area and landing thickness. Wing/central totals are 4.657153/14.574372 K/W; model bounds 5/15 K/W.",
+      "remaining": "Actual tape/mask, conductivity, weld and contact resistance qualification.",
+      "evidence": [
+        "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_PATHS.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M07",
+      "finding": "First C06 capture-cap screen leaves only0.100mm to U401 after XY allowances. Retreat bearing/cap edge0.4mm onto the unpopulated mounting ear and increase structural lever accordingly before promotion.",
+      "status": "REJECTED_TRIAL_REWORKED",
+      "correction": "First cap trial rejected and revised. Retreating its inboard edge increased nominal U401 gap 0.100\u21920.500 mm. Full located-body sweep subsequently reduces final design-screen minimum to 0.131067 mm; only that complete value governs.",
+      "remaining": "Actual component/cap/PCB tolerances and deformable assembly motion.",
+      "evidence": [
+        "analyses/mechanics_i24/POPULATED_CLEARANCE.json",
+        "analyses/mechanics_i24/LOCATING_MOTION.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M08",
+      "finding": "Independent review finds nodal-translation sweep misses cubic displacement inside long14mm wing/10mm central beam elements by up to0.259mm. Subdivide straight and curved elements to<=0.1mm and independently compare<=0.2mm mesh before swept-envelope credit.",
+      "status": "NUMERICAL_DEFECT_CORRECTED",
+      "correction": "Numerical defect corrected. All frame elements are \u22640.1 mm; independent \u22640.05 mm comparison verifies the refined linear response. Sweep adds 0.001 mm numerical padding. This does not establish elastic/material validity.",
+      "remaining": "Linear numerical convergence is established only; actual material and nonlinear validity remain open.",
+      "evidence": [
+        "analyses/mechanics_i24/FRAME_RESULTS.json",
+        "analyses/mechanics_i24/independent_review"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M09",
+      "finding": "The scalar root-force screen omits terminal end moments and horizontal reaction through the9.8mm shoe. Export full end reactions and keep joint peel/rotation and moment distribution open pending bounded analysis.",
+      "status": "DEMAND_EXPOSED_ACCEPTANCE_OPEN",
+      "correction": "Demand exposed; acceptance open. Frame outputs retain hot/cold moments. JOINT_AND_ELASTIC_DEMANDS.json includes horizontal reaction through the shoe and explicitly excludes complete joint/mount adequacy from the force-only beam screen.",
+      "remaining": "Complete end-moment and horizontal-reaction transfer through shoe, adhesive, PCB, caps, fasteners and landings.",
+      "evidence": [
+        "analyses/mechanics_i24/JOINT_AND_ELASTIC_DEMANDS.json",
+        "analyses/mechanics_i24/FRAME_RESULTS.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M10",
+      "finding": "Maximum leaf thickness does not bound inertia deflection: minimum20um leaves deflect about21% more than22um leaves at the same E. Define separate lower/upper E acceptance bounds and use minimumt/E for displacement, maximumt/E for force.",
+      "status": "BOUND_DIRECTION_CORRECTED_MATERIAL_OPEN",
+      "correction": "Bound direction corrected. Maximum thickness/E is used for force; minimum thickness/E for inertia displacement. Required E interval is 80\u2013140 GPa, with actual material-temperature qualification open.",
+      "remaining": "Modulus bounds at the actual local thermal-screen temperatures require material proof.",
+      "evidence": [
+        "analyses/mechanics_i24/FRAME_RESULTS.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M11",
+      "finding": "70C at bolt sites does not bound landing-bar temperature at the welded packet. Require the complete defined sink footprint <=70C and explicitly include2mm landing through-thickness conduction in the terminal allocation.",
+      "status": "BOUNDARY_DEFINED_INSTALLED_PROOF_OPEN",
+      "correction": "Boundary clarified; installed proof open. Entire landing undersides and full welded-packet projections must remain \u226470\u00b0C at 4.815 W. Bolt-site temperature alone is insufficient. Landing thickness is included in the terminal resistance allocations.",
+      "remaining": "Installed entire landing undersides and packet projections at or below70C at full4.815W, plus sink interface and cavity evidence.",
+      "evidence": [
+        "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_PATHS.json",
+        "iterations/I24_thermal_mechanics/candidate_mechanics/README.md"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M12",
+      "finding": "Individual concentric-leaf end-moment demand approaches100MPa in the100-leaf trial. Annealed-C110 hot elastic/yield allowable and leaf-specific nonlinear/contact behavior are not established; no mechanical acceptance follows from a linear clearance screen.",
+      "status": "OPEN_ADOPTION_BLOCKER",
+      "correction": "Open adoption blocker. Central common-centerline cold-leaf demand reaches 131.551 MPa; independent offset leaves differ. Annealed-C110 hot yield, finite displacement, friction, fatigue and out-of-plane behavior are unproven.",
+      "remaining": "Annealed-C110 individual-leaf hot yield, finite deformation, friction, fatigue and out-of-plane motion.",
+      "evidence": [
+        "analyses/mechanics_i24/JOINT_AND_ELASTIC_DEMANDS.json",
+        "analyses/mechanics_i24/independent_review"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M13",
+      "finding": "3.1..3.3mm sleeve does not locate4.4mm PCB holes; radial play can reach0.725mm. Add independent insulating ear-edge location and bound full rigid PCB translation/rotation, including insertion tolerance.",
+      "status": "LOCATION_AUTHORED_TOLERANCES_OPEN",
+      "correction": "Geometry and rigid-body screen corrected; tolerances open. Removable cap-integral insulating edge keys establish nominal 0.20 mm gaps independently of loose bolt sleeves. Explicit PCB/key tolerances give 0.05 mm insertion clearance. Eight rigid-motion vertices, convex swept hulls and curvature padding find no component/service overlap. Supplier/assembly acceptance remains open.",
+      "remaining": "Supplier outline/key tolerances, assembly insertion and elastic/impact response of the keys.",
+      "evidence": [
+        "iterations/I24_thermal_mechanics/candidate_mechanics/GR86_RVB_CARRIER_C06.scad",
+        "analyses/mechanics_i24/LOCATING_MOTION.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M14",
+      "finding": "Through-fastener preload is missing from insulating sleeve compression and capture-gap/creep conditions. Define a bounded installation preload screen and retain friction/creep/retention acceptance.",
+      "status": "PRELOAD_SCREEN_ADDED_PROCESS_OPEN",
+      "correction": "Preload screen added; process acceptance open. Proposed M2 torque 0.02\u20130.04 N\u00b7m and verified-friction condition yield 33.3\u2013133.3 N preload. Preload plus service is included in the sleeve compression screen. Hot creep, friction, retained preload and locking remain unqualified.",
+      "remaining": "Verified nut factor, chosen hardware, retained preload, hot creep, locking and thermal-cycle gap.",
+      "evidence": [
+        "iterations/I24_thermal_mechanics/candidate_mechanics/CANDIDATE_SPEC.json",
+        "iterations/I24_thermal_mechanics/candidate_mechanics/README.md"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M15",
+      "finding": "Complete independent prism integration finds W03/base0.260465mm3 and T04/base32.759902mm3 conservative swept overlaps. Deepen T04 shoe/free/cold hardware3mm and extend upper wing window0.7mm before reevaluation.",
+      "status": "GEOMETRY_CORRECTED_ELASTIC_VALIDITY_OPEN",
+      "correction": "Geometric sweep defect corrected. Central free/cold assembly was lowered 3 mm by extending the shoe 9.8\u219212.8 mm. Upper carrier window was expanded. Final carrier-frame sweep finds no non-mating collision; physical elastic validity remains open.",
+      "remaining": "Individual elastic motion, out-of-plane torsion, exact welded-plane registration and installed cavity.",
+      "evidence": [
+        "analyses/mechanics_i24/ASSEMBLY_CLEARANCE.json",
+        "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_CONTACT_T04.scad",
+        "iterations/I24_thermal_mechanics/candidate_mechanics/GR86_RVB_CARRIER_C06.scad"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M16",
+      "finding": "PCB edge location permits bounded in-plane end translation in addition to2mm Z motion. Include\u00b10.5mm in-plane terminal translation in free-span force/sweep cases; enlarge wing window if required, and assess full rigid-body locator polytope against components/cables.",
+      "status": "MOTION_SCREEN_CORRECTED_NONLINEAR_OPEN",
+      "correction": "Motion accounting corrected; nonlinear/out-of-plane scope open. Frame includes \u00b10.5 mm in-plane terminal translation with \u00b12 mm Z motion. Full located body/service swept hulls and robust root-bearing contact replace nominal-only dimensions.",
+      "remaining": "Nonlinear finite-displacement, out-of-plane modes and end rotations.",
+      "evidence": [
+        "analyses/mechanics_i24/FRAME_RESULTS.json",
+        "analyses/mechanics_i24/LOCATING_MOTION.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M17",
+      "finding": "A union of eight vertex-pose polygons misses intermediate rigid positions. Use their convex hull with bounded rotational curvature padding; apply root-line tilt across bearing width and a robust all-pose bearing-material intersection.",
+      "status": "ANALYSIS_DEFECT_CORRECTED",
+      "correction": "Analysis-only correction completed. Convex hulls enclose intermediate rigid states; robust local material cores and swept hole voids account for all poses. Root-line tilt is included; final force-only maximum after the separately frozen M18/M19 geometry relief is 143.036 MPa. M17 itself changed analysis only.",
+      "remaining": "Rigid-body approximation and elastic/material scope remain open.",
+      "evidence": [
+        "analyses/mechanics_i24/LOCATING_MOTION.json",
+        "analyses/mechanics_i24/final_review.py"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M18",
+      "finding": "Independent full150mm cable sweep finds admissible board-following851 cable overlap with upper-right post:0.854791mm3 at translation(\u22120.35,\u22120.35), withinX64.7008..65.15/Y\u22121.28885..\u22120.05/Z\u22123.6..\u22120.6. Subtract the post corner with margin; reduce unsupported root-bearing area and recompute strength rather than assume a thin overhang carries the load.",
+      "status": "CABLE_COLLISION_CORRECTED_IN_DECLARED_SCREEN",
+      "correction": "Geometry corrected and full cable motion added. The upper-right post corner at X\u226564.4, Y\u2265\u22121.8 mm is removed. Both matching root bands are trimmed to X\u226464.4 mm so no unsupported lip carries the load. The complete 605-segment, 150 mm 851 route is swept across all rigid states and intermediate convex hulls; minimum post clearance is 0.172245 mm.",
+      "remaining": "Physical cable restraint, manufactured route/tolerances and installed service demonstration.",
+      "evidence": [
+        "iterations/I24_thermal_mechanics/candidate_mechanics/GR86_RVB_CARRIER_C06.scad",
+        "analyses/mechanics_i24/LOCATING_MOTION.json"
+      ],
+      "original_criterion_closure_credit": false
+    },
+    {
+      "id": "I24-M19",
+      "finding": "Full-depth root-band trimming for cable clearance reduces effective width and exceeds the150MPa force-only allocation. Remove the outermost0.2mm of only the upper-right bearing band: Y[-1.0,-0.2], retain supportedX<=64.4, and recompute shorter lever plus0.5mm minimum band-depth/bearing pressure. No unsupported overhang or accepted material strength is credited.",
+      "status": "REJECTED_TRIAL_REWORKED_ACCEPTANCE_OPEN",
+      "correction": "Rejected full-depth narrow-band trial revised. Only the upper-right bearing band becomes Y=[\u22121.0,\u22120.2] mm, shortening its root lever. With outline, key motion, machining and root tilt, robust minimum area is 2.145 mm\u00b2, width 4.290 mm and lever 1.639905 mm; force-only Kt3 demand is 143.036 MPa and bearing pressure 20.096 MPa. Hot material and full moment/contact acceptance remain open.",
+      "remaining": "150MPa hot laminate requirement is not qualified material; full moments/contact and key impacts remain open.",
+      "evidence": [
+        "analyses/mechanics_i24/LOCATING_MOTION.json",
+        "iterations/I24_thermal_mechanics/candidate_mechanics/CANDIDATE_SPEC.json"
+      ],
+      "original_criterion_closure_credit": false
+    }
+  ],
+  "physical_measurements_claimed": false,
+  "geometry_spec_sha256": "9bad2756f2c7aca3758713753959d39e49944d478b847006264b53f4297d824c",
+  "geometry_freeze_evidence": "analyses/mechanics_i24/GEOMETRY_FREEZE.json"
+}

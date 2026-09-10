@@ -1,0 +1,48 @@
+{
+  "wing": {
+    "contact_rectangles_mm": [
+      [
+        15,
+        -7.6,
+        53,
+        -1.6
+      ],
+      [
+        15,
+        43.6,
+        53,
+        49.6
+      ]
+    ],
+    "hot_areal_R_K_W": 2.357894736842105,
+    "foil_R_K_W": 1.7992575776918482,
+    "terminal_R_allocation_K_W": 0.5,
+    "landing_through_thickness_R_within_terminal_allocation_K_W": 0.043859649122807015,
+    "remaining_weld_attachment_R_allocation_K_W": 0.45614035087719296,
+    "max_cut_length_mm": 41.02307277137414,
+    "model_total_R_K_W": 5,
+    "sum_R_K_W": 4.6571523145339535
+  },
+  "central": {
+    "contact_rectangle_mm": [
+      67.5,
+      12.8,
+      71.3,
+      27.9
+    ],
+    "hot_areal_R_K_W": 9.058210562062674,
+    "shoe_R_K_W": 0.743580806320437,
+    "foil_R_K_W": 3.772580979221534,
+    "terminal_R_allocation_K_W": 1,
+    "max_cut_length_mm": 34.179583671747096,
+    "landing_through_thickness_R_within_terminal_allocation_K_W": 0.11037527593818984,
+    "remaining_weld_attachment_R_allocation_K_W": 0.8896247240618101,
+    "model_total_R_K_W": 15,
+    "sum_R_K_W": 14.574372347604646
+  },
+  "air_C": 65,
+  "landing_C": 70,
+  "board_heat_W": 4.815,
+  "sink_boundary": "Complete underside of all three landing bars, including welded-packet projections, <=70C. No bolt-only cooling or floating-plate credit.",
+  "scope": "Specified path allocation with copper k>=300W/mK and accepted interfaces; no measured contact, uniform-terminal temperature or package qualification."
+}

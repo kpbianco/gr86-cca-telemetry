@@ -1,0 +1,3143 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "integration_checks": "rectangular30mm3 and triangular10mm3 exact",
+  "free_carrier_checks": [
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "BASE",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "POST_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "ROOT_LOWER_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "POST_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "ROOT_LOWER_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "POST_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "ROOT_LOWER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "POST_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "ROOT_LOWER_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "CAP_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "ROOT_UPPER_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_6.2_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_6.2_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_6.2_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_63_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_63_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_63_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_63_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_63_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_63_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_63_45.263840607765246_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_63_45.263840607765246_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_63_45.263840607765246_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "CAPTURE_SLEEVE_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "M2_HEAD_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "M2_NUT_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "CAPTURE_SLEEVE_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "M2_HEAD_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "M2_NUT_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "CAPTURE_SLEEVE_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "M2_HEAD_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "M2_NUT_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "CAPTURE_SLEEVE_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "M2_HEAD_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "M2_NUT_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 7.029786867168014,
+      "mating_plane_review": true
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "BASE",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "POST_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "ROOT_LOWER_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "POST_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "ROOT_LOWER_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "POST_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "ROOT_LOWER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "POST_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "ROOT_LOWER_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "CAP_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "ROOT_UPPER_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_6.2_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_6.2_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_6.2_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_63_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_63_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_63_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_63_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_63_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_63_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_63_45.263840607765246_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_63_45.263840607765246_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_63_45.263840607765246_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "CAPTURE_SLEEVE_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "M2_HEAD_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "M2_NUT_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "CAPTURE_SLEEVE_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "M2_HEAD_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "M2_NUT_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "CAPTURE_SLEEVE_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "M2_HEAD_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "M2_NUT_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "CAPTURE_SLEEVE_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "M2_HEAD_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "M2_NUT_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 7.029786867168027,
+      "mating_plane_review": true
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "BASE",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "POST_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "ROOT_LOWER_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "POST_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "ROOT_LOWER_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "POST_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "ROOT_LOWER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "POST_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "ROOT_LOWER_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "CAP_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "ROOT_UPPER_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_6.2_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_6.2_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_6.2_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_63_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_63_-4_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_63_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_63_-4_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_63_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_63_-4_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_63_45.263840607765246_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_0",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_63_45.263840607765246_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_1",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_63_45.263840607765246_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_2",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "CAPTURE_SLEEVE_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "M2_HEAD_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "M2_NUT_6.2_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "CAPTURE_SLEEVE_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "M2_HEAD_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "M2_NUT_63_-4",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "CAPTURE_SLEEVE_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "M2_HEAD_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "M2_NUT_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "CAPTURE_SLEEVE_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "M2_HEAD_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "M2_NUT_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 0.0,
+      "mating_plane_review": false
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 2.9653264848564143,
+      "mating_plane_review": true
+    }
+  ],
+  "free_carrier_hits": [
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 7.029786867168014,
+      "mating_plane_review": true
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 7.029786867168027,
+      "mating_plane_review": true
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 2.9653264848564143,
+      "mating_plane_review": true
+    }
+  ],
+  "service_checks": [
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "BASE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "POST_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "ROOT_LOWER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "POST_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "ROOT_LOWER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "POST_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "ROOT_LOWER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "POST_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "ROOT_LOWER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "CAP_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "ROOT_UPPER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "CAPTURE_SLEEVE_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "M2_HEAD_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "M2_NUT_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "CAPTURE_SLEEVE_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "M2_HEAD_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "M2_NUT_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "CAPTURE_SLEEVE_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "M2_HEAD_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "M2_NUT_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "CAPTURE_SLEEVE_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "M2_HEAD_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "M2_NUT_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "W03_UPPER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "W03_LOWER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "T04",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_mated_housing",
+      "obstacle": "T04_HOT_SHOE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "BASE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "POST_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "ROOT_LOWER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "POST_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "ROOT_LOWER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "POST_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "ROOT_LOWER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "POST_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "ROOT_LOWER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "CAP_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "ROOT_UPPER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "CAPTURE_SLEEVE_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "M2_HEAD_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "M2_NUT_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "CAPTURE_SLEEVE_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "M2_HEAD_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "M2_NUT_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "CAPTURE_SLEEVE_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "M2_HEAD_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "M2_NUT_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "CAPTURE_SLEEVE_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "M2_HEAD_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "M2_NUT_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "W03_UPPER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "W03_LOWER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "T04",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_free_wire_exit",
+      "obstacle": "T04_HOT_SHOE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "BASE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "POST_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "ROOT_LOWER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "POST_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "ROOT_LOWER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "POST_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "ROOT_LOWER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "POST_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "ROOT_LOWER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "CAP_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "ROOT_UPPER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "CAPTURE_SLEEVE_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "M2_HEAD_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "M2_NUT_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "CAPTURE_SLEEVE_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "M2_HEAD_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "M2_NUT_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "CAPTURE_SLEEVE_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "M2_HEAD_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "M2_NUT_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "CAPTURE_SLEEVE_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "M2_HEAD_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "M2_NUT_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "W03_UPPER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "W03_LOWER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "T04",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "F1_latch_service",
+      "obstacle": "T04_HOT_SHOE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "BASE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "POST_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "ROOT_LOWER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "POST_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "ROOT_LOWER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "POST_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "ROOT_LOWER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "POST_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "ROOT_LOWER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "CAP_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "ROOT_UPPER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "CAPTURE_SLEEVE_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "M2_HEAD_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "M2_NUT_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "CAPTURE_SLEEVE_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "M2_HEAD_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "M2_NUT_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "CAPTURE_SLEEVE_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "M2_HEAD_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "M2_NUT_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "CAPTURE_SLEEVE_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "M2_HEAD_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "M2_NUT_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "W03_UPPER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "W03_LOWER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "T04",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J201_programming_tool",
+      "obstacle": "T04_HOT_SHOE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "BASE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "POST_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "ROOT_LOWER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "POST_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "ROOT_LOWER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "POST_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "ROOT_LOWER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "POST_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "ROOT_LOWER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "CAP_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "ROOT_UPPER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "CAPTURE_SLEEVE_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "M2_HEAD_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "M2_NUT_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "CAPTURE_SLEEVE_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "M2_HEAD_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "M2_NUT_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "CAPTURE_SLEEVE_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "M2_HEAD_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "M2_NUT_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "CAPTURE_SLEEVE_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "M2_HEAD_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "M2_NUT_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "W03_UPPER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "W03_LOWER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "T04",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "J401_mated_plug",
+      "obstacle": "T04_HOT_SHOE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "BASE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "POST_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "ROOT_LOWER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "POST_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "ROOT_LOWER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "POST_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "ROOT_LOWER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "POST_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "ROOT_LOWER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "CAP_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "ROOT_UPPER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "CAPTURE_SLEEVE_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "M2_HEAD_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "M2_NUT_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "CAPTURE_SLEEVE_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "M2_HEAD_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "M2_NUT_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "CAPTURE_SLEEVE_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "M2_HEAD_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "M2_NUT_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "CAPTURE_SLEEVE_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "M2_HEAD_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "M2_NUT_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "W03_UPPER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "W03_LOWER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "T04",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "Adafruit851_full150mm_route",
+      "obstacle": "T04_HOT_SHOE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "BASE",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "POST_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "ROOT_LOWER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "POST_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "ROOT_LOWER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "POST_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "ROOT_LOWER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "POST_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "ROOT_LOWER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "CAP_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "ROOT_UPPER_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_6.2_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_6.2_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_6.2_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_63_-4_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_63_-4_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_63_-4_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_1",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_2",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "CAPTURE_SLEEVE_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "M2_HEAD_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "M2_NUT_6.2_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "CAPTURE_SLEEVE_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "M2_HEAD_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "M2_NUT_63_-4",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "CAPTURE_SLEEVE_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "M2_HEAD_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "M2_NUT_6.2_45.28735489815251",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "CAPTURE_SLEEVE_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "M2_HEAD_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "M2_NUT_63_45.263840607765246",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "W03_UPPER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "W03_LOWER",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "T04",
+      "overlap_mm3": 0.0
+    },
+    {
+      "service": "SMA_and_tool",
+      "obstacle": "T04_HOT_SHOE",
+      "overlap_mm3": 0.0
+    }
+  ],
+  "service_hits": [],
+  "limitations": [
+    "Free sweep remains a conditional linear elastic model; no claim of actual collision or elastic validity.",
+    "Mating-plane overlaps from conservative endpoint dilation require correlated joint geometry; no free-envelope exemption is hidden.",
+    "Connector envelopes/150mm cable/SMA tool geometry retain I22 supplier and installed-position assumptions. PCB-to-carrier locating play is separately unresolved."
+  ],
+  "physical_measurements_claimed": false
+}
