@@ -1,0 +1,20 @@
+{
+  "baseline_contacts": [
+    {"name":"wing1","wkt":"POLYGON ((53 -7.6, 53 -1.6, 15 -1.6, 15 -7.6, 53 -7.6))","interface_R":2.357894736842105,"bridge_R":2.642105263157895},
+    {"name":"wing2","wkt":"POLYGON ((53 43.6, 53 49.6, 15 49.6, 15 43.6, 53 43.6))","interface_R":2.357894736842105,"bridge_R":2.642105263157895},
+    {"name":"central","wkt":"POLYGON ((71.3 12.8, 71.3 27.9, 67.5 27.9, 67.5 12.8, 71.3 12.8))","interface_R":9.058210562062674,"bridge_R":5.9417894379373255}
+  ],
+  "rf_safe_trial_contacts": [
+    {"name":"wing1","wkt":"POLYGON ((53 -7.6, 53 -1.6, 15 -1.6, 15 -7.6, 53 -7.6))","interface_R":2.357894736842105,"bridge_R":2.642105263157895},
+    {"name":"wing2","wkt":"POLYGON ((53 43.6, 53 49.6, 15 49.6, 15 43.6, 53 43.6))","interface_R":2.357894736842105,"bridge_R":2.642105263157895},
+    {"name":"central_expanded","wkt":"POLYGON ((66.7 27.9, 72.7 27.9, 72.7 12.8, 66.7 12.8, 66.7 16.77, 66.78 16.77, 66.78 19.23, 66.7 19.23, 66.7 27.9))","interface_R":4.5905454674170825,"bridge_R":3.722222222222222},
+    {"name":"U121_back","wkt":"POLYGON ((54.7 29.2, 54.7 22.8, 44.7 22.8, 44.7 27.7, 45.300000000000004 27.7, 45.300000000000004 29.2, 54.7 29.2))","interface_R":6.5768621236133145,"bridge_R":3.722222222222222}
+  ],
+  "proposal_details": {
+    "central_expanded":{"name":"central_expanded","wkt":"POLYGON ((66.7 27.9, 72.7 27.9, 72.7 12.8, 66.7 12.8, 66.7 16.77, 66.78 16.77, 66.78 19.23, 66.7 19.23, 66.7 27.9))","area_mm2":90.4032,"interface_R":4.5905454674170825,"bridge_R":3.722222222222222,"total_R_K_W":8.312767689639305,"metal_x_max_mm":72.7,"nominal_rf_setback_mm":15.554766,"rf_margin_after_0p3mm_lateral_allocation":0.25476600000000077,"carrier_overlap_mm2":0.0,"required_carrier_window":false,"minimum_body_courtyard_gap_mm":0.5,"adopted":false},
+    "U121_back":{"name":"U121_back","wkt":"POLYGON ((54.7 29.2, 54.7 22.8, 44.7 22.8, 44.7 27.7, 45.300000000000004 27.7, 45.300000000000004 29.2, 54.7 29.2))","area_mm2":63.09999999999998,"interface_R":6.5768621236133145,"bridge_R":3.722222222222222,"total_R_K_W":10.299084345835537,"metal_x_max_mm":54.7,"nominal_rf_setback_mm":33.554766,"rf_margin_after_0p3mm_lateral_allocation":18.254766,"carrier_overlap_mm2":0.0,"required_carrier_window":false,"minimum_body_courtyard_gap_mm":0.5,"adopted":false}
+  },
+  "withdrawn_C01_contact":{"metal_x_max_mm":84.0,"nominal_antenna_setback_mm":4.254766000000004,"retained_requirement_mm":15,"not_adopted_due_to_rf_conflict":true},
+  "note":"Contact polygons only. Complete support/preload, bridges and finite external sink remain unadopted mechanical work. Neither proposed face overlaps the retained carrier base in XY.",
+  "source_PCB_sha256":"5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8"
+}

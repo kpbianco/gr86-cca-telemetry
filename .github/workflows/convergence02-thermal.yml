@@ -1,0 +1,73 @@
+name: Convergence02 shared-sink thermal verification
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/convergence02-thermal.yml'
+      - 'docs/engineering/rvb22/analyses/convergence_02/**'
+permissions:
+  contents: read
+concurrency:
+  group: convergence02-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+jobs:
+  thermal:
+    if: github.head_ref == 'codex/rvb24-coordinated-closure' && github.event.pull_request.head.repo.full_name == github.repository
+    strategy:
+      fail-fast: false
+      matrix:
+        mesh: [0.5, 0.25]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Record exact source
+        run: |
+          mkdir -p c02-evidence
+          git rev-parse HEAD > c02-evidence/commit.txt
+      - name: Provision pinned native CAD
+        run: bash docs/engineering/rvb22/runtime/hosted/setup_native.sh cad
+      - name: Refill and export exact candidate
+        run: |
+          xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/candidate/run_native_candidate.py \
+            --cad-dir docs/engineering/rvb22/candidate/cad --output c02-native \
+            --kicad-cli kicad-cli --pcbnew-python /usr/bin/python3
+      - name: Provision isolated numeric environment
+        run: |
+          python3 -m venv "$RUNNER_TEMP/c02-env"
+          "$RUNNER_TEMP/c02-env/bin/python" -m pip install -r docs/engineering/rvb22/analyses/convergence_02/requirements.txt
+          "$RUNNER_TEMP/c02-env/bin/python" -m pip freeze > c02-evidence/packages.txt
+      - name: Check analytic networks and exact contact exclusions
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          set -euo pipefail
+          PY="$RUNNER_TEMP/c02-env/bin/python"
+          D=docs/engineering/rvb22/analyses/convergence_02
+          "$PY" -m unittest discover -s "$D/tests" -v 2>&1 | tee c02-evidence/tests.log
+          "$PY" "$D/check_contacts.py" --pcb c02-native/candidate_kicad/GR86_CCA_RevB.kicad_pcb --out c02-evidence/CONTACT_CHECKS.json
+      - name: Solve common-shoe and finite-sink cases
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/c02-env/bin/python" docs/engineering/rvb22/analyses/convergence_02/run_screen.py \
+            --native-dir c02-native --mesh '${{ matrix.mesh }}' --out c02-evidence/thermal \
+            2>&1 | tee c02-evidence/thermal.log
+      - name: Preserve outputs and failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: convergence02-${{ matrix.mesh }}-${{ github.event.pull_request.head.sha }}
+          path: |
+            c02-evidence/
+            c02-native/RESULT.json
+            c02-native/DRC.json
+            c02-native/ERC.json
+          retention-days: 14
+          if-no-files-found: error
