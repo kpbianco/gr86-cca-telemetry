@@ -1,0 +1,56 @@
+{
+  "milestone": "I26_PREHARDWARE_CLOSURE",
+  "date": "2026-09-11",
+  "objective": "zero unresolved actionable engineering work before supplier/as-built/installed hardware evidence",
+  "formal_original_status_policy": "Do not mark an original criterion closed when its wording requires physical or supplier evidence; instead classify it qualification_only in the parallel prehardware status.",
+  "classes": ["desktop_closed", "bounded_inference_closed", "qualification_only", "contingency_only"],
+  "design_lanes": {
+    "cad_native": {"class": "desktop_closed", "reopen": "any CAD/BOM/stackup source change"},
+    "firmware_target_build": {"class": "desktop_closed", "reopen": "any release firmware/build-profile change"},
+    "thermal": {
+      "class": "desktop_closed",
+      "basis": "I25",
+      "release_heat_W": 2.940859375,
+      "mesh_0p5_max_C": 101.65032024423336,
+      "mesh_0p25_max_C": 107.26665057305043,
+      "screening_bound_C": 112.8829809018675,
+      "release_constraints": {"cpu_MHz_max":160,"ble_tx_dBm_max":3,"wifi":false,"notifications_per_s_max":120,"sustained_main_A_max":0.45,"converter_efficiency_min":0.80,"bulk_dashboard_air_C_max":65,"u201_immediate_air_C_max":85},
+      "reopen": "constraint violation or failed physical thermal gate"
+    },
+    "c02_cooler": {"class":"contingency_only","adopted":false,"reason":"~4.915 C fine-mesh benefit does not justify preload/tolerance/insulation/service/RF risk"},
+    "release_mechanics": {"class":"desktop_closed","evidence":{"populated_stack_checks":1154,"adafruit_851_mated_checks":776,"probe_approaches":37,"modeled_min_R408_T03_clearance_mm":0.120},"reopen":"receiving/as-built geometry exceeds controlled envelope"},
+    "adafruit_851_960": {
+      "class":"bounded_inference_closed",
+      "electrical_geometry":"closed",
+      "thermal_installation":"qualification_only",
+      "rf_metal_to_esp32_region_min_mm":16.421,
+      "gps_bias_series_resistance_budget_ohm_at_25mA":28.0,
+      "adapter_local_environment_C_max":60,
+      "reopen":"local adapter environment >60 C or supplied interface differs from controlled receiving envelope"
+    },
+    "can_receive_branch": {
+      "class":"bounded_inference_closed",
+      "finite_cases":14400,
+      "settle_1pct_ns_max":137.6,
+      "representative_sample_ns":1600,
+      "sample_receiver_V_min_for_1p5V_source":1.495510,
+      "dc_ratio_min":0.997006499,
+      "repeated_0p9V_crossing_cases":196,
+      "repeated_0p5V_crossing_cases":0,
+      "worst_below_0p9V_ns":5.2625,
+      "release_tx_enabled":false,
+      "r301":"DNP",
+      "reopen":"repeatable installed CAN errors attributable to branch, geometry allocation violation, or TX enablement"
+    },
+    "power_reset_analog": {"class":"bounded_inference_closed","correlation":"qualification_only","reopen":"measured rail/startup/transient/oil transfer exceeds modeled envelope"},
+    "rf_emc_esd": {"class":"bounded_inference_closed","installed_chamber":"qualification_only","reopen":"repeatable installed C/N0, BLE, ADC/CAN coupling, or ESD failure"},
+    "supplier_process": {"class":"qualification_only","reopen":"supplier proposes stackup/copper/via/mask/assembly deviation"},
+    "as_built_integration": {"class":"qualification_only","reopen":"failed acceptance gate"}
+  },
+  "next_reconciliation": {
+    "preserve_original_290_row_status": true,
+    "add_parallel_prehardware_status": true,
+    "target_actionable_prehardware_rows": 0
+  },
+  "physical_claims_made": false
+}
