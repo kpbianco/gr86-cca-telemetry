@@ -1,0 +1,40 @@
+{
+  "status": "BLOCKED_THERMAL_CONSTRUCTION_NOT_READY_FOR_ADOPTION",
+  "source_commit": "905215d13eda4194786c21f5ba1ce66f02a14223",
+  "hosted_run": 34567386808,
+  "artifact_0p5": 10186574802,
+  "artifact_0p25": 10186646620,
+  "refined_0p25": {
+    "baseline_fixed_landing_max_board_C": 135.29738952190837,
+    "rf_safe_fixed_landing_max_board_C": 127.27301507284596,
+    "rf_safe_1K_W_sink_max_board_C": 126.4143285859523,
+    "rf_safe_1K_W_sink_sink_C": 68.91916776977813,
+    "rf_safe_1K_W_sink_U201_region_mean_C": 123.69504856408494,
+    "rf_safe_1K_W_sink_U121_region_mean_C": 102.25411665390716,
+    "rf_safe_2K_W_sink_max_board_C": 129.26144280173156,
+    "rf_safe_2K_W_sink_sink_C": 72.50920209352877,
+    "hotspot_xy_mm": [80.25, 23.0],
+    "hotspot_component_region": "U201",
+    "energy_balance_abs_W_lt": 6e-11
+  },
+  "mesh_delta_0p5_to_0p25_C": {
+    "rf_safe_fixed_landing_max": 9.84203907284596,
+    "rf_safe_1K_W_sink_max": 9.8196545859523,
+    "rf_safe_2K_W_sink_max": 9.65798380173156
+  },
+  "decisions": {
+    "adopt_C02_contact_geometry": false,
+    "claim_mesh_convergence": false,
+    "claim_package_or_junction_temperature": false,
+    "claim_thermal_criterion_closure": false,
+    "retain_C02_as_geometric_and_network_feasibility_evidence": true,
+    "require_next_design_to_target_U201_direct_heat_path": true,
+    "require_external_sink_R_K_W_conservative_max": 1.0384215991692627,
+    "require_sink_landing_target_C_max": 70.0,
+    "require_antenna_metal_setback_mm_min": 15.0,
+    "require_contact_courtyard_gap_mm_min": 0.5,
+    "require_full_3D_support_preload_service_clearance": true
+  },
+  "reason": "The finer hosted mesh materially raises all C02 maxima by about 9.7-9.8 C and leaves the U201 board region near 124 C even with the 1 K/W finite sink. The present concept therefore improves the board model but is not sufficiently demonstrated for product adoption. The next wave must attack the U201 source-to-sink path and mechanically realize the cooler without violating RF or service clearances.",
+  "physical_test": false
+}
