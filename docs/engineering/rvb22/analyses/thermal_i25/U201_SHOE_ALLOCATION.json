@@ -1,5 +1,5 @@
 {
-  "status": "I25_CONSERVATIVE_SHOE_ALLOCATION_SCREEN",
+  "status": "SUPERSEDED_PARTIAL_INTERFACE_SCREEN_NOT_WHOLE_HEAT_PATH",
   "assumptions": {
     "solder_mask_thickness_um": 25.0,
     "solder_mask_k_W_mK": 0.2,
@@ -11,27 +11,169 @@
     "allocation_K_W": 5.0
   },
   "cases": [
-    {"side_mm":3.9,"mask_present":true,"total_board_back_to_landing_k_w":21.5866754328,"meets_5_k_w_allocation":false},
-    {"side_mm":5.0,"mask_present":true,"total_board_back_to_landing_k_w":13.1333333333,"meets_5_k_w_allocation":false},
-    {"side_mm":5.5,"mask_present":true,"total_board_back_to_landing_k_w":10.8539944904,"meets_5_k_w_allocation":false},
-    {"side_mm":6.0,"mask_present":true,"total_board_back_to_landing_k_w":9.1203703704,"meets_5_k_w_allocation":false},
-    {"side_mm":6.5,"mask_present":true,"total_board_back_to_landing_k_w":7.7712031558,"meets_5_k_w_allocation":false},
-    {"side_mm":7.0,"mask_present":true,"total_board_back_to_landing_k_w":6.7006802721,"meets_5_k_w_allocation":false},
-    {"side_mm":8.0,"mask_present":true,"total_board_back_to_landing_k_w":5.1302083333,"meets_5_k_w_allocation":false},
-    {"side_mm":3.9,"mask_present":false,"total_board_back_to_landing_k_w":13.3683979838,"meets_5_k_w_allocation":false},
-    {"side_mm":5.0,"mask_present":false,"total_board_back_to_landing_k_w":8.1333333333,"meets_5_k_w_allocation":false},
-    {"side_mm":5.5,"mask_present":false,"total_board_back_to_landing_k_w":6.7217630854,"meets_5_k_w_allocation":false},
-    {"side_mm":6.0,"mask_present":false,"total_board_back_to_landing_k_w":5.6481481481,"meets_5_k_w_allocation":false},
-    {"side_mm":6.5,"mask_present":false,"total_board_back_to_landing_k_w":4.8126232742,"meets_5_k_w_allocation":true},
-    {"side_mm":7.0,"mask_present":false,"total_board_back_to_landing_k_w":4.1496598639,"meets_5_k_w_allocation":true},
-    {"side_mm":8.0,"mask_present":false,"total_board_back_to_landing_k_w":3.1770833333,"meets_5_k_w_allocation":true}
+    {
+      "side_mm": 3.9,
+      "mask_present": true,
+      "area_mm2": 15.209999999999999,
+      "r_mask_k_w": 8.218277449046681,
+      "r_tim_bulk_k_w": 6.574621959237344,
+      "r_contact_k_w": 6.574621959237344,
+      "r_spreader_k_w": 0.2191540653079115,
+      "partial_interface_k_w": 21.58667543282928,
+      "partial_below_5_k_w_not_system_acceptance": false
+    },
+    {
+      "side_mm": 5.0,
+      "mask_present": true,
+      "area_mm2": 25.0,
+      "r_mask_k_w": 5.000000000000001,
+      "r_tim_bulk_k_w": 4.0,
+      "r_contact_k_w": 4.000000000000001,
+      "r_spreader_k_w": 0.13333333333333333,
+      "partial_interface_k_w": 13.133333333333333,
+      "partial_below_5_k_w_not_system_acceptance": false
+    },
+    {
+      "side_mm": 5.5,
+      "mask_present": true,
+      "area_mm2": 30.25,
+      "r_mask_k_w": 4.132231404958677,
+      "r_tim_bulk_k_w": 3.305785123966942,
+      "r_contact_k_w": 3.3057851239669422,
+      "r_spreader_k_w": 0.11019283746556474,
+      "partial_interface_k_w": 10.853994490358126,
+      "partial_below_5_k_w_not_system_acceptance": false
+    },
+    {
+      "side_mm": 6.0,
+      "mask_present": true,
+      "area_mm2": 36.0,
+      "r_mask_k_w": 3.4722222222222223,
+      "r_tim_bulk_k_w": 2.7777777777777777,
+      "r_contact_k_w": 2.7777777777777777,
+      "r_spreader_k_w": 0.09259259259259259,
+      "partial_interface_k_w": 9.120370370370372,
+      "partial_below_5_k_w_not_system_acceptance": false
+    },
+    {
+      "side_mm": 6.5,
+      "mask_present": true,
+      "area_mm2": 42.25,
+      "r_mask_k_w": 2.9585798816568047,
+      "r_tim_bulk_k_w": 2.366863905325444,
+      "r_contact_k_w": 2.366863905325444,
+      "r_spreader_k_w": 0.07889546351084814,
+      "partial_interface_k_w": 7.77120315581854,
+      "partial_below_5_k_w_not_system_acceptance": false
+    },
+    {
+      "side_mm": 7.0,
+      "mask_present": true,
+      "area_mm2": 49.0,
+      "r_mask_k_w": 2.5510204081632653,
+      "r_tim_bulk_k_w": 2.0408163265306123,
+      "r_contact_k_w": 2.0408163265306123,
+      "r_spreader_k_w": 0.06802721088435375,
+      "partial_interface_k_w": 6.700680272108843,
+      "partial_below_5_k_w_not_system_acceptance": false
+    },
+    {
+      "side_mm": 8.0,
+      "mask_present": true,
+      "area_mm2": 64.0,
+      "r_mask_k_w": 1.9531250000000002,
+      "r_tim_bulk_k_w": 1.5624999999999998,
+      "r_contact_k_w": 1.5625,
+      "r_spreader_k_w": 0.052083333333333336,
+      "partial_interface_k_w": 5.130208333333333,
+      "partial_below_5_k_w_not_system_acceptance": false
+    },
+    {
+      "side_mm": 3.9,
+      "mask_present": false,
+      "area_mm2": 15.209999999999999,
+      "r_mask_k_w": 0.0,
+      "r_tim_bulk_k_w": 6.574621959237344,
+      "r_contact_k_w": 6.574621959237344,
+      "r_spreader_k_w": 0.2191540653079115,
+      "partial_interface_k_w": 13.3683979837826,
+      "partial_below_5_k_w_not_system_acceptance": false
+    },
+    {
+      "side_mm": 5.0,
+      "mask_present": false,
+      "area_mm2": 25.0,
+      "r_mask_k_w": 0.0,
+      "r_tim_bulk_k_w": 4.0,
+      "r_contact_k_w": 4.000000000000001,
+      "r_spreader_k_w": 0.13333333333333333,
+      "partial_interface_k_w": 8.133333333333333,
+      "partial_below_5_k_w_not_system_acceptance": false
+    },
+    {
+      "side_mm": 5.5,
+      "mask_present": false,
+      "area_mm2": 30.25,
+      "r_mask_k_w": 0.0,
+      "r_tim_bulk_k_w": 3.305785123966942,
+      "r_contact_k_w": 3.3057851239669422,
+      "r_spreader_k_w": 0.11019283746556474,
+      "partial_interface_k_w": 6.721763085399449,
+      "partial_below_5_k_w_not_system_acceptance": false
+    },
+    {
+      "side_mm": 6.0,
+      "mask_present": false,
+      "area_mm2": 36.0,
+      "r_mask_k_w": 0.0,
+      "r_tim_bulk_k_w": 2.7777777777777777,
+      "r_contact_k_w": 2.7777777777777777,
+      "r_spreader_k_w": 0.09259259259259259,
+      "partial_interface_k_w": 5.648148148148148,
+      "partial_below_5_k_w_not_system_acceptance": false
+    },
+    {
+      "side_mm": 6.5,
+      "mask_present": false,
+      "area_mm2": 42.25,
+      "r_mask_k_w": 0.0,
+      "r_tim_bulk_k_w": 2.366863905325444,
+      "r_contact_k_w": 2.366863905325444,
+      "r_spreader_k_w": 0.07889546351084814,
+      "partial_interface_k_w": 4.812623274161736,
+      "partial_below_5_k_w_not_system_acceptance": true
+    },
+    {
+      "side_mm": 7.0,
+      "mask_present": false,
+      "area_mm2": 49.0,
+      "r_mask_k_w": 0.0,
+      "r_tim_bulk_k_w": 2.0408163265306123,
+      "r_contact_k_w": 2.0408163265306123,
+      "r_spreader_k_w": 0.06802721088435375,
+      "partial_interface_k_w": 4.149659863945578,
+      "partial_below_5_k_w_not_system_acceptance": true
+    },
+    {
+      "side_mm": 8.0,
+      "mask_present": false,
+      "area_mm2": 64.0,
+      "r_mask_k_w": 0.0,
+      "r_tim_bulk_k_w": 1.5624999999999998,
+      "r_contact_k_w": 1.5625,
+      "r_spreader_k_w": 0.052083333333333336,
+      "partial_interface_k_w": 3.1770833333333335,
+      "partial_below_5_k_w_not_system_acceptance": true
+    }
   ],
   "decision": {
-    "masked_i24_style_contact": "REJECT_AS_PRIMARY_CLOSURE_DIRECTION",
-    "preferred_candidate": "6.5x6.5 mm or larger exposed grounded backside land plus compliant shoe, subject to native copper/mask/assembly clearance and supplier-qualified interface data.",
-    "minimum_screened_exposed_side_mm_at_h_10000": 6.5,
-    "qualification_warning": "The 10 kW/m2K interface conductance is an allocation, not a measured material/contact value. No closure is allowed until the selected stack and pressure are bounded by supplier data or test correlation."
-  },
-  "physical_test_claimed": false,
-  "thermal_qualification_claimed": false
+    "whole_board_back_to_landing_K_W": null,
+    "whole_path_acceptance": false,
+    "masked_contact_rejected": false,
+    "bare_land_selected": false,
+    "reason": "Original calculation omitted the bridge, cold joint, spreading and a second interface. It cannot select a cooling construction or reject all insulated contacts.",
+    "next_evidence": "../convergence_01/results/thermal_native_05/RESULTS.json",
+    "geometry_warning": "Centered 6.5/7mm bare land intersects nearby body or non-ground routing. No copper or mask changes are adopted.",
+    "properties_are_allocations": true
+  }
 }

@@ -1,0 +1,23 @@
+{
+  "state": "LOCAL_C01_CHECKPOINT_NOT_PUBLISHED",
+  "base_commit": "5d772f12cb7b7c3fdf40c792726c2e01c8025a73",
+  "branch": "codex/rvb24-coordinated-closure",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "adopted_changes": [
+    "Corrected current fitted-MPN handling table/CSV",
+    "Corrected I25 partial-interface semantics and withdrawn incomplete design selection",
+    "Portable source/firmware/native-export/thermal review scripts and 22 negative-path tests",
+    "Runnable but remotely unexecuted workflow patches"
+  ],
+  "thermal": {
+    "trial_05_max_C": 105.25774448117504,
+    "trial_025_max_C": 111.53270596878417,
+    "trial_full_path_K_W": 8.897503422366341,
+    "converged": false,
+    "mechanically_adopted": false,
+    "junction_proven": false
+  },
+  "next_action": "Complete a combined U201/U121 thermal construction with carrier/preload/insulation/antenna constraints, then actual CAD rework and all affected/prior-closed applicability checks. Do not resume the rejected fixed-anchor CAN_RX front-route search or incomplete 7mm exposed-land selection.",
+  "hardware_operations": false,
+  "fabrication_release": false
+}

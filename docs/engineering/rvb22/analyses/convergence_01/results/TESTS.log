@@ -1,0 +1,27 @@
+test_LED_chains_current (test_review.ProductGuards.test_LED_chains_current) ... ok
+test_LED_polarity_rejected (test_review.ProductGuards.test_LED_polarity_rejected) ... ok
+test_LED_resistor_rejected (test_review.ProductGuards.test_LED_resistor_rejected) ... ok
+test_TNPU_unknown_MSL_not_invented (test_review.ProductGuards.test_TNPU_unknown_MSL_not_invented) ... ok
+test_altered_PCB_invalidates_evidence (test_review.ProductGuards.test_altered_PCB_invalidates_evidence) ... ok
+test_can_gpio_rejected (test_review.ProductGuards.test_can_gpio_rejected) ... ok
+test_comment_does_not_fake_transmit_call (test_review.ProductGuards.test_comment_does_not_fake_transmit_call) ... ok
+test_contact_contains_complete_path_terms (test_review.ProductGuards.test_contact_contains_complete_path_terms) ... ok
+test_contact_is_not_a_bare_land (test_review.ProductGuards.test_contact_is_not_a_bare_land) ... ok
+test_handling_updates_exact_two_parts (test_review.ProductGuards.test_handling_updates_exact_two_parts) ... ok
+test_normal_mode_rejected (test_review.ProductGuards.test_normal_mode_rejected) ... ok
+test_optical_guarantee_not_invented (test_review.ProductGuards.test_optical_guarantee_not_invented) ... ok
+test_population_of_isolation_link_rejected (test_review.ProductGuards.test_population_of_isolation_link_rejected) ... ok
+test_real_component_notch_is_present (test_review.ProductGuards.test_real_component_notch_is_present) ... ok
+test_receive_only_current (test_review.ProductGuards.test_receive_only_current) ... ok
+test_regression_binds_current_source (test_review.ProductGuards.test_regression_binds_current_source) ... ok
+test_removing_pullup_rejected (test_review.ProductGuards.test_removing_pullup_rejected) ... ok
+test_termination_population_rejected (test_review.ProductGuards.test_termination_population_rejected) ... ok
+test_thermal_empty_native_not_accepted (test_review.ProductGuards.test_thermal_empty_native_not_accepted) ... ok
+test_transmit_call_rejected (test_review.ProductGuards.test_transmit_call_rejected) ... ok
+test_tx_queue_rejected (test_review.ProductGuards.test_tx_queue_rejected) ... ok
+test_unknown_new_MPN_fails_closed (test_review.ProductGuards.test_unknown_new_MPN_fails_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 2.134s
+
+OK

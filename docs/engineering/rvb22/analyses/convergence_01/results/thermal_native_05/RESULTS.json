@@ -1,0 +1,142 @@
+{
+  "status": "BOARD_MODEL_ONLY",
+  "extraction": {
+    "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+    "native_PCB_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+    "native_polygons": 78,
+    "barrels": 338,
+    "copper_m": [
+      7.000000000000001e-05,
+      3e-05,
+      3e-05,
+      7.000000000000001e-05
+    ],
+    "dielectric_m": [
+      0.00020300000000000003,
+      0.00103,
+      0.00020300000000000003
+    ],
+    "native_geometry": true,
+    "provisional_fill": false
+  },
+  "results": [
+    {
+      "mesh_mm": 0.5,
+      "mode": "native_filled",
+      "contact_box": [
+        67.5,
+        12.8,
+        71.3,
+        27.9
+      ],
+      "contact_R": 15.0,
+      "wing_R": 5.0,
+      "edge_mode": "face",
+      "solver": "newton",
+      "plating_um_condition": 15.0,
+      "heat_scale": 1.0,
+      "nodes": 76012,
+      "C206_board_region_max_C": 100.22369044410844,
+      "C206_board_region_mean_C": 99.84739762924873,
+      "max_board_C": 126.22672269105969,
+      "min_board_C": 73.31150191262985,
+      "source_region_mean_C": {
+        "U201": 124.03368304748597,
+        "U151": 93.79954168236233,
+        "U121": 107.84976339068777,
+        "U403": 86.62432889802187,
+        "U401": 90.34990577573423,
+        "other5V_allocation": 81.8624745725271
+      },
+      "heat_W": 4.815000000000028,
+      "heat_to_landing_W": 3.6158319318865724,
+      "heat_to_air_W": 1.199168068130652,
+      "energy_balance_residual_W": 1.7196910562233825e-11,
+      "max_nodal_residual_W": 3.898628381932001e-15,
+      "linear_solver_residuals": [],
+      "iterations": 4,
+      "last_iteration_change_K": 1.9248602711741114e-10,
+      "max_front_back_difference_K": 16.93864798234648,
+      "package_temperature_proven": false,
+      "disconnected_copper_cells": 9430,
+      "wing_boxes": [
+        [
+          15,
+          -7.6,
+          53,
+          -1.6
+        ],
+        [
+          15,
+          43.6,
+          53,
+          49.6
+        ]
+      ],
+      "face_overlay_precision_mm": 1e-07,
+      "barrel_area_capture_ratio": 0.9998996042161442,
+      "case": "baseline",
+      "additional_contact_total_K_W": null
+    },
+    {
+      "mesh_mm": 0.5,
+      "mode": "native_filled",
+      "contact_box": [
+        67.5,
+        12.8,
+        71.3,
+        27.9
+      ],
+      "contact_R": 15.0,
+      "wing_R": 5.0,
+      "edge_mode": "face",
+      "solver": "newton",
+      "plating_um_condition": 15.0,
+      "heat_scale": 1.0,
+      "nodes": 76012,
+      "C206_board_region_max_C": 85.16166203154442,
+      "C206_board_region_mean_C": 84.99653836453585,
+      "max_board_C": 105.25774448117504,
+      "min_board_C": 72.3717354125231,
+      "source_region_mean_C": {
+        "U201": 102.5846030865535,
+        "U151": 90.63378885392163,
+        "U121": 102.90144458064233,
+        "U403": 83.3520247387466,
+        "U401": 83.68382750049417,
+        "other5V_allocation": 79.9319417972449
+      },
+      "heat_W": 4.815000000000028,
+      "heat_to_landing_W": 4.009487663111743,
+      "heat_to_air_W": 0.8055123369042723,
+      "energy_balance_residual_W": 1.5987211554602254e-11,
+      "max_nodal_residual_W": 2.858824288409778e-15,
+      "linear_solver_residuals": [],
+      "iterations": 4,
+      "last_iteration_change_K": 4.383196028356906e-10,
+      "max_front_back_difference_K": 21.132249548698,
+      "package_temperature_proven": false,
+      "disconnected_copper_cells": 9430,
+      "wing_boxes": [
+        [
+          15,
+          -7.6,
+          53,
+          -1.6
+        ],
+        [
+          15,
+          43.6,
+          53,
+          49.6
+        ]
+      ],
+      "face_overlay_precision_mm": 1e-07,
+      "barrel_area_capture_ratio": 0.9998996042161442,
+      "case": "trial",
+      "additional_contact_total_K_W": 8.897503422366341
+    }
+  ],
+  "package_temperature_proven": false,
+  "release": false
+}

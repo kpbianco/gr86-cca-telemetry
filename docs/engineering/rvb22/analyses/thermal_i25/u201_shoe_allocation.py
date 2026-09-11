@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Conservative allocation screen for the I25 U201 backside thermal shoe.
+"""Partial-interface screen for the I25 U201 backside thermal shoe (corrected scope).
 
 This is a deterministic sizing calculation, not a package/junction or contact
 qualification model.  It intentionally separates the solder-mask-covered
-I24 option from a deliberate exposed-ground-land respin candidate.
+I24 option from a proposed exposed-ground land. Neither is an adopted design.
+Bridge, cold joint, spreading and the second interface were omitted originally.
 """
 from __future__ import annotations
 
@@ -30,8 +31,8 @@ class Case:
     r_tim_bulk_k_w: float
     r_contact_k_w: float
     r_spreader_k_w: float
-    total_board_back_to_landing_k_w: float
-    meets_5_k_w_allocation: bool
+    partial_interface_k_w: float
+    partial_below_5_k_w_not_system_acceptance: bool
 
 
 def r_layer(thickness_m: float, conductivity: float, area_m2: float) -> float:
@@ -54,8 +55,8 @@ def evaluate(side_mm: float, mask_present: bool) -> Case:
         r_tim_bulk_k_w=r_tim,
         r_contact_k_w=r_contact,
         r_spreader_k_w=r_spreader,
-        total_board_back_to_landing_k_w=total,
-        meets_5_k_w_allocation=total <= TARGET_K_W,
+        partial_interface_k_w=total,
+        partial_below_5_k_w_not_system_acceptance=total <= TARGET_K_W,
     )
 
 
@@ -63,7 +64,7 @@ def main() -> None:
     sides = [3.9, 5.0, 5.5, 6.0, 6.5, 7.0, 8.0]
     cases = [evaluate(side, mask) for mask in (True, False) for side in sides]
     output = {
-        "status": "I25_CONSERVATIVE_SHOE_ALLOCATION_SCREEN",
+        "status": "SUPERSEDED_PARTIAL_INTERFACE_SCREEN_NOT_WHOLE_HEAT_PATH",
         "assumptions": {
             "solder_mask_thickness_um": MASK_T_M * 1e6,
             "solder_mask_k_W_mK": MASK_K_W_MK,
@@ -76,11 +77,14 @@ def main() -> None:
         },
         "cases": [asdict(c) for c in cases],
         "decision": {
-            "masked_i24_style_contact": "REJECT_AS_PRIMARY_CLOSURE_DIRECTION",
-            "reason": "At the retained conservative properties, even 8x8 mm remains above 5 K/W with solder mask present unless contact assumptions are improved; the known nearby-component geometry also makes such growth nontrivial.",
-            "preferred_candidate": "6.5x6.5 mm or larger exposed grounded backside land plus compliant shoe, subject to native copper/mask/assembly clearance and supplier-qualified interface data.",
-            "minimum_screened_exposed_side_mm_at_h_10000": min(c.side_mm for c in cases if not c.mask_present and c.meets_5_k_w_allocation),
-            "qualification_warning": "The 10 kW/m2K interface conductance is an allocation, not a measured material/contact value. No closure is allowed until the selected stack and pressure are bounded by supplier data or test correlation.",
+            "whole_board_back_to_landing_K_W": None,
+            "whole_path_acceptance": False,
+            "masked_contact_rejected": False,
+            "bare_land_selected": False,
+            "reason": "Original calculation omitted the bridge, cold joint, spreading and a second interface. It cannot select a cooling construction or reject all insulated contacts.",
+            "next_evidence": "../convergence_01/results/thermal_native_05/RESULTS.json",
+            "geometry_warning": "Centered 6.5/7mm bare land intersects nearby body or non-ground routing. No copper or mask changes are adopted.",
+            "properties_are_allocations": True,
         },
     }
     out = Path(__file__).with_name("U201_SHOE_ALLOCATION.json")

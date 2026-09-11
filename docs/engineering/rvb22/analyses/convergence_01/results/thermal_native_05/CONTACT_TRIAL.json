@@ -1,0 +1,38 @@
+{
+  "contact_WKT": "POLYGON ((74.02 25.5, 74.02 25.169999999999998, 77.98 25.169999999999998, 77.98 25.5, 83.11999999999999 25.5, 83.11999999999999 24.57, 84 24.57, 84 16.3, 73.8 16.3, 73.8 25.5, 74.02 25.5), (74.295 19.955, 74.295 17.445, 78.30499999999999 17.445, 78.30499999999999 19.955, 74.295 19.955))",
+  "area_mm2": 81.64970000000004,
+  "courtyard_exclusions": [
+    {
+      "ref": "R525",
+      "keepout_WKT": "POLYGON ((83.11999999999999 24.57, 83.11999999999999 27.03, 87.08 27.03, 87.08 24.57, 83.11999999999999 24.57))"
+    },
+    {
+      "ref": "R158",
+      "keepout_WKT": "POLYGON ((74.295 17.445, 74.295 19.955, 78.30499999999999 19.955, 78.30499999999999 17.445, 74.295 17.445))"
+    },
+    {
+      "ref": "C531",
+      "keepout_WKT": "POLYGON ((74.02 25.169999999999998, 74.02 27.63, 77.98 27.63, 77.98 25.169999999999998, 74.02 25.169999999999998))"
+    }
+  ],
+  "path_terms_K_W": {
+    "solder_mask": 1.5309303034793753,
+    "insulating_TIM_bulk": 1.0206202023195836,
+    "two_interfaces": 2.4494884855670005,
+    "copper_through_thickness": 0.08164961618556668,
+    "axial_bridge_25x12x3_mm": 2.314814814814815,
+    "cold_joint": 0.5,
+    "spreading_allowance": 1.0
+  },
+  "total_to_landing_K_W": 8.897503422366341,
+  "status": "INSULATED_CONTACT_FEASIBILITY_NOT_ADOPTED",
+  "electrical": "Retain solder mask and independent insulating TIM; no bare copper land or mask opening. Copper trace under contact is not shorted by design.",
+  "remaining": [
+    "Selected TIM conductivity, dielectric and pressure data",
+    "Preload/load-path and carrier-window redesign",
+    "Full swept solid/cable/service geometry",
+    "BLE antenna metal proximity review",
+    "Actual complete cold-landing construction <=70C"
+  ],
+  "all_properties_are_allocations": true
+}

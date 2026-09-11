@@ -1,3 +1,9 @@
+# Convergence 01 superseding disposition
+
+The I25 6.5/7 mm exposed-land selection and whole-path <=5 K/W claim below are withdrawn. The original calculation was a partial interface, not a complete heat path; candidate geometry intersects component/trace constraints. `../convergence_01/README.md` and its native-copper results govern the next work. No mask opening or new PCB revision has been adopted.
+
+## Historical I24/I25 discussion (retained, not current acceptance)
+
 # I24 -> I25 thermal closure handoff
 
 This handoff converts the I24 U201 feasibility direction into a bounded I25 design requirement. It does **not** close REG-02 or THERM-02 and it does not authorize fabrication.

@@ -1,3 +1,9 @@
+# Current checkpoint: convergence 01
+
+See `analyses/convergence_01/README.md` relative to the rvb22 root and `current/CONVERGENCE_01_EFFECTIVITY.json`. The former 6.5/7 mm exposed-shoe whole-path selection is withdrawn. New native-copper trial refinement gives 111.533 C board maximum at 0.25 mm; no thermal/mechanical acceptance or new PCB fabrication release is claimed. Earlier numerical statements below retain their historical configuration and scope.
+
+## Historical review
+
 # I22 engineering review
 
 Open original criteria decrease from **152 to 146**. The register now has **140 closed / 146 open / 4 not applicable**, preserving all 290 original questions, required-evidence cells and user inputs. The original user baseline remains 73/213/4. All 351 prior redlines plus six I22 findings are retained.

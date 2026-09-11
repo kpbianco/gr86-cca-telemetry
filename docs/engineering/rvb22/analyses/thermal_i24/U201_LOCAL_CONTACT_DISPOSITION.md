@@ -1,3 +1,9 @@
+# Convergence 01 superseding disposition
+
+The I25 6.5/7 mm exposed-land selection and whole-path <=5 K/W claim below are withdrawn. The original calculation was a partial interface, not a complete heat path; candidate geometry intersects component/trace constraints. `../convergence_01/README.md` and its native-copper results govern the next work. No mask opening or new PCB revision has been adopted.
+
+## Historical I24/I25 discussion (retained, not current acceptance)
+
 # I24 U201 local thermal extraction disposition
 
 Status: **DESIGN REDLINE + FEASIBILITY DIRECTION — NOT THERMALLY QUALIFIED**

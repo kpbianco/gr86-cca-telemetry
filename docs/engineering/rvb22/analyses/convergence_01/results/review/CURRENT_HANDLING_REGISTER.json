@@ -13,7 +13,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/430/43045/430450001-AS-000.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Applicable43045 header family application specificationA1:wave/reflow260Cmax,original packaging until use,avoid corrosive chemicals. Selected F1 route remains local/selective after global. The source does not give a local wave dwell; do not borrow W\u00fcrth5s. Twelve-circuit harness requires recommended25.4mm relaxed wire before bend/tie/twist,matched plating and no current sharing across pins; compare actual harness separately. NumericMSL not published.",
+      "handling": "Applicable43045 header family application specificationA1:wave/reflow260Cmax,original packaging until use,avoid corrosive chemicals. Selected F1 route remains local/selective after global. The source does not give a local wave dwell; do not borrow Würth5s. Twelve-circuit harness requires recommended25.4mm relaxed wire before bend/tie/twist,matched plating and no current sharing across pins; compare actual harness separately. NumericMSL not published.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -39,7 +39,7 @@
       "manufacturer_peak_C": 260,
       "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/wurth_61300211121.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact manufacturer through-hole header drawing permits lead-free wave250\u2026260C,\u22645s each wave. Routed local/selective after global; no whole-body reflow or numericMSL inferred. Preserve manufacturer storage/usewithin12months and inspect solderability of older stock.",
+      "handling": "Exact manufacturer through-hole header drawing permits lead-free wave250…260C,≤5s each wave. Routed local/selective after global; no whole-body reflow or numericMSL inferred. Preserve manufacturer storage/usewithin12months and inspect solderability of older stock.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -91,7 +91,7 @@
       "manufacturer_peak_C": null,
       "source": "https://www.kemet.com/en/us/capacitors/ceramic/ceramics-faq.html",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Manufacturer says all KEMET MLCCs MSL1 and baking unnecessary. This does not set this exact MPN reflow peak. FAQ ultrasonic limits20W/L,20\u201340kHz,\u226460C,\u22645min apply only to capacitor-level guidance; assembled GNSS/LED/connectors may prohibit that process.",
+      "handling": "Manufacturer says all KEMET MLCCs MSL1 and baking unnecessary. This does not set this exact MPN reflow peak. FAQ ultrasonic limits20W/L,20–40kHz,≤60C,≤5min apply only to capacitor-level guidance; assembled GNSS/LED/connectors may prohibit that process.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -104,7 +104,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5\u202640C/20\u202670%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow\u2264260C/\u226410s;preheat delta\u2264150C for0603/0805,\u2264130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -117,7 +117,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5\u202640C/20\u202670%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow\u2264260C/\u226410s;preheat delta\u2264150C for0603/0805,\u2264130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -130,7 +130,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5\u202640C/20\u202670%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow\u2264260C/\u226410s;preheat delta\u2264150C for0603/0805,\u2264130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -143,7 +143,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_soft_en.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact TDK product page links soft-termination Oct2025 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5\u202640C/20\u202670%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow\u2264260C/\u226410s;preheat delta\u2264150C for0603/0805,\u2264130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "handling": "Exact TDK product page links soft-termination Oct2025 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -156,7 +156,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_soft_en.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact TDK product page links soft-termination Oct2025 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5\u202640C/20\u202670%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow\u2264260C/\u226410s;preheat delta\u2264150C for0603/0805,\u2264130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "handling": "Exact TDK product page links soft-termination Oct2025 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -169,7 +169,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5\u202640C/20\u202670%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow\u2264260C/\u226410s;preheat delta\u2264150C for0603/0805,\u2264130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -182,7 +182,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5\u202640C/20\u202670%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow\u2264260C/\u226410s;preheat delta\u2264150C for0603/0805,\u2264130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -195,7 +195,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5\u202640C/20\u202670%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow\u2264260C/\u226410s;preheat delta\u2264150C for0603/0805,\u2264130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -351,7 +351,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/DMM0000COL14.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact ERA3 family/product-linked rectangular resistor profile:lead-free peak\u2264260C/\u226410s,above230C30\u201340s,preheat150\u2026180C60\u2013120s,maximumtwo reflows. ERA datasheet storage5\u202635C/45\u202685%RH,\u22641year. Use rosin flux; highly acidic/water-soluble/fluoride flux prohibited; cleaning/coating needs process validation. No numericMSL found in reviewed primary docs; retain exact receiving declaration.",
+      "handling": "Exact ERA3 family/product-linked rectangular resistor profile:lead-free peak≤260C/≤10s,above230C30–40s,preheat150…180C60–120s,maximumtwo reflows. ERA datasheet storage5…35C/45…85%RH,≤1year. Use rosin flux; highly acidic/water-soluble/fluoride flux prohibited; cleaning/coating needs process validation. No numericMSL found in reviewed primary docs; retain exact receiving declaration.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -364,7 +364,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/DMM0000COL14.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact ERA3 family/product-linked rectangular resistor profile:lead-free peak\u2264260C/\u226410s,above230C30\u201340s,preheat150\u2026180C60\u2013120s,maximumtwo reflows. ERA datasheet storage5\u202635C/45\u202685%RH,\u22641year. Use rosin flux; highly acidic/water-soluble/fluoride flux prohibited; cleaning/coating needs process validation. No numericMSL found in reviewed primary docs; retain exact receiving declaration.",
+      "handling": "Exact ERA3 family/product-linked rectangular resistor profile:lead-free peak≤260C/≤10s,above230C30–40s,preheat150…180C60–120s,maximumtwo reflows. ERA datasheet storage5…35C/45…85%RH,≤1year. Use rosin flux; highly acidic/water-soluble/fluoride flux prohibited; cleaning/coating needs process validation. No numericMSL found in reviewed primary docs; retain exact receiving declaration.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -390,7 +390,7 @@
       "manufacturer_peak_C": 250,
       "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/espressif_esp32_s3_wroom1.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Open-bag168h at25\u00b15C/60%RH; apply exact manufacturer bake procedure only if required.",
+      "handling": "Open-bag168h at25±5C/60%RH; apply exact manufacturer bake procedure only if required.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -403,7 +403,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://www.murata.com/en-eu/support/faqs/capacitor/ceramiccapacitor/mnt/0009",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Murata chip MLCC family explicitly MSL1; resin-molded exceptions do not apply. GCM exact approval documents allow240\u2013260C lead-free peak; GRM reflow maximum is not borrowed from GCM. Avoid thermal shock; retain exact part storage/solderability and board-process checks.",
+      "handling": "Murata chip MLCC family explicitly MSL1; resin-molded exceptions do not apply. GCM exact approval documents allow240–260C lead-free peak; GRM reflow maximum is not borrowed from GCM. Avoid thermal shock; retain exact part storage/solderability and board-process checks.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -416,7 +416,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://www.murata.com/en-eu/support/faqs/capacitor/ceramiccapacitor/mnt/0009",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Murata chip MLCC family explicitly MSL1; resin-molded exceptions do not apply. GCM exact approval documents allow240\u2013260C lead-free peak; GRM reflow maximum is not borrowed from GCM. Avoid thermal shock; retain exact part storage/solderability and board-process checks.",
+      "handling": "Murata chip MLCC family explicitly MSL1; resin-molded exceptions do not apply. GCM exact approval documents allow240–260C lead-free peak; GRM reflow maximum is not borrowed from GCM. Avoid thermal shock; retain exact part storage/solderability and board-process checks.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -429,7 +429,7 @@
       "manufacturer_peak_C": null,
       "source": "https://www.murata.com/en-eu/support/faqs/capacitor/ceramiccapacitor/mnt/0009",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Murata chip MLCC family explicitly MSL1; resin-molded exceptions do not apply. GCM exact approval documents allow240\u2013260C lead-free peak; GRM reflow maximum is not borrowed from GCM. Avoid thermal shock; retain exact part storage/solderability and board-process checks.",
+      "handling": "Murata chip MLCC family explicitly MSL1; resin-molded exceptions do not apply. GCM exact approval documents allow240–260C lead-free peak; GRM reflow maximum is not borrowed from GCM. Avoid thermal shock; retain exact part storage/solderability and board-process checks.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -468,7 +468,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://search.murata.co.jp/Ceramy/image/img/P02/JELF243A-9139.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Public manufacturer inductor MSL table covers LQ* as1. Exact JELF243A_9139E-01 reference row;recommended reflow245\u00b13C,limit260C/10s,two cycles. Store\u221210\u202640C/15\u202685%RH;usewithin12months or check solderability. IPAcleaning\u226440C,other listedcleaning\u226460C;do not contact winding with tweezers/brushes. No assembled-board ultrasonic authorization.",
+      "handling": "Public manufacturer inductor MSL table covers LQ* as1. Exact JELF243A_9139E-01 reference row;recommended reflow245±3C,limit260C/10s,two cycles. Store−10…40C/15…85%RH;usewithin12months or check solderability. IPAcleaning≤40C,other listedcleaning≤60C;do not contact winding with tweezers/brushes. No assembled-board ultrasonic authorization.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -559,7 +559,7 @@
       "manufacturer_peak_C": 260,
       "source": "https://assets.nexperia.com/documents/other-type/REFLOW_BG-BD-1.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact live product API maps PMEG2010BEA,115 to its chemical report, but that report was unavailable403;no MSL is borrowed from PMEG2010BEA-Q. Manufacturer SOD323 page links Feb2026 reflow guide:body<1.6mm gives260Cclassification,typ245Cpeak,three cycles,20\u201330swithin5Cpeak recommended. This recommended dwell differs from the board10speak allocation; assembler must validate compatible measured profile, not assume all dwell definitions identical.",
+      "handling": "Exact live product API maps PMEG2010BEA,115 to its chemical report, but that report was unavailable403;no MSL is borrowed from PMEG2010BEA-Q. Manufacturer SOD323 page links Feb2026 reflow guide:body<1.6mm gives260Cclassification,typ245Cpeak,three cycles,20–30swithin5Cpeak recommended. This recommended dwell differs from the board10speak allocation; assembler must validate compatible measured profile, not assume all dwell definitions identical.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -923,7 +923,7 @@
       "manufacturer_peak_C": 250,
       "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/hirose_ufl.pdf",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Manufacturer profile: board/lead surface\u2264250C for\u226410s,\u22642cycles; localmanual350C\u22645s,stencil0.10\u20130.12mm. Original packaging storage\u221210\u202640C/\u226485%RH/\u22646months; longer storage requires solderability confirmation. NumericMSL is not listed in the reviewed document. Keep unmated connector clean; no whole-board wash approval inferred.",
+      "handling": "Manufacturer profile: board/lead surface≤250C for≤10s,≤2cycles; localmanual350C≤5s,stencil0.10–0.12mm. Original packaging storage−10…40C/≤85%RH/≤6months; longer storage requires solderability confirmation. NumericMSL is not listed in the reviewed document. Keep unmated connector clean; no whole-board wash approval inferred.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -936,7 +936,7 @@
       "manufacturer_peak_C": 250,
       "source": "https://www.vishay.com/en/product/30100/tab/quality/",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact MPN manufacturer quality row: Floor Life-Unlimited. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Vishay document31052 prose specifies reflow\u2264250C for\u226420s; its table allows260C, so this package uses the more restrictive prose. Thermal ramp, cooling and controlled cleaning still apply.",
+      "handling": "Exact MPN manufacturer quality row: Floor Life-Unlimited. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Vishay document31052 prose specifies reflow≤250C for≤20s; its table allows260C, so this package uses the more restrictive prose. Thermal ramp, cooling and controlled cleaning still apply.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -949,7 +949,7 @@
       "manufacturer_peak_C": 250,
       "source": "https://www.vishay.com/en/product/30122/tab/quality/",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact MPN manufacturer quality row: Floor Life-Unlimited. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Vishay document31052 prose specifies reflow\u2264250C for\u226420s; its table allows260C, so this package uses the more restrictive prose. Thermal ramp, cooling and controlled cleaning still apply.",
+      "handling": "Exact MPN manufacturer quality row: Floor Life-Unlimited. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Vishay document31052 prose specifies reflow≤250C for≤20s; its table allows260C, so this package uses the more restrictive prose. Thermal ramp, cooling and controlled cleaning still apply.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
@@ -962,7 +962,7 @@
       "manufacturer_peak_C": 250,
       "source": "https://www.vishay.com/en/product/30122/tab/quality/",
       "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact MPN manufacturer quality row: Floor Life-Unlimited. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Vishay document31052 prose specifies reflow\u2264250C for\u226420s; its table allows260C, so this package uses the more restrictive prose. Thermal ramp, cooling and controlled cleaning still apply.",
+      "handling": "Exact MPN manufacturer quality row: Floor Life-Unlimited. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Vishay document31052 prose specifies reflow≤250C for≤20s; its table allows260C, so this package uses the more restrictive prose. Thermal ramp, cooling and controlled cleaning still apply.",
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {

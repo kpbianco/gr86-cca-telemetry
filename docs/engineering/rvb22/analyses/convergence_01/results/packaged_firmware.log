@@ -1,0 +1,19 @@
+actual_oil PASS PASS actual oil scheduler 90072 checks
+
+actual_gps PASS PASS actual GPS state/command/epoch/parser 2084 checks
+
+actual_cache PASS TRAFFIC oil=6000 gps=1200 time=120 total=14420 oil_max_gap=20 physical_arrivals=216000
+PASS actual cache/notification/backpressure 1329 checks
+
+oil_boundaries PASS PASS oil sensor/calibration boundary 19362 checks
+
+oil_model_test PASS PASS: 32 independent-channel calibration, supply sweep and fault assertions.
+
+io_budget_test PASS VERIFIED assertions=14600225 exact_replenished_10s=1200
+
+protocol_test PASS PASS: 11407 protocol/parser/encoding assertions; address/undefined sanitizer enabled.
+
+erb_diagnostics_test PASS PASS: 24 RTC-record, calibration identity and BLE backoff wrap checks.
+
+erb_parser_test PASS 26 checks, 0 failures
+
