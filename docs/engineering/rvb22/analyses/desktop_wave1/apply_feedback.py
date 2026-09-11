@@ -15,7 +15,8 @@ BASE = '5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8'
 KEEP_VIA = '4eabd859-1c65-44f0-b0f2-197b528fff61'
 LEAVES = {'8cb33166-2699-5311-b448-a141ed5f9309',
           '99a942b9-65b0-580e-bde6-aa983db1a3a0',
-          '70849dce-f027-53f5-81fb-448694c6de51'}
+          '70849dce-f027-53f5-81fb-448694c6de51',
+          'cde2df06-5907-51c2-b56a-8a2e8439f87b'}
 PATHS = [
  (132, 'B.Cu', [(37.8625,10.725),(39.1,10.725)]),
  (132, 'In1.Cu', [(39.1,10.725),(38.9,10.925),(38.9,13.5),(38.9,13.8),(39.2,14.1)]),
@@ -56,6 +57,13 @@ def transform(text):
         if ((rec.startswith('(segment ') or rec.startswith('(via '))
             and re.search(r'\(net 132\)',rec) and ident!=KEEP_VIA) or ident in LEAVES:
             changes.append((a,z,'')); removed.append(ident)
+        elif ident=='b9d2a613-96c8-5ce6-b246-5bfd42e67687':
+            children=list(records(rec)); aa,zz=next((aa,zz) for aa,zz,t in children if t.startswith('(at '))
+            rec=rec[:aa]+'(at 33.5 11)'+rec[zz:]
+            changes.append((a,z,rec)); moved.append('TP405')
+        elif ident=='d5ed58e6-9edf-4660-9a35-326712abb854':
+            rec=rec.replace('(at 40.5 12.8)', '(at 33.5 12.8)')
+            changes.append((a,z,rec))
         elif rec.startswith('(footprint ') and any('(property "Reference" "'+r+'"' in rec for r in ['R155','R156']):
             ref='R155' if '(property "Reference" "R155"' in rec else 'R156'
             y=12.9 if ref=='R155' else 16.1
@@ -65,7 +73,7 @@ def transform(text):
             rec=rec.replace('(justify mirror)','')
             rec=re.sub(r'\(at (-?0\.825) 0 (?:90|270)\)',r'(at \1 0 270)',rec)
             changes.append((a,z,rec)); moved.append(ref)
-    if len(removed)!=89 or sorted(moved)!=['R155','R156']:
+    if len(removed)!=90 or sorted(moved)!=['R155','R156','TP405']:
         raise ValueError(f'Unexpected edit census: {len(removed)} / {moved}')
     for a,z,rec in reversed(changes): text=text[:a]+rec+text[z:]
     added=[]
@@ -90,7 +98,7 @@ def main():
     shutil.copytree(args.source,args.out,dirs_exist_ok=True)
     (args.out/p.name).write_text(text)
     data=dict(base_sha256=BASE,candidate_sha256=hashlib.sha256(text.encode()).hexdigest(),
-        changed_footprints=['R155','R156'],removed_uuids=removed,
+        changed_footprints=['R155','R156','TP405'],removed_uuids=removed,
         added_vias_requiring_fill_cap_planarize=[{'xy_mm':[39.2,14.1],'drill_mm':.3,'ref':'R155.2'},{'xy_mm':[39.5,12.1],'drill_mm':.3,'ref':'R155.1'}],
         existing_fill_cap_process_count=49,new_total_fill_cap_count=51,
         native_checks_performed=False,fabrication_release=False)
