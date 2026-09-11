@@ -1,0 +1,20 @@
+{
+  "status": "CONVERGENCE_01_SOURCE_PUBLISHED",
+  "source_commit": "7a01d0471ee86a9663c18175c4dd0b932f60232f",
+  "publication_run": 34565070220,
+  "restored_engineering_text_files": 53,
+  "workflow_files": 2,
+  "source_sensitive_tests": 22,
+  "actual_function_firmware_suites": 9,
+  "publication_checks": "HOSTED_PASS",
+  "source_archive_sha256": "599341959efea5b80a253cc13c90039d6b84aced8aef1ac0b9a58400d174cf25",
+  "preserved_intervening_trials": ["desktop_wave1/apply_feedback.py", "desktop_wave1/thermal_access.py", ".github/workflows/desktop-feedback-native.yml"],
+  "source_baseline": "5d772f12cb7b7c3fdf40c792726c2e01c8025a73",
+  "publication_parent": "209e384f6da07277f7de4d9d2be84750ad9ac370",
+  "binary_maps": "Original 3 NPZ maps and external workbook remain in the linked Convergence01 working package, not this UTF-8 source import.",
+  "historical_notes": "analyses/convergence_01/HANDOFF.json records the earlier local checkpoint; this file controls publication status. IMPORTED_SOURCE_MANIFEST.json records the staged import before the two workflow files were applied.",
+  "thermal_construction_adopted": false,
+  "pcb_changed": false,
+  "fabrication_release": false,
+  "merge_performed": false
+}
