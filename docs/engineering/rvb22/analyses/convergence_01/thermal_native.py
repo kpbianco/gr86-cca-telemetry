@@ -21,7 +21,8 @@ FILLED_HASH='11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1'
 def digest(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 def extract_native(pcb:Path):
-    if digest(pcb)!=FILLED_HASH: raise ValueError('Native copper differs from the reviewed I24 candidate; rebind explicitly before analysis')
+    from native_binding import verify_filled
+    binding = verify_filled(pcb)
     b,items,unsupported=c.collect(pcb)
     if unsupported: raise ValueError(unsupported)
     geom=json.loads((D/'THERMAL_GEOMETRY.json').read_text()); model.G=geom['outline']
@@ -53,7 +54,7 @@ def extract_native(pcb:Path):
             fills[layer].append(shape);count+=1
     if not count:raise ValueError('Unfilled PCB: no native polygons; approximate fill is not substituted')
     native=[unary_union([explicit[i],*fills[l]]).difference(drilled).intersection(model.board)for i,l in enumerate(c.L)]
-    meta={'source_PCB_sha256':SOURCE_HASH,'native_PCB_sha256':digest(pcb),'native_polygons':count,'barrels':len(vias),'copper_m':cu.tolist(),'dielectric_m':diel.tolist(),'native_geometry':True,'provisional_fill':False}
+    meta={'source_PCB_sha256':SOURCE_HASH,'native_PCB_sha256':digest(pcb),'native_polygons':count,'barrels':len(vias),'copper_m':cu.tolist(),'dielectric_m':diel.tolist(),'native_geometry':True,'provisional_fill':False,'filled_content_binding':binding}
     # The inherited solver's second mask slot is named provisional; the actual arrays here are native only.
     return (explicit,native,vias,drilled,cu,diel,source_layers,meta),b
 
