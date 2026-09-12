@@ -1,0 +1,90 @@
+{
+  "source_run": 34620964062,
+  "source_commit": "0187cafd8610e11f3faf2a8ef35b39863bd40b40",
+  "artifact_id": 10273346331,
+  "map_sha256": "7e465b2b047e868bc58abd70ba62e3a202d7fe0a74c3e12b50341523f2221997",
+  "case": "release_existing_cooling",
+  "mesh_mm": 0.25,
+  "global_mesh_allowance_C": 5.61633032881707,
+  "rows": [
+    {
+      "reference": "D601",
+      "center_mm": [
+        17,
+        3
+      ],
+      "region_halfwidth_mm": 1.0,
+      "cell_count": 49,
+      "max_board_region_C": 74.34135327918251,
+      "board_region_with_global_mesh_allowance_C": 79.95768360799958
+    },
+    {
+      "reference": "D602",
+      "center_mm": [
+        20,
+        3
+      ],
+      "region_halfwidth_mm": 1.0,
+      "cell_count": 49,
+      "max_board_region_C": 74.51231886717176,
+      "board_region_with_global_mesh_allowance_C": 80.12864919598883
+    },
+    {
+      "reference": "D603",
+      "center_mm": [
+        23,
+        3
+      ],
+      "region_halfwidth_mm": 1.0,
+      "cell_count": 49,
+      "max_board_region_C": 74.58651781761995,
+      "board_region_with_global_mesh_allowance_C": 80.20284814643702
+    },
+    {
+      "reference": "D604",
+      "center_mm": [
+        26,
+        3
+      ],
+      "region_halfwidth_mm": 1.0,
+      "cell_count": 49,
+      "max_board_region_C": 74.7996431791188,
+      "board_region_with_global_mesh_allowance_C": 80.41597350793587
+    },
+    {
+      "reference": "D605",
+      "center_mm": [
+        29,
+        3
+      ],
+      "region_halfwidth_mm": 1.0,
+      "cell_count": 49,
+      "max_board_region_C": 75.31745476145615,
+      "board_region_with_global_mesh_allowance_C": 80.93378509027322
+    },
+    {
+      "reference": "D606",
+      "center_mm": [
+        32,
+        3
+      ],
+      "region_halfwidth_mm": 1.0,
+      "cell_count": 49,
+      "max_board_region_C": 76.01887790403497,
+      "board_region_with_global_mesh_allowance_C": 81.63520823285204
+    },
+    {
+      "reference": "D401",
+      "center_mm": [
+        30,
+        9.5
+      ],
+      "region_halfwidth_mm": 1.0,
+      "cell_count": 49,
+      "max_board_region_C": 78.01618850321144,
+      "board_region_with_global_mesh_allowance_C": 83.63251883202851
+    }
+  ],
+  "scope": "Extracted the maximum over all four layers in a 2x2mm neighborhood, then added the I25 global one-step mesh allowance. This is a board-region screen, not LED junction temperature, local air, a new thermal solve, or an upper mathematical error bound. LED self-heating and assembled optical output remain physical qualification.",
+  "physical_test_claimed": false
+}
