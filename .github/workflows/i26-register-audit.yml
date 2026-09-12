@@ -16,8 +16,32 @@ jobs:
           persist-credentials: false
       - name: Audit controlled register
         run: python3 docs/engineering/rvb22/i26_audit_open_rows.py | tee i26-register-audit.log
+      - name: Preserve revision-bound desktop analysis inputs
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, pathlib, subprocess, zipfile
+          root = pathlib.Path('.')
+          paths = subprocess.check_output(['git', 'ls-files', '-z', 'docs/engineering/rvb22', '.github/workflows', 'AGENTS.md', '.agents']).decode().split('\0')
+          suffixes = {'.py', '.json', '.md', '.csv', '.txt', '.yaml', '.yml', '.cpp', '.h', '.hpp', '.ino', '.sh', '.scad', '.kicad_pcb', '.kicad_sch', '.kicad_pro', '.kicad_dru', '.xml'}
+          manifest = {'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode().strip(), 'files': {}, 'physical_tests_claimed': False}
+          with zipfile.ZipFile('i26-desktop-inputs.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
+              for name in sorted(filter(None, paths)):
+                  p = root / name
+                  if p.suffix not in suffixes or not p.is_file():
+                      continue
+                  content = p.read_bytes()
+                  archive.writestr(name, content)
+                  manifest['files'][name] = {'bytes': len(content), 'sha256': hashlib.sha256(content).hexdigest()}
+              archive.writestr('I26_INPUT_MANIFEST.json', json.dumps(manifest, indent=2) + '\n')
+          pathlib.Path('i26-desktop-input-manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+          print('I26_DESKTOP_INPUT_FILES', len(manifest['files']))
+          print('I26_DESKTOP_INPUT_SOURCE', manifest['source_commit'])
+          PY
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: i26-register-audit-${{ github.sha }}
-          path: i26-register-audit.log
+          name: i26-register-audit-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            i26-register-audit.log
+            i26-desktop-inputs.zip
+            i26-desktop-input-manifest.json
           retention-days: 14
