@@ -1,0 +1,22 @@
+{
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "native_PCB_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+  "net": "CAN_RX_MCU",
+  "from": "B.Cu",
+  "to": "F.Cu",
+  "width_mm": 0.2,
+  "a": [
+    82.7281,
+    15.5354
+  ],
+  "z": [
+    77.8,
+    33.1
+  ],
+  "path_mm": null,
+  "diagnostics": {
+    "start_access": 80,
+    "end_access": 72,
+    "visited": 6863
+  }
+}

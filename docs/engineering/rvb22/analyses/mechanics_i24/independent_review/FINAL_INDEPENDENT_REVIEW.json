@@ -1,0 +1,155 @@
+{
+  "reviewer": "independent_mechanics_check",
+  "status": "CONDITIONAL_DESIGN_SCREEN_REVIEW_COMPLETE_PHYSICAL_ACCEPTANCE_OPEN",
+  "reviewed_at_UTC": "2026-09-10T16:38:23.442566+00:00",
+  "geometry_spec_sha256": "9bad2756f2c7aca3758713753959d39e49944d478b847006264b53f4297d824c",
+  "supersedes": "REVIEW_E727_CORRECTIONS.json",
+  "file_sha256": {
+    "iterations/I24_thermal_mechanics/candidate_mechanics/ASSEMBLY_C06_W03_T04.scad": "5b6d367fb8a7b5cb9b6c7ee57ec2d1040b5b86d05eec4d909df839b0b912e777",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/README.md": "74e4a40a11e88bc020616d39107175a47b003ac2036676b81b90ec0061703a62",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_LANDINGS_C06.scad": "8ecdecee0e05540d88666559a7a2306d3178b0e8311d224102f1c281ed944371",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_WING_W03.scad": "1794267a85163274b2bf7d41f077a17e4366c3c1f5ce304540e1b706ab174098",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/CANDIDATE_SPEC.json": "9bad2756f2c7aca3758713753959d39e49944d478b847006264b53f4297d824c",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_CONTACT_T04.scad": "685a9a7d18188e12727365585880a480fe998587e803f92a37acf4ecb8c6ef47",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_PATHS.json": "96fce775c289ab63a5e7dc487121da70c793d3a4fe701bdc03f69ec8b085342b",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/GR86_RVB_CARRIER_C06.scad": "df45e367e58a9e3c8de0aea1c8eb74bf903ee1cfe647531ca5369fd60a7f0de3",
+    "analyses/mechanics_i24/build_candidate.py": "3372f87eebf784a19f2fc7c60188e6189eb87c398da1e7b6f0302dcf819dab7b",
+    "analyses/mechanics_i24/final_review.py": "7dbf64df9428ec2b14c54038c3ba52743b94228953a89c3487fa99b7dd52c159",
+    "analyses/mechanics_i24/check_assembly.py": "6f5ddba329473d505e86808ec04b7474e199eb9cd4a614e52294cffc973dfe61",
+    "analyses/mechanics_i24/FRAME_RESULTS.json": "bad65d519171f13666323786a32b2cdf018a8332a5f776e59910ed2aebda8d89",
+    "analyses/mechanics_i24/LOCATING_MOTION.json": "137449ac6b95108f52a43ad1bf65a5b7271ba217f6cd83114e776f19fd31b6ab",
+    "analyses/mechanics_i24/JOINT_AND_ELASTIC_DEMANDS.json": "a3b391ef6b81063fb8dfdedd7970d96eb91cdaca01b5a146e2e75b6af7812fc5",
+    "analyses/mechanics_i24/SOURCE_EFFECTIVITY.json": "b9db2f31b695664d975ca498cbf807c445316ef8c7ed0d6ffe4e981f5fe2b937",
+    "analyses/mechanics_i24/ASSEMBLY_CLEARANCE.json": "048ebbe32be0640db0daa576414cc3e6f164e5d3ded73394a08942d8c8881453",
+    "analyses/mechanics_i24/REDLINE_FREEZE.json": "86d8b155336083a3c221d187dc44bc7dea223bc78b9648b0ed436a82307aaf5b",
+    "analyses/mechanics_i24/REDLINE_DISPOSITIONS.json": "10e00cd5955786342cb22c4e2cb853a52ebe1e1d6b04754a9d6f9a344a8e5bbd",
+    "analyses/mechanics_i23/foil_clamps.py": "ee2e12e50c5cfea9d7bdce14abe9a648f01905c18d3cbbd45aa1443ff32f8999",
+    "analyses/mated_i22/RESULTS.json": "3ec8441da107f011cbc4dc5c09289eac8ed298f871551f406e20b2709769428f",
+    "iterations/I18_capacitor_thermal_tab/CURRENT_OUTLINE_GEOMETRY.json": "fe847d108c37a15d8386c9abec3cedbe39f390f4091c071464596b5b871101b7"
+  },
+  "source_or_register_modified": false,
+  "physical_qualification_claimed": false,
+  "original_criteria_closed_by_this_review": [],
+  "preserved_bounds": {
+    "air_C": 65,
+    "complete_landing_underside_C": 70,
+    "heat_W": 4.815,
+    "minimum_antenna_metal_exclusion_mm": 15
+  },
+  "prior_blocker_dispositions": [
+    {
+      "id": "IMR-01",
+      "status": "CORRECTED",
+      "evidence": "Convex hulls enclose intermediate component/service rectangle positions; cable swept per centerline segment. Independent expanded-key check includes additional rotation/interpolation allowance."
+    },
+    {
+      "id": "IMR-02",
+      "status": "CORRECTED",
+      "evidence": "Upper-right post relieved at X>=64.4,Y>=-1.8. Corresponding upper/lower root bands end at X64.4 to avoid an unsupported thin overhang; the band is shortened to Y[-1.0,-0.2] to reduce root moment while maintaining bearing area."
+    },
+    {
+      "id": "IMR-03",
+      "status": "CORRECTED",
+      "evidence": "Root force screen uses guaranteed material across pose states, swept hole exclusion and a root-line tilt term; max reported conditional demand143.036396MPa."
+    }
+  ],
+  "reviewed_geometry": {
+    "foil_construction": "100 individual unbonded C110 leaves,20\u201322um each; welded/brazed terminal packets only.",
+    "nominal_free_length_mm": {
+      "wing": 27.067320852425212,
+      "central": 22.42383175279833
+    },
+    "independent_shortest_offset_free_span_mm": {
+      "wing": 23.67218484813626,
+      "central": 22.39710232973562
+    },
+    "inside_bend_radius_minimum_mm": {
+      "wing": 1.5,
+      "central": 1.9
+    },
+    "hot_shoe_height_mm": 12.8,
+    "central_path_R_allocation_sum_K_W": 14.574372347604646,
+    "wing_path_R_allocation_sum_K_W": 4.6571523145339535,
+    "thermal_status": "Arithmetic path allocations checked; contact properties and installed full-footprint70C sink are unproven.",
+    "antenna_shoe_setback_after_declared_position_allowance_mm": 16.65476600000001
+  },
+  "independent_checks": {
+    "expanded_rigid_motion": {
+      "checks_count": 9982,
+      "local_key_motion_bound_mm": 0.36,
+      "interpolation_padding_mm": 0.03,
+      "maximum_expanded_rotation_rad": 0.01267605633802817,
+      "maximum_point_radius_from_rotation_origin_mm": 106.19469046420508,
+      "non_mating_interferences": [],
+      "component_minimum_clearance_mm": 0.10085717183928208,
+      "component_minimum_pair": [
+        "U401",
+        "ROOT_UPPER_63_-4"
+      ],
+      "cable_post_minimum_clearance_mm": 0.1396742075679802,
+      "moving_shoe_base_minimum_clearance_mm": 0.1599999999999966,
+      "coverage": "153 bodies,5 mated/service rectangles,SMA service,hot transfer shoe and605 cable segments against carrier solids,base,landings and M3 head envelopes.",
+      "scope": "Conservative rigid assembled pose and declared shape/tolerance envelopes; not flexible-cable/PCB/locator dynamics."
+    },
+    "frame_refinement": {
+      "element_lengths_mm": [
+        0.1,
+        0.05
+      ],
+      "maximum_observed_maximum_displacement_difference_mm": 1.8e-05,
+      "modulus_GPa": 80,
+      "leaf_thickness_um": 20,
+      "scope": "Independent linear common-centerline solver refinement. Separate force material corner is140GPa/22um. No material elasticity is established."
+    },
+    "effectivity": {
+      "normalized_footprint_pose_count": 199,
+      "pose_differences": 0,
+      "PCB_source_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+      "body_rows": 153
+    },
+    "nominal_support_path": "All four post bases retain positive contact with the C06 base. Relieved root-bearing region is supported by the remaining post; no unsupported outer strip is retained.",
+    "source_fixture_checks": {
+      "body_locator_checks": 8109,
+      "reported_locator_minimum_component_clearance_mm": 0.13106681050451496,
+      "intended_mating_plane_bounding_overlaps_retained": [
+        {
+          "part": "W03_UPPER_FREE",
+          "obstacle": "UPPER_LANDING",
+          "overlap_mm3": 7.029786867168014,
+          "mating_plane_review": true
+        },
+        {
+          "part": "W03_LOWER_FREE",
+          "obstacle": "LOWER_LANDING",
+          "overlap_mm3": 7.029786867168027,
+          "mating_plane_review": true
+        },
+        {
+          "part": "T04_FREE",
+          "obstacle": "CENTRAL_LANDING",
+          "overlap_mm3": 2.9653264848564143,
+          "mating_plane_review": true
+        }
+      ],
+      "non_mating_free_carrier_hits": []
+    }
+  },
+  "conditional_structural_demands": {
+    "largest_root_force_only_Kt3_MPa": 143.03639608414466,
+    "minimum_root_contact_area_mm2": 2.1449999999999996,
+    "largest_root_bearing_MPa": 20.09603516397898,
+    "specified_hot_laminate_flexural_requirement_MPa": 150,
+    "specified_bearing_requirement_MPa": 50,
+    "largest_common_centerline_leaf_fiber_demand_MPa": 131.55076135343737,
+    "scope": "Force-only root/bearing screens satisfy their declared numerical allocations. Complete root/joint/locator structural acceptance and leaf elastic validity remain open."
+  },
+  "retained_open_conditions": [
+    "Per-leaf hot yield, finite displacement, interleaf friction/contact, fatigue and out-of-plane motion. The131.55MPa common-centerline central cold-end demand is a demand, not an allowable.",
+    "Hot/cold end moments, joint peel/rotation, shoe leverage, full mount reaction distribution, landing restraint, locator compliance and impact.",
+    "Foil procurement/forming/weld isolation,20\u201322um thickness, material properties at actual local temperatures, thermal contact/joint resistance and retained M2 preload/creep.",
+    "Full landing undersides and welded-footprint projections must stay<=70C at4.815W; bolt-site temperature alone is insufficient. External sink/support and dashboard fit remain unobserved.",
+    "Three intentionally retained mating-plane sweep overlaps are caused by conservative uncorrelated envelope dilation; correlated terminal geometry still requires validation.",
+    "The851 cable60C rating does not cover65C design air. No replacement or rating waiver was introduced.",
+    "All specified shape/tolerance envelopes remain acceptance conditions until demonstrated by actual parts/processes. No physical assembly, fatigue, thermal, installed vehicle or hardware qualification is claimed."
+  ]
+}

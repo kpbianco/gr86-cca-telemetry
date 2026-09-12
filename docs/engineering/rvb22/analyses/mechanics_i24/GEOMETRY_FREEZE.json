@@ -1,0 +1,29 @@
+{
+  "status": "AUTHORED_REWORK_NOT_ACCEPTED",
+  "files": {
+    "ASSEMBLY_C06_W03_T04.scad": "5b6d367fb8a7b5cb9b6c7ee57ec2d1040b5b86d05eec4d909df839b0b912e777",
+    "README.md": "74e4a40a11e88bc020616d39107175a47b003ac2036676b81b90ec0061703a62",
+    "THERMAL_LANDINGS_C06.scad": "8ecdecee0e05540d88666559a7a2306d3178b0e8311d224102f1c281ed944371",
+    "THERMAL_WING_W03.scad": "1794267a85163274b2bf7d41f077a17e4366c3c1f5ce304540e1b706ab174098",
+    "CANDIDATE_SPEC.json": "9bad2756f2c7aca3758713753959d39e49944d478b847006264b53f4297d824c",
+    "THERMAL_CONTACT_T04.scad": "685a9a7d18188e12727365585880a480fe998587e803f92a37acf4ecb8c6ef47",
+    "THERMAL_PATHS.json": "96fce775c289ab63a5e7dc487121da70c793d3a4fe701bdc03f69ec8b085342b",
+    "GR86_RVB_CARRIER_C06.scad": "df45e367e58a9e3c8de0aea1c8eb74bf903ee1cfe647531ca5369fd60a7f0de3"
+  },
+  "source_effectivity": {
+    "source_PCB": "iterations/I24_return_clearance_final/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+    "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+    "native_pose_reference": "runtime/hosted/run26/extracted/native_I06_hosted/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+    "native_pose_reference_sha256": "44121c54ce49ace9c82404726706ef8a8f582ad63a9dad0a29bdd99aa0cad5db",
+    "inherited_body_evidence": "analyses/mated_i22/RESULTS.json",
+    "body_evidence_sha256": "3ec8441da107f011cbc4dc5c09289eac8ed298f871551f406e20b2709769428f",
+    "checked_footprints": 199,
+    "fitted_body_rows": 153,
+    "differences": [],
+    "equivalent_rotations_normalized": true,
+    "coordinate_tolerance_mm": 1e-06,
+    "geometry_spec_sha256": "9bad2756f2c7aca3758713753959d39e49944d478b847006264b53f4297d824c",
+    "scope": "Pose/value/side inheritance binds declared body envelopes. It does not certify manufacturer3D models or physical component placement."
+  },
+  "physical_measurements_claimed": false
+}

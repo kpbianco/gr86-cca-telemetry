@@ -1,0 +1,16 @@
+{
+  "primary_sources": [
+    {
+      "title": "Vishay TNPU e3 data sheet, document 28779, revision 04-Mar-2025",
+      "url": "https://www.vishay.com/docs/28779/tnpue3.pdf",
+      "used_for": "Replacement resistor family handling; no invented numerical MSL or production reflow peak."
+    },
+    {
+      "title": "Espressif ESP32-S3 hardware design guidelines: module antenna positioning",
+      "url": "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/pcb-layout-design.html",
+      "used_for": "End-product housing antenna clearance recommendation of at least 15 mm in all directions; final RF performance not synthesized."
+    }
+  ],
+  "local_source_reference": "5d772f12cb7b7c3fdf40c792726c2e01c8025a73",
+  "numerical_material_inputs": "Thermal conductivity, TIM thickness/interface conductance and bridge dimensions are explicit allocations, not vendor-guaranteed selected materials."
+}

@@ -1,0 +1,120 @@
+{
+  "source_pose_differences": [],
+  "locator_states": 8,
+  "locator_hits": [],
+  "locator_nearest": [
+    {
+      "ref": "U401",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.13106681050451496
+    },
+    {
+      "ref": "U401",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.13106681050451496
+    },
+    {
+      "ref": "J202",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.3505353110546565
+    },
+    {
+      "ref": "J202",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.3505353110546565
+    }
+  ],
+  "root_bearing": [
+    {
+      "center": [
+        6.2,
+        -4
+      ],
+      "minimum_contact_area_mm2": 4.256,
+      "minimum_effective_width_mm": 6.08,
+      "max_root_lever_mm": 1.852845652299403,
+      "one_root_force_only_Kt3_MPa": 114.03045649223276,
+      "max_bearing_MPa": 10.128288399138839,
+      "scope": "All-pose conservative ear core, hole swept void, key motion, outline/fixture tolerance and root-line tilt included; thermal end moments, joint/contact stress and nonlinear impact remain open."
+    },
+    {
+      "center": [
+        63,
+        -4
+      ],
+      "minimum_contact_area_mm2": 2.1449999999999996,
+      "minimum_effective_width_mm": 4.289999999999999,
+      "max_root_lever_mm": 1.6399048563001115,
+      "one_root_force_only_Kt3_MPa": 143.03639608414466,
+      "max_bearing_MPa": 20.09603516397898,
+      "scope": "All-pose conservative ear core, hole swept void, key motion, outline/fixture tolerance and root-line tilt included; thermal end moments, joint/contact stress and nonlinear impact remain open."
+    },
+    {
+      "center": [
+        6.2,
+        45.28735489815251
+      ],
+      "minimum_contact_area_mm2": 4.256000000000017,
+      "minimum_effective_width_mm": 6.08,
+      "max_root_lever_mm": 1.8528465451232778,
+      "one_root_force_only_Kt3_MPa": 114.03051143966665,
+      "max_bearing_MPa": 10.128288399138798,
+      "scope": "All-pose conservative ear core, hole swept void, key motion, outline/fixture tolerance and root-line tilt included; thermal end moments, joint/contact stress and nonlinear impact remain open."
+    },
+    {
+      "center": [
+        63,
+        45.263840607765246
+      ],
+      "minimum_contact_area_mm2": 4.256000000000021,
+      "minimum_effective_width_mm": 6.0800000000000045,
+      "max_root_lever_mm": 1.8528447594755164,
+      "one_root_force_only_Kt3_MPa": 114.03040154479805,
+      "max_bearing_MPa": 10.12828839913879,
+      "scope": "All-pose conservative ear core, hole swept void, key motion, outline/fixture tolerance and root-line tilt included; thermal end moments, joint/contact stress and nonlinear impact remain open."
+    }
+  ],
+  "service_hits": [],
+  "elastic_end_demands": [
+    {
+      "part": "wing",
+      "end": "hot",
+      "bending_moment_Nmm": 24.23143476356018,
+      "fiber_stress_MPa": 79.04991767146646,
+      "leaf_t_mm": 0.022,
+      "load": "\u00b12mm Z,\u00b10.5mm in-plane translation,arbitrary in-plane30g direction",
+      "E_GPa": 140
+    },
+    {
+      "part": "wing",
+      "end": "cold",
+      "bending_moment_Nmm": 25.99092865221193,
+      "fiber_stress_MPa": 84.78989338477142,
+      "leaf_t_mm": 0.022,
+      "load": "\u00b12mm Z,\u00b10.5mm in-plane translation,arbitrary in-plane30g direction",
+      "E_GPa": 140
+    },
+    {
+      "part": "central",
+      "end": "hot",
+      "bending_moment_Nmm": 5.236439429790719,
+      "fiber_stress_MPa": 42.989760520420774,
+      "leaf_t_mm": 0.022,
+      "load": "\u00b12mm Z,\u00b10.5mm in-plane translation,arbitrary in-plane30g direction",
+      "E_GPa": 140
+    },
+    {
+      "part": "central",
+      "end": "cold",
+      "bending_moment_Nmm": 16.023759737924358,
+      "fiber_stress_MPa": 131.55076135343737,
+      "leaf_t_mm": 0.022,
+      "load": "\u00b12mm Z,\u00b10.5mm in-plane translation,arbitrary in-plane30g direction",
+      "E_GPa": 140
+    }
+  ]
+}

@@ -1,3 +1,7 @@
+# Current-source correction: convergence 01
+
+R155 and R156 are TNPU060311K8HWEA00 and TNPU06034K99HWEA00, not the prior TNPW entries. The canonical JSON/CSV have been rebuilt from the actual fitted PCB inventory: 153 fitted references, 74 exact MPNs. No numeric TNPU MSL or production peak was invented. The immutable prior table is preserved in `../convergence_01/support/HANDLING_I22.json`. This is source/process preparation, not an assembler qualification.
+
 The I04 board has 74 fitted manufacturer part numbers and 153 fitted references. All 74 now have a primary-source handling or process-scope entry. Moisture classification is established for 58 part numbers: 28 have numeric MSL values, and 30 have a manufacturer designation of Not Applicable or unlimited floor life. These are component source findings, not 58 assembly acceptance passes.
 
 The remaining 16 numeric classifications are explicitly identified: eight TDK CGA parts, two Panasonic ERA parts, PMEG2010BEA, the GPS module, U.FL, F1, F101 and the local pin headers. Current TDK and Panasonic documents give storage, soldering and cleaning requirements without a numeric MSL. The live Nexperia API advertises an exact PMEG chemical report, but that report could not be retrieved. The other parts retain their specific local or module handling conditions. None is assigned MSL1 by analogy.

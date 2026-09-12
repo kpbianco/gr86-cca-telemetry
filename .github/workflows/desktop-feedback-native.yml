@@ -1,0 +1,77 @@
+name: Desktop convergence candidate native verification
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/desktop-feedback-native.yml'
+      - 'docs/engineering/rvb22/analyses/desktop_wave1/apply_feedback.py'
+      - 'docs/engineering/rvb22/analyses/desktop_wave1/thermal_access.py'
+permissions:
+  contents: read
+concurrency:
+  group: desktop-feedback-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.head_ref == 'codex/rvb24-coordinated-closure' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Build isolated exact-source coordinated candidate
+        run: |
+          mkdir -p feedback_evidence
+          git rev-parse HEAD > feedback_evidence/commit.txt
+          python3 docs/engineering/rvb22/analyses/desktop_wave1/apply_feedback.py --out feedback_evidence/cad
+          python3 docs/engineering/rvb22/analyses/desktop_wave1/thermal_access.py feedback_evidence/cad/GR86_CCA_RevB.kicad_pcb
+      - name: Provision pinned native CAD and firmware tools
+        run: |
+          bash docs/engineering/rvb22/runtime/hosted/setup_native.sh cad
+          bash docs/engineering/rvb22/runtime/hosted/setup_native.sh firmware
+      - name: Verify the exact candidate, all fourteen native postconditions
+        run: |
+          xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/candidate/run_native_candidate.py \
+            --cad-dir feedback_evidence/cad \
+            --firmware-dir docs/engineering/rvb22/candidate/firmware \
+            --output feedback_evidence/native \
+            --kicad-cli kicad-cli --pcbnew-python /usr/bin/python3 \
+            --arduino-cli "${RUNNER_TEMP}/rvb22-native-tools/bin/arduino-cli" \
+            --arduino-config "${RUNNER_TEMP}/rvb22-native-tools/config/arduino-cli.yaml" \
+            --nimble-dir "${RUNNER_TEMP}/rvb22-native-tools/user/libraries/NimBLE-Arduino" \
+            --component-step
+      - name: Preserve verified source as an unreferenced Git blob only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib, json, os, pathlib, urllib.request
+          root=pathlib.Path('feedback_evidence')
+          result=json.loads((root/'native/RESULT.json').read_text())
+          checks=result['output_postconditions']
+          assert result['status']=='NATIVE_OUTPUTS_COMPLETE', result['status']
+          assert result['inputs_unchanged'] is True
+          assert len(checks)==14 and all(v['pass'] for v in checks.values()), checks
+          source=(root/'cad/GR86_CCA_RevB.kicad_pcb').read_bytes()
+          expected='a5a7916f426f455736b02c3b7c4073b066417838758f50ebd199c354d08fb976'
+          assert hashlib.sha256(source).hexdigest()==expected
+          url='https://api.github.com/repos/tranquilWorks/gr86-cca-telemetry/git/blobs'
+          payload=json.dumps({'encoding':'base64','content':base64.b64encode(source).decode()}).encode()
+          request=urllib.request.Request(url,data=payload,method='POST',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'})
+          with urllib.request.urlopen(request,timeout=30) as response: blob=json.load(response)
+          record={'source_sha256':expected,'git_blob_sha':blob['sha'],'native_postconditions':14,'branch_modified':False,'fabrication_release':False}
+          (root/'VERIFIED_SOURCE_BLOB.json').write_text(json.dumps(record,indent=2)+'\n')
+          print(json.dumps(record))
+          PY
+      - name: Preserve source, native reports and failure evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: desktop-feedback-${{ github.event.pull_request.head.sha }}
+          path: feedback_evidence/
+          retention-days: 14
+          if-no-files-found: error

@@ -1,0 +1,33 @@
+{
+  "status": "DESKTOP_RELEASE_ALLOCATION_NOT_HARDWARE_CURRENT_LIMIT",
+  "cpu_mhz": 160,
+  "ble_tx_dbm": 3,
+  "wifi_allowed": false,
+  "ble_notification_budget_per_s": 120,
+  "u201_current_allocation_A": 0.45,
+  "u201_voltage_bound_V": 3.443,
+  "u201_heat_allocation_W": 1.54935,
+  "converter_efficiency_floor": 0.80,
+  "u151_loss_allocation_W": 0.3873375,
+  "gps_5v_allocation_W": 0.101,
+  "oil_5v_allocation_W": 0.165,
+  "other_5v_allocation_W": 0.13,
+  "u121_output_burden_W": 2.3326875,
+  "u121_conversion_loss_W": 0.583171875,
+  "u121_magnetic_headroom_W": 0.025,
+  "u121_heat_allocation_W": 0.608171875,
+  "release_total_heat_allocation_W": 2.940859375,
+  "previous_total_heat_stress_W": 4.815,
+  "previous_u201_heat_stress_W": 2.58225,
+  "rationale": "The release thermal budget is power-flow coupled instead of forcing the historical model to a fixed total heat. U201 receives the 0.45 A release allocation at 3.443 V. U151 and U121 retain the conservative 80% conversion-efficiency allocation and are recomputed at the reduced release load. U121 additionally retains 25 mW magnetic headroom. GPS, oil/analog and other 5 V allocations are unchanged. The old 4.815 W case remains a stress sensitivity, not the release steady-state heat vector.",
+  "invalidators": [
+    "CPU frequency above 160 MHz",
+    "BLE transmit power above +3 dBm",
+    "Wi-Fi initialization or use",
+    "materially increased radio duty or removal of the 120/s notification budget",
+    "measured sustained main-profile current above 0.45 A under the release workload",
+    "measured converter efficiency below the 80% allocation in the release operating region"
+  ],
+  "hardware_capacity_A": 0.75,
+  "hardware_capacity_note": "The 0.75 A main-rail design capacity and 4.815 W historical thermal vector remain transient/electrical stress sensitivities. They are not release steady-state operating allocations."
+}

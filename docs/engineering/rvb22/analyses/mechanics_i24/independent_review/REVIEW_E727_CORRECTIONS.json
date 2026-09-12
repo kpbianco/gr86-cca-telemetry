@@ -1,0 +1,93 @@
+{
+  "reviewer": "independent_mechanics_check",
+  "status": "CORRECTION_REQUIRED_ON_FROZEN_E727_SOURCE",
+  "reviewed_at_UTC": "2026-09-10T16:27:29.348126+00:00",
+  "geometry_spec_sha256": "e72723eb925d52410eb4324c0647d6505b0417ded270906a43136e718cbea788",
+  "file_sha256": {
+    "iterations/I24_thermal_mechanics/candidate_mechanics/ASSEMBLY_C06_W03_T04.scad": "5b6d367fb8a7b5cb9b6c7ee57ec2d1040b5b86d05eec4d909df839b0b912e777",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/README.md": "63fb038740b21e197be6598527072770ea9f35c242f5f35bdb1fd242b9ba125e",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_LANDINGS_C06.scad": "8ecdecee0e05540d88666559a7a2306d3178b0e8311d224102f1c281ed944371",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_WING_W03.scad": "1794267a85163274b2bf7d41f077a17e4366c3c1f5ce304540e1b706ab174098",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/CANDIDATE_SPEC.json": "e72723eb925d52410eb4324c0647d6505b0417ded270906a43136e718cbea788",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_CONTACT_T04.scad": "685a9a7d18188e12727365585880a480fe998587e803f92a37acf4ecb8c6ef47",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/THERMAL_PATHS.json": "96fce775c289ab63a5e7dc487121da70c793d3a4fe701bdc03f69ec8b085342b",
+    "iterations/I24_thermal_mechanics/candidate_mechanics/GR86_RVB_CARRIER_C06.scad": "a5d568e5dbc50db8a6815841239521bf7d4d154b6818224a35392520c5b9057a",
+    "analyses/mechanics_i24/FRAME_RESULTS.json": "bad65d519171f13666323786a32b2cdf018a8332a5f776e59910ed2aebda8d89",
+    "analyses/mechanics_i24/LOCATING_MOTION.json": "4a87eaa9f59974a35cb372825eacaa6d1644f5717841f5f14d0ed83d088f78d8",
+    "analyses/mechanics_i24/JOINT_AND_ELASTIC_DEMANDS.json": "842b2f598588497f420560325bd883fe56505a1c965fcab6de3dc5961ea439d1",
+    "analyses/mechanics_i24/SOURCE_EFFECTIVITY.json": "086efed1eaaf5672ca5879f691a826866d9f76a218c269c980537d807c84c3e3",
+    "analyses/mechanics_i24/ASSEMBLY_CLEARANCE.json": "048ebbe32be0640db0daa576414cc3e6f164e5d3ded73394a08942d8c8881453"
+  },
+  "source_or_register_modified": false,
+  "physical_qualification_claimed": false,
+  "preserved_bounds": {
+    "air_C": 65,
+    "landing_C": 70,
+    "heat_W": 4.815,
+    "minimum_antenna_metal_exclusion_mm": 15
+  },
+  "resolved_in_this_candidate": [
+    "Replaced reverse-tangent T03 geometry with tangent-continuous T04 and explicit hot shoe.",
+    "Separated rigid welded terminals from genuinely free foil lengths; individual offset leaf free lengths exceed20mm.",
+    "Refined all frame elements to<=0.1mm and separated maximum force from minimum thickness/modulus displacement corners.",
+    "Exported hot/cold end moments and retained elastic/yield, moment-transfer and nonlinear limits as open.",
+    "Added independent insulating edge keys instead of treating loose bolt sleeves as XY locators.",
+    "Required entire landing underside including welded-packet footprint<=70C and included landing through-thickness conduction in joint allocation.",
+    "Added full cap/post/hardware projection data and source-pose inheritance evidence."
+  ],
+  "blocking_findings": [
+    {
+      "id": "IMR-01",
+      "finding": "The LOCATING_MOTION body/service sweep unions only vertex-pose polygons; it does not enclose the intermediate convex set.",
+      "required_correction": "For each convex rectangle take convex hull across vertex poses plus justified nonlinear padding; use per-segment hulls for a nonconvex cable route.",
+      "independent_result": "Convex-hull rectangle/body/hot-shoe checks pass at this source; U401 minimum0.1310668105mm and moving hot-shoe/base minimum0.19mm."
+    },
+    {
+      "id": "IMR-02",
+      "finding": "LOCATING_MOTION excludes the851 cable. Including its board-following location envelope intersects POST_63_-4.",
+      "direct_pose": {
+        "translation_mm": [
+          -0.35,
+          -0.35
+        ],
+        "rotation_rad": 0
+      },
+      "direct_pose_overlap_mm3": 0.8547913769972383,
+      "direct_pose_overlap_XY_bounds_mm": [
+        64.7008343170393,
+        -1.288849300563191,
+        65.15,
+        -0.05
+      ],
+      "swept_segment_hull_overlap_mm3": 0.8947315559608374,
+      "required_correction": "Relieve the support/cable edge and verify the new support load path, or author and bound fixed clips plus connector-to-clip free motion. Current unspecified clips do not prove clearance."
+    },
+    {
+      "id": "IMR-03",
+      "finding": "Root lever sweep follows only the root center, excluding tilt across the bearing width.",
+      "required_correction": "Bound signed distance from the whole bearing band to the transformed root line; retain full joint/mount acceptance open."
+    }
+  ],
+  "independent_numeric_checks": {
+    "fine_mesh_maximum_reported_displacement_delta_mm": 1.8e-05,
+    "fine_meshes_mm": [
+      0.1,
+      0.05
+    ],
+    "fine_mesh_scope": "Linear common-centerline frame at20um and80GPa; does not establish elastic material validity.",
+    "footprint_pose_count": 199,
+    "normalized_pose_differences": 0,
+    "PCB_source_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+    "shortest_offset_free_span_mm": {
+      "wing": 23.67218484813626,
+      "central": 22.39710232973562
+    }
+  },
+  "retained_open_conditions": [
+    "Per-leaf hot yield, finite displacement, interleaf friction/contact, fatigue and out-of-plane motion. Common-centerline central cold-end demand131.550761MPa is not an allowable.",
+    "Joint peel, end moments, shoe leverage, landing rotational restraint, full mount reactions, locator compliance and impact.",
+    "Procurement/process verification of foil thickness, temper, weld isolation, thermal conductivity, joint resistance, laminate hot properties and retained M2 preload.",
+    "Actual installed landing temperature, external support, cavity fit, connector/cable retention and physical qualification.",
+    "Adafruit85160C rating remains below65C design air; no passive mechanical revision resolves it."
+  ]
+}

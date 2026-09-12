@@ -1,0 +1,48 @@
+{
+  "basis": "Actual In1 GND finite-volume restricted-subset resistance,150C/24um;10% numerical/spreading inflation; source return trace2mm by0.6mm with0.06mm total etch and50um copper; max board1.76mm /15um barrel; one source B-In1 and one load F-In1 barrel. All other planes and parallel grounds omitted.",
+  "source_to_load_ground_upper_ohm": 0.012554196212606762,
+  "shared_return_allocation_ohm": 0.015,
+  "C206_to_load_plane_plus_load_barrel_upper_ohm": 0.010709594951036672,
+  "C206_ground_spreading_allocation_ohm": 0.011,
+  "note": "C206 ground-side barrel and2.8mm front return trace are already included in its explicit lead contract, so are not counted again here. The restricted single-plane screen is a numerical engineering bound with stated inflation, not an exact continuum theorem.",
+  "status": "PASS_RETAINED_POWER_RETURN_ALLOCATIONS",
+  "original_contract": {
+    "basis": "Actual In1 GND finite-volume restricted-subset resistance,150C/24um;10% numerical/spreading inflation; source return trace2mm by0.6mm with0.06mm total etch and50um copper; max board1.76mm /15um barrel; one source B-In1 and one load F-In1 barrel. All other planes and parallel grounds omitted.",
+    "source_to_load_ground_upper_ohm": 0.013278577402052183,
+    "shared_return_allocation_ohm": 0.015,
+    "C206_to_load_plane_plus_load_barrel_upper_ohm": 0.010709491383525144,
+    "C206_ground_spreading_allocation_ohm": 0.011,
+    "note": "C206 ground-side barrel and2.8mm front return trace are already included in its explicit lead contract, so are not counted again here. The restricted single-plane screen is a numerical engineering bound with stated inflation, not an exact continuum theorem."
+  },
+  "filled_PCB_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "method": "Recompute actual In1 restricted copper including all via/PTH/NPTH bores at 0.1 and 0.075 mm; retain original trace/barrel terms after exact terminal/stack geometry identity check; use larger mesh resistance and original 10% inflation.",
+  "terminal_geometry_signature_sha256": "b2c1a7dda52b0db3d72b742841ed25a0aebbbfe84c0aa3bda5df5506f3e877cc",
+  "terms": [
+    {
+      "contract_key": "source_to_load_ground_upper_ohm",
+      "retained_nonplane_ohm": 0.005431171501799264,
+      "mesh_plane_values_ohm": [
+        0.00631136421901926,
+        0.006475477009824997
+      ],
+      "credited_plane_ohm": 0.006475477009824997,
+      "numerical_multiplier": 1.1,
+      "margin_ohm": 0.0024458037873932373,
+      "pass_allocation": true
+    },
+    {
+      "contract_key": "C206_to_load_plane_plus_load_barrel_upper_ohm",
+      "retained_nonplane_ohm": 0.0007710917534874996,
+      "mesh_plane_values_ohm": [
+        0.008809864470810915,
+        0.009035002906862884
+      ],
+      "credited_plane_ohm": 0.009035002906862884,
+      "numerical_multiplier": 1.1,
+      "margin_ohm": 0.00029040504896332697,
+      "pass_allocation": true
+    }
+  ],
+  "physical_tests_claimed": 0
+}

@@ -1,0 +1,2 @@
+-r ../convergence_01/requirements.txt
+pyamg==5.3.0

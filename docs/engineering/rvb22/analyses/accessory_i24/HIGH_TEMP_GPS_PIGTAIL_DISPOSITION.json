@@ -1,0 +1,47 @@
+{
+  "status": "CANDIDATE_SUBSTITUTION_SELECTED_FOR_VALIDATION_NOT_RELEASED",
+  "rejected_release_baseline": {
+    "manufacturer": "Adafruit",
+    "product_id": 851,
+    "function": "SMA to U.FL/MHF adapter cable",
+    "operating_temperature_C": [-10, 60],
+    "retained_design_bulk_air_C": 65,
+    "retained_landing_C": 70,
+    "disposition": "REJECTED_FOR_65C_RELEASE_ENVIRONMENT",
+    "reason": "The component operating ceiling is below the retained minimum environmental boundary; passive thermal improvement cannot resolve the requirements conflict."
+  },
+  "selected_validation_candidate": {
+    "manufacturer": "Samtec",
+    "manufacturer_part_number": "MH113-MH1RP-01SB1-0150",
+    "end_1": "MHF1 type plug, right angle, U.FL-type interface",
+    "end_2": "01SB1 standard-polarity SMA straight jack, sealed bulkhead",
+    "length_mm_nominal": 150,
+    "cable_OD_mm": 1.13,
+    "impedance_ohm": 50,
+    "frequency_max_GHz": 6,
+    "operating_temperature_C": [-40, 90],
+    "minimum_bend_radius_mm": 6.8,
+    "end_2_drawing": "SMA-J-C-X-ST-SB4",
+    "interface_target": "Adafruit 960 standard SMA",
+    "selection_reason": "Preserves MHF1/U.FL-to-standard-SMA function and nominal length while exceeding the retained 65C environment requirement."
+  },
+  "sources": [
+    "https://www.adafruit.com/product/851",
+    "https://cdn-shop.adafruit.com/product-files/851/C934-001_datasheet.pdf",
+    "https://www.adafruit.com/product/960",
+    "https://www.samtec.com/products/mh113-mh1rp-mh1rp-0150",
+    "https://suddendocs.samtec.com/prints/mhxxx-xxxxx-xxxxxx-xxxx-mkt.pdf",
+    "https://suddendocs.samtec.com/prints/sma-j-c-x-st-sb4-mkt.pdf",
+    "https://www.digikey.com/en/products/detail/samtec-inc/MH113-MH1RP-01SB1-0150/6691530"
+  ],
+  "criterion_effect": {
+    "GPS-09": "OPEN_ELECTRICAL_ACCEPTANCE_REMAINS",
+    "GPS-14": "OPEN_EXACT_MECHANICAL_RETENTION_AND_SERVICE_REMAIN",
+    "CFG-09": "OPEN_INSTALLED_CONFIGURATION_RECORD_REMAINS",
+    "thermal_accessory_conflict": "KNOWN_851_60C_CONFLICT_REMOVED_FROM_SELECTED_DESIGN_PATH"
+  },
+  "next_action": "Substitute the exact Samtec assembly into the mechanical model and rerun cable-motion, bulkhead, strain-relief, service, and RF-setback checks before acceptance.",
+  "pcb_change_required": false,
+  "physical_test_claimed": false,
+  "release_authorized": false
+}

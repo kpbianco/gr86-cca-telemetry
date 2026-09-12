@@ -1,0 +1,91 @@
+{
+  "status": "PASS_ELECTRICAL_CHAIN_AND_FINITE_CURRENT_BOUND_OPTICAL_ACCEPTANCE_SEPARATE",
+  "rows": [
+    {
+      "resistor": "R601",
+      "LED": "D601",
+      "signal": "PWR",
+      "GPIO": 15,
+      "U201_pad": "8",
+      "R_min_ohm": 970.1999999999999,
+      "R_max_ohm": 1030.2,
+      "hard_current_upper_mA": 3.710575139146568,
+      "resistor_power_upper_mW": 13.358070500927644,
+      "brightness_lower_bound_mcd": 0,
+      "brightness_note": "No guaranteed positive luminance can be deduced at this low-current operating point from the available limits. This is not a claimed optical pass."
+    },
+    {
+      "resistor": "R602",
+      "LED": "D602",
+      "signal": "BLE",
+      "GPIO": 6,
+      "U201_pad": "6",
+      "R_min_ohm": 970.1999999999999,
+      "R_max_ohm": 1030.2,
+      "hard_current_upper_mA": 3.710575139146568,
+      "resistor_power_upper_mW": 13.358070500927644,
+      "brightness_lower_bound_mcd": 0,
+      "brightness_note": "No guaranteed positive luminance can be deduced at this low-current operating point from the available limits. This is not a claimed optical pass."
+    },
+    {
+      "resistor": "R603",
+      "LED": "D603",
+      "signal": "CAN",
+      "GPIO": 7,
+      "U201_pad": "7",
+      "R_min_ohm": 970.1999999999999,
+      "R_max_ohm": 1030.2,
+      "hard_current_upper_mA": 3.710575139146568,
+      "resistor_power_upper_mW": 13.358070500927644,
+      "brightness_lower_bound_mcd": 0,
+      "brightness_note": "No guaranteed positive luminance can be deduced at this low-current operating point from the available limits. This is not a claimed optical pass."
+    },
+    {
+      "resistor": "R604",
+      "LED": "D604",
+      "signal": "GPS",
+      "GPIO": 8,
+      "U201_pad": "12",
+      "R_min_ohm": 970.1999999999999,
+      "R_max_ohm": 1030.2,
+      "hard_current_upper_mA": 3.710575139146568,
+      "resistor_power_upper_mW": 13.358070500927644,
+      "brightness_lower_bound_mcd": 0,
+      "brightness_note": "No guaranteed positive luminance can be deduced at this low-current operating point from the available limits. This is not a claimed optical pass."
+    },
+    {
+      "resistor": "R605",
+      "LED": "D605",
+      "signal": "SYS",
+      "GPIO": 10,
+      "U201_pad": "18",
+      "R_min_ohm": 970.1999999999999,
+      "R_max_ohm": 1030.2,
+      "hard_current_upper_mA": 3.710575139146568,
+      "resistor_power_upper_mW": 13.358070500927644,
+      "brightness_lower_bound_mcd": 0,
+      "brightness_note": "No guaranteed positive luminance can be deduced at this low-current operating point from the available limits. This is not a claimed optical pass."
+    },
+    {
+      "resistor": "R606",
+      "LED": "D606",
+      "signal": "OIL",
+      "GPIO": 9,
+      "U201_pad": "17",
+      "R_min_ohm": 970.1999999999999,
+      "R_max_ohm": 1030.2,
+      "hard_current_upper_mA": 3.710575139146568,
+      "resistor_power_upper_mW": 13.358070500927644,
+      "brightness_lower_bound_mcd": 0,
+      "brightness_note": "No guaranteed positive luminance can be deduced at this low-current operating point from the available limits. This is not a claimed optical pass."
+    }
+  ],
+  "all_six_current_upper_mA": 22.263450834879407,
+  "allocation_notes": [
+    "3.6V operating ceiling; LED Vf is conservatively set to zero for the current upper bound.",
+    "Resistor minimum includes 1% initial tolerance and an additional 2% thermal decrease, an engineering allowance rather than a measured resistor temperature.",
+    "Current upper bounds do not assert a guaranteed loaded GPIO high voltage or light output."
+  ],
+  "respin_disposition": "Existing current-limited standard 0603 resistor/LED footprints permit assembly-value or optical-bin tuning without a new PCB layout. No brightness-dependent safety or measurement function is credited.",
+  "original_WCA_07_closed": false
+}

@@ -1,0 +1,71 @@
+{
+  "source_filled_pcb_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "analyzer_sha256": "cc2e71bc98db5d157d4224a9d4eb00b22f73b73027b3c127397b88468ee2d7a1",
+  "terminal_geometry_signature_sha256": "b2c1a7dda52b0db3d72b742841ed25a0aebbbfe84c0aa3bda5df5506f3e877cc",
+  "explicit_footprint_bores_removed": 26,
+  "total_bores_removed": 348,
+  "removed_drill_copper_area_mm2": 13.0961230238172,
+  "layer": "In1.Cu",
+  "temperature_C": 150,
+  "copper_um": 24,
+  "sheet_R_ohm": 0.0010853298333333332,
+  "rows": [
+    {
+      "mesh_mm": 0.1,
+      "status": "SOLVED_RESTRICTED_GROUND_SUBSET",
+      "nodes": 402736,
+      "retained_area_mm2": 4027.3600000000006,
+      "ports": {
+        "source_via": 226238,
+        "load_EP_via": 207960,
+        "C206_ground_via": 13620
+      },
+      "measurements": [
+        {
+          "from": "source_via",
+          "to": "load_EP_via",
+          "restricted_plane_R_ohm": 0.00631136421901926,
+          "max_KCL_residual_A": 1.7766565996168993e-11
+        },
+        {
+          "from": "C206_ground_via",
+          "to": "load_EP_via",
+          "restricted_plane_R_ohm": 0.008809864470810915,
+          "max_KCL_residual_A": 2.3575807972520124e-11
+        }
+      ]
+    },
+    {
+      "mesh_mm": 0.075,
+      "status": "SOLVED_RESTRICTED_GROUND_SUBSET",
+      "nodes": 720650,
+      "retained_area_mm2": 4053.65625,
+      "ports": {
+        "source_via": 405731,
+        "load_EP_via": 370355,
+        "C206_ground_via": 23436
+      },
+      "measurements": [
+        {
+          "from": "source_via",
+          "to": "load_EP_via",
+          "restricted_plane_R_ohm": 0.006475477009824997,
+          "max_KCL_residual_A": 1.0794920513035322e-11
+        },
+        {
+          "from": "C206_ground_via",
+          "to": "load_EP_via",
+          "restricted_plane_R_ohm": 0.009035002906862884,
+          "max_KCL_residual_A": 1.4999557151895715e-11
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Includes only actual In1 ground subset. No removed copper, layer parallel paths or extra contacts are credited.",
+    "No disconnected pieces are joined within a cell. All cells fit entirely in source copper by half-diagonal erosion.",
+    "Point current injection represents one retained cell of the actual via land. Via barrels and source/terminal tracks are added separately.",
+    "Numerical centre-to-centre finite volume is not a strict continuum upper-bound theorem; use two-mesh result and explicit numerical margin."
+  ]
+}

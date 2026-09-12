@@ -1,0 +1,413 @@
+{
+  "iteration": "I24",
+  "status": "PASS_NATIVE_CAD_AND_TARGET_BUILD",
+  "source_commit": "49e5aaf04127c61ab0b967150a24e59a57323872",
+  "source_tree": "dfe2a0452c7421dbe66050d0325765bd7d3e3b9e",
+  "run": 34499455561,
+  "run_number": 28,
+  "run_attempt": 1,
+  "job": 102946245124,
+  "artifact": 10161339481,
+  "artifact_sha256": "6c8d1f6f047cdfb7859013e4d93d325e42ac92a04aba0f382c8fc1a831eb4a35",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "filled_PCB_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+  "native_folder": "runtime/hosted/run28/extracted/native_I06_hosted",
+  "native_findings": 0,
+  "postconditions_passed": 14,
+  "output_postconditions": {
+    "refilled_copper": {
+      "pass": true,
+      "details": {
+        "copper_zones": 20,
+        "zone_layer_pairs": 20,
+        "saved_filled_polygon_count": 78,
+        "details": [
+          {
+            "uuid": "134c9ab9-e117-5eaf-98d2-b4abd2832612",
+            "net": "GND",
+            "layer": "F.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.5929971452975
+          },
+          {
+            "uuid": "3e129aa9-5bc5-4696-8564-1325ebdf93be",
+            "net": "OIL_EFUSE_RTN",
+            "layer": "F.Cu",
+            "outline_count": 2,
+            "outer_area_mm2": 7.835632861386472
+          },
+          {
+            "uuid": "51d0ea03-7216-4543-9f4b-5e8c626ddbbe",
+            "net": "GND",
+            "layer": "F.Cu",
+            "outline_count": 24,
+            "outer_area_mm2": 2010.167698724091
+          },
+          {
+            "uuid": "80694fcd-4224-5db7-ad66-b41a97d530c4",
+            "net": "GND",
+            "layer": "F.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 71.59243138982043
+          },
+          {
+            "uuid": "dd323d65-0713-5686-a3cb-1ab14aced4cb",
+            "net": "GND",
+            "layer": "F.Cu",
+            "outline_count": 2,
+            "outer_area_mm2": 429.9975395583467
+          },
+          {
+            "uuid": "025f3d28-cee6-5603-b502-cc856bf65ad7",
+            "net": "GND",
+            "layer": "B.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 80.18331679357615
+          },
+          {
+            "uuid": "2838a140-f9bc-4f26-80b8-7066701e2a62",
+            "net": "OIL_EFUSE_RTN",
+            "layer": "B.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 16.98989707030401
+          },
+          {
+            "uuid": "2cbe24e5-7152-51c6-872a-dcf9024643b0",
+            "net": "GND",
+            "layer": "B.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 433.14633464544727
+          },
+          {
+            "uuid": "4d3a0773-3148-5ce0-9317-b6d911b544a3",
+            "net": "GND",
+            "layer": "B.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.5929971452975
+          },
+          {
+            "uuid": "fd2d6539-43cc-4d0e-9c86-2c8de69b05fb",
+            "net": "GND",
+            "layer": "B.Cu",
+            "outline_count": 31,
+            "outer_area_mm2": 2169.9385002799386
+          },
+          {
+            "uuid": "93e88f7c-8fff-4c7f-b1d5-661fb50aaf19",
+            "net": "OIL_EFUSE_RTN",
+            "layer": "In1.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 16.98989707030401
+          },
+          {
+            "uuid": "b0888c9d-194c-56f7-9068-c1c90cdcd80c",
+            "net": "GND",
+            "layer": "In1.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.5929971452975
+          },
+          {
+            "uuid": "b9e12855-9aff-553f-899d-e044269f5078",
+            "net": "GND",
+            "layer": "In1.Cu",
+            "outline_count": 2,
+            "outer_area_mm2": 62.79558622163778
+          },
+          {
+            "uuid": "e8b9068f-470c-537d-af54-6c229a10635d",
+            "net": "GND",
+            "layer": "In1.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.94948101564154
+          },
+          {
+            "uuid": "f5ad958c-f9cd-468c-9e6c-951ecb335b1e",
+            "net": "GND",
+            "layer": "In1.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 3206.7453897760142
+          },
+          {
+            "uuid": "2fe17068-db9d-535b-90bb-c97bd3281718",
+            "net": "GND",
+            "layer": "In2.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.5929971452975
+          },
+          {
+            "uuid": "3d6f56bf-8bca-55af-9494-76e5a3ae62ec",
+            "net": "GND",
+            "layer": "In2.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 435.94948101564154
+          },
+          {
+            "uuid": "52337a10-bc47-4de1-8eb5-c1a2aa4c9592",
+            "net": "GND",
+            "layer": "In2.Cu",
+            "outline_count": 3,
+            "outer_area_mm2": 3097.9976156251428
+          },
+          {
+            "uuid": "7127fb96-ee09-43d1-976f-58e8e95c3b43",
+            "net": "OIL_EFUSE_RTN",
+            "layer": "In2.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 16.98989707030401
+          },
+          {
+            "uuid": "ca831ba5-947a-55c3-b79f-e0f2a1053129",
+            "net": "GND",
+            "layer": "In2.Cu",
+            "outline_count": 1,
+            "outer_area_mm2": 80.18331679357615
+          }
+        ]
+      }
+    },
+    "erc_report": {
+      "pass": true,
+      "details": {
+        "findings": 0,
+        "errors": 0,
+        "warnings": 0,
+        "exclusions": 0
+      }
+    },
+    "drc_report": {
+      "pass": true,
+      "details": {
+        "findings": 0,
+        "errors": 0,
+        "warnings": 0,
+        "exclusions": 0
+      }
+    },
+    "schematic_netlist": {
+      "pass": true,
+      "details": {
+        "components": 195,
+        "nets": 133
+      }
+    },
+    "pcb_netlist": {
+      "pass": true,
+      "details": {
+        "test_records": 839
+      }
+    },
+    "requested_gerbers": {
+      "pass": true,
+      "details": {
+        "F.Cu": "GR86_CCA_RevB-F_Cu.gtl",
+        "In1.Cu": "GR86_CCA_RevB-In1_Cu.g1",
+        "In2.Cu": "GR86_CCA_RevB-In2_Cu.g2",
+        "B.Cu": "GR86_CCA_RevB-B_Cu.gbl",
+        "F.Mask": "GR86_CCA_RevB-F_Mask.gts",
+        "B.Mask": "GR86_CCA_RevB-B_Mask.gbs",
+        "F.Paste": "GR86_CCA_RevB-F_Paste.gtp",
+        "B.Paste": "GR86_CCA_RevB-B_Paste.gbp",
+        "F.SilkS": "GR86_CCA_RevB-F_Silkscreen.gto",
+        "B.SilkS": "GR86_CCA_RevB-B_Silkscreen.gbo",
+        "Edge.Cuts": "GR86_CCA_RevB-Edge_Cuts.gm1"
+      }
+    },
+    "separate_drills": {
+      "pass": true,
+      "details": {
+        "Plated": "GR86_CCA_RevB-PTH.drl",
+        "NonPlated": "GR86_CCA_RevB-NPTH.drl"
+      }
+    },
+    "schematic_bom": {
+      "pass": true,
+      "details": {
+        "rows": 153,
+        "columns": [
+          "Reference",
+          "Value",
+          "Footprint",
+          "Manufacturer",
+          "MPN",
+          "LCSC",
+          "Quantity"
+        ]
+      }
+    },
+    "component_positions": {
+      "pass": true,
+      "details": {
+        "rows": 151,
+        "columns": [
+          "Ref",
+          "Val",
+          "Package",
+          "PosX",
+          "PosY",
+          "Rot",
+          "Side"
+        ]
+      }
+    },
+    "schematic_pdf": {
+      "pass": true,
+      "details": {
+        "bytes": 1774661,
+        "sha256": "6c36df04a8e36086c44917079aea7924849670cdf93b02806c66a25c4722e1c5"
+      }
+    },
+    "component_step_file": {
+      "pass": true,
+      "details": {
+        "bytes": 3531338,
+        "sha256": "8d5f1f400d692d86a1e3c044a8fc54e9f58e9e530b59ffcc120d22d64b048cc6"
+      }
+    },
+    "component_model_log": {
+      "pass": true,
+      "details": {
+        "missing_model_log_entries": 0,
+        "scope": "Exporter log only; source model presence and envelope correctness remain separate checks."
+      }
+    },
+    "fitted_component_step_inventory": {
+      "pass": true,
+      "details": {
+        "fitted_count": 153,
+        "exporter_added_count": 153,
+        "step_occurrence_reference_count": 154,
+        "all_fitted_present": true,
+        "expected_inventory_sha256": "087ff2fdf0f3d8d45b508277863fc8a830b78d1d002d22966811328ccc7de82e",
+        "scope": "Native STEP inclusion only. Explicit envelope models remain envelopes, and solder/cable/installed bounds are checked separately."
+      }
+    },
+    "firmware_artifacts": {
+      "pass": true,
+      "details": {
+        "elf": {
+          "bytes": 12757508,
+          "sha256": "cc06b9e97788b5fa2063550d6fbbd44f1855bd8784d1e1ae1ce354507929dd19"
+        },
+        "app_bin": {
+          "bytes": 683856,
+          "sha256": "d4b27d34a89e6b1d86eb4bb59e0fd9c423df7d4a322a159ce67b175b605fb558"
+        }
+      }
+    }
+  },
+  "source_CAD_files": {
+    "LEDs_Status.kicad_sch": "62919551d080dc2172fb7f6894287fbf606264cf2a185d8e7480ac66f78d9a6e",
+    "GR86_CCA_RevB.kicad_prl": "4a3e8bf6f0f966c07be53473d0d7162aa6e1c144cf48237c3c29a8ef0cf0e78e",
+    "RVB22_POWER_CANDIDATE_ONLY.txt": "5f5d506776d25fad066c6c63591de12e4a791c4d2f3d636e933943f1a5781f07",
+    "FITTED_REFERENCES.json": "087ff2fdf0f3d8d45b508277863fc8a830b78d1d002d22966811328ccc7de82e",
+    "Oil_Pressure.kicad_sch": "de0c8f81adbcb074200e27a78609317bd0667109c7538589fed6a4b4b9f59c27",
+    "GPS.kicad_sch": "55a9d87b7fac9f5c218104c7d5f063411c8f9ac93436b913c260918982f7ecaf",
+    "CANDIDATE_README.md": "a4f2e6a6dde9036ff0186344769c0d4065770665c8e294c9098fee62c299d212",
+    "GR86_CCA_RevB.kicad_sch": "3993d2b279b3041cf1ea64515656e1980fd30249d07c9c3b9c3a0f36e5c3b281",
+    "Input_Protection.kicad_sch": "70ac2de994a57b58859715b221f4d99d937cd88fede81c529ccb0132ed964ebd",
+    "GR86_CCA_RevB.kicad_pcb": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+    "GR86_CCA_RevB.kicad_dru": "156050fc0fd321f299a2db28d9cda78f453029e537d201247cc71d9abf7d65da",
+    "Power_3V3.kicad_sch": "ed6c299b48849ba2eec5e8e197d8b64daa3e782f5aa9ad64bfe2ea9e64ef1019",
+    "ESP32.kicad_sch": "147b31aade61f7c367abd0e7c41ee76c3be494cd76d027472c710bcfaa311060",
+    "sym-lib-table": "4668006fdd85a6fbfd2e8d258275ac0881c762a223afce22626785f03b2c718f",
+    "Test_Points.kicad_sch": "b6263cca62138a2d94ee13314f1163d50c92c5d8e27f48cb935fb0e38b539ba4",
+    "GR86_CCA_RevB.kicad_pro": "52d0a52f7bb8ae57320f6d059c3539fd628a3cb9c84d66192c2cf9916142171f",
+    "fp-lib-table": "7b517306e8b610c928fc6371b9c96d9d2df8fbad166a38894c914d7b8bb51fc7",
+    "Programming_Debug.kicad_sch": "486de6f9c5b7d04bba917926c68ba5ea9dbc3d4116f4a3578988283b7a2fe61f",
+    "CAN.kicad_sch": "ea1c080399a0066b8ff71deea8e129f5b3515e3787fed44052969215f2e5e1a1",
+    "Vehicle_Interconnect.kicad_sch": "bf55946e04486d888dc3ee126e71d68ff2826af1ceb2286277e4d4e99a7e4c40",
+    "Power_5V.kicad_sch": "845afc91933487ec26fb1a140825f13461d5eea36496df3dcb034ca522365364",
+    "libraries/RevB.kicad_sym": "0fbd6269100b199be48c7e22b078ba5a314b4492d23fd900021dd9310ca09c5f",
+    "models/ENVELOPE_TPS3808_DBV0006A.step": "49c7af653bd28289a781dbc22e2974042c1ad314726f6d6ab4da24e6050d048d",
+    "models/ENVELOPE_C_0603_1608Metric_RVB22_C205.step": "6f635d6a798f5b396801338bd09c561cb28c5ed77b3f3b28248ae6934f3ca326",
+    "models/ENVELOPE_KEMET_C1210_10u50V.step": "5b0d225bb2c29ee9132422fdcf2b1dfbc044cedcc181e102344f0d5dd34e274d",
+    "models/ENVELOPE_Coilcraft_MSS1246T_12x12_RVB22_L121.step": "ddd6949e37a4949979fcbfd33b7194073cb8d9f20713a929af460e011db336ed",
+    "models/ENVELOPE_R_0603_1608Metric_RVB22_R203.step": "379bf1889a646b97bd6172624f5cb82ead3c68097b0693b15d2cca55e3ab3494",
+    "models/ENVELOPE_R_0603_1608Metric_RVB22_R157.step": "24d98fde147dda86b6eaf5e60d7412babffba9fab808ba53cab12091fc09aabb",
+    "models/ENVELOPE_Murata_LQW18AS_1608.step": "8dc9860d48f1f310cbb4fedd0859e36f6b22350e2f1eb7ca433e5d2465fc130d",
+    "models/ENVELOPE_R_0603_1608Metric_RVB22_R155.step": "9fa8ccd8941ac41b5cfcbfe19e4b8e011285245410a56c75a4f1b4916fcfc785",
+    "models/ENVELOPE_Fuse_Littelfuse-NANO2-885.step": "9d36a9abf86fe279bf6de0a69d7bd60e729853d406d1523e3406362177cb6003",
+    "models/ENVELOPE_WSLP0603_MANUFACTURER.step": "41b3fb49317d8023ba3e55d02a8d568e7a99ef293928d5ba4e69f481a00438b6",
+    "models/ENVELOPE_KEMET_T598_X_7343_Median_RVB22_C206.step": "70e116f6b72779d9d18e13b3f39b807c8d55337d3b94d25107a7c972fe799330",
+    "models/ENVELOPE_HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.step": "b30c2bf603e43d6fd52a5532c80196e6ad8df4c1de639250321851f114fefc6f",
+    "models/ENVELOPE_TI_DDA0008B_4214849B.step": "9ef46c4d078c5bbb9982618e3c80d58590fa2dbcb052185ee7728a010ad4d931",
+    "models/ENVELOPE_WSLP0603_MANUFACTURER_R153.step": "5d3ddd582dc72c78ad5910dd196a105247bfef40a94cd49eaad1a28116cfd740",
+    "models/ENVELOPE_R_0603_1608Metric_RVB22_R156.step": "34333acbfbf21749f6c9601043337101b7c1790e7a5a69842e37599ae3f07d2c",
+    "models/ENVELOPE_TI_DPY0002A_TPD1E05U06_SMDMask.step": "c9d865a8b06d5de7e49b609d88e16493b0842f8623eda2073718034e07a2e374",
+    "models/ENVELOPE_TI_PWP0016A_TPS2660.step": "5f4c1b37c0a8362ddb61c8228a7233d601c78a2878029a100b67c8091b11d35c",
+    "models/ENVELOPE_TI_DRB0008J_TCAN3403.step": "c0ce404df93ae34fa583617fb70a787b163f8d3d2e0537580652a5badf4ff737",
+    "models/ENVELOPE_CDTop_PA1616D_20Pad_v06.step": "d3c27aeb3da18df56e080db9947eb015a1967d558c9aecd4dc6f93c79d42a8ca",
+    "models/ENVELOPE_Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.step": "2243353fd26661c62429727755fdc6f236a303e3b37a78bfb77d7062a91ec91e",
+    "libraries/RevB.pretty/Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical.kicad_mod": "57c6d35b43e1b88a36581eba48f1ea77345677124233631fb1b3fce3abab76c3",
+    "libraries/RevB.pretty/LED_0603_1608Metric.kicad_mod": "fc97fced1536541b16bae010b22d0204b3c6e7680ebf76507c56f7dff2c16649",
+    "libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm.kicad_mod": "64ad83fbdbf19255a150892c28ccc38dac47fc9d30ae5d5ca4c791b321f6f623",
+    "libraries/RevB.pretty/Murata_LQW18AS_1608.kicad_mod": "bbc27566d1eda3ed63ed86d856e53e674ac58bb51aa4d60edd2994096d537fcf",
+    "libraries/RevB.pretty/WSLP0603_MANUFACTURER_R153.kicad_mod": "e221b11feb82caf78a35d9d9c47d12b962a172eaf38e412357424943ca373165",
+    "libraries/RevB.pretty/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal.kicad_mod": "8d286e81ef8f67d655dc450516580447da744920eb73b6bea226b7707c8fa837",
+    "libraries/RevB.pretty/Wurth_61300211121_1x02.kicad_mod": "fae196d64558ce050e0d2caf740f7864cc78b44944d3a8f8552b6a8353dc0b8c",
+    "libraries/RevB.pretty/TI_DRB0008J_TCAN3403.kicad_mod": "6a087c283c7dfdf04838e90b35b49f0c323ece348600c172c0c3a64cf9e1202e",
+    "libraries/RevB.pretty/D_SMA.kicad_mod": "08e475ba157dfd29f03602ae785bc21faee2586a20f96edeb9c19cb42868948f",
+    "libraries/RevB.pretty/MountingHole_4.4mm_Outboard.kicad_mod": "b257de739a84ff80cc31716db935e7e3e4baa453841d9ad9eb434b14472caf43",
+    "libraries/RevB.pretty/U.FL_Hirose_U.FL-R-SMT-1_Vertical.kicad_mod": "ecb0d4bf28d78d48e82afb246edd1724537b3f37576d5564404e724bdf309fcb",
+    "libraries/RevB.pretty/SOT-23.kicad_mod": "fab9dbbbc894bef856de100bd88ce1195435b9223f660f4021c15e00f9be8237",
+    "libraries/RevB.pretty/Coilcraft_MSS1246T_12x12.kicad_mod": "374a5e52bb92199e80c7cf60b615f4ae3c2b600cba74612aa8f5a2b8f990cd05",
+    "libraries/RevB.pretty/R_0603_1608Metric.kicad_mod": "c9cacb54994c0aa1d42dfe9c3fb385868f53f5a8d826a51a7f08056f34d871b4",
+    "libraries/RevB.pretty/R_0603_1608Metric_RVB22_R156.kicad_mod": "c18c6b45214d5b6c56f645b69f6568d25275bd872bcf56f588dd9a7e1e5f9fd6",
+    "libraries/RevB.pretty/WSLP0603_MANUFACTURER.kicad_mod": "d762689855c072c352dba0202e4780af14db25b4964e44973fc6bbc9f03d5fbb",
+    "libraries/RevB.pretty/C_0603_1608Metric.kicad_mod": "608e18fb80450783fac25cc58c9252747b9ea2194cf45d152599bf23170afeb6",
+    "libraries/RevB.pretty/MSOP-8_3x3mm_P0.65mm.kicad_mod": "1f7eac14be14b4813bbc1654935e31bf0a7b37885911b1811b8e7b861cc5bb35",
+    "libraries/RevB.pretty/SOIC-8_3.9x4.9mm_P1.27mm.kicad_mod": "c7cfe70e1d1fdc430d5bee68c1c48c8ac9b976c676d5181211167f569fdd117e",
+    "libraries/RevB.pretty/C_0805_2012Metric.kicad_mod": "f9821eb1d391e3d2bc6c77832e3dcb89c12eb239a84b32afe731e7e2e61509bb",
+    "libraries/RevB.pretty/C_0402_1005Metric.kicad_mod": "1aec3acfe8de50f53c01fa2f4735284e5027424485d0cf154a868f441e4436bc",
+    "libraries/RevB.pretty/PinHeader_1x02_P2.54mm_Vertical.kicad_mod": "2f3abce1a47e344cff1be30f002410ea46d00c52eb239a2e5cc8b7fe46e5acc9",
+    "libraries/RevB.pretty/SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm.kicad_mod": "f4ea754c90fccf90ab5b622758f985cd938cbfcba7ecb1009a1b6ff89256c933",
+    "libraries/RevB.pretty/SOT-23-5.kicad_mod": "428744bf0ef6b4f15c735b90c0119d7ae4b9eef99642e9ecca7ec1a32d4240e0",
+    "libraries/RevB.pretty/ESP32-S3-WROOM-1.kicad_mod": "65145e12e0f08bb8c126a3915e7f641b1c79c7b0ae5aaa4c0d5bc278a18c4c04",
+    "libraries/RevB.pretty/VSSOP-8_2.3x2mm_P0.5mm.kicad_mod": "e123bce97bda0be995e78f9feab2277e8edfc92577e089028da2f2702d0603c4",
+    "libraries/RevB.pretty/KEMET_T598_X_7343_Median_RVB22_C206.kicad_mod": "3abe092b5475ee38f326e36f846186a9b839d0c11d01485e7f443a21769e888c",
+    "libraries/RevB.pretty/R_0603_1608Metric_RVB22_R203.kicad_mod": "f7916796ae7c2c9092f7a1ad71856a38d7b8ec22461bf40846903e745aa7e311",
+    "libraries/RevB.pretty/Nexperia_SOD323_PMEG2010BEA.kicad_mod": "15eff0adf9f4fa564660b60e6cb1cbfeaab635638d6b332c366a891214eeb0a4",
+    "libraries/RevB.pretty/R_0603_1608Metric_RVB22_R155.kicad_mod": "73c41c8ed8b62bcf4c6baba606b61bce664d31fc130a50d9a5df7b67e9bcbef6",
+    "libraries/RevB.pretty/Molex_Micro-Fit_3.0_43045-1200_2x06_P3.00mm_Horizontal_RVB22_F1.kicad_mod": "e84beb0320bccedf7a1f971c3bbb7f367a862dd8206247d51e913b34cf9e7633",
+    "libraries/RevB.pretty/TO-252-2.kicad_mod": "4db74601b723f842b0e423dbfb2fae7b8717859c27c2219feae089447a985e29",
+    "libraries/RevB.pretty/KEMET_T598_X_7343_Median.kicad_mod": "e2638c7b17476fe21a06134809c9dd9aa26ba048d554a17f9a344de5de941a5e",
+    "libraries/RevB.pretty/TPS3808_DBV0006A.kicad_mod": "2481f3a84725b6069d69c7b9b66d3281b5dfc7bef5ee133835a96124cfacac04",
+    "libraries/RevB.pretty/R_0805_2012Metric.kicad_mod": "c9e065246f39a319f005b381e48e92fe0cf15ef93d474e17a8c210566693cd97",
+    "libraries/RevB.pretty/ESP32-S3-WROOM-1_RVB22_U201_TH48.kicad_mod": "16c83584927c2242aa0557c4ff150689f6605724fe9f2a6246875d297f21a4be",
+    "libraries/RevB.pretty/D_SOD-123F.kicad_mod": "aa24a7d6bbbac5a2c0eb536a1ba5c0f023c3b35272e8a03f914873b48b3b0c07",
+    "libraries/RevB.pretty/D_SMB.kicad_mod": "3fe2352afdcb9d3c333fd57aba59a4eac88464beb338c81b2422b7b931073f73",
+    "libraries/RevB.pretty/TI_PWP0016A_TPS2660.kicad_mod": "fac4eb28211a9a50ee25bbf26f3b9032ac18f7995e4f76bff63cf6a3ba873931",
+    "libraries/RevB.pretty/R_2512_6332Metric.kicad_mod": "29b787a14a222b380ee2f0308002d95acec37074f13708a80c0b4531dbc01138",
+    "libraries/RevB.pretty/Hirose_UFL_R_SMT_1_80_RevB.kicad_mod": "04a28fbb207e977e5eedea4d3d0f43952de1da7b014e0c80ceb839aaee695eee",
+    "libraries/RevB.pretty/TI_DPY0002A_TPD1E05U06_SMDMask.kicad_mod": "99cf73073a296cbd9a26c6fe36d9de9b5c4cb72b3b62a6f2da18cc611a614ee2",
+    "libraries/RevB.pretty/CDTop_PA1616D_20Pad_v06.kicad_mod": "595453e700993350c3e2154261109550fd90dd2e8323077911daf3340a1fb430",
+    "libraries/RevB.pretty/TestPoint_Pad_D1.5mm.kicad_mod": "15befb4e91182778cd505b79123962fdf11fe396349ca7f788ba430d0d20ca10",
+    "libraries/RevB.pretty/D_SMC.kicad_mod": "ef70d411a94053ae633f6b30a5146218b0bf144e91ba1b4b20bdc2451864a860",
+    "libraries/RevB.pretty/D_SMC_RVB22_D103.kicad_mod": "e944bb83714e7c8bcd1b95c36a43a4f16cc250dbcd1532af8c0a2660ec1c28a8",
+    "libraries/RevB.pretty/C_1210_3225Metric.kicad_mod": "01a9cf0760a69faa989db0ff756daa38df9941e218e5f8a06ba1a5cd5ec2c37d",
+    "libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.46x2.31mm_RVB22_U151.kicad_mod": "cbc4631b4f422e67d772176af27ac1af4c2f5ce5a1431a3409f2df58bae9d482",
+    "libraries/RevB.pretty/L_Coilcraft_XAL5030-XXX.kicad_mod": "fb4554ae1d45c37ef0d8d21d86e363d74469b39a559860253100c06ab7e08bad",
+    "libraries/RevB.pretty/Coilcraft_MSS1246T_12x12_RVB22_L121.kicad_mod": "4dc10090e2f615024b53139aafe2b754ab5c105de094d3fee4304f1db60aa045",
+    "libraries/RevB.pretty/R_1206_3216Metric.kicad_mod": "fc7e92d4991b06a68d33544a7eab13e18224773057bc9e6bafdd6744529e3f71",
+    "libraries/RevB.pretty/TI_DDA0008B_4214849B.kicad_mod": "d7153eb7b6245784529bd34fa265eea9dde51380969793584c2ce3c50f121016",
+    "libraries/RevB.pretty/ESP32-S3-WROOM-1_RVB22_U201.kicad_mod": "d6feca1219e0ee0cdd576b1fbdb003d4a9262fa38926a54b8109db2090cb2750",
+    "libraries/RevB.pretty/HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm.kicad_mod": "22e9c999c6c9bcd47b01724cc6b99207c24f0c7c4107a9b23347aa559fc923ab",
+    "libraries/RevB.pretty/C_0603_1608Metric_RVB22_C154.kicad_mod": "9c580f28840a78576acd1b62b1b1cba3d74d5a3577a0dff1f2c59068acd034bb",
+    "libraries/RevB.pretty/Fuse_Littelfuse-NANO2-885.kicad_mod": "b041f0e9d16bafb9f833640d4f6fc49e2ba71f90d21fed23638d10ba696c0b4a",
+    "libraries/RevB.pretty/C_0603_1608Metric_RVB22_C205.kicad_mod": "3634037f681da9a06a7ff5b4dab2349650dfb638e951fde6438c475867caf6d0",
+    "libraries/RevB.pretty/KEMET_C1210_10u50V.kicad_mod": "bf19c7f0ff60f7a10572bca286f824c29a0974bfc6de0183ff90ac6c2eaf5e16",
+    "libraries/RevB.pretty/R_0603_1608Metric_RVB22_R157.kicad_mod": "ccc18a2be92a75b0406d9842522773aa5fd4767eda9419f28f497afd9796b008"
+  },
+  "physical_tests_claimed": 0,
+  "manufacturing_release": false,
+  "engineering_models_are_separate": true,
+  "mechanical_acceptance": false,
+  "thermal_acceptance": false,
+  "prior_partial_native": {
+    "run": 34498897443,
+    "source_commit": "307d4a7daadf0b9e8136b89bb3153637b5d6f439",
+    "artifact": 10161096571,
+    "postconditions_passed": 14,
+    "adopted_final": false
+  }
+}

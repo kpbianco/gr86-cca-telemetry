@@ -1,0 +1,53 @@
+{
+  "status": "ELASTIC_VALIDITY_AND_JOINT_MOMENTS_OPEN",
+  "common_centerline_end_demands": [
+    {
+      "part": "wing",
+      "end": "hot",
+      "bending_moment_Nmm": 24.23143476356018,
+      "fiber_stress_MPa": 79.04991767146646,
+      "leaf_t_mm": 0.022,
+      "load": "\u00b12mm Z,\u00b10.5mm in-plane translation,arbitrary in-plane30g direction",
+      "E_GPa": 140
+    },
+    {
+      "part": "wing",
+      "end": "cold",
+      "bending_moment_Nmm": 25.99092865221193,
+      "fiber_stress_MPa": 84.78989338477142,
+      "leaf_t_mm": 0.022,
+      "load": "\u00b12mm Z,\u00b10.5mm in-plane translation,arbitrary in-plane30g direction",
+      "E_GPa": 140
+    },
+    {
+      "part": "central",
+      "end": "hot",
+      "bending_moment_Nmm": 5.236439429790719,
+      "fiber_stress_MPa": 42.989760520420774,
+      "leaf_t_mm": 0.022,
+      "load": "\u00b12mm Z,\u00b10.5mm in-plane translation,arbitrary in-plane30g direction",
+      "E_GPa": 140
+    },
+    {
+      "part": "central",
+      "end": "cold",
+      "bending_moment_Nmm": 16.023759737924358,
+      "fiber_stress_MPa": 131.55076135343737,
+      "leaf_t_mm": 0.022,
+      "load": "\u00b12mm Z,\u00b10.5mm in-plane translation,arbitrary in-plane30g direction",
+      "E_GPa": 140
+    }
+  ],
+  "central_shoe_height_mm": 12.8,
+  "central_hot_horizontal_reaction_N": 1.907487194427104,
+  "shoe_joint_additional_lever_moment_Nmm": 26.75632287622899,
+  "open": [
+    "AnnealedC110 per-leaf hot yield/elastic validity is not established by a150MPa laminate requirement.",
+    "Concentric individual leaves have different path length, curvature and stress; common-centerline demand is not a worst-leaf proof.",
+    "Hot/cold end moments and horizontal shoe lever loads require joint peel/rotation, landing restraint and full mount load distribution analysis.",
+    "80..140GPa E and150MPa laminate requirements must be demonstrated across actual local material temperatures; air65C does not set material temperature.",
+    "Force-only PCB/cap screens are partial static estimates and do not establish complete structural acceptance."
+  ],
+  "geometry_spec_sha256": "9bad2756f2c7aca3758713753959d39e49944d478b847006264b53f4297d824c",
+  "physical_measurements_claimed": false
+}

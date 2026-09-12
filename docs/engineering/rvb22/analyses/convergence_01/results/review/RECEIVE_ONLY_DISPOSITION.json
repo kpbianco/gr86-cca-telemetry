@@ -1,0 +1,11 @@
+{
+  "status": "PASS_SOURCE_RECEIVE_ONLY_VARIANT",
+  "isolating_link": "R301 DNP",
+  "recessive_pullup": "R303 10k +3V3 to TXD",
+  "termination": "R306 DNP",
+  "transmit_calls": 0,
+  "tx_queue_length": 0,
+  "six_CAN_TX_reference_gaps": "Real geometry findings, but on an isolated MCU stub, not the populated CAN receiver path. Do not reroute active power solely to erase these flags.",
+  "valid_only_for": "Exact receive-only BOM and firmware configuration. A future transmit-enabled variant requires renewed route/reference review.",
+  "not_proven": "Powered-off or internally failed transceiver behavior, shorts across the DNP link, real bus loading and vehicle non-interference."
+}

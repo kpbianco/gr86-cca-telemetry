@@ -1,0 +1,55 @@
+name: I26 source-bound closure evidence
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  evidence:
+    if: github.event.pull_request.number == 46 && github.head_ref == 'codex/rvb24-coordinated-closure' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Check whether this commit changes I26 analysis sources
+        id: scope
+        shell: bash
+        run: |
+          if git diff-tree --no-commit-id --name-only -r HEAD | grep -Eq '(^docs/engineering/rvb22/analyses/i26/.*\.(py|patch|csv)$|^\.github/workflows/i26-closure-evidence.yml$)'; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Provision pinned analysis dependencies
+        if: steps.scope.outputs.run == 'true'
+        run: |
+          python3 -m venv .i26-venv
+          .i26-venv/bin/pip install -r docs/engineering/rvb22/analyses/convergence_01/requirements.txt
+          echo "$PWD/.i26-venv/bin" >> "$GITHUB_PATH"
+      - name: Reproduce source-bound engineering evidence and regression checks
+        if: steps.scope.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python docs/engineering/rvb22/analyses/i26/prepare_publication.py verify
+      - name: Preserve verified outputs as an unreferenced scoped commit
+        if: steps.scope.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python docs/engineering/rvb22/analyses/i26/prepare_publication.py prepare-commit
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always() && steps.scope.outputs.run == 'true'
+        with:
+          name: i26-closure-evidence-${{ github.event.pull_request.head.sha }}
+          path: |
+            i26-publication/*.log
+            i26-publication/VERIFICATION.json
+            i26-publication/PUBLICATION_RESULT.json
+            i26-publication/I26_GENERATED_EVIDENCE.zip
+          retention-days: 14

@@ -1,0 +1,642 @@
+{
+  "file_count": 106,
+  "files": [
+    {
+      "path": "control/EXECUTION_PLAN_CURRENT.md",
+      "exists": true,
+      "expected_historical_sha256": "4d7404817d8243462512ddad84c2bc1d7ec8859f74adae38503bd1ab74aef4fd",
+      "actual_sha256": "4d7404817d8243462512ddad84c2bc1d7ec8859f74adae38503bd1ab74aef4fd"
+    },
+    {
+      "path": "control/CLOSED_CRITERIA_ADJUDICATION.json",
+      "exists": true,
+      "expected_historical_sha256": "b9950c04e85097fdcc50e938002d8a00f283ab148a84f080d2e1569ff715837b",
+      "actual_sha256": "b9950c04e85097fdcc50e938002d8a00f283ab148a84f080d2e1569ff715837b"
+    },
+    {
+      "path": "current/I21_SOURCE_VERIFICATION.json",
+      "exists": true,
+      "expected_historical_sha256": "938ba171be55b8b6213eb00bc73cd52e90973449a35deda4dcf4c730e5b97993",
+      "actual_sha256": "938ba171be55b8b6213eb00bc73cd52e90973449a35deda4dcf4c730e5b97993"
+    },
+    {
+      "path": "iterations/I20_controlled_handoff/NATIVE_BINDING.json",
+      "exists": true,
+      "expected_historical_sha256": "6f36235aab2349569f2cacf485912921762bc718e2a5fd5c4c72c2808ca2312b",
+      "actual_sha256": "6f36235aab2349569f2cacf485912921762bc718e2a5fd5c4c72c2808ca2312b"
+    },
+    {
+      "path": "current/SOURCE_EFFECTIVITY.json",
+      "exists": true,
+      "expected_historical_sha256": "832fcdcc8cd7ebb9df2e169c8b9194011c37d138484da13fd5de05bd2657170d",
+      "actual_sha256": "832fcdcc8cd7ebb9df2e169c8b9194011c37d138484da13fd5de05bd2657170d"
+    },
+    {
+      "path": "current/I22_SOURCE_VERIFICATION.json",
+      "exists": true,
+      "expected_historical_sha256": "439e707054473202080d1e7a96c4f52a394b26c6f820c906e25e284855227b6e",
+      "actual_sha256": "439e707054473202080d1e7a96c4f52a394b26c6f820c906e25e284855227b6e"
+    },
+    {
+      "path": "interfaces/HARNESS_INTERFACE_CONTRACT.json",
+      "exists": true,
+      "expected_historical_sha256": "8de240d9bfbc5862fae2984984929e0c086bc37a255289129d312548cac3576a",
+      "actual_sha256": "8de240d9bfbc5862fae2984984929e0c086bc37a255289129d312548cac3576a"
+    },
+    {
+      "path": "interfaces/HARNESS_CHECKS.json",
+      "exists": true,
+      "expected_historical_sha256": "c45fcc060f1cc5d87d9056329c8eac1e7a893cbae583086c5f0d3f5b43a29c9d",
+      "actual_sha256": "c45fcc060f1cc5d87d9056329c8eac1e7a893cbae583086c5f0d3f5b43a29c9d"
+    },
+    {
+      "path": "analyses/harness_wire/HARNESS_WIRE_DELTA.json",
+      "exists": true,
+      "expected_historical_sha256": "709bdb5ea3ca0ba32fc78b0da3a1845b1d597fa82b4b3ce17c9ef2774798babe",
+      "actual_sha256": "709bdb5ea3ca0ba32fc78b0da3a1845b1d597fa82b4b3ce17c9ef2774798babe"
+    },
+    {
+      "path": "control/RECOVERY_LEDGER.md",
+      "exists": true,
+      "expected_historical_sha256": "8ebd3401682084e4888c14457ab57035a64bf11b7bbf378d7c1549510a25f102",
+      "actual_sha256": "8ebd3401682084e4888c14457ab57035a64bf11b7bbf378d7c1549510a25f102"
+    },
+    {
+      "path": "control/DESKTOP_ACTION_DISPOSITIONS_CURRENT.json",
+      "exists": true,
+      "expected_historical_sha256": "3c58401e35ff5346919f66128e72c1b081817c0464a2f9fcbf928d5e9522d701",
+      "actual_sha256": "3c58401e35ff5346919f66128e72c1b081817c0464a2f9fcbf928d5e9522d701"
+    },
+    {
+      "path": "iterations/I06_harness_handoff/CANDIDATE_MANIFEST.json",
+      "exists": true,
+      "expected_historical_sha256": "017aa6938b0cea4fcf5d02a0e28ba556e4a0c0485495f171a7d5aba15a703fc0",
+      "actual_sha256": "017aa6938b0cea4fcf5d02a0e28ba556e4a0c0485495f171a7d5aba15a703fc0"
+    },
+    {
+      "path": "control/FINAL_GATES.json",
+      "exists": true,
+      "expected_historical_sha256": "76a6c41e288d8c18f096e0c1fc9cf361f38a7397af05d96379de27a43a041906",
+      "actual_sha256": "76a6c41e288d8c18f096e0c1fc9cf361f38a7397af05d96379de27a43a041906"
+    },
+    {
+      "path": "interfaces/MOLEX_A1_HARNESS_REDLINE.json",
+      "exists": true,
+      "expected_historical_sha256": "f7e6567d47cb426e6a19a6356f6dd1feda53c481c27e1631f39d4fe28174f28e",
+      "actual_sha256": "f7e6567d47cb426e6a19a6356f6dd1feda53c481c27e1631f39d4fe28174f28e"
+    },
+    {
+      "path": "interfaces/SINGLE_RETURN_EFFECTIVITY.json",
+      "exists": true,
+      "expected_historical_sha256": "6c7af28cea00c2a54f0765cf157f3b8630e9799cf9ee615f2210552134ffe640",
+      "actual_sha256": "6c7af28cea00c2a54f0765cf157f3b8630e9799cf9ee615f2210552134ffe640"
+    },
+    {
+      "path": "interfaces/FINAL_I06_HARNESS_BINDING.json",
+      "exists": true,
+      "expected_historical_sha256": "ea1271a3927330045a38668bb5208bd4aace21b828afc3f535bb34593ec04458",
+      "actual_sha256": "ea1271a3927330045a38668bb5208bd4aace21b828afc3f535bb34593ec04458"
+    },
+    {
+      "path": "analyses/installation/DASHBOARD_EXPOSURE_AND_SERVICE.md",
+      "exists": true,
+      "expected_historical_sha256": "9875d08e5f9c94bc8a752d9f7372da234a2311a0a80bf4d7aa8ed15e9dbefd48",
+      "actual_sha256": "9875d08e5f9c94bc8a752d9f7372da234a2311a0a80bf4d7aa8ed15e9dbefd48"
+    },
+    {
+      "path": "lanes/mechanics/MECHANICAL_INSTALLATION_RVB22.md",
+      "exists": true,
+      "expected_historical_sha256": "c537001620be1f1ddbec9d8ea77b9dc84cb5461fb1ffca843c448cf71d2b31d8",
+      "actual_sha256": "c537001620be1f1ddbec9d8ea77b9dc84cb5461fb1ffca843c448cf71d2b31d8"
+    },
+    {
+      "path": "analyses/review_i22/ACCESSORY_APPLICABILITY.json",
+      "exists": true,
+      "expected_historical_sha256": "5ee7e0b4956d9be07583378bdcd128c9f0663fee9159b017498c65c6ba1ae5bc",
+      "actual_sha256": "5ee7e0b4956d9be07583378bdcd128c9f0663fee9159b017498c65c6ba1ae5bc"
+    },
+    {
+      "path": "analyses/mated_i22/RESULTS.json",
+      "exists": true,
+      "expected_historical_sha256": "3ec8441da107f011cbc4dc5c09289eac8ed298f871551f406e20b2709769428f",
+      "actual_sha256": "3ec8441da107f011cbc4dc5c09289eac8ed298f871551f406e20b2709769428f"
+    },
+    {
+      "path": "current/ACCESSORY_REVIEW.md",
+      "exists": true,
+      "expected_historical_sha256": "16b7fe5b047a4dad8b948b7d830be58bacc271ba13335c546588ed55f22f6861",
+      "actual_sha256": "16b7fe5b047a4dad8b948b7d830be58bacc271ba13335c546588ed55f22f6861"
+    },
+    {
+      "path": "lanes/firmware_oil/RECOVERED_RELEASE_CHECKS.json",
+      "exists": true,
+      "expected_historical_sha256": "9d36ebab30769a0293ff2fcbd194a54f113e5444f8680565da51558ccce9cdf8",
+      "actual_sha256": "9d36ebab30769a0293ff2fcbd194a54f113e5444f8680565da51558ccce9cdf8"
+    },
+    {
+      "path": "lanes/firmware_oil/RECOVERED_FIRMWARE_TEST_RESULTS.json",
+      "exists": true,
+      "expected_historical_sha256": "c4c5df66ff54cba721fe8808062019f824df6e0b0c4869e78fd30626121dc725",
+      "actual_sha256": "c4c5df66ff54cba721fe8808062019f824df6e0b0c4869e78fd30626121dc725"
+    },
+    {
+      "path": "lanes/firmware_oil/FINAL_I04_OIL_FIRMWARE_EFFECTIVITY.json",
+      "exists": true,
+      "expected_historical_sha256": "17c9b0178b833a546a4f14b2f287574b8545d7a56e68db66a8a94f02634b394f",
+      "actual_sha256": "17c9b0178b833a546a4f14b2f287574b8545d7a56e68db66a8a94f02634b394f"
+    },
+    {
+      "path": "current/EXECUTION_PLAN.md",
+      "exists": true,
+      "expected_historical_sha256": "4d7404817d8243462512ddad84c2bc1d7ec8859f74adae38503bd1ab74aef4fd",
+      "actual_sha256": "4d7404817d8243462512ddad84c2bc1d7ec8859f74adae38503bd1ab74aef4fd"
+    },
+    {
+      "path": "interfaces/asc_profile/ASC_PROFILE_REVIEW.json",
+      "exists": true,
+      "expected_historical_sha256": "a779bfe927e5e5d9387131a9cc297e5af79f25f217557178da1a7ee76e7f7ab4",
+      "actual_sha256": "a779bfe927e5e5d9387131a9cc297e5af79f25f217557178da1a7ee76e7f7ab4"
+    },
+    {
+      "path": "interfaces/asc_profile/PRIMARY_SOURCE_MANIFEST.json",
+      "exists": true,
+      "expected_historical_sha256": "5503b65e3db2c7de2e865692595d95e414d6e18d3c4ec2411970546c703b823d",
+      "actual_sha256": "5503b65e3db2c7de2e865692595d95e414d6e18d3c4ec2411970546c703b823d"
+    },
+    {
+      "path": "lanes/firmware_oil/RECOVERY_CALIBRATION_GAIN_REDLINE.json",
+      "exists": true,
+      "expected_historical_sha256": "4156482b336bece382dae6dcf618b2f7a5c26456dc57aaa1b574e169bd04cd9c",
+      "actual_sha256": "4156482b336bece382dae6dcf618b2f7a5c26456dc57aaa1b574e169bd04cd9c"
+    },
+    {
+      "path": "interfaces/OIL_HARNESS_ERROR_SWEEP.json",
+      "exists": true,
+      "expected_historical_sha256": "1a0e3bbbfeb53fae48b38ab52575d6644f48d7ef4b534dd262f89c9cde0aa6a1",
+      "actual_sha256": "1a0e3bbbfeb53fae48b38ab52575d6644f48d7ef4b534dd262f89c9cde0aa6a1"
+    },
+    {
+      "path": "lanes/oil_cap/FINAL_C532_SUBGRAPH_BINDING.json",
+      "exists": true,
+      "expected_historical_sha256": "28967e7b5768764cc5528550516b41c0b77bee732da05d6a03bbde0e3ef6dc94",
+      "actual_sha256": "28967e7b5768764cc5528550516b41c0b77bee732da05d6a03bbde0e3ef6dc94"
+    },
+    {
+      "path": "lanes/rf/RF_FINAL_REPORT.md",
+      "exists": true,
+      "expected_historical_sha256": "3fdd717e298f9671baa0d0bd7e612e526623cf035b1ff575a9a5dc8ba1536ce1",
+      "actual_sha256": "3fdd717e298f9671baa0d0bd7e612e526623cf035b1ff575a9a5dc8ba1536ce1"
+    },
+    {
+      "path": "lanes/rf/RF_FINAL_SUMMARY.json",
+      "exists": true,
+      "expected_historical_sha256": "2bc67f3c75f646a9f78d6da59e201a8ce2bb511d46ca790af21525498545cd76",
+      "actual_sha256": "2bc67f3c75f646a9f78d6da59e201a8ce2bb511d46ca790af21525498545cd76"
+    },
+    {
+      "path": "lanes/rf/RF_I04_ADDENDUM.md",
+      "exists": true,
+      "expected_historical_sha256": "a10485f6d1e16e37566e6ab1b7d8b6dc6b55d8e632ec8c2939f3a60188741b51",
+      "actual_sha256": "a10485f6d1e16e37566e6ab1b7d8b6dc6b55d8e632ec8c2939f3a60188741b51"
+    },
+    {
+      "path": "lanes/rf/RF_I04_SUMMARY.json",
+      "exists": true,
+      "expected_historical_sha256": "acfa57ec9f135bae0fc67b784b6851dfbb05847f7e383abf948d1c8d4d82f1ce",
+      "actual_sha256": "acfa57ec9f135bae0fc67b784b6851dfbb05847f7e383abf948d1c8d4d82f1ce"
+    },
+    {
+      "path": "lanes/rf/FINAL_I04_SOURCE_BINDING.json",
+      "exists": true,
+      "expected_historical_sha256": "377d251ef846085d22e6ed6d8c955760b55da0e985fa2aa1b3e0bb4c0d5f6c63",
+      "actual_sha256": "377d251ef846085d22e6ed6d8c955760b55da0e985fa2aa1b3e0bb4c0d5f6c63"
+    },
+    {
+      "path": "lanes/emc/EMC_SUMMARY.json",
+      "exists": true,
+      "expected_historical_sha256": "07646b33a327ac54aec8026ed70ae457146b5918221fabc9022dee1f950b226d",
+      "actual_sha256": "07646b33a327ac54aec8026ed70ae457146b5918221fabc9022dee1f950b226d"
+    },
+    {
+      "path": "control/RVB22_BRING_UP_AND_MEASUREMENT_CONTRACT.md",
+      "exists": true,
+      "expected_historical_sha256": "449d38b93d0d99ec35d3545af7b198e3430a19aa20cbf59b6de2b60b0215331f",
+      "actual_sha256": "449d38b93d0d99ec35d3545af7b198e3430a19aa20cbf59b6de2b60b0215331f"
+    },
+    {
+      "path": "control/BRINGUP_SCHEMATIC_TEXT_DELTA.json",
+      "exists": true,
+      "expected_historical_sha256": "b375d56d6cc12ce36313d7ee538c3bc384127c76eb41fea363ce7911556415ee",
+      "actual_sha256": "b375d56d6cc12ce36313d7ee538c3bc384127c76eb41fea363ce7911556415ee"
+    },
+    {
+      "path": "control/BRINGUP_ACTUAL_NODE_INDEX.json",
+      "exists": true,
+      "expected_historical_sha256": "a63b8b544d5707e4ec2c6dcced8a01f7b216c553052681a5fa9f46bc3d7af6f8",
+      "actual_sha256": "a63b8b544d5707e4ec2c6dcced8a01f7b216c553052681a5fa9f46bc3d7af6f8"
+    },
+    {
+      "path": "control/FINAL_I04_BRINGUP_BINDING.json",
+      "exists": true,
+      "expected_historical_sha256": "0a51eb793074e6b5eafbf20002325289bdd1e1b3a5174ae63fd79b937a76fd3f",
+      "actual_sha256": "0a51eb793074e6b5eafbf20002325289bdd1e1b3a5174ae63fd79b937a76fd3f"
+    },
+    {
+      "path": "lanes/oil_cap/OIL_CAP_GEOMETRY_REPORT.json",
+      "exists": true,
+      "expected_historical_sha256": "d4166613bd2279bb696cb5c6adb26256ae80e679d66d7e6009df7ae60b9428bd",
+      "actual_sha256": "d4166613bd2279bb696cb5c6adb26256ae80e679d66d7e6009df7ae60b9428bd"
+    },
+    {
+      "path": "lanes/oil_cap/OIL_CAP_SAME_NET_CONTACTS.json",
+      "exists": true,
+      "expected_historical_sha256": "2f5dee7d7f4155806d436db4b7091bf62f5f674cf59479508a2880e9a32e28ec",
+      "actual_sha256": "2f5dee7d7f4155806d436db4b7091bf62f5f674cf59479508a2880e9a32e28ec"
+    },
+    {
+      "path": "control/check_combined_copper.py",
+      "exists": true,
+      "expected_historical_sha256": "5f0e5cb0ceffd8ea3a07fca51209f90225f7b708d666ca33bb5df175fe936c2a",
+      "actual_sha256": "5f0e5cb0ceffd8ea3a07fca51209f90225f7b708d666ca33bb5df175fe936c2a"
+    },
+    {
+      "path": "iterations/I04_compact_shunt/COMBINED_COPPER_CHECK.json",
+      "exists": true,
+      "expected_historical_sha256": "dbe14bde92d2e9445f4765e4ff8ac028412039b5e90b4b3a42870684391933e5",
+      "actual_sha256": "dbe14bde92d2e9445f4765e4ff8ac028412039b5e90b4b3a42870684391933e5"
+    },
+    {
+      "path": "iterations/I04_compact_shunt/COURTYARD_CHECK.json",
+      "exists": true,
+      "expected_historical_sha256": "6e080d8a723d8a3c7ae1665078acf472b0a39e433bc64fe21516790ff5541ab2",
+      "actual_sha256": "6e080d8a723d8a3c7ae1665078acf472b0a39e433bc64fe21516790ff5541ab2"
+    },
+    {
+      "path": "verification/independent/I04_SOURCE_AND_GATE_AUDIT.json",
+      "exists": true,
+      "expected_historical_sha256": "18fceb8cec99fceb6476a5439d12fc57798a8b226e25607bf54b179f0f063d75",
+      "actual_sha256": "18fceb8cec99fceb6476a5439d12fc57798a8b226e25607bf54b179f0f063d75"
+    },
+    {
+      "path": "analyses/mated_i18/RESULTS.json",
+      "exists": true,
+      "expected_historical_sha256": "7466a6278a904f43d085330b5b6057d7fa92c8d24156eb7ea875f35bc42044d2",
+      "actual_sha256": "7466a6278a904f43d085330b5b6057d7fa92c8d24156eb7ea875f35bc42044d2"
+    },
+    {
+      "path": "analyses/review_i22/PACKAGE_ORIENTATION_RESULTS.json",
+      "exists": true,
+      "expected_historical_sha256": "2f2d83d02b4882dbac35d4fe49db012d6510ee3b7d42c6f1f796adb8f7a5910b",
+      "actual_sha256": "2f2d83d02b4882dbac35d4fe49db012d6510ee3b7d42c6f1f796adb8f7a5910b"
+    },
+    {
+      "path": "analyses/review_i22/EXPOSED_PAD_REVIEW.json",
+      "exists": true,
+      "expected_historical_sha256": "23d6196bd765c5b290890b85c06cdff74adc2c57dee89ee791d484b516e25110",
+      "actual_sha256": "23d6196bd765c5b290890b85c06cdff74adc2c57dee89ee791d484b516e25110"
+    },
+    {
+      "path": "analyses/review_i22/package_audit.py",
+      "exists": true,
+      "expected_historical_sha256": "cec2f1f7dbffccd15f6e4d563d7a7a4c0a2cf15ca5121e70cb6ffe275fb7e5f5",
+      "actual_sha256": "cec2f1f7dbffccd15f6e4d563d7a7a4c0a2cf15ca5121e70cb6ffe275fb7e5f5"
+    },
+    {
+      "path": "analyses/review_i22/sources/MANIFEST.json",
+      "exists": true,
+      "expected_historical_sha256": "ce335a69faa9a6cb6a0a5b4a565e563e74d7afa8235bd3856cb09fc948391d09",
+      "actual_sha256": "ce335a69faa9a6cb6a0a5b4a565e563e74d7afa8235bd3856cb09fc948391d09"
+    },
+    {
+      "path": "current/MANUFACTURING_AND_ASSEMBLY.md",
+      "exists": true,
+      "expected_historical_sha256": "f20c72b672c9a2141d9413f1f8ec198c4b4c3ab3cd7106e96bd53bf2ae1c009e",
+      "actual_sha256": "f20c72b672c9a2141d9413f1f8ec198c4b4c3ab3cd7106e96bd53bf2ae1c009e"
+    },
+    {
+      "path": "analyses/manufacturing_i20/RESULTS.json",
+      "exists": true,
+      "expected_historical_sha256": "daa279f665dd6cad14f4ff36043abbce38c6ee51598e9ae7236d9974563476ac",
+      "actual_sha256": "daa279f665dd6cad14f4ff36043abbce38c6ee51598e9ae7236d9974563476ac"
+    },
+    {
+      "path": "analyses/review_i22/electrical_audit.py",
+      "exists": true,
+      "expected_historical_sha256": "fbe454d85a6b63f5126cd39bc08eb131d8c888a81cc288f0e0831a479fb40887",
+      "actual_sha256": "fbe454d85a6b63f5126cd39bc08eb131d8c888a81cc288f0e0831a479fb40887"
+    },
+    {
+      "path": "lanes/power/FINAL_I04_POWER_EFFECTIVITY.json",
+      "exists": true,
+      "expected_historical_sha256": "7614948f0477b3872c1893f2c8071300dad9a76bed2163a98c302fc2b08f0b26",
+      "actual_sha256": "7614948f0477b3872c1893f2c8071300dad9a76bed2163a98c302fc2b08f0b26"
+    },
+    {
+      "path": "lanes/power/COUPLED_STARTUP_ENVELOPE.json",
+      "exists": true,
+      "expected_historical_sha256": "61403b7c7bb855edead8e74923d7d7aa3520f67e6ed50fb9e00818ee7fad28b5",
+      "actual_sha256": "61403b7c7bb855edead8e74923d7d7aa3520f67e6ed50fb9e00818ee7fad28b5"
+    },
+    {
+      "path": "lanes/power_limits/POWER_LIMITS_SUMMARY.json",
+      "exists": true,
+      "expected_historical_sha256": "7dff1f6f253807926f9a5bfb7717bc18ea30e47607cb990bcc9025f7fd9007ef",
+      "actual_sha256": "7dff1f6f253807926f9a5bfb7717bc18ea30e47607cb990bcc9025f7fd9007ef"
+    },
+    {
+      "path": "analyses/power_i19/SUMMARY.json",
+      "exists": true,
+      "expected_historical_sha256": "7813e47c086c71862b56668128876a8d550e91d265f5250e1e6fea4ffc0f53c4",
+      "actual_sha256": "7813e47c086c71862b56668128876a8d550e91d265f5250e1e6fea4ffc0f53c4"
+    },
+    {
+      "path": "analyses/power_i19/EXTREMA_CONFIRMATION.json",
+      "exists": true,
+      "expected_historical_sha256": "258dd2055e22d55504b3eb86ea383e9b197d9a0e8ebe4cffcadde3f186c969f4",
+      "actual_sha256": "258dd2055e22d55504b3eb86ea383e9b197d9a0e8ebe4cffcadde3f186c969f4"
+    },
+    {
+      "path": "analyses/thermal_i18/face_15.0/RESULTS.json",
+      "exists": true,
+      "expected_historical_sha256": "16fdd49fe0c3a49d56b3db6a056d6bb87f7696816f4a0db9facd60c1f48fb141",
+      "actual_sha256": "16fdd49fe0c3a49d56b3db6a056d6bb87f7696816f4a0db9facd60c1f48fb141"
+    },
+    {
+      "path": "lanes/power/POWER_GEOMETRY_REPORT.json",
+      "exists": true,
+      "expected_historical_sha256": "4824326717a99e771f8d8e045d4bb59d44e8be5bd0e5ae8b6d2c2d3a16e44fe8",
+      "actual_sha256": "4824326717a99e771f8d8e045d4bb59d44e8be5bd0e5ae8b6d2c2d3a16e44fe8"
+    },
+    {
+      "path": "analyses/assembly_handling/EXACT_MPN_HANDLING_REGISTER.json",
+      "exists": true,
+      "expected_historical_sha256": "8b75ad02a30de0d34ab9ac955fc38228d618ae520889c8d6955a7b978bdd9e06",
+      "actual_sha256": "8b75ad02a30de0d34ab9ac955fc38228d618ae520889c8d6955a7b978bdd9e06"
+    },
+    {
+      "path": "analyses/assembly_handling/PROCESS_RECONCILIATION.md",
+      "exists": true,
+      "expected_historical_sha256": "238614f0abeea7b3234c431093d78679c59a5ae4b5b9b15c55e0d39de7561305",
+      "actual_sha256": "238614f0abeea7b3234c431093d78679c59a5ae4b5b9b15c55e0d39de7561305"
+    },
+    {
+      "path": "lanes/mechanics/ASSEMBLY_PROCESS_RVB22.md",
+      "exists": true,
+      "expected_historical_sha256": "e9f510a20e18d6d8a2cf6b264640d7c7aec0445b876b6c7b2a70f247197d20e7",
+      "actual_sha256": "e9f510a20e18d6d8a2cf6b264640d7c7aec0445b876b6c7b2a70f247197d20e7"
+    },
+    {
+      "path": "analyses/lost_ground/LOST_GROUND_RESULTS_RECONSTRUCTED.json",
+      "exists": true,
+      "expected_historical_sha256": "6ec9e99b4e2287669bd61062f5f19192e51c8c3a6296adf6456426cd3586e7c8",
+      "actual_sha256": "6ec9e99b4e2287669bd61062f5f19192e51c8c3a6296adf6456426cd3586e7c8"
+    },
+    {
+      "path": "interfaces/LOST_GROUND_FINITE_DC_SCREEN.json",
+      "exists": true,
+      "expected_historical_sha256": "3919193bd4f1eec855eaf45dbf6fdd55673073c59c38a3f9e77aee07dd8cd906",
+      "actual_sha256": "3919193bd4f1eec855eaf45dbf6fdd55673073c59c38a3f9e77aee07dd8cd906"
+    },
+    {
+      "path": "runtime/final_I06_actual_preflight/RESULT.json",
+      "exists": true,
+      "expected_historical_sha256": "47d1ac4057b92a6752abacf976768596bf4fa311d08c9fc08df2d276e8e1200f",
+      "actual_sha256": "47d1ac4057b92a6752abacf976768596bf4fa311d08c9fc08df2d276e8e1200f"
+    },
+    {
+      "path": "runtime/run_native_candidate.py",
+      "exists": true,
+      "expected_historical_sha256": "187d303cb103cef92143d53c099615a435ceef29c0458d7ac9521205d451f315",
+      "actual_sha256": "187d303cb103cef92143d53c099615a435ceef29c0458d7ac9521205d451f315"
+    },
+    {
+      "path": "analyses/review_i22/THERMAL_ACCESSORY_BOUND.json",
+      "exists": true,
+      "expected_historical_sha256": "3d6322079825e0468dd6c85c922e44ce836cce55a3776e6e387cede821644965",
+      "actual_sha256": "3d6322079825e0468dd6c85c922e44ce836cce55a3776e6e387cede821644965"
+    },
+    {
+      "path": "current/THERMAL_REVIEW.md",
+      "exists": true,
+      "expected_historical_sha256": "164c7cd1fd2d1fa95ecc8af140923de6c01fcfbb094d95f1cd31ecdc941aa108",
+      "actual_sha256": "164c7cd1fd2d1fa95ecc8af140923de6c01fcfbb094d95f1cd31ecdc941aa108"
+    },
+    {
+      "path": "lanes/emc/RF_STRIP_NETWORK.json",
+      "exists": true,
+      "expected_historical_sha256": "136f177c0cb02f729dc78bb81db0419d7d9e60180a4bea2e288c16b5762d71ab",
+      "actual_sha256": "136f177c0cb02f729dc78bb81db0419d7d9e60180a4bea2e288c16b5762d71ab"
+    },
+    {
+      "path": "control/REG07_SOURCE_COPPER_ANNOTATIONS.json",
+      "exists": true,
+      "expected_historical_sha256": "22ade87152b7028fbc6d718ab3d42ec15c8363b62bc5d97714eea9aea0621c55",
+      "actual_sha256": "22ade87152b7028fbc6d718ab3d42ec15c8363b62bc5d97714eea9aea0621c55"
+    },
+    {
+      "path": "analyses/review_i22/RF_RETURN_REVIEW.json",
+      "exists": true,
+      "expected_historical_sha256": "efaa0ba810bb4cb48237a939bdbf8789e6d9302f244346c598cccb8856397b08",
+      "actual_sha256": "efaa0ba810bb4cb48237a939bdbf8789e6d9302f244346c598cccb8856397b08"
+    },
+    {
+      "path": "lanes/emc/EMC_DESKTOP_REPORT.md",
+      "exists": true,
+      "expected_historical_sha256": "101c4622a26e2d9d73f53b86453962ef79d56eb71cac11b7f0f3b03b8fd1248f",
+      "actual_sha256": "101c4622a26e2d9d73f53b86453962ef79d56eb71cac11b7f0f3b03b8fd1248f"
+    },
+    {
+      "path": "lanes/emc/REDLINE_DISPOSITIONS.json",
+      "exists": true,
+      "expected_historical_sha256": "1e44cc67b597f207b26b6ae31da1dcf5efa4d89b02e1df66c7f8b06b47f34be2",
+      "actual_sha256": "1e44cc67b597f207b26b6ae31da1dcf5efa4d89b02e1df66c7f8b06b47f34be2"
+    },
+    {
+      "path": "lanes/emc/EMC_NUMERICAL_VERIFICATION.json",
+      "exists": true,
+      "expected_historical_sha256": "dfcf84e50264ea556b24d61b6f41a0091682506644728ded71bea525a80f6b30",
+      "actual_sha256": "dfcf84e50264ea556b24d61b6f41a0091682506644728ded71bea525a80f6b30"
+    },
+    {
+      "path": "analyses/service_i19/RESULTS.json",
+      "exists": true,
+      "expected_historical_sha256": "06cbb09e55a98a0039d0cab06f26b85f8af741c8b1c075991283a397f94f47fe",
+      "actual_sha256": "06cbb09e55a98a0039d0cab06f26b85f8af741c8b1c075991283a397f94f47fe"
+    },
+    {
+      "path": "analyses/review_i22/VIA_CURRENT_THERMAL_BUDGET.json",
+      "exists": true,
+      "expected_historical_sha256": "2d3b75096afaa2aeb8d759afe2de9197ce5fde82ee5fa8c2558919e25c21b95c",
+      "actual_sha256": "2d3b75096afaa2aeb8d759afe2de9197ce5fde82ee5fa8c2558919e25c21b95c"
+    },
+    {
+      "path": "analyses/review_i22/DRILL_RECONCILIATION.json",
+      "exists": true,
+      "expected_historical_sha256": "71799ff29f2e8cf826e85773586a48429493a63cea54eaf4f10f33173eae6283",
+      "actual_sha256": "71799ff29f2e8cf826e85773586a48429493a63cea54eaf4f10f33173eae6283"
+    },
+    {
+      "path": "analyses/rf_i18/EXTENDED_NETWORK_RESULTS.json",
+      "exists": true,
+      "expected_historical_sha256": "74c5bb43e910fb4145f5f2a8e72934d4fc36e6c5e6d00f7f8bf45b80fb486252",
+      "actual_sha256": "74c5bb43e910fb4145f5f2a8e72934d4fc36e6c5e6d00f7f8bf45b80fb486252"
+    },
+    {
+      "path": "control/SI11_COUPLING_PATH_REVIEW.json",
+      "exists": true,
+      "expected_historical_sha256": "3ba361e849ca16625422d96f28ff7f96aaca3231a1b5dc19344876c20087146d",
+      "actual_sha256": "3ba361e849ca16625422d96f28ff7f96aaca3231a1b5dc19344876c20087146d"
+    },
+    {
+      "path": "analyses/can_branch/COMPLETE_CAN_BRANCH_RESULTS.json",
+      "exists": true,
+      "expected_historical_sha256": "a801a4a8e8e64f129b875e99b68c8d790509ea22707726f5a2e7c3d75c50f40e",
+      "actual_sha256": "a801a4a8e8e64f129b875e99b68c8d790509ea22707726f5a2e7c3d75c50f40e"
+    },
+    {
+      "path": "analyses/can_branch/COMPLETE_CAN_BRANCH_REVIEW.md",
+      "exists": true,
+      "expected_historical_sha256": "2f1e78eafa0c96dfcce286a399a9ca2a467c6e48236553a342fe65c3e824a541",
+      "actual_sha256": "2f1e78eafa0c96dfcce286a399a9ca2a467c6e48236553a342fe65c3e824a541"
+    },
+    {
+      "path": "analyses/harness_wire/AVSS_CAN_STUB_MODEL.json",
+      "exists": true,
+      "expected_historical_sha256": "4ada4c29fe0f74addc953469b36c2998501e2350c3ad9b4e7fb78fa1d5f9ebeb",
+      "actual_sha256": "4ada4c29fe0f74addc953469b36c2998501e2350c3ad9b4e7fb78fa1d5f9ebeb"
+    },
+    {
+      "path": "analyses/can_branch/CAN22-02_NUMERICAL_CHECKS.json",
+      "exists": true,
+      "expected_historical_sha256": "82f22d8ac19741ff81cfbe45c1d06c73624ca08ed66050156b9edebb902e6be7",
+      "actual_sha256": "82f22d8ac19741ff81cfbe45c1d06c73624ca08ed66050156b9edebb902e6be7"
+    },
+    {
+      "path": "analyses/can_branch/CAN22-02_INDEPENDENT_REVIEW.json",
+      "exists": true,
+      "expected_historical_sha256": "6c6305c1387ff98c2e48bcc6c137a46c380edb521e56c629cf44e5ef05a6da34",
+      "actual_sha256": "6c6305c1387ff98c2e48bcc6c137a46c380edb521e56c629cf44e5ef05a6da34"
+    },
+    {
+      "path": "analyses/can_branch/CAN22-02_THRESHOLD_REFINEMENT.json",
+      "exists": true,
+      "expected_historical_sha256": "ea5e573a976d61dca85a670eff0b222a47866468f161098fe2c93f17cefb2e82",
+      "actual_sha256": "ea5e573a976d61dca85a670eff0b222a47866468f161098fe2c93f17cefb2e82"
+    },
+    {
+      "path": "analyses/can_branch/FINAL_CAN_SOURCE_BINDING.json",
+      "exists": true,
+      "expected_historical_sha256": "87fd07aaf564b8a15f8d5fbff3a080349f9229fc6fe816de2d19763cc3ada036",
+      "actual_sha256": "87fd07aaf564b8a15f8d5fbff3a080349f9229fc6fe816de2d19763cc3ada036"
+    },
+    {
+      "path": "control/SI11_COUPLING_REVIEW_AND_TEST_PLAN.md",
+      "exists": true,
+      "expected_historical_sha256": "b7169d67e426e78b723deace9c287978d43b929a520c07c292652d265ccf75ff",
+      "actual_sha256": "b7169d67e426e78b723deace9c287978d43b929a520c07c292652d265ccf75ff"
+    },
+    {
+      "path": "analyses/review_i22/REVIEW_REPORT.md",
+      "exists": true,
+      "expected_historical_sha256": "5d8fb06624593c8d3dd04b2cfbe46bd9b0c2a93500a19973778db3c16da4e4f0",
+      "actual_sha256": "5d8fb06624593c8d3dd04b2cfbe46bd9b0c2a93500a19973778db3c16da4e4f0"
+    },
+    {
+      "path": "analyses/review_i22/package_overlays/U401.svg",
+      "exists": true,
+      "expected_historical_sha256": "2a3810a79d6d85f22a2eff53e295e288f6fbd382e41106f2b73861c1f0634154",
+      "actual_sha256": "2a3810a79d6d85f22a2eff53e295e288f6fbd382e41106f2b73861c1f0634154"
+    },
+    {
+      "path": "analyses/review_i22/sources/pa1616d.pdf",
+      "exists": true,
+      "expected_historical_sha256": "b32e14f2147645ce443c14d7ff1d2aec2b278ef177b913d2880b3a551cb55e08",
+      "actual_sha256": "b32e14f2147645ce443c14d7ff1d2aec2b278ef177b913d2880b3a551cb55e08"
+    },
+    {
+      "path": "lanes/mechanics/FINAL_COMPONENT_ENVELOPES.json",
+      "exists": true,
+      "expected_historical_sha256": "e9b8c89e865f53a93ed458ce690dc310f3fd9df0b8eaf39658492fbd2b4bbbd1",
+      "actual_sha256": "e9b8c89e865f53a93ed458ce690dc310f3fd9df0b8eaf39658492fbd2b4bbbd1"
+    },
+    {
+      "path": "lanes/mechanics/FINAL_SOURCE_BINDING.json",
+      "exists": true,
+      "expected_historical_sha256": "4a607ecf994508b22f6099810cb7c5e4e778738782e1d7f7f64a47bf98eedce5",
+      "actual_sha256": "4a607ecf994508b22f6099810cb7c5e4e778738782e1d7f7f64a47bf98eedce5"
+    },
+    {
+      "path": "lanes/mechanics/STRUCTURAL_SERVICE_MODEL.json",
+      "exists": true,
+      "expected_historical_sha256": "e701cb8641ebef7f6ddd35a96acff390868b686cd32018fd59213fa1f32c5ecc",
+      "actual_sha256": "e701cb8641ebef7f6ddd35a96acff390868b686cd32018fd59213fa1f32c5ecc"
+    },
+    {
+      "path": "analyses/assembly_handling/PRIMARY_BODY_HEIGHT_ADDENDUM.json",
+      "exists": true,
+      "expected_historical_sha256": "7fdd606347fd74861dc3994a18d9bf8fe090e02b338c074a8d3502b6fb382bce",
+      "actual_sha256": "7fdd606347fd74861dc3994a18d9bf8fe090e02b338c074a8d3502b6fb382bce"
+    },
+    {
+      "path": "lanes/mechanics/THERMAL_CONTACT_T01_MODEL.json",
+      "exists": true,
+      "expected_historical_sha256": "a5fc11981a3bca81c2dc343bd87a0b618e391770088be932934004bc68df4f88",
+      "actual_sha256": "a5fc11981a3bca81c2dc343bd87a0b618e391770088be932934004bc68df4f88"
+    },
+    {
+      "path": "lanes/mechanics/THERMAL_CONTACT_T01_REVIEW.md",
+      "exists": true,
+      "expected_historical_sha256": "d3c23b6dc0e48a09471cc415981a3bfd6baa1235d81735f6085eb17c194bba4f",
+      "actual_sha256": "d3c23b6dc0e48a09471cc415981a3bfd6baa1235d81735f6085eb17c194bba4f"
+    },
+    {
+      "path": "lanes/mechanics/THERMAL_CONTACT_T01_INVERSE_REQUIREMENTS.json",
+      "exists": true,
+      "expected_historical_sha256": "bf381e8241a51ea9e2eaf098c0cd03e2bb6e5ba870fbe88e6daa010cbeda8df9",
+      "actual_sha256": "bf381e8241a51ea9e2eaf098c0cd03e2bb6e5ba870fbe88e6daa010cbeda8df9"
+    },
+    {
+      "path": "analyses/review_i22/POPULATED_CLEARANCE_RESULTS.json",
+      "exists": true,
+      "expected_historical_sha256": "b0ecac00865a5fd31a1572a6d7c18ae75981a16c76d54b4e2262f4128563d6e4",
+      "actual_sha256": "b0ecac00865a5fd31a1572a6d7c18ae75981a16c76d54b4e2262f4128563d6e4"
+    },
+    {
+      "path": "lanes/mechanics/C03_CARRIER_CHECKS.json",
+      "exists": true,
+      "expected_historical_sha256": "3166345cfe697fbffdd4b0449248aad9422e63cac200a4f14f1d5ccadc1cf255",
+      "actual_sha256": "3166345cfe697fbffdd4b0449248aad9422e63cac200a4f14f1d5ccadc1cf255"
+    },
+    {
+      "path": "lanes/mechanics/RF_ACCESSORY_ISOLATION_CHECKS.json",
+      "exists": true,
+      "expected_historical_sha256": "7a18845ed0186f4fac17d2f51e3625d3570557b8b78ffc92e173e875fe6c3a1c",
+      "actual_sha256": "7a18845ed0186f4fac17d2f51e3625d3570557b8b78ffc92e173e875fe6c3a1c"
+    },
+    {
+      "path": "analyses/review_i22/mechanical_audit.py",
+      "exists": true,
+      "expected_historical_sha256": "57f7f55d5e5e084f3bd736315f7265d2e942759a32aa7371a57e971a6aa4dbb8",
+      "actual_sha256": "57f7f55d5e5e084f3bd736315f7265d2e942759a32aa7371a57e971a6aa4dbb8"
+    },
+    {
+      "path": "analyses/mated_i22/check_mated.py",
+      "exists": true,
+      "expected_historical_sha256": "c19455a026b9397b548502df3e03756c46ac81c6f4e33242fc1c07951a8e018f",
+      "actual_sha256": "c19455a026b9397b548502df3e03756c46ac81c6f4e33242fc1c07951a8e018f"
+    },
+    {
+      "path": "iterations/I18_capacitor_thermal_tab/CURRENT_OUTLINE_GEOMETRY.json",
+      "exists": true,
+      "expected_historical_sha256": "fe847d108c37a15d8386c9abec3cedbe39f390f4091c071464596b5b871101b7",
+      "actual_sha256": "fe847d108c37a15d8386c9abec3cedbe39f390f4091c071464596b5b871101b7"
+    },
+    {
+      "path": "runtime/NATIVE_NEGATIVE_CONTROL_RECHECK.json",
+      "exists": true,
+      "expected_historical_sha256": "c4c3531bdbbc221139a01a09a581b260ee9b9c28f55002b23dfac566a3b53e79",
+      "actual_sha256": "c4c3531bdbbc221139a01a09a581b260ee9b9c28f55002b23dfac566a3b53e79"
+    }
+  ],
+  "hash_match_is_not_engineering_acceptance": true
+}

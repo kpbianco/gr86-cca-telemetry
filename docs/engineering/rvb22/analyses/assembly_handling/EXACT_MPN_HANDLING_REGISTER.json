@@ -1,13 +1,7 @@
 {
-  "pcb_sha256": "c2297b8c857d54f525667e9b2dace5f5f538b7c8d651370cc1b40fa2bdfb39c1",
-  "status": "SOURCE_INVENTORY_AND_PROCESS_ROUTING_COMPLETE_SUPPLIER_DECLARATIONS_REMAIN",
-  "unique_fitted_MPNs": 74,
+  "status": "CURRENT_SOURCE_MPN_INVENTORY_RECONCILED",
+  "unique_fitted_MPNs": 75,
   "fitted_references": 153,
-  "MSL_primary_known_MPNs": 58,
-  "numeric_MSL_primary_known_MPNs": 28,
-  "manufacturer_non_numeric_classification_MPNs": 30,
-  "expansion_sha256": "57d52175f52632a3efd7fafbcb11915d1893c354461b00902a2f683f73918dba",
-  "unknown_msl_MPNs": 16,
   "rows": [
     {
       "mpn": "0430451200",
@@ -673,6 +667,32 @@
       "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
     },
     {
+      "mpn": "TNPU060311K8HWEA00",
+      "manufacturer": "Vishay",
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/docs/28779/tnpue3.pdf",
+      "source_evidence": "PRIMARY_FAMILY_DATASHEET_28779_REV_04_MAR_2025_REVIEWED",
+      "handling": "TNPU e3 manufacturer Assembly section permits automatic wave/reflow/vapor-phase processing and common electronics cleaning solvents. Coating/potting compatibility remains application-specific. Numeric MSL and a numeric production peak are not stated here and are not invented.",
+      "current_release_condition": "Use the board-wide compatible process and incoming lot label. TNPU film limit125C and power derating apply; part-family solvent compatibility does not authorize cleaning the full assembly.",
+      "references": "R155",
+      "quantity": 1
+    },
+    {
+      "mpn": "TNPU06034K99HWEA00",
+      "manufacturer": "Vishay",
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/docs/28779/tnpue3.pdf",
+      "source_evidence": "PRIMARY_FAMILY_DATASHEET_28779_REV_04_MAR_2025_REVIEWED",
+      "handling": "TNPU e3 manufacturer Assembly section permits automatic wave/reflow/vapor-phase processing and common electronics cleaning solvents. Coating/potting compatibility remains application-specific. Numeric MSL and a numeric production peak are not stated here and are not invented.",
+      "current_release_condition": "Use the board-wide compatible process and incoming lot label. TNPU film limit125C and power derating apply; part-family solvent compatibility does not authorize cleaning the full assembly.",
+      "references": "R156",
+      "quantity": 1
+    },
+    {
       "mpn": "TNPW0603100KBEEA",
       "references": "R123",
       "manufacturer": "Vishay",
@@ -687,9 +707,9 @@
     },
     {
       "mpn": "TNPW060310K0BEEA",
-      "references": "R156 R502 R504",
+      "references": "R502 R504",
       "manufacturer": "Vishay",
-      "quantity": 3,
+      "quantity": 2,
       "process": "GLOBAL_REFLOW",
       "msl": "NOT_APPLICABLE",
       "manufacturer_peak_C": null,
@@ -703,19 +723,6 @@
       "references": "R514 R524",
       "manufacturer": "Vishay",
       "quantity": 2,
-      "process": "GLOBAL_REFLOW",
-      "msl": "NOT_APPLICABLE",
-      "manufacturer_peak_C": null,
-      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
-      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
-      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
-      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
-    },
-    {
-      "mpn": "TNPW060323K7BEEA",
-      "references": "R155",
-      "manufacturer": "Vishay",
-      "quantity": 1,
       "process": "GLOBAL_REFLOW",
       "msl": "NOT_APPLICABLE",
       "manufacturer_peak_C": null,
@@ -976,279 +983,249 @@
     {
       "reference": "TP103",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP121",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP403",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP203",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP101",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP122",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP124",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP123",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "J201",
       "assembly": "BARE_PCB",
-      "mpn": "TC2030-IDC-NL (tool, not assembled component)",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "TC2030-IDC-NL (tool, not assembled component)"
     },
     {
       "reference": "TP404",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP102",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP405",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP510",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP401",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "C203",
       "assembly": "DNP",
-      "mpn": "GCM188R71C105KA64D",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "GCM188R71C105KA64D"
     },
     {
       "reference": "TP402",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP505",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP504",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP506",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP302",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP501",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP211",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP213",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "SJ301",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB OPEN SOLDER LINK",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB OPEN SOLDER LINK"
     },
     {
       "reference": "TP303",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP151",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP509",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP304",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "R301",
       "assembly": "DNP",
-      "mpn": "CRCW06030000Z0EA",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "CRCW06030000Z0EA"
     },
     {
       "reference": "TP507",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP153",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP152",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "R306",
       "assembly": "DNP",
-      "mpn": "CRCW1206120RFKEA",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "CRCW1206120RFKEA"
     },
     {
       "reference": "TP502",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP104",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP305",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP301",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP212",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP508",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP201",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP202",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "TP503",
       "assembly": "BARE_PCB",
-      "mpn": "BARE PCB PAD",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "mpn": "BARE PCB PAD"
     },
     {
       "reference": "MH901",
-      "assembly": "",
-      "mpn": "",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "assembly": null,
+      "mpn": ""
     },
     {
       "reference": "MH902",
-      "assembly": "",
-      "mpn": "",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "assembly": null,
+      "mpn": ""
     },
     {
       "reference": "MH903",
-      "assembly": "",
-      "mpn": "",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "assembly": null,
+      "mpn": ""
     },
     {
       "reference": "MH904",
-      "assembly": "",
-      "mpn": "",
-      "reason": "DNP/tool/bareboard/notfitted per source assembly metadata"
+      "assembly": null,
+      "mpn": ""
     }
   ],
-  "no_assembly_acceptance_inferred": true
+  "corrected_references": [
+    {
+      "reference": "R155",
+      "before": "TNPW060323K7BEEA",
+      "after": "TNPU060311K8HWEA00"
+    },
+    {
+      "reference": "R156",
+      "before": "TNPW060310K0BEEA",
+      "after": "TNPU06034K99HWEA00"
+    }
+  ],
+  "MSL_primary_known_MPNs": 57,
+  "numeric_MSL_primary_known_MPNs": 28,
+  "unknown_msl_MPNs": 18,
+  "physical_assembly_acceptance": false,
+  "pcb_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8"
 }

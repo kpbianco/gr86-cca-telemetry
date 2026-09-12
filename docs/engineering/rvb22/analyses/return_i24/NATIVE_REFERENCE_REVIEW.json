@@ -1,0 +1,270 @@
+{
+  "status": "PASS_EXACT_NATIVE_REFERENCE_REGRESSION_REVIEW_SIX_CAN_TX_GAPS_OPEN",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "filled_PCB_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+  "before": {
+    "critical_segments_checked": 313,
+    "reportable_segment_findings": 15,
+    "reportable_adjacent_gap_length_mm": 5.912173034517663,
+    "by_net": {
+      "CAN_RX_MCU": 9,
+      "CAN_TX_MCU": 6
+    },
+    "all_adjacent_gap_length_mm_including_subthreshold": 5.912173034517663,
+    "simultaneous_inner_plane_gap_length_mm": 0.05797709920305593,
+    "simultaneous_inner_plane_gap_segment_count": 1
+  },
+  "after": {
+    "critical_segments_checked": 313,
+    "reportable_segment_findings": 6,
+    "reportable_adjacent_gap_length_mm": 1.3417456363915103,
+    "by_net": {
+      "CAN_TX_MCU": 6
+    },
+    "all_adjacent_gap_length_mm_including_subthreshold": 1.3417456363915103,
+    "simultaneous_inner_plane_gap_length_mm": 0.0,
+    "simultaneous_inner_plane_gap_segment_count": 0
+  },
+  "critical_net_scope": [
+    "ADC_NODE",
+    "CANH",
+    "CANL",
+    "CAN_RX_MCU",
+    "CAN_TX_MCU",
+    "GPS_ANT_RF_BIASED",
+    "GPS_EXT_ANT",
+    "GPS_PPS_BUFFER",
+    "GPS_PPS_MCU",
+    "GPS_PPS_RAW",
+    "GPS_RX_MODULE",
+    "GPS_TX_BUFFER",
+    "GPS_TX_MCU",
+    "GPS_TX_RAW",
+    "OIL_EXCITATION_ADC",
+    "UART0_RX",
+    "UART0_TX"
+  ],
+  "source_critical_segment_identity_and_geometry_unchanged": true,
+  "full_per_UUID_comparison_includes_subthreshold_gaps": true,
+  "regressions": [],
+  "improved_metrics": [
+    {
+      "uuid": "045a8466-bd32-4eaa-b1f0-600ad27ea23b",
+      "net": "CAN_RX_MCU",
+      "metric": "adjacent_gap_after_own_antipads_mm",
+      "before_mm": 0.14142135623731153,
+      "after_mm": 0.0,
+      "delta_mm": -0.14142135623731153
+    },
+    {
+      "uuid": "2af2bbcd-0762-43fc-990f-932f16c948dc",
+      "net": "CAN_RX_MCU",
+      "metric": "adjacent_gap_after_own_antipads_mm",
+      "before_mm": 0.5748749846775447,
+      "after_mm": 0.0,
+      "delta_mm": -0.5748749846775447
+    },
+    {
+      "uuid": "3cb08c20-61e0-4499-9533-e8c53f87870f",
+      "net": "CAN_RX_MCU",
+      "metric": "adjacent_gap_after_own_antipads_mm",
+      "before_mm": 1.5999999999999979,
+      "after_mm": 0.0,
+      "delta_mm": -1.5999999999999979
+    },
+    {
+      "uuid": "532a64af-95c7-4e97-8200-a2b6caad1c40",
+      "net": "CAN_RX_MCU",
+      "metric": "adjacent_gap_after_own_antipads_mm",
+      "before_mm": 0.10000000000000142,
+      "after_mm": 0.0,
+      "delta_mm": -0.10000000000000142
+    },
+    {
+      "uuid": "6b8bcaa8-cd83-445e-9672-248530cf9ab1",
+      "net": "CAN_RX_MCU",
+      "metric": "adjacent_gap_after_own_antipads_mm",
+      "before_mm": 0.9913580503692976,
+      "after_mm": 0.0,
+      "delta_mm": -0.9913580503692976
+    },
+    {
+      "uuid": "9e2e97fc-9590-4daf-80c6-69c69e27069f",
+      "net": "CAN_RX_MCU",
+      "metric": "adjacent_gap_after_own_antipads_mm",
+      "before_mm": 0.354257668947336,
+      "after_mm": 0.0,
+      "delta_mm": -0.354257668947336
+    },
+    {
+      "uuid": "a7d99572-0ff2-4ca3-9f29-3ee86f5182bc",
+      "net": "CAN_RX_MCU",
+      "metric": "adjacent_gap_after_own_antipads_mm",
+      "before_mm": 0.35425766894732597,
+      "after_mm": 0.0,
+      "delta_mm": -0.35425766894732597
+    },
+    {
+      "uuid": "df746851-8e9b-46eb-9007-0b9aef9e0fc6",
+      "net": "CAN_RX_MCU",
+      "metric": "adjacent_gap_after_own_antipads_mm",
+      "before_mm": 0.10000000000000142,
+      "after_mm": 0.0,
+      "delta_mm": -0.10000000000000142
+    },
+    {
+      "uuid": "e290dfec-5c37-43ea-8644-3d01c3213a09",
+      "net": "CAN_RX_MCU",
+      "metric": "adjacent_gap_after_own_antipads_mm",
+      "before_mm": 0.354257668947336,
+      "after_mm": 0.0,
+      "delta_mm": -0.354257668947336
+    },
+    {
+      "uuid": "871a1d07-8555-46ec-8b60-8f49faecf1a8",
+      "net": "CAN_TX_MCU",
+      "metric": "both_ground_planes_gap_mm",
+      "before_mm": 0.05797709920305593,
+      "after_mm": 0.0,
+      "delta_mm": -0.05797709920305593
+    }
+  ],
+  "all_nine_prior_CAN_RX_gaps_removed": true,
+  "all_simultaneous_inner_plane_gaps_removed": true,
+  "RF_segments_checked": 12,
+  "RF_adjacent_reference_gaps": 0,
+  "remaining_segments": [
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "3cd9494b-1d5d-47a2-aa04-327840a5c89e",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.684766,
+        14.25
+      ],
+      "end": [
+        81.7,
+        14.25
+      ],
+      "length_mm": 0.015234000000006631,
+      "adjacent_gap_after_own_antipads_mm": 0.015234000000006631,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (81.684766 14.25, 81.7 14.25)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "6e2aaa09-c44c-4e4f-ba78-c2933e8e23ce",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.7,
+        14.25
+      ],
+      "end": [
+        81.2,
+        14.75
+      ],
+      "length_mm": 0.7071067811865476,
+      "adjacent_gap_after_own_antipads_mm": 0.7071067811865476,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (81.7 14.25, 81.2 14.75)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "871a1d07-8555-46ec-8b60-8f49faecf1a8",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.15,
+        15.15
+      ],
+      "end": [
+        80.85,
+        15.45
+      ],
+      "length_mm": 0.4242640687119358,
+      "adjacent_gap_after_own_antipads_mm": 0.19869417708630266,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (81.15 15.15, 81.009502 15.290498000000003)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "95963305-6d4d-40ef-a89e-319eb932f057",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.2,
+        14.75
+      ],
+      "end": [
+        81.2,
+        15.05
+      ],
+      "length_mm": 0.3000000000000007,
+      "adjacent_gap_after_own_antipads_mm": 0.3000000000000007,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (81.2 14.75, 81.2 15.05)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "d940ea9d-cb9c-43f3-a104-0c43f56d70f9",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.15,
+        15.1
+      ],
+      "end": [
+        81.15,
+        15.15
+      ],
+      "length_mm": 0.05000000000000071,
+      "adjacent_gap_after_own_antipads_mm": 0.05000000000000071,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (81.15 15.1, 81.15 15.15)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    },
+    {
+      "net": "CAN_TX_MCU",
+      "uuid": "ff83a906-e673-4cf7-a47a-ba6b8551df15",
+      "layer": "F.Cu",
+      "reference": "In1.Cu",
+      "start": [
+        81.2,
+        15.05
+      ],
+      "end": [
+        81.15,
+        15.1
+      ],
+      "length_mm": 0.07071067811865199,
+      "adjacent_gap_after_own_antipads_mm": 0.07071067811865199,
+      "both_ground_planes_gap_mm": 0.0,
+      "adjacent_gap_WKT": "LINESTRING (81.2 15.05, 81.15 15.1)",
+      "both_gap_WKT": "LINESTRING EMPTY"
+    }
+  ],
+  "native_postconditions_passed": 14,
+  "native_ERC_DRC_unconnected_parity_findings": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "manufacturing_report_path": "analyses/manufacturing_i24/RESULTS.json",
+  "manufacturing_report_sha256": "a44456e2913bd831a569940bacaf184f70676c5682e0e4a4abf8c6bfc4ac8922",
+  "before_reference_cache_sha256": "fc6f3cc31ddacbfffd30da60a1ff38672233f80fe84848435ee3d60df05b0d21",
+  "scope_limits": [
+    "Critical outer signal centreline reference, explicit own-pad/via antipad allowance, and geometric same-net connectivity are checked; no local return-current transfer or EM field/neck-down proof is claimed.",
+    "GND-02 remains open for the six CAN_TX launch interruptions and its complete layer-by-layer/neck-down requirement; additional analog/private-return/power-loop applicability remains separate.",
+    "SI-07 receiver scope waveforms and CAN-03 failure tests remain unexecuted physical requirements.",
+    "All 133-net intended connectivity and export agreement are independently supplied by the peer manufacturing report."
+  ],
+  "physical_tests_claimed": 0,
+  "manufacturing_release": false
+}

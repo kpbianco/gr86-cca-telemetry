@@ -1,0 +1,13 @@
+{
+  "native_postconditions": 14,
+  "intended_nets": 133,
+  "disconnected_pad_nets": {},
+  "firmware_suites": 9,
+  "firmware_exact_source_files_bound": 22,
+  "CAD_native_run_reused": 34499455561,
+  "native_copper_and_exports_independently_recomputed_this_iteration": true,
+  "fresh_KiCad_execution_this_iteration": false,
+  "ASan": true,
+  "UBSan": true,
+  "physical_testing": false
+}

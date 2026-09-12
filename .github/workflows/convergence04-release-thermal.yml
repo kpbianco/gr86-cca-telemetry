@@ -1,0 +1,62 @@
+name: Convergence04 release-profile thermal verification
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/convergence04-release-thermal.yml'
+      - 'docs/engineering/rvb22/analyses/convergence_04/**'
+      - 'docs/engineering/rvb22/candidate/firmware/**'
+permissions:
+  contents: read
+concurrency:
+  group: convergence04-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+jobs:
+  release-thermal:
+    if: github.head_ref == 'codex/rvb24-coordinated-closure' && github.event.pull_request.head.repo.full_name == github.repository
+    strategy:
+      fail-fast: false
+      matrix:
+        mesh: [0.5, 0.25]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Verify release power-profile source
+        run: python3 docs/engineering/rvb22/analyses/convergence_04/check_release_profile.py
+      - name: Provision pinned native CAD
+        run: bash docs/engineering/rvb22/runtime/hosted/setup_native.sh cad
+      - name: Refill exact candidate
+        run: |
+          xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/candidate/run_native_candidate.py \
+            --cad-dir docs/engineering/rvb22/candidate/cad --output c04-native \
+            --kicad-cli kicad-cli --pcbnew-python /usr/bin/python3
+      - name: Provision numeric environment
+        run: |
+          python3 -m venv "$RUNNER_TEMP/c04-env"
+          "$RUNNER_TEMP/c04-env/bin/python" -m pip install -r docs/engineering/rvb22/analyses/convergence_02/requirements.txt
+      - name: Run release/stress thermal screen
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          mkdir -p c04-evidence
+          "$RUNNER_TEMP/c04-env/bin/python" docs/engineering/rvb22/analyses/convergence_04/run_release_screen.py \
+            --native-dir c04-native --mesh '${{ matrix.mesh }}' --out c04-evidence/thermal \
+            2>&1 | tee c04-evidence/thermal.log
+          git rev-parse HEAD > c04-evidence/commit.txt
+      - name: Preserve evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: convergence04-${{ matrix.mesh }}-${{ github.event.pull_request.head.sha }}
+          path: |
+            c04-evidence/
+            c04-native/RESULT.json
+            c04-native/DRC.json
+            c04-native/ERC.json
+          retention-days: 14
+          if-no-files-found: error

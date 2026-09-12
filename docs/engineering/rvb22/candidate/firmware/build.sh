@@ -6,7 +6,7 @@ cli_args=()
 if [[ -n ${ARDUINO_CLI_CONFIG:-} ]]; then
   cli_args+=(--config-file "$ARDUINO_CLI_CONFIG")
 fi
-fqbn='esp32:esp32:esp32s3:USBMode=hwcdc,CDCOnBoot=default,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=240,FlashMode=qio,FlashSize=8M,PartitionScheme=default_8MB,DebugLevel=none,PSRAM=enabled,LoopCore=1,EventsCore=1,EraseFlash=none,UploadSpeed=115200'
+fqbn='esp32:esp32:esp32s3:USBMode=hwcdc,CDCOnBoot=default,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=160,FlashMode=qio,FlashSize=8M,PartitionScheme=default_8MB,DebugLevel=none,PSRAM=enabled,LoopCore=1,EventsCore=1,EraseFlash=none,UploadSpeed=115200'
 "$cli" "${cli_args[@]}" compile --fqbn "$fqbn" --warnings all \
   --build-path "${FIRMWARE_BUILD_DIR:-/tmp/gr86_revb_build}" \
   --output-dir "$firmware_dir/images" "$firmware_dir/cca_telemetry"

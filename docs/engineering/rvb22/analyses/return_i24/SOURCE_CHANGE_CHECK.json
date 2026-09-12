@@ -1,0 +1,28 @@
+{
+  "status": "PASS_INDEPENDENT_SOURCE_PREFLIGHT_NATIVE_REQUIRED",
+  "source_before_sha256": "44121c54ce49ace9c82404726706ef8a8f582ad63a9dad0a29bdd99aa0cad5db",
+  "source_after_sha256": "e0e370d81a8a095b65583806051c69362ce3a131567fbcc0cfb6d0bf683caf71",
+  "changed_nets": [
+    "OIL_5V",
+    "OIL_SIG"
+  ],
+  "removed_segments": 11,
+  "added_segments": 6,
+  "all_nonsegment_objects_exact": true,
+  "unchanged_segment_objects_exact": true,
+  "new_clearance_regressions": [],
+  "lost_explicit_pad_groups": [],
+  "all_track_keepout_polygons_checked": 7,
+  "new_track_keepout_hits": [],
+  "voltage_specific_minimum_clearance_mm": {
+    "protected": 1.625,
+    "raw": 2.9131682471315914
+  },
+  "voltage_specific_findings": [],
+  "projected_adjacent_reference_regressions": [],
+  "minimum_copper_board_edge_mm": 8.97188960110865,
+  "minimum_copper_NPTH_mm": 14.649936278268983,
+  "native_required": true,
+  "affected_PDN_ground_thermal_required": true,
+  "physical_tests_claimed": 0
+}

@@ -1,0 +1,51 @@
+--- a/docs/engineering/rvb22/analyses/convergence_01/run_review.py
++++ b/docs/engineering/rvb22/analyses/convergence_01/run_review.py
+@@ -90,7 +90,7 @@
+     require(all(n[x]==0 for x in ['native_DRC','native_unconnected','native_parity','native_ERC']),'Native findings present')
+     require(f['status']=='PASS' and len(f['results'])==9 and all(x['passed']for x in f['results']),'Firmware regression failure')
+     for path,sha in f['source_files_sha256'].items():require(digest(firmware/path)==sha,'Firmware changed since regression: '+path)
+-    return {'native_postconditions':n['native_postconditions_passed'],'intended_nets':n['continuity']['nets'],'disconnected_pad_nets':n['continuity']['disconnected_pad_nets'],'firmware_suites':len(f['results']),'firmware_exact_source_files_bound':len(f['source_files_sha256']),'CAD_native_run_reused':34499455561,'native_copper_and_exports_independently_recomputed_this_iteration':True,'fresh_KiCad_execution_this_iteration':False,'ASan':True,'UBSan':True,'physical_testing':False}
++    return {'native_postconditions':n['native_postconditions_passed'],'intended_nets':n['continuity']['nets'],'disconnected_pad_nets':n['continuity']['disconnected_pad_nets'],'firmware_suites':len(f['results']),'firmware_exact_source_files_bound':len(f['source_files_sha256']),'CAD_native_run_reused':34499455561,'native_copper_and_exports_independently_recomputed_this_iteration':False,'current_source_hash_binding_verified_this_execution':True,'fresh_KiCad_execution_this_iteration':False,'ASan':True,'UBSan':True,'physical_testing':False}
+ 
+ def main():
+     ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,default=D/'results/review');ap.add_argument('--evidence-root',type=Path,default=W);a=ap.parse_args();a.out.mkdir(parents=True,exist_ok=True)
+@@ -110,13 +110,13 @@
+         status=r['desktop_status']; category=''; action='';domain=r['id'].split('-')[0]
+         if r['closure']=='na':category='NOT_APPLICABLE_RETAINED';action='Original not-applicable rationale retained; no fabricated result.'
+         elif r['id']in ('REG-02','THERM-02'):
+-            category='ACTIVE_THERMAL_DESIGN';action='Finish full-load local thermal construction and package/local-air bounds; reject partial-path or colliding shoe proposals.'
++            category='I25_CONDITIONAL_DESKTOP_COMPLETE_PHYSICAL_GATE';action='I25/C04 controls the2.940859375W release allocation,<=0.45A current and>=80percent efficiency. Execute I26-PWR-01/I26-THERM-01; do not revive the superseded4.815W release model or claim measured hot spots.'
+         elif r['id']=='GND-02':
+-            category='RETURN_SCOPE_REVIEWED_BROADER_CLOSE_PENDING';action='Six remaining gaps are isolated CAN_TX stub geometry; actual receiver/RF paths remain referenced. Broader neck-down/return evidence must retain its stated finite scope.'
++            category='RETURN_TRANSFER_DESKTOP_WORK_REMAINING';action='All54 historical UUIDs reconciled:48 removed,6 isolated TX stub. Expanded scope includes2CAN_RXD pre-resistor gaps and60signal-via transfers; validate actual plane-transfer corridors, edge/receiver margins and etched necks before closing GND-02.'
+         elif r['id']=='WCA-07':
+-            category='NO_PCB_CHANGE_INDICATED_OPTICS_UNPROVEN';action='Six actual current-limited chains pass source/current checks. Optical lower bound remains zero; tune populated LED/resistor on existing footprints rather than redesign PCB for an unspecified visibility guarantee.'
++            category='LED_DESKTOP_COMPLETE_INSTALLED_VISIBILITY_GATE';action='I26 bounds7fittedLEDs including D401/U404; retains1kohm and a zero guaranteed hot low-current optical minimum. Execute I26-LED-01 current/thermal/photometry/dashboard recognition gates. Legacy LED_REVIEW covers the six GPIO channels only; the controlling seven-channel report is analyses/i26/LED_BOUND.json.'
+         elif domain=='THERM':
+-            category='THERMAL_DEPENDENCY_RECHECK';action='Re-review even formerly closed thermal rows against the final heat path, source temperatures and actual selected material limits.'
++            category='I25_THERMAL_SCOPE_RETAINED';action='I25 governs adopted release cooling and model assumptions. Preserve original row-specific limits and physical correlation; unadopted C02 mechanics are contingency-only.'
+         elif status=='COMPLETED_CONDITIONAL_MODEL':
+             category='BOUNDED_ANALYSIS_RETAINED';action='Existing finite assumptions and failure cases remain explicit. Do not turn missing universal supplier guarantees into endless new calculations; do not imply an unknown is proven.'
+         elif r['closure']=='closed':
+@@ -127,6 +127,6 @@
+     require(len(coverage)==290 and len({r['id']for r in coverage})==290,'Criterion identity loss')
+     save(a.out/'ALL_CRITERIA_COVERAGE.json',{'criterion_count':290,'original_counts':dict(original_counts),'workstream_counts':dict(Counter(r['desktop_workstream']for r in coverage)),'meaning':'Coverage/triage and dependency register, NOT 290 fresh engineering passes. Historical statuses are not rewritten by taxonomy.','rows':coverage})
+     save(a.out/'EVIDENCE_AVAILABILITY.json',{'file_count':len(filechecks),'files':list(filechecks.values()),'hash_match_is_not_engineering_acceptance':True})
+-    summary={'status':'PASS_EXECUTED_SOURCE_AND_REGRESSION_CHECKS_CONVERGENCE_REMAINS_OPEN','source_PCB_sha256':digest(pcb),'original_criteria':dict(original_counts),'all_290_rows_retained':True,'four_original_DESKTOP_WORK_REMAINING':[r['id']for r in reg['rows']if r['desktop_status']=='DESKTOP_WORK_REMAINING'],'regression':evidence,'corrected_handling_refs':handling['corrected_references'],'actual_PCB_routing_changes_this_iteration':False,'finished_all_desktop_work':False,'fabrication_release':False,'notes':['The user means avoiding another PCB order AFTER first fabrication, not preserving the current draft.','Free pre-fabrication redesign is authorized within the product scope.','Changing taxonomy does not count as closing original criteria.','Mechanical/thermal design is the principal active coupled workstream; exact materials and model applicability remain consequential.','The high-temperature pigtail is a validation candidate, not an installed-unit claim.']}
++    summary={'status':'PASS_EXECUTED_SOURCE_AND_REGRESSION_CHECKS_CONVERGENCE_REMAINS_OPEN','source_PCB_sha256':digest(pcb),'original_criteria':dict(original_counts),'all_290_rows_retained':True,'actionable_DESKTOP_WORK_REMAINING':[r['id']for r in reg['rows']if r['desktop_status']=='DESKTOP_WORK_REMAINING'],'regression':evidence,'corrected_handling_refs':handling['corrected_references'],'actual_PCB_routing_changes_this_iteration':False,'finished_all_desktop_work':False,'fabrication_release':False,'notes':['The user means avoiding another PCB order AFTER first fabrication, not preserving the current draft.','Free pre-fabrication redesign is authorized within the product scope.','Changing taxonomy does not count as closing original criteria.','GND-02 is the remaining actionable desktop criterion. Thermal is I25 conditional-model complete; physical correlation remains mandatory.','The user-selected851/960 chain is retained;851 must remain in an installed accessory zone<=60C.']}
+     save(a.out/'SUMMARY.json',summary);print(json.dumps(summary,indent=2))
+ if __name__=='__main__':main()
+--- a/docs/engineering/rvb22/I26_PREHARDWARE_CLOSURE.md
++++ b/docs/engineering/rvb22/I26_PREHARDWARE_CLOSURE.md
+@@ -1,3 +1,11 @@
++# I26-A current result: one actionable desktop criterion remains
++
++As of2026-09-12, WCA-07 desktop electrical/optical inference is complete with actual visibility/temperature qualification retained; REG-02 and THERM-02 are reconciled to I25. GND-02 remains actionable. All290 original questions and literal closure states remain unchanged.
++
++Current aggregate:141desktop/source/documentary,30conditional-model,114external qualification,4N/A,1desktop work remaining. This is not zero and not fabrication release. See `analyses/i26/README.md`, `RECONCILIATION_AUDIT.json`, and `QUALIFICATION_GATES.json`.
++
++---
++
+ # I26 pre-hardware closure contract
+ 
+ Date: 2026-09-11

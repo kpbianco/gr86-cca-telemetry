@@ -1,0 +1,51 @@
+{
+  "status": "PASS_EXECUTED_SOURCE_AND_REGRESSION_CHECKS_CONVERGENCE_REMAINS_OPEN",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "original_criteria": {
+    "open": 146,
+    "closed": 140,
+    "na": 4
+  },
+  "all_290_rows_retained": true,
+  "four_original_DESKTOP_WORK_REMAINING": [
+    "WCA-07",
+    "REG-02",
+    "GND-02",
+    "THERM-02"
+  ],
+  "regression": {
+    "native_postconditions": 14,
+    "intended_nets": 133,
+    "disconnected_pad_nets": {},
+    "firmware_suites": 9,
+    "firmware_exact_source_files_bound": 22,
+    "CAD_native_run_reused": 34499455561,
+    "native_copper_and_exports_independently_recomputed_this_iteration": true,
+    "fresh_KiCad_execution_this_iteration": false,
+    "ASan": true,
+    "UBSan": true,
+    "physical_testing": false
+  },
+  "corrected_handling_refs": [
+    {
+      "reference": "R155",
+      "before": "TNPW060323K7BEEA",
+      "after": "TNPU060311K8HWEA00"
+    },
+    {
+      "reference": "R156",
+      "before": "TNPW060310K0BEEA",
+      "after": "TNPU06034K99HWEA00"
+    }
+  ],
+  "actual_PCB_routing_changes_this_iteration": false,
+  "finished_all_desktop_work": false,
+  "fabrication_release": false,
+  "notes": [
+    "The user means avoiding another PCB order AFTER first fabrication, not preserving the current draft.",
+    "Free pre-fabrication redesign is authorized within the product scope.",
+    "Changing taxonomy does not count as closing original criteria.",
+    "Mechanical/thermal design is the principal active coupled workstream; exact materials and model applicability remain consequential.",
+    "The high-temperature pigtail is a validation candidate, not an installed-unit claim."
+  ]
+}

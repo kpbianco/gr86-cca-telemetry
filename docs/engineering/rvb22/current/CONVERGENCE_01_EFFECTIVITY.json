@@ -1,0 +1,22 @@
+{
+  "checkpoint": "CONVERGENCE_01",
+  "base_commit": "5d772f12cb7b7c3fdf40c792726c2e01c8025a73",
+  "PR": 46,
+  "publication": "LOCAL_PACKAGE_ONLY_GITHUB_WRITE_ACTIONS_NOT_EXPOSED",
+  "goal": "Avoid needing a second PCB fabrication after the final candidate is ordered; freely redesign before that order.",
+  "current_candidate_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "original_register": "FINAL_REVIEW_REGISTER.json",
+  "original_register_scope": "Historical I22 checkpoint; formal statuses preserved. It is not the current thermal/contact disposition.",
+  "current_scope_register": "analyses/convergence_01/results/review/ALL_CRITERIA_COVERAGE.json",
+  "current_report": "analyses/convergence_01/README.md",
+  "formal_counts": {
+    "open": 146,
+    "closed": 140,
+    "na": 4
+  },
+  "prior_redline_identities_retained": 357,
+  "closed_original_criteria_this_turn": 0,
+  "complete_desktop_convergence": false,
+  "no_new_BOM_CAD_fabrication_release": true,
+  "after_redesign": "Review every applicable original criterion including prior closures; re-run affected source/net/export/firmware/power/thermal/mechanical/antenna checks. Unchanged evidence requires an explicit applicability argument, not an automatic pass."
+}

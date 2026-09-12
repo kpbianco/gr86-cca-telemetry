@@ -1,0 +1,1231 @@
+{
+  "status": "CURRENT_SOURCE_MPN_INVENTORY_RECONCILED",
+  "unique_fitted_MPNs": 75,
+  "fitted_references": 153,
+  "rows": [
+    {
+      "mpn": "0430451200",
+      "references": "F1",
+      "manufacturer": "Molex",
+      "quantity": 1,
+      "process": "LOCAL_OR_SELECTIVE_AFTER_GLOBAL",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/applicationspecificationspdf/430/43045/430450001-AS-000.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Applicable43045 header family application specificationA1:wave/reflow260Cmax,original packaging until use,avoid corrosive chemicals. Selected F1 route remains local/selective after global. The source does not give a local wave dwell; do not borrow Würth5s. Twelve-circuit harness requires recommended25.4mm relaxed wire before bend/tie/twist,matched plating and no current sharing across pins; compare actual harness separately. NumericMSL not published.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "0885001.DR",
+      "references": "F101",
+      "manufacturer": "Littelfuse",
+      "quantity": 1,
+      "process": "LOCAL_OR_SELECTIVE_AFTER_GLOBAL",
+      "msl": null,
+      "manufacturer_peak_C": null,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/littelfuse_885.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "FACTORY_LOCAL_AFTER_REFLOW; excluded fromglobalpaste/autoCPL; controlled localmanufacturer profile, body cooling and continuity afterward.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "61300211121",
+      "references": "J202 J203",
+      "manufacturer": "Wurth Elektronik",
+      "quantity": 2,
+      "process": "LOCAL_OR_SELECTIVE_AFTER_GLOBAL",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/wurth_61300211121.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact manufacturer through-hole header drawing permits lead-free wave250…260C,≤5s each wave. Routed local/selective after global; no whole-body reflow or numericMSL inferred. Preserve manufacturer storage/usewithin12months and inspect solderability of older stock.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "AA0603FR-07220RL",
+      "references": "R402 R403 R404 R515 R525",
+      "manufacturer": "Yageo",
+      "quantity": 5,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": null,
+      "source": "https://www.mouser.com/pdfDocs/Yageo_Automotive.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Manufacturer-authored automotive catalog AA resistor section specifies MSL1 and J-STD020D solder reference. Archived manufacturer document is mirrored by Mouser; it does not establish the incoming lot or numeric peak for this assembly.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "APT1608SGC",
+      "references": "D401 D601 D602 D603 D604 D605 D606",
+      "manufacturer": "Kingbright",
+      "quantity": 7,
+      "process": "GLOBAL_REFLOW",
+      "msl": 3,
+      "manufacturer_peak_C": 260,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/kingbright_apt1608sgc.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "LED floor-life/optical lens and cleaning restrictions remain controlled by incoming label and exact profile.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "BZT52H-B15-QX",
+      "references": "D104",
+      "manufacturer": "Nexperia",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "https://www.nexperia.com/chemical-content/BZT52H-B15-Q.html",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact12NC934664276115/orderable row gives MSL1. Lead-free table: peak260C,maximum40s within5C ofpeak,three processingcycles. Manufacturer report2026-05-22; web read2026-09-09; no lot acceptance inferred.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "C1210C106K5RACTU",
+      "references": "C504 C505 C506",
+      "manufacturer": "KEMET",
+      "quantity": 3,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": null,
+      "source": "https://www.kemet.com/en/us/capacitors/ceramic/ceramics-faq.html",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Manufacturer says all KEMET MLCCs MSL1 and baking unnecessary. This does not set this exact MPN reflow peak. FAQ ultrasonic limits20W/L,20–40kHz,≤60C,≤5min apply only to capacitor-level guidance; assembled GNSS/LED/connectors may prohibit that process.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CGA3E2C0G1H101J080AA",
+      "references": "C126 C514 C524",
+      "manufacturer": "TDK",
+      "quantity": 3,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CGA3E2C0G1H222J080AA",
+      "references": "C124",
+      "manufacturer": "TDK",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CGA3E2C0G2A332J080AA",
+      "references": "C125",
+      "manufacturer": "TDK",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CGA3E2X7R1H223K080AE",
+      "references": "C501 C513 C523",
+      "manufacturer": "TDK",
+      "quantity": 3,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_soft_en.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TDK product page links soft-termination Oct2025 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CGA3E2X7R2A103K080AE",
+      "references": "C102",
+      "manufacturer": "TDK",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_soft_en.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TDK product page links soft-termination Oct2025 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CGA3E3X7R1H224K080AB",
+      "references": "C152 C154",
+      "manufacturer": "TDK",
+      "quantity": 2,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CGA4J2X7R2A104K125AA",
+      "references": "C101 C123 C503",
+      "manufacturer": "TDK",
+      "quantity": 3,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CGA6N3X7R2A225K230AB",
+      "references": "C103 C121 C122 C129",
+      "manufacturer": "TDK",
+      "quantity": 4,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://product.tdk.com/system/files/dam/doc/product/capacitor/ceramic/mlcc/specification/mlccspec_automotive_general_en.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TDK product page links general June2026 delivery specification. NumericMSL is not published in either reviewed page/specification and is not borrowed from CeraLink or another vendor. Store5…40C/20…70%RH,original packaging,usewithin6months or verify solderability;avoid condensation. Lead-free reflow≤260C/≤10s;preheat delta≤150C for0603/0805,≤130C for1210. Follow exact cleaning/thermal-shock rules; soft termination contains resin and must not be called resinless.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CRCW06030000Z0EA",
+      "references": "R401",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/20035/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CRCW0603100KFKEA",
+      "references": "R108 R127 R152 R407 R408 R409 R411 R506",
+      "manufacturer": "Vishay",
+      "quantity": 8,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/20035/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CRCW060310K0FKEA",
+      "references": "R157 R201 R202 R303 R410",
+      "manufacturer": "Vishay",
+      "quantity": 5,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/20035/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CRCW060310R0FKEA",
+      "references": "R106",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/20035/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CRCW06031K00FKEA",
+      "references": "R154 R203 R302 R405 R601 R602 R603 R604 R605 R606",
+      "manufacturer": "Vishay",
+      "quantity": 10,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/20035/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CRCW06035K10FKEA",
+      "references": "R107",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/20035/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CRCW12060000Z0EA",
+      "references": "R109 R128 R151",
+      "manufacturer": "Vishay",
+      "quantity": 3,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/20035/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CRCW1206100KFKEA",
+      "references": "R111 R125",
+      "manufacturer": "Vishay",
+      "quantity": 2,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/20035/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CRCW1206510KFKEA",
+      "references": "R105",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/20035/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CRCW25124R70FKEGHP",
+      "references": "R507",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/20043/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "CRCW25126K81FKEG",
+      "references": "R101",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/20035/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "ERA3AEB1472V",
+      "references": "R104",
+      "manufacturer": "Panasonic",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/DMM0000COL14.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact ERA3 family/product-linked rectangular resistor profile:lead-free peak≤260C/≤10s,above230C30–40s,preheat150…180C60–120s,maximumtwo reflows. ERA datasheet storage5…35C/45…85%RH,≤1year. Use rosin flux; highly acidic/water-soluble/fluoride flux prohibited; cleaning/coating needs process validation. No numericMSL found in reviewed primary docs; retain exact receiving declaration.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "ERA3AEB2612V",
+      "references": "R126",
+      "manufacturer": "Panasonic",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/DMM0000COL14.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact ERA3 family/product-linked rectangular resistor profile:lead-free peak≤260C/≤10s,above230C30–40s,preheat150…180C60–120s,maximumtwo reflows. ERA datasheet storage5…35C/45…85%RH,≤1year. Use rosin flux; highly acidic/water-soluble/fluoride flux prohibited; cleaning/coating needs process validation. No numericMSL found in reviewed primary docs; retain exact receiving declaration.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "ESD2CAN24DBZRQ1",
+      "references": "D301 D501",
+      "manufacturer": "Texas Instruments",
+      "quantity": 2,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/esd2can24_q1.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact orderable-part row; shipping label controls lot exposure.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "ESP32-S3-WROOM-1-N8R2",
+      "references": "U201",
+      "manufacturer": "Espressif",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 3,
+      "manufacturer_peak_C": 250,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/espressif_esp32_s3_wroom1.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Open-bag168h at25±5C/60%RH; apply exact manufacturer bake procedure only if required.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "GCM188R71C105KA64D",
+      "references": "C153 C302 C511 C512 C521 C522",
+      "manufacturer": "Murata",
+      "quantity": 6,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "https://www.murata.com/en-eu/support/faqs/capacitor/ceramiccapacitor/mnt/0009",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Murata chip MLCC family explicitly MSL1; resin-molded exceptions do not apply. GCM exact approval documents allow240–260C lead-free peak; GRM reflow maximum is not borrowed from GCM. Avoid thermal shock; retain exact part storage/solderability and board-process checks.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "GCM188R71H104KA57D",
+      "references": "C158 C202 C205 C301 C403 C404 C405 C502 C531",
+      "manufacturer": "Murata",
+      "quantity": 9,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "https://www.murata.com/en-eu/support/faqs/capacitor/ceramiccapacitor/mnt/0009",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Murata chip MLCC family explicitly MSL1; resin-molded exceptions do not apply. GCM exact approval documents allow240–260C lead-free peak; GRM reflow maximum is not borrowed from GCM. Avoid thermal shock; retain exact part storage/solderability and board-process checks.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "GRM1885C1H103JA01D",
+      "references": "C532",
+      "manufacturer": "Murata",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": null,
+      "source": "https://www.murata.com/en-eu/support/faqs/capacitor/ceramiccapacitor/mnt/0009",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Murata chip MLCC family explicitly MSL1; resin-molded exceptions do not apply. GCM exact approval documents allow240–260C lead-free peak; GRM reflow maximum is not borrowed from GCM. Avoid thermal shock; retain exact part storage/solderability and board-process checks.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "LM5164DDAR",
+      "references": "U121",
+      "manufacturer": "Texas Instruments",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 2,
+      "manufacturer_peak_C": 260,
+      "source": "https://www.ti.com/product/LM5164/part-details/LM5164DDAR",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TI manufacturer part page read2026-09-09; not borrowed from Q1/non-Q sibling.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "LM63615DQPWPRQ1",
+      "references": "U151",
+      "manufacturer": "Texas Instruments",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 3,
+      "manufacturer_peak_C": 260,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/lm63615_q1.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact orderable-part row; shipping label controls lot exposure.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "LQW18AS1N6J0ZD",
+      "references": "L406",
+      "manufacturer": "Murata",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "https://search.murata.co.jp/Ceramy/image/img/P02/JELF243A-9139.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Public manufacturer inductor MSL table covers LQ* as1. Exact JELF243A_9139E-01 reference row;recommended reflow245±3C,limit260C/10s,two cycles. Store−10…40C/15…85%RH;usewithin12months or check solderability. IPAcleaning≤40C,other listedcleaning≤60C;do not contact winding with tweezers/brushes. No assembled-board ultrasonic authorization.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "LTC4367HMS8#WTRPBF",
+      "references": "U101",
+      "manufacturer": "Analog Devices",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": null,
+      "source": "https://www.analog.com/media/en/quality-documentation/msl-package_26apr2016.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "ADI/Linear primary package table dated2016-04-26 explicitly lists MS8 8-lead MSOP MSL1/no drypack. Actual LTC4367 order code uses MS8. Table defers peak body temperature to J-STD020; datasheet300C/10s lead-local rating is not a whole-body reflow allowance.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "MCAST32MSB7226KPNA01",
+      "references": "C127 C128 C151 C155 C156 C157 C201 C204 C401 C402",
+      "manufacturer": "Taiyo Yuden",
+      "quantity": 10,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.yuden.co.jp/en/product/support/useful/faq/mlcc/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Taiyo Yuden states resinless ceramic capacitors are outside MSL regulation. No numericMSL1 is assigned. Store and solder according to the exact automotive MLCC specification.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "MIC5504-3.3YM5-TR",
+      "references": "U403",
+      "manufacturer": "Microchip",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": null,
+      "source": "https://www.microchip.com/en-us/about/corporate-responsibility/our-products/product-material-compliance.MIC5504-3.3YM5-TR.html",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact Microchip material-compliance API row identifies MIC5504-3.3YM5-TR/SOT-23/5 leads/NiPdAu and MSL-1. This does not turn datasheet local-lead260C/10s into whole-body reflow qualification.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "MSS1246T-473MLC",
+      "references": "L121",
+      "manufacturer": "Coilcraft",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/mss1246t.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Family explicitlyMSL1; permitted3x40s at260C, cool between cycles; vendor washing document applies.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "OPA2333AIDR",
+      "references": "U502",
+      "manufacturer": "Texas Instruments",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "https://www.ti.com/product/OPA2333/part-details/OPA2333AIDR",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TI manufacturer part page read2026-09-09; not borrowed from Q1/non-Q sibling.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "PA1616D",
+      "references": "U401",
+      "manufacturer": "CDTop Technology",
+      "quantity": 1,
+      "process": "LOCAL_OR_SELECTIVE_AFTER_GLOBAL",
+      "msl": null,
+      "manufacturer_peak_C": null,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/pa1616d_v06.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "MANUAL_GPS/selective after global. Manufacturer requires prebaking before any SMT reflow; if double-sided reflow, module on second pass only unless first-pass process is separately agreed. Datasheet gives no numeric MSL or bake time/temperature; do not invent125C/24h. Reflow profile must be measured, and selective assembly still requires compatible local heat/cleaning procedure.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "PMEG2010BEA,115",
+      "references": "D511 D512 D521 D522",
+      "manufacturer": "Nexperia",
+      "quantity": 4,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 260,
+      "source": "https://assets.nexperia.com/documents/other-type/REFLOW_BG-BD-1.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact live product API maps PMEG2010BEA,115 to its chemical report, but that report was unavailable403;no MSL is borrowed from PMEG2010BEA-Q. Manufacturer SOD323 page links Feb2026 reflow guide:body<1.6mm gives260Cclassification,typ245Cpeak,three cycles,20–30swithin5Cpeak recommended. This recommended dwell differs from the board10speak allocation; assembler must validate compatible measured profile, not assume all dwell definitions identical.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "S5DHE3_A/H",
+      "references": "D101",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/s5a.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact voltage/type and automotive suffix are within manufacturer family ordering information; family explicitly specifies MSL1 and lead-free maximum peak260C. Time/ramp/repeat-cycle and lot-label controls remain.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "SMAJ30AHE3_A/H",
+      "references": "D102",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/smaj.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact voltage/type and automotive suffix are within manufacturer family ordering information; family explicitly specifies MSL1 and lead-free maximum peak260C. Time/ramp/repeat-cycle and lot-label controls remain.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "SMCJ24AHE3_A/H",
+      "references": "D103",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/smcj.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact voltage/type and automotive suffix are within manufacturer family ordering information; family explicitly specifies MSL1 and lead-free maximum peak260C. Time/ramp/repeat-cycle and lot-label controls remain.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "SN74LVC2G125DCUR",
+      "references": "U402 U404",
+      "manufacturer": "Texas Instruments",
+      "quantity": 2,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "https://www.ti.com/product/SN74LVC2G125/part-details/SN74LVC2G125DCUR",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TI manufacturer part page read2026-09-09; not borrowed from Q1/non-Q sibling.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "SS16HE3_B/H",
+      "references": "D502",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "https://www.vishay.com/docs/88746/ss12.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact voltage/type and automotive suffix are within manufacturer family ordering information; family explicitly specifies MSL1 and lead-free maximum peak260C. Time/ramp/repeat-cycle and lot-label controls remain.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "STD25NF20",
+      "references": "Q101",
+      "manufacturer": "STMicroelectronics",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "https://www.st.com/resource/en/material_declaration/md_dp-wspc-to-wspc-252-wspc-dpak_xmdpmm2ga62.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Manufacturer material declaration explicitly names STD25NF20/XMDP*MM2GA62,dated2020-04-08;MSL1,260C,three reflows. Current exact ST product page links this report; sites/material variation and actual lot labels remain controlled.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "T598X477M006ATE025",
+      "references": "C206",
+      "manufacturer": "KEMET",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 3,
+      "manufacturer_peak_C": 260,
+      "source": "lanes/mechanics/sources/KEM_T2073_T59X.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact X-case table and family storage:168h30C/60%RH; return unused parts to sealed fresh-desiccant MBB; maximumthree specified reflows.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TCAN3403DRBRQ1",
+      "references": "U301",
+      "manufacturer": "Texas Instruments",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 2,
+      "manufacturer_peak_C": 260,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/tcan3403_q1.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact orderable-part row; shipping label controls lot exposure.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPU060311K8HWEA00",
+      "manufacturer": "Vishay",
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/docs/28779/tnpue3.pdf",
+      "source_evidence": "PRIMARY_FAMILY_DATASHEET_28779_REV_04_MAR_2025_REVIEWED",
+      "handling": "TNPU e3 manufacturer Assembly section permits automatic wave/reflow/vapor-phase processing and common electronics cleaning solvents. Coating/potting compatibility remains application-specific. Numeric MSL and a numeric production peak are not stated here and are not invented.",
+      "current_release_condition": "Use the board-wide compatible process and incoming lot label. TNPU film limit125C and power derating apply; part-family solvent compatibility does not authorize cleaning the full assembly.",
+      "references": "R155",
+      "quantity": 1
+    },
+    {
+      "mpn": "TNPU06034K99HWEA00",
+      "manufacturer": "Vishay",
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/docs/28779/tnpue3.pdf",
+      "source_evidence": "PRIMARY_FAMILY_DATASHEET_28779_REV_04_MAR_2025_REVIEWED",
+      "handling": "TNPU e3 manufacturer Assembly section permits automatic wave/reflow/vapor-phase processing and common electronics cleaning solvents. Coating/potting compatibility remains application-specific. Numeric MSL and a numeric production peak are not stated here and are not invented.",
+      "current_release_condition": "Use the board-wide compatible process and incoming lot label. TNPU film limit125C and power derating apply; part-family solvent compatibility does not authorize cleaning the full assembly.",
+      "references": "R156",
+      "quantity": 1
+    },
+    {
+      "mpn": "TNPW0603100KBEEA",
+      "references": "R123",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW060310K0BEEA",
+      "references": "R502 R504",
+      "manufacturer": "Vishay",
+      "quantity": 2,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW06031K00BEEA",
+      "references": "R514 R524",
+      "manufacturer": "Vishay",
+      "quantity": 2,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW060324K3BEEA",
+      "references": "R103",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW060327K4BEEA",
+      "references": "R501",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW060331K6BEEA",
+      "references": "R121",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW060336K5BEEA",
+      "references": "R503",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW060343K2BEEA",
+      "references": "R124",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW06034K02BEEA",
+      "references": "R512 R522",
+      "manufacturer": "Vishay",
+      "quantity": 2,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW0805118KBEEA",
+      "references": "R505",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW0805124KBEEA",
+      "references": "R513 R523",
+      "manufacturer": "Vishay",
+      "quantity": 2,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW08051M00BEEA",
+      "references": "R511 R521",
+      "manufacturer": "Vishay",
+      "quantity": 2,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW0805309KBEEA",
+      "references": "R122",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TNPW1206549KBEEA",
+      "references": "R102",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "NOT_APPLICABLE",
+      "manufacturer_peak_C": null,
+      "source": "https://www.vishay.com/en/product/28758/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Not Applicable. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Applicable chip-resistor assembly source supports IEC61760-1 reflow/wave/vapor and common solvent cleaning; no arbitrary coating/potting or ultrasonic process acceptance follows. Exact profile and solderability of aged stock must be checked.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TPD1E05U06DPYR",
+      "references": "D402",
+      "manufacturer": "Texas Instruments",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "https://www.ti.com/product/TPD1E05U06/part-details/TPD1E05U06DPYR",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TI manufacturer part page read2026-09-09; not borrowed from Q1/non-Q sibling.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TPS26600PWPR",
+      "references": "U501",
+      "manufacturer": "Texas Instruments",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 2,
+      "manufacturer_peak_C": 260,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/tps2660.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact orderable-part row; shipping label controls lot exposure.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "TPS3808G33QDBVRQ1",
+      "references": "U202",
+      "manufacturer": "Texas Instruments",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "https://www.ti.com/product/TPS3808-Q1/part-details/TPS3808G33QDBVRQ1",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact TI manufacturer part page read2026-09-09; not borrowed from Q1/non-Q sibling.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "U.FL-R-SMT-1(80)",
+      "references": "J401",
+      "manufacturer": "Hirose",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": null,
+      "manufacturer_peak_C": 250,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/hirose_ufl.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Manufacturer profile: board/lead surface≤250C for≤10s,≤2cycles; localmanual350C≤5s,stencil0.10–0.12mm. Original packaging storage−10…40C/≤85%RH/≤6months; longer storage requires solderability confirmation. NumericMSL is not listed in the reviewed document. Keep unmated connector clean; no whole-board wash approval inferred.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "WSL2512R4700FEA",
+      "references": "R110",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "FLOOR_LIFE_UNLIMITED",
+      "manufacturer_peak_C": 250,
+      "source": "https://www.vishay.com/en/product/30100/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Floor Life-Unlimited. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Vishay document31052 prose specifies reflow≤250C for≤20s; its table allows260C, so this package uses the more restrictive prose. Thermal ramp, cooling and controlled cleaning still apply.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "WSLP0603R0100FEA",
+      "references": "R153",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "FLOOR_LIFE_UNLIMITED",
+      "manufacturer_peak_C": 250,
+      "source": "https://www.vishay.com/en/product/30122/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Floor Life-Unlimited. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Vishay document31052 prose specifies reflow≤250C for≤20s; its table allows260C, so this package uses the more restrictive prose. Thermal ramp, cooling and controlled cleaning still apply.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "WSLP0603R0820FEA",
+      "references": "R158",
+      "manufacturer": "Vishay",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": "FLOOR_LIFE_UNLIMITED",
+      "manufacturer_peak_C": 250,
+      "source": "https://www.vishay.com/en/product/30122/tab/quality/",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Exact MPN manufacturer quality row: Floor Life-Unlimited. This is preserved as the manufacturer designation, not silently relabeled numeric MSL1. Vishay document31052 prose specifies reflow≤250C for≤20s; its table allows260C, so this package uses the more restrictive prose. Thermal ramp, cooling and controlled cleaning still apply.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    },
+    {
+      "mpn": "XGL5030-153MEC",
+      "references": "L151",
+      "manufacturer": "Coilcraft",
+      "quantity": 1,
+      "process": "GLOBAL_REFLOW",
+      "msl": 1,
+      "manufacturer_peak_C": 260,
+      "source": "baseline/GR86_CCA_RevB/evidence/manufacturer/xgl5030_2026.pdf",
+      "source_evidence": "EXACT_OR_APPLICABLE_PRIMARY_SOURCE",
+      "handling": "Family explicitlyMSL1; permitted3x40s at260C, cool between cycles; vendor washing document applies.",
+      "current_release_condition": "Lotlabel/time/profile/cleaning acceptance remains unmeasured; use restrictive compatibleglobal envelope; unknownprofilepart mustnotenter oven until confirmed."
+    }
+  ],
+  "excluded": [
+    {
+      "reference": "TP103",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP121",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP403",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP203",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP101",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP122",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP124",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP123",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "J201",
+      "assembly": "BARE_PCB",
+      "mpn": "TC2030-IDC-NL (tool, not assembled component)"
+    },
+    {
+      "reference": "TP404",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP102",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP405",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP510",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP401",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "C203",
+      "assembly": "DNP",
+      "mpn": "GCM188R71C105KA64D"
+    },
+    {
+      "reference": "TP402",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP505",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP504",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP506",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP302",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP501",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP211",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP213",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "SJ301",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB OPEN SOLDER LINK"
+    },
+    {
+      "reference": "TP303",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP151",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP509",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP304",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "R301",
+      "assembly": "DNP",
+      "mpn": "CRCW06030000Z0EA"
+    },
+    {
+      "reference": "TP507",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP153",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP152",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "R306",
+      "assembly": "DNP",
+      "mpn": "CRCW1206120RFKEA"
+    },
+    {
+      "reference": "TP502",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP104",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP305",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP301",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP212",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP508",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP201",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP202",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "TP503",
+      "assembly": "BARE_PCB",
+      "mpn": "BARE PCB PAD"
+    },
+    {
+      "reference": "MH901",
+      "assembly": null,
+      "mpn": ""
+    },
+    {
+      "reference": "MH902",
+      "assembly": null,
+      "mpn": ""
+    },
+    {
+      "reference": "MH903",
+      "assembly": null,
+      "mpn": ""
+    },
+    {
+      "reference": "MH904",
+      "assembly": null,
+      "mpn": ""
+    }
+  ],
+  "corrected_references": [
+    {
+      "reference": "R155",
+      "before": "TNPW060323K7BEEA",
+      "after": "TNPU060311K8HWEA00"
+    },
+    {
+      "reference": "R156",
+      "before": "TNPW060310K0BEEA",
+      "after": "TNPU06034K99HWEA00"
+    }
+  ],
+  "MSL_primary_known_MPNs": 57,
+  "numeric_MSL_primary_known_MPNs": 28,
+  "unknown_msl_MPNs": 18,
+  "physical_assembly_acceptance": false,
+  "pcb_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8"
+}

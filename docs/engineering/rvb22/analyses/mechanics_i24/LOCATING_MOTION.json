@@ -1,0 +1,513 @@
+{
+  "status": "CONDITIONAL_RIGID_KEY_SCREEN",
+  "origin_mm": [
+    34.6,
+    20.637798876479437
+  ],
+  "local_key_motion_bound_mm": 0.35,
+  "states": [
+    [
+      0.35,
+      0.35,
+      0.0
+    ],
+    [
+      0.04636515469127454,
+      2.5576176544401712e-17,
+      0.01232394366197183
+    ],
+    [
+      0.35,
+      -0.35,
+      -0.0
+    ],
+    [
+      -0.35,
+      0.35,
+      0.0
+    ],
+    [
+      -0.04636515469127454,
+      -2.5576176544401712e-17,
+      -0.01232394366197183
+    ],
+    [
+      -0.35,
+      -0.35,
+      -0.0
+    ],
+    [
+      0.046220260296282574,
+      -1.8207266680252346e-17,
+      -0.01232394366197183
+    ],
+    [
+      -0.046220260296282574,
+      1.8207266680252346e-17,
+      0.01232394366197183
+    ]
+  ],
+  "maximum_rotation_deg": 0.7061099587879863,
+  "key_gap_nominal_mm": 0.2,
+  "PCB_edge_position_tolerance_mm": 0.1,
+  "key_machining_tolerance_mm": 0.05,
+  "minimum_insertion_gap_mm": 0.05,
+  "linearization_padding_mm": 0.01,
+  "checks_count": 8109,
+  "interferences": [],
+  "service_checks_count": 318,
+  "service_interferences": [],
+  "cable_sweep_segments": 605,
+  "cable_sweep_radius_mm": 1.51,
+  "cable_checks": [
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "C06_BASE",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.4
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "POST_6.2_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.772636995450377
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "ROOT_LOWER_6.2_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.646233214076886
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "POST_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.17224492443001904
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "ROOT_LOWER_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.19916905882165273
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "POST_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 62.76854517406285
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "ROOT_LOWER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 62.76862483174511
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "POST_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.618752440732234
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "ROOT_LOWER_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.618915738916133
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "CAP_6.2_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.975976491251796
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "ROOT_UPPER_6.2_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 28.759332004677745
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_6.2_-4_0",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 27.318125195202274
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_6.2_-4_0",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.975976491251796
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_6.2_-4_1",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 23.73071475869433
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_6.2_-4_1",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.53048437626953
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_6.2_-4_2",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.62200491535378
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_6.2_-4_2",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 22.337257781675227
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.0500000000000003
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.555810696039889
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_63_-4_0",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.932618911271479
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_63_-4_0",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.0500000000000003
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_63_-4_1",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.5
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_63_-4_1",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.0500000000000003
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_63_-4_2",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 2.3719162586112224
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_63_-4_2",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 3.0500000000000003
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 62.84260309112258
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 62.820321260467686
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 69.93029956520404
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 62.993422818509835
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 62.67206213917784
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 61.96195242407731
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 67.53644616816695
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 62.993422818509835
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.77028600820678
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 30.724753880655353
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_63_45.263840607765246_0",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.003152611298624
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_0",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.068822837231625
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_63_45.263840607765246_1",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.43094059147297
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_1",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.068822837231625
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_63_45.263840607765246_2",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 37.62642766828087
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "KEY_BRIDGE_63_45.263840607765246_2",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 31.06882283723163
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "CAPTURE_SLEEVE_6.2_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.795084691210402
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "M2_HEAD_6.2_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 26.202903801388253
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "M2_NUT_6.2_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 25.52269884135488
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "CAPTURE_SLEEVE_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.3331367136566132
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "M2_HEAD_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 6.136956113590286
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "M2_NUT_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 5.42124940051325
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "CAPTURE_SLEEVE_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 66.11960449402872
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "M2_HEAD_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 66.09700578011864
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "M2_NUT_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 65.49255728673172
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "CAPTURE_SLEEVE_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.93335191161984
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "M2_HEAD_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 33.18933746036629
+    },
+    {
+      "service": "Adafruit851_full150mm_board_following_sweep",
+      "obstacle": "M2_NUT_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 32.5346362075807
+    }
+  ],
+  "corrected_root_bearing_force_only_screens": [
+    {
+      "center": [
+        6.2,
+        -4
+      ],
+      "minimum_contact_area_mm2": 4.256,
+      "minimum_effective_width_mm": 6.08,
+      "max_root_lever_mm": 1.852845652299403,
+      "one_root_force_only_Kt3_MPa": 114.03045649223276,
+      "max_bearing_MPa": 10.128288399138839,
+      "scope": "All-pose conservative ear core, hole swept void, key motion, outline/fixture tolerance and root-line tilt included; thermal end moments, joint/contact stress and nonlinear impact remain open."
+    },
+    {
+      "center": [
+        63,
+        -4
+      ],
+      "minimum_contact_area_mm2": 2.1449999999999996,
+      "minimum_effective_width_mm": 4.289999999999999,
+      "max_root_lever_mm": 1.6399048563001115,
+      "one_root_force_only_Kt3_MPa": 143.03639608414466,
+      "max_bearing_MPa": 20.09603516397898,
+      "scope": "All-pose conservative ear core, hole swept void, key motion, outline/fixture tolerance and root-line tilt included; thermal end moments, joint/contact stress and nonlinear impact remain open."
+    },
+    {
+      "center": [
+        6.2,
+        45.28735489815251
+      ],
+      "minimum_contact_area_mm2": 4.256000000000017,
+      "minimum_effective_width_mm": 6.08,
+      "max_root_lever_mm": 1.8528465451232778,
+      "one_root_force_only_Kt3_MPa": 114.03051143966665,
+      "max_bearing_MPa": 10.128288399138798,
+      "scope": "All-pose conservative ear core, hole swept void, key motion, outline/fixture tolerance and root-line tilt included; thermal end moments, joint/contact stress and nonlinear impact remain open."
+    },
+    {
+      "center": [
+        63,
+        45.263840607765246
+      ],
+      "minimum_contact_area_mm2": 4.256000000000021,
+      "minimum_effective_width_mm": 6.0800000000000045,
+      "max_root_lever_mm": 1.8528447594755164,
+      "one_root_force_only_Kt3_MPa": 114.03040154479805,
+      "max_bearing_MPa": 10.12828839913879,
+      "scope": "All-pose conservative ear core, hole swept void, key motion, outline/fixture tolerance and root-line tilt included; thermal end moments, joint/contact stress and nonlinear impact remain open."
+    }
+  ],
+  "nearest": [
+    {
+      "ref": "U401",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.13106681050451496
+    },
+    {
+      "ref": "U401",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.13106681050451496
+    },
+    {
+      "ref": "J202",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.3505353110546565
+    },
+    {
+      "ref": "J202",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.3505353110546565
+    },
+    {
+      "ref": "J202",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.6505353110546537
+    },
+    {
+      "ref": "J202",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.6505353110546537
+    },
+    {
+      "ref": "J202",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_2",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.6505353110546537
+    },
+    {
+      "ref": "J203",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.6773548981525153
+    },
+    {
+      "ref": "J203",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.8456703072169112
+    },
+    {
+      "ref": "J203",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.8456703072169112
+    },
+    {
+      "ref": "C128",
+      "obstacle": "CAP_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.0232707739730742
+    },
+    {
+      "ref": "C128",
+      "obstacle": "ROOT_UPPER_63_45.263840607765246",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.0232707739730742
+    }
+  ],
+  "limitations": [
+    "Finished-outline and key-position tolerances are explicit assembly acceptance conditions, not guaranteed supplier process.",
+    "Rigid-body corner sweep excludes deformable PCB modes, side-key contact stress/impact and cap/locator elastic deflection.",
+    "Separate captured PCB Zstack1.71mm remains unchanged. End rotations and out-of-plane flex response remain open."
+  ],
+  "geometry_spec_sha256": "9bad2756f2c7aca3758713753959d39e49944d478b847006264b53f4297d824c",
+  "physical_measurements_claimed": false
+}

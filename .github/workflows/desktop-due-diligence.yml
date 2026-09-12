@@ -1,0 +1,55 @@
+name: Desktop respin-risk due diligence
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/workflows/desktop-due-diligence.yml'
+      - 'docs/engineering/rvb22/analyses/convergence_01/**'
+      - 'docs/engineering/rvb22/candidate/**'
+      - 'docs/engineering/rvb22/analyses/assembly_handling/**'
+permissions:
+  contents: read
+concurrency:
+  group: desktop-due-diligence-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+jobs:
+  desktop:
+    if: github.head_ref == 'codex/rvb24-coordinated-closure' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Preserve exact tracked source for reproducible full-wave review
+        run: |
+          mkdir -p desktop_evidence
+          git rev-parse HEAD > desktop_evidence/commit.txt
+          git ls-tree -r -l HEAD > desktop_evidence/tracked-tree.txt
+          git archive --format=tar.gz --output=desktop_evidence/source.tar.gz HEAD
+          sha256sum desktop_evidence/source.tar.gz > desktop_evidence/source.sha256
+      - name: Provision isolated analysis dependencies
+        run: |
+          python3 -m venv "$RUNNER_TEMP/convergence-env"
+          "$RUNNER_TEMP/convergence-env/bin/python" -m pip install -r docs/engineering/rvb22/analyses/convergence_01/requirements.txt
+          "$RUNNER_TEMP/convergence-env/bin/python" -m pip freeze > desktop_evidence/python-packages.txt
+      - name: Run actual host firmware regressions and negative-path tests
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          set -euo pipefail
+          PY="$RUNNER_TEMP/convergence-env/bin/python"
+          D=docs/engineering/rvb22/analyses/convergence_01
+          "$PY" "$D/firmware_regression.py" --firmware-dir docs/engineering/rvb22/candidate/firmware --out desktop_evidence/firmware
+          cp desktop_evidence/firmware/RECOVERED_FIRMWARE_TEST_RESULTS.json "$D/results/FIRMWARE_REGRESSION.json"
+          "$PY" -m unittest discover -s "$D/tests" -v 2>&1 | tee desktop_evidence/tests.log
+          "$PY" "$D/run_review.py" --out desktop_evidence/review
+      - name: Preserve evidence without changing source or release state
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: desktop-wave1-${{ github.event.pull_request.head.sha }}
+          path: desktop_evidence/
+          retention-days: 14
+          if-no-files-found: error

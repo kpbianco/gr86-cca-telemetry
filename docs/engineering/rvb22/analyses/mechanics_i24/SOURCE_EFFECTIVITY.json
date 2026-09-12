@@ -1,0 +1,15 @@
+{
+  "source_PCB": "iterations/I24_return_clearance_final/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "native_pose_reference": "runtime/hosted/run26/extracted/native_I06_hosted/candidate_kicad/GR86_CCA_RevB.kicad_pcb",
+  "native_pose_reference_sha256": "44121c54ce49ace9c82404726706ef8a8f582ad63a9dad0a29bdd99aa0cad5db",
+  "inherited_body_evidence": "analyses/mated_i22/RESULTS.json",
+  "body_evidence_sha256": "3ec8441da107f011cbc4dc5c09289eac8ed298f871551f406e20b2709769428f",
+  "checked_footprints": 199,
+  "fitted_body_rows": 153,
+  "differences": [],
+  "equivalent_rotations_normalized": true,
+  "coordinate_tolerance_mm": 1e-06,
+  "geometry_spec_sha256": "9bad2756f2c7aca3758713753959d39e49944d478b847006264b53f4297d824c",
+  "scope": "Pose/value/side inheritance binds declared body envelopes. It does not certify manufacturer3D models or physical component placement."
+}

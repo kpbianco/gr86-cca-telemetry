@@ -1,0 +1,27 @@
+{
+  "firmware_portable_entrypoint": "PASS 9 suites",
+  "native_export_portable_entrypoint": "PASS intended nets and exports",
+  "unit_negative_path_tests": "PASS 22",
+  "review_entrypoint": "PASS checked source identities and scoped dispositions",
+  "thermal_native_cases": [
+    {
+      "mesh_mm": 0.5,
+      "case": "baseline",
+      "complete": true
+    },
+    {
+      "mesh_mm": 0.5,
+      "case": "insulated_trial",
+      "complete": true
+    },
+    {
+      "mesh_mm": 0.25,
+      "case": "insulated_trial",
+      "complete": true
+    }
+  ],
+  "remote_workflow_changes": "NOT EXECUTED",
+  "github_publication": "NOT PERFORMED_READ_ACTIONS_ONLY",
+  "PCB_or_mechanical_design_adoption": "NONE",
+  "all_desktop_convergence_complete": false
+}

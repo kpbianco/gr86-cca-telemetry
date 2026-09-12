@@ -1,0 +1,343 @@
+{
+  "baseline": "5d772f12cb7b7c3fdf40c792726c2e01c8025a73",
+  "payload_sha256": "27e65c6baa786aff560edc60f842d405d1b48ef4e52dcae53b934e4bcd5eccc1",
+  "source_archive_sha256": "599341959efea5b80a253cc13c90039d6b84aced8aef1ac0b9a58400d174cf25",
+  "restored_source_files": 53,
+  "workflow_files_pending": 2,
+  "binary_map_archives": "Retained in original Convergence01 working package; not part of this UTF-8 source payload",
+  "files": [
+    {
+      "path": ".github/workflows/desktop-due-diligence.yml",
+      "sha256": "4bc654c3baa86c1b3cf10f88f59557c8cc8ae1ed6567eab9f479e29d0a678a0e",
+      "size": 2700,
+      "disposition": "connector_workflow_update_required"
+    },
+    {
+      "path": ".github/workflows/rvb22-native.yml",
+      "sha256": "5be8a6b9a65bee1d896d350facc9d30db2db3297a387b0e805c518494d723834",
+      "size": 6292,
+      "disposition": "connector_workflow_update_required"
+    },
+    {
+      "path": "docs/engineering/rvb22/GR86_CCA_RevB_Board_Vetting_Summary.md",
+      "sha256": "75c9c0911d2845ce3613a9cc29e7e0cb3e0a39dc734fe1f6307953c361e1015f",
+      "size": 4292,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/assembly_handling/CURRENT_FITTED_MPN_HANDLING.csv",
+      "sha256": "9739bf7f63af89eb0eb63105569946370366ef08c0ddc27b0cc8e14444766bf5",
+      "size": 30805,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/assembly_handling/EXACT_MPN_HANDLING_REGISTER.json",
+      "sha256": "a4113088dc49e072af03f066c718e19a6f711a05612d086ab8c57401841711a9",
+      "size": 72640,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/assembly_handling/HANDLING_REVIEW.md",
+      "sha256": "f06655ae1583e72e32a57550c96b1045e60f5bdd4f8246c14ea0ff529aeb500e",
+      "size": 4487,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/HANDOFF.json",
+      "sha256": "bedd6f9cbbc40212c1d16062fa0dcfd15a906fb38938db45d772e235aa84e227",
+      "size": 1187,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/README.md",
+      "sha256": "b3e12a65d6612213f70a83b065e17f9240b0818fa2a00247f240c8e3aceaeefc",
+      "size": 11459,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/SOURCES.json",
+      "sha256": "bdd70b9b5a7c691c9bd35f6fc94913e2a63ae30617f39bd10bc219aca56e2647",
+      "size": 928,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/THERMAL_GEOMETRY.json",
+      "sha256": "c68a91d5a4ec7b70e32c0af466bb689b88f5f269dc495538858143114502afbf",
+      "size": 247644,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/THIRD_PARTY_NOTICES.md",
+      "sha256": "a8fcbcc077dfb016a00f422235ebb78909c0b17cf206c105d088358bf9fe10c5",
+      "size": 330,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/firmware_regression.py",
+      "sha256": "a00c848b085d49f87c8410e17ba913493fe22bdba72b93bdac1612139641d157",
+      "size": 18386,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/native_exports.py",
+      "sha256": "2cde487ad394d84eb63a068576ad789e34fe8d4e4faa6b542afaee65f57059bf",
+      "size": 12158,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/requirements.txt",
+      "sha256": "354cafa8f42cb15ea38d3e15658ad558f4298f1572887959ad543d76f6d8184c",
+      "size": 59,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/FIRMWARE_REGRESSION.json",
+      "sha256": "ee01a65ed72c26ea93931c4888bfbf7b83c756db581661e4690cca0aff1cc0eb",
+      "size": 16234,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/FRONT_ROUTE_REJECTED.json",
+      "sha256": "9f61d7b20cb4555a1b877df7cd3e8e6cbc0b31f029e8faa3ca90bd751ad855c0",
+      "size": 442,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/LOCAL_EXECUTION_STATUS.json",
+      "sha256": "18b6a668dcc8e8ab3a50e51ffdbea6f0b5040b41d6cc9416e57e1c6aacaf85a7",
+      "size": 744,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/NATIVE_RECHECK.json",
+      "sha256": "136c35a5d8d21fa9388cb55c8a2b7c57b3fab3672ee69912a72fa81db730675e",
+      "size": 176097,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/TESTS.log",
+      "sha256": "e6241b3311f98264a19dcd922c553d084c1cac033fe2aadbb0ff98523278cd46",
+      "size": 2315,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/packaged_firmware.log",
+      "sha256": "2fe1263593459e8c3abfa79cabce258d3d4d40eb0fdb977216f0525a3447885a",
+      "size": 784,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/packaged_firmware/RECOVERED_FIRMWARE_TEST_RESULTS.json",
+      "sha256": "ee01a65ed72c26ea93931c4888bfbf7b83c756db581661e4690cca0aff1cc0eb",
+      "size": 16234,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/packaged_firmware/recovered_tests/actual_cache.cpp",
+      "sha256": "102623ca51390506a4904861a7e3618e11249246641bd826e5048aab9acc1c0c",
+      "size": 11706,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/packaged_firmware/recovered_tests/actual_gps.cpp",
+      "sha256": "c74987038370d281721259347d521fa28e9c6abcdc6485f8761d48cb6874c16f",
+      "size": 20732,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/packaged_firmware/recovered_tests/actual_oil.cpp",
+      "sha256": "112c3637f1b5b9cc8f3581b35eeadb86fc6f4ba4eda0ccacb8080595fae883d8",
+      "size": 7393,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/packaged_firmware/recovered_tests/oil_boundaries.cpp",
+      "sha256": "c423ef875a49a867b7b0888c4efe20c26856e28049dd3107933134e8fce0c091",
+      "size": 2578,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/packaged_native.log",
+      "sha256": "a39791db39e6e0817153d1c9e1eb7f7b9dbbdc39fb327ae283434254607dd668",
+      "size": 6875,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/packaged_native/RESULTS.json",
+      "sha256": "136c35a5d8d21fa9388cb55c8a2b7c57b3fab3672ee69912a72fa81db730675e",
+      "size": 176097,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/review.log",
+      "sha256": "537f6f17a678604ea37516da53133763c61b872b1f461c4d55c0c0b2cf81c83f",
+      "size": 1705,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/review/ALL_CRITERIA_COVERAGE.json",
+      "sha256": "582258dde74495c97055660021d873341208b71ed8bf4858b9500497d3be7a38",
+      "size": 267899,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/review/CURRENT_HANDLING_REGISTER.json",
+      "sha256": "c68f3d34c0ef0246dac211fddafb13f24c627570a8ab7d86440af999946ad721",
+      "size": 72349,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/review/EVIDENCE_AVAILABILITY.json",
+      "sha256": "f3d9505e04d8f1af80f6013abd146d9548ea92177e030abb244ad26c55bb888e",
+      "size": 30777,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/review/LED_REVIEW.json",
+      "sha256": "ad88df3bf2d42209fe1e6150fbfe6d83bf5e1c7e0629daa82690d31f71827ba9",
+      "size": 3836,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/review/RECEIVE_ONLY_DISPOSITION.json",
+      "sha256": "4636d8752a052abdddbd918b28ef1de0ce906423102d7c27b19996642155e744",
+      "size": 684,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/review/REGRESSION_BINDING.json",
+      "sha256": "37c39341b13d12483c950b32b810718b77b8d1320ea664507541d53eb0b9e41c",
+      "size": 384,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/review/SUMMARY.json",
+      "sha256": "537f6f17a678604ea37516da53133763c61b872b1f461c4d55c0c0b2cf81c83f",
+      "size": 1705,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/thermal_native_025.log",
+      "sha256": "14d3fc86c355deb2ec7b8899df57a935fa2bd6ab8885cba577c83996ad197460",
+      "size": 1419,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/thermal_native_025/CONTACT_TRIAL.json",
+      "sha256": "007c07a019842b7552a57bff090c23c8dbb787186307bc9a461954c4ae59c7ba",
+      "size": 1779,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/thermal_native_025/RESULTS.json",
+      "sha256": "edd0635f0eb51f50fe5af54fb7fa67eb79cde97c31007afa8316745c2be06950",
+      "size": 2288,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/thermal_native_05.log",
+      "sha256": "3ad3e3fc302df2e9cf701a977edefcc43abe23f72128f53902310d5af51688b4",
+      "size": 3715,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/thermal_native_05/CONTACT_TRIAL.json",
+      "sha256": "007c07a019842b7552a57bff090c23c8dbb787186307bc9a461954c4ae59c7ba",
+      "size": 1779,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/results/thermal_native_05/RESULTS.json",
+      "sha256": "60798d5d6d257917c325fabc750ac3ceb5a929fb025526ec6d8178b6d5fbb253",
+      "size": 3914,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/run_review.py",
+      "sha256": "345308287d5a84fedaddf1ac8f885da235fd00743e4d0ef16179b8c1f5842cbb",
+      "size": 14890,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/support/HANDLING_I22.json",
+      "sha256": "8b75ad02a30de0d34ab9ac955fc38228d618ae520889c8d6955a7b978bdd9e06",
+      "size": 75287,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/support/I25_SHOE_ALLOCATION_SUPERSEDED.json",
+      "sha256": "f2e76a66d9bd1a1a3ec54f02221b0ccd6517390f41032977e3386e0e9948b0ab",
+      "size": 2684,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/support/check_combined_copper.py",
+      "sha256": "1f161d98122bfec6c02a4accf3c5af67cb389fe21677b4ca5963f0d061fe4076",
+      "size": 5697,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/support/sexpdata.py",
+      "sha256": "ceaa3bb54b53f159359e33d1d65bb3918614289b2c78e8f46b6e9e1f96673e3c",
+      "size": 22999,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/tests/test_review.py",
+      "sha256": "5cb9f2409f7d7e6f0dd0ac85e38fbefda7adca8aecb88d6203f3ea05d9cb9b76",
+      "size": 4957,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/thermal_fvm.py",
+      "sha256": "61e6f2a06d820fa693679da6b9fb2482f2f16de7082fca51680f538c7522478d",
+      "size": 10853,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/convergence_01/thermal_native.py",
+      "sha256": "c801e6cf365a34e2b7e4f97295a5af490d7bce541feec0296c9740c5d6c62894",
+      "size": 7398,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/thermal_i24/I25_HANDOFF.md",
+      "sha256": "c2d93383a414d644007a7a75b4ae4d9f2f7f6441ddfb166cd63c2e314953ffb9",
+      "size": 3951,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/thermal_i24/U201_LOCAL_CONTACT_DISPOSITION.md",
+      "sha256": "8ebc99bd4745ccaefccf15e1d72bce98f23f3d4465432c8e76cd0d6fc186ecee",
+      "size": 6584,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/thermal_i25/U201_SHOE_ALLOCATION.json",
+      "sha256": "663e1856412e802b90daf0163414ff6395e51b7e0312c91e47eb3afb519b620c",
+      "size": 5974,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/analyses/thermal_i25/u201_shoe_allocation.py",
+      "sha256": "badd6b8944df4575ac398af5345f41cbed5cb820b442da98f713aa9a8092bb76",
+      "size": 3493,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/current/CONVERGENCE_01_EFFECTIVITY.json",
+      "sha256": "00d63c26093000e76fe9e228af35e0665e86cc5b43cb642f58e43663e15e6177",
+      "size": 1264,
+      "disposition": "source_restored"
+    },
+    {
+      "path": "docs/engineering/rvb22/current/THERMAL_REVIEW.md",
+      "sha256": "38c520cf83b755c79c8c8c44b94e9390a053195729c887a6788115c4cbc58b84",
+      "size": 5690,
+      "disposition": "source_restored"
+    }
+  ],
+  "pcb_adopted": false,
+  "physical_tests": false,
+  "fabrication_release": false
+}

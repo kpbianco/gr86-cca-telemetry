@@ -8,6 +8,10 @@ on:
       - 'docs/engineering/rvb22/candidate/run_native_candidate.py'
       - 'docs/engineering/rvb22/candidate/cad/**'
       - 'docs/engineering/rvb22/candidate/firmware/**'
+      - 'docs/engineering/rvb22/analyses/thermal_i18/**'
+      - 'docs/engineering/rvb22/analyses/thermal_i24/**'
+      - 'docs/engineering/rvb22/analyses/convergence_01/**'
+      - 'docs/engineering/rvb22/current/mechanics/I24_trial/THERMAL_PATHS.json'
 permissions:
   contents: read
 concurrency:
@@ -15,7 +19,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   native:
-    if: github.head_ref == 'codex/rvb22-corrective-engineering' && github.event.pull_request.head.repo.full_name == github.repository
+    if: (github.head_ref == 'codex/rvb22-corrective-engineering' || github.head_ref == 'codex/rvb24-coordinated-closure') && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-24.04
     timeout-minutes: 35
     steps:
@@ -58,11 +62,19 @@ jobs:
               subprocess.run(['xvfb-run','-a','/usr/bin/python3','docs/engineering/rvb22/runtime/hosted/diagnose_parser.py','docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb','native_parser_diagnostic'],check=True,timeout=600)
           PYCODE
           fi
+      - name: Provision isolated native-analysis dependencies
+        id: analysis_setup
+        if: always() && steps.cad_setup.conclusion == 'success'
+        run: |
+          python3 -m venv "$RUNNER_TEMP/convergence-env"
+          "$RUNNER_TEMP/convergence-env/bin/python" -m pip install -r docs/engineering/rvb22/analyses/convergence_01/requirements.txt
+          "$RUNNER_TEMP/convergence-env/bin/python" -m pip freeze > native_setup/python-packages.txt
       - name: Provision pinned Arduino toolchain
         id: firmware_setup
         if: always() && steps.checkout.conclusion == 'success'
         run: bash docs/engineering/rvb22/runtime/hosted/setup_native.sh firmware
       - name: Run CAD verification and target firmware compilation
+        id: native_full
         if: always() && steps.cad_setup.conclusion == 'success' && steps.firmware_setup.conclusion == 'success'
         run: |
           xvfb-run -a /usr/bin/python3 docs/engineering/rvb22/candidate/run_native_candidate.py \
@@ -75,6 +87,26 @@ jobs:
             --arduino-config "${RUNNER_TEMP}/rvb22-native-tools/config/arduino-cli.yaml" \
             --nimble-dir "${RUNNER_TEMP}/rvb22-native-tools/user/libraries/NimBLE-Arduino" \
             --component-step
+      - name: Independently reconstruct copper, nets and manufacturing exports
+        if: always() && steps.analysis_setup.conclusion == 'success' && steps.native_full.conclusion == 'success'
+        run: |
+          "$RUNNER_TEMP/convergence-env/bin/python" docs/engineering/rvb22/analyses/convergence_01/native_binding.py \
+            native_I06_hosted/candidate_kicad/GR86_CCA_RevB.kicad_pcb \
+            --out native_convergence_review/CONTENT_BINDING.json
+          "$RUNNER_TEMP/convergence-env/bin/python" docs/engineering/rvb22/analyses/convergence_01/native_exports.py \
+            --native-dir native_I06_hosted \
+            --source-pcb docs/engineering/rvb22/candidate/cad/GR86_CCA_RevB.kicad_pcb \
+            --expected-source-hash 5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8 \
+            --expected-hash "$(sha256sum native_I06_hosted/candidate_kicad/GR86_CCA_RevB.kicad_pcb | cut -d' ' -f1)" \
+            --output-dir native_convergence_review
+      - name: Run native-copper full-path thermal feasibility screen
+        if: always() && steps.analysis_setup.conclusion == 'success' && steps.native_full.conclusion == 'success'
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          "$RUNNER_TEMP/convergence-env/bin/python" docs/engineering/rvb22/analyses/convergence_01/thermal_native.py \
+            --native-dir native_I06_hosted --mesh 0.5 --case both --out thermal_convergence_01
       - name: Preserve returned evidence and failures
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -86,5 +118,7 @@ jobs:
             native_footprint_variants/
             native_I06_cad_only/
             native_I06_hosted/
+            native_convergence_review/
+            thermal_convergence_01/
           retention-days: 7
           if-no-files-found: error

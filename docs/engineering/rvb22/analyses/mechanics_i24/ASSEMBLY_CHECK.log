@@ -1,0 +1,24 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "free_carrier_hits": [
+    {
+      "part": "W03_UPPER_FREE",
+      "obstacle": "UPPER_LANDING",
+      "overlap_mm3": 7.029786867168014,
+      "mating_plane_review": true
+    },
+    {
+      "part": "W03_LOWER_FREE",
+      "obstacle": "LOWER_LANDING",
+      "overlap_mm3": 7.029786867168027,
+      "mating_plane_review": true
+    },
+    {
+      "part": "T04_FREE",
+      "obstacle": "CENTRAL_LANDING",
+      "overlap_mm3": 2.9653264848564143,
+      "mating_plane_review": true
+    }
+  ],
+  "service_hits": []
+}

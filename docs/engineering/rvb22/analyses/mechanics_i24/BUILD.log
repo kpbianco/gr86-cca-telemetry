@@ -1,0 +1,216 @@
+{
+  "interferences": [],
+  "nearest": [
+    {
+      "ref": "U401",
+      "obstacle": "CAP_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.49999999999999994
+    },
+    {
+      "ref": "U401",
+      "obstacle": "ROOT_UPPER_63_-4",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.49999999999999994
+    },
+    {
+      "ref": "R408",
+      "obstacle": "T04_HOT_SHOE",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.6200000000000045
+    },
+    {
+      "ref": "J202",
+      "obstacle": "CAP_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.7373548981525175
+    },
+    {
+      "ref": "J202",
+      "obstacle": "ROOT_UPPER_6.2_45.28735489815251",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.7373548981525175
+    },
+    {
+      "ref": "L406",
+      "obstacle": "T04_HOT_SHOE",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 0.8000000000000114
+    },
+    {
+      "ref": "J202",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_0",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.0373548981525145
+    },
+    {
+      "ref": "J202",
+      "obstacle": "KEY_BRIDGE_6.2_45.28735489815251_1",
+      "overlap_mm3": 0.0,
+      "clearance_mm": 1.0373548981525145
+    }
+  ],
+  "thermal": {
+    "wing": {
+      "contact_rectangles_mm": [
+        [
+          15,
+          -7.6,
+          53,
+          -1.6
+        ],
+        [
+          15,
+          43.6,
+          53,
+          49.6
+        ]
+      ],
+      "hot_areal_R_K_W": 2.357894736842105,
+      "foil_R_K_W": 1.7992575776918482,
+      "terminal_R_allocation_K_W": 0.5,
+      "landing_through_thickness_R_within_terminal_allocation_K_W": 0.043859649122807015,
+      "remaining_weld_attachment_R_allocation_K_W": 0.45614035087719296,
+      "max_cut_length_mm": 41.02307277137414,
+      "model_total_R_K_W": 5,
+      "sum_R_K_W": 4.6571523145339535
+    },
+    "central": {
+      "contact_rectangle_mm": [
+        67.5,
+        12.8,
+        71.3,
+        27.9
+      ],
+      "hot_areal_R_K_W": 9.058210562062674,
+      "shoe_R_K_W": 0.743580806320437,
+      "foil_R_K_W": 3.772580979221534,
+      "terminal_R_allocation_K_W": 1,
+      "max_cut_length_mm": 34.179583671747096,
+      "landing_through_thickness_R_within_terminal_allocation_K_W": 0.11037527593818984,
+      "remaining_weld_attachment_R_allocation_K_W": 0.8896247240618101,
+      "model_total_R_K_W": 15,
+      "sum_R_K_W": 14.574372347604646
+    },
+    "air_C": 65,
+    "landing_C": 70,
+    "board_heat_W": 4.815,
+    "sink_boundary": "Complete underside of all three landing bars, including welded-packet projections, <=70C. No bolt-only cooling or floating-plate credit.",
+    "scope": "Specified path allocation with copper k>=300W/mK and accepted interfaces; no measured contact, uniform-terminal temperature or package qualification."
+  },
+  "structure": {
+    "one_root_carries_all20g_N": 43.1059954267349,
+    "hot_copper_mass_g": 16.700543999999997,
+    "free_span_hot_inertia_N": 6.156355332276699,
+    "allocated_spring_N": 14.0608122981062,
+    "PCB_mass_allocation_g": 100,
+    "minimum_bearing_width_mm": 4.600000000000006,
+    "bearing_band_min_depth_mm": 0.5,
+    "max_root_lever_mm": 1.35,
+    "Kt3_PCB_root_MPa": 109.81486606674977,
+    "hot_notched_PCB_flexural_requirement_MPa": 150,
+    "Kt3_capture_cap_flexural_MPa": 93.44910486345023,
+    "capture_material_hot_flexural_requirement_MPa": 150,
+    "local_bearing_MPa": 18.74173714205863,
+    "bearing_requirement_MPa": 50,
+    "capture_gap_mm": [
+      0.09,
+      0.51
+    ],
+    "root_bands": [
+      {
+        "center": [
+          6.2,
+          -4
+        ],
+        "root_y_mm": 0,
+        "band_bounds_mm": [
+          2.7,
+          -1.2,
+          9.7,
+          -0.2
+        ],
+        "minimum_bearing_width_mm": 6.699999999999999,
+        "max_root_lever_mm": 1.35
+      },
+      {
+        "center": [
+          63,
+          -4
+        ],
+        "root_y_mm": 0,
+        "band_bounds_mm": [
+          59.5,
+          -1.0,
+          64.4,
+          -0.2
+        ],
+        "minimum_bearing_width_mm": 4.600000000000006,
+        "max_root_lever_mm": 1.15
+      },
+      {
+        "center": [
+          6.2,
+          45.28735489815251
+        ],
+        "root_y_mm": 41.28735489815251,
+        "band_bounds_mm": [
+          2.7,
+          41.48735489815251,
+          9.7,
+          42.48735489815251
+        ],
+        "minimum_bearing_width_mm": 6.699999999999999,
+        "max_root_lever_mm": 1.35
+      },
+      {
+        "center": [
+          63,
+          45.263840607765246
+        ],
+        "root_y_mm": 41.263840607765246,
+        "band_bounds_mm": [
+          59.5,
+          41.46384060776525,
+          66.5,
+          42.46384060776525
+        ],
+        "minimum_bearing_width_mm": 6.7,
+        "max_root_lever_mm": 1.35
+      }
+    ],
+    "material": "Machined electrical-grade insulating laminate; hot properties are procurement requirements, not published guarantees.",
+    "required_load_path": "M2 through fasteners,2.85..2.95mm insulating sleeves between postZ\u22120.5 and cap-bodyZ2.35..2.45, retained nuts and C06 root contact bands; bearing faces remain1.85..1.95mm above PCB bottom. No clamp-friction or printed-thread credit.",
+    "sleeve_OD_mm": [
+      3.1,
+      3.3
+    ],
+    "sleeve_ID_mm": [
+      2.05,
+      2.35
+    ],
+    "sleeve_min_hole_radial_clearance_mm": 0.1750000000000001,
+    "sleeve_max_compression_MPa": 13.427341404890996,
+    "M2_installation_torque_Nm": [
+      0.02,
+      0.04
+    ],
+    "nut_factor_condition": [
+      0.15,
+      0.3
+    ],
+    "preload_interval_N": [
+      33.333333333333336,
+      133.33333333333334
+    ],
+    "sleeve_preload_plus_service_compression_MPa": 54.96012981623167,
+    "hot_compression_requirement_MPa": 100,
+    "preload_scope": "Torque window is a proposed assembly control conditional on verified frictionfactor, hardware and retained preload. Hot creep, locking process and thermal-cycle capture gap require qualification.",
+    "edge_key_nominal_gap_mm": 0.2,
+    "PCB_edge_position_tolerance_mm": 0.1,
+    "key_machining_position_tolerance_mm": 0.05,
+    "minimum_insertion_gap_mm": 0.05,
+    "maximum_key_local_clearance_mm": 0.35,
+    "scope": "Nominal static beam/bearing allocation; superseded for root bearing and stress by the all-pose LOCATING_MOTION.json screen. No impact-contact dynamics, PCB strain, full assembly FEA, material qualification, fatigue or retention test."
+  }
+}

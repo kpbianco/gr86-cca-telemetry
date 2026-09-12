@@ -1,0 +1,32 @@
+{
+  "iteration": "I24",
+  "status": "PASS_EXECUTION",
+  "exit_code": 0,
+  "working_directory": "engineering",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "argv": [
+    "python",
+    "analyses/manufacturing_i24/check_native.py",
+    "--native-dir",
+    "runtime/hosted/run28/extracted/native_I06_hosted",
+    "--expected-hash",
+    "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+    "--expected-source-hash",
+    "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+    "--source-pcb",
+    "iterations/I24_return_clearance_final/candidate_kicad/GR86_CCA_RevB.kicad_pcb"
+  ],
+  "analyzer_sha256": "b24782cda0deac570112d8286237075bbcb5cd359c671cff88a455327b143082",
+  "independent_copper_parser_sha256": "5f0e5cb0ceffd8ea3a07fca51209f90225f7b708d666ca33bb5df175fe936c2a",
+  "source_PCB_sha256": "5b373f6033fdbd18f126f8ca054b619abada2568778c5a8fc303c4e756fb06c8",
+  "filled_PCB_sha256": "11533ea91c3bc4c61dd7066e0001914a72bc90b27afb38d321c43b8feb90e3b1",
+  "native_RESULT_sha256": "788a8ccd773d24f67ef733f637883cc9155cbb3f832e3747793a4aa3f53989b7",
+  "outputs": {
+    "RESULTS.json": "a44456e2913bd831a569940bacaf184f70676c5682e0e4a4abf8c6bfc4ac8922",
+    "RUN.log": "1db89fb6e92e0c147f7dbda774f904ed378a7401ba3bb068e4f623706fd6a7aa"
+  },
+  "physical_tests_claimed": 0
+}

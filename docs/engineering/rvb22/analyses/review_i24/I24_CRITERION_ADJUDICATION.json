@@ -1,0 +1,50 @@
+{
+  "status": "I24_NARROW_SCOPE_ADJUDICATION",
+  "total_criteria": 290,
+  "baseline_after_I23": {
+    "closed": 139,
+    "open": 147,
+    "not_applicable": 4,
+    "reason_for_difference_from_I22": "I23 reopened MECH-03 after invalidating the earlier C05/W02/T03 mechanical construction."
+  },
+  "changes": [
+    {
+      "id": "MECH-03",
+      "prior_state": "OPEN_REOPENED_I23",
+      "new_state": "CLOSED_I24_ORIGINAL_SCOPE",
+      "question": "Are bottom-side components allowed by standoff height and enclosure clearance?",
+      "required_evidence": "Worst-case tolerance stack includes component heights, solder protrusion, warp and fasteners.",
+      "evidence": [
+        "analyses/mechanics_i24/independent_review/FINAL_INDEPENDENT_REVIEW.md",
+        "current/mechanics/I24_trial/CANDIDATE_SPEC.json"
+      ],
+      "basis": "Corrected C06/W03/T04 source-effective geometry checks 9,982 component/service/cable/hot-shoe relationships with zero non-mating interference; refinement and source-pose checks are retained.",
+      "explicit_exclusions": [
+        "physical installed fit",
+        "final carrier material qualification",
+        "retained preload and hot-creep qualification",
+        "impact/fatigue/vibration acceptance",
+        "thermal/package qualification",
+        "GPS pigtail retention/service acceptance"
+      ]
+    }
+  ],
+  "current_after_I24_adjudication": {
+    "closed": 140,
+    "open": 146,
+    "not_applicable": 4
+  },
+  "net_numerical_progress_vs_I22": false,
+  "interpretation": "The numerical I22 count is restored using corrected I24 evidence. Broader mechanical, thermal, GPS, return-path, supplier and physical acceptance criteria remain independent and open.",
+  "other_open_dispositions": {
+    "GND-02": "Six nearest-adjacent-plane CAN_TX interruptions remain; zero simultaneous dual-plane gaps do not by themselves prove acceptable return transfer.",
+    "REG-02": "Open pending a realizable local cooling correction and converged package-temperature margins.",
+    "THERM-02": "Open pending exact current thermal model, package/local-air bounds and physical correlation.",
+    "GPS-09": "Open for guaranteed delivered antenna bias/current and open/short/hot-plug behavior.",
+    "GPS-14": "Open for exact new pigtail envelope, strain relief, panel retention and service acceptance.",
+    "WCA-07": "Open for guaranteed low-current/hot optical visibility at the exact LED operating point."
+  },
+  "physical_test_claimed": false,
+  "supplier_acceptance_claimed": false,
+  "fabrication_release_authorized": false
+}
